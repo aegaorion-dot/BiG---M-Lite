@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "AU-FRL",
+  "jurisdictionCode": "AU",
+  "metadata": {
+    "title": null,
+    "officialDocumentId": null,
+    "language": null,
+    "documentKind": "STRUCTURED_DATA"
+  },
+  "provenance": {
+    "artifactId": "14144dfd-29e6-43f2-9bb3-ab36e97c1127",
+    "rawContentHash": "4c38850ae0b9846f35864bfcf8b315f156d8970e9e86f72c8fcabaf2434d5cb5",
+    "sourceUrl": "https://api.prod.legislation.gov.au/v1/Titles?$top=1",
+    "finalUrl": "https://api.prod.legislation.gov.au/v1/Titles?$top=1",
+    "retrievedAt": "2026-10-28T22:40:23.146Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "FRL",
+    "authorityName": "Office of Parliamentary Counsel Federal Register",
+    "sourceRole": "PRIMARY_LEGISLATION",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/4c38850ae0b9846f35864bfcf8b315f156d8970e9e86f72c8fcabaf2434d5cb5.bin",
+    "rawContentHash": "4c38850ae0b9846f35864bfcf8b315f156d8970e9e86f72c8fcabaf2434d5cb5"
+  },
+  "sourceSpecificMetadata": {
+    "format": "JSON",
+    "topLevelKeys": [
+      "@odata.context",
+      "value"
+    ],
+    "payloadRef": {
+      "rawStorageRef": "blobs/4c38850ae0b9846f35864bfcf8b315f156d8970e9e86f72c8fcabaf2434d5cb5.bin",
+      "rawContentHash": "4c38850ae0b9846f35864bfcf8b315f156d8970e9e86f72c8fcabaf2434d5cb5"
+    }
+  },
+  "normalizedContent": {
+    "text": "{\"@odata.context\":\"https://api.prod.legislation.gov.au/v1/$metadata#Titles(id,name,makingDate,collection,subCollection,isPrincipal,isInForce,publishComments,status,hasCommencedUnincorporatedAmendments,nameHistory,namePossibleFuture,statusHistory,statusPossibleFuture,originatingBillUri,asMadeRegisteredAt,optionalSeriesNumber,year,number,seriesType)\",\"value\":[{\"id\":\"C1901A00001\",\"name\":\"Consolidated Revenue\",\"makingDate\":\"1901-06-25T00:00:00\",\"collection\":\"Act\",\"subCollection\":null,\"isPrincipal\":true,\"isInForce\":false,\"publishComments\":null,\"status\":\"Repealed\",\"hasCommencedUnincorporatedAmendments\":false,\"originatingBillUri\":\"https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A\\\"legislation%2Fbillshistorical%2FHBILL19010200011\\\"\",\"asMadeRegisteredAt\":\"2013-01-22T23:32:48.7600000\",\"optionalSeriesNumber\":null,\"year\":1901,\"number\":1,\"seriesType\":\"Act\",\"nameHistory\":[{\"name\":\"Consolidated Revenue\",\"start\":\"1901-06-25T00:00:00\",\"affecterTitleId\":null,\"affecterName\":null}],\"namePossibleFuture\":[],\"statusHistory\":[{\"status\":\"InForce\",\"start\":\"1901-06-25T00:00:00\",\"reasons\":[]},{\"status\":\"Repealed\",\"start\":\"1934-08-06T00:00:00\",\"reasons\":[{\"affect\":\"Repeal\",\"markdown\":\"second sch of the [Statute Law Revision Act 1934](/C1934A00045)\",\"affectedByTitle\":{\"titleId\":\"C1934A00045\",\"name\":\"Statute Law Revision Act 1934\",\"provisions\":\"second sch\",\"optionalSeriesNumber\":null,\"year\":1934,\"number\":45,\"seriesType\":\"Act\"},\"amendedByTitle\":null,\"dateChanged\":null}]}],\"statusPossibleFuture\":[]}]}",
+    "blocks": [
+      {
+        "locator": "#",
+        "text": "{\"@odata.context\":\"https://api.prod.legislation.gov.au/v1/$metadata#Titles(id,name,makingDate,collection,subCollection,isPrincipal,isInForce,publishComments,status,hasCommencedUnincorporatedAmendments,nameHistory,namePossibleFuture,statusHistory,statusPossibleFuture,originatingBillUri,asMadeRegisteredAt,optionalSeriesNumber,year,number,seriesType)\",\"value\":[{\"id\":\"C1901A00001\",\"name\":\"Consolidated Revenue\",\"makingDate\":\"1901-06-25T00:00:00\",\"collection\":\"Act\",\"subCollection\":null,\"isPrincipal\":true,\"isInForce\":false,\"publishComments\":null,\"status\":\"Repealed\",\"hasCommencedUnincorporatedAmendments\":false,\"originatingBillUri\":\"https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A\\\"legislation%2Fbillshistorical%2FHBILL19010200011\\\"\",\"asMadeRegisteredAt\":\"2013-01-22T23:32:48.7600000\",\"optionalSeriesNumber\":null,\"year\":1901,\"number\":1,\"seriesType\":\"Act\",\"nameHistory\":[{\"name\":\"Consolidated Revenue\",\"start\":\"1901-06-25T00:00:00\",\"affecterTitleId\":null,\"affecterName\":null}],\"namePossibleFuture\":[],\"statusHistory\":[{\"status\":\"InForce\",\"start\":\"1901-06-25T00:00:00\",\"reasons\":[]},{\"status\":\"Repealed\",\"start\":\"1934-08-06T00:00:00\",\"reasons\":[{\"affect\":\"Repeal\",\"markdown\":\"second sch of the [Statute Law Revision Act 1934](/C1934A00045)\",\"affectedByTitle\":{\"titleId\":\"C1934A00045\",\"name\":\"Statute Law Revision Act 1934\",\"provisions\":\"second sch\",\"optionalSeriesNumber\":null,\"year\":1934,\"number\":45,\"seriesType\":\"Act\"},\"amendedByTitle\":null,\"dateChanged\":null}]}],\"statusPossibleFuture\":[]}]}",
+        "anchorId": "1bb291ecd270f81797e35e559abf47592ce89c3a9093299c9585868d81b6a2c3"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "1bb291ecd270f81797e35e559abf47592ce89c3a9093299c9585868d81b6a2c3",
+      "locator": "#",
+      "start": 0,
+      "end": 1519,
+      "quoteHash": "4c38850ae0b9846f35864bfcf8b315f156d8970e9e86f72c8fcabaf2434d5cb5",
+      "rawContentHash": "4c38850ae0b9846f35864bfcf8b315f156d8970e9e86f72c8fcabaf2434d5cb5"
+    }
+  ],
+  "discoveredLinks": [],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred."
+  ],
+  "envelopeId": "b679ac3aefb48a440c5d8cfae2db9dc911da91c89b87e730be0872919fab57ca"
+}

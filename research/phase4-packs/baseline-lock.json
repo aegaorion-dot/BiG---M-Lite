@@ -1,0 +1,123 @@
+{
+  "baselineCommit": "1be08511ff21079e6c2c8cc24fa953a94426561a",
+  "branch": "codex/real-freelancer-umkm-packs",
+  "mainCommit": "d6ce3b0c586761cd9221c613c569fdc2644c504a",
+  "unchangedCoreFiles": 23,
+  "frozenCore": [
+    {
+      "file": "src/accounting/postingService.js",
+      "baselineBlob": "c6210c7776cfcab941e8ff7c2d43c7b735f9df4a",
+      "currentBlob": "c6210c7776cfcab941e8ff7c2d43c7b735f9df4a"
+    },
+    {
+      "file": "src/accounting/reversalService.js",
+      "baselineBlob": "5ad53bbeb0d7bb0ea0914188d4f8cf7a4f5b4c29",
+      "currentBlob": "5ad53bbeb0d7bb0ea0914188d4f8cf7a4f5b4c29"
+    },
+    {
+      "file": "src/business/purchaseService.js",
+      "baselineBlob": "7f5a35979521328ccb2e0ebcef11c338de2ecef6",
+      "currentBlob": "7f5a35979521328ccb2e0ebcef11c338de2ecef6"
+    },
+    {
+      "file": "src/business/salesService.js",
+      "baselineBlob": "7d7d39e8c5c9c5d4f3c82d5a9df73a6d79e9ae07",
+      "currentBlob": "7d7d39e8c5c9c5d4f3c82d5a9df73a6d79e9ae07"
+    },
+    {
+      "file": "src/dashboard/dashboard.js",
+      "baselineBlob": "ebd4b98b77e3a18228d386a3c23b4f4c649bfc5c",
+      "currentBlob": "ebd4b98b77e3a18228d386a3c23b4f4c649bfc5c"
+    },
+    {
+      "file": "src/domain/audit.js",
+      "baselineBlob": "524b3d733c285ad7abc2743564b627da459df0dd",
+      "currentBlob": "524b3d733c285ad7abc2743564b627da459df0dd"
+    },
+    {
+      "file": "src/domain/chartOfAccounts.js",
+      "baselineBlob": "e39b4ebd8c200f601d4738221d9023190a55177a",
+      "currentBlob": "e39b4ebd8c200f601d4738221d9023190a55177a"
+    },
+    {
+      "file": "src/domain/journal.js",
+      "baselineBlob": "3c6a15c1410c9249395e6c545cdb35e47e0fc481",
+      "currentBlob": "3c6a15c1410c9249395e6c545cdb35e47e0fc481"
+    },
+    {
+      "file": "src/domain/ledger.js",
+      "baselineBlob": "61e794d8efe86a77d799f5595de31f40bb3082e8",
+      "currentBlob": "61e794d8efe86a77d799f5595de31f40bb3082e8"
+    },
+    {
+      "file": "src/domain/money.js",
+      "baselineBlob": "e56977980fc2aba4084c22ccb048af2040478fd1",
+      "currentBlob": "e56977980fc2aba4084c22ccb048af2040478fd1"
+    },
+    {
+      "file": "src/domain/organization.js",
+      "baselineBlob": "752bcda125b9741ffc5c277632b6d71dfbc2e844",
+      "currentBlob": "752bcda125b9741ffc5c277632b6d71dfbc2e844"
+    },
+    {
+      "file": "src/domain/transaction.js",
+      "baselineBlob": "9b74f428965a12e958313971220bd9c5ff30266b",
+      "currentBlob": "9b74f428965a12e958313971220bd9c5ff30266b"
+    },
+    {
+      "file": "src/fabric/candidates.js",
+      "baselineBlob": "4714c0dbbd90d10a7966b57620526fb814a9b174",
+      "currentBlob": "4714c0dbbd90d10a7966b57620526fb814a9b174"
+    },
+    {
+      "file": "src/fabric/governanceStore.js",
+      "baselineBlob": "5e05efebef29a8a49d9e3d2f698e5779c6f25c27",
+      "currentBlob": "5e05efebef29a8a49d9e3d2f698e5779c6f25c27"
+    },
+    {
+      "file": "src/tax/accountingBoundary.js",
+      "baselineBlob": "67e58b61fa26d7abcabba0cc4714f946b5efda76",
+      "currentBlob": "67e58b61fa26d7abcabba0cc4714f946b5efda76"
+    },
+    {
+      "file": "src/tax/contentRegistry.js",
+      "baselineBlob": "0ce18fe9096da54f8670836e4e932070b2abc8d2",
+      "currentBlob": "0ce18fe9096da54f8670836e4e932070b2abc8d2"
+    },
+    {
+      "file": "src/tax/contracts.js",
+      "baselineBlob": "5a852955657013cce6465094aca90192a601f8e8",
+      "currentBlob": "5a852955657013cce6465094aca90192a601f8e8"
+    },
+    {
+      "file": "src/tax/determinationStore.js",
+      "baselineBlob": "7e62c010290a03ea7f211b7ff54fca829e008323",
+      "currentBlob": "7e62c010290a03ea7f211b7ff54fca829e008323"
+    },
+    {
+      "file": "src/tax/dsl.js",
+      "baselineBlob": "d8ae5b3b70ba0b3db525a234c8d6aa042394f416",
+      "currentBlob": "d8ae5b3b70ba0b3db525a234c8d6aa042394f416"
+    },
+    {
+      "file": "src/tax/facts.js",
+      "baselineBlob": "4b092c8fe8bad344159869c0a9a820c0a9c19190",
+      "currentBlob": "4b092c8fe8bad344159869c0a9a820c0a9c19190"
+    },
+    {
+      "file": "src/tax/legacyAdapter.js",
+      "baselineBlob": "6e1f46ad6f01c24b5a04df4fe53131511fb38233",
+      "currentBlob": "6e1f46ad6f01c24b5a04df4fe53131511fb38233"
+    },
+    {
+      "file": "src/tax/taxEngine.js",
+      "baselineBlob": "7032d5b16c2b87d4678c7f365d0ca98c2261f197",
+      "currentBlob": "7032d5b16c2b87d4678c7f365d0ca98c2261f197"
+    },
+    {
+      "file": "src/tax/treatyResolver.js",
+      "baselineBlob": "2470fd0c3bd4c129b5320a56d7a8265cfdfb756d",
+      "currentBlob": "2470fd0c3bd4c129b5320a56d7a8265cfdfb756d"
+    }
+  ]
+}

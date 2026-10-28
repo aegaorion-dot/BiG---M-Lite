@@ -1,0 +1,422 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "ID-JDIH",
+  "jurisdictionCode": "ID",
+  "metadata": {
+    "title": "PMK 164 TAHUN 2023 - Tata Cara Pengenaan Pajak Penghasilan atas Penghasilan dari Usaha yang Diterima atau Diperoleh Wajib Pajak yang Memiliki Peredaran Bruto Tertentu dan Kewajiban Pelaporan Usaha untuk Dikukuhkan sebagai Pengusaha Kena Pajak | JDIH Kementerian Keuangan",
+    "officialDocumentId": null,
+    "language": "id",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "89edb6c1-11fc-409b-87d6-8cd3390accee",
+    "rawContentHash": "4ef14be7a2c41ff7af6c003eacb00e145b0f7585c0eda6a5e2a4d18fbd8b0dd7",
+    "sourceUrl": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023",
+    "finalUrl": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023",
+    "retrievedAt": "2026-10-28T22:40:04.469Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "JDIH",
+    "authorityName": "Ministry of Finance legal documentation",
+    "sourceRole": "SECONDARY_LEGISLATION",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/4ef14be7a2c41ff7af6c003eacb00e145b0f7585c0eda6a5e2a4d18fbd8b0dd7.bin",
+    "rawContentHash": "4ef14be7a2c41ff7af6c003eacb00e145b0f7585c0eda6a5e2a4d18fbd8b0dd7"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/4ef14be7a2c41ff7af6c003eacb00e145b0f7585c0eda6a5e2a4d18fbd8b0dd7.bin",
+      "rawContentHash": "4ef14be7a2c41ff7af6c003eacb00e145b0f7585c0eda6a5e2a4d18fbd8b0dd7"
+    },
+    "metaTags": [
+      "<meta charSet=\"utf-8\"/>",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>",
+      "<meta name=\"theme-color\" content=\"#02275d\"/>",
+      "<meta name=\"next-size-adjust\" content=\"\"/>",
+      "<meta name=\"description\" content=\"Tata Cara Pengenaan Pajak Penghasilan atas Penghasilan dari Usaha yang Diterima atau Diperoleh Wajib Pajak yang Memiliki Peredaran Bruto Tertentu dan Kewajiban Pelaporan Usaha untuk Dikukuhkan sebagai Pengusaha Kena Pajak\"/>",
+      "<meta property=\"og:title\" content=\"PMK 164 TAHUN 2023 - Tata Cara Pengenaan Pajak Penghasilan atas Penghasilan dari Usaha yang Diterima atau Diperoleh Wajib Pajak yang Memiliki Peredaran Bruto Tertentu dan Kewajiban Pelaporan Usaha untuk Dikukuhkan sebagai Pengusaha Kena Pajak | JDIH Kementerian Keuangan\"/>",
+      "<meta property=\"og:description\" content=\"Tata Cara Pengenaan Pajak Penghasilan atas Penghasilan dari Usaha yang Diterima atau Diperoleh Wajib Pajak yang Memiliki Peredaran Bruto Tertentu dan Kewajiban Pelaporan Usaha untuk Dikukuhkan sebagai Pengusaha Kena Pajak\"/>",
+      "<meta property=\"og:url\" content=\"https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023\"/>",
+      "<meta property=\"og:site_name\" content=\"Kementerian Keuangan Republik Indonesia\"/>",
+      "<meta property=\"og:locale\" content=\"id_ID\"/>",
+      "<meta property=\"og:image\" content=\"https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023/opengraph-image-hp7kqz?de4d8aac5cfec2eb\"/>",
+      "<meta property=\"og:image:type\" content=\"image/png\"/>",
+      "<meta property=\"og:image:width\" content=\"1200\"/>",
+      "<meta property=\"og:image:height\" content=\"630\"/>",
+      "<meta property=\"og:type\" content=\"website\"/>",
+      "<meta name=\"twitter:card\" content=\"summary_large_image\"/>",
+      "<meta name=\"twitter:site\" content=\"@KemenkeuRI\"/>",
+      "<meta name=\"twitter:creator\" content=\"@jdihkemenkeu\"/>",
+      "<meta name=\"twitter:title\" content=\"PMK 164 TAHUN 2023 - Tata Cara Pengenaan Pajak Penghasilan atas Penghasilan dari Usaha yang Diterima atau Diperoleh Wajib Pajak yang Memiliki Peredaran Bruto Tertentu dan Kewajiban Pelaporan Usaha untuk Dikukuhkan sebagai Pengusaha Kena Pajak | JDIH Kementerian Keuangan\"/>",
+      "<meta name=\"twitter:description\" content=\"Tata Cara Pengenaan Pajak Penghasilan atas Penghasilan dari Usaha yang Diterima atau Diperoleh Wajib Pajak yang Memiliki Peredaran Bruto Tertentu dan Kewajiban Pelaporan Usaha untuk Dikukuhkan sebagai Pengusaha Kena Pajak\"/>",
+      "<meta name=\"twitter:image\" content=\"https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023/twitter-image-hp7kqz?c9e8bd3f94f63ff8\"/>",
+      "<meta name=\"twitter:image:type\" content=\"image/png\"/>",
+      "<meta name=\"twitter:image:width\" content=\"1200\"/>",
+      "<meta name=\"twitter:image:height\" content=\"675\"/>"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Mencabut Terbaru Dokumen ini mencabut 68/PMK.03/2010 tentang Batasan Pengusaha Kecil Pajak Pertambahan Nilai.",
+    "blocks": [
+      {
+        "locator": "html:article:179674",
+        "text": "Mencabut Terbaru Dokumen ini mencabut 68/PMK.03/2010 tentang Batasan Pengusaha Kecil Pajak Pertambahan Nilai.",
+        "anchorId": "a86b2b04443a28a1591dbf6bc155ae2e987c509ea079733ecace9d2a5179804e"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "a86b2b04443a28a1591dbf6bc155ae2e987c509ea079733ecace9d2a5179804e",
+      "locator": "html:article:179674",
+      "start": 0,
+      "end": 109,
+      "quoteHash": "06106ec8d3061e011cee07662cac7d12748fd6949e164cf23174e9c03859dafe",
+      "rawContentHash": "4ef14be7a2c41ff7af6c003eacb00e145b0f7585c0eda6a5e2a4d18fbd8b0dd7"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/home",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?teu=Kementerian+Keuangan&bentuk=Peraturan+Menteri&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Monografi%20Hukum&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Artikel%20Hukum&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Putusan%20Pengadilan&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/infografis",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/simplifikasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/direktori",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/program-perencanaan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/sosialisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/kamus-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=rancangan-puu",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=naskah-akademik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=hasil-analisis",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=risalah-pembahasan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=kajian-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kmk-tarif-bunga",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kurs-pajak",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/berita",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jurnalhukum.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/statistik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prestasi-dan-penghargaan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/tentang-jdih",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prasyarat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/kebijakan-privasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/faq",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih-old.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/hubungi-kami",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/home",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/api/download/a99b8e80-9694-46ab-8de1-63c2484aa636/2023pmkeuangan164.pdf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/api/download/d0704787-49a3-4a29-8161-2f1d28cb3caf/ABSTRAK%20PMK%20164.pdf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023/overview",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023/summary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023/files",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023/evaluasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023/chat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/faq",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prasyarat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/hubungi-kami",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/tentang-jdih",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/berita-jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/statistik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.setneg.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.ekon.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/kemenkeuRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.twitter.com/jdihkemenkeu",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/kemenkeuRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/jdihkemenkeu",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://whatsapp.com/channel/0029Vaix37eLSmbdYZ1Vme1c",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/rss.xml",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/atom.xml",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/feed.json",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/68-pmk-03-2010",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/197-pmk-03-2013",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/sharer/sharer.php?u=undefined/dok/pmk-164-tahun-2023",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://twitter.com/intent/tweet?url=undefined/dok/pmk-164-tahun-2023",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.linkedin.com/shareArticle?mini=true&url=undefined/dok/pmk-164-tahun-2023",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/99-pmk-03-2018",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bidang=Hukum%20Keuangan%20Negara",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=PEREDARAN%20BRUTO",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=PENGUSAHA%20KENA%20PAJAK",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=PAJAK%20PENGHASILAN",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/99-pmk-03-2018",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-52-tahun-2025",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-37-tahun-2025",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/231-pmk-03-2019",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "01dbda2b05efd45bb7e3a5153d7ee978a592f11a47c0438a6f6fb1c53a8acc9c"
+}

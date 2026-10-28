@@ -14,7 +14,11 @@
     "fabric:probe": "node scripts/fabric-probe.js",
     "fabric:report": "node scripts/fabric-report.js",
     "tax": "node scripts/tax-engine.js",
-    "tax:demo": "node scripts/tax-demo.js"
+    "tax:demo": "node scripts/tax-demo.js",
+    "packs:probe": "node scripts/phase4-probe.js",
+    "packs:normalize": "node scripts/phase4-normalize.js",
+    "packs:build": "node scripts/phase4-build-catalog.js",
+    "packs:demo": "node scripts/phase4-demo.js"
   },
   "license": "UNLICENSED"
 }

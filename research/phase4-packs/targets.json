@@ -1,0 +1,224 @@
+[
+  {
+    "id": "id-pp20-status",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/dok/pp-20-tahun-2026",
+    "method": "HTML"
+  },
+  {
+    "id": "id-pp20",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+    "method": "PDF_TEXT"
+  },
+  {
+    "id": "id-pp55-status",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/dok/pp-55-tahun-2022",
+    "method": "HTML"
+  },
+  {
+    "id": "id-pp55",
+    "sourceId": "ID-DJPP",
+    "url": "https://www.peraturan.go.id/files/pp55-2022bt.pdf",
+    "method": "PDF_TEXT"
+  },
+  {
+    "id": "id-individual",
+    "sourceId": "ID-DJP",
+    "url": "https://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi",
+    "method": "HTML"
+  },
+  {
+    "id": "id-hpp",
+    "sourceId": "ID-DJPP",
+    "url": "https://www.peraturan.go.id/files/uu7-2021bt.pdf",
+    "method": "PDF_TEXT"
+  },
+  {
+    "id": "id-wht",
+    "sourceId": "ID-DJP",
+    "url": "https://www.pajak.go.id/id/pph-pasal-2326",
+    "method": "HTML"
+  },
+  {
+    "id": "id-vat164",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/dok/pmk-164-tahun-2023",
+    "method": "HTML"
+  },
+  {
+    "id": "id-vat131",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024",
+    "method": "HTML"
+  },
+  {
+    "id": "id-treaty112",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/dok/pmk-112-tahun-2025",
+    "method": "HTML"
+  },
+  {
+    "id": "id-sg",
+    "sourceId": "ID-DJP",
+    "url": "https://www.pajak.go.id/id/p3b/mli-singapura",
+    "method": "HTML"
+  },
+  {
+    "id": "id-au",
+    "sourceId": "ID-DJP",
+    "url": "https://www.pajak.go.id/id/p3b/mli-australia",
+    "method": "HTML"
+  },
+  {
+    "id": "sg-cit",
+    "sourceId": "SG-IRAS",
+    "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-rate-rebates-and-tax-exemption-schemes",
+    "method": "HTML"
+  },
+  {
+    "id": "sg-self-employed",
+    "sourceId": "SG-IRAS",
+    "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships",
+    "method": "HTML"
+  },
+  {
+    "id": "sg-sso-retry",
+    "sourceId": "SG-SSO",
+    "url": "https://sso.agc.gov.sg/Act/ITA1947",
+    "method": "HTML"
+  },
+  {
+    "id": "au-api-retry",
+    "sourceId": "AU-FRL",
+    "url": "https://api.prod.legislation.gov.au/v1/Titles?$top=1",
+    "method": "API"
+  },
+  {
+    "id": "au-residence",
+    "sourceId": "AU-ATO",
+    "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency",
+    "method": "HTML"
+  },
+  {
+    "id": "au-business",
+    "sourceId": "AU-ATO",
+    "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/before-you-start-a-business/business-structures",
+    "method": "HTML"
+  },
+  {
+    "id": "us-small",
+    "sourceId": "US-IRS",
+    "url": "https://www.irs.gov/publications/p334",
+    "method": "HTML"
+  },
+  {
+    "id": "uk-sole",
+    "sourceId": "GB-GOVUK",
+    "url": "https://www.gov.uk/api/content/set-up-sole-trader",
+    "method": "API"
+  },
+  {
+    "id": "id-pp55-jdih",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/api/download/cab6ec99-3dbc-47c6-adbf-ea5f0f7117d6/55TAHUN2022PP.pdf",
+    "method": "PDF_TEXT"
+  },
+  {
+    "id": "id-vat164-text",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/api/download/a99b8e80-9694-46ab-8de1-63c2484aa636/2023pmkeuangan164.pdf",
+    "method": "PDF_TEXT"
+  },
+  {
+    "id": "id-vat131-text",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/api/download/f128868e-3cf6-4596-8407-c34eeca0e7be/2024pmkeuangan131.pdf",
+    "method": "PDF_TEXT"
+  },
+  {
+    "id": "id-treaty112-text",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/api/download/8830a44a-12f5-4717-84c0-fed0e6239bdf/2025pmkeuangan112.pdf",
+    "method": "PDF_TEXT"
+  },
+  {
+    "id": "id-pp55-html",
+    "sourceId": "ID-DJP",
+    "url": "https://www.pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan",
+    "method": "HTML"
+  },
+  {
+    "id": "id-pp55-bpk",
+    "sourceId": "ID-BPK",
+    "url": "https://peraturan.bpk.go.id/Download/284096/PP%20Nomor%2055%20Tahun%202022.pdf",
+    "method": "PDF_TEXT"
+  },
+  {
+    "id": "id-hpp-status",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021",
+    "method": "HTML"
+  },
+  {
+    "id": "id-wht26",
+    "sourceId": "ID-DJP",
+    "url": "https://www.pajak.go.id/id/pph-pasal-26",
+    "method": "HTML"
+  },
+  {
+    "id": "id-ftc-status",
+    "sourceId": "ID-JDIH",
+    "url": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018",
+    "method": "HTML"
+  },
+  {
+    "id": "id-ftc-html",
+    "sourceId": "ID-DJP",
+    "url": "https://www.pajak.go.id/id/peraturan/pelaksanaan-pengkreditan-pajak-atas-penghasilan-dari-luar-negeri",
+    "method": "HTML"
+  },
+  {
+    "id": "sg-individual-rates",
+    "sourceId": "SG-IRAS",
+    "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates",
+    "method": "HTML"
+  },
+  {
+    "id": "id-sg-pdf",
+    "sourceId": "ID-DJP",
+    "url": "https://www.pajak.go.id/sites/default/files/2025-05/Tax%20Treaty%20Singapura%20%28Modified%20by%20MLI%29%20-%20EN_0.pdf",
+    "method": "PDF_TEXT"
+  },
+  {
+    "id": "id-au-pdf",
+    "sourceId": "ID-DJP",
+    "url": "https://www.pajak.go.id/sites/default/files/2025-05/Tax%20Treaty%20Australia%20%28Modified%20by%20MLI%29%20-%20EN.pdf",
+    "method": "PDF_TEXT"
+  },
+  {
+    "id": "sg-treaty-pdf",
+    "sourceId": "SG-IRAS",
+    "url": "https://www.iras.gov.sg/media/docs/default-source/dtas/singapore-indonesia-dta-%28ratified%29%2823-july-2021%29.pdf",
+    "method": "PDF_TEXT"
+  },
+  {
+    "id": "uk-sole-current",
+    "sourceId": "GB-GOVUK",
+    "url": "https://www.gov.uk/api/content/become-sole-trader",
+    "method": "API"
+  },
+  {
+    "id": "au-business-current",
+    "sourceId": "AU-ATO",
+    "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/business-structures-key-tax-obligations",
+    "method": "HTML"
+  },
+  {
+    "id": "au-business-download",
+    "sourceId": "AU-ATO",
+    "url": "https://www.ato.gov.au/api/public/content/0-cc3f5eaa-8367-4481-a889-5a6ab9b2c419",
+    "method": "STRUCTURED_DOWNLOAD"
+  }
+]

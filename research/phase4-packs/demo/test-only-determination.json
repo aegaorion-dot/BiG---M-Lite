@@ -1,0 +1,2273 @@
+{
+  "status": "CALCULATED",
+  "reason": "APPROVED_GOVERNED_RULE_EXECUTED",
+  "taxReady": true,
+  "taxType": "SIMPLIFIED_INCOME",
+  "jurisdictionCode": "ID",
+  "period": {
+    "periodStart": "2026-05-01",
+    "periodEnd": "2026-05-31"
+  },
+  "economicDate": "2026-05-31",
+  "currency": "IDR",
+  "appliedRules": [
+    {
+      "ruleId": "ID_UMKM_MONTHLY_INDIVIDUAL_2026",
+      "packId": "ID_UMKM_INDIVIDUAL_2026",
+      "packVersion": 1,
+      "candidateId": "5fc1dc0f00cd9e8495dc00a06ba32ab2cda16ce2d17967ad20a05696e862a373",
+      "contentHash": "b8ea500d0dfeabfe4f3649755fe94c182f926ad5eaebbb80a87de52f881c13ce",
+      "governanceStatus": "APPROVED"
+    }
+  ],
+  "taxableBase": {
+    "amountMinor": "50000000",
+    "currency": "IDR"
+  },
+  "rate": {
+    "kind": "FORMULA_DERIVED",
+    "parameters": {}
+  },
+  "taxAmount": {
+    "amountMinor": "250000",
+    "currency": "IDR"
+  },
+  "reliefs": [],
+  "withholding": null,
+  "treatyResult": {
+    "status": "NOT_NEEDED",
+    "treatyApplicable": false,
+    "selectedTreatyPack": null,
+    "candidateTreaties": [],
+    "requiredMissingFacts": [],
+    "reason": "CONFIRMED_SOURCE_AND_RESIDENCE_MATCH",
+    "evaluatedAsOf": "2026-05-31"
+  },
+  "evidenceRefs": [
+    {
+      "evidenceId": "863f9bb9e0c3f2d34aef57dc830d5c265355b95cc4a39404cd3a2c70f5677c0a",
+      "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+      "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+      "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+      "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+      "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+      "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+      "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+      "locator": "pdf:page:3",
+      "start": 4252,
+      "end": 4970,
+      "quote": "Pasal 56 \n(1) Atas penghasilan dari usaha yang diterima atau \ndiperoleh Wajib Pajak dalam negeri yang memiliki \nperedaran bruto tertentu, dikenai Pajak Penghasilan \nyang bersifa t final. \n(2) Tarif Pajak Penghasilan yang bersifat final \nsebagaimana dimaksud pada ayat (1) sebesar 0,5% \n(nol koma lima persen). \n(3) Tidak termasuk penghasilan dari usaha yang dikenai \nPajak Penghasilan yang bersifat final sebagaimana \ndimaksud pada ayat (1) sebagai berikut: \na. penghasilan yang diterima atau diperoleh Wajib \nPajak orang pribadi dari jasa sehubungan \ndengan pekerjaan bebas; \nb. penghasilan yang diterima atau diperoleh di luar \nnegeri yang pajaknya terutang atau telah dibayar \ndi luar negeri; \nc. penghasilan . . . ",
+      "quoteHash": "f781df8e7a8b952b42f224b6ea11b3d4f49cb71943aa523c73fd7bdcb0544b74",
+      "legalLocator": "PP20/2026 ArticleI(3), amended Article56 exclusions",
+      "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+      "documentTitle": "PP20/2026 ArticleI(3), amended Article56 exclusions",
+      "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+      "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+    },
+    {
+      "evidenceId": "9d742a7e4deee1c1d2f292b245f76fb808f82795e58bac1478df3e02450a948a",
+      "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+      "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+      "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+      "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+      "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+      "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+      "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+      "locator": "pdf:page:5",
+      "start": 6534,
+      "end": 7952,
+      "quote": "Pasal 57 \n( \n1) Wajib Pajak dalam negeri yang memiliki peredaran \nbruto tertentu yang dikenai Pajak Penghasilan \nbersifat final sebagaimana dimaksud dalam Pasal 56 \nayat (1) merupakan: \na. Wajib Pajak orang pribadi; dan \nb. Wajib Pajak badan berbentuk perseroan \nperorangan yang didirikan oleh 1 ( satu) orang \ndan koperasi, \nyang menerima atau memperoleh penghasilan dengan \nperedaran bruto tidak melebihi Rp4.800.000.000,00 \n(empat miliar delapan ratus juta rupiah) dalam 1 \n( satu) Tahun Pajak. \n(2) Tidak termasuk Wajib Pajak sebagaimana dimaksud \npada ayat (1) dalam hal: \na. Wajib Pajak memilih untuk dikenai Pajak \nPenghasilan berdasarkan: \n1. tarif Pasal 17 ayat (1) huruf a \nUndang-Undang Pajak Penghasilan, untuk \nWajib Pajak orang pribadi; atau \n2. tarif Pasal 17 ayat (1) huruf b \nUndang-Undang Pajak Penghasilan \ndengan mempertimbangkan Pasal 31E \nUndang-Undang Pajak Penghasilan, untuk \nWajib Pajak badan; \nb. Wajib Pajak badan berbentuk perseroan \nperorangan sebagaimana dimaksud pada ayat (1) \nhuruf b yang didirikan oleh Wajib Pajak orang \npribadi yang memiliki keahlian khusus yang \nmenyerahkan jasa yang sejenis dengan jasa \nsehubungan dengan pekerjaan be bas \nsebagaimana dimaksud dalam Pasal 56 ayat (4); \nc. Wajib Pajak badan sebagaimana dimaksud pada \nayat ( 1) huruf b, yang memperoleh fasilitas Pajak \nPenghasilan berdasarkan: \n1. Pasal 31A Undang-Undang Pajak \nPenghasilan; \n2. Peraturan ... ",
+      "quoteHash": "597885b522a8e6200e9bd25a35be872b691a2205d51ae4fd9291728562fced95",
+      "legalLocator": "PP20/2026 ArticleI(4), amended Article57(1)-(2)",
+      "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+      "documentTitle": "PP20/2026 ArticleI(4), amended Article57(1)-(2)",
+      "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+      "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+    },
+    {
+      "evidenceId": "e20a8c77023b8df7aeff6974843181a1812e9722bf8fa52a0dfee11338594bfe",
+      "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+      "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+      "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+      "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+      "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+      "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+      "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+      "locator": "pdf:page:6",
+      "start": 8391,
+      "end": 9636,
+      "quote": "Wajib Pajak orang pribadi beserta seluruh Wajib \nPajak badan berbentuk perseroan perorangan \nyang didirikan oleh Wajib Pajak orang pribadi \nyang bersangkutan, yang telah menerima atau \nmemperoleh penghasilan dengan peredaran \nbruto sebagaimana dimaksud pada ayat (1) \nsecara keseluruhan jumlahnya melebihi \nRp4.800.000.000,00 (empat miliar delapan ratus \njuta rupiah) dalam 1 ( satu) Tahun Pajak; dan \nf. Wajib Pajak badan berbentuk koperasi \nsebagaimana dimaksud pada ayat (1) huruf b \nyang telah melewati jangka waktu 4 (empat) \nTahun Pajak sejak Tahun Pajak Wajib Pajak \nbersangkutan terdaftar. \n(3) Wajib Pajak sebagaimana dimaksud pada ayat (2) \nhuruf a wajib menyampaikan pemberitahuan kepada \nDirektur Jenderal Pajak. \n(4) Wajib Pajak sebagaimana dimaksud pada ayat (2) \nhuruf e dan huruf \nf serta ayat (3), untuk Tahun \nPajak-Tahun Pajak berikutnya tidak dapat dikenai \nPajak Penghasilan bersifat final berdasarkan \nPeraturan Pemerintah ini. \n(5) Ketentuan mengenai tata cara pemberitahuan \nsebagaimana dimaksud pada ayat (3) diatur dalam \nPeraturan Menteri. \n5. Ketentuan Pasal 58 diubah sehingga berbunyi sebagai \nberikut: \nPasal 58 \n(1) Besarnya peredaran bruto sebagaimana dimaksud \ndalam Pasal 57 ayat (1) merupakan: \na. jumlah ... ",
+      "quoteHash": "66e888aaf7b0f6469afb3f7ea92c641e8b77cb89f1bde411b454a8c40d112ed9",
+      "legalLocator": "Amended Article57(2)(e)-(f), disqualification and succession",
+      "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+      "documentTitle": "Amended Article57(2)(e)-(f), disqualification and succession",
+      "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+      "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+    },
+    {
+      "evidenceId": "7d28647e36f2f221e2740995c04fcfb1350aec7215ef068ac83e83edf273e640",
+      "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+      "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+      "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+      "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+      "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+      "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+      "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+      "locator": "pdf:page:6",
+      "start": 9525,
+      "end": 9636,
+      "quote": "Pasal 58 \n(1) Besarnya peredaran bruto sebagaimana dimaksud \ndalam Pasal 57 ayat (1) merupakan: \na. jumlah ... ",
+      "quoteHash": "ca5cb2b3f39b0574238acd86e64e82a82160c94b6fd589918f34950f065c8a06",
+      "legalLocator": "PP20/2026 ArticleI(5), amended Article58 aggregate turnover",
+      "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+      "documentTitle": "PP20/2026 ArticleI(5), amended Article58 aggregate turnover",
+      "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+      "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+    },
+    {
+      "evidenceId": "4f2350cf548fdf243674e382bf32c42e6686fec561f00d20145a5ab74be642fd",
+      "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+      "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+      "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+      "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+      "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+      "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+      "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+      "locator": "pdf:page:7",
+      "start": 9693,
+      "end": 10781,
+      "quote": "jumlah keseluruhan peredaran bruto atas \npenghasilan dari usaha dan jasa sehubungan \ndengan pekerjaan bebas dalam 1 (satu) tahun \ndari Tahun Pajak terakhir sebelum Tahun Pajak \nbersangkutan, baik yang dikenai Pajak \nPenghasilan yang tidak bersifat final maupun \nyang bersifat final, termasuk peredaran bruto \nyang diterima atau diperoleh di luar negeri; dan \nb. imbalan atau nilai pengganti berupa uang atau \nnilai uang yang diterima atau diperoleh dari \nusaha dan jasa sehubungan dengan pekerjaan \nbebas sebelum dikurangi potongan penjualan, \npotongan tunai, dan/atau potongan sejenis. \n(2) Dalam hal Wajib Pajak orang pribadi merupakan \nsuami-istri yang: \na. menghendaki perjanjian pemisahan harta dan \npenghasilan secara tertulis; atau \nb. istrinya menghendaki memilih untuk \nmenjalankan hak dan kewajiban perpajakannya \nsendiri, \nsebagaimana dimaksud dalam Pasal 8 ayat (2) \nhuruf b dan huruf c Undang-Undang Pajak \nPenghasilan, besarnya peredaran bruto sebagaimana \ndimaksud pada ayat (1) ditentukan berdasarkan \npenggabungan peredaran bruto dari suami dan istri. \n(3) Penentuan ... ",
+      "quoteHash": "c68328e34bb24f850c84f8f8198cc52819eee800a8499a798f3a44a770ed14b4",
+      "legalLocator": "Amended Article58(1)-(2): professional/foreign/spousal turnover",
+      "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+      "documentTitle": "Amended Article58(1)-(2): professional/foreign/spousal turnover",
+      "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+      "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+    },
+    {
+      "evidenceId": "514bcfb7b0bc280728b2e90cb73fdad6bd6f0038c55f344e8a3d81e6ed464b0a",
+      "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+      "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+      "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+      "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+      "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+      "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+      "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+      "locator": "pdf:page:8",
+      "start": 11188,
+      "end": 12210,
+      "quote": "6. Pasal 59 dihapus. \nPasal II \n1. Pada saat Peraturan Pemerintah ini mulai berlaku: \na. Wajib Pajak yang berdasarkan ketentuan Peraturan \nPemerintah Nomor 55 Tahun 2022 tentang \nPenyesuaian Pengaturan di Bidang Pajak Penghasilan \nyang jangka waktu tertentu pengenaan Pajak \nPenghasilan yang bersifat final berakhir pada: \n1) Tahun Pajak 2024 untuk Wajib Pajak orang \npribadi, dapat dikenai Pajak Penghasilan yang \nbersifat final berdasarkan Peraturan Pemerintah \nini untuk Tahun Pajak 2025 dan Tahun Pajak \n2026; atau \n2) Tahun Pajak 2025 untuk Wajib Pajak orang \npribadi dan Wajib Pajak badan berbentuk \nperseroan perorangan yang didirikan oleh 1 \n( satu) orang, dapat dikenai Pajak Penghasilan \nyang bersifat final berdasarkan Peraturan \nPemerintah ini untuk Tahun Pajak 2026, \nsepanjang Wajib Pajak yang bersangkutan memenuhi \nkriteria untuk dikenai Pajak Penghasilan yang \nbersifat final berdasarkan Peraturan Pemerintah \nNomor 55 Tahun 2022 tentang Penyesuaian \nPengaturan di Bidang Pajak Penghasilan; \nb. Wajib ... ",
+      "quoteHash": "98079a89922bd5a4cae649efbabbbc50a97ff3b51946a22e92fb3e5fa115f52f",
+      "legalLocator": "PP20/2026 ArticleI(6), ArticleII transition; not modeled as automatic backdating",
+      "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+      "documentTitle": "PP20/2026 ArticleI(6), ArticleII transition; not modeled as automatic backdating",
+      "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+      "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+    },
+    {
+      "evidenceId": "c6136b3f43330cd8574d3b13f03ca952c6005c961ce7be2df236242da3f19603",
+      "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+      "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+      "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+      "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+      "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+      "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+      "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+      "locator": "pdf:page:11",
+      "start": 16125,
+      "end": 16540,
+      "quote": "pada tanggal 22 April 2026 \nPRESIDEN REPUBLIK INDONESIA, \nttd. \nPRABOWO SUBIANTO \nDiundangkan di Jakarta \npada tanggal 22 April 2026 \nMENTERI SEKRETARIS NEGARA \nREPUBLIK INDONESIA, \nttd. \nPRASETYO HADI \nLEMBARAN NEGARA REPUBLIK INDONESIA TAHUN 2026 NOMOR 43 \nSalinan sesuai dengan aslinya \nKEMENTERIAN SEKRETARIAT NEGARA \nEPUBLIK INDONESIA \nPerundang-undangan an \n~)mlw·nistrasi Huku \nlvanna Djaman \nSK No 283785 A ",
+      "quoteHash": "192e322e38b316bbcadd2251893d61898f1f721152a349a15ef05bae0465c90f",
+      "legalLocator": "PP20/2026 promulgation 22 April 2026 and ArticleII(2)",
+      "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+      "documentTitle": "PP20/2026 promulgation 22 April 2026 and ArticleII(2)",
+      "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+      "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+    },
+    {
+      "evidenceId": "490ffe4d858914d666133de842511ab22c4a35a5ac282caf7db0733b9ebd52dd",
+      "sourceUrl": "https://jdih.kemenkeu.go.id/dok/pp-20-tahun-2026",
+      "rawContentHash": "be292f637e5aa5e5acc43ca0885348dd067f02e0d78b9272a810b7521c609090",
+      "rawStorageRef": "research/phase4-packs/raw/blobs/be292f637e5aa5e5acc43ca0885348dd067f02e0d78b9272a810b7521c609090.bin",
+      "artifactId": "e2909c16-3e64-4198-8f28-e01176a9a6be",
+      "envelopeId": "21aa8b1e6a81ffd79e74a2fd743e2a1b69de13bed63c68516d5237667927c9ea",
+      "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20-status.json",
+      "normalizedTextHash": "6dd2c43e68f3d860a646396c4c4590b47e22df1e31a4c9ca70fa39a0e943e41a",
+      "locator": "html:article:180973",
+      "start": 17,
+      "end": 113,
+      "quote": "Dokumen ini mengubah PP 55 TAHUN 2022 tentang Penyesuaian Pengaturan di Bidang Pajak Penghasilan",
+      "quoteHash": "a65242c922feda3bdf7096ccbe4f610560d04df8ba926858b7a3b3884dd68844",
+      "legalLocator": "JDIH current relationship: PP20 changes PP55",
+      "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+      "documentTitle": "PP 20 TAHUN 2026 - Perubahan atas Peraturan Pemerintah Nomor 55 Tahun 2022 tentang Penyesuaian Pengaturan di Bidang Pajak Penghasilan | JDIH Kementerian Keuangan"
+    },
+    {
+      "evidenceId": "d17781577bd5e935ffd8021ed7f2c8c1c51348bef554576ee56ba5ce714d2d52",
+      "sourceUrl": "https://www.pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan",
+      "rawContentHash": "369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2",
+      "rawStorageRef": "research/phase4-packs/raw/blobs/369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2.bin",
+      "artifactId": "14019b75-4b23-41f1-aded-8c9a9da3231f",
+      "envelopeId": "39ee4e3aae5d208e853be985769c03158662f164942cc601a3a28bd533011896",
+      "envelopeStorageRef": "research/phase4-packs/normalized/id-pp55-html.json",
+      "normalizedTextHash": "7ea60bd77517ef775aa9125079a207d5e4c8f4259fc7075bd498cd389b1d5eb9",
+      "locator": "html:article:48408",
+      "start": 79661,
+      "end": 81361,
+      "quote": "Pasal 60 (1) Jumlah peredaran bruto atas penghasilan dari usaha sebagaimana dimaksud dalam Pasal 56 ayat (1) setiap bulan merupakan dasar pengenaan pajak yang digunakan untuk menghitung Pajak Penghasilan yang bersifat final. (2) Wajib Pajak orang pribadi yang memiliki peredaran bruto tertentu sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf a, atas bagian peredaran bruto dari usaha sampai dengan Rp500.000.000,00 (lima ratus juta rupiah) dalam 1 (satu) Tahun Pajak tidak dikenai Pajak Penghasilan. (3) Bagian peredaran bruto dari usaha tidak dikenai Pajak Penghasilan sebagaimana dimaksud pada ayat (2) merupakan jumlah peredaran bruto dari usaha yang dihitung secara kumulatif sejak Masa Pajak pertama dalam suatu Tahun Pajak atau bagian Tahun Pajak. (4) Peredaran bruto yang dijadikan dasar pengenaan pajak sebagaimana dimaksud pada ayat (1) dan jumlah peredaran bruto dari usaha yang dihitung secara kumulatif sebagaimana dimaksud pada ayat (3) merupakan imbalan atau nilai pengganti berupa uang atau nilai uang yang diterima atau diperoleh dari usaha, sebelum dikurangi potongan penjualan, potongan tunai, dan/atau potongan sejenis. (5) Pajak Penghasilan terutang dihitung berdasarkan tarif sebagaimana dimaksud dalam Pasal 56 ayat (2) dikalikan dengan: dasar pengenaan pajak sebagaimana dimaksud pada ayat (1), untuk Wajib Pajak badan sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf b; atau dasar pengenaan pajak sebagaimana dimaksud pada ayat (1) setelah memperhitungkan bagian peredaran bruto dari usaha sebagaimana dimaksud pada ayat (2), untuk Wajib Pajak orang pribadi sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf a. Pasal 61 (1) Wajib Pajak sebagaimana dimaksud dalam Pasal 5",
+      "quoteHash": "a20744060b6ee755040e69999e81619a14459f68461b04af9c3bb38b1821ebda",
+      "legalLocator": "PP55/2022 Article60: monthly gross, cumulative 500m exclusion, rate/base",
+      "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+      "documentTitle": "PENYESUAIAN PENGATURAN DI BIDANG PAJAK PENGHASILAN | Direktorat Jenderal Pajak"
+    },
+    {
+      "evidenceId": "0162f14c8cc73c9bbcaba532458ded7023b121e5742f97f8cbfbc92ddd18ebc1",
+      "sourceUrl": "https://www.pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan",
+      "rawContentHash": "369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2",
+      "rawStorageRef": "research/phase4-packs/raw/blobs/369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2.bin",
+      "artifactId": "14019b75-4b23-41f1-aded-8c9a9da3231f",
+      "envelopeId": "39ee4e3aae5d208e853be985769c03158662f164942cc601a3a28bd533011896",
+      "envelopeStorageRef": "research/phase4-packs/normalized/id-pp55-html.json",
+      "normalizedTextHash": "7ea60bd77517ef775aa9125079a207d5e4c8f4259fc7075bd498cd389b1d5eb9",
+      "locator": "html:article:48408",
+      "start": 81302,
+      "end": 82152,
+      "quote": "Pasal 61 (1) Wajib Pajak sebagaimana dimaksud dalam Pasal 57 ayat (1) yang peredaran brutonya pada Tahun Pajak berjalan telah melebihi Rp4.800.000.000,00 (empat miliar delapan ratus juta rupiah), atas penghasilan dari usaha tetap dikenai tarif Pajak Penghasilan sebagaimana dimaksud dalam Pasal 56 ayat (2) sampai dengan akhir Tahun Pajak bersangkutan. (2) Atas penghasilan dari usaha sebagaimana dimaksud dalam Pasal 56 ayat (1) yang diterima atau diperoleh pada Tahun Pajak-Tahun Pajak berikutnya oleh Wajib Pajak sebagaimana dimaksud pada ayat (1) dikenai Pajak Penghasilan berdasarkan: tarif Pasal 17 ayat (1) huruf a Undang-Undang Pajak Penghasilan, untuk Wajib Pajak orang pribadi; atau tarif Pasal 17 ayat (1) huruf b Undang-Undang Pajak Penghasilan dengan mempertimbangkan Pasal 31E Undang-Undang Pajak Penghasilan, untuk Wajib Pajak badan. P",
+      "quoteHash": "5e3880069b3a9b2da8a775556c9f4be7a40ff9869fb578ee1d88d3e32cb2ba8b",
+      "legalLocator": "PP55/2022 Article61: current-year threshold crossing and subsequent years",
+      "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+      "documentTitle": "PENYESUAIAN PENGATURAN DI BIDANG PAJAK PENGHASILAN | Direktorat Jenderal Pajak"
+    }
+  ],
+  "packId": "ID_UMKM_INDIVIDUAL_2026",
+  "packVersion": 1,
+  "domesticCandidate": {
+    "status": "DOMESTIC_CANDIDATE",
+    "taxableBase": {
+      "amountMinor": "50000000",
+      "currency": "IDR"
+    },
+    "taxAmount": {
+      "amountMinor": "250000",
+      "currency": "IDR"
+    },
+    "rate": {
+      "kind": "FORMULA_DERIVED",
+      "parameters": {}
+    }
+  },
+  "requiredMissingFacts": [],
+  "calculationTrace": [
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.0.0",
+      "op": "INPUT",
+      "result": "ID"
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.0.1",
+      "op": "LITERAL",
+      "result": "ID"
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.0",
+      "op": "EQ",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.1.0",
+      "op": "INPUT",
+      "result": "ID"
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.1.1",
+      "op": "LITERAL",
+      "result": "ID"
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.1",
+      "op": "EQ",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.2.0",
+      "op": "INPUT",
+      "result": "INDIVIDUAL"
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.2.1",
+      "op": "LITERAL",
+      "result": "INDIVIDUAL"
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.2",
+      "op": "EQ",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.3.0",
+      "op": "INPUT",
+      "result": "ELIGIBLE_NON_PROFESSIONAL_DOMESTIC_BUSINESS"
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.3.1",
+      "op": "LITERAL",
+      "result": "ELIGIBLE_NON_PROFESSIONAL_DOMESTIC_BUSINESS"
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.3",
+      "op": "EQ",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.4.0",
+      "op": "INPUT",
+      "result": false
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.4.1",
+      "op": "LITERAL",
+      "result": false
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.4",
+      "op": "EQ",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.5.0",
+      "op": "INPUT",
+      "result": false
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.5.1",
+      "op": "LITERAL",
+      "result": false
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.5",
+      "op": "EQ",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.6.0",
+      "op": "INPUT",
+      "result": {
+        "numerator": "1000000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.6.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.6",
+      "op": "GTE",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.7.0",
+      "op": "INPUT",
+      "result": {
+        "numerator": "1000000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.7.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "4800000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.7",
+      "op": "LTE",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.8.0",
+      "op": "INPUT",
+      "result": {
+        "numerator": "100000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.8.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.8",
+      "op": "GTE",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.9.0",
+      "op": "INPUT",
+      "result": {
+        "numerator": "450000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.9.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.9",
+      "op": "GTE",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.0.0",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.0.1.0.0",
+      "op": "INPUT",
+      "result": {
+        "numerator": "450000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.0.1.0.1",
+      "op": "INPUT",
+      "result": {
+        "numerator": "100000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.0.1.0",
+      "op": "ADD",
+      "result": {
+        "numerator": "550000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.0.1.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "500000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.0.1",
+      "op": "SUBTRACT",
+      "result": {
+        "numerator": "50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.0",
+      "op": "MAX",
+      "result": {
+        "numerator": "50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.1.0",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.1.1.0",
+      "op": "INPUT",
+      "result": {
+        "numerator": "450000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.1.1.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "500000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.1.1",
+      "op": "SUBTRACT",
+      "result": {
+        "numerator": "-50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0.1",
+      "op": "MAX",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.0",
+      "op": "SUBTRACT",
+      "result": {
+        "numerator": "50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.0.0",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.0.1.0.0",
+      "op": "INPUT",
+      "result": {
+        "numerator": "450000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.0.1.0.1",
+      "op": "INPUT",
+      "result": {
+        "numerator": "100000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.0.1.0",
+      "op": "ADD",
+      "result": {
+        "numerator": "550000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.0.1.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "500000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.0.1",
+      "op": "SUBTRACT",
+      "result": {
+        "numerator": "50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.0",
+      "op": "MAX",
+      "result": {
+        "numerator": "50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.1.0",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.1.1.0",
+      "op": "INPUT",
+      "result": {
+        "numerator": "450000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.1.1.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "500000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.1.1",
+      "op": "SUBTRACT",
+      "result": {
+        "numerator": "-50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0.1",
+      "op": "MAX",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.0",
+      "op": "SUBTRACT",
+      "result": {
+        "numerator": "50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "200",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0.0",
+      "op": "DIVIDE",
+      "result": {
+        "numerator": "250000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.0",
+      "op": "ROUND",
+      "result": {
+        "numerator": "250000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "200",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10.1",
+      "op": "MULTIPLY",
+      "result": {
+        "numerator": "50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root.10",
+      "op": "EQ",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:applicability",
+      "path": "root",
+      "op": "AND",
+      "result": true
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.0.0",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.0.1.0.0",
+      "op": "INPUT",
+      "result": {
+        "numerator": "450000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.0.1.0.1",
+      "op": "INPUT",
+      "result": {
+        "numerator": "100000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.0.1.0",
+      "op": "ADD",
+      "result": {
+        "numerator": "550000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.0.1.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "500000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.0.1",
+      "op": "SUBTRACT",
+      "result": {
+        "numerator": "50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.0",
+      "op": "MAX",
+      "result": {
+        "numerator": "50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.1.0",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.1.1.0",
+      "op": "INPUT",
+      "result": {
+        "numerator": "450000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.1.1.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "500000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.1.1",
+      "op": "SUBTRACT",
+      "result": {
+        "numerator": "-50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root.1",
+      "op": "MAX",
+      "result": {
+        "numerator": "0",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:base",
+      "path": "root",
+      "op": "SUBTRACT",
+      "result": {
+        "numerator": "50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:amount",
+      "path": "root.0",
+      "op": "INPUT",
+      "result": {
+        "numerator": "50000000",
+        "denominator": "1"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:amount",
+      "path": "root.1",
+      "op": "LITERAL",
+      "result": {
+        "numerator": "1",
+        "denominator": "200"
+      }
+    },
+    {
+      "expression": "ID_UMKM_INDIVIDUAL_2026@1/ID_UMKM_MONTHLY_INDIVIDUAL_2026:amount",
+      "path": "root",
+      "op": "MULTIPLY",
+      "result": {
+        "numerator": "250000",
+        "denominator": "1"
+      }
+    }
+  ],
+  "postingPerformed": false,
+  "testOnly": true,
+  "determinationId": "4cb796d39fb5deccb6eb35f13412e46b55c39770f85af2e242ebc179fb8a376b",
+  "engineVersion": "universal-lite-tax/1",
+  "scopeId": "phase4-test-org",
+  "subjectId": "individual-1",
+  "requestHash": "690c7d9dd28793baac3941d8a375ce002c2c7cbcb9649fbf7f9e38d3e480f3a2",
+  "idempotencyScope": "28b6d49705f44c1c2dcaccd83424fba541d34a492289853f0db2dd89b7e1a637",
+  "request": {
+    "scopeId": "phase4-test-org",
+    "subjectId": "individual-1",
+    "requestKey": "controlled-real-umkm",
+    "taxType": "SIMPLIFIED_INCOME",
+    "jurisdictionCode": "ID",
+    "jurisdictionBasis": "TAX_RESIDENCE",
+    "incomeOrEventType": "MONTHLY_ELIGIBLE_DOMESTIC_BUSINESS",
+    "currency": "IDR",
+    "period": {
+      "periodStart": "2026-05-01",
+      "periodEnd": "2026-05-31"
+    },
+    "economicDate": "2026-05-31"
+  },
+  "inputFacts": {
+    "scopeId": "phase4-test-org",
+    "subjectId": "individual-1",
+    "revision": 1,
+    "period": {
+      "periodStart": "2026-05-01",
+      "periodEnd": "2026-05-31"
+    },
+    "economicDate": "2026-05-31",
+    "currency": "IDR",
+    "facts": [
+      {
+        "name": "SUBJECT_TYPE",
+        "type": "STRING",
+        "value": "INDIVIDUAL",
+        "evidenceReference": "TEST ONLY stipulated evidence: SUBJECT_TYPE"
+      },
+      {
+        "name": "INCOME_TYPE",
+        "type": "STRING",
+        "value": "MONTHLY_ELIGIBLE_DOMESTIC_BUSINESS",
+        "evidenceReference": "TEST ONLY stipulated evidence: INCOME_TYPE"
+      },
+      {
+        "name": "TAX_RESIDENCE",
+        "type": "COUNTRY",
+        "value": "ID",
+        "evidenceReference": "TEST ONLY stipulated evidence: TAX_RESIDENCE"
+      },
+      {
+        "name": "SOURCE",
+        "type": "COUNTRY",
+        "value": "ID",
+        "evidenceReference": "TEST ONLY stipulated evidence: SOURCE"
+      },
+      {
+        "name": "REGISTRATION",
+        "type": "COUNTRY",
+        "value": "ID",
+        "evidenceReference": "TEST ONLY stipulated evidence: REGISTRATION"
+      },
+      {
+        "name": "WITHHOLDING",
+        "type": "COUNTRY",
+        "value": "ID",
+        "evidenceReference": "TEST ONLY stipulated evidence: WITHHOLDING"
+      },
+      {
+        "name": "LEGAL_FORM",
+        "type": "STRING",
+        "value": "INDIVIDUAL",
+        "evidenceReference": "TEST ONLY stipulated evidence: LEGAL_FORM"
+      },
+      {
+        "name": "INCOME_CATEGORY",
+        "type": "STRING",
+        "value": "ELIGIBLE_NON_PROFESSIONAL_DOMESTIC_BUSINESS",
+        "evidenceReference": "TEST ONLY stipulated evidence: INCOME_CATEGORY"
+      },
+      {
+        "name": "ELECTED_ORDINARY_REGIME",
+        "type": "BOOLEAN",
+        "value": false,
+        "evidenceReference": "TEST ONLY stipulated evidence: ELECTED_ORDINARY_REGIME"
+      },
+      {
+        "name": "PREVIOUSLY_DISQUALIFIED_FROM_FINAL",
+        "type": "BOOLEAN",
+        "value": false,
+        "evidenceReference": "TEST ONLY stipulated evidence: PREVIOUSLY_DISQUALIFIED_FROM_FINAL"
+      },
+      {
+        "name": "PRIOR_YEAR_AGGREGATE_TURNOVER",
+        "type": "MONEY",
+        "value": {
+          "amountMinor": "1000000000",
+          "currency": "IDR"
+        },
+        "evidenceReference": "TEST ONLY stipulated evidence: PRIOR_YEAR_AGGREGATE_TURNOVER"
+      },
+      {
+        "name": "MONTH_GROSS_BUSINESS_TURNOVER",
+        "type": "MONEY",
+        "value": {
+          "amountMinor": "100000000",
+          "currency": "IDR"
+        },
+        "evidenceReference": "TEST ONLY stipulated evidence: MONTH_GROSS_BUSINESS_TURNOVER"
+      },
+      {
+        "name": "YTD_GROSS_BEFORE_MONTH",
+        "type": "MONEY",
+        "value": {
+          "amountMinor": "450000000",
+          "currency": "IDR"
+        },
+        "evidenceReference": "TEST ONLY stipulated evidence: YTD_GROSS_BEFORE_MONTH"
+      },
+      {
+        "name": "AGGREGATION_BASIS_REVIEWED",
+        "type": "BOOLEAN",
+        "value": true,
+        "evidenceReference": "TEST ONLY stipulated evidence: AGGREGATION_BASIS_REVIEWED"
+      },
+      {
+        "name": "MONTH_PERIOD_REVIEWED",
+        "type": "BOOLEAN",
+        "value": true,
+        "evidenceReference": "TEST ONLY stipulated evidence: MONTH_PERIOD_REVIEWED"
+      },
+      {
+        "name": "REGIME_FIRST_TAX_YEAR",
+        "type": "NUMBER",
+        "value": "2020",
+        "evidenceReference": "TEST ONLY stipulated evidence: REGIME_FIRST_TAX_YEAR"
+      },
+      {
+        "name": "BUSINESS_CAPACITY",
+        "type": "STRING",
+        "value": "INDIVIDUAL_FREELANCER",
+        "evidenceReference": "TEST ONLY stipulated evidence: BUSINESS_CAPACITY"
+      },
+      {
+        "name": "INCOME_REGIME",
+        "type": "STRING",
+        "value": "ORDINARY_ART17",
+        "evidenceReference": "TEST ONLY stipulated evidence: INCOME_REGIME"
+      },
+      {
+        "name": "REVIEWED_TAXABLE_INCOME",
+        "type": "MONEY",
+        "value": {
+          "amountMinor": "300000123",
+          "currency": "IDR"
+        },
+        "evidenceReference": "TEST ONLY stipulated evidence: REVIEWED_TAXABLE_INCOME"
+      },
+      {
+        "name": "TAXABLE_INCOME_RECONCILIATION_APPROVED",
+        "type": "BOOLEAN",
+        "value": true,
+        "evidenceReference": "TEST ONLY stipulated evidence: TAXABLE_INCOME_RECONCILIATION_APPROVED"
+      },
+      {
+        "name": "ANNUAL_TAX_PERIOD_REVIEWED",
+        "type": "BOOLEAN",
+        "value": true,
+        "evidenceReference": "TEST ONLY stipulated evidence: ANNUAL_TAX_PERIOD_REVIEWED"
+      },
+      {
+        "name": "PAYER_IS_WITHHOLDING_AGENT",
+        "type": "BOOLEAN",
+        "value": true,
+        "evidenceReference": "TEST ONLY stipulated evidence: PAYER_IS_WITHHOLDING_AGENT"
+      },
+      {
+        "name": "PAYEE_TAX_RESIDENCE",
+        "type": "COUNTRY",
+        "value": "ID",
+        "evidenceReference": "TEST ONLY stipulated evidence: PAYEE_TAX_RESIDENCE"
+      },
+      {
+        "name": "PAYEE_IS_PERMANENT_ESTABLISHMENT",
+        "type": "BOOLEAN",
+        "value": false,
+        "evidenceReference": "TEST ONLY stipulated evidence: PAYEE_IS_PERMANENT_ESTABLISHMENT"
+      },
+      {
+        "name": "PAYMENT_CATEGORY",
+        "type": "STRING",
+        "value": "NON_FINAL_MANAGEMENT_SERVICE",
+        "evidenceReference": "TEST ONLY stipulated evidence: PAYMENT_CATEGORY"
+      },
+      {
+        "name": "GROSS_FEE_EXCLUDING_VAT",
+        "type": "MONEY",
+        "value": {
+          "amountMinor": "10000000",
+          "currency": "IDR"
+        },
+        "evidenceReference": "TEST ONLY stipulated evidence: GROSS_FEE_EXCLUDING_VAT"
+      },
+      {
+        "name": "NPWP_VALID",
+        "type": "BOOLEAN",
+        "value": true,
+        "evidenceReference": "TEST ONLY stipulated evidence: NPWP_VALID"
+      },
+      {
+        "name": "SUBJECT_TO_PPH21",
+        "type": "BOOLEAN",
+        "value": false,
+        "evidenceReference": "TEST ONLY stipulated evidence: SUBJECT_TO_PPH21"
+      },
+      {
+        "name": "FINAL_REGIME_CERTIFICATE_APPLIES",
+        "type": "BOOLEAN",
+        "value": false,
+        "evidenceReference": "TEST ONLY stipulated evidence: FINAL_REGIME_CERTIFICATE_APPLIES"
+      },
+      {
+        "name": "ASSESSMENT_YEAR",
+        "type": "NUMBER",
+        "value": "2026",
+        "evidenceReference": "TEST ONLY stipulated evidence: ASSESSMENT_YEAR"
+      },
+      {
+        "name": "NORMAL_CHARGEABLE_INCOME",
+        "type": "MONEY",
+        "value": {
+          "amountMinor": "20000000",
+          "currency": "IDR"
+        },
+        "evidenceReference": "TEST ONLY stipulated evidence: NORMAL_CHARGEABLE_INCOME"
+      },
+      {
+        "name": "FISCAL_RECONCILIATION_APPROVED",
+        "type": "BOOLEAN",
+        "value": true,
+        "evidenceReference": "TEST ONLY stipulated evidence: FISCAL_RECONCILIATION_APPROVED"
+      },
+      {
+        "name": "CLAIMS_STARTUP_EXEMPTION",
+        "type": "BOOLEAN",
+        "value": false,
+        "evidenceReference": "TEST ONLY stipulated evidence: CLAIMS_STARTUP_EXEMPTION"
+      },
+      {
+        "name": "CASH_GRANT_ELIGIBLE",
+        "type": "BOOLEAN",
+        "value": false,
+        "evidenceReference": "TEST ONLY stipulated evidence: CASH_GRANT_ELIGIBLE"
+      },
+      {
+        "name": "HAS_TAX_CREDITS_OR_SPECIAL_RATE_INCOME",
+        "type": "BOOLEAN",
+        "value": false,
+        "evidenceReference": "TEST ONLY stipulated evidence: HAS_TAX_CREDITS_OR_SPECIAL_RATE_INCOME"
+      },
+      {
+        "name": "CALENDAR_BASIS_PERIOD_REVIEWED",
+        "type": "BOOLEAN",
+        "value": true,
+        "evidenceReference": "TEST ONLY stipulated evidence: CALENDAR_BASIS_PERIOD_REVIEWED"
+      }
+    ],
+    "status": "CONFIRMED",
+    "aiAuthority": "CANDIDATE_ONLY",
+    "snapshotHash": "3abf58241cc9cf885c5c5f0b9c219b734abeba8491470f6949b9b9525354bef5",
+    "confirmation": {
+      "decisionSource": "HUMAN",
+      "actor": "Test fixture fact reviewer",
+      "snapshotHash": "3abf58241cc9cf885c5c5f0b9c219b734abeba8491470f6949b9b9525354bef5",
+      "at": "2026-10-28T23:06:51.555Z"
+    }
+  },
+  "executionSnapshots": [
+    {
+      "candidateId": "5fc1dc0f00cd9e8495dc00a06ba32ab2cda16ce2d17967ad20a05696e862a373",
+      "jurisdictionCode": "ID",
+      "evidenceIds": [
+        "863f9bb9e0c3f2d34aef57dc830d5c265355b95cc4a39404cd3a2c70f5677c0a",
+        "9d742a7e4deee1c1d2f292b245f76fb808f82795e58bac1478df3e02450a948a",
+        "e20a8c77023b8df7aeff6974843181a1812e9722bf8fa52a0dfee11338594bfe",
+        "7d28647e36f2f221e2740995c04fcfb1350aec7215ef068ac83e83edf273e640",
+        "4f2350cf548fdf243674e382bf32c42e6686fec561f00d20145a5ab74be642fd",
+        "514bcfb7b0bc280728b2e90cb73fdad6bd6f0038c55f344e8a3d81e6ed464b0a",
+        "c6136b3f43330cd8574d3b13f03ca952c6005c961ce7be2df236242da3f19603",
+        "490ffe4d858914d666133de842511ab22c4a35a5ac282caf7db0733b9ebd52dd",
+        "d17781577bd5e935ffd8021ed7f2c8c1c51348bef554576ee56ba5ce714d2d52",
+        "0162f14c8cc73c9bbcaba532458ded7023b121e5742f97f8cbfbc92ddd18ebc1"
+      ],
+      "provenance": [
+        {
+          "evidenceId": "863f9bb9e0c3f2d34aef57dc830d5c265355b95cc4a39404cd3a2c70f5677c0a",
+          "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+          "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+          "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+          "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+          "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+          "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+          "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+          "locator": "pdf:page:3",
+          "start": 4252,
+          "end": 4970,
+          "quote": "Pasal 56 \n(1) Atas penghasilan dari usaha yang diterima atau \ndiperoleh Wajib Pajak dalam negeri yang memiliki \nperedaran bruto tertentu, dikenai Pajak Penghasilan \nyang bersifa t final. \n(2) Tarif Pajak Penghasilan yang bersifat final \nsebagaimana dimaksud pada ayat (1) sebesar 0,5% \n(nol koma lima persen). \n(3) Tidak termasuk penghasilan dari usaha yang dikenai \nPajak Penghasilan yang bersifat final sebagaimana \ndimaksud pada ayat (1) sebagai berikut: \na. penghasilan yang diterima atau diperoleh Wajib \nPajak orang pribadi dari jasa sehubungan \ndengan pekerjaan bebas; \nb. penghasilan yang diterima atau diperoleh di luar \nnegeri yang pajaknya terutang atau telah dibayar \ndi luar negeri; \nc. penghasilan . . . ",
+          "quoteHash": "f781df8e7a8b952b42f224b6ea11b3d4f49cb71943aa523c73fd7bdcb0544b74",
+          "legalLocator": "PP20/2026 ArticleI(3), amended Article56 exclusions",
+          "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+          "documentTitle": "PP20/2026 ArticleI(3), amended Article56 exclusions",
+          "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+          "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+        },
+        {
+          "evidenceId": "9d742a7e4deee1c1d2f292b245f76fb808f82795e58bac1478df3e02450a948a",
+          "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+          "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+          "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+          "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+          "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+          "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+          "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+          "locator": "pdf:page:5",
+          "start": 6534,
+          "end": 7952,
+          "quote": "Pasal 57 \n( \n1) Wajib Pajak dalam negeri yang memiliki peredaran \nbruto tertentu yang dikenai Pajak Penghasilan \nbersifat final sebagaimana dimaksud dalam Pasal 56 \nayat (1) merupakan: \na. Wajib Pajak orang pribadi; dan \nb. Wajib Pajak badan berbentuk perseroan \nperorangan yang didirikan oleh 1 ( satu) orang \ndan koperasi, \nyang menerima atau memperoleh penghasilan dengan \nperedaran bruto tidak melebihi Rp4.800.000.000,00 \n(empat miliar delapan ratus juta rupiah) dalam 1 \n( satu) Tahun Pajak. \n(2) Tidak termasuk Wajib Pajak sebagaimana dimaksud \npada ayat (1) dalam hal: \na. Wajib Pajak memilih untuk dikenai Pajak \nPenghasilan berdasarkan: \n1. tarif Pasal 17 ayat (1) huruf a \nUndang-Undang Pajak Penghasilan, untuk \nWajib Pajak orang pribadi; atau \n2. tarif Pasal 17 ayat (1) huruf b \nUndang-Undang Pajak Penghasilan \ndengan mempertimbangkan Pasal 31E \nUndang-Undang Pajak Penghasilan, untuk \nWajib Pajak badan; \nb. Wajib Pajak badan berbentuk perseroan \nperorangan sebagaimana dimaksud pada ayat (1) \nhuruf b yang didirikan oleh Wajib Pajak orang \npribadi yang memiliki keahlian khusus yang \nmenyerahkan jasa yang sejenis dengan jasa \nsehubungan dengan pekerjaan be bas \nsebagaimana dimaksud dalam Pasal 56 ayat (4); \nc. Wajib Pajak badan sebagaimana dimaksud pada \nayat ( 1) huruf b, yang memperoleh fasilitas Pajak \nPenghasilan berdasarkan: \n1. Pasal 31A Undang-Undang Pajak \nPenghasilan; \n2. Peraturan ... ",
+          "quoteHash": "597885b522a8e6200e9bd25a35be872b691a2205d51ae4fd9291728562fced95",
+          "legalLocator": "PP20/2026 ArticleI(4), amended Article57(1)-(2)",
+          "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+          "documentTitle": "PP20/2026 ArticleI(4), amended Article57(1)-(2)",
+          "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+          "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+        },
+        {
+          "evidenceId": "e20a8c77023b8df7aeff6974843181a1812e9722bf8fa52a0dfee11338594bfe",
+          "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+          "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+          "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+          "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+          "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+          "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+          "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+          "locator": "pdf:page:6",
+          "start": 8391,
+          "end": 9636,
+          "quote": "Wajib Pajak orang pribadi beserta seluruh Wajib \nPajak badan berbentuk perseroan perorangan \nyang didirikan oleh Wajib Pajak orang pribadi \nyang bersangkutan, yang telah menerima atau \nmemperoleh penghasilan dengan peredaran \nbruto sebagaimana dimaksud pada ayat (1) \nsecara keseluruhan jumlahnya melebihi \nRp4.800.000.000,00 (empat miliar delapan ratus \njuta rupiah) dalam 1 ( satu) Tahun Pajak; dan \nf. Wajib Pajak badan berbentuk koperasi \nsebagaimana dimaksud pada ayat (1) huruf b \nyang telah melewati jangka waktu 4 (empat) \nTahun Pajak sejak Tahun Pajak Wajib Pajak \nbersangkutan terdaftar. \n(3) Wajib Pajak sebagaimana dimaksud pada ayat (2) \nhuruf a wajib menyampaikan pemberitahuan kepada \nDirektur Jenderal Pajak. \n(4) Wajib Pajak sebagaimana dimaksud pada ayat (2) \nhuruf e dan huruf \nf serta ayat (3), untuk Tahun \nPajak-Tahun Pajak berikutnya tidak dapat dikenai \nPajak Penghasilan bersifat final berdasarkan \nPeraturan Pemerintah ini. \n(5) Ketentuan mengenai tata cara pemberitahuan \nsebagaimana dimaksud pada ayat (3) diatur dalam \nPeraturan Menteri. \n5. Ketentuan Pasal 58 diubah sehingga berbunyi sebagai \nberikut: \nPasal 58 \n(1) Besarnya peredaran bruto sebagaimana dimaksud \ndalam Pasal 57 ayat (1) merupakan: \na. jumlah ... ",
+          "quoteHash": "66e888aaf7b0f6469afb3f7ea92c641e8b77cb89f1bde411b454a8c40d112ed9",
+          "legalLocator": "Amended Article57(2)(e)-(f), disqualification and succession",
+          "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+          "documentTitle": "Amended Article57(2)(e)-(f), disqualification and succession",
+          "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+          "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+        },
+        {
+          "evidenceId": "7d28647e36f2f221e2740995c04fcfb1350aec7215ef068ac83e83edf273e640",
+          "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+          "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+          "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+          "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+          "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+          "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+          "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+          "locator": "pdf:page:6",
+          "start": 9525,
+          "end": 9636,
+          "quote": "Pasal 58 \n(1) Besarnya peredaran bruto sebagaimana dimaksud \ndalam Pasal 57 ayat (1) merupakan: \na. jumlah ... ",
+          "quoteHash": "ca5cb2b3f39b0574238acd86e64e82a82160c94b6fd589918f34950f065c8a06",
+          "legalLocator": "PP20/2026 ArticleI(5), amended Article58 aggregate turnover",
+          "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+          "documentTitle": "PP20/2026 ArticleI(5), amended Article58 aggregate turnover",
+          "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+          "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+        },
+        {
+          "evidenceId": "4f2350cf548fdf243674e382bf32c42e6686fec561f00d20145a5ab74be642fd",
+          "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+          "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+          "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+          "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+          "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+          "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+          "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+          "locator": "pdf:page:7",
+          "start": 9693,
+          "end": 10781,
+          "quote": "jumlah keseluruhan peredaran bruto atas \npenghasilan dari usaha dan jasa sehubungan \ndengan pekerjaan bebas dalam 1 (satu) tahun \ndari Tahun Pajak terakhir sebelum Tahun Pajak \nbersangkutan, baik yang dikenai Pajak \nPenghasilan yang tidak bersifat final maupun \nyang bersifat final, termasuk peredaran bruto \nyang diterima atau diperoleh di luar negeri; dan \nb. imbalan atau nilai pengganti berupa uang atau \nnilai uang yang diterima atau diperoleh dari \nusaha dan jasa sehubungan dengan pekerjaan \nbebas sebelum dikurangi potongan penjualan, \npotongan tunai, dan/atau potongan sejenis. \n(2) Dalam hal Wajib Pajak orang pribadi merupakan \nsuami-istri yang: \na. menghendaki perjanjian pemisahan harta dan \npenghasilan secara tertulis; atau \nb. istrinya menghendaki memilih untuk \nmenjalankan hak dan kewajiban perpajakannya \nsendiri, \nsebagaimana dimaksud dalam Pasal 8 ayat (2) \nhuruf b dan huruf c Undang-Undang Pajak \nPenghasilan, besarnya peredaran bruto sebagaimana \ndimaksud pada ayat (1) ditentukan berdasarkan \npenggabungan peredaran bruto dari suami dan istri. \n(3) Penentuan ... ",
+          "quoteHash": "c68328e34bb24f850c84f8f8198cc52819eee800a8499a798f3a44a770ed14b4",
+          "legalLocator": "Amended Article58(1)-(2): professional/foreign/spousal turnover",
+          "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+          "documentTitle": "Amended Article58(1)-(2): professional/foreign/spousal turnover",
+          "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+          "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+        },
+        {
+          "evidenceId": "514bcfb7b0bc280728b2e90cb73fdad6bd6f0038c55f344e8a3d81e6ed464b0a",
+          "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+          "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+          "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+          "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+          "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+          "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+          "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+          "locator": "pdf:page:8",
+          "start": 11188,
+          "end": 12210,
+          "quote": "6. Pasal 59 dihapus. \nPasal II \n1. Pada saat Peraturan Pemerintah ini mulai berlaku: \na. Wajib Pajak yang berdasarkan ketentuan Peraturan \nPemerintah Nomor 55 Tahun 2022 tentang \nPenyesuaian Pengaturan di Bidang Pajak Penghasilan \nyang jangka waktu tertentu pengenaan Pajak \nPenghasilan yang bersifat final berakhir pada: \n1) Tahun Pajak 2024 untuk Wajib Pajak orang \npribadi, dapat dikenai Pajak Penghasilan yang \nbersifat final berdasarkan Peraturan Pemerintah \nini untuk Tahun Pajak 2025 dan Tahun Pajak \n2026; atau \n2) Tahun Pajak 2025 untuk Wajib Pajak orang \npribadi dan Wajib Pajak badan berbentuk \nperseroan perorangan yang didirikan oleh 1 \n( satu) orang, dapat dikenai Pajak Penghasilan \nyang bersifat final berdasarkan Peraturan \nPemerintah ini untuk Tahun Pajak 2026, \nsepanjang Wajib Pajak yang bersangkutan memenuhi \nkriteria untuk dikenai Pajak Penghasilan yang \nbersifat final berdasarkan Peraturan Pemerintah \nNomor 55 Tahun 2022 tentang Penyesuaian \nPengaturan di Bidang Pajak Penghasilan; \nb. Wajib ... ",
+          "quoteHash": "98079a89922bd5a4cae649efbabbbc50a97ff3b51946a22e92fb3e5fa115f52f",
+          "legalLocator": "PP20/2026 ArticleI(6), ArticleII transition; not modeled as automatic backdating",
+          "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+          "documentTitle": "PP20/2026 ArticleI(6), ArticleII transition; not modeled as automatic backdating",
+          "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+          "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+        },
+        {
+          "evidenceId": "c6136b3f43330cd8574d3b13f03ca952c6005c961ce7be2df236242da3f19603",
+          "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+          "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+          "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+          "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+          "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+          "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+          "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+          "locator": "pdf:page:11",
+          "start": 16125,
+          "end": 16540,
+          "quote": "pada tanggal 22 April 2026 \nPRESIDEN REPUBLIK INDONESIA, \nttd. \nPRABOWO SUBIANTO \nDiundangkan di Jakarta \npada tanggal 22 April 2026 \nMENTERI SEKRETARIS NEGARA \nREPUBLIK INDONESIA, \nttd. \nPRASETYO HADI \nLEMBARAN NEGARA REPUBLIK INDONESIA TAHUN 2026 NOMOR 43 \nSalinan sesuai dengan aslinya \nKEMENTERIAN SEKRETARIAT NEGARA \nEPUBLIK INDONESIA \nPerundang-undangan an \n~)mlw·nistrasi Huku \nlvanna Djaman \nSK No 283785 A ",
+          "quoteHash": "192e322e38b316bbcadd2251893d61898f1f721152a349a15ef05bae0465c90f",
+          "legalLocator": "PP20/2026 promulgation 22 April 2026 and ArticleII(2)",
+          "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+          "documentTitle": "PP20/2026 promulgation 22 April 2026 and ArticleII(2)",
+          "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+          "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+        },
+        {
+          "evidenceId": "490ffe4d858914d666133de842511ab22c4a35a5ac282caf7db0733b9ebd52dd",
+          "sourceUrl": "https://jdih.kemenkeu.go.id/dok/pp-20-tahun-2026",
+          "rawContentHash": "be292f637e5aa5e5acc43ca0885348dd067f02e0d78b9272a810b7521c609090",
+          "rawStorageRef": "research/phase4-packs/raw/blobs/be292f637e5aa5e5acc43ca0885348dd067f02e0d78b9272a810b7521c609090.bin",
+          "artifactId": "e2909c16-3e64-4198-8f28-e01176a9a6be",
+          "envelopeId": "21aa8b1e6a81ffd79e74a2fd743e2a1b69de13bed63c68516d5237667927c9ea",
+          "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20-status.json",
+          "normalizedTextHash": "6dd2c43e68f3d860a646396c4c4590b47e22df1e31a4c9ca70fa39a0e943e41a",
+          "locator": "html:article:180973",
+          "start": 17,
+          "end": 113,
+          "quote": "Dokumen ini mengubah PP 55 TAHUN 2022 tentang Penyesuaian Pengaturan di Bidang Pajak Penghasilan",
+          "quoteHash": "a65242c922feda3bdf7096ccbe4f610560d04df8ba926858b7a3b3884dd68844",
+          "legalLocator": "JDIH current relationship: PP20 changes PP55",
+          "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+          "documentTitle": "PP 20 TAHUN 2026 - Perubahan atas Peraturan Pemerintah Nomor 55 Tahun 2022 tentang Penyesuaian Pengaturan di Bidang Pajak Penghasilan | JDIH Kementerian Keuangan"
+        },
+        {
+          "evidenceId": "d17781577bd5e935ffd8021ed7f2c8c1c51348bef554576ee56ba5ce714d2d52",
+          "sourceUrl": "https://www.pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan",
+          "rawContentHash": "369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2",
+          "rawStorageRef": "research/phase4-packs/raw/blobs/369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2.bin",
+          "artifactId": "14019b75-4b23-41f1-aded-8c9a9da3231f",
+          "envelopeId": "39ee4e3aae5d208e853be985769c03158662f164942cc601a3a28bd533011896",
+          "envelopeStorageRef": "research/phase4-packs/normalized/id-pp55-html.json",
+          "normalizedTextHash": "7ea60bd77517ef775aa9125079a207d5e4c8f4259fc7075bd498cd389b1d5eb9",
+          "locator": "html:article:48408",
+          "start": 79661,
+          "end": 81361,
+          "quote": "Pasal 60 (1) Jumlah peredaran bruto atas penghasilan dari usaha sebagaimana dimaksud dalam Pasal 56 ayat (1) setiap bulan merupakan dasar pengenaan pajak yang digunakan untuk menghitung Pajak Penghasilan yang bersifat final. (2) Wajib Pajak orang pribadi yang memiliki peredaran bruto tertentu sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf a, atas bagian peredaran bruto dari usaha sampai dengan Rp500.000.000,00 (lima ratus juta rupiah) dalam 1 (satu) Tahun Pajak tidak dikenai Pajak Penghasilan. (3) Bagian peredaran bruto dari usaha tidak dikenai Pajak Penghasilan sebagaimana dimaksud pada ayat (2) merupakan jumlah peredaran bruto dari usaha yang dihitung secara kumulatif sejak Masa Pajak pertama dalam suatu Tahun Pajak atau bagian Tahun Pajak. (4) Peredaran bruto yang dijadikan dasar pengenaan pajak sebagaimana dimaksud pada ayat (1) dan jumlah peredaran bruto dari usaha yang dihitung secara kumulatif sebagaimana dimaksud pada ayat (3) merupakan imbalan atau nilai pengganti berupa uang atau nilai uang yang diterima atau diperoleh dari usaha, sebelum dikurangi potongan penjualan, potongan tunai, dan/atau potongan sejenis. (5) Pajak Penghasilan terutang dihitung berdasarkan tarif sebagaimana dimaksud dalam Pasal 56 ayat (2) dikalikan dengan: dasar pengenaan pajak sebagaimana dimaksud pada ayat (1), untuk Wajib Pajak badan sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf b; atau dasar pengenaan pajak sebagaimana dimaksud pada ayat (1) setelah memperhitungkan bagian peredaran bruto dari usaha sebagaimana dimaksud pada ayat (2), untuk Wajib Pajak orang pribadi sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf a. Pasal 61 (1) Wajib Pajak sebagaimana dimaksud dalam Pasal 5",
+          "quoteHash": "a20744060b6ee755040e69999e81619a14459f68461b04af9c3bb38b1821ebda",
+          "legalLocator": "PP55/2022 Article60: monthly gross, cumulative 500m exclusion, rate/base",
+          "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+          "documentTitle": "PENYESUAIAN PENGATURAN DI BIDANG PAJAK PENGHASILAN | Direktorat Jenderal Pajak"
+        },
+        {
+          "evidenceId": "0162f14c8cc73c9bbcaba532458ded7023b121e5742f97f8cbfbc92ddd18ebc1",
+          "sourceUrl": "https://www.pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan",
+          "rawContentHash": "369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2",
+          "rawStorageRef": "research/phase4-packs/raw/blobs/369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2.bin",
+          "artifactId": "14019b75-4b23-41f1-aded-8c9a9da3231f",
+          "envelopeId": "39ee4e3aae5d208e853be985769c03158662f164942cc601a3a28bd533011896",
+          "envelopeStorageRef": "research/phase4-packs/normalized/id-pp55-html.json",
+          "normalizedTextHash": "7ea60bd77517ef775aa9125079a207d5e4c8f4259fc7075bd498cd389b1d5eb9",
+          "locator": "html:article:48408",
+          "start": 81302,
+          "end": 82152,
+          "quote": "Pasal 61 (1) Wajib Pajak sebagaimana dimaksud dalam Pasal 57 ayat (1) yang peredaran brutonya pada Tahun Pajak berjalan telah melebihi Rp4.800.000.000,00 (empat miliar delapan ratus juta rupiah), atas penghasilan dari usaha tetap dikenai tarif Pajak Penghasilan sebagaimana dimaksud dalam Pasal 56 ayat (2) sampai dengan akhir Tahun Pajak bersangkutan. (2) Atas penghasilan dari usaha sebagaimana dimaksud dalam Pasal 56 ayat (1) yang diterima atau diperoleh pada Tahun Pajak-Tahun Pajak berikutnya oleh Wajib Pajak sebagaimana dimaksud pada ayat (1) dikenai Pajak Penghasilan berdasarkan: tarif Pasal 17 ayat (1) huruf a Undang-Undang Pajak Penghasilan, untuk Wajib Pajak orang pribadi; atau tarif Pasal 17 ayat (1) huruf b Undang-Undang Pajak Penghasilan dengan mempertimbangkan Pasal 31E Undang-Undang Pajak Penghasilan, untuk Wajib Pajak badan. P",
+          "quoteHash": "5e3880069b3a9b2da8a775556c9f4be7a40ff9869fb578ee1d88d3e32cb2ba8b",
+          "legalLocator": "PP55/2022 Article61: current-year threshold crossing and subsequent years",
+          "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+          "documentTitle": "PENYESUAIAN PENGATURAN DI BIDANG PAJAK PENGHASILAN | Direktorat Jenderal Pajak"
+        }
+      ],
+      "envelopeIds": [],
+      "status": "APPROVED",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "runtimeExecutable": true,
+      "executorSupported": true,
+      "reviewHistory": [
+        {
+          "actor": "Test fixture reviewer",
+          "decisionSource": "HUMAN",
+          "decision": "APPROVED",
+          "reason": "TEST ONLY approval simulation on real retained legal content; not actual legal approval",
+          "reviewedHashes": [
+            "369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2",
+            "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+            "be292f637e5aa5e5acc43ca0885348dd067f02e0d78b9272a810b7521c609090"
+          ],
+          "reviewedContentHash": "b8ea500d0dfeabfe4f3649755fe94c182f926ad5eaebbb80a87de52f881c13ce",
+          "at": "2026-10-28T23:06:51.554Z"
+        }
+      ],
+      "sourceCandidateId": "50faf606cd449d98be98734fa604160cdfa1a4a6e28b7f0d648d184f4ee0518f",
+      "contentKind": "COUNTRY_PACK",
+      "executableContent": {
+        "packId": "ID_UMKM_INDIVIDUAL_2026",
+        "version": 1,
+        "jurisdictionCode": "ID",
+        "currency": "IDR",
+        "effectiveFrom": "2026-04-22",
+        "effectiveTo": "2026-12-31",
+        "evidenceRefs": [
+          {
+            "evidenceId": "863f9bb9e0c3f2d34aef57dc830d5c265355b95cc4a39404cd3a2c70f5677c0a",
+            "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+            "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+            "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+            "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+            "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+            "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+            "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+            "locator": "pdf:page:3",
+            "start": 4252,
+            "end": 4970,
+            "quote": "Pasal 56 \n(1) Atas penghasilan dari usaha yang diterima atau \ndiperoleh Wajib Pajak dalam negeri yang memiliki \nperedaran bruto tertentu, dikenai Pajak Penghasilan \nyang bersifa t final. \n(2) Tarif Pajak Penghasilan yang bersifat final \nsebagaimana dimaksud pada ayat (1) sebesar 0,5% \n(nol koma lima persen). \n(3) Tidak termasuk penghasilan dari usaha yang dikenai \nPajak Penghasilan yang bersifat final sebagaimana \ndimaksud pada ayat (1) sebagai berikut: \na. penghasilan yang diterima atau diperoleh Wajib \nPajak orang pribadi dari jasa sehubungan \ndengan pekerjaan bebas; \nb. penghasilan yang diterima atau diperoleh di luar \nnegeri yang pajaknya terutang atau telah dibayar \ndi luar negeri; \nc. penghasilan . . . ",
+            "quoteHash": "f781df8e7a8b952b42f224b6ea11b3d4f49cb71943aa523c73fd7bdcb0544b74",
+            "legalLocator": "PP20/2026 ArticleI(3), amended Article56 exclusions",
+            "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+            "documentTitle": "PP20/2026 ArticleI(3), amended Article56 exclusions",
+            "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+            "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+          },
+          {
+            "evidenceId": "9d742a7e4deee1c1d2f292b245f76fb808f82795e58bac1478df3e02450a948a",
+            "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+            "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+            "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+            "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+            "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+            "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+            "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+            "locator": "pdf:page:5",
+            "start": 6534,
+            "end": 7952,
+            "quote": "Pasal 57 \n( \n1) Wajib Pajak dalam negeri yang memiliki peredaran \nbruto tertentu yang dikenai Pajak Penghasilan \nbersifat final sebagaimana dimaksud dalam Pasal 56 \nayat (1) merupakan: \na. Wajib Pajak orang pribadi; dan \nb. Wajib Pajak badan berbentuk perseroan \nperorangan yang didirikan oleh 1 ( satu) orang \ndan koperasi, \nyang menerima atau memperoleh penghasilan dengan \nperedaran bruto tidak melebihi Rp4.800.000.000,00 \n(empat miliar delapan ratus juta rupiah) dalam 1 \n( satu) Tahun Pajak. \n(2) Tidak termasuk Wajib Pajak sebagaimana dimaksud \npada ayat (1) dalam hal: \na. Wajib Pajak memilih untuk dikenai Pajak \nPenghasilan berdasarkan: \n1. tarif Pasal 17 ayat (1) huruf a \nUndang-Undang Pajak Penghasilan, untuk \nWajib Pajak orang pribadi; atau \n2. tarif Pasal 17 ayat (1) huruf b \nUndang-Undang Pajak Penghasilan \ndengan mempertimbangkan Pasal 31E \nUndang-Undang Pajak Penghasilan, untuk \nWajib Pajak badan; \nb. Wajib Pajak badan berbentuk perseroan \nperorangan sebagaimana dimaksud pada ayat (1) \nhuruf b yang didirikan oleh Wajib Pajak orang \npribadi yang memiliki keahlian khusus yang \nmenyerahkan jasa yang sejenis dengan jasa \nsehubungan dengan pekerjaan be bas \nsebagaimana dimaksud dalam Pasal 56 ayat (4); \nc. Wajib Pajak badan sebagaimana dimaksud pada \nayat ( 1) huruf b, yang memperoleh fasilitas Pajak \nPenghasilan berdasarkan: \n1. Pasal 31A Undang-Undang Pajak \nPenghasilan; \n2. Peraturan ... ",
+            "quoteHash": "597885b522a8e6200e9bd25a35be872b691a2205d51ae4fd9291728562fced95",
+            "legalLocator": "PP20/2026 ArticleI(4), amended Article57(1)-(2)",
+            "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+            "documentTitle": "PP20/2026 ArticleI(4), amended Article57(1)-(2)",
+            "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+            "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+          },
+          {
+            "evidenceId": "e20a8c77023b8df7aeff6974843181a1812e9722bf8fa52a0dfee11338594bfe",
+            "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+            "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+            "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+            "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+            "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+            "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+            "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+            "locator": "pdf:page:6",
+            "start": 8391,
+            "end": 9636,
+            "quote": "Wajib Pajak orang pribadi beserta seluruh Wajib \nPajak badan berbentuk perseroan perorangan \nyang didirikan oleh Wajib Pajak orang pribadi \nyang bersangkutan, yang telah menerima atau \nmemperoleh penghasilan dengan peredaran \nbruto sebagaimana dimaksud pada ayat (1) \nsecara keseluruhan jumlahnya melebihi \nRp4.800.000.000,00 (empat miliar delapan ratus \njuta rupiah) dalam 1 ( satu) Tahun Pajak; dan \nf. Wajib Pajak badan berbentuk koperasi \nsebagaimana dimaksud pada ayat (1) huruf b \nyang telah melewati jangka waktu 4 (empat) \nTahun Pajak sejak Tahun Pajak Wajib Pajak \nbersangkutan terdaftar. \n(3) Wajib Pajak sebagaimana dimaksud pada ayat (2) \nhuruf a wajib menyampaikan pemberitahuan kepada \nDirektur Jenderal Pajak. \n(4) Wajib Pajak sebagaimana dimaksud pada ayat (2) \nhuruf e dan huruf \nf serta ayat (3), untuk Tahun \nPajak-Tahun Pajak berikutnya tidak dapat dikenai \nPajak Penghasilan bersifat final berdasarkan \nPeraturan Pemerintah ini. \n(5) Ketentuan mengenai tata cara pemberitahuan \nsebagaimana dimaksud pada ayat (3) diatur dalam \nPeraturan Menteri. \n5. Ketentuan Pasal 58 diubah sehingga berbunyi sebagai \nberikut: \nPasal 58 \n(1) Besarnya peredaran bruto sebagaimana dimaksud \ndalam Pasal 57 ayat (1) merupakan: \na. jumlah ... ",
+            "quoteHash": "66e888aaf7b0f6469afb3f7ea92c641e8b77cb89f1bde411b454a8c40d112ed9",
+            "legalLocator": "Amended Article57(2)(e)-(f), disqualification and succession",
+            "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+            "documentTitle": "Amended Article57(2)(e)-(f), disqualification and succession",
+            "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+            "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+          },
+          {
+            "evidenceId": "7d28647e36f2f221e2740995c04fcfb1350aec7215ef068ac83e83edf273e640",
+            "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+            "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+            "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+            "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+            "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+            "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+            "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+            "locator": "pdf:page:6",
+            "start": 9525,
+            "end": 9636,
+            "quote": "Pasal 58 \n(1) Besarnya peredaran bruto sebagaimana dimaksud \ndalam Pasal 57 ayat (1) merupakan: \na. jumlah ... ",
+            "quoteHash": "ca5cb2b3f39b0574238acd86e64e82a82160c94b6fd589918f34950f065c8a06",
+            "legalLocator": "PP20/2026 ArticleI(5), amended Article58 aggregate turnover",
+            "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+            "documentTitle": "PP20/2026 ArticleI(5), amended Article58 aggregate turnover",
+            "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+            "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+          },
+          {
+            "evidenceId": "4f2350cf548fdf243674e382bf32c42e6686fec561f00d20145a5ab74be642fd",
+            "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+            "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+            "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+            "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+            "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+            "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+            "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+            "locator": "pdf:page:7",
+            "start": 9693,
+            "end": 10781,
+            "quote": "jumlah keseluruhan peredaran bruto atas \npenghasilan dari usaha dan jasa sehubungan \ndengan pekerjaan bebas dalam 1 (satu) tahun \ndari Tahun Pajak terakhir sebelum Tahun Pajak \nbersangkutan, baik yang dikenai Pajak \nPenghasilan yang tidak bersifat final maupun \nyang bersifat final, termasuk peredaran bruto \nyang diterima atau diperoleh di luar negeri; dan \nb. imbalan atau nilai pengganti berupa uang atau \nnilai uang yang diterima atau diperoleh dari \nusaha dan jasa sehubungan dengan pekerjaan \nbebas sebelum dikurangi potongan penjualan, \npotongan tunai, dan/atau potongan sejenis. \n(2) Dalam hal Wajib Pajak orang pribadi merupakan \nsuami-istri yang: \na. menghendaki perjanjian pemisahan harta dan \npenghasilan secara tertulis; atau \nb. istrinya menghendaki memilih untuk \nmenjalankan hak dan kewajiban perpajakannya \nsendiri, \nsebagaimana dimaksud dalam Pasal 8 ayat (2) \nhuruf b dan huruf c Undang-Undang Pajak \nPenghasilan, besarnya peredaran bruto sebagaimana \ndimaksud pada ayat (1) ditentukan berdasarkan \npenggabungan peredaran bruto dari suami dan istri. \n(3) Penentuan ... ",
+            "quoteHash": "c68328e34bb24f850c84f8f8198cc52819eee800a8499a798f3a44a770ed14b4",
+            "legalLocator": "Amended Article58(1)-(2): professional/foreign/spousal turnover",
+            "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+            "documentTitle": "Amended Article58(1)-(2): professional/foreign/spousal turnover",
+            "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+            "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+          },
+          {
+            "evidenceId": "514bcfb7b0bc280728b2e90cb73fdad6bd6f0038c55f344e8a3d81e6ed464b0a",
+            "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+            "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+            "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+            "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+            "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+            "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+            "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+            "locator": "pdf:page:8",
+            "start": 11188,
+            "end": 12210,
+            "quote": "6. Pasal 59 dihapus. \nPasal II \n1. Pada saat Peraturan Pemerintah ini mulai berlaku: \na. Wajib Pajak yang berdasarkan ketentuan Peraturan \nPemerintah Nomor 55 Tahun 2022 tentang \nPenyesuaian Pengaturan di Bidang Pajak Penghasilan \nyang jangka waktu tertentu pengenaan Pajak \nPenghasilan yang bersifat final berakhir pada: \n1) Tahun Pajak 2024 untuk Wajib Pajak orang \npribadi, dapat dikenai Pajak Penghasilan yang \nbersifat final berdasarkan Peraturan Pemerintah \nini untuk Tahun Pajak 2025 dan Tahun Pajak \n2026; atau \n2) Tahun Pajak 2025 untuk Wajib Pajak orang \npribadi dan Wajib Pajak badan berbentuk \nperseroan perorangan yang didirikan oleh 1 \n( satu) orang, dapat dikenai Pajak Penghasilan \nyang bersifat final berdasarkan Peraturan \nPemerintah ini untuk Tahun Pajak 2026, \nsepanjang Wajib Pajak yang bersangkutan memenuhi \nkriteria untuk dikenai Pajak Penghasilan yang \nbersifat final berdasarkan Peraturan Pemerintah \nNomor 55 Tahun 2022 tentang Penyesuaian \nPengaturan di Bidang Pajak Penghasilan; \nb. Wajib ... ",
+            "quoteHash": "98079a89922bd5a4cae649efbabbbc50a97ff3b51946a22e92fb3e5fa115f52f",
+            "legalLocator": "PP20/2026 ArticleI(6), ArticleII transition; not modeled as automatic backdating",
+            "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+            "documentTitle": "PP20/2026 ArticleI(6), ArticleII transition; not modeled as automatic backdating",
+            "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+            "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+          },
+          {
+            "evidenceId": "c6136b3f43330cd8574d3b13f03ca952c6005c961ce7be2df236242da3f19603",
+            "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+            "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+            "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+            "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+            "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+            "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+            "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+            "locator": "pdf:page:11",
+            "start": 16125,
+            "end": 16540,
+            "quote": "pada tanggal 22 April 2026 \nPRESIDEN REPUBLIK INDONESIA, \nttd. \nPRABOWO SUBIANTO \nDiundangkan di Jakarta \npada tanggal 22 April 2026 \nMENTERI SEKRETARIS NEGARA \nREPUBLIK INDONESIA, \nttd. \nPRASETYO HADI \nLEMBARAN NEGARA REPUBLIK INDONESIA TAHUN 2026 NOMOR 43 \nSalinan sesuai dengan aslinya \nKEMENTERIAN SEKRETARIAT NEGARA \nEPUBLIK INDONESIA \nPerundang-undangan an \n~)mlw·nistrasi Huku \nlvanna Djaman \nSK No 283785 A ",
+            "quoteHash": "192e322e38b316bbcadd2251893d61898f1f721152a349a15ef05bae0465c90f",
+            "legalLocator": "PP20/2026 promulgation 22 April 2026 and ArticleII(2)",
+            "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+            "documentTitle": "PP20/2026 promulgation 22 April 2026 and ArticleII(2)",
+            "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+            "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+          },
+          {
+            "evidenceId": "490ffe4d858914d666133de842511ab22c4a35a5ac282caf7db0733b9ebd52dd",
+            "sourceUrl": "https://jdih.kemenkeu.go.id/dok/pp-20-tahun-2026",
+            "rawContentHash": "be292f637e5aa5e5acc43ca0885348dd067f02e0d78b9272a810b7521c609090",
+            "rawStorageRef": "research/phase4-packs/raw/blobs/be292f637e5aa5e5acc43ca0885348dd067f02e0d78b9272a810b7521c609090.bin",
+            "artifactId": "e2909c16-3e64-4198-8f28-e01176a9a6be",
+            "envelopeId": "21aa8b1e6a81ffd79e74a2fd743e2a1b69de13bed63c68516d5237667927c9ea",
+            "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20-status.json",
+            "normalizedTextHash": "6dd2c43e68f3d860a646396c4c4590b47e22df1e31a4c9ca70fa39a0e943e41a",
+            "locator": "html:article:180973",
+            "start": 17,
+            "end": 113,
+            "quote": "Dokumen ini mengubah PP 55 TAHUN 2022 tentang Penyesuaian Pengaturan di Bidang Pajak Penghasilan",
+            "quoteHash": "a65242c922feda3bdf7096ccbe4f610560d04df8ba926858b7a3b3884dd68844",
+            "legalLocator": "JDIH current relationship: PP20 changes PP55",
+            "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+            "documentTitle": "PP 20 TAHUN 2026 - Perubahan atas Peraturan Pemerintah Nomor 55 Tahun 2022 tentang Penyesuaian Pengaturan di Bidang Pajak Penghasilan | JDIH Kementerian Keuangan"
+          },
+          {
+            "evidenceId": "d17781577bd5e935ffd8021ed7f2c8c1c51348bef554576ee56ba5ce714d2d52",
+            "sourceUrl": "https://www.pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan",
+            "rawContentHash": "369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2",
+            "rawStorageRef": "research/phase4-packs/raw/blobs/369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2.bin",
+            "artifactId": "14019b75-4b23-41f1-aded-8c9a9da3231f",
+            "envelopeId": "39ee4e3aae5d208e853be985769c03158662f164942cc601a3a28bd533011896",
+            "envelopeStorageRef": "research/phase4-packs/normalized/id-pp55-html.json",
+            "normalizedTextHash": "7ea60bd77517ef775aa9125079a207d5e4c8f4259fc7075bd498cd389b1d5eb9",
+            "locator": "html:article:48408",
+            "start": 79661,
+            "end": 81361,
+            "quote": "Pasal 60 (1) Jumlah peredaran bruto atas penghasilan dari usaha sebagaimana dimaksud dalam Pasal 56 ayat (1) setiap bulan merupakan dasar pengenaan pajak yang digunakan untuk menghitung Pajak Penghasilan yang bersifat final. (2) Wajib Pajak orang pribadi yang memiliki peredaran bruto tertentu sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf a, atas bagian peredaran bruto dari usaha sampai dengan Rp500.000.000,00 (lima ratus juta rupiah) dalam 1 (satu) Tahun Pajak tidak dikenai Pajak Penghasilan. (3) Bagian peredaran bruto dari usaha tidak dikenai Pajak Penghasilan sebagaimana dimaksud pada ayat (2) merupakan jumlah peredaran bruto dari usaha yang dihitung secara kumulatif sejak Masa Pajak pertama dalam suatu Tahun Pajak atau bagian Tahun Pajak. (4) Peredaran bruto yang dijadikan dasar pengenaan pajak sebagaimana dimaksud pada ayat (1) dan jumlah peredaran bruto dari usaha yang dihitung secara kumulatif sebagaimana dimaksud pada ayat (3) merupakan imbalan atau nilai pengganti berupa uang atau nilai uang yang diterima atau diperoleh dari usaha, sebelum dikurangi potongan penjualan, potongan tunai, dan/atau potongan sejenis. (5) Pajak Penghasilan terutang dihitung berdasarkan tarif sebagaimana dimaksud dalam Pasal 56 ayat (2) dikalikan dengan: dasar pengenaan pajak sebagaimana dimaksud pada ayat (1), untuk Wajib Pajak badan sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf b; atau dasar pengenaan pajak sebagaimana dimaksud pada ayat (1) setelah memperhitungkan bagian peredaran bruto dari usaha sebagaimana dimaksud pada ayat (2), untuk Wajib Pajak orang pribadi sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf a. Pasal 61 (1) Wajib Pajak sebagaimana dimaksud dalam Pasal 5",
+            "quoteHash": "a20744060b6ee755040e69999e81619a14459f68461b04af9c3bb38b1821ebda",
+            "legalLocator": "PP55/2022 Article60: monthly gross, cumulative 500m exclusion, rate/base",
+            "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+            "documentTitle": "PENYESUAIAN PENGATURAN DI BIDANG PAJAK PENGHASILAN | Direktorat Jenderal Pajak"
+          },
+          {
+            "evidenceId": "0162f14c8cc73c9bbcaba532458ded7023b121e5742f97f8cbfbc92ddd18ebc1",
+            "sourceUrl": "https://www.pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan",
+            "rawContentHash": "369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2",
+            "rawStorageRef": "research/phase4-packs/raw/blobs/369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2.bin",
+            "artifactId": "14019b75-4b23-41f1-aded-8c9a9da3231f",
+            "envelopeId": "39ee4e3aae5d208e853be985769c03158662f164942cc601a3a28bd533011896",
+            "envelopeStorageRef": "research/phase4-packs/normalized/id-pp55-html.json",
+            "normalizedTextHash": "7ea60bd77517ef775aa9125079a207d5e4c8f4259fc7075bd498cd389b1d5eb9",
+            "locator": "html:article:48408",
+            "start": 81302,
+            "end": 82152,
+            "quote": "Pasal 61 (1) Wajib Pajak sebagaimana dimaksud dalam Pasal 57 ayat (1) yang peredaran brutonya pada Tahun Pajak berjalan telah melebihi Rp4.800.000.000,00 (empat miliar delapan ratus juta rupiah), atas penghasilan dari usaha tetap dikenai tarif Pajak Penghasilan sebagaimana dimaksud dalam Pasal 56 ayat (2) sampai dengan akhir Tahun Pajak bersangkutan. (2) Atas penghasilan dari usaha sebagaimana dimaksud dalam Pasal 56 ayat (1) yang diterima atau diperoleh pada Tahun Pajak-Tahun Pajak berikutnya oleh Wajib Pajak sebagaimana dimaksud pada ayat (1) dikenai Pajak Penghasilan berdasarkan: tarif Pasal 17 ayat (1) huruf a Undang-Undang Pajak Penghasilan, untuk Wajib Pajak orang pribadi; atau tarif Pasal 17 ayat (1) huruf b Undang-Undang Pajak Penghasilan dengan mempertimbangkan Pasal 31E Undang-Undang Pajak Penghasilan, untuk Wajib Pajak badan. P",
+            "quoteHash": "5e3880069b3a9b2da8a775556c9f4be7a40ff9869fb578ee1d88d3e32cb2ba8b",
+            "legalLocator": "PP55/2022 Article61: current-year threshold crossing and subsequent years",
+            "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+            "documentTitle": "PENYESUAIAN PENGATURAN DI BIDANG PAJAK PENGHASILAN | Direktorat Jenderal Pajak"
+          }
+        ],
+        "rules": [
+          {
+            "ruleId": "ID_UMKM_MONTHLY_INDIVIDUAL_2026",
+            "taxType": "SIMPLIFIED_INCOME",
+            "subjectTypes": [
+              "INDIVIDUAL"
+            ],
+            "incomeOrEventType": "MONTHLY_ELIGIBLE_DOMESTIC_BUSINESS",
+            "requiredFacts": {
+              "TAX_RESIDENCE": "COUNTRY",
+              "SOURCE": "COUNTRY",
+              "LEGAL_FORM": "STRING",
+              "INCOME_CATEGORY": "STRING",
+              "ELECTED_ORDINARY_REGIME": "BOOLEAN",
+              "PREVIOUSLY_DISQUALIFIED_FROM_FINAL": "BOOLEAN",
+              "PRIOR_YEAR_AGGREGATE_TURNOVER": "MONEY",
+              "MONTH_GROSS_BUSINESS_TURNOVER": "MONEY",
+              "YTD_GROSS_BEFORE_MONTH": "MONEY",
+              "AGGREGATION_BASIS_REVIEWED": "BOOLEAN",
+              "MONTH_PERIOD_REVIEWED": "BOOLEAN"
+            },
+            "applicabilityPredicate": {
+              "op": "AND",
+              "args": [
+                {
+                  "op": "EQ",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "TAX_RESIDENCE"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "STRING",
+                      "value": "ID"
+                    }
+                  ]
+                },
+                {
+                  "op": "EQ",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "SOURCE"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "STRING",
+                      "value": "ID"
+                    }
+                  ]
+                },
+                {
+                  "op": "EQ",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "LEGAL_FORM"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "STRING",
+                      "value": "INDIVIDUAL"
+                    }
+                  ]
+                },
+                {
+                  "op": "EQ",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "INCOME_CATEGORY"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "STRING",
+                      "value": "ELIGIBLE_NON_PROFESSIONAL_DOMESTIC_BUSINESS"
+                    }
+                  ]
+                },
+                {
+                  "op": "EQ",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "ELECTED_ORDINARY_REGIME"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "BOOLEAN",
+                      "value": false
+                    }
+                  ]
+                },
+                {
+                  "op": "EQ",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "PREVIOUSLY_DISQUALIFIED_FROM_FINAL"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "BOOLEAN",
+                      "value": false
+                    }
+                  ]
+                },
+                {
+                  "op": "GTE",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "PRIOR_YEAR_AGGREGATE_TURNOVER"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "NUMBER",
+                      "value": "0"
+                    }
+                  ]
+                },
+                {
+                  "op": "LTE",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "PRIOR_YEAR_AGGREGATE_TURNOVER"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "NUMBER",
+                      "value": "4800000000"
+                    }
+                  ]
+                },
+                {
+                  "op": "GTE",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "MONTH_GROSS_BUSINESS_TURNOVER"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "NUMBER",
+                      "value": "0"
+                    }
+                  ]
+                },
+                {
+                  "op": "GTE",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "YTD_GROSS_BEFORE_MONTH"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "NUMBER",
+                      "value": "0"
+                    }
+                  ]
+                },
+                {
+                  "op": "EQ",
+                  "args": [
+                    {
+                      "op": "SUBTRACT",
+                      "args": [
+                        {
+                          "op": "MAX",
+                          "args": [
+                            {
+                              "op": "LITERAL",
+                              "valueType": "NUMBER",
+                              "value": "0"
+                            },
+                            {
+                              "op": "SUBTRACT",
+                              "args": [
+                                {
+                                  "op": "ADD",
+                                  "args": [
+                                    {
+                                      "op": "INPUT",
+                                      "name": "YTD_GROSS_BEFORE_MONTH"
+                                    },
+                                    {
+                                      "op": "INPUT",
+                                      "name": "MONTH_GROSS_BUSINESS_TURNOVER"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "LITERAL",
+                                  "valueType": "NUMBER",
+                                  "value": "500000000"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "MAX",
+                          "args": [
+                            {
+                              "op": "LITERAL",
+                              "valueType": "NUMBER",
+                              "value": "0"
+                            },
+                            {
+                              "op": "SUBTRACT",
+                              "args": [
+                                {
+                                  "op": "INPUT",
+                                  "name": "YTD_GROSS_BEFORE_MONTH"
+                                },
+                                {
+                                  "op": "LITERAL",
+                                  "valueType": "NUMBER",
+                                  "value": "500000000"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "MULTIPLY",
+                      "args": [
+                        {
+                          "op": "ROUND",
+                          "args": [
+                            {
+                              "op": "DIVIDE",
+                              "args": [
+                                {
+                                  "op": "SUBTRACT",
+                                  "args": [
+                                    {
+                                      "op": "MAX",
+                                      "args": [
+                                        {
+                                          "op": "LITERAL",
+                                          "valueType": "NUMBER",
+                                          "value": "0"
+                                        },
+                                        {
+                                          "op": "SUBTRACT",
+                                          "args": [
+                                            {
+                                              "op": "ADD",
+                                              "args": [
+                                                {
+                                                  "op": "INPUT",
+                                                  "name": "YTD_GROSS_BEFORE_MONTH"
+                                                },
+                                                {
+                                                  "op": "INPUT",
+                                                  "name": "MONTH_GROSS_BUSINESS_TURNOVER"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "op": "LITERAL",
+                                              "valueType": "NUMBER",
+                                              "value": "500000000"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "op": "MAX",
+                                      "args": [
+                                        {
+                                          "op": "LITERAL",
+                                          "valueType": "NUMBER",
+                                          "value": "0"
+                                        },
+                                        {
+                                          "op": "SUBTRACT",
+                                          "args": [
+                                            {
+                                              "op": "INPUT",
+                                              "name": "YTD_GROSS_BEFORE_MONTH"
+                                            },
+                                            {
+                                              "op": "LITERAL",
+                                              "valueType": "NUMBER",
+                                              "value": "500000000"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "LITERAL",
+                                  "valueType": "NUMBER",
+                                  "value": "200"
+                                }
+                              ]
+                            }
+                          ],
+                          "rule": {
+                            "mode": "DOWN",
+                            "precision": 0
+                          }
+                        },
+                        {
+                          "op": "LITERAL",
+                          "valueType": "NUMBER",
+                          "value": "200"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "taxBaseFormula": {
+              "op": "SUBTRACT",
+              "args": [
+                {
+                  "op": "MAX",
+                  "args": [
+                    {
+                      "op": "LITERAL",
+                      "valueType": "NUMBER",
+                      "value": "0"
+                    },
+                    {
+                      "op": "SUBTRACT",
+                      "args": [
+                        {
+                          "op": "ADD",
+                          "args": [
+                            {
+                              "op": "INPUT",
+                              "name": "YTD_GROSS_BEFORE_MONTH"
+                            },
+                            {
+                              "op": "INPUT",
+                              "name": "MONTH_GROSS_BUSINESS_TURNOVER"
+                            }
+                          ]
+                        },
+                        {
+                          "op": "LITERAL",
+                          "valueType": "NUMBER",
+                          "value": "500000000"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "MAX",
+                  "args": [
+                    {
+                      "op": "LITERAL",
+                      "valueType": "NUMBER",
+                      "value": "0"
+                    },
+                    {
+                      "op": "SUBTRACT",
+                      "args": [
+                        {
+                          "op": "INPUT",
+                          "name": "YTD_GROSS_BEFORE_MONTH"
+                        },
+                        {
+                          "op": "LITERAL",
+                          "valueType": "NUMBER",
+                          "value": "500000000"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "amountFormula": {
+              "op": "MULTIPLY",
+              "args": [
+                {
+                  "op": "INPUT",
+                  "name": "TAX_BASE"
+                },
+                {
+                  "op": "LITERAL",
+                  "valueType": "NUMBER",
+                  "value": "0.005"
+                }
+              ]
+            },
+            "rateDefinition": {
+              "kind": "FORMULA_DERIVED"
+            },
+            "parameters": {},
+            "finalRounding": {
+              "mode": "DOWN",
+              "precision": 0
+            },
+            "evidenceRefs": [
+              {
+                "evidenceId": "863f9bb9e0c3f2d34aef57dc830d5c265355b95cc4a39404cd3a2c70f5677c0a",
+                "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+                "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+                "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+                "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+                "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+                "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+                "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+                "locator": "pdf:page:3",
+                "start": 4252,
+                "end": 4970,
+                "quote": "Pasal 56 \n(1) Atas penghasilan dari usaha yang diterima atau \ndiperoleh Wajib Pajak dalam negeri yang memiliki \nperedaran bruto tertentu, dikenai Pajak Penghasilan \nyang bersifa t final. \n(2) Tarif Pajak Penghasilan yang bersifat final \nsebagaimana dimaksud pada ayat (1) sebesar 0,5% \n(nol koma lima persen). \n(3) Tidak termasuk penghasilan dari usaha yang dikenai \nPajak Penghasilan yang bersifat final sebagaimana \ndimaksud pada ayat (1) sebagai berikut: \na. penghasilan yang diterima atau diperoleh Wajib \nPajak orang pribadi dari jasa sehubungan \ndengan pekerjaan bebas; \nb. penghasilan yang diterima atau diperoleh di luar \nnegeri yang pajaknya terutang atau telah dibayar \ndi luar negeri; \nc. penghasilan . . . ",
+                "quoteHash": "f781df8e7a8b952b42f224b6ea11b3d4f49cb71943aa523c73fd7bdcb0544b74",
+                "legalLocator": "PP20/2026 ArticleI(3), amended Article56 exclusions",
+                "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+                "documentTitle": "PP20/2026 ArticleI(3), amended Article56 exclusions",
+                "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+                "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+              },
+              {
+                "evidenceId": "9d742a7e4deee1c1d2f292b245f76fb808f82795e58bac1478df3e02450a948a",
+                "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+                "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+                "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+                "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+                "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+                "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+                "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+                "locator": "pdf:page:5",
+                "start": 6534,
+                "end": 7952,
+                "quote": "Pasal 57 \n( \n1) Wajib Pajak dalam negeri yang memiliki peredaran \nbruto tertentu yang dikenai Pajak Penghasilan \nbersifat final sebagaimana dimaksud dalam Pasal 56 \nayat (1) merupakan: \na. Wajib Pajak orang pribadi; dan \nb. Wajib Pajak badan berbentuk perseroan \nperorangan yang didirikan oleh 1 ( satu) orang \ndan koperasi, \nyang menerima atau memperoleh penghasilan dengan \nperedaran bruto tidak melebihi Rp4.800.000.000,00 \n(empat miliar delapan ratus juta rupiah) dalam 1 \n( satu) Tahun Pajak. \n(2) Tidak termasuk Wajib Pajak sebagaimana dimaksud \npada ayat (1) dalam hal: \na. Wajib Pajak memilih untuk dikenai Pajak \nPenghasilan berdasarkan: \n1. tarif Pasal 17 ayat (1) huruf a \nUndang-Undang Pajak Penghasilan, untuk \nWajib Pajak orang pribadi; atau \n2. tarif Pasal 17 ayat (1) huruf b \nUndang-Undang Pajak Penghasilan \ndengan mempertimbangkan Pasal 31E \nUndang-Undang Pajak Penghasilan, untuk \nWajib Pajak badan; \nb. Wajib Pajak badan berbentuk perseroan \nperorangan sebagaimana dimaksud pada ayat (1) \nhuruf b yang didirikan oleh Wajib Pajak orang \npribadi yang memiliki keahlian khusus yang \nmenyerahkan jasa yang sejenis dengan jasa \nsehubungan dengan pekerjaan be bas \nsebagaimana dimaksud dalam Pasal 56 ayat (4); \nc. Wajib Pajak badan sebagaimana dimaksud pada \nayat ( 1) huruf b, yang memperoleh fasilitas Pajak \nPenghasilan berdasarkan: \n1. Pasal 31A Undang-Undang Pajak \nPenghasilan; \n2. Peraturan ... ",
+                "quoteHash": "597885b522a8e6200e9bd25a35be872b691a2205d51ae4fd9291728562fced95",
+                "legalLocator": "PP20/2026 ArticleI(4), amended Article57(1)-(2)",
+                "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+                "documentTitle": "PP20/2026 ArticleI(4), amended Article57(1)-(2)",
+                "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+                "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+              },
+              {
+                "evidenceId": "e20a8c77023b8df7aeff6974843181a1812e9722bf8fa52a0dfee11338594bfe",
+                "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+                "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+                "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+                "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+                "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+                "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+                "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+                "locator": "pdf:page:6",
+                "start": 8391,
+                "end": 9636,
+                "quote": "Wajib Pajak orang pribadi beserta seluruh Wajib \nPajak badan berbentuk perseroan perorangan \nyang didirikan oleh Wajib Pajak orang pribadi \nyang bersangkutan, yang telah menerima atau \nmemperoleh penghasilan dengan peredaran \nbruto sebagaimana dimaksud pada ayat (1) \nsecara keseluruhan jumlahnya melebihi \nRp4.800.000.000,00 (empat miliar delapan ratus \njuta rupiah) dalam 1 ( satu) Tahun Pajak; dan \nf. Wajib Pajak badan berbentuk koperasi \nsebagaimana dimaksud pada ayat (1) huruf b \nyang telah melewati jangka waktu 4 (empat) \nTahun Pajak sejak Tahun Pajak Wajib Pajak \nbersangkutan terdaftar. \n(3) Wajib Pajak sebagaimana dimaksud pada ayat (2) \nhuruf a wajib menyampaikan pemberitahuan kepada \nDirektur Jenderal Pajak. \n(4) Wajib Pajak sebagaimana dimaksud pada ayat (2) \nhuruf e dan huruf \nf serta ayat (3), untuk Tahun \nPajak-Tahun Pajak berikutnya tidak dapat dikenai \nPajak Penghasilan bersifat final berdasarkan \nPeraturan Pemerintah ini. \n(5) Ketentuan mengenai tata cara pemberitahuan \nsebagaimana dimaksud pada ayat (3) diatur dalam \nPeraturan Menteri. \n5. Ketentuan Pasal 58 diubah sehingga berbunyi sebagai \nberikut: \nPasal 58 \n(1) Besarnya peredaran bruto sebagaimana dimaksud \ndalam Pasal 57 ayat (1) merupakan: \na. jumlah ... ",
+                "quoteHash": "66e888aaf7b0f6469afb3f7ea92c641e8b77cb89f1bde411b454a8c40d112ed9",
+                "legalLocator": "Amended Article57(2)(e)-(f), disqualification and succession",
+                "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+                "documentTitle": "Amended Article57(2)(e)-(f), disqualification and succession",
+                "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+                "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+              },
+              {
+                "evidenceId": "7d28647e36f2f221e2740995c04fcfb1350aec7215ef068ac83e83edf273e640",
+                "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+                "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+                "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+                "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+                "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+                "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+                "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+                "locator": "pdf:page:6",
+                "start": 9525,
+                "end": 9636,
+                "quote": "Pasal 58 \n(1) Besarnya peredaran bruto sebagaimana dimaksud \ndalam Pasal 57 ayat (1) merupakan: \na. jumlah ... ",
+                "quoteHash": "ca5cb2b3f39b0574238acd86e64e82a82160c94b6fd589918f34950f065c8a06",
+                "legalLocator": "PP20/2026 ArticleI(5), amended Article58 aggregate turnover",
+                "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+                "documentTitle": "PP20/2026 ArticleI(5), amended Article58 aggregate turnover",
+                "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+                "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+              },
+              {
+                "evidenceId": "4f2350cf548fdf243674e382bf32c42e6686fec561f00d20145a5ab74be642fd",
+                "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+                "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+                "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+                "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+                "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+                "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+                "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+                "locator": "pdf:page:7",
+                "start": 9693,
+                "end": 10781,
+                "quote": "jumlah keseluruhan peredaran bruto atas \npenghasilan dari usaha dan jasa sehubungan \ndengan pekerjaan bebas dalam 1 (satu) tahun \ndari Tahun Pajak terakhir sebelum Tahun Pajak \nbersangkutan, baik yang dikenai Pajak \nPenghasilan yang tidak bersifat final maupun \nyang bersifat final, termasuk peredaran bruto \nyang diterima atau diperoleh di luar negeri; dan \nb. imbalan atau nilai pengganti berupa uang atau \nnilai uang yang diterima atau diperoleh dari \nusaha dan jasa sehubungan dengan pekerjaan \nbebas sebelum dikurangi potongan penjualan, \npotongan tunai, dan/atau potongan sejenis. \n(2) Dalam hal Wajib Pajak orang pribadi merupakan \nsuami-istri yang: \na. menghendaki perjanjian pemisahan harta dan \npenghasilan secara tertulis; atau \nb. istrinya menghendaki memilih untuk \nmenjalankan hak dan kewajiban perpajakannya \nsendiri, \nsebagaimana dimaksud dalam Pasal 8 ayat (2) \nhuruf b dan huruf c Undang-Undang Pajak \nPenghasilan, besarnya peredaran bruto sebagaimana \ndimaksud pada ayat (1) ditentukan berdasarkan \npenggabungan peredaran bruto dari suami dan istri. \n(3) Penentuan ... ",
+                "quoteHash": "c68328e34bb24f850c84f8f8198cc52819eee800a8499a798f3a44a770ed14b4",
+                "legalLocator": "Amended Article58(1)-(2): professional/foreign/spousal turnover",
+                "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+                "documentTitle": "Amended Article58(1)-(2): professional/foreign/spousal turnover",
+                "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+                "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+              },
+              {
+                "evidenceId": "514bcfb7b0bc280728b2e90cb73fdad6bd6f0038c55f344e8a3d81e6ed464b0a",
+                "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+                "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+                "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+                "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+                "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+                "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+                "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+                "locator": "pdf:page:8",
+                "start": 11188,
+                "end": 12210,
+                "quote": "6. Pasal 59 dihapus. \nPasal II \n1. Pada saat Peraturan Pemerintah ini mulai berlaku: \na. Wajib Pajak yang berdasarkan ketentuan Peraturan \nPemerintah Nomor 55 Tahun 2022 tentang \nPenyesuaian Pengaturan di Bidang Pajak Penghasilan \nyang jangka waktu tertentu pengenaan Pajak \nPenghasilan yang bersifat final berakhir pada: \n1) Tahun Pajak 2024 untuk Wajib Pajak orang \npribadi, dapat dikenai Pajak Penghasilan yang \nbersifat final berdasarkan Peraturan Pemerintah \nini untuk Tahun Pajak 2025 dan Tahun Pajak \n2026; atau \n2) Tahun Pajak 2025 untuk Wajib Pajak orang \npribadi dan Wajib Pajak badan berbentuk \nperseroan perorangan yang didirikan oleh 1 \n( satu) orang, dapat dikenai Pajak Penghasilan \nyang bersifat final berdasarkan Peraturan \nPemerintah ini untuk Tahun Pajak 2026, \nsepanjang Wajib Pajak yang bersangkutan memenuhi \nkriteria untuk dikenai Pajak Penghasilan yang \nbersifat final berdasarkan Peraturan Pemerintah \nNomor 55 Tahun 2022 tentang Penyesuaian \nPengaturan di Bidang Pajak Penghasilan; \nb. Wajib ... ",
+                "quoteHash": "98079a89922bd5a4cae649efbabbbc50a97ff3b51946a22e92fb3e5fa115f52f",
+                "legalLocator": "PP20/2026 ArticleI(6), ArticleII transition; not modeled as automatic backdating",
+                "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+                "documentTitle": "PP20/2026 ArticleI(6), ArticleII transition; not modeled as automatic backdating",
+                "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+                "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+              },
+              {
+                "evidenceId": "c6136b3f43330cd8574d3b13f03ca952c6005c961ce7be2df236242da3f19603",
+                "sourceUrl": "https://jdih.kemenkeu.go.id/api/download/d057ff82-50e7-4127-b66b-f704a36f071d/2026pp020.pdf",
+                "rawContentHash": "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+                "rawStorageRef": "research/phase4-packs/raw/blobs/3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520.bin",
+                "artifactId": "7a0ecd45-08ed-4c52-80e4-72abcee6a87e",
+                "envelopeId": "871ce3008b5fd04ee9a49db0ec3930684a546a9079c89f264f735b8d209578ab",
+                "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20.json",
+                "normalizedTextHash": "545e4d1c359fd92b0261861c3b6f42842e1cb9987d556700c4bbd2bd7702c067",
+                "locator": "pdf:page:11",
+                "start": 16125,
+                "end": 16540,
+                "quote": "pada tanggal 22 April 2026 \nPRESIDEN REPUBLIK INDONESIA, \nttd. \nPRABOWO SUBIANTO \nDiundangkan di Jakarta \npada tanggal 22 April 2026 \nMENTERI SEKRETARIS NEGARA \nREPUBLIK INDONESIA, \nttd. \nPRASETYO HADI \nLEMBARAN NEGARA REPUBLIK INDONESIA TAHUN 2026 NOMOR 43 \nSalinan sesuai dengan aslinya \nKEMENTERIAN SEKRETARIAT NEGARA \nEPUBLIK INDONESIA \nPerundang-undangan an \n~)mlw·nistrasi Huku \nlvanna Djaman \nSK No 283785 A ",
+                "quoteHash": "192e322e38b316bbcadd2251893d61898f1f721152a349a15ef05bae0465c90f",
+                "legalLocator": "PP20/2026 promulgation 22 April 2026 and ArticleII(2)",
+                "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+                "documentTitle": "PP20/2026 promulgation 22 April 2026 and ArticleII(2)",
+                "extractionStorageRef": "research/phase4-packs/extractions/id-pp20.json",
+                "extractionHash": "36d85b620fb3643a0e0501d8667c4d89fa4a7f2c0c96f8e7f9e88f020d24c844"
+              },
+              {
+                "evidenceId": "490ffe4d858914d666133de842511ab22c4a35a5ac282caf7db0733b9ebd52dd",
+                "sourceUrl": "https://jdih.kemenkeu.go.id/dok/pp-20-tahun-2026",
+                "rawContentHash": "be292f637e5aa5e5acc43ca0885348dd067f02e0d78b9272a810b7521c609090",
+                "rawStorageRef": "research/phase4-packs/raw/blobs/be292f637e5aa5e5acc43ca0885348dd067f02e0d78b9272a810b7521c609090.bin",
+                "artifactId": "e2909c16-3e64-4198-8f28-e01176a9a6be",
+                "envelopeId": "21aa8b1e6a81ffd79e74a2fd743e2a1b69de13bed63c68516d5237667927c9ea",
+                "envelopeStorageRef": "research/phase4-packs/normalized/id-pp20-status.json",
+                "normalizedTextHash": "6dd2c43e68f3d860a646396c4c4590b47e22df1e31a4c9ca70fa39a0e943e41a",
+                "locator": "html:article:180973",
+                "start": 17,
+                "end": 113,
+                "quote": "Dokumen ini mengubah PP 55 TAHUN 2022 tentang Penyesuaian Pengaturan di Bidang Pajak Penghasilan",
+                "quoteHash": "a65242c922feda3bdf7096ccbe4f610560d04df8ba926858b7a3b3884dd68844",
+                "legalLocator": "JDIH current relationship: PP20 changes PP55",
+                "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+                "documentTitle": "PP 20 TAHUN 2026 - Perubahan atas Peraturan Pemerintah Nomor 55 Tahun 2022 tentang Penyesuaian Pengaturan di Bidang Pajak Penghasilan | JDIH Kementerian Keuangan"
+              },
+              {
+                "evidenceId": "d17781577bd5e935ffd8021ed7f2c8c1c51348bef554576ee56ba5ce714d2d52",
+                "sourceUrl": "https://www.pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan",
+                "rawContentHash": "369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2",
+                "rawStorageRef": "research/phase4-packs/raw/blobs/369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2.bin",
+                "artifactId": "14019b75-4b23-41f1-aded-8c9a9da3231f",
+                "envelopeId": "39ee4e3aae5d208e853be985769c03158662f164942cc601a3a28bd533011896",
+                "envelopeStorageRef": "research/phase4-packs/normalized/id-pp55-html.json",
+                "normalizedTextHash": "7ea60bd77517ef775aa9125079a207d5e4c8f4259fc7075bd498cd389b1d5eb9",
+                "locator": "html:article:48408",
+                "start": 79661,
+                "end": 81361,
+                "quote": "Pasal 60 (1) Jumlah peredaran bruto atas penghasilan dari usaha sebagaimana dimaksud dalam Pasal 56 ayat (1) setiap bulan merupakan dasar pengenaan pajak yang digunakan untuk menghitung Pajak Penghasilan yang bersifat final. (2) Wajib Pajak orang pribadi yang memiliki peredaran bruto tertentu sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf a, atas bagian peredaran bruto dari usaha sampai dengan Rp500.000.000,00 (lima ratus juta rupiah) dalam 1 (satu) Tahun Pajak tidak dikenai Pajak Penghasilan. (3) Bagian peredaran bruto dari usaha tidak dikenai Pajak Penghasilan sebagaimana dimaksud pada ayat (2) merupakan jumlah peredaran bruto dari usaha yang dihitung secara kumulatif sejak Masa Pajak pertama dalam suatu Tahun Pajak atau bagian Tahun Pajak. (4) Peredaran bruto yang dijadikan dasar pengenaan pajak sebagaimana dimaksud pada ayat (1) dan jumlah peredaran bruto dari usaha yang dihitung secara kumulatif sebagaimana dimaksud pada ayat (3) merupakan imbalan atau nilai pengganti berupa uang atau nilai uang yang diterima atau diperoleh dari usaha, sebelum dikurangi potongan penjualan, potongan tunai, dan/atau potongan sejenis. (5) Pajak Penghasilan terutang dihitung berdasarkan tarif sebagaimana dimaksud dalam Pasal 56 ayat (2) dikalikan dengan: dasar pengenaan pajak sebagaimana dimaksud pada ayat (1), untuk Wajib Pajak badan sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf b; atau dasar pengenaan pajak sebagaimana dimaksud pada ayat (1) setelah memperhitungkan bagian peredaran bruto dari usaha sebagaimana dimaksud pada ayat (2), untuk Wajib Pajak orang pribadi sebagaimana dimaksud dalam Pasal 57 ayat (1) huruf a. Pasal 61 (1) Wajib Pajak sebagaimana dimaksud dalam Pasal 5",
+                "quoteHash": "a20744060b6ee755040e69999e81619a14459f68461b04af9c3bb38b1821ebda",
+                "legalLocator": "PP55/2022 Article60: monthly gross, cumulative 500m exclusion, rate/base",
+                "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+                "documentTitle": "PENYESUAIAN PENGATURAN DI BIDANG PAJAK PENGHASILAN | Direktorat Jenderal Pajak"
+              },
+              {
+                "evidenceId": "0162f14c8cc73c9bbcaba532458ded7023b121e5742f97f8cbfbc92ddd18ebc1",
+                "sourceUrl": "https://www.pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan",
+                "rawContentHash": "369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2",
+                "rawStorageRef": "research/phase4-packs/raw/blobs/369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2.bin",
+                "artifactId": "14019b75-4b23-41f1-aded-8c9a9da3231f",
+                "envelopeId": "39ee4e3aae5d208e853be985769c03158662f164942cc601a3a28bd533011896",
+                "envelopeStorageRef": "research/phase4-packs/normalized/id-pp55-html.json",
+                "normalizedTextHash": "7ea60bd77517ef775aa9125079a207d5e4c8f4259fc7075bd498cd389b1d5eb9",
+                "locator": "html:article:48408",
+                "start": 81302,
+                "end": 82152,
+                "quote": "Pasal 61 (1) Wajib Pajak sebagaimana dimaksud dalam Pasal 57 ayat (1) yang peredaran brutonya pada Tahun Pajak berjalan telah melebihi Rp4.800.000.000,00 (empat miliar delapan ratus juta rupiah), atas penghasilan dari usaha tetap dikenai tarif Pajak Penghasilan sebagaimana dimaksud dalam Pasal 56 ayat (2) sampai dengan akhir Tahun Pajak bersangkutan. (2) Atas penghasilan dari usaha sebagaimana dimaksud dalam Pasal 56 ayat (1) yang diterima atau diperoleh pada Tahun Pajak-Tahun Pajak berikutnya oleh Wajib Pajak sebagaimana dimaksud pada ayat (1) dikenai Pajak Penghasilan berdasarkan: tarif Pasal 17 ayat (1) huruf a Undang-Undang Pajak Penghasilan, untuk Wajib Pajak orang pribadi; atau tarif Pasal 17 ayat (1) huruf b Undang-Undang Pajak Penghasilan dengan mempertimbangkan Pasal 31E Undang-Undang Pajak Penghasilan, untuk Wajib Pajak badan. P",
+                "quoteHash": "5e3880069b3a9b2da8a775556c9f4be7a40ff9869fb578ee1d88d3e32cb2ba8b",
+                "legalLocator": "PP55/2022 Article61: current-year threshold crossing and subsequent years",
+                "sourceKind": "OFFICIAL_LEGAL_TEXT_OR_AUTHORITY_GUIDANCE",
+                "documentTitle": "PENYESUAIAN PENGATURAN DI BIDANG PAJAK PENGHASILAN | Direktorat Jenderal Pajak"
+              }
+            ],
+            "treatyRelevant": true,
+            "requiredTrueFacts": [
+              "AGGREGATION_BASIS_REVIEWED",
+              "MONTH_PERIOD_REVIEWED"
+            ],
+            "effectiveFrom": "2026-04-22",
+            "effectiveTo": "2026-12-31"
+          }
+        ],
+        "testOnly": true,
+        "label": "TEST ONLY controlled approval simulation: Monthly UMKM final-income INDIVIDUAL 2026; reviewed domestic non-professional business subset"
+      },
+      "contentHash": "b8ea500d0dfeabfe4f3649755fe94c182f926ad5eaebbb80a87de52f881c13ce",
+      "reviewPackage": {
+        "stage": "READY_FOR_REVIEW",
+        "sourceStatus": "SOURCE_VERIFIED",
+        "structureStatus": "STRUCTURE_VALIDATED",
+        "humanApproval": false,
+        "scope": "Monthly UMKM final-income INDIVIDUAL 2026; reviewed domestic non-professional business subset",
+        "temporal": {
+          "publishedAt": "2026-04-22",
+          "legalFrom": "2026-04-22",
+          "coverageYear": "2026",
+          "verifiedAsOf": "2026-10-29",
+          "amendmentAssessment": "PP20/2026 changes PP55/2022; retained exact old/new article scope and ArticleII transitions. Coverage end is a review boundary, not claimed repeal.",
+          "basis": "PP20/2026 amended Art56-58, removed Art59; unchanged Art60-61 read with PP55. Whole requested month must fit after commencement."
+        },
+        "exclusions": [
+          "Prior-year turnover must include the legally relevant branches/spouse/business group; 2026 also professional and foreign turnover and all relevant one-founder companies. Human review of aggregation required.",
+          "Income category must be reviewed against Article56 exclusions: professional work, foreign-taxed income, separately final-taxed and exempt income are excluded.",
+          "2026 Jan-Apr split/transition, cooperatives, other legal forms, legacy beneficiaries and permanently disqualified histories need separate review.",
+          "Only one complete tax month; YTD before this month includes all relevant business outlets. No monthly-to-annual duplicate aggregation.",
+          "Exact whole-rupiah subset: taxable monthly gross must be a multiple of IDR200; other amounts unresolved pending governed rounding evidence."
+        ],
+        "factPrompts": {
+          "PRIOR_YEAR_AGGREGATE_TURNOVER": "What is the prior-year turnover aggregated under this rule, including the relevant spouse, branches and business group?",
+          "MONTH_GROSS_BUSINESS_TURNOVER": "What is gross eligible business turnover for this tax month, before discounts?",
+          "YTD_GROSS_BEFORE_MONTH": "What is cumulative gross business turnover from the start of this tax year through the previous month?",
+          "LEGAL_FORM": "What is the taxpayer legal form?",
+          "INCOME_CATEGORY": "Has this income been classified against the statutory business-income exclusions?",
+          "ELECTED_ORDINARY_REGIME": "Has the taxpayer elected the ordinary income-tax regime?",
+          "PREVIOUSLY_DISQUALIFIED_FROM_FINAL": "Has a prior threshold crossing or election permanently ended eligibility?",
+          "AGGREGATION_BASIS_REVIEWED": "Has a human reviewed the statutory turnover aggregation basis?",
+          "MONTH_PERIOD_REVIEWED": "Is this exactly one complete tax month, with its YTD balance reconciled?",
+          "REGIME_FIRST_TAX_YEAR": "Which tax year first counted toward the statutory final-income regime period?"
+        }
+      }
+    }
+  ],
+  "createdAt": "2026-10-28T23:06:51.561Z",
+  "calculationHash": "b0ba746d6303d8607c944583b38c19a2093b38423474317079c17befc554f2bb",
+  "integrityHash": "b416939e9469ab9685d62976d21b07fd2ddb63bdb788bab381f4653d0a21e8be"
+}

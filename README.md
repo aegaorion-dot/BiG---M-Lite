@@ -91,11 +91,22 @@ The UI resumes the saved pending question after refresh. It does not claim to re
 
 ## Verification
 
-See docs/IMPLEMENTATION-REPORT.md for the profiling baseline and docs/ORIGINAL-PORT.md for Original source provenance. Current engine architecture, coverage limits and validation are in [Phase 3 report](docs/PHASE3-TAX-REPORT.md) and [tax contracts/CLI](docs/PHASE3-TAX-CONTRACTS.md).
+See docs/IMPLEMENTATION-REPORT.md for the profiling baseline and docs/ORIGINAL-PORT.md for Original provenance. Engine architecture is documented in the [Phase 3 report](docs/PHASE3-TAX-REPORT.md) and [tax contracts/CLI](docs/PHASE3-TAX-CONTRACTS.md). Current source acquisition, candidate coverage, temporal limits and validation are in the [Phase 4 report](docs/PHASE4-PACKS-REPORT.md).
 
 ## Offline tax engine
 
     npm run tax -- catalog
     npm run tax:demo
 
-The catalog contains candidates, not automatically approved law. The demo reports the individual/treaty coverage gaps and an isolated TEST ONLY positive calculation. Real available material is COMPANY/CIT 2025; it is not freelancer income law. Tax calculations never browse, invoke a model or post GL. The accounting handoff remains a mapping review plan targeting the existing PostingService.
+The catalog contains candidates, not automatically approved law. Phase 4 adds eight structured real-source CountryPack candidates, two treaty evidence dossiers and six research candidates. No new legal content is approved by default. The earlier COMPANY/CIT2025 reference remains separate and cannot extend into 2026.
+
+    npm run packs:demo
+    npm run tax -- verify-sources
+    npm run tax -- inspect <candidate-id>
+    npm run tax -- questions request.json facts-candidate.json
+
+Indonesia includes review-ready individual PKP, monthly UMKM and narrow withholding subsets. Singapore has a narrow YA2026 company subset with income basis2025. VAT, foreign credit, ID–SG/ID–AU treaty effects and executable AU/US/UK domestic coverage remain unresolved. Coverage windows, eligibility facts and exact-arithmetic restrictions are explicit.
+
+Selected packs drive tax-readiness questions through the existing profiler and optional web-store tax-review context. AI answers remain candidates. Human fact confirmation and legal approval are separate; profile corrections invalidate tax proposals. Bookkeeping remains available while tax is unresolved.
+
+Use the [Phase 4 review workflow](docs/PHASE4-REVIEW-WORKFLOW.md) to inspect evidence and perform explicit human review. Tax calculations never browse, invoke a model or post GL. The existing accounting boundary still requires mapping review and rejects TEST ONLY amounts.

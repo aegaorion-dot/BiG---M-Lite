@@ -141,12 +141,13 @@ function applyFacts(state,facts,source='USER',{jurisdictionFacts=[],correction=f
 function slotValue(state,key){const s=state.slots[key];return s&&s.status!=='CONFLICT'&&s.status!=='UNKNOWN'?s.value:null;}
 function jurisdictionValue(state,basis){return state.jurisdictionFacts.find(f=>f.basis===basis&&['CANDIDATE','CONFIRMED'].includes(f.status))?.countryCode??null;}
 function gapAnalysis(state){return CRITICAL_SLOTS.filter(k=>!slotValue(state,k));}
-function planQuestion(state,lang='en'){
+function planQuestion(state,lang='en',{taxReadiness=null}={}){
  const conflict=Object.entries(state.slots).find(([,s])=>s.status==='CONFLICT');
  const jurisdictionConflict=state.jurisdictionFacts.find(f=>f.status==='CONFLICT');
  if(conflict)return {key:conflict[0],text:lang==='id'?'Ada jawaban yang berbeda. Tolong nyatakan koreksi untuk pengaturan yang ingin Anda gunakan.':'Those answers differ. Please state a correction for the setup you want to use.'};
  if(jurisdictionConflict)return {key:'jurisdiction.'+jurisdictionConflict.basis,text:lang==='id'?'Lokasi tersebut berbeda. Tolong jelaskan lokasi pendaftaran dan lokasi kerja secara terpisah.':'Those locations differ. Please clarify registration and work location separately.'};
  if(gapAnalysis(state).length)return {key:'currency.functional',text:lang==='id'?'Mata uang apa yang Anda gunakan untuk pembukuan? Pembayaran pelanggan bisa berbeda.':'Which currency do you want to keep your books in? Customer payments can use another currency.'};
+ const taxQuestion=require('../tax/readiness').taxQuestion(taxReadiness);if(taxQuestion)return taxQuestion;
  return {key:'done',text:lang==='id'?'Silakan tinjau pengaturan. Pengaturan pajak dapat ditinjau nanti.':'Please review your setup. Tax settings can be reviewed later.'};
 }
 function planConfiguration(state,{year=new Date().getUTCFullYear(),organizationId='org-contoh'}={}){

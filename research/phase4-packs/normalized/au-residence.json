@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "AU-ATO",
+  "jurisdictionCode": "AU",
+  "metadata": {
+    "title": "Your tax residency | Australian Taxation Office",
+    "officialDocumentId": null,
+    "language": "en",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "d89c7e33-381b-46da-9400-28e9f27f5bcd",
+    "rawContentHash": "da5da0c71b8850da1eab96d8ebff99e806fe790f1cba388f34c9786dddc75cb6",
+    "sourceUrl": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency",
+    "finalUrl": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency",
+    "retrievedAt": "2026-10-28T22:40:12.114Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "ATO",
+    "authorityName": "Australian Taxation Office",
+    "sourceRole": "TAX_AUTHORITY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/da5da0c71b8850da1eab96d8ebff99e806fe790f1cba388f34c9786dddc75cb6.bin",
+    "rawContentHash": "da5da0c71b8850da1eab96d8ebff99e806fe790f1cba388f34c9786dddc75cb6"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/da5da0c71b8850da1eab96d8ebff99e806fe790f1cba388f34c9786dddc75cb6.bin",
+      "rawContentHash": "da5da0c71b8850da1eab96d8ebff99e806fe790f1cba388f34c9786dddc75cb6"
+    },
+    "metaTags": [
+      "<meta charSet=\"utf-8\" data-next-head=\"\"/>",
+      "<meta name=\"viewport\" content=\"width=device-width\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.title\" content=\"Your tax residency\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.identifier\" content=\"https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.description\" content=\"If you are coming to Australia or going overseas, you may need to work out your residency for tax purposes.\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.creator\" content=\"scheme=AGLSTERMS.AglsAgent; corporateName=Australian Taxation Office; address=GPO Box 9990 Canberra ACT 2600; contact=13 28 65\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.publisher\" content=\"scheme=AGLSTERMS.AglsAgent; corporateName=Australian Taxation Office; address=GPO Box 9990 Canberra ACT 2600; contact=13 28 65\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.modified\" content=\"scheme=dcterms.ISO8601; 2026-06-02T14:00:00.000+00:00\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.language\" content=\"dcterms.RFC4646; en\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.subject\" content=\"australian assets, australian property, australian resident, foreign resident, non-resident, temporary resident, australian sourced income, australian worker, backpacker, certificate of payment,  foreign employment income, foreign income, foreign investments, foreign property, foreign resident, foreign salary, foreign worker, gap year, going overseas, holiday visa, international students, international visitor, investing overseas, work in Australia, working holiday, residency, leaving Australia, visitor factsheet, appeal, court case, federal court, addy v commissioner\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.type\" content=\"Content\" data-next-head=\"\"/>",
+      "<meta name=\"description\" content=\"If you are coming to Australia or going overseas, you may need to work out your residency for tax purposes.\" data-next-head=\"\"/>",
+      "<meta name=\"keywords\" content=\"australian assets, australian property, australian resident, foreign resident, non-resident, temporary resident, australian sourced income, australian worker, backpacker, certificate of payment,  foreign employment income, foreign income, foreign investments, foreign property, foreign resident, foreign salary, foreign worker, gap year, going overseas, holiday visa, international students, international visitor, investing overseas, work in Australia, working holiday, residency, leaving Australia, visitor factsheet, appeal, court case, federal court, addy v commissioner\" data-next-head=\"\"/>",
+      "<meta name=\"robots\" content=\"index,follow\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:card\" content=\"summary\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:title\" content=\"Your tax residency\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:description\" content=\"If you are coming to Australia or going overseas, you may need to work out your residency for tax purposes.\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:image\" content=\"https://www.ato.gov.au/-/media/ato/home-banner.jpg\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:image:alt\" content=\"home banner\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:image:width\" content=\"2550\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:image:height\" content=\"1913\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:url\" content=\"https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:site\" content=\"@ato_gov_au\" data-next-head=\"\"/>",
+      "<meta name=\"og:type\" content=\"website\" data-next-head=\"\"/>",
+      "<meta name=\"og:title\" content=\"Your tax residency\" data-next-head=\"\"/>",
+      "<meta name=\"og:description\" content=\"If you are coming to Australia or going overseas, you may need to work out your residency for tax purposes.\" data-next-head=\"\"/>",
+      "<meta name=\"og:image\" content=\"https://www.ato.gov.au/-/media/ato/home-banner.jpg\" data-next-head=\"\"/>",
+      "<meta name=\"og:image:width\" content=\"2550\" data-next-head=\"\"/>",
+      "<meta name=\"og:image:height\" content=\"1913\" data-next-head=\"\"/>",
+      "<meta name=\"og:url\" content=\"https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency\" data-next-head=\"\"/>",
+      "<meta name=\"fb:app_id\" content=\"123456789\" data-next-head=\"\"/>"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Your tax residency | Australian Taxation Office ATO Community Legal Database What's New Log in to online services Log in Log in to ATO online services Access secure services, view your details and lodge online. Search Log in to online services Log in Log in to ATO online services Access secure services, view your details and lodge online. Menu Search Your tax residency If you are coming to Australia or going overseas, you may need to work out your residency for tax purposes. Last updated 3 June 2026 Print or Download Work out your tax residency You can use the residency tests to work out if you're: an Australian resident for tax purposes a foreign or temporary resident for tax purposes. You can also be a temporary resident if you are an Australian resident or a foreign resident for tax purposes. We don't use the same rules as the Department of Home Affairs. This means you: can be an Australian resident for tax purposes without being an Australian citizen or permanent resident may have a visa to enter Australia but are not an Australian resident for tax purposes. For a summary of key information about residency status, download Residency for tax purposes (PDF, 296KB) This link will download a file . This information is also available in Arabic, Chinese, Japanese, Korean and Vietnamese, go to Information in your language . If you're a working holiday maker, see Working holiday makers . Residency tests There are statutory tests to determine your residency: Resides test Domicile test 183-day test The Commonwealth superannuation test . You can also use our work out your residency status for tax purposes tools to help work out your residency. Resides test The primary test of tax residency is called the resides test . If you reside in Australia, you're an Australian resident for tax purposes and you don't need to apply any of the other residency tests. Some of the factors that can be used to determine residency status include: physical presence intention and purpose family business or employment ties maintenance and location of assets social and living arrangements. If you don't satisfy the resides test, you'll still be an Australian resident if you satisfy one of 3 statutory tests. Domicile test You're an Australian resident if your domicile (the place that is your permanent home) is in Australia, unless we are satisfied that your permanent place of abode is outside Australia. A domicile is a place that is your permanent home by law. For example, it may be a domicile by origin (where you were born) or by choice (where you have changed your home with the intent of making it permanent). For more information about this test, see the domicile test . 183-day test You will be a resident under this test if you're actually present in Australia for more than half the income year, whether continuously or with breaks. unless it is established that your &lsquo;usual place of abode&rsquo; is outside Australia and you have no intention of taking up residence here. For more information about this test, see the 183-day test . The Commonwealth superannuation test This test applies to Australian Government employees working at Australian posts overseas and who are contributing members of the Commonwealth Superannuation Scheme (CSS) or Public Sector Superannuation Scheme (PSS). It does not apply to members of the Public Sector Superannuation Accumulation Plan (PSSAP). If this is the case, you (and your spouse and children under 16 years old) are a resident of Australia regardless of any other factors. For more information about this test, see the superannuation test . Example: Australian resident under the domicile test Emily leaves Australia to work in Japan as a teacher of English. Emily has a one-year contract after which she plans to tour China and other parts of Asia before returning to Australia to continue work here. Emily lives with a family in Japan during her time there and rents out her property in Australia. Emily is single. Her parents live interstate and her brother has moved to France. Emily is an Australian resident for tax purposes even though she is residing in Japan because, under the domicile test: her domicile is in Australia (as she is a resident who has lived in Australia and will generally retain a domicile here when absent overseas), unless she chooses to permanently migrate to another country) her permanent place of abode remains Australia. End of example Example: Foreign resident for tax purposes Bronwyn, an Australian resident, receives a job offer to work overseas for 3 years, with an option to extend for another 3 years. Bronwyn, her husband and 3 children decide to make the move. They rent out their house in Australia as they intend to return one day. While overseas they rent a house with an accommodation allowance provided under Bronwyn's contract. Bronwyn is unsure if she will extend her contract to stay for another 3 years. She will decide later depending on how the family like life. Bronwyn is a foreign resident for tax purposes because she does not satisfy 'the resides' test. This is due to: the length of her physical absence from Australia other circumstances not being consistent with residing in Australia, even though she has retained the family home &ndash; such as establishing a home overseas with her family renting out her family home in Australia. Bronwyn has also not satisfied the domicile test, as: her permanent place of abode is outside Australia due to the length of time committed to being overseas the establishment of a home overseas her family going with her overseas the fact that she won't be selling the family home in Australia, although relevant, is not persuasive enough to overcome the finding on the basis of the other factors it can be argued that she has abandoned her home in Australia for the duration of her stay, by renting it out. End of example Failure to cut connection with Australia A legal decision External Link in 2013 shows that a person who fails to cut their connection with Australia will be treated as an Australian resident. If your residency status changes during the year If your status has changed from resident to foreign resident during the income year, answer 'yes' to the question Are you an Australian resident? on your tax return. This ensures you're taxed at resident rates for the income year. You're entitled to a pro-rata tax-free threshold for the number of months you're an Australian resident. Foreign residents don't have to pay the Medicare levy. In your tax return you can claim the number of days in the income year that you're not an Australian resident as exempt days. From the date you cease to be an Australian resident, there is no need to return your foreign-source income in your tax return. Also, all Australian-sourced interest, dividends and royalties you received after you ceased to be an Australian resident are subject to the withholding tax provisions as a final tax. They should not be included in your tax return. If you have a Higher Education Loan Program (HELP), VET Student Loan (VSL) or Australian Apprenticeship Support Loan (AASL) debt, you may need to report your worldwide income . Your worldwide income and outstanding debt amounts are used to work out your repayment obligations against these debts. If you are or become a foreign resident and you want more information about capital gains tax, see Foreign residents and capital gains tax . For more information about foreign employment income being exempt from tax, see Tax exempt income from foreign employment . Foreign and temporary residents If you're from overseas working in Australia, your residency and temporary status impact your tax and other obligations. Australian resident for tax purposes If you're an Australian resident for tax purposes, you must declare all income you've earned in Australia and overseas. QC 59296 Print or Download Tools Media centre Forms and instructions Tax rates and codes Calculators and tools Tools Media centre Forms and instructions Tax rates and codes Calculators and tools Tax information for People with disability Aboriginal and Torres Strait Islander peoples Norfolk Island Other languages Tax information for People with disability Aboriginal and Torres Strait Islander peoples Norfolk Island Other languages Help and support Top call centre questions Contact us Identity security and scams Financial difficulties and disasters Help and support Top call centre questions Contact us Identity security and scams Financial difficulties and disasters About ATO Careers Privacy policy ATOtv Other languages facebook Opens in a new window Linkedin Opens in a new window Instagram Opens in a new window We acknowledge the Traditional Owners and Custodians of Country throughout Australia and their continuing connection to land, waters and community. We pay our respects to them, their cultures, and Elders past and present. © Commonwealth of Australia | View related websites Our commitment to you We are committed to providing you with accurate, consistent and clear information to help you understand your rights and entitlements and meet your obligations. If you follow our information and it turns out to be incorrect, or it is misleading and you make a mistake as a result, we will take that into account when determining what action, if any, we should take. Some of the information on this website applies to a specific financial year. This is clearly marked. Make sure you have the information for the right year before making decisions based on that information. If you feel that our information does not fully cover your circumstances, or you are unsure how it applies to you, contact us or seek professional advice. Copyright notice &copy; Australian Taxation Office for the Commonwealth of Australia You are free to copy, adapt, modify, transmit and distribute this material as you wish (but not in any way that suggests the ATO or the Commonwealth endorses you or any of your services or products).",
+    "blocks": [
+      {
+        "locator": "html:document",
+        "text": "Your tax residency | Australian Taxation Office ATO Community Legal Database What's New Log in to online services Log in Log in to ATO online services Access secure services, view your details and lodge online. Search Log in to online services Log in Log in to ATO online services Access secure services, view your details and lodge online. Menu Search Your tax residency If you are coming to Australia or going overseas, you may need to work out your residency for tax purposes. Last updated 3 June 2026 Print or Download Work out your tax residency You can use the residency tests to work out if you're: an Australian resident for tax purposes a foreign or temporary resident for tax purposes. You can also be a temporary resident if you are an Australian resident or a foreign resident for tax purposes. We don't use the same rules as the Department of Home Affairs. This means you: can be an Australian resident for tax purposes without being an Australian citizen or permanent resident may have a visa to enter Australia but are not an Australian resident for tax purposes. For a summary of key information about residency status, download Residency for tax purposes (PDF, 296KB) This link will download a file . This information is also available in Arabic, Chinese, Japanese, Korean and Vietnamese, go to Information in your language . If you're a working holiday maker, see Working holiday makers . Residency tests There are statutory tests to determine your residency: Resides test Domicile test 183-day test The Commonwealth superannuation test . You can also use our work out your residency status for tax purposes tools to help work out your residency. Resides test The primary test of tax residency is called the resides test . If you reside in Australia, you're an Australian resident for tax purposes and you don't need to apply any of the other residency tests. Some of the factors that can be used to determine residency status include: physical presence intention and purpose family business or employment ties maintenance and location of assets social and living arrangements. If you don't satisfy the resides test, you'll still be an Australian resident if you satisfy one of 3 statutory tests. Domicile test You're an Australian resident if your domicile (the place that is your permanent home) is in Australia, unless we are satisfied that your permanent place of abode is outside Australia. A domicile is a place that is your permanent home by law. For example, it may be a domicile by origin (where you were born) or by choice (where you have changed your home with the intent of making it permanent). For more information about this test, see the domicile test . 183-day test You will be a resident under this test if you're actually present in Australia for more than half the income year, whether continuously or with breaks. unless it is established that your &lsquo;usual place of abode&rsquo; is outside Australia and you have no intention of taking up residence here. For more information about this test, see the 183-day test . The Commonwealth superannuation test This test applies to Australian Government employees working at Australian posts overseas and who are contributing members of the Commonwealth Superannuation Scheme (CSS) or Public Sector Superannuation Scheme (PSS). It does not apply to members of the Public Sector Superannuation Accumulation Plan (PSSAP). If this is the case, you (and your spouse and children under 16 years old) are a resident of Australia regardless of any other factors. For more information about this test, see the superannuation test . Example: Australian resident under the domicile test Emily leaves Australia to work in Japan as a teacher of English. Emily has a one-year contract after which she plans to tour China and other parts of Asia before returning to Australia to continue work here. Emily lives with a family in Japan during her time there and rents out her property in Australia. Emily is single. Her parents live interstate and her brother has moved to France. Emily is an Australian resident for tax purposes even though she is residing in Japan because, under the domicile test: her domicile is in Australia (as she is a resident who has lived in Australia and will generally retain a domicile here when absent overseas), unless she chooses to permanently migrate to another country) her permanent place of abode remains Australia. End of example Example: Foreign resident for tax purposes Bronwyn, an Australian resident, receives a job offer to work overseas for 3 years, with an option to extend for another 3 years. Bronwyn, her husband and 3 children decide to make the move. They rent out their house in Australia as they intend to return one day. While overseas they rent a house with an accommodation allowance provided under Bronwyn's contract. Bronwyn is unsure if she will extend her contract to stay for another 3 years. She will decide later depending on how the family like life. Bronwyn is a foreign resident for tax purposes because she does not satisfy 'the resides' test. This is due to: the length of her physical absence from Australia other circumstances not being consistent with residing in Australia, even though she has retained the family home &ndash; such as establishing a home overseas with her family renting out her family home in Australia. Bronwyn has also not satisfied the domicile test, as: her permanent place of abode is outside Australia due to the length of time committed to being overseas the establishment of a home overseas her family going with her overseas the fact that she won't be selling the family home in Australia, although relevant, is not persuasive enough to overcome the finding on the basis of the other factors it can be argued that she has abandoned her home in Australia for the duration of her stay, by renting it out. End of example Failure to cut connection with Australia A legal decision External Link in 2013 shows that a person who fails to cut their connection with Australia will be treated as an Australian resident. If your residency status changes during the year If your status has changed from resident to foreign resident during the income year, answer 'yes' to the question Are you an Australian resident? on your tax return. This ensures you're taxed at resident rates for the income year. You're entitled to a pro-rata tax-free threshold for the number of months you're an Australian resident. Foreign residents don't have to pay the Medicare levy. In your tax return you can claim the number of days in the income year that you're not an Australian resident as exempt days. From the date you cease to be an Australian resident, there is no need to return your foreign-source income in your tax return. Also, all Australian-sourced interest, dividends and royalties you received after you ceased to be an Australian resident are subject to the withholding tax provisions as a final tax. They should not be included in your tax return. If you have a Higher Education Loan Program (HELP), VET Student Loan (VSL) or Australian Apprenticeship Support Loan (AASL) debt, you may need to report your worldwide income . Your worldwide income and outstanding debt amounts are used to work out your repayment obligations against these debts. If you are or become a foreign resident and you want more information about capital gains tax, see Foreign residents and capital gains tax . For more information about foreign employment income being exempt from tax, see Tax exempt income from foreign employment . Foreign and temporary residents If you're from overseas working in Australia, your residency and temporary status impact your tax and other obligations. Australian resident for tax purposes If you're an Australian resident for tax purposes, you must declare all income you've earned in Australia and overseas. QC 59296 Print or Download Tools Media centre Forms and instructions Tax rates and codes Calculators and tools Tools Media centre Forms and instructions Tax rates and codes Calculators and tools Tax information for People with disability Aboriginal and Torres Strait Islander peoples Norfolk Island Other languages Tax information for People with disability Aboriginal and Torres Strait Islander peoples Norfolk Island Other languages Help and support Top call centre questions Contact us Identity security and scams Financial difficulties and disasters Help and support Top call centre questions Contact us Identity security and scams Financial difficulties and disasters About ATO Careers Privacy policy ATOtv Other languages facebook Opens in a new window Linkedin Opens in a new window Instagram Opens in a new window We acknowledge the Traditional Owners and Custodians of Country throughout Australia and their continuing connection to land, waters and community. We pay our respects to them, their cultures, and Elders past and present. © Commonwealth of Australia | View related websites Our commitment to you We are committed to providing you with accurate, consistent and clear information to help you understand your rights and entitlements and meet your obligations. If you follow our information and it turns out to be incorrect, or it is misleading and you make a mistake as a result, we will take that into account when determining what action, if any, we should take. Some of the information on this website applies to a specific financial year. This is clearly marked. Make sure you have the information for the right year before making decisions based on that information. If you feel that our information does not fully cover your circumstances, or you are unsure how it applies to you, contact us or seek professional advice. Copyright notice &copy; Australian Taxation Office for the Commonwealth of Australia You are free to copy, adapt, modify, transmit and distribute this material as you wish (but not in any way that suggests the ATO or the Commonwealth endorses you or any of your services or products).",
+        "anchorId": "1b926f496a762cf77f06a8c9e69c0ea61bde976ea9984fd4ebae8b06890782fb"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "1b926f496a762cf77f06a8c9e69c0ea61bde976ea9984fd4ebae8b06890782fb",
+      "locator": "html:document",
+      "start": 0,
+      "end": 10008,
+      "quoteHash": "445617cc3acf9c5c9709ade99835c695a12d43a29ad1944c379c6673919c8c3a",
+      "rawContentHash": "da5da0c71b8850da1eab96d8ebff99e806fe790f1cba388f34c9786dddc75cb6"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://community.ato.gov.au/s/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.ato.gov.au/single-page-applications/legaldatabase",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/whats-new",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency#Residencytests",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency/australian-resident-for-tax-purposes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency/foreign-and-temporary-residents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/api/public/content/f7fcb4c5-9e3e-40f3-ae29-8cabd6c7fcf7_TaxTimeToolkit_Residencyfortaxpurposes_pdf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/other-languages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency#Residestest",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency#Domiciletest",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency#BK_183daytest",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency#TheCommonwealthsuperannuationtest",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/calculators-and-tools/tax-return-work-out-your-tax-residency",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/residency-tests/residency-the-resides-test",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/residency-tests/residency-the-domicile-test",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/residency-tests/residency-the-183-day-test",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/residency-tests/residency-the-superannuation-test",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/cth/aat/2013/604.html",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/living-overseas-and-becoming-a-foreign-tax-resident",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/study-and-training-support-loans/overseas-repayments#ato-Reportingyourworldwideincome",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/income-deductions-offsets-and-records/income-you-must-declare/foreign-and-worldwide-income/tax-exempt-income-from-foreign-employment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency/foreign-and-temporary-residents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/your-tax-residency/australian-resident-for-tax-purposes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/media-centre",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/forms-and-instructions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/tax-rates-and-codes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/calculators-and-tools",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/media-centre",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/forms-and-instructions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/tax-rates-and-codes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/calculators-and-tools",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/people-with-disability",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/aboriginal-and-torres-strait-islander-peoples",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/norfolk-island",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/other-languages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/people-with-disability",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/aboriginal-and-torres-strait-islander-peoples",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/norfolk-island",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/other-languages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/contact-us/top-call-centre-questions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/contact-us",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/online-services/scams-cyber-safety-and-identity-protection",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/financial-difficulties-and-disasters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/contact-us/top-call-centre-questions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/contact-us",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/online-services/scams-cyber-safety-and-identity-protection",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/financial-difficulties-and-disasters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/careers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/commitments-and-reporting/information-and-privacy/your-privacy/privacy-policy",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/atotv",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/other-languages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/atogovau",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://au.linkedin.com/company/australian-taxation-office",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/austaxoffice/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/using-our-website/copyright-notice",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/using-our-website/view-related-websites",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "fcce09008c9c349137842010ad9357a2ee38e1cd1ee3976ab4585930aab6fc3f"
+}

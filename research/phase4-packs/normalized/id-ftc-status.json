@@ -1,0 +1,414 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "ID-JDIH",
+  "jurisdictionCode": "ID",
+  "metadata": {
+    "title": "192/PMK.03/2018 - Pelaksanaan Pengkreditan Pajak atas Penghasilan Dari Luar Negeri | JDIH Kementerian Keuangan",
+    "officialDocumentId": null,
+    "language": "id",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "f09b636d-3872-4d46-9d9d-7180ebbd8575",
+    "rawContentHash": "0aa4a6f59c4f63446905e46e1e7ea6a943288f47bb3499742f80917cbc0cef4e",
+    "sourceUrl": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018",
+    "finalUrl": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018",
+    "retrievedAt": "2026-10-28T22:44:18.774Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "JDIH",
+    "authorityName": "Ministry of Finance legal documentation",
+    "sourceRole": "SECONDARY_LEGISLATION",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/0aa4a6f59c4f63446905e46e1e7ea6a943288f47bb3499742f80917cbc0cef4e.bin",
+    "rawContentHash": "0aa4a6f59c4f63446905e46e1e7ea6a943288f47bb3499742f80917cbc0cef4e"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/0aa4a6f59c4f63446905e46e1e7ea6a943288f47bb3499742f80917cbc0cef4e.bin",
+      "rawContentHash": "0aa4a6f59c4f63446905e46e1e7ea6a943288f47bb3499742f80917cbc0cef4e"
+    },
+    "metaTags": [
+      "<meta charSet=\"utf-8\"/>",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>",
+      "<meta name=\"theme-color\" content=\"#02275d\"/>",
+      "<meta name=\"next-size-adjust\" content=\"\"/>",
+      "<meta name=\"description\" content=\"Pelaksanaan Pengkreditan Pajak atas Penghasilan Dari Luar Negeri\"/>",
+      "<meta property=\"og:title\" content=\"192/PMK.03/2018 - Pelaksanaan Pengkreditan Pajak atas Penghasilan Dari Luar Negeri | JDIH Kementerian Keuangan\"/>",
+      "<meta property=\"og:description\" content=\"Pelaksanaan Pengkreditan Pajak atas Penghasilan Dari Luar Negeri\"/>",
+      "<meta property=\"og:url\" content=\"https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018\"/>",
+      "<meta property=\"og:site_name\" content=\"Kementerian Keuangan Republik Indonesia\"/>",
+      "<meta property=\"og:locale\" content=\"id_ID\"/>",
+      "<meta property=\"og:image\" content=\"https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018/opengraph-image-hp7kqz?de4d8aac5cfec2eb\"/>",
+      "<meta property=\"og:image:type\" content=\"image/png\"/>",
+      "<meta property=\"og:image:width\" content=\"1200\"/>",
+      "<meta property=\"og:image:height\" content=\"630\"/>",
+      "<meta property=\"og:type\" content=\"website\"/>",
+      "<meta name=\"twitter:card\" content=\"summary_large_image\"/>",
+      "<meta name=\"twitter:site\" content=\"@KemenkeuRI\"/>",
+      "<meta name=\"twitter:creator\" content=\"@jdihkemenkeu\"/>",
+      "<meta name=\"twitter:title\" content=\"192/PMK.03/2018 - Pelaksanaan Pengkreditan Pajak atas Penghasilan Dari Luar Negeri | JDIH Kementerian Keuangan\"/>",
+      "<meta name=\"twitter:description\" content=\"Pelaksanaan Pengkreditan Pajak atas Penghasilan Dari Luar Negeri\"/>",
+      "<meta name=\"twitter:image\" content=\"https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018/twitter-image-hp7kqz?c9e8bd3f94f63ff8\"/>",
+      "<meta name=\"twitter:image:type\" content=\"image/png\"/>",
+      "<meta name=\"twitter:image:width\" content=\"1200\"/>",
+      "<meta name=\"twitter:image:height\" content=\"675\"/>"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Mencabut Terbaru Dokumen ini mencabut 164/KMK.03/2002 tentang Kredit Pajak Luar Negeri.",
+    "blocks": [
+      {
+        "locator": "html:article:171151",
+        "text": "Mencabut Terbaru Dokumen ini mencabut 164/KMK.03/2002 tentang Kredit Pajak Luar Negeri.",
+        "anchorId": "dec976de2d61371c34c92fac533b78d07649df1a7eb7fbff19c7a9fe7d404099"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "dec976de2d61371c34c92fac533b78d07649df1a7eb7fbff19c7a9fe7d404099",
+      "locator": "html:article:171151",
+      "start": 0,
+      "end": 87,
+      "quoteHash": "7548dab02a2aee126ccb80a40746fb95842ca53ea7f16d859e04b2632298c274",
+      "rawContentHash": "0aa4a6f59c4f63446905e46e1e7ea6a943288f47bb3499742f80917cbc0cef4e"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/home",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?teu=Kementerian+Keuangan&bentuk=Peraturan+Menteri&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Monografi%20Hukum&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Artikel%20Hukum&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Putusan%20Pengadilan&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/infografis",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/simplifikasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/direktori",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/program-perencanaan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/sosialisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/kamus-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=rancangan-puu",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=naskah-akademik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=hasil-analisis",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=risalah-pembahasan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=kajian-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kmk-tarif-bunga",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kurs-pajak",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/berita",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jurnalhukum.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/statistik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prestasi-dan-penghargaan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/tentang-jdih",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prasyarat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/kebijakan-privasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/faq",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih-old.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/hubungi-kami",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/faq",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prasyarat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/hubungi-kami",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/tentang-jdih",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/berita-jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/statistik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.setneg.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.ekon.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/kemenkeuRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.twitter.com/jdihkemenkeu",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/kemenkeuRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/jdihkemenkeu",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://whatsapp.com/channel/0029Vaix37eLSmbdYZ1Vme1c",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/rss.xml",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/atom.xml",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/feed.json",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/home",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/api/download/c3a1e914-b4c4-4cd2-84c0-bc3414336e2a/192~PMK.03~2018Per.pdf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/api/download/abtrak/2018/192~PMK.03~2018Per.pdf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018/overview",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018/summary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018/files",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018/evaluasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018/chat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bidang=Hukum%20Keuangan%20Negara",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=PENGKREDITAN",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=LUAR%20NEGERI",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=PAJAK%20PENGHASILAN",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/164-kmk-03-2002",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/sharer/sharer.php?u=undefined/dok/192-pmk-03-2018",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://twitter.com/intent/tweet?url=undefined/dok/192-pmk-03-2018",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.linkedin.com/shareArticle?mini=true&url=undefined/dok/192-pmk-03-2018",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/192-pmk-03-2018#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-112-tahun-2025",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/per-11pj2025",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-80-tahun-2024",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/per-7pj2025",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "4f81881c1bc9956c550acbfcfd5438141fe8b75370644446425354007fd24414"
+}

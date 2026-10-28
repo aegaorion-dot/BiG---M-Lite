@@ -4,10 +4,11 @@ const {TaxDeterminationStore}=require('./determinationStore');
 const {FabricGovernanceStore}=require('../fabric/governanceStore');
 const {UniversalTaxEngine}=require('./taxEngine');
 const {originalCompanyCandidate,idSgResearchCandidate}=require('./referenceCandidates');
-function createTaxSystem({governancePath=null,determinationPath=null}={}){
+function createTaxSystem({governancePath=null,determinationPath=null,includePhase4=true}={}){
  const governance=new FabricGovernanceStore({persistPath:governancePath}),registry=new TaxContentRegistry({governanceStore:governance});
  for(const candidate of [originalCompanyCandidate(),idSgResearchCandidate()])if(!governance.get(candidate.candidateId))registry.register(candidate);
+ if(includePhase4)require('./phase4Catalog').registerPhase4Catalog(registry);
  const determinations=new TaxDeterminationStore({persistPath:determinationPath}),engine=new UniversalTaxEngine({registry,determinations});
  return {engine,registry,governance,determinations};
 }
-module.exports={createTaxSystem,UniversalTaxEngine,TaxContentRegistry,TaxDeterminationStore,...require('./facts'),...require('./treatyResolver'),...require('./accountingBoundary')};
+module.exports={createTaxSystem,UniversalTaxEngine,TaxContentRegistry,TaxDeterminationStore,...require('./facts'),...require('./treatyResolver'),...require('./accountingBoundary'),...require('./readiness'),...require('./subjects')};

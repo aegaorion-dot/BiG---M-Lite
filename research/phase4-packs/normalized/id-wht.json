@@ -1,0 +1,504 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "ID-DJP",
+  "jurisdictionCode": "ID",
+  "metadata": {
+    "title": "PPh Pasal 23/26 | Direktorat Jenderal Pajak",
+    "officialDocumentId": null,
+    "language": "id",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "111b035b-09e9-4d24-b97e-e2e1727eba9f",
+    "rawContentHash": "1bd82242b3e13a57aeda26f56af666bae1d6bbc42b3b1a099670bf82819c9a26",
+    "sourceUrl": "https://www.pajak.go.id/id/pph-pasal-2326",
+    "finalUrl": "https://www.pajak.go.id/id/pph-pasal-2326",
+    "retrievedAt": "2026-10-28T22:40:10.411Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "DJP",
+    "authorityName": "Direktorat Jenderal Pajak",
+    "sourceRole": "TAX_AUTHORITY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/1bd82242b3e13a57aeda26f56af666bae1d6bbc42b3b1a099670bf82819c9a26.bin",
+    "rawContentHash": "1bd82242b3e13a57aeda26f56af666bae1d6bbc42b3b1a099670bf82819c9a26"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/1bd82242b3e13a57aeda26f56af666bae1d6bbc42b3b1a099670bf82819c9a26.bin",
+      "rawContentHash": "1bd82242b3e13a57aeda26f56af666bae1d6bbc42b3b1a099670bf82819c9a26"
+    },
+    "metaTags": [
+      "<meta charset=\"utf-8\" />",
+      "<meta name=\"robots\" content=\"index, follow\" />",
+      "<meta name=\"keywords\" content=\"pajak, djp, direktorat jenderal pajak, pph, kup, ppn, ppnbm, djponline\" />",
+      "<meta property=\"og:determiner\" content=\"An\" />",
+      "<meta property=\"og:site_name\" content=\"Direktorat Jenderal Pajak\" />",
+      "<meta property=\"og:url\" content=\"http://www.pajak.go.id/id/pph-pasal-2326\" />",
+      "<meta property=\"og:title\" content=\"PPh Pasal 23/26\" />",
+      "<meta name=\"Generator\" content=\"Drupal 8 (https://www.drupal.org)\" />",
+      "<meta name=\"MobileOptimized\" content=\"width\" />",
+      "<meta name=\"HandheldFriendly\" content=\"true\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+      "<meta name=\"HandheldFriendly\" content=\"true\" />",
+      "<meta name=\"apple-touch-fullscreen\" content=\"YES\" />"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Untuk lebih memahami ketentuan Pajak Penghasilan (selanjutnya disingkat PPh) Pasal 23/26, silahkan disimak penjelasan seputar PPh Pasal 23/26 berikut ini. Atas penghasilan tersebut di bawah ini dengan nama dan dalam bentuk apa pun yang dibayarkan, disediakan untuk dibayarkan, atau telah jatuh tempo pembayarannya oleh Pemotong PPh Pasal 23 kepada Wajib Pajak dalam negeri atau bentuk usaha tetap, dipotong PPh Pasal 23 oleh pihak yang wajib membayarkan: sebesar 15% (lima belas persen) dari jumlah bruto atas sesuai UU HPP, bunga, royalti; dan hadiah, penghargaan, bonus, dan sejenisnya selain yang telah dipotong PPh Pasal 21 sebesar 2% (dua persen) dari jumlah bruto atas: sewa dan penghasilan lain sehubungan dengan penggunaan harta, kecuali sewa dan penghasilan lain sehubungan dengan penggunaan harta yang telah dikenai Pajak Penghasilan Pasal 4 ayat (2); dan imbalan sehubungan dengan jasa teknik, jasa manajemen, jasa konstruksi, jasa konsultan, dan jasa lain selain jasa yang telah dipotong PPh Pasal 21. Dalam hal Wajib Pajak yang menerima atau memperoleh penghasilan tidak memiliki Nomor Pokok Wajib Pajak (NPWP), besarnya tarif pemotongan adalah lebih tinggi 100% (seratus persen) daripada tarif tersebut di atas. Pemotongan PPh Pasal 23 tidak dilakukan atas: penghasilan yang dibayar atau terutang kepada bank; sewa yang dibayarkan atau terutang sehubungan dengan sewa guna usaha dengan hak opsi; dividen yang bukan Objek PPh dan dividen yang diterima oleh orang pribadi (merupakan objek PPh yang bersifat final); bagian laba yang bukan objek PPh; sisa hasil usaha koperasi yang dibayarkan oleh koperasi kepada anggotanya; dan penghasilan yang dibayar atau terutang kepada badan usaha atas jasa keuangan yang berfungsi sebagai penyalur pinjaman dan/atau pembiayaan yang diatur dengan Peraturan Menteri Keuangan. Instansi Pemerintah tidak melakukan pemotongan PPh Pasal 23 atas: penghasilan yang dibayarkan atau terutang kepada bank; sewa yang dibayarkan atau terutang sehubungan dengan sewa guna usaha dengan hak opsi; penghasilan yang dibayarkan atau terutang kepadabadan usaha atas jasa keuangan yang berfungsi sebagai penyalur pinjaman dan/ atau pembiayaan sesuai dengan ketentuan peraturan perundang-undangan di bidang perpajakan; imbalan sehubungan denganjasa yang telah dikenai PPh yang bersifat final berdasarkan peraturan perundang- undangan di bidang perpajakan; imbalan sehubungan dengan Jasa pengangkutanjekspedisi yang telah diatur dalam Pasal 15 Undang-Undang PPh; imbalan sehubungan dengan jasa yang telah dipotong PPh sebagaimana dimaksud dalam Pasal 21 Undang- Undang PPh; dan/ atau penghasilan yang dibayarkan, disediakan untuk dibayarkan, atau telah jatuh tempo pembayarannya kepada Wajib Pajak yang dapat menyerahkan fotokopi Surat Keterangan Bebas Pemotongan dan/ atau Pemungutan PPh berdasarkan ketentuan yang mengatur mengenai tata cara pengaJuan permohonan pembebasan dari pemotongan dan/ atau pemungutan Pajak Penghasilan oleh pihak lain, yang telah dilegalisasi oleh KPP yang menerbitkan Surat Keterangan Bebas dimaksud (PMK-231/PMK.03/20219). Pemotong Pajak Penghasilan Pasal 23 Pemotong PPh Pasal 23 adalah : Badan pemerintah, subjek pajak badan dalam negeri, penyelenggara kegiatan, bentuk usaha tetap, atau perwakilan perusahaan luar negeri lainnya. Wajib Pajak orang pribadi dalam negeri (hanya memotong PPh Pasal 23 atas sewa saja) yang ditunjuk sebagai pemotong PPh 23 ( Harus ada Surat Keputusan Penunjukan yang diterbitkan oleh Kepala KPP (tidak ada format baku yang tersedia), yaitu: Akuntan, Arsitek, Dokter, Notaris, Pejabat Pembuat Akte Tanah (PPAT) kecuali PPAT tersebut adalah Camat, pengacara, dan konsultan, yang melakukan pekerjaan bebas; Orang pribadi yang menjalankan usaha yang menyelenggarakan pembukuan. Saat Pemotongan Pemotongan Pajak Penghasilan Pasal 23 UU PPh dilakukan pada akhir bulan dibayarkannya penghasilan, disediakan untuk dibayarkannya penghasilan; atau jatuh temponya pembayaran penghasilan yang bersangkutan, tergantung peristiwa yang terjadi terlebih dahulu. Saat Terutang Saat terutangnya Pajak Penghasilan Pasal 23 UU PPh adalah pada saat pembayaran, saat disediakan untuk dibayarkan (seperti: dividen) dan jatuh tempo (seperti: bunga dan sewa), saat yang ditentukan dalam kontrak atau perjanjian atau faktur (seperti: royalti, imbalan jasa teknik atau jasa manajemen atau jasa lainnya). Tempat Pemotongan Atas transaksi-transaksi yang merupakan objek pemotongan PPh Pasal 23 yang pembayarannya dilakukan oleh kantor pusat, maka PPh Pasal 23 dipotong, disetor, dan dilaporkan oleh kantor pusat. Atas transaksi-transaksi yang merupakan objek pemotongan PPh Pasal 23 yang pembayarannya dilakukan oleh kantor cabang , misalnya pembayaran sewa mesin oleh kantor cabang, PPh Pasal 23 dipotong, disetor, dan dilaporkan oleh kantor cabang yang bersangkutan. Ketentuan tentang pemusatan pelaksanaan pemotongan, penyetoran, pelaporan PPh Pasal 23 tidak diatur dalam peraturan perundang-undangan perpajakan. Bukti potong PPh pasal 23/26 dibuat menggunakan aplikasi e-Bupot PPh pasal 23/26 pada aplikasi DJP Online (Peraturan Dirjen Pajak Nomor PER-24/PJ/2021 ) . Pembuatan Bukti Potong PPh pasal 23/26 Pemotong PPh pasal pasal 23/26 menggunakan aplikasi e-Bupot PPh pasal 23/26 pada aplikasi DJP Online (Peraturan Dirjen Pajak Nomor PER-24/PJ/2021 ) . Batas Akhir Penyampaian SPT masa PPh Pasal 23/36 penyampaian SPT Masa PPh Unifikasi paling lama 20 (dua puluh) hari setelah Masa Pajak berakhir (Peraturan Dirjen Pajak Nomor PER-24/PJ/2021 ) . Tags belajarpph 316697 kali dilihat",
+    "blocks": [
+      {
+        "locator": "html:article:48039",
+        "text": "Untuk lebih memahami ketentuan Pajak Penghasilan (selanjutnya disingkat PPh) Pasal 23/26, silahkan disimak penjelasan seputar PPh Pasal 23/26 berikut ini. Atas penghasilan tersebut di bawah ini dengan nama dan dalam bentuk apa pun yang dibayarkan, disediakan untuk dibayarkan, atau telah jatuh tempo pembayarannya oleh Pemotong PPh Pasal 23 kepada Wajib Pajak dalam negeri atau bentuk usaha tetap, dipotong PPh Pasal 23 oleh pihak yang wajib membayarkan: sebesar 15% (lima belas persen) dari jumlah bruto atas sesuai UU HPP, bunga, royalti; dan hadiah, penghargaan, bonus, dan sejenisnya selain yang telah dipotong PPh Pasal 21 sebesar 2% (dua persen) dari jumlah bruto atas: sewa dan penghasilan lain sehubungan dengan penggunaan harta, kecuali sewa dan penghasilan lain sehubungan dengan penggunaan harta yang telah dikenai Pajak Penghasilan Pasal 4 ayat (2); dan imbalan sehubungan dengan jasa teknik, jasa manajemen, jasa konstruksi, jasa konsultan, dan jasa lain selain jasa yang telah dipotong PPh Pasal 21. Dalam hal Wajib Pajak yang menerima atau memperoleh penghasilan tidak memiliki Nomor Pokok Wajib Pajak (NPWP), besarnya tarif pemotongan adalah lebih tinggi 100% (seratus persen) daripada tarif tersebut di atas. Pemotongan PPh Pasal 23 tidak dilakukan atas: penghasilan yang dibayar atau terutang kepada bank; sewa yang dibayarkan atau terutang sehubungan dengan sewa guna usaha dengan hak opsi; dividen yang bukan Objek PPh dan dividen yang diterima oleh orang pribadi (merupakan objek PPh yang bersifat final); bagian laba yang bukan objek PPh; sisa hasil usaha koperasi yang dibayarkan oleh koperasi kepada anggotanya; dan penghasilan yang dibayar atau terutang kepada badan usaha atas jasa keuangan yang berfungsi sebagai penyalur pinjaman dan/atau pembiayaan yang diatur dengan Peraturan Menteri Keuangan. Instansi Pemerintah tidak melakukan pemotongan PPh Pasal 23 atas: penghasilan yang dibayarkan atau terutang kepada bank; sewa yang dibayarkan atau terutang sehubungan dengan sewa guna usaha dengan hak opsi; penghasilan yang dibayarkan atau terutang kepadabadan usaha atas jasa keuangan yang berfungsi sebagai penyalur pinjaman dan/ atau pembiayaan sesuai dengan ketentuan peraturan perundang-undangan di bidang perpajakan; imbalan sehubungan denganjasa yang telah dikenai PPh yang bersifat final berdasarkan peraturan perundang- undangan di bidang perpajakan; imbalan sehubungan dengan Jasa pengangkutanjekspedisi yang telah diatur dalam Pasal 15 Undang-Undang PPh; imbalan sehubungan dengan jasa yang telah dipotong PPh sebagaimana dimaksud dalam Pasal 21 Undang- Undang PPh; dan/ atau penghasilan yang dibayarkan, disediakan untuk dibayarkan, atau telah jatuh tempo pembayarannya kepada Wajib Pajak yang dapat menyerahkan fotokopi Surat Keterangan Bebas Pemotongan dan/ atau Pemungutan PPh berdasarkan ketentuan yang mengatur mengenai tata cara pengaJuan permohonan pembebasan dari pemotongan dan/ atau pemungutan Pajak Penghasilan oleh pihak lain, yang telah dilegalisasi oleh KPP yang menerbitkan Surat Keterangan Bebas dimaksud (PMK-231/PMK.03/20219). Pemotong Pajak Penghasilan Pasal 23 Pemotong PPh Pasal 23 adalah : Badan pemerintah, subjek pajak badan dalam negeri, penyelenggara kegiatan, bentuk usaha tetap, atau perwakilan perusahaan luar negeri lainnya. Wajib Pajak orang pribadi dalam negeri (hanya memotong PPh Pasal 23 atas sewa saja) yang ditunjuk sebagai pemotong PPh 23 ( Harus ada Surat Keputusan Penunjukan yang diterbitkan oleh Kepala KPP (tidak ada format baku yang tersedia), yaitu: Akuntan, Arsitek, Dokter, Notaris, Pejabat Pembuat Akte Tanah (PPAT) kecuali PPAT tersebut adalah Camat, pengacara, dan konsultan, yang melakukan pekerjaan bebas; Orang pribadi yang menjalankan usaha yang menyelenggarakan pembukuan. Saat Pemotongan Pemotongan Pajak Penghasilan Pasal 23 UU PPh dilakukan pada akhir bulan dibayarkannya penghasilan, disediakan untuk dibayarkannya penghasilan; atau jatuh temponya pembayaran penghasilan yang bersangkutan, tergantung peristiwa yang terjadi terlebih dahulu. Saat Terutang Saat terutangnya Pajak Penghasilan Pasal 23 UU PPh adalah pada saat pembayaran, saat disediakan untuk dibayarkan (seperti: dividen) dan jatuh tempo (seperti: bunga dan sewa), saat yang ditentukan dalam kontrak atau perjanjian atau faktur (seperti: royalti, imbalan jasa teknik atau jasa manajemen atau jasa lainnya). Tempat Pemotongan Atas transaksi-transaksi yang merupakan objek pemotongan PPh Pasal 23 yang pembayarannya dilakukan oleh kantor pusat, maka PPh Pasal 23 dipotong, disetor, dan dilaporkan oleh kantor pusat. Atas transaksi-transaksi yang merupakan objek pemotongan PPh Pasal 23 yang pembayarannya dilakukan oleh kantor cabang , misalnya pembayaran sewa mesin oleh kantor cabang, PPh Pasal 23 dipotong, disetor, dan dilaporkan oleh kantor cabang yang bersangkutan. Ketentuan tentang pemusatan pelaksanaan pemotongan, penyetoran, pelaporan PPh Pasal 23 tidak diatur dalam peraturan perundang-undangan perpajakan. Bukti potong PPh pasal 23/26 dibuat menggunakan aplikasi e-Bupot PPh pasal 23/26 pada aplikasi DJP Online (Peraturan Dirjen Pajak Nomor PER-24/PJ/2021 ) . Pembuatan Bukti Potong PPh pasal 23/26 Pemotong PPh pasal pasal 23/26 menggunakan aplikasi e-Bupot PPh pasal 23/26 pada aplikasi DJP Online (Peraturan Dirjen Pajak Nomor PER-24/PJ/2021 ) . Batas Akhir Penyampaian SPT masa PPh Pasal 23/36 penyampaian SPT Masa PPh Unifikasi paling lama 20 (dua puluh) hari setelah Masa Pajak berakhir (Peraturan Dirjen Pajak Nomor PER-24/PJ/2021 ) . Tags belajarpph 316697 kali dilihat",
+        "anchorId": "39ea63890b491fffa4970e2609ded7d57c21de95ec671486bd1e6ce4c9b515ad"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "39ea63890b491fffa4970e2609ded7d57c21de95ec671486bd1e6ce4c9b515ad",
+      "locator": "html:article:48039",
+      "start": 0,
+      "end": 5550,
+      "quoteHash": "64efbcce773f782502f28941642d31a3dc5aea9ae902540591674a1b45b76973",
+      "rawContentHash": "1bd82242b3e13a57aeda26f56af666bae1d6bbc42b3b1a099670bf82819c9a26"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.pajak.go.id/id/pph-pasal-2326#main-content",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/selayang-pandang",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/visi-misi-tujuan-dan-maklumat-pelayanan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tugas-dan-fungsi-0",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/logo-direktorat-jenderal-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kode-etik-dan-kode-perilaku",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/daftar-pejabat-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/unit-kerja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/halaman-infografis-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/peraturan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kurs-pajak",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kmk-tarif-bunga",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/aplikasi-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/formulir-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-yang-wajib-disediakan-dan-diumumkan-secara-berkala",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-yang-wajib-diumumkan-secara-serta-merta",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-publik-tersedia-setiap-saat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-kerja-dan-anggaran-0",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/daftar-isian-pelaksanaan-anggaran",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/realisasi-belanja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/keuangan-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-strategis-direktorat-jenderal-pajak-2025-2029",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-kerja-ditjen-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kinerja-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/laporan-kinerja-unit-kerja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tahunan-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/realisasi-pendapatan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/layanan-digital/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/akses-informasi-publik-melalui-layanan-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/gambaran-singkat-pembentukan-ppid-tingkat-i",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/regulasi-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/prosedur-permohonan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/laporan-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/statistik-akses-informasi-publik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/jalur-dan-waktu-layanan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/saluran-pengaduan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/penyediaan-pembicara-pembahas-atau-moderator-pada-kegiatan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/standar-pelayanan-di-lingkungan-direktorat-jenderal-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/en/apa-map-homepage",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/aeoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/crs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/cbcr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/aeoi-wht",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/fatca",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/carf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/eoir",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/seoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/globe",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tax-treaty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/en/tax-treaty-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/taxtreaty-mli",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/uu-hpp",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/PPS",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/covid19",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/pajakdigital",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/halaman-infografis-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://ejurnal.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/lapor-tahunan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/buku-elektronik-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kerja-sama-dan-kemitraan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/klaster-kemudahan-berusaha-bidang-perpajakan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/penegakan-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/faq-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PLDDScx7l7xS1tqRfrYTuZVcHzoeIsKv7w",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://open.spotify.com/show/6jOGiW7J1T4B81LYNxttOk?si=DumG1PAmTp-RLdf9p7Fnlw",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp/coretax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://edukasi.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://pajak.go.id/index-belajar-pajak/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/en/index-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://coretaxdjp.pajak.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-konsultan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-pjap",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp/coretax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/index.php/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/taxonomy/term/13823",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/apbnkita",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/reformdjp/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/prasyarat-pengguna",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/hubungi-kami",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/form/contact",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.facebook.com/DitjenPajakRI/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.twitter.com/DitjenPajakRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/user/DitjenPajakRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/ditjenpajakri/?hl=id",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://pengaduan.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "4b6b08ef94636f36f238a2c359d4bc798e42c48b555d9ccf6071d87060dcfa28"
+}

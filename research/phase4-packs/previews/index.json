@@ -1,0 +1,29 @@
+[
+  {
+    "sourceId": "id-treaty112-text",
+    "rawContentHash": "551d2a9ac214e79d21abbb4c891906262df0eeb6097d8c1e15723437a2250728",
+    "page": 25,
+    "previewRef": "previews/pmk112-page25.png",
+    "previewHash": "37ad1b427a65e9c19854024248c8ab3be7c12be934d2a78b5f510760667107c1",
+    "renderer": "PyMuPDF/1.26.5",
+    "purpose": "READ_ONLY_VISUAL_QA_NOT_LEGAL_APPROVAL"
+  },
+  {
+    "sourceId": "id-hpp",
+    "rawContentHash": "296b5bf34c4ec496b1e72ea6c9f878aee26ec68bb05afce2a21e4f469c7f3147",
+    "page": 62,
+    "previewRef": "previews/hpp-page62.png",
+    "previewHash": "25c45ab6460b5a2de2edaf02efeb17b25cc3a7066ee3624bf0e16f9e3ccb1f51",
+    "renderer": "PyMuPDF/1.26.5",
+    "purpose": "READ_ONLY_VISUAL_QA_NOT_LEGAL_APPROVAL"
+  },
+  {
+    "sourceId": "id-hpp",
+    "rawContentHash": "296b5bf34c4ec496b1e72ea6c9f878aee26ec68bb05afce2a21e4f469c7f3147",
+    "page": 63,
+    "previewRef": "previews/hpp-page63.png",
+    "previewHash": "dd0b7146ea59ac195e93c5d5d618e735bc8a2a19897cf15f9395c62a4db3cb5c",
+    "renderer": "PyMuPDF/1.26.5",
+    "purpose": "READ_ONLY_VISUAL_QA_NOT_LEGAL_APPROVAL"
+  }
+]

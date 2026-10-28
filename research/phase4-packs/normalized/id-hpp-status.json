@@ -1,0 +1,478 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "ID-JDIH",
+  "jurisdictionCode": "ID",
+  "metadata": {
+    "title": "UU 7 TAHUN 2021 - Harmonisasi Peraturan Perpajakan | JDIH Kementerian Keuangan",
+    "officialDocumentId": null,
+    "language": "id",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "a5d3b1e0-192e-4c17-bc41-0a39a31e9876",
+    "rawContentHash": "12e53e0eb71da564c0cae83611d373c6a1ec7b6a61fc4406b6f16315e5f30fe8",
+    "sourceUrl": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021",
+    "finalUrl": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021",
+    "retrievedAt": "2026-10-28T22:41:26.144Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "JDIH",
+    "authorityName": "Ministry of Finance legal documentation",
+    "sourceRole": "SECONDARY_LEGISLATION",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/12e53e0eb71da564c0cae83611d373c6a1ec7b6a61fc4406b6f16315e5f30fe8.bin",
+    "rawContentHash": "12e53e0eb71da564c0cae83611d373c6a1ec7b6a61fc4406b6f16315e5f30fe8"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/12e53e0eb71da564c0cae83611d373c6a1ec7b6a61fc4406b6f16315e5f30fe8.bin",
+      "rawContentHash": "12e53e0eb71da564c0cae83611d373c6a1ec7b6a61fc4406b6f16315e5f30fe8"
+    },
+    "metaTags": [
+      "<meta charSet=\"utf-8\"/>",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>",
+      "<meta name=\"theme-color\" content=\"#02275d\"/>",
+      "<meta name=\"next-size-adjust\" content=\"\"/>",
+      "<meta name=\"description\" content=\"Harmonisasi Peraturan Perpajakan\"/>",
+      "<meta property=\"og:title\" content=\"UU 7 TAHUN 2021 - Harmonisasi Peraturan Perpajakan | JDIH Kementerian Keuangan\"/>",
+      "<meta property=\"og:description\" content=\"Harmonisasi Peraturan Perpajakan\"/>",
+      "<meta property=\"og:url\" content=\"https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021\"/>",
+      "<meta property=\"og:site_name\" content=\"Kementerian Keuangan Republik Indonesia\"/>",
+      "<meta property=\"og:locale\" content=\"id_ID\"/>",
+      "<meta property=\"og:image\" content=\"https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021/opengraph-image-hp7kqz?de4d8aac5cfec2eb\"/>",
+      "<meta property=\"og:image:type\" content=\"image/png\"/>",
+      "<meta property=\"og:image:width\" content=\"1200\"/>",
+      "<meta property=\"og:image:height\" content=\"630\"/>",
+      "<meta property=\"og:type\" content=\"website\"/>",
+      "<meta name=\"twitter:card\" content=\"summary_large_image\"/>",
+      "<meta name=\"twitter:site\" content=\"@KemenkeuRI\"/>",
+      "<meta name=\"twitter:creator\" content=\"@jdihkemenkeu\"/>",
+      "<meta name=\"twitter:title\" content=\"UU 7 TAHUN 2021 - Harmonisasi Peraturan Perpajakan | JDIH Kementerian Keuangan\"/>",
+      "<meta name=\"twitter:description\" content=\"Harmonisasi Peraturan Perpajakan\"/>",
+      "<meta name=\"twitter:image\" content=\"https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021/twitter-image-hp7kqz?c9e8bd3f94f63ff8\"/>",
+      "<meta name=\"twitter:image:type\" content=\"image/png\"/>",
+      "<meta name=\"twitter:image:width\" content=\"1200\"/>",
+      "<meta name=\"twitter:image:height\" content=\"675\"/>"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Mencabut Terbaru Dokumen ini mencabut PERPU 1 TAHUN 2020 tentang Kebijakan Keuangan Negara dan Stabilitas Sistem Keuangan untuk Penanganan Pandemi Corona Virus Disease 2019 (Covid-19) dan/atau dalam Rangka Menghadapi Ancaman yang Membahayakan Perekonomian Nasional dan/atau Stabilitas Sistem Keuangan.",
+    "blocks": [
+      {
+        "locator": "html:article:239626",
+        "text": "Mencabut Terbaru Dokumen ini mencabut PERPU 1 TAHUN 2020 tentang Kebijakan Keuangan Negara dan Stabilitas Sistem Keuangan untuk Penanganan Pandemi Corona Virus Disease 2019 (Covid-19) dan/atau dalam Rangka Menghadapi Ancaman yang Membahayakan Perekonomian Nasional dan/atau Stabilitas Sistem Keuangan.",
+        "anchorId": "12d8a2fc8d5fbb1d6199d0287cbc18dc6fe1091a730e036ff8d203fd2b818e9f"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "12d8a2fc8d5fbb1d6199d0287cbc18dc6fe1091a730e036ff8d203fd2b818e9f",
+      "locator": "html:article:239626",
+      "start": 0,
+      "end": 301,
+      "quoteHash": "6b9a05a4f87fb1e5e291e1614037f5d64bd5872eef4c6c7cff4b0fe590a560c6",
+      "rawContentHash": "12e53e0eb71da564c0cae83611d373c6a1ec7b6a61fc4406b6f16315e5f30fe8"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/home",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?teu=Kementerian+Keuangan&bentuk=Peraturan+Menteri&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Monografi%20Hukum&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Artikel%20Hukum&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Putusan%20Pengadilan&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/infografis",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/simplifikasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/direktori",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/program-perencanaan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/sosialisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/kamus-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=rancangan-puu",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=naskah-akademik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=hasil-analisis",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=risalah-pembahasan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=kajian-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kmk-tarif-bunga",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kurs-pajak",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/berita",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jurnalhukum.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/statistik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prestasi-dan-penghargaan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/tentang-jdih",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prasyarat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/kebijakan-privasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/faq",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih-old.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/hubungi-kami",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/faq",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prasyarat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/hubungi-kami",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/tentang-jdih",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/berita-jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/statistik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.setneg.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.ekon.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/kemenkeuRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.twitter.com/jdihkemenkeu",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/kemenkeuRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/jdihkemenkeu",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://whatsapp.com/channel/0029Vaix37eLSmbdYZ1Vme1c",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/rss.xml",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/atom.xml",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/feed.json",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/home",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/api/download/a9faab97-aca7-4f87-9fdc-faa8123d1454/7TAHUN2021UU.pdf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021/overview",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021/summary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021/files",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021/evaluasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021/chat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bidang=Hukum%20Keuangan%20Negara",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=PERPAJAKAN",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=COVID-19",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=PROGRAM%20PEN",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-124-tahun-2024",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/kmk-nomor-13mkef22026",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/nomor-15mkef22026",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/kmk-nomor-11mkef22026",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/perpu-1-tahun-2020",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-2-tahun-2020",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-16-tahun-2009",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-5-tahun-2008",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-16-tahun-2000",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-28-tahun-2007",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-6-tahun-1983",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-1983",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-17-tahun-2000",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-36-tahun-2008",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-1991",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-10-tahun-1994",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-8-tahun-1983",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-11-tahun-1994",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-18-tahun-2000",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-42-tahun-2009",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-11-tahun-1995",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-39-tahun-2007",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/sharer/sharer.php?u=undefined/dok/uu-7-tahun-2021",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://twitter.com/intent/tweet?url=undefined/dok/uu-7-tahun-2021",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.linkedin.com/shareArticle?mini=true&url=undefined/dok/uu-7-tahun-2021",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/uu-7-tahun-2021#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "5423f397a3073d1fa62fc016c6a69e2dcb78dd0f3ed22d5da871b535e8cb46c9"
+}

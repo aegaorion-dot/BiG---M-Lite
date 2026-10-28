@@ -82,4 +82,23 @@ function normalizeArtifact(store,artifact){
  base.normalizedContent.text=text;if(!text)base.processingState='NO_TEXT_REVIEW_REQUIRED';
  return finish();
 }
-module.exports={normalizeArtifact,parseEffectiveDate,inertText,VERSION,assertVerifiedEnvelope};
+// Offline extractor bridge: raw source verification remains mandatory. Extraction is
+// candidate evidence, never a legal-effect decision or an approval.
+function normalizePdfExtraction(store,artifact,extraction){
+ const base=normalizeArtifact(store,artifact);
+ if(artifact.sourceType!=='PDF'||artifact.httpStatus!==200||extraction.rawContentHash!==artifact.rawContentHash||extraction.extractor!=='pypdf/6.12.2'||!Array.isArray(extraction.pages)||!extraction.pages.length||extraction.pages.length>2000||extraction.pages.some(p=>typeof p!=='string')||extraction.pages.join('').length>10000000)throw Error('Hash-bound bounded PDF extraction required');
+ const copy=JSON.parse(JSON.stringify(base));delete copy.envelopeId;
+ copy.normalizedContent={text:'',blocks:[]};copy.citationAnchors=[];
+ copy.processingState=extraction.pages.every(p=>p.trim())?'NORMALIZED':'OCR_REVIEW_REQUIRED';
+ copy.sourceSpecificMetadata={...copy.sourceSpecificMetadata,extractor:extraction.extractor,extractionHash:hash(JSON.stringify(extraction.pages)),pageCount:extraction.pages.length};
+ extraction.pages.forEach((text,i)=>{
+  if(copy.normalizedContent.text)copy.normalizedContent.text+='\n\f\n';
+  const start=copy.normalizedContent.text.length;copy.normalizedContent.text+=text;
+  const locator='pdf:page:'+(i+1),anchorId=hash(artifact.rawContentHash+'|'+locator);
+  copy.normalizedContent.blocks.push({locator,text,anchorId});
+  copy.citationAnchors.push({anchorId,locator,start,end:copy.normalizedContent.text.length,quoteHash:hash(text),rawContentHash:artifact.rawContentHash});
+ });
+ copy.warnings.push('Offline PDF extraction: tables, reading order and legal effect require human review.');
+ const envelope=deepFreeze({...copy,envelopeId:hash(JSON.stringify(copy))});verifiedEnvelopes.add(envelope);return envelope;
+}
+module.exports={normalizeArtifact,normalizePdfExtraction,parseEffectiveDate,inertText,VERSION,assertVerifiedEnvelope};

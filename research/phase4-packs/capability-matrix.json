@@ -1,0 +1,375 @@
+[
+  {
+    "jurisdiction": "ID",
+    "taxTypes": [
+      "INCOME_TAX"
+    ],
+    "subjectTypes": [
+      "INDIVIDUAL"
+    ],
+    "period": {
+      "from": "2025-01-01",
+      "to": "2025-12-31"
+    },
+    "ruleAvailability": [
+      "ID_ART17_REVIEWED_PKP_2025"
+    ],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "READY_FOR_REVIEW",
+    "executable": false,
+    "packId": "ID_INDIVIDUAL_ORDINARY_2025",
+    "knownGaps": [
+      "Net-income method, NPPN, deductions/PTKP and fiscal reconciliation must already be reviewed; no automatic turnover-to-PKP conversion.",
+      "Withholding, instalments, foreign credit and tax payable/refundable settlement are separate.",
+      "Cross-border source/residence differences require separately approved treaty coverage."
+    ]
+  },
+  {
+    "jurisdiction": "ID",
+    "taxTypes": [
+      "INCOME_TAX"
+    ],
+    "subjectTypes": [
+      "INDIVIDUAL"
+    ],
+    "period": {
+      "from": "2026-01-01",
+      "to": "2026-12-31"
+    },
+    "ruleAvailability": [
+      "ID_ART17_REVIEWED_PKP_2026"
+    ],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "READY_FOR_REVIEW",
+    "executable": false,
+    "packId": "ID_INDIVIDUAL_ORDINARY_2026",
+    "knownGaps": [
+      "Net-income method, NPPN, deductions/PTKP and fiscal reconciliation must already be reviewed; no automatic turnover-to-PKP conversion.",
+      "Withholding, instalments, foreign credit and tax payable/refundable settlement are separate.",
+      "Cross-border source/residence differences require separately approved treaty coverage."
+    ]
+  },
+  {
+    "jurisdiction": "ID",
+    "taxTypes": [
+      "SIMPLIFIED_INCOME"
+    ],
+    "subjectTypes": [
+      "INDIVIDUAL"
+    ],
+    "period": {
+      "from": "2025-01-01",
+      "to": "2025-12-31"
+    },
+    "ruleAvailability": [
+      "ID_UMKM_MONTHLY_INDIVIDUAL_2025"
+    ],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "READY_FOR_REVIEW",
+    "executable": false,
+    "packId": "ID_UMKM_INDIVIDUAL_2025",
+    "knownGaps": [
+      "Prior-year turnover must include the legally relevant branches/spouse/business group; 2026 also professional and foreign turnover and all relevant one-founder companies. Human review of aggregation required.",
+      "Income category must be reviewed against Article56 exclusions: professional work, foreign-taxed income, separately final-taxed and exempt income are excluded.",
+      "2026 Jan-Apr split/transition, cooperatives, other legal forms, legacy beneficiaries and permanently disqualified histories need separate review.",
+      "Only one complete tax month; YTD before this month includes all relevant business outlets. No monthly-to-annual duplicate aggregation.",
+      "Exact whole-rupiah subset: taxable monthly gross must be a multiple of IDR200; other amounts unresolved pending governed rounding evidence."
+    ]
+  },
+  {
+    "jurisdiction": "ID",
+    "taxTypes": [
+      "SIMPLIFIED_INCOME"
+    ],
+    "subjectTypes": [
+      "INDIVIDUAL"
+    ],
+    "period": {
+      "from": "2026-04-22",
+      "to": "2026-12-31"
+    },
+    "ruleAvailability": [
+      "ID_UMKM_MONTHLY_INDIVIDUAL_2026"
+    ],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "READY_FOR_REVIEW",
+    "executable": false,
+    "packId": "ID_UMKM_INDIVIDUAL_2026",
+    "knownGaps": [
+      "Prior-year turnover must include the legally relevant branches/spouse/business group; 2026 also professional and foreign turnover and all relevant one-founder companies. Human review of aggregation required.",
+      "Income category must be reviewed against Article56 exclusions: professional work, foreign-taxed income, separately final-taxed and exempt income are excluded.",
+      "2026 Jan-Apr split/transition, cooperatives, other legal forms, legacy beneficiaries and permanently disqualified histories need separate review.",
+      "Only one complete tax month; YTD before this month includes all relevant business outlets. No monthly-to-annual duplicate aggregation.",
+      "Exact whole-rupiah subset: taxable monthly gross must be a multiple of IDR200; other amounts unresolved pending governed rounding evidence."
+    ]
+  },
+  {
+    "jurisdiction": "ID",
+    "taxTypes": [
+      "SIMPLIFIED_INCOME"
+    ],
+    "subjectTypes": [
+      "COMPANY"
+    ],
+    "period": {
+      "from": "2026-04-22",
+      "to": "2026-12-31"
+    },
+    "ruleAvailability": [
+      "ID_UMKM_MONTHLY_PT_PERORANGAN_2026"
+    ],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "READY_FOR_REVIEW",
+    "executable": false,
+    "packId": "ID_UMKM_PT_PERORANGAN_2026",
+    "knownGaps": [
+      "Prior-year turnover must include the legally relevant branches/spouse/business group; 2026 also professional and foreign turnover and all relevant one-founder companies. Human review of aggregation required.",
+      "Income category must be reviewed against Article56 exclusions: professional work, foreign-taxed income, separately final-taxed and exempt income are excluded.",
+      "2026 Jan-Apr split/transition, cooperatives, other legal forms, legacy beneficiaries and permanently disqualified histories need separate review.",
+      "Only one complete tax month; YTD before this month includes all relevant business outlets. No monthly-to-annual duplicate aggregation.",
+      "Exact whole-rupiah subset: taxable monthly gross must be a multiple of IDR200; other amounts unresolved pending governed rounding evidence."
+    ]
+  },
+  {
+    "jurisdiction": "ID",
+    "taxTypes": [
+      "WHT"
+    ],
+    "subjectTypes": [
+      "COMPANY"
+    ],
+    "period": {
+      "from": "2026-01-01",
+      "to": "2026-12-31"
+    },
+    "ruleAvailability": [
+      "ID_ART23_RESIDENT_COMPANY_MANAGEMENT_2026"
+    ],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "READY_FOR_REVIEW",
+    "executable": false,
+    "packId": "ID_WHT23_MANAGEMENT_2026",
+    "knownGaps": [
+      "Withholding amount is not annual income liability, actual payment or available credit. Evidence of withholding remains separate.",
+      "No payroll, construction, treaty percentage shortcut or missing-NPWP branch.",
+      "Exact whole-rupiah arithmetic subset; other base precision requires separate rounding review.",
+      "Confirmed SOURCE, WITHHOLDING and payee TAX_RESIDENCE must identify the same transaction."
+    ]
+  },
+  {
+    "jurisdiction": "ID",
+    "taxTypes": [
+      "WHT"
+    ],
+    "subjectTypes": [
+      "INDIVIDUAL"
+    ],
+    "period": {
+      "from": "2026-01-01",
+      "to": "2026-12-31"
+    },
+    "ruleAvailability": [
+      "ID_ART26_NONRESIDENT_SERVICE_2026"
+    ],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "READY_FOR_REVIEW",
+    "executable": false,
+    "packId": "ID_WHT26_SERVICE_2026",
+    "knownGaps": [
+      "Withholding amount is not annual income liability, actual payment or available credit. Evidence of withholding remains separate.",
+      "No payroll, construction, treaty percentage shortcut or missing-NPWP branch.",
+      "Exact whole-rupiah arithmetic subset; other base precision requires separate rounding review.",
+      "Confirmed SOURCE, WITHHOLDING and payee TAX_RESIDENCE must identify the same transaction."
+    ]
+  },
+  {
+    "jurisdiction": "SG",
+    "taxTypes": [
+      "CIT"
+    ],
+    "subjectTypes": [
+      "COMPANY"
+    ],
+    "period": {
+      "from": "2025-01-01",
+      "to": "2025-12-31"
+    },
+    "ruleAvailability": [
+      "SG_NORMAL_CIT_PTE_YA2026"
+    ],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "READY_FOR_REVIEW",
+    "executable": false,
+    "packId": "SG_CIT_YA2026_PTE_NO_CASH_GRANT",
+    "knownGaps": [
+      "SSO403 persists; authority guidance is retained, statutory text review remains a human judgement point.",
+      "NCI after fiscal reconciliation only; no SUTE, credits, special rates, non-calendar basis period or cash-grant-eligible company.",
+      "Exact arithmetic subset: NCI multiple of SGD800 avoids fractional-cent rounding assumptions.",
+      "2026 request period is OUT_OF_PERIOD: YA2026 refers to calendar basis 2025 in this subset."
+    ]
+  },
+  {
+    "jurisdiction": "ID",
+    "taxTypes": [
+      "VAT"
+    ],
+    "subjectTypes": [],
+    "period": {
+      "verifiedAsOf": "2026-10-29",
+      "coverage": "REVIEW_REQUIRED"
+    },
+    "ruleAvailability": [],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "REVIEW_REQUIRED",
+    "executable": false,
+    "knownGaps": [
+      "Registration timing and voluntary PKP election must be established; low turnover alone never means no VAT.",
+      "PMK11/2025/53/2025 interaction, exclusions and invoice rounding not compiled. No VAT amount rule or automatic registration decision."
+    ]
+  },
+  {
+    "jurisdiction": "ID",
+    "taxTypes": [
+      "FOREIGN_TAX_CREDIT"
+    ],
+    "subjectTypes": [],
+    "period": {
+      "verifiedAsOf": "2026-10-29",
+      "coverage": "REVIEW_REQUIRED"
+    },
+    "ruleAvailability": [],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "REVIEW_REQUIRED",
+    "executable": false,
+    "knownGaps": [
+      "Domestic/treaty limitation, per-country/per-income aggregation, taxable versus exempt foreign income, proof of tax and current amendments require review.",
+      "No executable FOREIGN_TAX_CREDIT rule; generic MIN operation alone is not authority."
+    ]
+  },
+  {
+    "jurisdiction": "ID–SG",
+    "taxTypes": [
+      "INCOME_TAX",
+      "CIT",
+      "SIMPLIFIED_INCOME",
+      "WHT",
+      "FOREIGN_TAX_CREDIT"
+    ],
+    "subjectTypes": [
+      "INDIVIDUAL",
+      "COMPANY"
+    ],
+    "period": null,
+    "ruleAvailability": [],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "REVIEW_REQUIRED",
+    "executable": false,
+    "treatyCoverage": "ACQUIRED_DOSSIER_NO_EXECUTABLE_ARTICLES",
+    "knownGaps": [
+      "Treaty income classification, residence/tie-breaker, fixed base/PE, rolling presence window, benefit/PPT and valid 2026 PMK112 documents need human review.",
+      "No rate/cap/exemption/credit is executable; source presence alone is not complete eligibility.",
+      "Source HTML/PDF reading-order differences require legal article review.",
+      "PMK112 PDF Article29 says commencement on promulgation; visual page25 shows31December2025 and BN1205. Extraction placeholders and conflicting abstract cannot set dates automatically.",
+      "No domestic foreign-credit method compiled; treaty does not replace domestic law."
+    ]
+  },
+  {
+    "jurisdiction": "ID–AU",
+    "taxTypes": [
+      "INCOME_TAX",
+      "CIT",
+      "SIMPLIFIED_INCOME",
+      "WHT",
+      "FOREIGN_TAX_CREDIT"
+    ],
+    "subjectTypes": [
+      "INDIVIDUAL",
+      "COMPANY"
+    ],
+    "period": null,
+    "ruleAvailability": [],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "REVIEW_REQUIRED",
+    "executable": false,
+    "treatyCoverage": "ACQUIRED_DOSSIER_NO_EXECUTABLE_ARTICLES",
+    "knownGaps": [
+      "Treaty income classification, residence/tie-breaker, fixed base/PE, rolling presence window, benefit/PPT and valid 2026 PMK112 documents need human review.",
+      "No rate/cap/exemption/credit is executable; source presence alone is not complete eligibility.",
+      "Source HTML/PDF reading-order differences require legal article review.",
+      "PMK112 PDF Article29 says commencement on promulgation; visual page25 shows31December2025 and BN1205. Extraction placeholders and conflicting abstract cannot set dates automatically.",
+      "No domestic foreign-credit method compiled; treaty does not replace domestic law."
+    ]
+  },
+  {
+    "jurisdiction": "AU",
+    "taxTypes": [
+      "AU_RESIDENCE"
+    ],
+    "subjectTypes": [],
+    "period": {
+      "verifiedAsOf": "2026-10-29",
+      "coverage": "UNRESOLVED"
+    },
+    "ruleAvailability": [],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "REVIEW_REQUIRED",
+    "executable": false,
+    "knownGaps": [
+      "Acquisition proof only; no executable domestic tax coverage or temporal inference."
+    ]
+  },
+  {
+    "jurisdiction": "AU",
+    "taxTypes": [
+      "AU_BUSINESS_CURRENT"
+    ],
+    "subjectTypes": [],
+    "period": {
+      "verifiedAsOf": "2026-10-29",
+      "coverage": "UNRESOLVED"
+    },
+    "ruleAvailability": [],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "REVIEW_REQUIRED",
+    "executable": false,
+    "knownGaps": [
+      "Acquisition proof only; no executable domestic tax coverage or temporal inference."
+    ]
+  },
+  {
+    "jurisdiction": "US",
+    "taxTypes": [
+      "US_SMALL"
+    ],
+    "subjectTypes": [],
+    "period": {
+      "verifiedAsOf": "2026-10-29",
+      "coverage": "UNRESOLVED"
+    },
+    "ruleAvailability": [],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "REVIEW_REQUIRED",
+    "executable": false,
+    "knownGaps": [
+      "Acquisition proof only; no executable domestic tax coverage or temporal inference."
+    ]
+  },
+  {
+    "jurisdiction": "GB",
+    "taxTypes": [
+      "UK_SOLE_CURRENT"
+    ],
+    "subjectTypes": [],
+    "period": {
+      "verifiedAsOf": "2026-10-29",
+      "coverage": "UNRESOLVED"
+    },
+    "ruleAvailability": [],
+    "evidenceStatus": "SOURCE_VERIFIED",
+    "governanceStatus": "REVIEW_REQUIRED",
+    "executable": false,
+    "knownGaps": [
+      "Acquisition proof only; no executable domestic tax coverage or temporal inference."
+    ]
+  }
+]

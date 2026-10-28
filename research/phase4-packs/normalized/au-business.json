@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "AU-ATO",
+  "jurisdictionCode": "AU",
+  "metadata": {
+    "title": "ATO website currently unavailable",
+    "officialDocumentId": null,
+    "language": "en",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "74422df6-d434-48eb-beb0-ea752e562692",
+    "rawContentHash": "83f588001329373bd9ebcb8fb44aafafcfc0987d236ba7aa3cc32249afc1b2c0",
+    "sourceUrl": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/before-you-start-a-business/business-structures",
+    "finalUrl": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/before-you-start-a-business/business-structures",
+    "retrievedAt": "2026-10-28T22:40:18.016Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "ATO",
+    "authorityName": "Australian Taxation Office",
+    "sourceRole": "TAX_AUTHORITY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/83f588001329373bd9ebcb8fb44aafafcfc0987d236ba7aa3cc32249afc1b2c0.bin",
+    "rawContentHash": "83f588001329373bd9ebcb8fb44aafafcfc0987d236ba7aa3cc32249afc1b2c0"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/83f588001329373bd9ebcb8fb44aafafcfc0987d236ba7aa3cc32249afc1b2c0.bin",
+      "rawContentHash": "83f588001329373bd9ebcb8fb44aafafcfc0987d236ba7aa3cc32249afc1b2c0"
+    },
+    "metaTags": [
+      "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">",
+      "<meta name=\"viewport\" content=\"width=device-width\">"
+    ]
+  },
+  "normalizedContent": {
+    "text": "",
+    "blocks": []
+  },
+  "citationAnchors": [],
+  "discoveredLinks": [
+    {
+      "url": "https://www.ato.gov.au/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://community.ato.gov.au/s/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.facebook.com/atogovau",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://au.linkedin.com/company/australian-taxation-office",
+      "classification": "REJECTED_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NO_TEXT_REVIEW_REQUIRED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "4ac34c21cc9f30eeb993bb0b2810c8cc137e833f2afa9ddd8babf91ffa2bea98"
+}
