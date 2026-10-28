@@ -1,0 +1,16 @@
+[
+  {
+    "code": "PPN",
+    "name": "Pajak Pertambahan Nilai",
+    "status": "PLACEHOLDER",
+    "source": null,
+    "note": "Tarif dan aturan PPN belum diverifikasi dari sumber resmi (UU/PMK). Placeholder: tidak menghasilkan kewajiban pajak final."
+  },
+  {
+    "code": "PPH",
+    "name": "Pajak Penghasilan (pemotongan/pungutan)",
+    "status": "PLACEHOLDER",
+    "source": null,
+    "note": "Aturan PPh belum diverifikasi dari sumber resmi. Placeholder: tidak menghasilkan kewajiban pajak final."
+  }
+]

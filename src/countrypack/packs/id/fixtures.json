@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Beban operasional tunai",
+    "input": {
+      "id": "tx-001",
+      "orgId": "org-contoh",
+      "kind": "EXPENSE",
+      "date": "2026-03-15",
+      "jurisdiction": "ID",
+      "currency": "IDR",
+      "items": [{ "description": "Langganan internet kantor", "amountMajor": "500000" }],
+      "evidence": { "kind": "RECEIPT", "reference": "KW-2026-001" },
+      "idempotencyKey": "fixture:tx-001",
+      "memo": "Fixture pack Indonesia"
+    },
+    "expect": { "packId": "bigm-pack-id", "taxFinalTotalMinor": "0", "taxHasPlaceholder": true }
+  },
+  {
+    "name": "Pendapatan jasa",
+    "input": {
+      "id": "tx-002",
+      "orgId": "org-contoh",
+      "kind": "REVENUE",
+      "date": "2026-06-01",
+      "jurisdiction": "ID",
+      "currency": "IDR",
+      "items": [{ "description": "Jasa konsultasi", "amountMajor": "10000000" }],
+      "evidence": { "kind": "INVOICE", "reference": "INV-2026-042" },
+      "idempotencyKey": "fixture:tx-002"
+    },
+    "expect": { "packId": "bigm-pack-id", "taxFinalTotalMinor": "0", "taxHasPlaceholder": true }
+  }
+]

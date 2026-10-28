@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ID-PPN-001",
+    "category": "PPN",
+    "description": "Penjualan domestik Indonesia: penentuan PPN ditangguhkan menunggu tarif terverifikasi.",
+    "placeholder": true,
+    "source": null,
+    "condition": { "all": [{ "field": "jurisdiction", "op": "eq", "value": "ID" }] },
+    "action": { "kind": "manual" },
+    "note": "Placeholder — engine tidak boleh menghitung kewajiban final dari rule ini."
+  },
+  {
+    "id": "ID-PPH-001",
+    "category": "PPH",
+    "description": "Transaksi berpotensi objek PPh: penentuan ditangguhkan menunggu aturan terverifikasi.",
+    "placeholder": true,
+    "source": null,
+    "condition": { "all": [{ "field": "jurisdiction", "op": "eq", "value": "ID" }] },
+    "action": { "kind": "manual" },
+    "note": "Placeholder — engine tidak boleh menghitung kewajiban final dari rule ini."
+  }
+]

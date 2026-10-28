@@ -1,0 +1,12 @@
+{
+  "id": "bigm-pack-id",
+  "jurisdiction": "ID",
+  "version": "0.1.0",
+  "validFrom": "2026-01-01",
+  "validTo": "2026-12-31",
+  "currency": "IDR",
+  "rounding": { "mode": "HALF_UP", "decimals": 0 },
+  "minFrameworkVersion": "0.1.0",
+  "displayName": "Indonesia Country Pack (contoh kerja)",
+  "description": "Contoh kerja Country Pack Indonesia. Seluruh aturan pajak masih PLACEHOLDER tanpa sumber terverifikasi dan tidak menghasilkan kewajiban pajak final."
+}

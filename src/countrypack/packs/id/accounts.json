@@ -1,0 +1,9 @@
+[
+  { "id": "id-cash", "code": "101", "name": "Kas", "type": "ASSET" },
+  { "id": "id-receivable", "code": "102", "name": "Piutang Usaha", "type": "ASSET" },
+  { "id": "id-payable", "code": "201", "name": "Utang Usaha", "type": "LIABILITY" },
+  { "id": "id-tax-suspense", "code": "209", "name": "Pajak Ditangguhkan (suspense, bukan kewajiban final)", "type": "LIABILITY" },
+  { "id": "id-equity", "code": "301", "name": "Modal", "type": "EQUITY" },
+  { "id": "id-revenue", "code": "401", "name": "Pendapatan", "type": "REVENUE" },
+  { "id": "id-expense", "code": "501", "name": "Beban Operasional", "type": "EXPENSE" }
+]
