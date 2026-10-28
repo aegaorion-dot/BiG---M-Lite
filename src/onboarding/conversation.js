@@ -1,8 +1,9 @@
 'use strict';
 const {extractJurisdictionCandidates}=require('./jurisdictions');
 const {planQuestion}=require('./profiler');
+const {isFunctionalCorrection}=require('./currencyContext');
 // Fallback is deliberately bounded and is always labeled. Muse Spark handles semantics when configured.
-function detectSignals(text,{pendingQuestion=null}={}){
+function detectSignals(text,{pendingQuestion=null,previousCurrencyRole=null}={}){
  const t=String(text??''),facts=[],jurisdictionFacts=extractJurisdictionCandidates(t);
  const correction=/\b(?:actually|correction|correcting|instead|sebenarnya|koreksi|ganti|ubah)\b/i.test(t);
  const add=(slot,value,quote,operation=correction?'REPLACE':'SET')=>facts.push({slot,value,semanticRole:slot,source:'USER',supportingQuote:quote.slice(0,200),confidence:1,status:'CANDIDATE',operation});
@@ -35,6 +36,7 @@ function detectSignals(text,{pendingQuestion=null}={}){
    else if(/buy|purchas|import|beli|membeli/.test(before))slot='currency.foreignPurchases';
    else if(/paid|pay|bill|receiv|invoice|bayar|tagih|terima/.test(before))slot='currency.transactions';
    else if(pendingQuestion==='currency.functional'&&t.trim().toLowerCase()===m[0].toLowerCase())slot='currency.functional';
+   else if(isFunctionalCorrection(t,previousCurrencyRole))slot='currency.functional';
    if(slot){
     const negative=/\b(?:not|never|no longer|tidak|bukan|belum)\b/i.test(before);
     add(slot,slot==='currency.transactions'||slot==='currency.foreignPurchases'?[value]:value,clause.trim(),negative?'REMOVE':slot==='currency.transactions'||slot==='currency.foreignPurchases'?(correction?'REPLACE':'ADD'):(correction?'REPLACE':'SET'));
@@ -45,5 +47,5 @@ function detectSignals(text,{pendingQuestion=null}={}){
  if(dates){add('accounting.periodStart',dates[1],dates[0]);add('accounting.periodEnd',dates[2],dates[0]);}
  return {facts,jurisdictionFacts:jurisdictionFacts.map(f=>({...f,operation:correction?'REPLACE':f.status==='REJECTED'?'REMOVE':'SET'}))};
 }
-function turn(state,text){const signals=detectSignals(text,{pendingQuestion:state.pendingQuestion});const {applyFacts}=require('./profiler');const next=applyFacts(state,signals.facts,'USER',{jurisdictionFacts:signals.jurisdictionFacts});const question=planQuestion(next,next.slots['user.language'].value);return {profileState:next,signals,question,complete:question.key==='done'};}
+function turn(state,text){const signals=detectSignals(text,{pendingQuestion:state.pendingQuestion,previousCurrencyRole:state.lastCurrencyRole});const {applyFacts}=require('./profiler');const next=applyFacts(state,signals.facts,'USER',{jurisdictionFacts:signals.jurisdictionFacts});const question=planQuestion(next,next.slots['user.language'].value);return {profileState:next,signals,question,complete:question.key==='done'};}
 module.exports={detectSignals,turn,nextQuestion:planQuestion};

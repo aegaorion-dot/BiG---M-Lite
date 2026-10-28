@@ -110,14 +110,14 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
    try{
     aiCalls++;
     const raw=await provider.extractProfile({system:SYSTEM_PROMPT,user:JSON.stringify({message:text,previousCandidates:profileState,pendingQuestion:profileState.pendingQuestion,responseSchema:RESPONSE_SCHEMA,capabilities:{modules:ALLOWED_MODULES,jurisdictions:listJurisdictions().map(j=>j.code),currencies:listCurrencies().map(c=>c.code)}})});
-    const checked=validateExtractorPayload(raw,{userText:text,pendingQuestion:profileState.pendingQuestion});
+    const checked=validateExtractorPayload(raw,{userText:text,pendingQuestion:profileState.pendingQuestion,previousCurrencyRole:profileState.lastCurrencyRole});
     if(!checked.ok)throw Error('AI_SCHEMA_VALIDATION_FAILED');
     extracted=checked.extracted;diagnostic.providerUsed='meta';diagnostic.fallbackReason=null;aiSuccesses++;
    }catch(e){diagnostic.fallbackReason=e.message==='AI_SCHEMA_VALIDATION_FAILED'?'AI_SCHEMA_VALIDATION_FAILED':'PROVIDER_UNAVAILABLE_OR_INVALID_RESPONSE';}
   }
   if(!extracted){
-   const fallback=detectSignals(text,{pendingQuestion:profileState.pendingQuestion});
-   const checked=validateExtractorPayload(fallback,{userText:text,pendingQuestion:profileState.pendingQuestion});
+   const fallback=detectSignals(text,{pendingQuestion:profileState.pendingQuestion,previousCurrencyRole:profileState.lastCurrencyRole});
+   const checked=validateExtractorPayload(fallback,{userText:text,pendingQuestion:profileState.pendingQuestion,previousCurrencyRole:profileState.lastCurrencyRole});
    if(!checked.ok)throw Error('Fallback validation failed: '+checked.errors.join('; '));
    extracted=checked.extracted;
   }

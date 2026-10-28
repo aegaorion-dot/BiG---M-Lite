@@ -5,6 +5,7 @@ const {isKnownJurisdiction}=require('../global/jurisdictions');
 const {BASES}=require('./jurisdictions');
 const {verifyQuote}=require('./evidence');
 const {assertDate}=require('../domain/organization');
+const {isFunctionalCorrection}=require('./currencyContext');
 const ALLOWED_BUSINESS_TYPES=Object.freeze(['freelancer','small-business','umkm','perdagangan','jasa','kuliner','manufaktur']);
 const ALLOWED_MODULES=Object.freeze(['sales','purchase','accounting','reports','import']);
 const SUBJECT_TYPES=Object.freeze(['COMPANY','INDIVIDUAL','PARTNERSHIP']);
@@ -50,7 +51,7 @@ function normalizeValue(key,value){
  if(Array.isArray(value)&&value.every(v=>typeof v==='string'))return [...new Set(value.map(v=>type==='currencies'?v.trim().toUpperCase():v.trim().toLowerCase()))];
  return value;
 }
-function validateExtractorPayload(raw,{userText=null,pendingQuestion=null}={}){
+function validateExtractorPayload(raw,{userText=null,pendingQuestion=null,previousCurrencyRole=null}={}){
  const errors=[],out={facts:[],jurisdictionFacts:[],detectedLanguage:raw?.detectedLanguage??null};
  if(!raw||typeof raw!=='object'||Array.isArray(raw)||!Array.isArray(raw.facts))return {ok:false,errors:['facts must be an array']};
  if(raw.approval||raw.activeConfiguration||raw.selectedPackIds)errors.push('AI cannot grant authority');
@@ -73,7 +74,7 @@ function validateExtractorPayload(raw,{userText=null,pendingQuestion=null}={}){
   if(value==null){if(f.status!=='UNKNOWN'&&f.operation!=='REMOVE')errors.push(f.slot+': null requires UNKNOWN');}
   else if(f.status==='UNKNOWN'||!valueValid(f.slot,value))errors.push(f.slot+': unsupported value/type/status');
   const quote=f.supportingQuote??f.evidence;
-  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&pendingQuestion!=='currency.functional'&&!/book|pembukuan|fungsional|functional/i.test(quote??''))errors.push('functional currency requires bookkeeping evidence');
+  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&pendingQuestion!=='currency.functional'&&!/book|pembukuan|fungsional|functional/i.test(quote??'')&&!isFunctionalCorrection(userText,previousCurrencyRole))errors.push('functional currency requires bookkeeping evidence');
   out.facts.push({...f,value,semanticRole:f.slot,source:f.source??'USER',supportingQuote:quote,confidence:f.confidence??null,status:f.status??'CANDIDATE',operation:f.operation??'SET'});
  }
  if(raw.jurisdictionFacts!==undefined&&!Array.isArray(raw.jurisdictionFacts))errors.push('jurisdictionFacts must be an array');
@@ -110,6 +111,7 @@ function applyFacts(state,facts,source='USER',{jurisdictionFacts=[],correction=f
   else delete record.alternatives;
   if(changed(prev,record)){next.history.push({revision:state.revision,slot:f.slot,previous:prev});dirty=true;}
   next.slots[f.slot]=record;
+  if(f.slot.startsWith('currency.')&&value!=null)next.lastCurrencyRole=f.slot;
  }
  for(const f of jurisdictionFacts){
   const current=next.jurisdictionFacts.filter(j=>j.basis===f.basis&&j.status!=='REJECTED');
