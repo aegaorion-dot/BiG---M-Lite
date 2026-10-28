@@ -9,20 +9,26 @@ const auditPill = $('#auditPill');
 const demoNote = $('#demoNote');
 
 const TABS = [
-  ['onboarding', 'AI Onboarding'],
-  ['dashboard', 'Dashboard'],
-  ['sales', 'Sales'],
-  ['purchase', 'Purchase'],
-  ['accounting', 'Accounting'],
-  ['reports', 'Reports'],
-  ['import', 'CSV Import'],
-  ['tax', 'Tax & Pack'],
-  ['settings', 'Settings'],
+  ['onboarding', 'nav.onboarding'],
+  ['dashboard', 'nav.dashboard'],
+  ['sales', 'nav.sales'],
+  ['purchase', 'nav.purchase'],
+  ['accounting', 'nav.accounting'],
+  ['reports', 'nav.reports'],
+  ['import', 'nav.import'],
+  ['tax', 'nav.tax'],
+  ['settings', 'nav.settings'],
 ];
 let route = 'onboarding';
-let cache = { summary: null, txs: [], journals: [], audit: null, tax: null, settings: null, monthly: [], ob: null };
+let cache = { summary: null, txs: [], journals: [], audit: null, tax: null, settings: null, monthly: [], ob: null, ws: null };
 let obChat = [];
 let obBooted = false;
+let STR = {};
+let UILANG = 'en';
+
+function tr(key) {
+  return STR[key] ?? key;
+}
 
 function toast(msg, kind = '') {
   const el = document.createElement('div');
@@ -52,11 +58,11 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 
 function renderTabs() {
   tabsEl.innerHTML = '';
-  for (const [id, label] of TABS) {
+  for (const [id, key] of TABS) {
     const b = document.createElement('button');
     b.className = 'tab';
     b.type = 'button';
-    b.textContent = label;
+    b.textContent = tr(key);
     b.setAttribute('aria-selected', id === route ? 'true' : 'false');
     b.addEventListener('click', () => { route = id; render(); });
     tabsEl.appendChild(b);
@@ -80,6 +86,7 @@ async function refresh(partial = false) {
     cache.tax = await api('/api/tax').catch(() => null);
     cache.settings = await api('/api/settings').catch(() => null);
     await refreshOb();
+    await refreshI18n();
   }
   const ok = cache.audit && cache.audit.verify && cache.audit.verify.ok === true;
   auditPill.textContent = ok ? 'audit OK' : 'audit ?';
@@ -206,13 +213,22 @@ function vTax() {
 
 function vOnboarding() {
   const ob = cache.ob;
-  const msgs = obChat.map((m) => `<div class="chat-row ${m.who}"><div class="bubble"><strong>${m.who === 'ai' ? 'AI Assistant' : 'Anda'}</strong><p>${esc(m.text)}</p>${m.tag ? `<span class="tag ${m.tag === 'AI' ? 'sale' : 'warn'}">${esc(m.tag)}</span>` : ''}</div></div>`).join('');
+  const ws = cache.ws;
+  const msgs = obChat.map((m) => `<div class="chat-row ${m.who}"><div class="bubble"><strong>${m.who === 'ai' ? 'AI Assistant' : 'You'}</strong><p>${esc(m.text)}</p>${m.tag ? `<span class="tag ${m.tag === 'AI' ? 'sale' : 'warn'}">${esc(m.tag)}</span>` : ''}</div></div>`).join('');
   const draft = ob?.draft;
-  const summary = draft ? `<div class="kv"><span>Bahasa</span><strong>${esc(draft.languageProfile?.ui || '-')}</strong><span>Yurisdiksi</span><strong>${esc(draft.organizationProfile?.domicile || draft.jurisdictionProfiles?.[0]?.code || '-')}</strong><span>Mata uang</span><strong>${esc(draft.currencyProfile?.functional || '-')}${draft.currencyProfile?.otherCurrencies?.length ? ` (+${draft.currencyProfile.otherCurrencies.map(esc).join(', ')})` : ''} (usulan)</strong><span>CountryPack</span><strong>${esc(ob?.proposal ? 'Siap validasi' : 'Perlu validasi')}</strong><span>Status pajak</span><strong>menunggu verifikasi (placeholder)</strong></div>` : '<p class="muted">Memuat…</p>';
-  return `<div class="hero"><div class="panel hero-main"><p class="hero-kicker">AI-FIRST ONBOARDING · ONE ENGINE</p><h1>Selamat datang di BiG-M.</h1><p>Ceritakan sedikit tentang bisnis Anda. Saya akan membantu menyiapkan sistemnya.</p><p class="muted">${esc(ob?.ai?.note || '')}</p></div>
-  <div class="panel"><h3>Usulan konfigurasi</h3>${summary}<div class="toolbar"><button class="btn navy" id="obPropose" type="button">Susun usulan</button><button class="btn navy" id="obValidate" type="button">Validasi</button><button class="btn gold" id="obActivate" type="button">Konfirmasi &amp; Aktifkan</button></div><div id="obOut"></div></div></div>
-  <div class="panel"><h3>Percakapan</h3><div class="chat" id="obChat">${msgs || '<p class="muted">Mulai dengan menyapa, contoh: Saya punya perusahaan perdagangan di Singapura, tapi ingin memakai bahasa Indonesia.</p>'}</div>
-  <div class="toolbar"><input id="obInput" placeholder="Tulis jawaban Anda…" style="flex:1" /><button class="btn gold" id="obSend" type="button">Kirim</button></div></div>`;
+  const slots = ob?.slots ?? {};
+  const slotVal = (k) => slots[k]?.value ?? null;
+  const orgName = slotVal('org.name') ?? draft?.organizationProfile?.name ?? null;
+  const dom = slotVal('org.domicile') ?? draft?.organizationProfile?.domicile ?? null;
+  const cur = slotVal('currency.functional') ?? draft?.currencyProfile?.functional ?? null;
+  const langOpts = (ob?.languages ?? [{ tag: 'en', name: 'English' }, { tag: 'id', name: 'Bahasa Indonesia' }])
+    .map((l) => `<option value="${esc(l.tag)}" ${ob?.uiLanguage === l.tag ? 'selected' : ''}>${esc(l.name)}</option>`).join('');
+  const summary = `<div class="kv"><span>${esc(tr('ob.langLabel'))}</span><strong>${esc(ob?.uiLanguage || 'en')}</strong><span>Business</span><strong>${esc(orgName || '-')}</strong><span>Jurisdiction</span><strong>${esc(dom || '-')}</strong><span>Currency</span><strong>${esc(cur || '-')}</strong><span>CountryPack</span><strong>${esc(ob?.proposal ? 'Ready' : 'Needs validation')}</strong><span>Tax</span><strong>${esc(tr('ob.taxNote'))}</strong></div><p class="muted">${esc(tr('ob.fxNote'))}</p>`;
+  const wsBlock = ws?.activated ? `<div class="panel"><h3>${esc(ws.organizationName || '')} · ${esc(ws.functionalCurrency || '')} · ${esc(ws.domicile || '')}</h3><p class="muted">${esc(tr('ws.income'))} · ${esc(tr('ws.expenses'))} · ${esc(tr('ws.cash'))} · ${esc(tr('ws.summary'))}</p></div>` : '';
+  return `<div class="hero"><div class="panel hero-main"><p class="hero-kicker">${esc(tr('ob.kicker'))}</p><h1>${esc(tr('ob.title'))}</h1><p>${esc(tr('ob.subtitle'))}</p><p class="muted">${esc(ob?.ai?.note || '')}</p><label>${esc(tr('ob.langLabel'))} <select id="obLang">${langOpts}</select></label></div>
+  <div class="panel"><h3>${esc(tr('ob.reviewTitle'))}</h3>${summary}<div class="toolbar"><button class="btn navy" id="obPropose" type="button">${esc(tr('ob.propose'))}</button><button class="btn navy" id="obValidate" type="button">${esc(tr('ob.validate'))}</button><button class="btn gold" id="obActivate" type="button">${esc(tr('ob.activate'))}</button></div><div id="obOut"></div></div></div>${wsBlock}
+  <div class="panel"><h3>${esc(tr('ob.chatTitle'))}</h3><div class="chat" id="obChat">${msgs || `<p class="muted">${esc(tr('ob.hint'))}</p>`}</div>
+  <div class="toolbar"><input id="obInput" placeholder="${esc(tr('ob.placeholder'))}" style="flex:1" /><button class="btn gold" id="obSend" type="button">${esc(tr('ob.send'))}</button></div></div>`;
 }
 
 function wireOnboarding() {
@@ -232,6 +248,12 @@ function wireOnboarding() {
   };
   $('#obSend')?.addEventListener('click', send);
   $('#obInput')?.addEventListener('keydown', (e) => { if (e.key === 'Enter') send(); });
+  $('#obLang')?.addEventListener('change', async (e) => {
+    try {
+      await api('/api/onboarding/language', { method: 'POST', body: JSON.stringify({ language: e.target.value }) });
+      await refreshAll();
+    } catch (err2) { toast(err2.message, 'error'); }
+  });
   $('#obPropose')?.addEventListener('click', async () => {
     try { const r = await api('/api/onboarding/propose', { method: 'POST', body: '{}' }); await refreshOb(); toast(`Usulan tersusun: ${r.proposal.functionalCurrency} · ${(r.proposal.jurisdictions || []).join(',')}`); render(); }
     catch (e) { toast(e.message, 'error'); }
@@ -251,10 +273,28 @@ function wireOnboarding() {
 
 async function refreshOb() {
   cache.ob = await api('/api/onboarding/state').catch(() => null);
+  cache.ws = await api('/api/workspace').catch(() => null);
+  if (cache.ob && cache.ob.uiLanguage) UILANG = cache.ob.uiLanguage;
   if (cache.ob && !obBooted && obChat.length === 0) {
     obBooted = true;
-    obChat.push({ who: 'ai', text: 'Selamat datang di BiG-M. Ceritakan sedikit tentang bisnis Anda. Saya akan membantu menyiapkan sistemnya.', tag: 'deterministik' });
+    obChat.push({ who: 'ai', text: tr('ob.greeting') || 'Welcome to BiG-M. Tell me a little about your business and I will help set it up.', tag: 'deterministik' });
   }
+}
+
+async function refreshI18n() {
+  try {
+    const r = await api('/api/i18n').catch(() => null);
+    const lang = r?.state?.uiLanguage ?? 'en';
+    UILANG = lang;
+    document.documentElement.lang = lang;
+    const table = await fetch(`/i18n/${lang}.json`).then((x) => x.json()).catch(() => null);
+    if (table && typeof table === 'object') STR = table;
+  } catch { /* keep English fallback */ }
+}
+
+async function refreshAll() {
+  await refresh();
+  render();
 }
 
 function vSettings() {

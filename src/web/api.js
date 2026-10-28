@@ -108,6 +108,16 @@ async function handleApi(store, method, pathname, query, body) {
     if (method === 'GET' && pathname === '/api/onboarding/history') {
       return json({ ok: true, history: store.onboardingHistory(), ai: store.aiStatus() });
     }
+    if (method === 'POST' && pathname === '/api/onboarding/language') {
+      const lang = store.setUiLanguage(body?.language ?? body?.tag ?? 'en');
+      return json({ ok: true, language: lang });
+    }
+    if (method === 'GET' && pathname === '/api/workspace') {
+      return json({ ok: true, workspace: store.workspaceProfile() });
+    }
+    if (method === 'GET' && pathname === '/api/i18n') {
+      return json({ ok: true, state: store.onboardingState() });
+    }
     if (method === 'GET' && pathname === '/api/settings') {
       return json({
         ok: true,

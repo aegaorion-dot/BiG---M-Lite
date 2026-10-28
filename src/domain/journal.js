@@ -37,7 +37,7 @@ class JournalLine {
 }
 
 class JournalEntry {
-  constructor({ id, orgId, date, currency, lines, memo = null, transactionId = null, periodId = null, reversalOf = null }) {
+  constructor({ id, orgId, date, currency, lines, memo = null, transactionId = null, periodId = null, reversalOf = null, business = null }) {
     if (!id || typeof id !== 'string') throw new Error('JournalEntry.id is required');
     if (!orgId || typeof orgId !== 'string') throw new Error('JournalEntry.orgId is required');
     assertDate(date, 'JournalEntry.date');

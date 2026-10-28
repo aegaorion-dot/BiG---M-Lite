@@ -57,13 +57,20 @@ class MetaModelAdapter extends AIProvider {
         'content-type': 'application/json',
         authorization: `Bearer ${this.apiKey}`,
       },
-      body: JSON.stringify({ model: this.model, task, input }),
+      // Responses API contract: model + input blocks, bounded tokens.
+      body: JSON.stringify({ model: this.model, input: [{ role: 'system', content: input.system ?? '' }, { role: 'user', content: input.user ?? '' }], max_output_tokens: 512, task }),
     });
     if (!res || res.ok !== true) {
       const status = res?.status ?? '?';
       throw new Error(`Meta API request failed (status ${status})`);
     }
     return res.json();
+  }
+
+  /** Structured profiling extraction (Responses API contract). */
+  async extractProfile({ system, user }) {
+    const raw = await this._post('profile-extract', { system, user });
+    return raw && raw.output !== undefined ? raw.output : raw;
   }
 
   /** @returns {Promise<object>} usulan MENTAH — wajib divalidasi sebelum dipakai. */

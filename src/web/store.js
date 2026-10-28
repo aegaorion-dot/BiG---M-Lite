@@ -26,6 +26,15 @@ const { blankProfile, validateProfile } = require('../onboarding/profile');
 const { turn: conversationTurn } = require('../onboarding/conversation');
 const { proposeConfiguration, validateProposal, createConfigurator } = require('../onboarding/configurator');
 const { MetaModelAdapter } = require('../ai/aiAdapter');
+const { normalizeLanguageTag, supportedLanguages } = require('../i18n/languages');
+const { t } = require('../i18n/strings');
+const { listJurisdictions } = require('../global/jurisdictions');
+const { listCurrencies } = require('../global/currencies');
+const { blankSlots } = require('../onboarding/slots');
+const {
+  SYSTEM_PROMPT, blankProfileState, validateExtractorPayload, applyFacts,
+  gapAnalysis, planQuestion, planConfiguration, validateConfiguration,
+} = require('../onboarding/profiler');
 const fs = require('node:fs');
 
 const ID_PACK_DIR = path.join(__dirname, '..', 'countrypack', 'packs', 'id');
@@ -82,9 +91,25 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
   const ctx = { org, periods, ledger, audit, idempotency, posting, reversal, registry, pack, chart };
   const configurator = createConfigurator({ audit });
   let draft = blankProfile();
+  // P1 zero-state: English base, no business defaults.
+  draft.userProfile.preferredLanguage = 'en';
+  draft.languageProfile.ui = 'en';
+  draft.organizationProfile = { id: '', name: '', domicile: '', businessField: '' };
+  draft.entityProfiles = [];
+  draft.jurisdictionProfiles = [];
+  draft.currencyProfile = { functional: '', otherCurrencies: [] };
+  draft.moduleConfiguration = [];
   let lastProposal = null;
   let lastValidation = null;
   let activeConfig = null;
+  // P1 schema-driven profiler state: empty slots, one model call per turn.
+  let profileState = blankProfileState();
+  profileState.slots['user.language'].value = 'en';
+  profileState.slots['user.language'].status = 'active';
+  profileState.slots['user.language'].source = 'default-base';
+  let uiLanguage = 'en';
+  let aiCalls = 0;
+  let aiSuccesses = 0;
 
   function chartFor(jurisdiction) {
     return charts.get(jurisdiction) ?? chart;
@@ -320,6 +345,43 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
   }
 
   async function onboardingTurn(userText, { aiProvider = null } = {}) {
+    const text = String(userText ?? '');
+    // P1: one Meta call per meaningful turn; deterministic fallback otherwise.
+    let provider = aiProvider;
+    if (!provider && process.env.BIGM_META_API_URL && process.env.BIGM_META_API_KEY) {
+      provider = new MetaModelAdapter({});
+    }
+    if (provider && typeof provider.extractProfile === 'function') {
+      try {
+        aiCalls += 1;
+        profileState.aiCalls = aiCalls;
+        const raw = await provider.extractProfile({
+          system: SYSTEM_PROMPT,
+          user: JSON.stringify({ profile: profileState.slots, message: text, lang: uiLanguage }),
+        });
+        const checked = validateExtractorPayload(raw);
+        if (checked.ok) {
+          profileState = applyFacts(profileState, checked.extracted.facts, 'ai');
+          profileState.turnCount += 1;
+          aiSuccesses += 1;
+          if (checked.extracted.detectedLanguage) {
+            const lang = normalizeLanguageTag(checked.extracted.detectedLanguage);
+            uiLanguage = lang;
+            profileState.slots['user.language'].value = lang;
+            profileState.slots['user.language'].status = 'proposed';
+            profileState.slots['user.language'].source = 'ai';
+          }
+          const missing = gapAnalysis(profileState);
+          profileState.readyForProposal = missing.length === 0;
+          const question = checked.extracted.nextQuestion
+            ? { key: 'ai', text: checked.extracted.nextQuestion }
+            : planQuestion(profileState, uiLanguage);
+          syncDraftFromProfileState();
+          persist();
+          return { draft: onboardingDraft(), signals: {}, question, complete: question.key === 'done', aiLabel: 'ai-tervalidasi' };
+        }
+      } catch { /* fall through to deterministic */ }
+    }
     let signals = {};
     let aiLabel = 'deterministik';
     if (aiProvider) {
@@ -335,14 +397,16 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
       } catch { /* fallback deterministik */ }
     }
     const { detectSignals } = require('../onboarding/conversation');
-    const det = detectSignals(userText);
+    const det = detectSignals(text);
     signals = { ...det, ...signals };
-    const out = conversationTurn(draft, userText);
+    const out = conversationTurn(draft, text);
     // Gabungkan sinyal AI tervalidasi bila ada, lalu terapkan ulang agar id org ikut terisi.
     draft = out.draft;
     if (Object.keys(signals).length > 0) {
       const { applySignalsToDraft, nextQuestion } = require('../onboarding/conversation');
       draft = applySignalsToDraft(draft, signals);
+      if (signals.language) uiLanguage = normalizeLanguageTag(signals.language);
+      mirrorProfileStateFromDraft(signals);
       const question = nextQuestion(draft);
       persist();
       return { draft: JSON.parse(JSON.stringify(draft)), signals, question, complete: question.key === 'done', aiLabel };
@@ -351,11 +415,92 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
     return { draft: JSON.parse(JSON.stringify(draft)), signals: out.signals, question: out.question, complete: out.complete, aiLabel };
   }
 
+  function mirrorProfileStateFromDraft(signals) {
+    const set = (key, value, source = 'conversation') => {
+      if (value === undefined || value === null || value === '') return;
+      const slot = profileState.slots[key];
+      if (!slot) return;
+      slot.value = value;
+      slot.status = 'proposed';
+      slot.source = source;
+    };
+    if (signals.orgName) set('org.name', signals.orgName);
+    if (signals.jurisdiction) {
+      set('org.domicile', signals.jurisdiction);
+      if (!profileState.slots['org.entityJurisdiction'].value) set('org.entityJurisdiction', signals.jurisdiction);
+    }
+    if (signals.currency) {
+      set('currency.functional', draft.currencyProfile.functional || signals.currency);
+      const others = draft.currencyProfile.otherCurrencies ?? [];
+      if (others.length) profileState.slots['currency.transactions'].value = [...others];
+      if (others.length) profileState.slots['currency.transactions'].status = 'proposed';
+      const rep = draft.currencyProfile.functional || signals.currency;
+      if (rep) set('currency.reporting', rep);
+    }
+    if (signals.businessField) set('org.businessType', signals.businessField);
+    if (signals.language) set('user.language', normalizeLanguageTag(signals.language));
+    if (draft.organizationProfile.name) set('org.name', draft.organizationProfile.name);
+    if (draft.organizationProfile.domicile) set('org.domicile', draft.organizationProfile.domicile);
+    if (draft.currencyProfile.functional) set('currency.functional', draft.currencyProfile.functional);
+    profileState.turnCount += 1;
+    profileState.readyForProposal = gapAnalysis(profileState).length === 0;
+  }
+
+  function syncDraftFromProfileState() {
+    const v = (k) => profileState.slots[k]?.value ?? null;
+    const name = v('org.name');
+    const dom = v('org.domicile') ?? v('org.entityJurisdiction');
+    const cur = v('currency.functional');
+    const lang = v('user.language') ?? 'en';
+    const next = JSON.parse(JSON.stringify(draft));
+    if (name) next.organizationProfile.name = String(name).slice(0, 60);
+    if (dom) {
+      next.organizationProfile.domicile = String(dom).toUpperCase();
+      next.entityProfiles = [{ id: 'ent-1', name: next.organizationProfile.name || 'Main entity', jurisdiction: String(dom).toUpperCase() }];
+      next.jurisdictionProfiles = [{ code: String(dom).toUpperCase(), packStatus: 'pending-validation', taxStatus: 'pending-verification' }];
+    }
+    if (cur) {
+      next.currencyProfile.functional = String(cur).toUpperCase();
+      const tx = v('currency.transactions');
+      if (Array.isArray(tx)) next.currencyProfile.otherCurrencies = tx.map((c) => String(c).toUpperCase());
+    }
+    next.userProfile.preferredLanguage = normalizeLanguageTag(lang);
+    next.languageProfile.ui = normalizeLanguageTag(lang);
+    if (next.organizationProfile.name && !next.organizationProfile.id) {
+      const slug = next.organizationProfile.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 24) || 'org';
+      next.organizationProfile.id = `org-${slug}`;
+    }
+    draft = next;
+  }
+
   function onboardingDraft() {
     return JSON.parse(JSON.stringify(draft));
   }
 
   function onboardingPropose() {
+    // P1: profile-driven plan first; legacy deterministic proposal as fallback.
+    const plan = planConfiguration(profileState);
+    if (plan.organizationName && plan.domicile && plan.functionalCurrency) {
+      const checked = validateConfiguration(plan, { registry });
+      if (checked.ok) {
+        lastProposal = {
+          language: checked.validated.language,
+          organizationId: draft.organizationProfile.id || 'org-draft',
+          organizationName: checked.validated.organizationName,
+          entities: [{ id: 'ent-1', jurisdiction: checked.validated.entityJurisdiction }],
+          jurisdictions: [checked.validated.entityJurisdiction],
+          functionalCurrency: checked.validated.functionalCurrency,
+          otherCurrencies: checked.validated.transactionCurrencies,
+          reportingCurrency: checked.validated.reportingCurrency,
+          modules: checked.validated.modules,
+          period: { ...draft.accountingConfiguration },
+          taxStatus: 'pending-verification',
+          source: 'profile-driven',
+          version: 1,
+        };
+        return { ok: true, proposal: JSON.parse(JSON.stringify(lastProposal)) };
+      }
+    }
     const out = proposeConfiguration(draft);
     if (out.ok) lastProposal = out.proposal;
     return out;
@@ -390,6 +535,13 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
   function onboardingState() {
     return {
       draft: onboardingDraft(),
+      slots: JSON.parse(JSON.stringify(profileState.slots)),
+      missingSlots: gapAnalysis(profileState),
+      readyForProposal: profileState.readyForProposal,
+      uiLanguage,
+      languages: supportedLanguages(),
+      jurisdictions: listJurisdictions(),
+      currencies: listCurrencies(),
       proposal: lastProposal ? JSON.parse(JSON.stringify(lastProposal)) : null,
       validated: lastValidation ? JSON.parse(JSON.stringify(lastValidation)) : null,
       active: activeConfig ? JSON.parse(JSON.stringify(activeConfig)) : null,
@@ -471,9 +623,40 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
     return {
       configured: hasEndpoint && hasKey,
       mode: hasEndpoint && hasKey ? 'ai' : 'deterministik',
+      calls: aiCalls,
+      successes: aiSuccesses,
       note: hasEndpoint && hasKey
         ? 'AI terkonfigurasi; output tetap divalidasi deterministik.'
         : 'AI tidak terkonfigurasi — memakai fallback deterministik (jujur, bukan klaim AI).',
+    };
+  }
+
+  function setUiLanguage(tag) {
+    uiLanguage = normalizeLanguageTag(tag);
+    profileState.slots['user.language'].value = uiLanguage;
+    profileState.slots['user.language'].status = 'proposed';
+    profileState.slots['user.language'].source = 'user-selection';
+    const next = JSON.parse(JSON.stringify(draft));
+    next.userProfile.preferredLanguage = uiLanguage;
+    next.languageProfile.ui = uiLanguage;
+    draft = next;
+    persist();
+    return uiLanguage;
+  }
+
+  function workspaceProfile() {
+    const plan = planConfiguration(profileState);
+    const active = activeConfig?.proposal ?? null;
+    return {
+      language: uiLanguage,
+      organizationName: active?.organizationName ?? plan.organizationName,
+      domicile: active?.jurisdictions?.[0] ?? plan.domicile,
+      functionalCurrency: active?.functionalCurrency ?? plan.functionalCurrency,
+      reportingCurrency: active?.reportingCurrency ?? plan.reportingCurrency,
+      modules: active?.modules ?? plan.modules,
+      activated: Boolean(activeConfig),
+      taxNote: t(uiLanguage, 'ob.taxNote'),
+      fxNote: t(uiLanguage, 'ob.fxNote'),
     };
   }
 
@@ -484,6 +667,7 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
     charts, chartFor, pipelineDepsFor,
     onboardingTurn, onboardingDraft, onboardingPropose, onboardingValidate,
     onboardingActivate, onboardingHistory, onboardingState, aiStatus,
+    setUiLanguage, workspaceProfile,
     configurator,
   };
 }
