@@ -1,24 +1,7 @@
 'use strict';
-
-/**
- * ISO 3166 jurisdiction registry (small curated subset for MVP).
- * Language NEVER implies jurisdiction; selection must be explicit.
- */
-
-const JURISDICTIONS = Object.freeze([
-  { code: 'ID', name: 'Indonesia' },
-  { code: 'MY', name: 'Malaysia' },
-  { code: 'SG', name: 'Singapore' },
-  { code: 'US', name: 'United States' },
-  { code: 'AU', name: 'Australia' },
-]);
-
-function listJurisdictions() {
-  return JURISDICTIONS.map((j) => ({ ...j }));
-}
-
-function isKnownJurisdiction(code) {
-  return JURISDICTIONS.some((j) => j.code === String(code ?? '').toUpperCase());
-}
-
-module.exports = { JURISDICTIONS, listJurisdictions, isKnownJurisdiction };
+// Jurisdiction metadata is not an executable tax pack. No default-country fallback.
+const JURISDICTIONS = Object.freeze(require('./jurisdiction-metadata.json'));
+function getJurisdiction(code) { return JURISDICTIONS.find(j => j.code === String(code ?? '').toUpperCase()) ?? null; }
+function listJurisdictions() { return JURISDICTIONS.map(j => JSON.parse(JSON.stringify(j))); }
+function isKnownJurisdiction(code) { return Boolean(getJurisdiction(code)); }
+module.exports = { JURISDICTIONS, getJurisdiction, listJurisdictions, isKnownJurisdiction };

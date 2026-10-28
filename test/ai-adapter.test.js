@@ -51,7 +51,7 @@ describe('MetaModelAdapter — konfigurasi & protokol', () => {
     let seen;
     const stubFetch = async (url, opts) => {
       seen = { url, opts };
-      return { ok: true, json: async () => ({ category: 'EXPENSE' }) };
+      return { ok: true, json: async () => ({ status: 'completed', output: [{type:'message', role:'assistant', content:[{type:'output_text', text:JSON.stringify({category:'EXPENSE'})}]}] }) };
     };
     const adapter = new MetaModelAdapter({
       endpoint: 'https://meta.example/v1', apiKey: 'RAHASIA-UJI', model: 'm1', fetchImpl: stubFetch,
@@ -59,15 +59,25 @@ describe('MetaModelAdapter — konfigurasi & protokol', () => {
     assert.deepEqual(await adapter.classify({ id: 'x' }), { category: 'EXPENSE' });
     assert.equal(seen.opts.headers.authorization, 'Bearer RAHASIA-UJI');
     const body = JSON.parse(seen.opts.body);
-    assert.equal(body.task, 'classify-transaction');
+    assert.equal(body.task, undefined);
+    assert.equal(body.store, false);
+    assert.ok(body.input[1].content[0].text.includes('x'));
     assert.equal(body.model, 'm1');
   });
 
   it('status HTTP gagal menjadi error eksplisit', async () => {
     const failing = async () => ({ ok: false, status: 500 });
     const adapter = new MetaModelAdapter({
-      endpoint: 'https://meta.example/v1', apiKey: 'k', fetchImpl: failing,
+      endpoint: 'https://meta.example/v1', apiKey: 'k', model: 'fixture-model', fetchImpl: failing,
     });
     await assert.rejects(() => adapter.explain({ id: 'x' }), /status 500/);
   });
+});
+
+const { responsePayload } = require('../src/ai/aiAdapter');
+describe('Meta Responses envelope',()=>{
+ it('parses content across output text blocks',()=>{assert.deepEqual(responsePayload({status:'completed',output:[{type:'reasoning'},{type:'message',role:'assistant',content:[{type:'output_text',text:'{"facts":'},{type:'output_text',text:'[]}'}]}]}),{facts:[]});});
+ it('rejects incomplete, refusal, missing output and invalid JSON',()=>{
+  for(const response of [{status:'incomplete',output:[]},{status:'completed',output:[{type:'message',role:'assistant',content:[{type:'refusal'}]}]},{facts:[]},{output:[{type:'message',role:'assistant',content:[{type:'output_text',text:'not JSON'}]}]}])assert.throws(()=>responsePayload(response));
+ });
 });

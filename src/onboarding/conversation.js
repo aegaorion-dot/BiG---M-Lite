@@ -1,172 +1,49 @@
 'use strict';
-
-/**
- * Conversation — ekstraksi sinyal deterministik dari teks pengguna (ID/EN).
- *
- * Kontrak:
- * - 100% deterministik, tanpa jaringan, tanpa klaim AI.
- * - detectSignals() hanya mengembalikan fakta yang eksplisit di teks.
- * - TIDAK mengarang tarif/hukum; hanya bahasa, yurisdiksi, mata uang,
- *   bidang usaha, nama organisasi bila eksplisit.
- * - nextQuestion() hanya menanyakan slot yang masih kosong.
- */
-
-const JURISDICTIONS = [
-  { code: 'SG', aliases: ['singapura', 'singapore', 'sg'] },
-  { code: 'ID', aliases: ['indonesia', 'indonesian', 'id'] },
-  { code: 'MY', aliases: ['malaysia', 'my'] },
-  { code: 'US', aliases: ['amerika', 'united states', 'usa', 'us'] },
-];
-
-const CURRENCIES = ['SGD', 'IDR', 'USD', 'MYR', 'EUR'];
-
-const FIELDS = [
-  { key: 'perdagangan', aliases: ['perdagangan', 'trading', 'dagang', 'retail', 'niaga'] },
-  { key: 'jasa', aliases: ['jasa', 'services', 'service', 'konsultasi', 'consulting'] },
-  { key: 'manufaktur', aliases: ['manufaktur', 'manufacturing', 'pabrik'] },
-  { key: 'kuliner', aliases: ['kuliner', 'fnb', 'food', 'restoran', 'cafe'] },
-];
-
-function lower(t) {
-  return String(t ?? '').toLowerCase();
+const {extractJurisdictionCandidates}=require('./jurisdictions');
+const {planQuestion}=require('./profiler');
+// Fallback is deliberately bounded and is always labeled. Muse Spark handles semantics when configured.
+function detectSignals(text,{pendingQuestion=null}={}){
+ const t=String(text??''),facts=[],jurisdictionFacts=extractJurisdictionCandidates(t);
+ const correction=/\b(?:actually|correction|correcting|instead|sebenarnya|koreksi|ganti|ubah)\b/i.test(t);
+ const add=(slot,value,quote,operation=correction?'REPLACE':'SET')=>facts.push({slot,value,semanticRole:slot,source:'USER',supportingQuote:quote.slice(0,200),confidence:1,status:'CANDIDATE',operation});
+ const uncertain=/^(?:not sure|unsure|maybe|perhaps|tidak yakin|belum tahu|mungkin)\b/i.test(t.trim());
+ if(uncertain)return {facts:[],jurisdictionFacts:[]};
+ const language=t.match(/\b(?:app|application|display|ui|bahasa|pakai|prefer|use|want|ingin)\b[^.]{0,45}\b(English|Indonesian|Indonesia|Inggris)\b/i);
+ if(language&&/(?:app|language|bahasa|display|ui|prefer|use|pakai|ingin)/i.test(language[0]))add('user.language',/Indonesian|Indonesia/i.test(language[1])?'id':'en',language[0]);
+ const nationality=t.match(/\b(?:I am|I'm|saya(?: adalah)?|nationality(?: is)?)\s+(?:an?\s+)?(Australian|Indonesian|British|American)\b/i);
+ if(nationality)add('user.nationality',({australian:'AU',indonesian:'ID',british:'GB',american:'US'})[nationality[1].toLowerCase()],nationality[0]);
+ let name=t.match(/\b(?:business (?:name is|is called)|company (?:name is|is called)|nama (?:usaha|bisnis|perusahaan)(?: saya)?(?: adalah)?|(?:usaha|bisnis|toko|perusahaan) (?:saya )?bernama)\s+["']?([^,;.\n"']{2,80})/i);
+ if(!name)name=t.match(/^(?:(?:actually|correction)[:,]?\s*)?(?:Company|PT|CV)\s+([^,;.\n]{2,80})/i);
+ if(name)add('org.name',name[1].trim(),name[0]);
+ if(/\b(?:freelance|freelancer|freelencer|pekerja lepas)\b/i.test(t)){const m=t.match(/\b(?:freelance|freelancer|freelencer|pekerja lepas)\b/i);add('org.businessType','freelancer',m[0]);add('org.subjectType','INDIVIDUAL',m[0]);}
+ else {
+  const m=t.match(/\b(coffee shop|warung kopi|kedai kopi|cafe|kuliner|food|restoran|restaurant|perdagangan|trading|retail|dagang|consulting|services?|jasa|konsultasi|manufacturing|manufaktur|umkm)\b/i);
+  if(m)add('org.businessType',/coffee|kopi|cafe|kuliner|food|restoran|restaurant/i.test(m[0])?'kuliner':/trading|retail|dagang/i.test(m[0])?'perdagangan':/manufact|manufaktur/i.test(m[0])?'manufaktur':/umkm/i.test(m[0])?'umkm':'jasa',m[0]);
+ }
+ const subject=t.match(/\b(sole proprietor|individual|perorangan|company|corporation|perseroan|PT|partnership|kemitraan)\b/i);
+ if(subject)add('org.subjectType',/sole|individual|perorangan/i.test(subject[0])?'INDIVIDUAL':/partnership|kemitraan/i.test(subject[0])?'PARTNERSHIP':'COMPANY',subject[0]);
+ const currencyPattern=/\b(IDR|SGD|USD|AUD|GBP|EUR|MYR|rupiah|Singapore dollars?|US dollars?|Australian dollars?|pounds?)\b/gi;
+ for(const clause of t.split(/(?<=[.!?;])\s+|,\s*|\s+(?:and|but|dan|tetapi)\s+/i)){
+  if(/\b(?:maybe|perhaps|unsure|mungkin|belum tahu)\b/i.test(clause))continue;
+  const matches=[...clause.matchAll(currencyPattern)];currencyPattern.lastIndex=0;
+  for(const m of matches){
+   const value=/rupiah/i.test(m[0])?'IDR':/Singapore dollars?/i.test(m[0])?'SGD':/US dollars?/i.test(m[0])?'USD':/Australian dollars?/i.test(m[0])?'AUD':/pounds?/i.test(m[0])?'GBP':m[0].toUpperCase();
+   const before=clause.slice(0,m.index).toLowerCase();
+   let slot=null;
+   if(/report|laporan/.test(before))slot='currency.reporting';
+   else if(/book|pembukuan|functional|fungsional/.test(before))slot='currency.functional';
+   else if(/buy|purchas|import|beli|membeli/.test(before))slot='currency.foreignPurchases';
+   else if(/paid|pay|bill|receiv|invoice|bayar|tagih|terima/.test(before))slot='currency.transactions';
+   else if(pendingQuestion==='currency.functional'&&t.trim().toLowerCase()===m[0].toLowerCase())slot='currency.functional';
+   if(slot){
+    const negative=/\b(?:not|never|no longer|tidak|bukan|belum)\b/i.test(before);
+    add(slot,slot==='currency.transactions'||slot==='currency.foreignPurchases'?[value]:value,clause.trim(),negative?'REMOVE':slot==='currency.transactions'||slot==='currency.foreignPurchases'?(correction?'REPLACE':'ADD'):(correction?'REPLACE':'SET'));
+   }
+  }
+ }
+ const dates=t.match(/\b(?:period|periode)\s+(\d{4}-\d{2}-\d{2})\s+(?:to|through|sampai|hingga)\s+(\d{4}-\d{2}-\d{2})/i);
+ if(dates){add('accounting.periodStart',dates[1],dates[0]);add('accounting.periodEnd',dates[2],dates[0]);}
+ return {facts,jurisdictionFacts:jurisdictionFacts.map(f=>({...f,operation:correction?'REPLACE':f.status==='REJECTED'?'REMOVE':'SET'}))};
 }
-
-function detectSignals(text) {
-  const t = lower(text);
-  const signals = {};
-  for (const j of JURISDICTIONS) {
-    const hit = j.aliases.some((a) => {
-      const alias = String(a).toLowerCase();
-      if (alias.length <= 2) return new RegExp(`\\b${alias}\\b`, 'i').test(t);
-      return t.includes(alias);
-    });
-    if (hit) { signals.jurisdiction = j.code; break; }
-  }
-  for (const c of CURRENCIES) {
-    if (t.includes(c.toLowerCase())) { signals.currency = c; break; }
-  }
-  for (const f of FIELDS) {
-    if (f.aliases.some((a) => t.includes(a))) { signals.businessField = f.key; break; }
-  }
-  if (/(bahasa indonesia|pakai indonesia|indonesian language|use indonesian)/.test(t)) signals.language = 'id';
-  else if (/(english|bahasa inggris|use english)/.test(t)) signals.language = 'en';
-  else if (/\bindonesia\b/.test(t) && /nyaman|ingin|pakai|gunakan/.test(t)) signals.language = 'id';
-
-  const rawText = String(text ?? '');
-  const firstChunk = rawText.split(/[,;\n]/)[0] ?? rawText;
-  const orgMatch = firstChunk.match(/(?:\bpt\b|\bcv\b|\bcompany\b)\s+([A-Za-z0-9 .&'-]{2,60})/i);
-  if (orgMatch) {
-    let name = orgMatch[1].trim().replace(/\s+(di|di\s+singapura|singapura)$/i, '').trim();
-    name = name.slice(0, 60).trim();
-    if (name) signals.orgName = name;
-  }
-  return signals;
-}
-
-function applySignalsToDraft(draft, signals) {
-  const next = JSON.parse(JSON.stringify(draft));
-  if (signals.language) {
-    next.userProfile.preferredLanguage = signals.language;
-    next.languageProfile.ui = signals.language;
-  }
-  if (signals.jurisdiction) {
-    if (!next.organizationProfile.domicile) next.organizationProfile.domicile = signals.jurisdiction;
-    if (next.entityProfiles.length === 0) {
-      next.entityProfiles.push({
-        id: 'ent-1',
-        name: next.organizationProfile.name || 'Entitas Utama',
-        jurisdiction: signals.jurisdiction,
-      });
-    } else if (!next.entityProfiles[0].jurisdiction) {
-      next.entityProfiles[0].jurisdiction = signals.jurisdiction;
-    }
-    if (!next.jurisdictionProfiles.some((j) => j.code === signals.jurisdiction)) {
-      next.jurisdictionProfiles.push({ code: signals.jurisdiction, packStatus: 'pending-validation', taxStatus: 'pending-verification' });
-    }
-  }
-  if (signals.currency) {
-    if (!next.currencyProfile.functional) next.currencyProfile.functional = signals.currency;
-    else if (next.currencyProfile.functional !== signals.currency
-      && !next.currencyProfile.otherCurrencies.includes(signals.currency)) {
-      next.currencyProfile.otherCurrencies.push(signals.currency);
-    }
-  }
-  if (signals.businessField && !next.organizationProfile.businessField) {
-    next.organizationProfile.businessField = signals.businessField;
-  }
-  if (signals.orgName && !next.organizationProfile.name) {
-    next.organizationProfile.name = signals.orgName;
-    if (next.entityProfiles[0] && next.entityProfiles[0].name === 'Entitas Utama') {
-      next.entityProfiles[0].name = signals.orgName;
-    }
-  }
-  if (next.organizationProfile.name && !next.organizationProfile.id) {
-    const slug = next.organizationProfile.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 24) || 'org';
-    next.organizationProfile.id = `org-${slug}`;
-  }
-  return next;
-}
-
-const QUESTIONS = {
-  id: {
-    orgName: 'Siapa nama organisasi/perusahaan Anda?',
-    domicile: 'Organisasi berdomisili di negara mana? (contoh: Singapura / Indonesia)',
-    businessField: 'Bisnis Anda bergerak di bidang apa? (contoh: perdagangan, jasa)',
-    currency: 'Mata uang fungsional apa yang dipakai? (contoh: SGD, IDR, USD)',
-    language: 'Bahasa tampilan yang diinginkan? (Indonesia / English)',
-    done: 'Informasi sudah cukup. Silakan tinjau usulan konfigurasi lalu konfirmasi.',
-  },
-  en: {
-    orgName: 'What is your organization name?',
-    domicile: 'Which country is the organization domiciled in? (e.g. Singapore / Indonesia)',
-    businessField: 'What line of business? (e.g. trading, services)',
-    currency: 'What functional currency? (e.g. SGD, IDR, USD)',
-    language: 'Preferred UI language? (Indonesia / English)',
-    done: 'Enough info collected. Please review the proposed configuration, then confirm.',
-  },
-};
-
-function nextQuestion(draft) {
-  const lang = draft?.languageProfile?.ui === 'en' ? 'en' : 'id';
-  const q = QUESTIONS[lang];
-  if (!draft?.organizationProfile?.name) return { key: 'orgName', text: q.orgName };
-  if (!draft?.organizationProfile?.domicile) return { key: 'domicile', text: q.domicile };
-  if (!draft?.organizationProfile?.businessField) return { key: 'businessField', text: q.businessField };
-  if (!draft?.currencyProfile?.functional) return { key: 'currency', text: q.currency };
-  if (!draft?.userProfile?.displayName) return { key: 'displayName', text: lang === 'en' ? 'What should I call you?' : 'Siapa nama Anda untuk sapaan?' };
-  return { key: 'done', text: q.done };
-}
-
-function turn(draft, userText) {
-  const signals = detectSignals(userText);
-  let next = applySignalsToDraft(draft, signals);
-  const t = String(userText ?? '').trim();
-  const q0 = nextQuestion(next);
-  // Isi slot yang sedang ditanya dari jawaban bebas bila deteksi tidak menangkapnya.
-  if (t && q0.key === 'currency' && !signals.currency) {
-    const m = t.toUpperCase().match(/\b(SGD|IDR|USD|MYR|EUR)\b/);
-    if (m) next = applySignalsToDraft(next, { currency: m[1] });
-    else if (/^rupiah$/i.test(t)) next = applySignalsToDraft(next, { currency: 'IDR' });
-    else if (/^dolar( singapura)?$/i.test(t)) next = applySignalsToDraft(next, { currency: 'SGD' });
-  }
-  if (t && q0.key === 'orgName' && !signals.orgName && t.length <= 60 && !/singapura|indonesia|perdagangan|jasa|bahasa/i.test(t)) {
-    next = JSON.parse(JSON.stringify(next));
-    if (!next.organizationProfile.name) {
-      next.organizationProfile.name = t.slice(0, 60);
-      if (next.entityProfiles[0] && (!next.entityProfiles[0].name || next.entityProfiles[0].name === 'Entitas Utama')) {
-        next.entityProfiles[0].name = t.slice(0, 60);
-      }
-    }
-  }
-  // Nama sapaan: bila draft belum punya displayName dan teks pendek tanpa kata kunci, pakai sebagai nama.
-  if (!next.userProfile.displayName) {
-    if (t && t.length <= 40 && Object.keys(signals).length === 0) {
-      next = JSON.parse(JSON.stringify(next));
-      next.userProfile.displayName = t.slice(0, 40);
-    }
-  }
-  const question = nextQuestion(next);
-  return { draft: next, signals, question, complete: question.key === 'done' };
-}
-
-module.exports = { detectSignals, applySignalsToDraft, nextQuestion, turn };
+function turn(state,text){const signals=detectSignals(text,{pendingQuestion:state.pendingQuestion});const {applyFacts}=require('./profiler');const next=applyFacts(state,signals.facts,'USER',{jurisdictionFacts:signals.jurisdictionFacts});const question=planQuestion(next,next.slots['user.language'].value);return {profileState:next,signals,question,complete:question.key==='done'};}
+module.exports={detectSignals,turn,nextQuestion:planQuestion};

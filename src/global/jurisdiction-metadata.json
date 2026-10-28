@@ -1,0 +1,164 @@
+[
+  {
+    "code": "ID",
+    "name": "Indonesia",
+    "currency": "IDR",
+    "locale": "id-ID",
+    "taxAuthority": "DJP / Direktorat Jenderal Pajak",
+    "officialDomains": [
+      "pajak.go.id",
+      "peraturan.bpk.go.id",
+      "jdih.kemenkeu.go.id",
+      "peraturan.go.id",
+      "mahkamahagung.go.id",
+      "setpp.kemenkeu.go.id",
+      "coretaxdjp.pajak.go.id"
+    ],
+    "terminology": [
+      "Wajib Pajak",
+      "Fiskus",
+      "SPHP",
+      "Pembahasan Akhir",
+      "Keberatan",
+      "Banding",
+      "P3B",
+      "Coretax DJP",
+      "Bukti Potong Unifikasi"
+    ],
+    "researchInstruction": "Prioritaskan sumber resmi Indonesia dan bedakan aturan yang berlaku pada tahun pajak sengketa dari aturan saat ini. Administrasi DJP (e-Faktur, e-Bupot, SPT) bermigrasi ke sistem Coretax DJP — saat menyebut proses administratif, cek apakah istilah/alur kini berjalan lewat Coretax alih-alih sistem lama, dan jangan asumsikan istilah pra-Coretax masih berlaku tanpa verifikasi.",
+    "disclaimer": "Analisis bukan pendapat hukum atau putusan; verifikasi aturan, keberlakuan tahun pajak, dan putusan lengkap sebelum digunakan.",
+    "metadataOnly": true,
+    "originalSource": {
+      "repository": "aegaorion-dot/big-m-",
+      "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+      "path": "jurisdiction.ts"
+    }
+  },
+  {
+    "code": "SG",
+    "name": "Singapore",
+    "currency": "SGD",
+    "locale": "en-SG",
+    "taxAuthority": "IRAS / Inland Revenue Authority of Singapore",
+    "officialDomains": [
+      "iras.gov.sg",
+      "sso.agc.gov.sg",
+      "mof.gov.sg",
+      "judiciary.gov.sg"
+    ],
+    "terminology": [
+      "IRAS",
+      "Comptroller of Income Tax (CIT)",
+      "Notice of Assessment (NOA)",
+      "Notice of Objection",
+      "Review",
+      "Notice of Refusal to Amend",
+      "Income Tax Board of Review (ITBR)",
+      "General Division of the High Court",
+      "Appellate Division",
+      "Court of Appeal",
+      "DTA"
+    ],
+    "researchInstruction": "Use Singapore primary legislation and current IRAS guidance. Treat IRAS guidance as administrative guidance unless the source states it has legal force. Verify the exact YA, service date, amendment scope, objection validity, finality, appeal deadline, and binding weight of every authority. Never assume an Indonesian-style objection/audit process applies in Singapore.",
+    "disclaimer": "Not Singapore legal or tax advice; verify the relevant Act, subsidiary legislation, IRAS guidance and tax-year applicability.",
+    "metadataOnly": true,
+    "originalSource": {
+      "repository": "aegaorion-dot/big-m-",
+      "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+      "path": "jurisdiction.ts"
+    }
+  },
+  {
+    "code": "US",
+    "name": "United States",
+    "currency": "USD",
+    "locale": "en-US",
+    "taxAuthority": "IRS / Internal Revenue Service",
+    "officialDomains": [
+      "irs.gov",
+      "uscode.house.gov",
+      "ecfr.gov",
+      "congress.gov",
+      "ustaxcourt.gov",
+      "uscourts.gov"
+    ],
+    "terminology": [
+      "IRS",
+      "Notice of Deficiency",
+      "Examination",
+      "Appeals",
+      "Tax Court",
+      "Revenue Ruling",
+      "Revenue Procedure"
+    ],
+    "researchInstruction": "Use the Internal Revenue Code and Treasury Regulations as primary authorities. Clearly label IRS administrative guidance versus binding law and check the tax year.",
+    "disclaimer": "Not U.S. legal or tax advice; verify the Code, Regulations, official IRS guidance and controlling case law for the relevant tax year.",
+    "metadataOnly": true,
+    "originalSource": {
+      "repository": "aegaorion-dot/big-m-",
+      "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+      "path": "jurisdiction.ts"
+    }
+  },
+  {
+    "code": "AU",
+    "name": "Australia",
+    "currency": "AUD",
+    "locale": "en-AU",
+    "taxAuthority": "ATO / Australian Taxation Office",
+    "officialDomains": [
+      "ato.gov.au",
+      "legislation.gov.au",
+      "art.gov.au",
+      "fedcourt.gov.au",
+      "hcourt.gov.au"
+    ],
+    "terminology": [
+      "ATO",
+      "Objection",
+      "Private Ruling",
+      "Public Ruling",
+      "Administrative Review Tribunal",
+      "Federal Court"
+    ],
+    "researchInstruction": "Prioritize Commonwealth legislation and official ATO rulings. Treat ATO guidance according to its legal status and verify the relevant income year.",
+    "disclaimer": "Not Australian legal or tax advice; verify legislation, ATO rulings and applicable tribunal/court authority for the relevant income year.",
+    "metadataOnly": true,
+    "originalSource": {
+      "repository": "aegaorion-dot/big-m-",
+      "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+      "path": "jurisdiction.ts"
+    }
+  },
+  {
+    "code": "GB",
+    "name": "United Kingdom",
+    "currency": "GBP",
+    "locale": "en-GB",
+    "taxAuthority": "HMRC / His Majesty's Revenue and Customs",
+    "officialDomains": [
+      "gov.uk",
+      "legislation.gov.uk",
+      "judiciary.uk",
+      "supremecourt.uk"
+    ],
+    "terminology": [
+      "HMRC",
+      "Enquiry",
+      "Closure Notice",
+      "Statutory Review",
+      "First-tier Tribunal",
+      "Upper Tribunal",
+      "DOTAS",
+      "DTA"
+    ],
+    "researchInstruction": "Use UK legislation as primary law and clearly distinguish HMRC manuals/guidance from legislation and binding precedent. Check the tax year and commencement provisions.",
+    "disclaimer": "Not UK legal or tax advice; verify legislation, commencement provisions, HMRC guidance and applicable tribunal/court authority.",
+    "metadataOnly": true,
+    "originalSource": {
+      "repository": "aegaorion-dot/big-m-",
+      "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+      "path": "jurisdiction.ts"
+    }
+  }
+]

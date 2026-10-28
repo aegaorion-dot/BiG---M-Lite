@@ -1,0 +1,914 @@
+{
+  "packCode": "ID_CIT_REFERENCE",
+  "version": 2,
+  "jurisdictionCode": "ID",
+  "effectiveFrom": "2025-01-01",
+  "effectiveTo": "2025-12-31",
+  "supportedSubjectTypes": [
+    "COMPANY"
+  ],
+  "supportedTaxTypes": [
+    "CIT"
+  ],
+  "supportedServices": [
+    "CORPORATE_INCOME_TAX"
+  ],
+  "engineCompatibility": {
+    "min": "M3",
+    "max": "M3"
+  },
+  "legalSources": [
+    {
+      "instrument": "UU 7/1983 tentang Pajak Penghasilan sebagaimana terakhir diubah dengan UU 7/2021",
+      "section": "Pasal 4, 6, 9, 11, 11A, dan 18",
+      "url": "https://www.pajak.go.id/sites/default/files/2021-12/SDSN%20UU%20HPP%204.0.pdf",
+      "publisher": "Direktorat Jenderal Pajak",
+      "verificationStatus": "VERIFIED_AUTHORITATIVE"
+    },
+    {
+      "instrument": "DJP - Biaya Yang Diakui Sebagai Pengurang Penghasilan Bruto",
+      "section": "Pasal 6 - pajak kecuali Pajak Penghasilan",
+      "url": "https://www.pajak.go.id/index.php/id/biaya-yang-diakui-sebagai-pengurang-penghasilan-bruto",
+      "publisher": "Direktorat Jenderal Pajak",
+      "verificationStatus": "VERIFIED_AUTHORITATIVE"
+    },
+    {
+      "instrument": "PP 55 Tahun 2022",
+      "section": "Penyesuaian Pengaturan di Bidang Pajak Penghasilan",
+      "url": "https://jdih.kemenkeu.go.id/download/cab6ec99-3dbc-47c6-adbf-ea5f0f7117d6/55TAHUN2022PP.pdf",
+      "publisher": "JDIH Kementerian Keuangan",
+      "verificationStatus": "VERIFIED_AUTHORITATIVE"
+    },
+    {
+      "instrument": "PMK 66 Tahun 2023",
+      "section": "Pasal 2",
+      "url": "https://jdih.kemenkeu.go.id/api/download/dce5daf1-d4e5-4bd1-bc4e-2c086ae33c04/2023pmkeuangan066.pdf",
+      "publisher": "JDIH Kementerian Keuangan",
+      "verificationStatus": "VERIFIED_AUTHORITATIVE"
+    },
+    {
+      "instrument": "PMK 72 Tahun 2023",
+      "section": "Pasal 2-11",
+      "url": "https://jdih.kemenkeu.go.id/api/download/46cededa-86ae-4cc9-93e5-b6bef8892074/2023pmkeuangan072.pdf",
+      "publisher": "JDIH Kementerian Keuangan",
+      "verificationStatus": "VERIFIED_AUTHORITATIVE"
+    },
+    {
+      "instrument": "PMK 74 Tahun 2024",
+      "section": "Pasal 2-12",
+      "url": "https://jdih.kemenkeu.go.id/download/4ae2b052-3f4c-4ebd-bf4a-7868a7039dae/2024pmkeuangan074.pdf",
+      "publisher": "JDIH Kementerian Keuangan",
+      "verificationStatus": "VERIFIED_AUTHORITATIVE"
+    },
+    {
+      "instrument": "PMK 105/PMK.03/2009 sebagaimana diubah terakhir dengan PMK 207/PMK.010/2015",
+      "section": "Piutang nyata-nyata tidak dapat ditagih",
+      "url": "https://jdih.kemenkeu.go.id/dok/105-pmk-03-2009/files",
+      "publisher": "JDIH Kementerian Keuangan",
+      "verificationStatus": "VERIFIED_AUTHORITATIVE"
+    },
+    {
+      "instrument": "PP 93 Tahun 2010",
+      "section": "Sumbangan yang dapat dikurangkan dari penghasilan bruto",
+      "url": "https://jdih.kemenkeu.go.id/dok/pp-93-tahun-2010/files",
+      "publisher": "JDIH Kementerian Keuangan",
+      "verificationStatus": "VERIFIED_AUTHORITATIVE"
+    },
+    {
+      "instrument": "PP 34 Tahun 2017",
+      "section": "Pasal 2 dan Pasal 4",
+      "url": "https://jdih.kemenkeu.go.id/api/download/fulltext/2017/34TAHUN2017PP.pdf",
+      "publisher": "JDIH Kementerian Keuangan",
+      "verificationStatus": "VERIFIED_AUTHORITATIVE"
+    }
+  ],
+  "researchCoverage": [
+    "deductible expenses",
+    "other non-deductible expenses",
+    "taxable/non-taxable income",
+    "final-tax income",
+    "fiscal depreciation",
+    "fiscal amortisation",
+    "benefits in kind/natura",
+    "provisions/reserves",
+    "bad debts",
+    "donations/contributions",
+    "related-party adjustments",
+    "other common reconciliation items"
+  ],
+  "rules": [
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "DETERMINISTIC",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_INCOME_TAX_EXPENSE"
+      },
+      "ruleCode": "ID_CIT_2025_INCOME_TAX_EXPENSE_ADD_BACK",
+      "name": "Income tax expense add-back",
+      "legalInstrument": "UU PPh as amended by UU 7/2021",
+      "articleSection": "Pasal 9 ayat (1) huruf h",
+      "authoritativeRequirement": "The taxpayer's own income tax may not be deducted.",
+      "deterministicConsequence": "Positive fiscal adjustment equal to mapped commercial debit.",
+      "formula": {
+        "code": "ID_CIT_2025_INCOME_TAX_EXPENSE_AMOUNT",
+        "expressionAst": {
+          "op": "ABS",
+          "args": [
+            {
+              "op": "INPUT",
+              "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_INCOME_TAX_EXPENSE",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "DETERMINISTIC",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_PROFIT_DISTRIBUTION_EXPENSE"
+      },
+      "ruleCode": "ID_CIT_2025_PROFIT_DISTRIBUTION_ADD_BACK",
+      "name": "Profit distribution add-back",
+      "legalInstrument": "UU PPh as amended by UU 7/2021",
+      "articleSection": "Pasal 9 ayat (1) huruf a",
+      "authoritativeRequirement": "Profit distributions are not deductible.",
+      "deterministicConsequence": "Positive fiscal adjustment equal to mapped commercial debit.",
+      "formula": {
+        "code": "ID_CIT_2025_PROFIT_DISTRIBUTION_AMOUNT",
+        "expressionAst": {
+          "op": "ABS",
+          "args": [
+            {
+              "op": "INPUT",
+              "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_PROFIT_DISTRIBUTION_EXPENSE",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "CONDITIONAL_FACT_DEPENDENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE",
+        "ID_FACT_SHAREHOLDER_PRIVATE_BENEFIT_CONFIRMED"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_SHAREHOLDER_PRIVATE_EXPENSE",
+        "requiredApprovedFact": "ID_FACT_SHAREHOLDER_PRIVATE_BENEFIT_CONFIRMED"
+      },
+      "ruleCode": "ID_CIT_2025_SHAREHOLDER_PRIVATE_EXPENSE_ADD_BACK",
+      "name": "Shareholder private expense add-back",
+      "legalInstrument": "UU PPh as amended by UU 7/2021",
+      "articleSection": "Pasal 9 ayat (1) huruf b",
+      "authoritativeRequirement": "Costs for private interests of shareholders, partners, or members are not deductible.",
+      "requiredFact": "ID_FACT_SHAREHOLDER_PRIVATE_BENEFIT_CONFIRMED",
+      "deterministicConsequence": "After approved private-benefit classification, add back mapped commercial debit.",
+      "formula": {
+        "code": "ID_CIT_2025_SHAREHOLDER_PRIVATE_EXPENSE_AMOUNT",
+        "expressionAst": {
+          "op": "ABS",
+          "args": [
+            {
+              "op": "INPUT",
+              "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_SHAREHOLDER_PRIVATE_EXPENSE",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "CONDITIONAL_FACT_DEPENDENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE",
+        "ID_FACT_RESERVE_NOT_STATUTORY_EXCEPTION"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_NONQUALIFYING_RESERVE",
+        "requiredApprovedFact": "ID_FACT_RESERVE_NOT_STATUTORY_EXCEPTION"
+      },
+      "ruleCode": "ID_CIT_2025_DISALLOWED_RESERVE_ADD_BACK",
+      "name": "Non-qualifying reserve add-back",
+      "legalInstrument": "UU PPh Pasal 9(1)(c); PMK 74 Tahun 2024",
+      "articleSection": "Pasal 9 ayat (1) huruf c; PMK 74/2024 Pasal 2-12",
+      "authoritativeRequirement": "Reserve formation is non-deductible unless within a statutory exception and its conditions.",
+      "requiredFact": "ID_FACT_RESERVE_NOT_STATUTORY_EXCEPTION",
+      "deterministicConsequence": "After approved exception analysis, add back mapped commercial debit.",
+      "formula": {
+        "code": "ID_CIT_2025_DISALLOWED_RESERVE_AMOUNT",
+        "expressionAst": {
+          "op": "ABS",
+          "args": [
+            {
+              "op": "INPUT",
+              "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_NONQUALIFYING_RESERVE",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "CONDITIONAL_FACT_DEPENDENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE",
+        "ID_FACT_RELATED_PARTY_EXCESS_AMOUNT_CONFIRMED"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_EXCESS_RELATED_PARTY_COMPENSATION",
+        "requiredApprovedFact": "ID_FACT_RELATED_PARTY_EXCESS_AMOUNT_CONFIRMED"
+      },
+      "ruleCode": "ID_CIT_2025_EXCESS_RELATED_PARTY_COMPENSATION_ADD_BACK",
+      "name": "Excess related-party compensation add-back",
+      "legalInstrument": "UU PPh as amended by UU 7/2021",
+      "articleSection": "Pasal 9 ayat (1) huruf f",
+      "authoritativeRequirement": "The portion exceeding reasonableness paid to a shareholder or related party for work is non-deductible.",
+      "requiredFact": "ID_FACT_RELATED_PARTY_EXCESS_AMOUNT_CONFIRMED",
+      "deterministicConsequence": "After approved professional determination, add back mapped confirmed excess.",
+      "formula": {
+        "code": "ID_CIT_2025_EXCESS_RELATED_PARTY_COMPENSATION_AMOUNT",
+        "expressionAst": {
+          "op": "ABS",
+          "args": [
+            {
+              "op": "INPUT",
+              "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_EXCESS_RELATED_PARTY_COMPENSATION",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "CONDITIONAL_FACT_DEPENDENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE",
+        "ID_FACT_DONATION_NOT_QUALIFYING"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_NONQUALIFYING_DONATION",
+        "requiredApprovedFact": "ID_FACT_DONATION_NOT_QUALIFYING"
+      },
+      "ruleCode": "ID_CIT_2025_NONQUALIFYING_DONATION_ADD_BACK",
+      "name": "Non-qualifying donation add-back",
+      "legalInstrument": "UU PPh Pasal 9(1)(g); PP 93 Tahun 2010",
+      "articleSection": "Pasal 9 ayat (1) huruf g; PP 93/2010",
+      "authoritativeRequirement": "Gifts, aid, and donations are non-deductible except expressly permitted categories satisfying implementing conditions.",
+      "requiredFact": "ID_FACT_DONATION_NOT_QUALIFYING",
+      "deterministicConsequence": "After approved exception analysis, add back mapped commercial debit.",
+      "formula": {
+        "code": "ID_CIT_2025_NONQUALIFYING_DONATION_AMOUNT",
+        "expressionAst": {
+          "op": "ABS",
+          "args": [
+            {
+              "op": "INPUT",
+              "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_NONQUALIFYING_DONATION",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "DETERMINISTIC",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_PARTNERSHIP_MEMBER_SALARY"
+      },
+      "ruleCode": "ID_CIT_2025_PARTNERSHIP_MEMBER_SALARY_ADD_BACK",
+      "name": "Partnership member salary add-back",
+      "legalInstrument": "UU PPh as amended by UU 7/2021",
+      "articleSection": "Pasal 9 ayat (1) huruf j",
+      "authoritativeRequirement": "Salary paid to members of a partnership, firm, or non-share divided limited partnership is non-deductible.",
+      "deterministicConsequence": "Positive fiscal adjustment equal to mapped commercial debit.",
+      "formula": {
+        "code": "ID_CIT_2025_PARTNERSHIP_MEMBER_SALARY_AMOUNT",
+        "expressionAst": {
+          "op": "ABS",
+          "args": [
+            {
+              "op": "INPUT",
+              "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_PARTNERSHIP_MEMBER_SALARY",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "DETERMINISTIC",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_TAX_SANCTION_EXPENSE"
+      },
+      "ruleCode": "ID_CIT_2025_TAX_SANCTION_ADD_BACK",
+      "name": "Tax sanction add-back",
+      "legalInstrument": "UU PPh as amended by UU 7/2021",
+      "articleSection": "Pasal 9 ayat (1) huruf k",
+      "authoritativeRequirement": "Tax-law administrative interest, fines, increases, and criminal fines are non-deductible.",
+      "deterministicConsequence": "Positive fiscal adjustment equal to mapped commercial debit.",
+      "formula": {
+        "code": "ID_CIT_2025_TAX_SANCTION_AMOUNT",
+        "expressionAst": {
+          "op": "ABS",
+          "args": [
+            {
+              "op": "INPUT",
+              "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_TAX_SANCTION_EXPENSE",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "CONDITIONAL_FACT_DEPENDENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE",
+        "ID_FACT_FINAL_TAX_LAND_BUILDING_RENT_VERIFIED"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_FINAL_TAX_LAND_BUILDING_RENT_INCOME",
+        "requiredApprovedFact": "ID_FACT_FINAL_TAX_LAND_BUILDING_RENT_VERIFIED"
+      },
+      "ruleCode": "ID_CIT_2025_FINAL_TAX_LAND_BUILDING_RENT_DEDUCTION",
+      "name": "Final-tax land/building rental income exclusion",
+      "legalInstrument": "UU PPh Pasal 4(2); PP 34 Tahun 2017",
+      "articleSection": "PP 34/2017 Pasal 2 ayat (1) dan Pasal 4 ayat (1)",
+      "authoritativeRequirement": "Income from rental of land and/or buildings within Article 2(1), excluding lodging services under Article 2(3), is subject to final income tax at 10% of gross rental value.",
+      "requiredFact": "ID_FACT_FINAL_TAX_LAND_BUILDING_RENT_VERIFIED",
+      "deterministicConsequence": "After approved classification as qualifying land/building rental income, deduct mapped commercial credit from ordinary CIT reconciliation.",
+      "formula": {
+        "code": "ID_CIT_2025_FINAL_TAX_LAND_BUILDING_RENT_AMOUNT",
+        "expressionAst": {
+          "op": "SUBTRACT",
+          "args": [
+            {
+              "op": "LITERAL",
+              "value": 0
+            },
+            {
+              "op": "ABS",
+              "args": [
+                {
+                  "op": "INPUT",
+                  "name": "ACCOUNTING_FISCAL_SOURCE.periodCredit"
+                }
+              ]
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_FINAL_TAX_LAND_BUILDING_RENT_INCOME",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "CONDITIONAL_FACT_DEPENDENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE",
+        "ID_FACT_DOMESTIC_DIVIDEND_RECIPIENT_AND_SOURCE_VERIFIED"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_DOMESTIC_DIVIDEND_NON_OBJECT_INCOME",
+        "requiredApprovedFact": "ID_FACT_DOMESTIC_DIVIDEND_RECIPIENT_AND_SOURCE_VERIFIED"
+      },
+      "ruleCode": "ID_CIT_2025_DOMESTIC_DIVIDEND_NON_OBJECT_DEDUCTION",
+      "name": "Domestic corporate dividend non-object income deduction",
+      "legalInstrument": "UU PPh as amended by UU 7/2021; PP 55 Tahun 2022",
+      "articleSection": "UU PPh Pasal 4 ayat (3) huruf f angka 1 huruf b",
+      "authoritativeRequirement": "A domestic dividend received by an Indonesian resident corporate taxpayer is excluded from the income-tax object.",
+      "requiredFact": "ID_FACT_DOMESTIC_DIVIDEND_RECIPIENT_AND_SOURCE_VERIFIED",
+      "deterministicConsequence": "After approved recipient-and-source classification, deduct mapped commercial credit from taxable income.",
+      "formula": {
+        "code": "ID_CIT_2025_DOMESTIC_DIVIDEND_NON_OBJECT_AMOUNT",
+        "expressionAst": {
+          "op": "SUBTRACT",
+          "args": [
+            {
+              "op": "LITERAL",
+              "value": 0
+            },
+            {
+              "op": "ABS",
+              "args": [
+                {
+                  "op": "INPUT",
+                  "name": "ACCOUNTING_FISCAL_SOURCE.periodCredit"
+                }
+              ]
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_DOMESTIC_DIVIDEND_NON_OBJECT_INCOME",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "CONDITIONAL_FACT_DEPENDENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE",
+        "ID_FACT_EXPENSE_RELATES_TO_NON_OBJECT_INCOME"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_NON_OBJECT_RELATED_EXPENSE",
+        "requiredApprovedFact": "ID_FACT_EXPENSE_RELATES_TO_NON_OBJECT_INCOME"
+      },
+      "ruleCode": "ID_CIT_2025_NON_OBJECT_RELATED_EXPENSE_ADD_BACK",
+      "name": "Expense related to non-object income add-back",
+      "legalInstrument": "UU PPh as amended by UU 7/2021",
+      "articleSection": "Penjelasan Pasal 6 ayat (1) huruf a",
+      "authoritativeRequirement": "Expenditure to obtain, collect, or maintain income that is not a tax object is not deductible.",
+      "requiredFact": "ID_FACT_EXPENSE_RELATES_TO_NON_OBJECT_INCOME",
+      "deterministicConsequence": "After approved nexus classification, add back mapped commercial debit.",
+      "formula": {
+        "code": "ID_CIT_2025_NON_OBJECT_RELATED_EXPENSE_AMOUNT",
+        "expressionAst": {
+          "op": "ABS",
+          "args": [
+            {
+              "op": "INPUT",
+              "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_NON_OBJECT_RELATED_EXPENSE",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "CONDITIONAL_FACT_DEPENDENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE",
+        "ID_FACT_BAD_DEBT_REQUIREMENTS_FAILED"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_BAD_DEBT_EXPENSE",
+        "requiredApprovedFact": "ID_FACT_BAD_DEBT_REQUIREMENTS_FAILED"
+      },
+      "ruleCode": "ID_CIT_2025_BAD_DEBT_REQUIREMENTS_FAILED_ADD_BACK",
+      "name": "Bad-debt expense failing statutory requirements add-back",
+      "legalInstrument": "UU PPh Pasal 6(1)(h); PMK 105/PMK.03/2009 as last amended by PMK 207/PMK.010/2015",
+      "articleSection": "Pasal 6 ayat (1) huruf h and implementing requirements",
+      "authoritativeRequirement": "A bad-debt deduction requires commercial P&L recognition, reporting, and prescribed collection evidence, subject to stated exceptions.",
+      "requiredFact": "ID_FACT_BAD_DEBT_REQUIREMENTS_FAILED",
+      "deterministicConsequence": "After approved failure determination, add back mapped commercial debit.",
+      "formula": {
+        "code": "ID_CIT_2025_BAD_DEBT_REQUIREMENTS_FAILED_AMOUNT",
+        "expressionAst": {
+          "op": "ABS",
+          "args": [
+            {
+              "op": "INPUT",
+              "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_BAD_DEBT_EXPENSE",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "CONDITIONAL_FACT_DEPENDENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE",
+        "ID_FACT_FISCAL_DEPRECIATION_AMOUNT"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_COMMERCIAL_DEPRECIATION",
+        "requiredApprovedFact": "ID_FACT_FISCAL_DEPRECIATION_AMOUNT"
+      },
+      "ruleCode": "ID_CIT_2025_FISCAL_DEPRECIATION_DIFFERENCE",
+      "name": "Commercial-to-fiscal depreciation difference",
+      "legalInstrument": "UU PPh Pasal 11; PMK 72 Tahun 2023",
+      "articleSection": "PMK 72/2023 Pasal 2-8",
+      "authoritativeRequirement": "Fiscal depreciation follows prescribed groups, methods, lives, rates, and commencement rules.",
+      "requiredFact": "ID_FACT_FISCAL_DEPRECIATION_AMOUNT",
+      "deterministicConsequence": "Commercial depreciation debit minus approved fiscal depreciation.",
+      "governedParameters": {
+        "nonBuildingGroups": {
+          "1": {
+            "years": 4,
+            "straightLineRate": 0.25,
+            "decliningRate": 0.5
+          },
+          "2": {
+            "years": 8,
+            "straightLineRate": 0.125,
+            "decliningRate": 0.25
+          },
+          "3": {
+            "years": 16,
+            "straightLineRate": 0.0625,
+            "decliningRate": 0.125
+          },
+          "4": {
+            "years": 20,
+            "straightLineRate": 0.05,
+            "decliningRate": 0.1
+          }
+        },
+        "buildings": {
+          "permanent": {
+            "years": 20,
+            "rate": 0.05
+          },
+          "nonPermanent": {
+            "years": 10,
+            "rate": 0.1
+          }
+        }
+      },
+      "formula": {
+        "code": "ID_CIT_2025_FISCAL_DEPRECIATION_AMOUNT",
+        "expressionAst": {
+          "op": "SUBTRACT",
+          "args": [
+            {
+              "op": "ABS",
+              "args": [
+                {
+                  "op": "INPUT",
+                  "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+                }
+              ]
+            },
+            {
+              "op": "ABS",
+              "args": [
+                {
+                  "op": "INPUT",
+                  "name": "ID_FACT_FISCAL_DEPRECIATION_AMOUNT.amount"
+                }
+              ]
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_COMMERCIAL_DEPRECIATION",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "CONDITIONAL_FACT_DEPENDENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE",
+        "ID_FACT_FISCAL_AMORTISATION_AMOUNT"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_COMMERCIAL_AMORTISATION",
+        "requiredApprovedFact": "ID_FACT_FISCAL_AMORTISATION_AMOUNT"
+      },
+      "ruleCode": "ID_CIT_2025_FISCAL_AMORTISATION_DIFFERENCE",
+      "name": "Commercial-to-fiscal amortisation difference",
+      "legalInstrument": "UU PPh Pasal 11A; PMK 72 Tahun 2023",
+      "articleSection": "PMK 72/2023 Pasal 9-11",
+      "authoritativeRequirement": "Fiscal amortisation follows prescribed methods, groups, lives, rates, and commencement rules.",
+      "requiredFact": "ID_FACT_FISCAL_AMORTISATION_AMOUNT",
+      "deterministicConsequence": "Commercial amortisation debit minus approved fiscal amortisation.",
+      "governedParameters": {
+        "groups": {
+          "1": {
+            "years": 4,
+            "straightLineRate": 0.25,
+            "decliningRate": 0.5
+          },
+          "2": {
+            "years": 8,
+            "straightLineRate": 0.125,
+            "decliningRate": 0.25
+          },
+          "3": {
+            "years": 16,
+            "straightLineRate": 0.0625,
+            "decliningRate": 0.125
+          },
+          "4": {
+            "years": 20,
+            "straightLineRate": 0.05,
+            "decliningRate": 0.1
+          }
+        }
+      },
+      "formula": {
+        "code": "ID_CIT_2025_FISCAL_AMORTISATION_AMOUNT",
+        "expressionAst": {
+          "op": "SUBTRACT",
+          "args": [
+            {
+              "op": "ABS",
+              "args": [
+                {
+                  "op": "INPUT",
+                  "name": "ACCOUNTING_FISCAL_SOURCE.periodDebit"
+                }
+              ]
+            },
+            {
+              "op": "ABS",
+              "args": [
+                {
+                  "op": "INPUT",
+                  "name": "ID_FACT_FISCAL_AMORTISATION_AMOUNT.amount"
+                }
+              ]
+            }
+          ]
+        },
+        "fiscalCategory": "ID_CIT_COMMERCIAL_AMORTISATION",
+        "outputType": "NUMBER",
+        "outputUnit": "CURRENCY"
+      }
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "PROFESSIONAL_JUDGMENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_DEDUCTIBILITY_JUDGMENT"
+      },
+      "deterministicConsequence": "No automatic fiscal conclusion; create governed REVIEW_REQUIRED.",
+      "action": {
+        "type": "REVIEW_REQUIRED",
+        "reason": "PROFESSIONAL_JUDGMENT_DEDUCTIBILITY_NEXUS"
+      },
+      "ruleCode": "ID_CIT_2025_GENERAL_DEDUCTIBILITY_REVIEW",
+      "name": "General expense deductibility review",
+      "legalInstrument": "UU PPh as amended by UU 7/2021",
+      "articleSection": "Pasal 6 ayat (1) huruf a",
+      "authoritativeRequirement": "Deductibility depends on the factual nexus to obtaining, collecting, and maintaining taxable income.",
+      "fiscalCategory": "ID_CIT_DEDUCTIBILITY_JUDGMENT",
+      "reviewReason": "PROFESSIONAL_JUDGMENT_DEDUCTIBILITY_NEXUS"
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "PROFESSIONAL_JUDGMENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_RELATED_PARTY_PRICING_JUDGMENT"
+      },
+      "deterministicConsequence": "No automatic fiscal conclusion; create governed REVIEW_REQUIRED.",
+      "action": {
+        "type": "REVIEW_REQUIRED",
+        "reason": "PROFESSIONAL_JUDGMENT_TRANSFER_PRICING"
+      },
+      "ruleCode": "ID_CIT_2025_TRANSFER_PRICING_REVIEW",
+      "name": "Related-party arm's-length review",
+      "legalInstrument": "UU PPh as amended by UU 7/2021",
+      "articleSection": "Pasal 18 ayat (3) dan ayat (4)",
+      "authoritativeRequirement": "Related-party pricing requires an arm's-length factual and comparability determination.",
+      "fiscalCategory": "ID_CIT_RELATED_PARTY_PRICING_JUDGMENT",
+      "reviewReason": "PROFESSIONAL_JUDGMENT_TRANSFER_PRICING"
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "PROFESSIONAL_JUDGMENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_NATURA_DEDUCTIBILITY_JUDGMENT"
+      },
+      "deterministicConsequence": "No automatic fiscal conclusion; create governed REVIEW_REQUIRED.",
+      "action": {
+        "type": "REVIEW_REQUIRED",
+        "reason": "PROFESSIONAL_JUDGMENT_NATURA_NEXUS_AND_TIMING"
+      },
+      "ruleCode": "ID_CIT_2025_NATURA_DEDUCTIBILITY_REVIEW",
+      "name": "Natura deductibility review",
+      "legalInstrument": "UU PPh Pasal 6(1)(n); PMK 66 Tahun 2023",
+      "articleSection": "PMK 66/2023 Pasal 2",
+      "authoritativeRequirement": "Employer natura costs require the statutory income-producing nexus and prescribed timing/capitalisation treatment.",
+      "fiscalCategory": "ID_CIT_NATURA_DEDUCTIBILITY_JUDGMENT",
+      "reviewReason": "PROFESSIONAL_JUDGMENT_NATURA_NEXUS_AND_TIMING"
+    },
+    {
+      "taxTypeCode": "CIT",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": "2025-12-31",
+      "requiredEvidence": [
+        "approved M1 mapping",
+        "authoritative accounting source",
+        "legal source set"
+      ],
+      "verificationStatus": "VERIFIED_AUTHORITATIVE",
+      "classification": "PROFESSIONAL_JUDGMENT",
+      "requiredFacts": [
+        "ACCOUNTING_FISCAL_SOURCE"
+      ],
+      "applicability": {
+        "fiscalCategory": "ID_CIT_POTENTIALLY_QUALIFYING_DONATION"
+      },
+      "deterministicConsequence": "No automatic fiscal conclusion; create governed REVIEW_REQUIRED.",
+      "action": {
+        "type": "REVIEW_REQUIRED",
+        "reason": "PROFESSIONAL_JUDGMENT_DONATION_ELIGIBILITY"
+      },
+      "ruleCode": "ID_CIT_2025_QUALIFYING_DONATION_REVIEW",
+      "name": "Potentially qualifying donation review",
+      "legalInstrument": "UU PPh Pasal 6(1)(i)-(m); PP 93 Tahun 2010",
+      "articleSection": "Pasal 6 ayat (1) huruf i-m; PP 93/2010",
+      "authoritativeRequirement": "Specified donations may be deductible only when category, recipient, documentation, and limit conditions are met.",
+      "fiscalCategory": "ID_CIT_POTENTIALLY_QUALIFYING_DONATION",
+      "reviewReason": "PROFESSIONAL_JUDGMENT_DONATION_ELIGIBILITY"
+    }
+  ],
+  "originalSource": {
+    "repository": "aegaorion-dot/big-m-",
+    "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+    "path": "src/taxCountryPackIndonesia.ts",
+    "blobSha": "cda3bcd6338d598dff8a4eb6337aecc32036a0ee"
+  },
+  "lite": {
+    "contentClass": "SUBSTANTIVE_REFERENCE",
+    "executable": false,
+    "requiredConsumer": "M3",
+    "approvalStatus": "REVIEW_REQUIRED",
+    "note": "Original source content retained; no M3/M5 execution in Lite. Human review does not install an executor."
+  }
+}

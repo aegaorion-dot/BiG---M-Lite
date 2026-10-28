@@ -9,6 +9,7 @@ const { makeContext, balancedEntry } = require('./helpers');
 const { ReversalService } = require('../src/accounting/reversalService');
 const { createWebStore } = require('../src/web/store');
 const { handleApi } = require('../src/web/api');
+const { createActiveStore } = require('./workspace-fixture');
 
 function sale(id, orgId = 'org-contoh') {
   return {
@@ -19,7 +20,7 @@ function sale(id, orgId = 'org-contoh') {
 
 describe('P0 — integritas & isolasi fondasi', () => {
   it('replay id sama beda payload ditolak', async () => {
-    const store = createWebStore();
+    const store = createActiveStore();
     await store.createSale(sale('p0-replay'));
     await assert.rejects(() => store.createSale({ ...sale('p0-replay'), amountMajor: '2000000' }), /different payload|Duplicate transaction/i);
   });
@@ -37,7 +38,7 @@ describe('P0 — integritas & isolasi fondasi', () => {
   });
 
   it('dashboard & monthly net-of-reversal (tidak ganda)', async () => {
-    const store = createWebStore();
+    const store = createActiveStore();
     await store.createSale(sale('p0-net'));
     const before = store.summary('IDR');
     assert.equal(before.totals.revenueMinor, '1000000');
@@ -68,7 +69,7 @@ describe('P0 — integritas & isolasi fondasi', () => {
   it('ledger + konfigurasi bertahan setelah restart (persist file)', async () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'bigm-p0-'));
     const file = path.join(dir, 'store.json');
-    const s1 = createWebStore({ persistPath: file });
+    const s1 = createActiveStore({ persistPath: file });
     await s1.createSale(sale('p0-persist'));
     assert.equal(fs.existsSync(file), true);
     const s2 = createWebStore({ persistPath: file });

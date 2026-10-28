@@ -1,579 +1,196 @@
 'use strict';
-/* BiG-M Lite SPA — tanpa framework, tanpa hitung akuntansi di frontend. */
-
-const $ = (sel) => document.querySelector(sel);
-const view = $('#view');
-const tabsEl = $('#tabs');
-const toasts = $('#toasts');
-const auditPill = $('#auditPill');
-const demoNote = $('#demoNote');
-const demoBtn = $('#demoBtn');
-const tabsWrap = $('#tabs');
-const topLang = $('#topLang');
-
-const TABS = [
-  ['onboarding', 'nav.onboarding'],
-  ['dashboard', 'nav.dashboard'],
-  ['sales', 'nav.sales'],
-  ['purchase', 'nav.purchase'],
-  ['accounting', 'nav.accounting'],
-  ['reports', 'nav.reports'],
-  ['import', 'nav.import'],
-  ['tax', 'nav.tax'],
-  ['settings', 'nav.settings'],
-];
-let route = 'onboarding';
-let cache = { summary: null, txs: [], journals: [], audit: null, tax: null, settings: null, monthly: [], ob: null, ws: null };
-let obChat = [];
-let obBooted = false;
-let STR = {};
-let UILANG = 'en';
-
-function tr(key) {
-  return STR[key] ?? key;
+const $=s=>document.querySelector(s);
+const view=$('#view'),tabsEl=$('#tabs'),topLang=$('#topLang');
+let route='onboarding',cache={ws:null,ob:null,summary:null,txs:[],journals:[],settings:null,monthly:[],audit:null};
+let STR={},UILANG='en',loadedLanguage=null,pending=false,userInput='',chat=[],lastError='',csvText='',csvReport=null;
+const TABS=[['onboarding','nav.onboarding'],['dashboard','nav.dashboard'],['sales','nav.sales'],['purchase','nav.purchase'],['accounting','nav.accounting'],['reports','nav.reports'],['import','nav.import'],['settings','nav.settings']];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const tr=k=>STR[k]??k;
+async function api(path,body){
+ const res=await fetch(path,body===undefined?{}:{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)});
+ const data=await res.json();if(!res.ok||data.ok===false)throw Error(data.error??'Request failed');return data;
 }
-
-function toast(msg, kind = '') {
-  const el = document.createElement('div');
-  el.className = `toast ${kind}`;
-  el.textContent = msg;
-  toasts.appendChild(el);
-  setTimeout(() => el.remove(), 4200);
+function toast(text,error=false){const el=document.createElement('div');el.className='toast'+(error?' error':'');el.textContent=text;$('#toasts').appendChild(el);setTimeout(()=>el.remove(),5000);}
+function money(minor,currency=cache.ws?.functionalCurrency){
+ if(!currency||minor==null)return '—';
+ const decimals=cache.ob?.currencies?.find(c=>c.code===currency)?.minorUnits??2;
+ const negative=String(minor).startsWith('-'),digits=String(minor).replace(/^-/,'').padStart(decimals+1,'0');
+ const whole=decimals?digits.slice(0,-decimals):digits,fraction=decimals?digits.slice(-decimals):'';
+ const locale=UILANG==='id'?'id-ID':'en-US',separator=UILANG==='id'?',':'.';
+ const formatted=new Intl.NumberFormat(locale,{maximumFractionDigits:0}).format(BigInt(whole));
+ return currency+' '+(negative?'-':'')+formatted+(decimals?separator+fraction:'');
 }
-
-async function api(path, opts = {}) {
-  const res = await fetch(path, {
-    headers: { 'content-type': 'application/json' },
-    ...opts,
-  });
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok || data.ok === false) throw new Error(data.error || `HTTP ${res.status}`);
-  return data;
+async function loadLanguage(lang){
+ UILANG=lang;document.documentElement.lang=lang;
+ if(loadedLanguage!==lang){const r=await fetch('/i18n/'+lang+'.json');STR=await r.json();loadedLanguage=lang;}
+ topLang.value=lang;
 }
-
-const fmtIDR = (minorStr) => {
-  const neg = String(minorStr).startsWith('-');
-  const digits = String(minorStr).replace('-', '');
-  const grouped = digits.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-  return `${neg ? '-' : ''}Rp${grouped}`;
-};
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
-function renderTabs() {
-  const active = Boolean(cache.ws && cache.ws.activated);
-  tabsEl.hidden = !active;
-  if (auditPill) auditPill.hidden = !active;
-  if (demoBtn) demoBtn.hidden = !active;
-  if (topLang && UILANG) topLang.value = UILANG;
-  if (!active) { tabsEl.innerHTML = ''; route = 'onboarding'; return; }
-  const allowed = new Set(['onboarding', 'dashboard', 'settings']);
-  const mods = Array.isArray(cache.ws?.modules) ? cache.ws.modules : [];
-  for (const m of mods) allowed.add(m);
-  tabsEl.innerHTML = '';
-  for (const [id, key] of TABS) {
-    if (id === 'tax') continue;
-    if (!allowed.has(id)) continue;
-    const b = document.createElement('button');
-    b.className = 'tab';
-    b.type = 'button';
-    b.textContent = tr(key);
-    b.setAttribute('aria-selected', id === route ? 'true' : 'false');
-    b.addEventListener('click', () => { route = id; render(); });
-    tabsEl.appendChild(b);
-  }
-  if (!allowed.has(route)) route = 'onboarding';
+async function refreshOb(){
+ const [ob,ws]=await Promise.all([api('/api/onboarding/state'),api('/api/workspace')]);cache.ob=ob;cache.ws=ws.workspace;
+ await loadLanguage(route==='onboarding'?ob.uiLanguage:cache.ws.language);
+ if(!chat.length){chat.push({who:'ai',text:ob.profileState.turnCount?tr('ob.resumed'):tr('ob.greeting')});if(ob.profileState.turnCount&&ob.question?.key!=='done')chat.push({who:'ai',text:ob.question.text});}
 }
-
-async function refresh(partial = false) {
-  const [s, t, j, a, m] = await Promise.all([
-    api('/api/summary').catch((e) => ({ error: e.message })),
-    api('/api/transactions').catch(() => ({ transactions: [] })),
-    api('/api/journals').catch(() => ({ journals: [] })),
-    api('/api/audit').catch(() => ({ verify: { ok: false }, entries: [] })),
-    api('/api/reports/monthly').catch(() => ({ months: [] })),
-  ]);
-  if (s.summary) cache.summary = s.summary;
-  cache.txs = t.transactions || [];
-  cache.journals = j.journals || [];
-  cache.audit = a;
-  cache.monthly = m.months || [];
-  if (!partial) {
-    cache.tax = await api('/api/tax').catch(() => null);
-    cache.settings = await api('/api/settings').catch(() => null);
-    await refreshOb();
-    await refreshI18n();
-  }
-  const ok = cache.audit && cache.audit.verify && cache.audit.verify.ok === true;
-  auditPill.textContent = ok ? 'audit OK' : 'audit ?';
-  auditPill.className = `pill ${ok ? 'ok' : 'bad'}`;
-  demoNote.hidden = !cache.txs.some((x) => x.demo);
+async function refresh(){
+ await refreshOb();
+ if(cache.ws.activated){
+  const [s,t,j,m,a,settings]=await Promise.all([api('/api/summary'),api('/api/transactions'),api('/api/journals'),api('/api/reports/monthly'),api('/api/audit'),api('/api/settings')]);
+  Object.assign(cache,{summary:s.summary,txs:t.transactions,journals:j.journals,monthly:m.months,audit:a,settings});
+ }
 }
-
-function txRows(list) {
-  if (!list.length) return '<tr><td colspan="7" class="muted">Belum ada transaksi.</td></tr>';
-  return list.map((t) => `<tr>
-    <td class="mono">${esc(t.id)}${t.demo ? ' <span class="tag demo">DEMO</span>' : ''}</td>
-    <td><span class="tag ${t.kind === 'SALE' ? 'sale' : t.kind === 'PURCHASE' ? 'purchase' : 'reversal'}">${esc(t.kind)}</span></td>
-    <td>${esc(t.date)}</td><td>${esc(t.counterparty)}</td>
-    <td class="num">${fmtIDR(t.totalMinor)}</td>
-    <td class="mono">${esc(t.postingId)}</td>
-    <td><button class="btn small navy" data-detail="${esc(t.id)}" type="button">Detail</button></td>
-  </tr>`).join('');
+function renderTabs(){
+ const active=Boolean(cache.ws?.activated);tabsEl.hidden=!active;$('#auditPill').hidden=!active;$('#demoBtn').hidden=!active;
+ $('#demoNote').hidden=!cache.txs.some(t=>t.demo);
+ if(!active){route='onboarding';tabsEl.innerHTML='';return;}
+ const allowed=new Set(['onboarding','dashboard','settings',...cache.ws.modules]);
+ tabsEl.innerHTML=TABS.filter(([id])=>allowed.has(id)).map(([id,key])=>'<button type="button" class="tab" data-route="'+id+'" aria-selected="'+(route===id)+'">'+esc(tr(key))+'</button>').join('');
+ tabsEl.querySelectorAll('[data-route]').forEach(b=>b.addEventListener('click',async()=>{if(pending)return;route=b.dataset.route;await loadLanguage(route==='onboarding'?cache.ob.uiLanguage:cache.ws.language);render();}));
+ $('#auditPill').textContent=cache.audit?.verify?.ok?tr('audit.valid'):tr('audit.review');
+ $('#demoBtn').textContent=tr('demo.load');
 }
-
-function vDashboard() {
-  const s = cache.summary;
-  if (!s) return '<div class="panel">Memuat…</div>';
-  const maxMonth = cache.monthly.reduce((a, b) => {
-    const v = BigInt(b.revenueMinor) > BigInt(b.expenseMinor) ? BigInt(b.revenueMinor) : BigInt(b.expenseMinor);
-    return v > a ? v : a;
-  }, 1n);
-  const bars = cache.monthly.slice(0, 6).map((m) => {
-    const r = BigInt(m.revenueMinor); const e = BigInt(m.expenseMinor);
-    const rp = Number((r * 100n) / maxMonth); const ep = Number((e * 100n) / maxMonth);
-    return `<div class="bar-row"><strong>${esc(m.month)}</strong>
-      <div class="bar-track"><div class="bar-rev" style="width:${rp}%"></div><div class="bar-exp" style="width:${ep}%"></div></div>
-      <span class="num">${fmtIDR(m.netMinor)}</span></div>`;
-  }).join('') || '<p class="muted">Belum ada data bulanan.</p>';
-  const recent = [...cache.txs].slice(0, 6);
-  return `<div class="hero">
-    <div class="panel hero-main">
-      <p class="hero-kicker">LEDGER ATELIER · IDR</p>
-      <h1>Keuangan yang tenang, tercatat, dan dapat diaudit.</h1>
-      <p>Pendapatan ${fmtIDR(s.totals.revenueMinor)} · Beban ${fmtIDR(s.totals.expenseMinor)} · ${s.transactionCount} jurnal terposting.</p>
-      <p class="net">${fmtIDR(s.totals.netMinor)}</p>
-    </div>
-    <div class="panel">
-      <h3>Arus bulanan</h3>
-      <div class="bars">${bars}</div>
-      <p class="muted"><span style="color:#1f7a6d">■</span> pendapatan &nbsp;<span style="color:#b97f1f">■</span> beban</p>
-    </div>
-  </div>
-  <div class="stat-grid">
-    <div class="stat"><h4>Pendapatan</h4><strong class="up">${fmtIDR(s.totals.revenueMinor)}</strong><small>akun id-revenue</small></div>
-    <div class="stat"><h4>Beban</h4><strong class="down">${fmtIDR(s.totals.expenseMinor)}</strong><small>akun id-expense</small></div>
-    <div class="stat"><h4>Kas (net)</h4><strong>${fmtIDR((s.balances.find((b) => b.accountId === 'id-cash') || {}).netMinor || '0')}</strong><small>akun id-cash</small></div>
-    <div class="stat"><h4>Audit trail</h4><strong>${s.auditOk ? 'Valid' : 'Periksa'}</strong><small>rantai hash SHA-256</small></div>
-  </div>
-  <div class="cards">
-    <div class="panel"><h3>Transaksi terbaru</h3><table><thead><tr><th>ID</th><th>Jenis</th><th>Tanggal</th><th>Relasi</th><th style="text-align:right">Nominal</th><th>Posting</th><th></th></tr></thead><tbody>${txRows(recent)}</tbody></table></div>
-    <div class="panel"><h3>Saldo akun</h3><table><thead><tr><th>Akun</th><th style="text-align:right">Saldo</th></tr></thead><tbody>
-      ${s.balances.map((b) => `<tr><td>${esc(b.accountId)} <span class="muted">${esc(b.code || '')} ${esc(b.name || '')}</span></td><td class="num">${fmtIDR(b.netMinor)}</td></tr>`).join('') || '<tr><td colspan="2">Kosong</td></tr>'}
-    </tbody></table></div>
-  </div>`;
+function country(code){return cache.ob?.jurisdictions?.find(j=>j.code===code)?.name??code;}
+function fact(key){return cache.ob?.slots?.[key]?.value??null;}
+function basisValues(basis){return (cache.ob?.jurisdictionCandidates??[]).filter(f=>f.basis===basis&&f.status!=='REJECTED').map(f=>country(f.countryCode)).join(', ');}
+function currentBasis(basis){return (cache.ob?.jurisdictionCandidates??[]).find(f=>f.basis===basis&&f.status==='CANDIDATE')?.countryCode??'';}
+function selectOptions(items,value,blank=false){return (blank?'<option value="">'+esc(tr('ob.unknown'))+'</option>':'')+items.map(([id,label])=>'<option value="'+esc(id)+'"'+(id===value?' selected':'')+'>'+esc(label)+'</option>').join('');}
+function vOnboarding(){
+ const ob=cache.ob;if(!ob)return '<div class="panel">'+esc(tr('loading'))+'</div>';
+ const p=ob.proposal,confirmed=ob.active?.profileRevision===ob.profileRevision;
+ const row=(label,value)=>'<div class="ob-kv"><span>'+esc(label)+'</span><strong>'+esc(Array.isArray(value)?value.join(', '):value||tr('ob.unknown'))+'</strong><small class="ob-badge '+(confirmed?'ok':'need')+'">'+esc(value?(confirmed?tr('ob.confirmed'):tr('ob.needsConfirm')):'')+'</small></div>';
+ const understand='<div class="panel ob-side-block"><h3>'+esc(tr('ob.understandTitle'))+'</h3>'+
+  row(tr('ob.fBusiness'),fact('org.name')||fact('org.businessType'))+
+  row(tr('ob.nationality'),country(fact('user.nationality')))+
+  row(tr('ob.workLocation'),basisValues('BUSINESS_WORK_LOCATION'))+
+  row(tr('ob.registration'),basisValues('REGISTRATION'))+
+  row(tr('ob.taxResidence'),basisValues('TAX_RESIDENCE'))+
+  row(tr('ob.fCustomers'),basisValues('CUSTOMER_LOCATION'))+
+  row(tr('ob.bankLocation'),basisValues('ACCOUNT_LOCATION'))+
+  row(tr('ob.fCurrency'),fact('currency.functional'))+
+  row(tr('ob.fOther'),fact('currency.transactions')?.join(', '))+
+  row(tr('ob.foreignPurchases'),fact('currency.foreignPurchases')?.join(', '))+'</div>';
+ const countries=ob.jurisdictions.map(j=>[j.code,j.name]),currencies=ob.currencies.map(c=>[c.code,c.code+' — '+c.name]);
+ const biz=['small-business','freelancer','umkm','perdagangan','jasa','kuliner','manufaktur'];
+ let setup='<div class="panel ob-side-block"><h3>'+esc(tr('ob.setupTitle'))+'</h3><p>'+esc(tr('ob.working'))+'</p></div>';
+ if(p){
+  const field=(label,content)=>'<label class="ob-edit"><span>'+esc(label)+'</span>'+content+'</label>';
+  setup='<div class="panel ob-side-block"><h3>'+esc(tr('ob.setupTitle'))+'</h3><p class="muted">'+esc(tr('ob.readyNote'))+'</p>'+
+   field(tr('business.name'),'<input id="setName" value="'+esc(p.organizationName)+'" maxlength="120" />')+
+   (p.organizationNameSuggested?'<small class="muted">'+esc(tr('ob.suggestedName'))+'</small>':'')+
+   field(tr('ob.sBusinessType'),'<select id="setBiz">'+selectOptions(biz.map(b=>[b,tr('business.'+b)]),p.businessType)+'</select>')+
+   field(tr('ob.workLocation'),'<select id="setWork">'+selectOptions(countries,currentBasis('BUSINESS_WORK_LOCATION'),true)+'</select>')+
+   field(tr('ob.registration'),'<select id="setRegistration">'+selectOptions(countries,currentBasis('REGISTRATION'),true)+'</select>')+
+   field(tr('ob.sBookCurrency'),'<select id="setCur">'+selectOptions(currencies,p.functionalCurrency)+'</select>')+
+   field(tr('ob.sLanguage'),'<select id="setLang">'+selectOptions([['en','English'],['id','Bahasa Indonesia']],p.language)+'</select>')+
+   '<div class="grid2">'+field(tr('period.start'),'<input id="setStart" type="date" value="'+esc(p.period.periodStart)+'" />')+
+   field(tr('period.end'),'<input id="setEnd" type="date" value="'+esc(p.period.periodEnd)+'" />')+'</div>'+
+   '<p>'+esc(tr('ob.sFeatures'))+': '+p.modules.map(m=>esc(tr('nav.'+m))).join(', ')+'</p>'+
+   '<p class="tax-pending">'+esc(tr('tax.review'))+'</p>'+
+   '<div class="ob-actions"><button type="button" id="obUse" class="btn gold"'+(pending?' disabled':'')+'>'+esc(pending?tr('working'):tr('ob.useSetup'))+'</button></div></div>';
+ }
+ const provider=ob.ai?.providerUsed==='meta'?tr('provider.meta')+(ob.ai.model?' · '+ob.ai.model:''):tr('provider.fallback');
+ const error=lastError?'<p class="err" role="alert">'+esc(lastError)+'</p>':'';
+ return '<div class="ob-wrap"><div class="ob-hero"><h1>'+esc(tr('ob.headline'))+'</h1><p>'+esc(tr('ob.subheadline'))+'</p></div>'+
+  (cache.ws?.activated?'<p class="tax-pending">'+esc(tr('ob.editingActive'))+'</p>':'')+
+  '<div class="ob-grid"><div class="panel ob-chat"><div class="chat" id="obChat">'+chat.map(m=>'<div class="chat-row '+m.who+'"><div class="bubble"><p>'+esc(m.text)+'</p></div></div>').join('')+'</div>'+
+  '<div class="ob-input-row"><input id="obInput" aria-label="'+esc(tr('ob.bigPlaceholder'))+'" placeholder="'+esc(tr('ob.bigPlaceholder'))+'" value="'+esc(userInput)+'" autocomplete="off"'+(pending?' disabled':'')+' /><button type="button" class="btn gold" id="obSend"'+(pending?' disabled':'')+'>'+esc(pending?tr('working'):tr('ob.send'))+'</button></div>'+
+  '<small class="muted" role="status">'+esc(provider)+'</small>'+error+'<p class="muted">'+esc(tr('tax.review'))+'</p></div><aside class="ob-aside">'+understand+setup+'</aside></div></div>';
 }
-
-function vSalesPurchase(kind) {
-  const isSale = kind === 'SALE';
-  const list = cache.txs.filter((t) => t.kind === kind);
-  return `<div class="panel">
-    <h3>${isSale ? 'Sales — penjualan' : 'Purchase — pembelian'}</h3>
-    <p class="muted">${isSale ? 'Dr kas / Cr pendapatan. Evidence INVOICE wajib.' : 'Dr beban / Cr kas. Evidence RECEIPT/INVOICE wajib.'} Posting via PostingService, idempotency otomatis.</p>
-    <div class="toolbar"><button class="btn gold" id="newTx" type="button">+ Transaksi baru</button></div>
-    <table><thead><tr><th>ID</th><th>Jenis</th><th>Tanggal</th><th>${isSale ? 'Pelanggan' : 'Pemasok'}</th><th style="text-align:right">Nominal</th><th>Posting</th><th></th></tr></thead>
-    <tbody>${txRows(list)}</tbody></table>
-  </div>`;
+async function prepare(){
+ await refreshOb();
+ if(!cache.ob.readyForProposal)return;
+ await api('/api/onboarding/propose',{});await api('/api/onboarding/validate',{});await refreshOb();
 }
-
-function vAccounting() {
-  const j = cache.journals;
-  const rows = j.length ? [...j].reverse().map((e) => `<tr>
-    <td class="mono">${esc(e.id)}${e.reversalOf ? `<br><span class="tag reversal">reversal of ${esc(e.reversalOf)}</span>` : ''}</td>
-    <td>${esc(e.date)}</td><td>${esc(e.transactionId || '-')}</td>
-    <td>${e.lines.map((l) => `<span class="mono">${l.side} ${esc(l.accountId)} ${fmtIDR(l.amountMinor)}</span>`).join('<br>')}</td>
-    <td><button class="btn small navy" data-rev="${esc(e.id)}" type="button">Reversal</button></td>
-  </tr>`).join('') : '<tr><td colspan="5" class="muted">Belum ada jurnal.</td></tr>';
-  const a = cache.audit || {};
-  const entries = (a.entries || []).slice(-8).reverse().map((e) => `<tr><td class="mono">#${e.seq}</td><td>${esc(e.action)}</td><td class="mono">${esc(e.entityId)}</td><td class="mono">${esc(String(e.hash).slice(0, 12))}…</td></tr>`).join('');
-  return `<div class="cards">
-    <div class="panel"><h3>Jurnal (append-only)</h3><table><thead><tr><th>ID</th><th>Tanggal</th><th>Transaksi</th><th>Baris</th><th></th></tr></thead><tbody>${rows}</tbody></table>
-    <p class="footer-note">Koreksi hanya via jurnal reversal baru — jurnal asli tidak pernah diubah.</p></div>
-    <div class="panel"><h3>Audit trail</h3><p class="${a.verify && a.verify.ok ? 'ok-text' : 'err'}">${a.verify && a.verify.ok ? 'Rantai valid ✓' : 'Belum terverifikasi'}</p>
-    <table><thead><tr><th>Seq</th><th>Aksi</th><th>Entitas</th><th>Hash</th></tr></thead><tbody>${entries || '<tr><td colspan="4">Kosong</td></tr>'}</tbody></table></div>
-  </div>`;
+async function run(work){
+ if(pending)return;pending=true;lastError='';render();
+ try{await work();}catch(e){lastError=e.message;toast(e.message,true);}
+ finally{pending=false;render();}
 }
-
-function vReports() {
-  const months = cache.monthly;
-  const rows = months.length ? months.map((m) => `<tr><td class="mono">${esc(m.month)}</td><td class="num">${fmtIDR(m.revenueMinor)}</td><td class="num">${fmtIDR(m.expenseMinor)}</td><td class="num"><strong>${fmtIDR(m.netMinor)}</strong></td><td class="num">${m.count}</td></tr>`).join('') : '<tr><td colspan="5" class="muted">Belum ada data.</td></tr>';
-  return `<div class="panel"><h3>Laporan bulanan — dari engine</h3>
-    <p class="muted">Dihitung dari metadata posting + ledger. Pajak final: Rp0 (seluruh rule ID placeholder).</p>
-    <table><thead><tr><th>Bulan</th><th style="text-align:right">Pendapatan</th><th style="text-align:right">Beban</th><th style="text-align:right">Bersih</th><th style="text-align:right">Transaksi</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+function wireOnboarding(){
+ const input=$('#obInput');
+ input?.addEventListener('input',e=>{userInput=e.target.value;});
+ const send=()=>{const text=userInput.trim();if(!text||pending)return;return run(async()=>{userInput='';chat.push({who:'user',text});const r=await api('/api/onboarding/turn',{text});chat.push({who:'ai',text:r.question.text});await prepare();});};
+ $('#obSend')?.addEventListener('click',send);input?.addEventListener('keydown',e=>{if(e.key==='Enter')send();});
+ const edit=(selector,payload)=>$(selector)?.addEventListener('change',e=>run(async()=>{await api('/api/onboarding/edit',payload(e.target.value));await prepare();}));
+ edit('#setName',v=>({slot:'org.name',value:v}));edit('#setBiz',v=>({slot:'org.businessType',value:v}));
+ edit('#setWork',v=>({basis:'BUSINESS_WORK_LOCATION',countryCode:v||null}));edit('#setRegistration',v=>({basis:'REGISTRATION',countryCode:v||null}));
+ edit('#setCur',v=>({slot:'currency.functional',value:v}));edit('#setLang',v=>({slot:'user.language',value:v}));
+ edit('#setStart',v=>({slot:'accounting.periodStart',value:v}));edit('#setEnd',v=>({slot:'accounting.periodEnd',value:v}));
+ $('#obUse')?.addEventListener('click',()=>run(async()=>{
+  const hash=cache.ob?.proposal?.hash;if(!hash)throw Error(tr('ob.working'));
+  await api('/api/onboarding/confirm',{proposalHash:hash,actor:'user',decisionSource:'HUMAN'});
+  await api('/api/onboarding/activate',{activationKey:'web-'+hash,actor:'user'});
+  route='dashboard';await refresh();toast(tr('ob.confirmedOk'));
+ }));
+ const chatEl=$('#obChat');if(chatEl)chatEl.scrollTop=chatEl.scrollHeight;
 }
-
-function vImport() {
-  return `<div class="cards">
-    <div class="panel"><h3>CSV Import</h3>
-      <p class="muted">Header: <span class="mono">type,id,orgId,date,jurisdiction,currency,description,amountMajor,counterparty,reference</span> · type = SALE|PURCHASE</p>
-      <div class="drop"><textarea id="csvText" rows="8" placeholder="SALE,sale-3,org-contoh,2026-08-01,ID,IDR,Jasa,2500000,PT Baru,INV-003"></textarea></div>
-      <div class="toolbar"><button class="btn navy" id="csvPreview" type="button">Pratinjau</button><button class="btn gold" id="csvRun" type="button">Validasi &amp; Posting</button></div>
-      <p class="err" id="csvErr" hidden></p><div id="csvOut"></div>
-    </div>
-    <div class="panel"><h3>Hasil terakhir</h3><div id="csvReport"><p class="muted">Belum ada impor pada sesi ini.</p></div></div>
-  </div>`;
+function txRows(rows){
+ return rows.map(tx=>'<tr><td>'+esc(tx.id)+(tx.demo?' <span class="tag demo">DEMO</span>':'')+'</td><td>'+esc(tx.date)+'</td><td>'+esc(tx.counterparty)+'</td><td class="num">'+esc(money(tx.totalMinor,tx.currency))+'</td></tr>').join('')||'<tr><td colspan="4" class="muted">'+esc(tr('ws.empty'))+'</td></tr>';
 }
-
-function vTax() {
-  const t = cache.tax;
-  if (!t) return '<div class="panel">Memuat…</div>';
-  return t.packs.map((p) => `<div class="panel">
-    <h3>${esc(p.displayName || p.id)} <span class="tag warn">PLACEHOLDER</span></h3>
-    <div class="kv"><span>Pack</span><strong class="mono">${esc(p.id)} v${esc(p.version)}</strong>
-    <span>Yurisdiksi</span><strong>${esc(p.jurisdiction)} · ${esc(p.validFrom)} → ${esc(p.validTo)}</strong>
-    <span>Mata uang</span><strong>${esc(p.currency)}</strong></div>
-    <table><thead><tr><th>Rule</th><th>Kategori</th><th>Status</th><th>Sumber</th></tr></thead><tbody>
-    ${p.rules.map((r) => `<tr><td class="mono">${esc(r.id)}</td><td>${esc(r.category)}</td><td><span class="tag warn">PLACEHOLDER</span></td><td>${esc(r.source || r.note || '—')}</td></tr>`).join('')}
-    </tbody></table><p class="footer-note">${esc(t.note)}</p></div>`).join('');
+function transactionTable(rows){return '<div class="table-scroll"><table><thead><tr><th>ID</th><th>'+esc(tr('date'))+'</th><th>'+esc(tr('counterparty'))+'</th><th>'+esc(tr('amount'))+'</th></tr></thead><tbody>'+txRows(rows)+'</tbody></table></div>';}
+function vDashboard(){
+ const s=cache.summary;if(!s)return '';
+ const cards=[['ws.income',s.totals.revenueMinor],['ws.expenses',s.totals.expenseMinor],['ws.net',s.totals.netMinor]];
+ return '<div class="hero"><div class="panel hero-main"><p class="hero-kicker">'+esc(cache.ws.organizationName)+' · '+esc(cache.ws.functionalCurrency)+'</p><h1>'+esc(tr('ws.summary'))+'</h1><p>'+esc(tr('tax.review'))+'</p></div></div>'+
+  '<div class="stat-grid">'+cards.map(([label,minor])=>'<div class="stat"><h4>'+esc(tr(label))+'</h4><strong>'+esc(money(minor))+'</strong></div>').join('')+'</div>'+
+  (s.otherCurrencies?.length?'<p class="tax-pending">'+esc(tr('currency.separate'))+' '+esc(s.otherCurrencies.join(', '))+'</p>':'')+
+  '<div class="panel"><h3>'+esc(tr('transactions.recent'))+'</h3>'+transactionTable(cache.txs.slice(0,8))+'</div>';
 }
-
-function obFriendly() {
-  const ob = cache.ob || {};
-  const slots = ob.slots || {};
-  const draft = ob.draft || {};
-  const cands = ob.jurisdictionCandidates || [];
-  const jMap = new Map((ob.jurisdictions || []).map((j) => [j.code, j.name]));
-  const lMap = new Map((ob.languages || []).map((l) => [l.tag, l.name]));
-  const val = (k) => slots[k]?.value ?? null;
-  const stOf = (k) => {
-    const s = slots[k];
-    if (!s) return 'unknown';
-    const v = s.value;
-    if (v === null || v === undefined || v === '' || (Array.isArray(v) && v.length === 0)) return 'unknown';
-    if (s.status === 'validated' || s.status === 'active' || s.evidenceStatus === 'CONFIRMED') return 'confirmed';
-    return 'needs';
-  };
-  const findCand = (b) => cands.find((c) => c.basis === b) || null;
-  const nameOf = (code) => (code ? (jMap.get(code) || code) : null);
-  const orgName = val('org.name') || draft.organizationProfile?.name || null;
-  const bTypeRaw = val('org.businessType') || draft.organizationProfile?.businessField || null;
-  const bType = bTypeRaw ? String(bTypeRaw).replace(/[-_]+/g, ' ') : null;
-  const biz = orgName && bType ? `${orgName} · ${bType}` : (orgName || bType || null);
-  const reg = findCand('REGISTRATION');
-  const work = findCand('BUSINESS_WORK_LOCATION');
-  const domSlot = val('org.domicile') || draft.organizationProfile?.domicile || null;
-  const whereCode = reg?.countryCode || work?.countryCode || domSlot || null;
-  let whereSt = 'unknown';
-  if (whereCode) {
-    const src = reg || work;
-    if (src && src.status === 'CONFIRMED') whereSt = 'confirmed';
-    else if (stOf('org.domicile') === 'confirmed') whereSt = 'confirmed';
-    else whereSt = 'needs';
-  }
-  const cur = val('currency.functional') || draft.currencyProfile?.functional || null;
-  const others = val('currency.transactions') || draft.currencyProfile?.otherCurrencies || [];
-  const langTag = val('user.language') || ob.uiLanguage || 'en';
-  const cust = findCand('CUSTOMER_LOCATION');
-  return {
-    biz, bizSt: biz ? stOf('org.name') : 'unknown',
-    where: nameOf(whereCode), whereCode, whereSt,
-    cur: cur || null, curSt: cur ? stOf('currency.functional') : 'unknown',
-    others: Array.isArray(others) ? others.filter(Boolean) : [],
-    lang: lMap.get(langTag) || (langTag === 'id' ? 'Bahasa Indonesia' : 'English'), langTag,
-    langSt: stOf('user.language') === 'unknown' ? 'needs' : stOf('user.language'),
-    custName: cust?.countryCode ? nameOf(cust.countryCode) : null,
-    custSt: cust?.countryCode ? (cust.status === 'CONFIRMED' ? 'confirmed' : 'needs') : 'unknown',
-  };
+function vTransactions(kind){return '<div class="panel"><h3>'+esc(tr(kind==='SALE'?'nav.sales':'nav.purchase'))+'</h3><button type="button" id="newTx" class="btn gold">'+esc(tr('action.new'))+'</button>'+transactionTable(cache.txs.filter(t=>t.kind===kind))+'</div>';}
+function vReports(){
+ return '<div class="panel"><h3>'+esc(tr('nav.reports'))+' · '+esc(cache.ws.functionalCurrency)+'</h3><p class="tax-pending">'+esc(tr('tax.review'))+'</p><p class="muted">'+esc(tr('currency.noFx'))+'</p><div class="table-scroll"><table><thead><tr><th>'+esc(tr('month'))+'</th><th>'+esc(tr('ws.income'))+'</th><th>'+esc(tr('ws.expenses'))+'</th><th>'+esc(tr('ws.net'))+'</th></tr></thead><tbody>'+
+ cache.monthly.map(m=>'<tr><td>'+esc(m.month)+'</td><td>'+esc(money(m.revenueMinor))+'</td><td>'+esc(money(m.expenseMinor))+'</td><td>'+esc(money(m.netMinor))+'</td></tr>').join('')+'</tbody></table></div></div>';
 }
-
-function vOnboarding() {
-  const ob = cache.ob;
-  const ws = cache.ws;
-  if (ws && ws.activated) {
-    const f = obFriendly();
-    return `<div class="ob-wrap"><div class="panel ob-done"><h2>${esc(tr('ob.confirmedOk'))}</h2>`
-      + `<p class="muted">${esc(ws.organizationName || '')} · ${esc(ws.domicile || '')} · ${esc(ws.functionalCurrency || '')}</p>`
-      + `<p class="muted">${esc(tr('ob.taxLater'))}</p></div></div>`;
-  }
-  const f = obFriendly();
-  const badge = (st) => st === 'confirmed' ? `<span class="ob-badge ok">${esc(tr('ob.confirmed'))}</span>` : st === 'needs' ? `<span class="ob-badge need">${esc(tr('ob.needsConfirm'))}</span>` : `<span class="muted">${esc(tr('ob.unknown'))}</span>`;
-  const msgs = obChat.map((m) => `<div class="chat-row ${m.who}"><div class="bubble"><p>${esc(m.text)}</p></div></div>`).join('');
-  const row = (label, disp, st) => `<div class="ob-kv"><span>${esc(label)}</span><strong>${disp ? esc(disp) : `<span class="muted">${esc(tr('ob.unknown'))}</span>`}</strong>${badge(st)}</div>`;
-  const understand = `<div class="panel ob-side-block"><h3>${esc(tr('ob.understandTitle'))}</h3>`
-    + row(tr('ob.fBusiness'), f.biz, f.bizSt)
-    + row(tr('ob.fWhere'), f.where, f.whereSt)
-    + row(tr('ob.fCurrency'), f.cur, f.curSt)
-    + row(tr('ob.fOther'), f.others.length ? f.others.join(', ') : null, f.others.length ? 'needs' : 'unknown')
-    + row(tr('ob.fLanguage'), f.lang, f.langSt)
-    + row(tr('ob.fCustomers'), f.custName, f.custSt)
-    + `</div>`;
-  const p = ob?.proposal || null;
-  let setup = `<div class="panel ob-side-block"><h3>${esc(tr('ob.setupTitle'))}</h3><p class="muted">${esc(tr('ob.working'))}</p></div>`;
-  if (p) {
-    const jMap = new Map((ob.jurisdictions || []).map((j) => [`${j.code}`, j.name]));
-    const locCode = (p.jurisdictions && p.jurisdictions[0]) || p.entityJurisdiction || f.whereCode || '';
-    const locName = jMap.get(locCode) || locCode || '';
-    const mods = Array.isArray(p.modules) ? p.modules : [];
-    const modNames = mods.length ? mods.join(', ') : '';
-    const langOpts = (ob.languages || [{ tag: 'en', name: 'English' }, { tag: 'id', name: 'Bahasa Indonesia' }])
-      .map((l) => `<option value="${esc(l.tag)}" ${String(p.language || f.langTag) === l.tag ? 'selected' : ''}>${esc(l.name)}</option>`).join('');
-    const jurOpts = `<option value="">${esc(tr('ob.unknown'))}</option>` + (ob.jurisdictions || []).map((j) => `<option value="${esc(j.code)}" ${locCode === j.code ? 'selected' : ''}>${esc(j.name)}</option>`).join('');
-    const curOpts = `<option value="">${esc(tr('ob.unknown'))}</option>` + (ob.currencies || []).map((c) => `<option value="${esc(c.code)}" ${String(p.functionalCurrency || '') === c.code ? 'selected' : ''}>${esc(c.code)} — ${esc(c.name)}</option>`).join('');
-    setup = `<div class="panel ob-side-block"><h3>${esc(tr('ob.setupTitle'))}</h3><p class="muted">${esc(tr('ob.readyNote'))}</p>`
-      + `<label class="ob-edit"><span>${esc(tr('ob.sBusinessType'))}</span><input id="setBiz" value="${esc(p.businessType || '')}" /></label>`
-      + `<label class="ob-edit"><span>${esc(tr('ob.sLanguage'))}</span><select id="setLang">${langOpts}</select></label>`
-      + `<label class="ob-edit"><span>${esc(tr('ob.sLocation'))}</span><select id="setJur">${jurOpts}</select></label>`
-      + `<label class="ob-edit"><span>${esc(tr('ob.sBookCurrency'))}</span><select id="setCur">${curOpts}</select></label>`
-      + `<div class="ob-kv"><span>${esc(tr('ob.sFeatures'))}</span><strong>${esc(modNames || tr('ob.unknown'))}</strong></div>`
-      + `<p class="muted">${esc(tr('ob.editHint'))}</p>`
-      + `<div class="ob-actions"><button class="btn gold" id="obUse" type="button">${esc(tr('ob.useSetup'))}</button>`
-      + `<button class="btn ghost dark" id="obChange" type="button">${esc(tr('ob.changeSomething'))}</button></div>`
-      + `<p class="muted">${esc(tr('ob.taxLater'))}</p><p class="err" id="obErr" hidden></p></div>`;
-  }
-  return `<div class="ob-wrap"><div class="ob-hero"><h1>${esc(tr('ob.headline'))}</h1><p>${esc(tr('ob.subheadline'))}</p></div>`
-    + `<div class="ob-grid"><div class="panel ob-chat"><div class="chat" id="obChat">${msgs || `<p class="muted">${esc(tr('ob.hint'))}</p>`}</div>`
-    + `<div class="ob-input-row"><input id="obInput" placeholder="${esc(tr('ob.bigPlaceholder'))}" autocomplete="off" /><button class="btn gold" id="obSend" type="button">${esc(tr('ob.send'))}</button></div>`
-    + `<p class="muted">${esc(tr('ob.taxLater'))}</p></div>`
-    + `<aside class="ob-aside">${understand}${setup}</aside></div></div>`;
+function vAccounting(){
+ return '<div class="panel"><h3>'+esc(tr('nav.accounting'))+'</h3><p>'+esc(tr('accounting.corrections'))+'</p><div class="table-scroll"><table><tbody>'+
+ cache.journals.map(j=>'<tr><td>'+esc(j.id)+'</td><td>'+esc(j.date)+'</td><td>'+j.lines.map(l=>esc(l.side+' '+l.accountId+' '+money(l.amountMinor,l.currency))).join('<br>')+'</td><td><button type="button" class="btn small navy" data-reverse="'+esc(j.id)+'">'+esc(tr('reversal'))+'</button></td></tr>').join('')+'</tbody></table></div></div>';
 }
-
-function wireOnboarding() {
-  const autoPrepare = async () => {
-    try { await api('/api/onboarding/propose', { method: 'POST', body: '{}' }); } catch { /* not ready yet */ }
-    try { await api('/api/onboarding/validate', { method: 'POST', body: '{}' }); } catch { /* pending verification */ }
-    try { await refreshOb(); } catch { /* keep UI */ }
-  };
-  const send = async () => {
-    const el = $('#obInput');
-    const text = String(el?.value || '').trim();
-    if (!text) return;
-    obChat.push({ who: 'user', text });
-    el.value = '';
-    render();
-    try {
-      const r = await api('/api/onboarding/turn', { method: 'POST', body: JSON.stringify({ text }) });
-      obChat.push({ who: 'ai', text: r.question.text });
-      await refreshOb();
-      await autoPrepare();
-    } catch (e) { obChat.push({ who: 'ai', text: `Maaf: ${e.message}` }); }
-    render();
-  };
-  $('#obSend')?.addEventListener('click', send);
-  $('#obInput')?.addEventListener('keydown', (e) => { if (e.key === 'Enter') send(); });
-  const chat = $('#obChat');
-  if (chat) chat.scrollTop = chat.scrollHeight;
-  if (topLang) {
-    topLang.value = UILANG || 'en';
-    topLang.onchange = async (e) => {
-      try {
-        await api('/api/onboarding/language', { method: 'POST', body: JSON.stringify({ language: e.target.value }) });
-        await refreshAll();
-      } catch (err2) { toast(err2.message, 'error'); }
-    };
-  }
-  $('#setLang')?.addEventListener('change', async (e) => {
-    try {
-      await api('/api/onboarding/language', { method: 'POST', body: JSON.stringify({ language: e.target.value }) });
-      await refreshAll();
-    } catch (err2) { toast(err2.message, 'error'); }
-  });
-  const editTurn = async (text) => {
-    obChat.push({ who: 'user', text });
-    render();
-    try {
-      const r = await api('/api/onboarding/turn', { method: 'POST', body: JSON.stringify({ text }) });
-      obChat.push({ who: 'ai', text: r.question.text });
-      await refreshOb();
-      await autoPrepare();
-    } catch (e) { obChat.push({ who: 'ai', text: `Maaf: ${e.message}` }); }
-    render();
-  };
-  $('#setJur')?.addEventListener('change', (e) => {
-    const code = String(e.target.value || '').trim();
-    if (!code) return;
-    editTurn(`Business location / registration is ${code}.`);
-  });
-  $('#setCur')?.addEventListener('change', (e) => {
-    const code = String(e.target.value || '').trim();
-    if (!code) return;
-    editTurn(`Bookkeeping currency is ${code}.`);
-  });
-  $('#setBiz')?.addEventListener('change', (e) => {
-    const v = String(e.target.value || '').trim();
-    if (!v) return;
-    editTurn(`Business type is ${v}.`);
-  });
-  $('#obChange')?.addEventListener('click', () => {
-    const el = $('#obInput');
-    if (el) el.focus();
-    toast(tr('ob.editHint'));
-  });
-  $('#obUse')?.addEventListener('click', async () => {
-    const errEl = $('#obErr');
-    try {
-      if (errEl) errEl.hidden = true;
-      let hash = cache.ob?.proposal?.hash || null;
-      if (!hash) {
-        try { await api('/api/onboarding/propose', { method: 'POST', body: '{}' }); await refreshOb(); } catch { /* show error below */ }
-        hash = cache.ob?.proposal?.hash || null;
-      }
-      if (!hash) throw new Error(tr('ob.working'));
-      await api('/api/onboarding/confirm', { method: 'POST', body: JSON.stringify({ proposalHash: hash }) });
-      const key = `web-${Date.now()}`;
-      await api('/api/onboarding/activate', { method: 'POST', body: JSON.stringify({ activationKey: key }) });
-      await refreshOb();
-      await refresh(true);
-      render();
-    } catch (e) {
-      if (errEl) { errEl.textContent = e.message; errEl.hidden = false; }
-      else toast(e.message, 'error');
-    }
-  });
+function vSettings(){
+ const s=cache.settings;
+ return '<div class="panel"><h3>'+esc(tr('nav.settings'))+'</h3><p>'+esc(s.org.name)+' · '+esc(country(cache.ws.jurisdiction)||tr('ob.unknown'))+' · '+esc(s.org.baseCurrency)+'</p>'+
+ s.periods.map(p=>'<p>'+esc(p.start)+' → '+esc(p.end)+' · '+esc(tr(p.status==='CLOSED'?'period.closed':'period.open'))+'</p>').join('')+
+ '<p>'+esc(tr('tax.review'))+'</p><button type="button" class="btn gold" id="reviewSetup">'+esc(tr('ob.changeSomething'))+'</button></div>';
 }
-
-async function refreshOb() {
-  cache.ob = await api('/api/onboarding/state').catch(() => null);
-  cache.ws = await api('/api/workspace').catch(() => null);
-  if (cache.ob && cache.ob.uiLanguage) UILANG = cache.ob.uiLanguage;
-  if (cache.ob && !obBooted && obChat.length === 0) {
-    obBooted = true;
-    obChat.push({ who: 'ai', text: tr('ob.greeting') || 'Welcome to BiG-M. Tell me a little about your business and I will help set it up.', tag: 'deterministik' });
-  }
+function vImport(){
+ return '<div class="panel"><h3>'+esc(tr('nav.import'))+'</h3><p class="muted">'+esc(tr('csv.hint'))+'</p><p class="mono">type,id,orgId,date,jurisdiction,currency,description,amountMajor,counterparty,reference</p>'+
+ '<textarea id="csvText" rows="8" aria-label="CSV">'+esc(csvText)+'</textarea><button type="button" class="btn gold" id="csvRun"'+(pending?' disabled':'')+'>'+esc(tr('csv.import'))+'</button>'+
+ (csvReport?'<p>'+esc(tr('csv.result'))+': '+csvReport.succeeded+' / '+csvReport.total+'</p>'+csvReport.failures.map(f=>'<p class="err">'+esc(f.row+': '+f.error)+'</p>').join(''):'')+'</div>';
 }
-
-async function refreshI18n() {
-  try {
-    const r = await api('/api/i18n').catch(() => null);
-    const lang = r?.state?.uiLanguage ?? 'en';
-    UILANG = lang;
-    document.documentElement.lang = lang;
-    const table = await fetch(`/i18n/${lang}.json`).then((x) => x.json()).catch(() => null);
-    if (table && typeof table === 'object') STR = table;
-  } catch { /* keep English fallback */ }
+function render(){
+ renderTabs();view.innerHTML=route==='onboarding'?vOnboarding():route==='dashboard'?vDashboard():route==='sales'?vTransactions('SALE'):route==='purchase'?vTransactions('PURCHASE'):route==='reports'?vReports():route==='accounting'?vAccounting():route==='import'?vImport():vSettings();
+ topLang.disabled=pending;if(pending)view.querySelectorAll('input,select,textarea,button').forEach(el=>{el.disabled=true;});
+ if(route==='onboarding'){wireOnboarding();return;}
+ $('#newTx')?.addEventListener('click',()=>openTx(route==='purchase'?'PURCHASE':'SALE'));
+ $('#reviewSetup')?.addEventListener('click',async()=>{route='onboarding';await refreshOb();render();});
+ view.querySelectorAll('[data-reverse]').forEach(b=>b.addEventListener('click',()=>openReversal(b.dataset.reverse)));
+ $('#csvText')?.addEventListener('input',e=>{csvText=e.target.value;});
+ $('#csvRun')?.addEventListener('click',()=>run(async()=>{const r=await api('/api/import/csv',{csv:csvText});csvReport=r.report;await refresh();}));
 }
-
-async function refreshAll() {
-  await refresh();
-  render();
+function transactionDate(){const today=new Date().toISOString().slice(0,10),p=cache.ws.period;return today>=p.periodStart&&today<=p.periodEnd?today:p.periodStart;}
+function openTx(kind){
+ const dialog=$('#txDialog'),sale=kind==='SALE';
+ dialog.innerHTML='<form id="txForm" class="dlg"><h3>'+esc(tr(sale?'nav.sales':'nav.purchase'))+'</h3><div class="grid2">'+
+ '<label>ID<input name="id" required value="tx-'+Date.now()+'" /></label><label>'+esc(tr('date'))+'<input name="date" type="date" required value="'+transactionDate()+'" /></label>'+
+ '<label>'+esc(tr('description'))+'<input name="description" required /></label><label>'+esc(tr('amount'))+'<input name="amountMajor" required inputmode="decimal" /></label>'+
+ '<label>'+esc(tr('currency'))+'<select name="currency">'+selectOptions(cache.ob.currencies.map(c=>[c.code,c.code]),cache.ws.functionalCurrency)+'</select></label>'+
+ '<label>'+esc(tr('counterparty'))+'<input name="counterparty" required /></label><label>'+esc(tr('reference'))+'<input name="reference" required /></label></div><p class="err" id="txErr" hidden></p>'+
+ '<div class="dlg-actions"><button type="button" class="btn ghost" id="txCancel">'+esc(tr('action.cancel'))+'</button><button type="submit" class="btn gold">'+esc(tr('action.post'))+'</button></div></form>';
+ $('#txCancel').addEventListener('click',()=>dialog.close());
+ $('#txForm').addEventListener('submit',async e=>{
+  e.preventDefault();if(pending)return;pending=true;
+  const submit=e.target.querySelector('[type=submit]');submit.disabled=true;
+  try{
+   const f=Object.fromEntries(new FormData(e.target)),ws=cache.ws;
+   const payload={id:f.id.trim(),orgId:ws.organizationId,date:f.date,jurisdiction:ws.jurisdiction??'ZZ',currency:f.currency,description:f.description,amountMajor:f.amountMajor.trim()};
+   if(sale){payload.customer=f.counterparty;payload.invoiceRef=f.reference;}else{payload.supplier=f.counterparty;payload.billRef=f.reference;}
+   await api(sale?'/api/sales':'/api/purchases',payload);dialog.close();await refresh();render();
+  }catch(error){$('#txErr').textContent=error.message;$('#txErr').hidden=false;}
+  finally{pending=false;submit.disabled=false;}
+ });dialog.showModal();
 }
-
-function vSettings() {
-  const s = cache.settings;
-  if (!s) return '<div class="panel">Memuat…</div>';
-  return `<div class="cards three">
-    <div class="panel"><h3>Organisasi</h3><div class="kv"><span>ID</span><strong class="mono">${esc(s.org.id)}</strong><span>Nama</span><strong>${esc(s.org.name)}</strong><span>Yurisdiksi</span><strong>${esc(s.org.jurisdiction)}</strong><span>Kurs dasar</span><strong>${esc(s.org.baseCurrency)}</strong></div></div>
-    <div class="panel"><h3>Periode</h3>${s.periods.map((p) => `<p><span class="tag">${esc(p.status)}</span> <strong class="mono">${esc(p.id)}</strong><br><span class="muted">${esc(p.start)} → ${esc(p.end)}</span></p>`).join('')}</div>
-    <div class="panel"><h3>Chart of Accounts</h3>${s.chart.map((a) => `<p class="mono">${esc(a.code)} · ${esc(a.id)}<br><span class="muted">${esc(a.name)} (${esc(a.type)})</span></p>`).join('')}</div>
-  </div>`;
+function openReversal(journalId){
+ const dialog=$('#revDialog');dialog.innerHTML='<form class="dlg" id="revForm"><h3>'+esc(tr('reversal'))+'</h3><label>ID<input name="id" required value="rev-'+Date.now()+'" /></label><label>'+esc(tr('date'))+'<input name="date" type="date" required value="'+transactionDate()+'" /></label><label>'+esc(tr('description'))+'<input name="memo" /></label><p class="err" id="revErr" hidden></p><div class="dlg-actions"><button type="button" id="revCancel" class="btn ghost">'+esc(tr('action.cancel'))+'</button><button type="submit" class="btn gold">'+esc(tr('action.post'))+'</button></div></form>';
+ $('#revCancel').addEventListener('click',()=>dialog.close());$('#revForm').addEventListener('submit',async e=>{e.preventDefault();if(pending)return;pending=true;try{const f=Object.fromEntries(new FormData(e.target));await api('/api/reversals',{journalId,...f});dialog.close();await refresh();render();}catch(error){$('#revErr').textContent=error.message;$('#revErr').hidden=false;}finally{pending=false;}});dialog.showModal();
 }
-
-function render() {
-  renderTabs();
-  if (route === 'onboarding') { view.innerHTML = vOnboarding(); wireOnboarding(); return; }
-  if (route === 'dashboard') view.innerHTML = vDashboard();
-  else if (route === 'sales') view.innerHTML = vSalesPurchase('SALE');
-  else if (route === 'purchase') view.innerHTML = vSalesPurchase('PURCHASE');
-  else if (route === 'accounting') view.innerHTML = vAccounting();
-  else if (route === 'reports') view.innerHTML = vReports();
-  else if (route === 'import') view.innerHTML = vImport();
-  else if (route === 'tax') view.innerHTML = vTax();
-  else view.innerHTML = vSettings();
-  wire();
-}
-
-function wire() {
-  view.querySelectorAll('[data-detail]').forEach((b) => b.addEventListener('click', () => {
-    const tx = cache.txs.find((x) => x.id === b.dataset.detail);
-    const j = cache.journals.find((e) => e.id === (tx ? tx.journalId : ''));
-    toast(tx ? `${tx.id} · ${tx.kind} · ${fmtIDR(tx.totalMinor)} · jurnal ${j ? j.lines.map((l) => `${l.side} ${l.accountId}`).join(' / ') : '-'}` : 'Tidak ditemukan');
-  }));
-  view.querySelectorAll('[data-rev]').forEach((b) => b.addEventListener('click', () => openReversal(b.dataset.rev)));
-  const nt = $('#newTx');
-  if (nt) nt.addEventListener('click', () => openTx(route === 'purchase' ? 'PURCHASE' : 'SALE'));
-  const pv = $('#csvPreview');
-  if (pv) pv.addEventListener('click', previewCsv);
-  const rn = $('#csvRun');
-  if (rn) rn.addEventListener('click', runCsv);
-}
-
-let pendingKind = 'SALE';
-let pendingJournal = null;
-function openTx(kind) {
-  pendingKind = kind;
-  $('#txTitle').textContent = kind === 'SALE' ? 'Penjualan baru' : 'Pembelian baru';
-  $('#cpLabel').firstChild.textContent = kind === 'SALE' ? 'Pelanggan' : 'Pemasok';
-  $('#txErr').hidden = true;
-  $('#txDialog').showModal();
-}
-function openReversal(journalId) {
-  pendingJournal = journalId;
-  $('#revErr').hidden = true;
-  $('#revDialog').showModal();
-}
-
-function formData(form) {
-  const fd = new FormData(form);
-  return Object.fromEntries(fd.entries());
-}
-
-$('#txForm').addEventListener('submit', async (e) => {
-  if (e.submitter && e.submitter.value === 'cancel') return;
-  e.preventDefault();
-  const f = formData(e.target);
-  const errEl = $('#txErr');
-  try {
-    if (!/^\d+(\.\d+)?$/.test(String(f.amountMajor).trim())) throw new Error('Nominal harus desimal positif, contoh 1500000');
-    const payload = {
-      id: f.id.trim(), orgId: 'org-contoh', date: f.date, jurisdiction: 'ID', currency: 'IDR',
-      description: f.description.trim(), amountMajor: String(f.amountMajor).trim(),
-    };
-    if (pendingKind === 'SALE') { payload.customer = f.counterparty.trim(); payload.invoiceRef = f.reference.trim(); }
-    else { payload.supplier = f.counterparty.trim(); payload.billRef = f.reference.trim(); }
-    const path = pendingKind === 'SALE' ? '/api/sales' : '/api/purchases';
-    await api(path, { method: 'POST', body: JSON.stringify(payload) });
-    $('#txDialog').close();
-    e.target.reset();
-    toast('Terposting ✓');
-    await refresh(true); render();
-  } catch (err2) { errEl.textContent = err2.message; errEl.hidden = false; }
-});
-
-$('#revForm').addEventListener('submit', async (e) => {
-  if (e.submitter && e.submitter.value === 'cancel') return;
-  e.preventDefault();
-  const f = formData(e.target);
-  const errEl = $('#revErr');
-  try {
-    await api('/api/reversals', { method: 'POST', body: JSON.stringify({ journalId: pendingJournal, id: f.id.trim(), date: f.date, memo: f.memo || null }) });
-    $('#revDialog').close();
-    e.target.reset();
-    toast('Reversal terposting ✓');
-    await refresh(true); render();
-  } catch (err2) { errEl.textContent = err2.message; errEl.hidden = false; }
-});
-
-function previewCsv() {
-  const text = $('#csvText').value;
-  const errEl = $('#csvErr'); const out = $('#csvOut');
-  try {
-    const lines = text.split(/\r?\n/).filter((l) => l.trim() !== '');
-    if (lines.length < 2) throw new Error('Butuh header + minimal 1 baris data.');
-    const headers = lines[0].split(',').map((s) => s.trim());
-    const rows = lines.slice(1, 6).map((l) => l.split(',').map((s) => s.trim()));
-    out.innerHTML = `<table><thead><tr>${headers.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table><p class="muted">Pratinjau 5 baris pertama dari ${lines.length - 1} baris.</p>`;
-    errEl.hidden = true;
-  } catch (e) { errEl.textContent = e.message; errEl.hidden = false; }
-}
-
-async function runCsv() {
-  const errEl = $('#csvErr');
-  try {
-    const data = await api('/api/import/csv', { method: 'POST', body: JSON.stringify({ csv: $('#csvText').value }) });
-    const r = data.report;
-    $('#csvReport').innerHTML = `<p><span class="tag ${r.failed ? 'warn' : 'sale'}">total ${r.total} · sukses ${r.succeeded} · gagal ${r.failed}</span></p>
-      ${r.failures.length ? `<table><thead><tr><th>Baris</th><th>ID</th><th>Error</th></tr></thead><tbody>${r.failures.map((f) => `<tr><td>${f.row}</td><td class="mono">${esc(f.id || '-')}</td><td>${esc(f.error)}</td></tr>`).join('')}</tbody></table>` : '<p class="ok-text">Semua baris lolos validasi.</p>'}`;
-    toast(`Impor selesai: ${r.succeeded} sukses, ${r.failed} gagal`);
-    await refresh(true); render();
-    const keep = $('#csvReport');
-    if (keep) keep.innerHTML = `<p><span class="tag ${r.failed ? 'warn' : 'sale'}">total ${r.total} · sukses ${r.succeeded} · gagal ${r.failed}</span></p>${r.failures.length ? `<table><thead><tr><th>Baris</th><th>ID</th><th>Error</th></tr></thead><tbody>${r.failures.map((f) => `<tr><td>${f.row}</td><td class="mono">${esc(f.id || '-')}</td><td>${esc(f.error)}</td></tr>`).join('')}</tbody></table>` : '<p class="ok-text">Semua baris lolos validasi.</p>'}`;
-  } catch (e) { errEl.textContent = e.message; errEl.hidden = false; }
-}
-
-$('#demoBtn').addEventListener('click', async () => {
-  try {
-    const r = await api('/api/demo/seed', { method: 'POST', body: '{}' });
-    toast(r.seeded ? 'Data demo dimuat (berlabel DEMO)' : 'Demo sudah ada');
-    await refresh(true); render();
-  } catch (e) { toast(e.message, 'error'); }
-});
-
-(async () => { renderTabs(); view.innerHTML = '<div class="panel">Memuat engine…</div>'; await refresh(); render(); })();
+topLang.addEventListener('change',e=>{const language=e.target.value;run(async()=>{route='onboarding';await api('/api/onboarding/language',{language});await prepare();});});
+$('#demoBtn').addEventListener('click',()=>run(async()=>{await api('/api/demo/seed',{});await refresh();}));
+async function boot(){view.innerHTML='<div class="panel">Loading…</div>';try{await refresh();if(cache.ws.activated&&cache.ob.active?.profileRevision===cache.ob.profileRevision){route='dashboard';await loadLanguage(cache.ws.language);}render();}catch(e){view.innerHTML='<div class="panel err">'+esc(e.message)+'</div>';}}
+boot();

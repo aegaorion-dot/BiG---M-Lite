@@ -14,6 +14,7 @@ const CURRENCIES = Object.freeze([
   { code: 'MYR', name: 'Malaysian Ringgit' },
   { code: 'EUR', name: 'Euro' },
   { code: 'AUD', name: 'Australian Dollar' },
+  { code: 'GBP', name: 'Pound Sterling' },
 ]);
 
 function listCurrencies() {

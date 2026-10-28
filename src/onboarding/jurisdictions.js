@@ -1,112 +1,58 @@
 'use strict';
-
-/**
- * Jurisdiction intelligence (P1 final §2). No new engine; uses ISO registry.
- * Nine bases; only relevant ones used for freelancer/UMKM.
- */
-
 const { isKnownJurisdiction } = require('../global/jurisdictions');
 const { verifyQuote } = require('./evidence');
-
-const BASES = Object.freeze([
-  'ACCOUNT_LOCATION',
-  'INCORPORATION',
-  'TAX_RESIDENCE',
-  'SOURCE',
-  'REGISTRATION',
-  'BUSINESS_WORK_LOCATION',
-  'CUSTOMER_LOCATION',
-  'WITHHOLDING',
-  'POSSIBLE_PE',
-]);
-
-function blankJurisdictionState() {
-  return { candidates: [] };
+const BASES=Object.freeze(['ACCOUNT_LOCATION','INCORPORATION','TAX_RESIDENCE','SOURCE','REGISTRATION','BUSINESS_WORK_LOCATION','CUSTOMER_LOCATION','WITHHOLDING','POSSIBLE_PE']);
+const COUNTRIES=[
+  ['ID',/\b(?:Indonesia|Indonesian|Bali|Bandung|Jakarta|Yogyakarta)\b/gi],
+  ['SG',/\b(?:Singapore|Singapura|Singaporean)\b/gi],
+  ['US',/\b(?:united states|america|amerika|usa|u\.s\.a?\.?)\b/gi],
+  ['US',/\bUS\b/g],
+  ['AU',/\b(?:Australia|Australian)\b/gi],
+  ['GB',/\b(?:United Kingdom|Britain|British|Inggris|UK)\b/gi],
+];
+function countryMentions(text) {
+  const out=[]; for(const [code,re] of COUNTRIES) { const r=new RegExp(re.source,re.flags);for(const m of text.matchAll(r))out.push({code,index:m.index,text:m[0]}); }
+  return out.sort((a,b)=>a.index-b.index);
 }
-
-function normalizeCountry(code) {
-  if (code === null || code === undefined) return null;
-  const c = String(code).trim().toUpperCase();
-  if (c === '' || c === 'UNKNOWN') return null;
-  return c;
+function blankJurisdictionState(){return {candidates:[]};}
+function addJurisdictionCandidate(state,f,userText=''){
+  const cc=f.countryCode==null?null:String(f.countryCode).toUpperCase(),errors=[];
+  if(!BASES.includes(f.basis))errors.push('unknown jurisdiction basis');
+  if(cc&&!isKnownJurisdiction(cc))errors.push('unknown country');
+  if(f.status&&!['CANDIDATE','UNKNOWN','REJECTED'].includes(f.status))errors.push('jurisdiction must remain candidate-only');
+  if(cc&&!verifyQuote(f.supportingQuote,userText))errors.push('verbatim supportingQuote required');
+  if(errors.length)return {ok:false,errors};
+  const candidates=(state?.candidates??[]).filter(x=>!(x.basis===f.basis&&x.countryCode===cc));
+  candidates.push({...f,countryCode:cc,status:cc?(f.status??'CANDIDATE'):'UNKNOWN',source:'USER'});
+  return {ok:true,state:{candidates}};
 }
-
-function addJurisdictionCandidate(state, { basis, countryCode, supportingQuote = null, status = 'CANDIDATE' }, userText = '') {
-  const errors = [];
-  if (!BASES.includes(basis)) errors.push(`unknown basis: ${basis}`);
-  const cc = normalizeCountry(countryCode);
-  if (cc !== null && !isKnownJurisdiction(cc)) errors.push(`unknown country: ${countryCode}`);
-  if (!['CANDIDATE', 'CONFIRMED', 'REJECTED', 'UNKNOWN'].includes(status)) errors.push(`bad status: ${status}`);
-  if (supportingQuote !== null && supportingQuote !== undefined && supportingQuote !== '') {
-    if (!verifyQuote(supportingQuote, userText)) errors.push('supportingQuote must occur verbatim in user message');
-  }
-  if (status === 'CONFIRMED' && (!supportingQuote || !verifyQuote(supportingQuote, userText))) {
-    errors.push('CONFIRMED jurisdiction requires verbatim supportingQuote');
-  }
-  if (errors.length) return { ok: false, errors };
-  const next = { candidates: [...(state?.candidates ?? [])] };
-  const idx = next.candidates.findIndex((c) => c.basis === basis);
-  const rec = {
-    basis, countryCode: cc, status,
-    supportingQuote: supportingQuote ? String(supportingQuote).trim().slice(0, 200) : null,
-  };
-  if (idx >= 0) next.candidates[idx] = rec;
-  else next.candidates.push(rec);
-  return { ok: true, state: next };
-}
-
-function getBasis(state, basis) {
-  return (state?.candidates ?? []).find((c) => c.basis === basis) ?? null;
-}
-
-/**
- * Basis-aware extraction from free text. Deterministic, no network.
- * Rules (strict):
- * - UI language never implies jurisdiction.
- * - Owner nationality never implies business jurisdiction.
- * - Customer location never implies registration.
- * - Operating location never auto-implies tax residence.
- */
+function getBasis(state,basis){return (state?.candidates??[]).find(c=>c.basis===basis&&c.status!=='REJECTED')??null;}
+// The local clause determines the role. A bare country never writes registration.
 function extractJurisdictionCandidates(text) {
-  const t = String(text ?? '');
-  const tl = t.toLowerCase();
-  const out = [];
-  const hasWord = (re) => re.test(tl);
-
-  const pickQuote = (m) => (m && m[0] ? m[0].slice(0, 200) : null);
-
-  // Operating location: "in Bali/Bandung/Indonesia", "run ... in X", "coffee shop in X".
-  let m = tl.match(/\bin\s+(bali|bandung|indonesia|singapore|malaysia)\b/);
-  if (m) {
-    const map = { bali: 'ID', bandung: 'ID', indonesia: 'ID', singapore: 'SG', malaysia: 'MY' };
-    out.push({ basis: 'BUSINESS_WORK_LOCATION', countryCode: map[m[1]], supportingQuote: pickQuote(t.match(new RegExp(`\\bin\\s+${m[1]}`, 'i'))) });
-  }
-  // Customer location: "US clients", "customers pay", "working with X clients".
-  if (/client|customer/.test(tl)) {
-    if (/\bus\b|\bu\.s\.?\b/.test(tl) || /united states|america/.test(tl)) {
-      const q = t.match(/US clients|united states|america|\bUS\b/i);
-      out.push({ basis: 'CUSTOMER_LOCATION', countryCode: 'US', supportingQuote: pickQuote(q) });
+  const result=[],clauses=String(text??'').split(/(?<=[.!?;])\s+|,\s*|\s+(?:and|but|dan|tetapi)\s+/i);
+  for(const clause of clauses){
+    const t=clause.trim();if(!t||/\b(?:maybe|perhaps|not sure|unsure|mungkin|belum tahu|tidak yakin)\b/i.test(t))continue;
+    const mentions=countryMentions(t);if(!mentions.length)continue;
+    let basis=null;
+    if(/\b(?:bank|bank account|rekening)\b/i.test(t))basis='ACCOUNT_LOCATION';
+    else if(/\b(?:customers?|clients?|pelanggan|klien)\b/i.test(t))basis='CUSTOMER_LOCATION';
+    else if(/\b(?:registered|registration|terdaftar|pendaftaran)\b/i.test(t))basis='REGISTRATION';
+    else if(/\b(?:incorporated|incorporation|didirikan|badan hukum)\b/i.test(t))basis='INCORPORATION';
+    else if(/\b(?:tax resident|tax residence|residen pajak|domisili pajak)\b/i.test(t))basis='TAX_RESIDENCE';
+    else if(/\b(?:withholding|potong pajak|pemotongan)\b/i.test(t))basis='WITHHOLDING';
+    else if(/\b(?:permanent establishment|possible pe|bentuk usaha tetap)\b/i.test(t))basis='POSSIBLE_PE';
+    else if(/\b(?:source income|income sourced|penghasilan bersumber)\b/i.test(t))basis='SOURCE';
+    else if(/\b(?:run|operate|operating|work|working|based|coffee shop|cafe|warung|usaha|bisnis|perusahaan|perdagangan|company|shop|bekerja|operasi|beroperasi)\b/i.test(t)
+      && /\b(?:in|di|from|dari|based)\b/i.test(t))basis='BUSINESS_WORK_LOCATION';
+    if(!basis)continue;
+    const negative=/\b(?:not|never|no longer|belum|tidak|bukan)\b/i.test(t);
+    for(const m of mentions){
+      if(/(?:Indonesian|Singapore|Australian|US)/i.test(m.text)&&/^\s+(?:rupiah|dollars?|language)\b/i.test(t.slice(m.index+m.text.length)))continue;
+      if(basis==='CUSTOMER_LOCATION'&&!/\b(?:in|from|di|dari)\s+(?:the\s+)?$/i.test(t.slice(0,m.index))&&!/^\s+(?:clients?|customers?|pelanggan|klien)\b/i.test(t.slice(m.index+m.text.length)))continue;
+      if(basis==='BUSINESS_WORK_LOCATION'&&!/\b(?:in|di|from|dari)\s+(?:the\s+)?$/i.test(t.slice(0,m.index)))continue;
+      result.push({basis,countryCode:m.code,supportingQuote:t.slice(0,200),source:'USER',status:negative?'REJECTED':'CANDIDATE'});
     }
   }
-  // Owner nationality only: "I'm Australian" -> no jurisdiction candidate, record nationality separately.
-  // Explicit registration language: "registered in X", "terdaftar di X".
-  m = tl.match(/(registered in|terdaftar di)\s+([a-z ]{2,40})/i);
-  if (m) {
-    const seg = m[2].toLowerCase();
-    let cc = null;
-    if (/indonesia/.test(seg)) cc = 'ID';
-    else if (/singapore|singapura/.test(seg)) cc = 'SG';
-    else if (/malaysia/.test(seg)) cc = 'MY';
-    else if (/united states|usa|america/.test(seg)) cc = 'US';
-    else if (/australia/.test(seg)) cc = 'AU';
-    out.push({ basis: 'REGISTRATION', countryCode: cc, supportingQuote: pickQuote(m) });
-  }
-  // Import purchase hint -> foreign currency unknown, possible source basis left null.
-  if (/import/.test(tl)) {
-    out.push({ basis: 'SOURCE', countryCode: null, supportingQuote: pickQuote(t.match(/import/i)) });
-  }
-  void hasWord;
-  return out;
+  return result;
 }
-
-module.exports = { BASES, blankJurisdictionState, addJurisdictionCandidate, getBasis, extractJurisdictionCandidates };
+module.exports={BASES,COUNTRIES,countryMentions,blankJurisdictionState,addJurisdictionCandidate,getBasis,extractJurisdictionCandidates};

@@ -1,752 +1,279 @@
 'use strict';
-
-/**
- * Web store — konteks runtime bersama untuk lapisan web.
- * Reuse penuh: PostingService satu-satunya pintu posting, Money BigInt,
- * ledger append-only, audit trail, idempotency, CountryPack, Tax Engine.
- * Tanpa database: state in-memory + indeks metadata transaksi.
- */
-
-const { Organization, FinancialPeriod, PeriodRegistry } = require('../domain/organization');
-const { Account, ChartOfAccounts } = require('../domain/chartOfAccounts');
-const { JournalEntry, JournalLine } = require('../domain/journal');
-const { Money } = require('../domain/money');
-const { Ledger } = require('../domain/ledger');
-const { AuditTrail, IdempotencyStore } = require('../domain/audit');
-const { PostingService } = require('../accounting/postingService');
-const { ReversalService } = require('../accounting/reversalService');
-const { CountryPackRegistry, loadPackFromDir } = require('../countrypack/registry');
-const { recordSale } = require('../business/salesService');
-const { recordPurchase } = require('../business/purchaseService');
-const { importCsv } = require('../import/csvImporter');
-const { getSummary } = require('../dashboard/dashboard');
-const path = require('node:path');
-
-const { blankProfile, validateProfile } = require('../onboarding/profile');
-const { turn: conversationTurn } = require('../onboarding/conversation');
-const { proposeConfiguration, validateProposal, createConfigurator } = require('../onboarding/configurator');
-const { MetaModelAdapter } = require('../ai/aiAdapter');
-const { normalizeLanguageTag, supportedLanguages } = require('../i18n/languages');
-const { t } = require('../i18n/strings');
-const { listJurisdictions } = require('../global/jurisdictions');
-const { listCurrencies } = require('../global/currencies');
-const { blankSlots } = require('../onboarding/slots');
-const { applyEvidenceFacts } = require('../onboarding/evidence');
-const { blankJurisdictionState, addJurisdictionCandidate, extractJurisdictionCandidates } = require('../onboarding/jurisdictions');
-const { hashProposal, evaluateReadiness } = require('../onboarding/readiness');
-const {
-  SYSTEM_PROMPT, blankProfileState, validateExtractorPayload, applyFacts,
-  gapAnalysis, planQuestion, planConfiguration, validateConfiguration,
-} = require('../onboarding/profiler');
-const fs = require('node:fs');
-
-const ID_PACK_DIR = path.join(__dirname, '..', 'countrypack', 'packs', 'id');
-const SG_PACK_DIR = path.join(__dirname, '..', 'countrypack', 'packs', 'sg');
-
-function chartForPack(pack) {
-  const chart = new ChartOfAccounts();
-  for (const a of pack.accounts) chart.add(new Account(a));
-  return chart;
+const fs=require('node:fs'),path=require('node:path');
+const {Organization,FinancialPeriod,PeriodRegistry,assertDate}=require('../domain/organization');
+const {Account,ChartOfAccounts}=require('../domain/chartOfAccounts');
+const {JournalEntry,JournalLine}=require('../domain/journal');
+const {Money}=require('../domain/money');
+const {Ledger}=require('../domain/ledger');
+const {AuditTrail,IdempotencyStore}=require('../domain/audit');
+const {PostingService}=require('../accounting/postingService');
+const {ReversalService}=require('../accounting/reversalService');
+const {recordSale}=require('../business/salesService');
+const {recordPurchase}=require('../business/purchaseService');
+const {getSummary}=require('../dashboard/dashboard');
+const {parseCsv}=require('../import/csvImporter');
+const {MetaModelAdapter}=require('../ai/aiAdapter');
+const {listJurisdictions}=require('../global/jurisdictions');
+const {listCurrencies,isKnownCurrency}=require('../global/currencies');
+const {supportedLanguages}=require('../i18n/languages');
+const {t}=require('../i18n/strings');
+const {SYSTEM_PROMPT,RESPONSE_SCHEMA,ALLOWED_MODULES,blankProfileState,validateExtractorPayload,applyFacts,gapAnalysis,planQuestion,planConfiguration,validateConfiguration,slotValue}=require('../onboarding/profiler');
+const {detectSignals}=require('../onboarding/conversation');
+const {fingerprint,deepFreeze}=require('../onboarding/canonical');
+const {ContentRegistry,resolveCountryPacks,approveContent}=require('../countrypack/resolver');
+const {proposeConfiguration,validateProposal}=require('../onboarding/configurator');
+const {hashProposal:proposalHash,evaluateReadiness}=require('../onboarding/readiness');
+const clone=x=>JSON.parse(JSON.stringify(x));
+function human(actor,decisionSource='HUMAN'){
+ if(decisionSource!=='HUMAN'||typeof actor!=='string'||!actor.trim()||/^(ai|model|muse|meta|system)(?:$|[: -])/i.test(actor))throw Error('Explicit human confirmation required');
 }
-
-function revenueExpenseIds(chart) {
-  const byCode = (code, type) => {
-    try { return chart.getByCode(code).id; } catch { return null; }
-  };
-  const byType = (type) => {
-    try { const f = chart.list().find((a) => a.type === type); return f ? f.id : null; } catch { return null; }
-  };
-  return { revenueId: byCode('401') ?? byType('REVENUE'), expenseId: byCode('501') ?? byType('EXPENSE') };
+function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvider=null}={}){
+ const scopeOrgId=orgId??'org-contoh',requiredToken=authToken??process.env.BIGM_API_TOKEN??null;
+ const periods=new PeriodRegistry(),ledger=new Ledger(),audit=new AuditTrail(),idempotency=new IdempotencyStore();
+ const posting=new PostingService({ledger,periods,audit,idempotency}),reversal=new ReversalService({posting});
+ const ctx={org:null,periods,ledger,audit,idempotency,posting,reversal,chart:null,pack:null,registry:null,modules:[],countryPackResolution:null};
+ const contentRegistry=new ContentRegistry(),txMeta=new Map();
+ let profileState=blankProfileState(),lastProposal=null,lastValidation=null,confirmation=null,activeConfig=null,history=[],packApprovals=[],proposalVersion=0;
+ let lastTurn={providerConfigured:false,providerUsed:'fallback',model:null,fallbackReason:'PROVIDER_NOT_CONFIGURED'},aiCalls=0,aiSuccesses=0,migrationNotice=null;
+ let turnQueue=Promise.resolve(),mutationQueue=Promise.resolve();
+ function serializeMutation(work){const next=mutationQueue.then(work);mutationQueue=next.catch(()=>{});return next;}
+ function checkAuth(token){if(requiredToken&&token!==requiredToken)throw Error('Unauthorized: invalid API token');}
+ function checkOrg(id){if(!id)throw Error('orgId is required');if(id!==scopeOrgId)throw Error('Unknown org scope: '+id);}
+ function requireActive(module=null){if(!activeConfig)throw Error('Workspace activation required');if(module&&!activeConfig.proposal.modules.includes(module))throw Error('Module is not enabled: '+module);}
+ function bookkeepingTemplate(config){
+  const jurisdiction=config.domicile??'ZZ',prefix=jurisdiction==='ID'?'id':jurisdiction==='SG'?'sg':'book';
+  const chart=new ChartOfAccounts();
+  const definitions=[['cash','101','Cash / bank','ASSET'],['receivable','102','Receivables','ASSET'],['payable','201','Payables','LIABILITY'],['capital','301','Equity','EQUITY'],['revenue','401','Income','REVENUE'],['expense','501','Expenses','EXPENSE']];
+  for(const [id,code,name,type] of definitions)chart.add(new Account({id:prefix+'-'+id,code,name,type}));
+  const pack=deepFreeze({manifest:{id:'bookkeeping-'+jurisdiction,version:'1.0.0',jurisdiction,currency:config.functionalCurrency,validFrom:config.period.periodStart,validTo:config.period.periodEnd},accounts:chart.list(),taxCategories:[],rules:[],bookkeepingOnly:true});
+  return {chart,pack};
+ }
+ function applyActiveConfiguration(config,resolution=config.countryPackResolution){
+  const valid=validateConfiguration(config);if(!valid.ok)throw Error('Cannot apply configuration: '+valid.errors.join('; '));
+  if(config.organizationId!==scopeOrgId)throw Error('Configuration organization scope mismatch');
+  if(ledger.size&&ctx.org&&(ctx.org.baseCurrency!==config.functionalCurrency||ctx.org.jurisdiction!==(config.domicile??'ZZ')))throw Error('Changing currency/jurisdiction with posted entries requires a reviewed migration');
+  const org=new Organization({id:scopeOrgId,name:config.organizationName,jurisdiction:config.domicile??'ZZ',baseCurrency:config.functionalCurrency});
+  const {chart,pack}=bookkeepingTemplate(config),requestedPeriodId='per-'+config.period.periodStart+'-'+config.period.periodEnd;
+  const existing=periods.list().find(p=>p.orgId===scopeOrgId&&(p.id===requestedPeriodId||p.start===config.period.periodStart&&p.end===config.period.periodEnd));
+  const periodId=existing?.id??requestedPeriodId;
+  if(periods.list().some(p=>p.id!==periodId&&p.orgId===scopeOrgId&&p.start<=config.period.periodEnd&&p.end>=config.period.periodStart))throw Error('Accounting periods overlap; review the period setup before activation');
+  const period=existing??new FinancialPeriod({id:periodId,orgId:scopeOrgId,code:config.period.periodStart.slice(0,4),start:config.period.periodStart,end:config.period.periodEnd});
+  const registry={select:(code,date)=>{assertDate(date,'transaction date');return code===org.jurisdiction?pack:null;},list:()=>[pack]};
+  if(!existing)periods.add(period);
+  Object.assign(ctx,{org,chart,pack,registry,modules:Object.freeze([...config.modules]),countryPackResolution:deepFreeze(clone(resolution))});
+  return ctx;
+ }
+ function pipelineDepsFor(input){
+  requireActive();checkOrg(input.orgId);
+  assertDate(input.date,'transaction date');
+  if(input.date<activeConfig.proposal.period.periodStart||input.date>activeConfig.proposal.period.periodEnd)throw Error('Transaction date is outside the active accounting period');
+  if(input.jurisdiction!==ctx.org.jurisdiction)throw Error('Transaction jurisdiction must match active workspace; record customer/bank countries separately');
+  if(!isKnownCurrency(input.currency))throw Error('Unsupported transaction currency');
+  return {...ctx};
+ }
+ function serializeJournal(e){return {id:e.id,orgId:e.orgId,date:e.date,currency:e.currency,transactionId:e.transactionId,reversalOf:e.reversalOf??null,memo:e.memo??null,periodId:e.periodId??null,finalized:e.finalized,finalizedAt:e.finalizedAt??null,balanced:e.isBalanced(),lines:e.lines.map(l=>({accountId:l.accountId,side:l.side,amountMinor:l.money.amountMinor.toString(),currency:l.money.currency}))};}
+ function deserializeJournal(o){
+  const entry=new JournalEntry({...o,lines:o.lines.map(l=>new JournalLine({accountId:l.accountId,side:l.side,money:Money.fromMinor(l.amountMinor,l.currency??o.currency)}))});
+  entry.finalize(()=>o.finalizedAt??new Date().toISOString());return entry;
+ }
+ function snapshot(){return {version:2,scopeOrgId,org:ctx.org,periods:periods.list(),journals:ledger.list().map(serializeJournal),audit:audit.list(),idempotency:idempotency.toJSON(),txMeta:[...txMeta.values()],profileState,lastProposal,lastValidation,confirmation,active:activeConfig,history,packApprovals,proposalVersion,lastTurn,aiCalls,aiSuccesses,savedAt:new Date().toISOString()};}
+ function persist(){
+  if(!persistPath)return;
+  const data=JSON.stringify(snapshot(),null,2),tmp=persistPath+'.tmp';
+  fs.mkdirSync(path.dirname(persistPath),{recursive:true});
+  try{fs.writeFileSync(tmp,data,'utf8');fs.renameSync(tmp,persistPath);}catch{throw Error('State could not be saved; retry before continuing');}
+ }
+ function invalidate(){lastProposal=null;lastValidation=null;confirmation=null;}
+ function resolve(state=profileState,confirmedPackIds=[]){
+  const plan=planConfiguration(state,{organizationId:scopeOrgId});
+  return resolveCountryPacks({jurisdictionFacts:state.jurisdictionFacts,subjectType:plan.subjectType,period:plan.period,effectiveDate:plan.period.periodStart,registry:contentRegistry,approvals:packApprovals,confirmedPackIds,profileRevision:state.revision});
+ }
+ function onboardingDraft(){
+  const p=planConfiguration(profileState,{organizationId:scopeOrgId}),v=k=>slotValue(profileState,k);
+  return {userProfile:{displayName:v('user.displayName')??'',preferredLanguage:p.language,nationality:v('user.nationality')},
+   organizationProfile:{id:scopeOrgId,name:v('org.name')??'',domicile:p.entityJurisdiction??'',businessField:v('org.businessType')??''},
+   entityProfiles:p.entityJurisdiction?[{id:'ent-1',name:p.organizationName,jurisdiction:p.entityJurisdiction}]:[],
+   jurisdictionProfiles:p.entityJurisdiction?[{code:p.entityJurisdiction,packStatus:'pending-validation',taxStatus:'pending-verification'}]:[],
+   currencyProfile:{functional:p.functionalCurrency??'',otherCurrencies:p.transactionCurrencies.filter(c=>c!==p.functionalCurrency)},
+   languageProfile:{ui:p.language},accountingConfiguration:p.period,taxConfiguration:{status:'pending-verification'},moduleConfiguration:v('modules.enabled')??[]};
+ }
+ async function performTurn(userText,{aiProvider=null}={}){
+  const text=String(userText??'').trim();if(!text||text.length>6000)throw Error('Message must contain 1..6000 characters');
+  let provider=aiProvider??profileProvider,extracted=null;
+  const configured=Boolean(provider||(process.env.BIGM_META_API_URL&&process.env.BIGM_META_API_KEY&&process.env.BIGM_META_MODEL));
+  const diagnostic={providerConfigured:configured,providerUsed:'fallback',model:aiProvider?.model??process.env.BIGM_META_MODEL??null,fallbackReason:configured?null:'PROVIDER_NOT_CONFIGURED'};
+  if(!provider&&configured){
+   if(process.env.NODE_TEST_CONTEXT||process.env.NODE_ENV==='test')diagnostic.fallbackReason='LIVE_AI_DISABLED_IN_TESTS';
+   else provider=new MetaModelAdapter();
+  }
+  if(provider){
+   try{
+    aiCalls++;
+    const raw=await provider.extractProfile({system:SYSTEM_PROMPT,user:JSON.stringify({message:text,previousCandidates:profileState,pendingQuestion:profileState.pendingQuestion,responseSchema:RESPONSE_SCHEMA,capabilities:{modules:ALLOWED_MODULES,jurisdictions:listJurisdictions().map(j=>j.code),currencies:listCurrencies().map(c=>c.code)}})});
+    const checked=validateExtractorPayload(raw,{userText:text,pendingQuestion:profileState.pendingQuestion});
+    if(!checked.ok)throw Error('AI_SCHEMA_VALIDATION_FAILED');
+    extracted=checked.extracted;diagnostic.providerUsed='meta';diagnostic.fallbackReason=null;aiSuccesses++;
+   }catch(e){diagnostic.fallbackReason=e.message==='AI_SCHEMA_VALIDATION_FAILED'?'AI_SCHEMA_VALIDATION_FAILED':'PROVIDER_UNAVAILABLE_OR_INVALID_RESPONSE';}
+  }
+  if(!extracted){
+   const fallback=detectSignals(text,{pendingQuestion:profileState.pendingQuestion});
+   const checked=validateExtractorPayload(fallback,{userText:text,pendingQuestion:profileState.pendingQuestion});
+   if(!checked.ok)throw Error('Fallback validation failed: '+checked.errors.join('; '));
+   extracted=checked.extracted;
+  }
+  const before={profileState,lastProposal,lastValidation,confirmation,lastTurn},oldRevision=profileState.revision,auditCount=audit.size;
+  profileState=applyFacts(profileState,extracted.facts,'USER',{jurisdictionFacts:extracted.jurisdictionFacts});
+  profileState.turnCount++;profileState.aiCalls=aiCalls;lastTurn=diagnostic;
+  const question=planQuestion(profileState,slotValue(profileState,'user.language')??'en');profileState.pendingQuestion=question.key;
+  if(profileState.revision!==oldRevision){
+   invalidate();audit.record({actor:'user',action:'onboarding.profile.revised',entityType:'profile',entityId:scopeOrgId,detail:{profileRevision:profileState.revision,slots:extracted.facts.map(f=>f.slot),jurisdictionBases:extracted.jurisdictionFacts.map(f=>f.basis),providerUsed:diagnostic.providerUsed}});
+  }
+  try{persist();}catch(e){({profileState,lastProposal,lastValidation,confirmation,lastTurn}=before);while(audit.size>auditCount)audit._rollbackLast(audit.size);throw e;}
+  return {draft:onboardingDraft(),question,complete:question.key==='done',aiLabel:diagnostic.providerUsed==='meta'?'ai-tervalidasi':'deterministik',...diagnostic,profileRevision:profileState.revision};
+ }
+ function onboardingTurn(text,options){const next=turnQueue.then(()=>performTurn(text,options));turnQueue=next.catch(()=>{});return next;}
+ function editProfile({slot=null,value=null,basis=null,countryCode=null,actor='user'}={}){
+  human(actor);const phrase=basis?'My business '+(basis==='REGISTRATION'?'is registered':basis==='BUSINESS_WORK_LOCATION'?'operates':basis.toLowerCase().replaceAll('_',' '))+' in '+countryCode+'.':slot==='currency.functional'?'Bookkeeping currency is '+value+'.':slot==='org.name'?'Business name is '+value+'.':slot==='org.businessType'?'Business type is '+value+'.':'User selected '+slot+': '+JSON.stringify(value);
+  const raw={facts:slot?[{slot,value,source:'USER',supportingQuote:phrase,status:value==null?'UNKNOWN':'CANDIDATE',operation:value==null?'REMOVE':'REPLACE'}]:[],jurisdictionFacts:basis?[{basis,countryCode,source:'USER',supportingQuote:phrase,status:countryCode==null?'UNKNOWN':'CANDIDATE',operation:countryCode==null?'REMOVE':'REPLACE'}]:[]};
+  const checked=validateExtractorPayload(raw,{userText:phrase});if(!checked.ok)throw Error(checked.errors.join('; '));
+  const before={profileState,lastProposal,lastValidation,confirmation},n=audit.size;profileState=applyFacts(profileState,checked.extracted.facts,'USER',{jurisdictionFacts:checked.extracted.jurisdictionFacts});invalidate();
+  if(profileState.revision!==before.profileState.revision)audit.record({actor,action:'onboarding.profile.edited',entityType:'profile',entityId:scopeOrgId,detail:{slot,basis,profileRevision:profileState.revision}});
+  try{persist();}catch(e){({profileState,lastProposal,lastValidation,confirmation}=before);while(audit.size>n)audit._rollbackLast(audit.size);throw e;}return onboardingState();
+ }
+ function setUiLanguage(tag){if(!['en','id'].includes(tag))throw Error('Unsupported language');editProfile({slot:'user.language',value:tag});return tag;}
+ function onboardingPropose(){
+  if(gapAnalysis(profileState).length)return {ok:false,errors:['Bookkeeping currency needs your answer']};
+  const conflict=Object.values(profileState.slots).some(s=>s.status==='CONFLICT');if(conflict)return {ok:false,errors:['Conflicting answers need clarification']};
+  if(lastProposal&&lastProposal.profileRevision===profileState.revision)return {ok:true,proposal:clone(lastProposal)};
+  const built=proposeConfiguration(profileState,{organizationId:scopeOrgId,version:proposalVersion+1,countryPackResolution:resolve()});if(!built.ok)return built;
+  const proposal=built.proposal;
+  const before={lastProposal,lastValidation,confirmation,proposalVersion};lastProposal=deepFreeze(proposal);lastValidation=null;confirmation=null;proposalVersion=proposal.version;
+  try{persist();}catch(e){({lastProposal,lastValidation,confirmation,proposalVersion}=before);throw e;}
+  return {ok:true,proposal:clone(lastProposal)};
+ }
+ function onboardingValidate(){
+  if(!lastProposal||lastProposal.profileRevision!==profileState.revision)return {ok:false,errors:['Latest proposal required']};
+  const valid=validateProposal(lastProposal);if(!valid.ok){lastValidation=null;return valid;}
+  if(lastProposal.hash!==proposalHash(lastProposal))throw Error('Proposal hash mismatch');
+  const before=lastValidation;lastValidation=deepFreeze({...clone(lastProposal),validatedAt:new Date().toISOString()});try{persist();}catch(e){lastValidation=before;throw e;}return {ok:true,validated:clone(lastValidation)};
+ }
+ function onboardingConfirm({proposalHash:hash,actor='user',decisionSource='HUMAN',packIds=[]}={}){
+  human(actor,decisionSource);
+  if(!lastProposal||hash!==lastProposal.hash||lastProposal.profileRevision!==profileState.revision)throw Error('Confirmation must reference the latest proposal hash and profile revision');
+  if(!lastValidation||lastValidation.hash!==hash)throw Error('Latest proposal validation required');
+  const eligible=lastProposal.countryPackResolution.candidates.filter(c=>c.status==='CANDIDATE').map(c=>c.packId);
+  if(!Array.isArray(packIds)||packIds.some(id=>!eligible.includes(id)))throw Error('Only applicable reviewed pack versions can be explicitly selected');
+  const record={proposalHash:hash,profileRevision:profileState.revision,effectiveDate:lastProposal.period.periodStart,selectedPackIds:[...new Set(packIds)],packVersions:lastProposal.countryPackResolution.candidates.filter(c=>c.packId).map(c=>({packId:c.packId,contentHash:c.contentHash,status:c.status})),actor,decisionSource,timestamp:new Date().toISOString()};
+  const before=confirmation,n=audit.size;confirmation=deepFreeze(record);audit.record({actor,action:'onboarding.confirm',entityType:'configuration',entityId:hash,detail:record});
+  try{persist();}catch(e){confirmation=before;audit._rollbackLast(n+1);throw e;}return {ok:true,...clone(record)};
+ }
+ function onboardingReadiness(){
+  const r=activeConfig&&lastProposal&&activeConfig.proposalHash===lastProposal.hash?activeConfig.countryPackResolution:lastProposal?.countryPackResolution??resolve();
+  return evaluateReadiness({profileState,proposal:lastProposal,validated:lastValidation,confirmation,resolution:r});
+ }
+ function onboardingActivate({activationKey,actor='user'}={}){
+  human(actor);
+  if(typeof activationKey!=='string'||!activationKey.trim())throw Error('activationKey is required');
+  const previous=history.find(r=>r.activationKey===activationKey);
+  if(previous){if(lastProposal&&previous.proposal.hash!==lastProposal.hash)throw Error('Activation key replay with different proposal');return clone(previous);}
+  if(!onboardingReadiness().workspaceReady)throw Error('Workspace not ready: current validation and explicit confirmation required');
+  const config=clone(lastValidation);delete config.validatedAt;
+  const confirmedState=clone(profileState);for(const f of confirmedState.jurisdictionFacts)if(f.status==='CANDIDATE')f.status='CONFIRMED';
+  const eligible=confirmation.selectedPackIds??[];
+  const resolution=resolve(confirmedState,eligible);
+  // Bind the evaluated confirmation without changing the approved proposal payload/hash.
+  const record=deepFreeze({activationKey,version:history.length+1,proposal:config,profileSnapshot:clone(profileState),confirmation:clone(confirmation),profileRevision:profileState.revision,proposalHash:config.hash,countryPackResolution:resolution,activatedAt:new Date().toISOString(),actor});
+  const runtimeBefore={...ctx},oldActive=activeConfig,auditCount=audit.size,periodCount=periods.list().length,historyCount=history.length;
+  try{
+   applyActiveConfiguration(config,resolution);activeConfig=record;history.push(record);
+   audit.record({actor,action:'onboarding.activate',entityType:'configuration',entityId:activationKey,detail:{version:record.version,profileRevision:record.profileRevision,proposalHash:record.proposalHash,effectiveDate:config.period.periodStart,packVersions:confirmation.packVersions}});
+   persist();
+  }catch(e){Object.assign(ctx,runtimeBefore);activeConfig=oldActive;history.splice(historyCount);while(audit.size>auditCount)audit._rollbackLast(audit.size);periods._periods.splice(periodCount);throw e;}
+  return clone(record);
+ }
+ function approvePack(input){human(input.actor,input.decisionSource);const approval=approveContent(contentRegistry,input);const before={packApprovals,lastProposal,lastValidation,confirmation};packApprovals=[...packApprovals.filter(a=>a.packId!==approval.packId),approval];invalidate();
+  const n=audit.size;audit.record({actor:input.actor,action:'country-pack.source-review',entityType:'country-pack',entityId:approval.packId,detail:approval});
+  try{persist();}catch(e){({packApprovals,lastProposal,lastValidation,confirmation}=before);audit._rollbackLast(n+1);throw e;}return approval;
+ }
+ function workspaceProfile(){
+  const p=activeConfig?.proposal;
+  return {activated:Boolean(p),language:p?.language??slotValue(profileState,'user.language')??'en',organizationId:p?.organizationId??scopeOrgId,organizationName:p?.organizationName??null,
+   domicile:p?.domicile??null,jurisdiction:p?.domicile??null,jurisdictionBasis:p?.jurisdictionBasis??null,functionalCurrency:p?.functionalCurrency??null,reportingCurrency:p?.reportingCurrency??null,
+   transactionCurrencies:p?.transactionCurrencies??[],foreignPurchaseCurrencies:p?.foreignPurchaseCurrencies??[],fxSource:p?.fxSource??null,period:p?.period??null,modules:p?.modules??[],
+   countryPackResolution:activeConfig?.countryPackResolution??resolve(),taxReady:Boolean(p&&activeConfig.countryPackResolution.status==='RESOLVED'),taxNote:t(p?.language??'en','ob.taxNote'),fxNote:t(p?.language??'en','ob.fxNote')};
+ }
+ function aiStatus(){return {...lastTurn,configured:Boolean(process.env.BIGM_META_API_URL&&process.env.BIGM_META_API_KEY&&process.env.BIGM_META_MODEL),mode:lastTurn.providerUsed,calls:aiCalls,successes:aiSuccesses};}
+ function onboardingState(){return {draft:onboardingDraft(),profileState:clone(profileState),profileRevision:profileState.revision,slots:clone(profileState.slots),missingSlots:gapAnalysis(profileState),readyForProposal:gapAnalysis(profileState).length===0,readiness:onboardingReadiness(),jurisdictionCandidates:clone(profileState.jurisdictionFacts),countryPackResolution:resolve(),uiLanguage:slotValue(profileState,'user.language')??'en',languages:supportedLanguages(),jurisdictions:listJurisdictions(),currencies:listCurrencies(),proposal:lastProposal?clone(lastProposal):null,validated:lastValidation?clone(lastValidation):null,confirmation:confirmation?clone(confirmation):null,active:activeConfig?clone(activeConfig):null,history:clone(history),question:planQuestion(profileState,slotValue(profileState,'user.language')??'en'),ai:aiStatus(),migrationNotice};}
+ function rememberMeta(kind,draft,result){
+  const line=result.journal.lines.find(l=>l.accountId===ctx.chart.getByCode(kind==='SALE'?'401':'501').id);
+  txMeta.set(result.transactionId,{id:result.transactionId,kind,date:draft.date,currency:draft.currency,totalMinor:line?.amountMinor??'0',counterparty:draft.customer??draft.supplier??'-',reference:draft.invoiceRef??draft.billRef??'-',postingId:result.receipt.postingId,journalId:result.journal.id,demo:String(result.transactionId).startsWith('demo-')});
+ }
+ function transactionCheckpoint(){return {ledgerSize:ledger.size,auditSize:audit.size,idempotency:idempotency.toJSON(),metadata:clone([...txMeta.entries()])};}
+ function rollbackTransaction(s){while(ledger.size>s.ledgerSize)ledger._rollbackLast(ledger.list().at(-1).id);while(audit.size>s.auditSize)audit._rollbackLast(audit.size);idempotency._restoreAll(s.idempotency);txMeta.clear();for(const [k,v]of s.metadata)txMeta.set(k,v);}
+ async function createTransaction(kind,draft,opts){
+  checkAuth(opts.authToken);checkOrg(draft?.orgId);requireActive(kind==='SALE'?'sales':'purchase');const deps=pipelineDepsFor(draft),before=transactionCheckpoint();
+  try{
+   const result=await (kind==='SALE'?recordSale:recordPurchase)(deps,draft);
+   result.tax={...result.tax,status:'requires_review',finalTotalMinor:null,finalLiabilityMinor:null,note:'Tax settings need review. Bookkeeping entry contains no final tax calculation.'};
+   result.report='Bookkeeping entry recorded. Tax settings need review; no final liability has been calculated.';
+   rememberMeta(kind,draft,result);persist();return result;
+  }catch(e){rollbackTransaction(before);throw e;}
+ }
+ const createSale=(draft,opts={})=>createTransaction('SALE',draft,opts),createPurchase=(draft,opts={})=>createTransaction('PURCHASE',draft,opts);
+ async function importCsvText(csv,opts={}){
+  checkAuth(opts.authToken);requireActive('import');
+  const rows=parseCsv(csv),seen=new Set(),receipts=[],failures=[];
+  for(const row of rows){try{
+   if(!row.id||seen.has(row.id)||ledger.list().some(e=>e.transactionId===row.id))throw Error('Missing or duplicate transaction id');
+   seen.add(row.id);
+   const base={id:row.id,orgId:row.orgId,date:row.date,jurisdiction:row.jurisdiction,currency:row.currency,description:row.description,amountMajor:row.amountMajor};
+   const type=String(row.type).toUpperCase();if(!['SALE','PURCHASE'].includes(type))throw Error('type must be SALE|PURCHASE');
+   const r=type==='SALE'?await createSale({...base,customer:row.counterparty,invoiceRef:row.reference},opts):await createPurchase({...base,supplier:row.counterparty,billRef:row.reference},opts);
+   receipts.push({row:row.__row,id:row.id,postingId:r.receipt.postingId});
+  }catch(e){failures.push({row:row.__row,id:row.id??null,error:e.message});}}
+  return {total:rows.length,succeeded:receipts.length,failed:failures.length,receipts,failures};
+ }
+ function reverseJournal({journalId,id,date,memo,actor='user',authToken:token=null}){
+  checkAuth(token);requireActive('accounting');const original=ledger.get(journalId);if(!original)throw Error('Unknown journal: '+journalId);checkOrg(original.orgId);const before=transactionCheckpoint();
+  try{const {entry,receipt}=reversal.reverse(original,{id,date,memo,actor});txMeta.set(entry.id,{id:entry.id,kind:'REVERSAL',date:entry.date,currency:entry.currency,totalMinor:'0',counterparty:'-',reference:'reversal-of:'+original.id,postingId:receipt.postingId,journalId:entry.id,demo:false});persist();return {entry:serializeJournal(entry),receipt};}catch(e){rollbackTransaction(before);throw e;}
+ }
+ function listTransactions(){return [...txMeta.values()].sort((a,b)=>b.date.localeCompare(a.date));}
+ function monthlyReport(currency=ctx.org?.baseCurrency){
+  if(!ctx.chart||!currency)return [];
+  const revenue=ctx.chart.getByCode('401').id,expense=ctx.chart.getByCode('501').id,buckets=new Map();
+  for(const e of ledger.list()){if(e.currency!==currency||e.orgId!==scopeOrgId)continue;const month=e.date.slice(0,7),b=buckets.get(month)??{month,count:0,revenueMinor:0n,expenseMinor:0n};b.count++;
+   for(const l of e.lines){if(l.accountId===revenue)b.revenueMinor+=l.side==='CREDIT'?l.money.amountMinor:-l.money.amountMinor;if(l.accountId===expense)b.expenseMinor+=l.side==='DEBIT'?l.money.amountMinor:-l.money.amountMinor;}buckets.set(month,b);
+  }
+  return [...buckets.values()].sort((a,b)=>a.month.localeCompare(b.month)).map(b=>({...b,revenueMinor:String(b.revenueMinor),expenseMinor:String(b.expenseMinor),netMinor:String(b.revenueMinor-b.expenseMinor)}));
+ }
+ function summary(currency=ctx.org?.baseCurrency){
+  if(!ctx.chart||!currency)return {currency:null,transactionCount:0,balances:[],totals:{revenueMinor:'0',expenseMinor:'0',netMinor:'0'},auditOk:audit.verifyChain().ok,otherCurrencies:[]};
+  return {...getSummary(ctx,{currency}),otherCurrencies:[...new Set(ledger.list().filter(e=>e.currency!==currency).map(e=>e.currency))],fxConversionApplied:false};
+ }
+ async function seedDemo(){
+  requireActive();if(txMeta.has('demo-sale-1'))return {seeded:false};
+  await createSale({id:'demo-sale-1',orgId:scopeOrgId,date:activeConfig.proposal.period.periodStart,jurisdiction:ctx.org.jurisdiction,currency:ctx.org.baseCurrency,customer:'[DEMO] Customer',invoiceRef:'DEMO-1',description:'[DEMO] Income',amountMajor:'1000'});
+  return {seeded:true};
+ }
+ function restore(){
+  if(!persistPath||!fs.existsSync(persistPath))return;
+  const raw=JSON.parse(fs.readFileSync(persistPath,'utf8'));if(raw.scopeOrgId&&raw.scopeOrgId!==scopeOrgId)throw Error('Persisted organization scope mismatch');
+  for(const p of raw.periods??[])periods.add(new FinancialPeriod(p));
+  for(const j of raw.journals??[]){if(j.orgId!==scopeOrgId)throw Error('Persisted journal scope mismatch');ledger.append(deserializeJournal(j));}
+  audit._restoreAll(raw.audit??[]);idempotency._restoreAll(raw.idempotency??{});for(const m of raw.txMeta??[])txMeta.set(m.id,m);
+  if(raw.version!==2){migrationNotice='Previous setup needs review before activation. Journals and period states are preserved.';return;}
+  profileState=raw.profileState;lastProposal=raw.lastProposal;lastValidation=raw.lastValidation;confirmation=raw.confirmation;packApprovals=raw.packApprovals??[];history=(raw.history??[]).map(deepFreeze);proposalVersion=raw.proposalVersion??0;lastTurn=raw.lastTurn??lastTurn;aiCalls=raw.aiCalls??0;aiSuccesses=raw.aiSuccesses??0;
+  if(raw.active){
+   const p=raw.active.proposal;
+   if(p.hash!==proposalHash(p)||raw.active.confirmation?.proposalHash!==p.hash||raw.active.confirmation?.profileRevision!==p.profileRevision||p.profileFingerprint!==fingerprint({slots:raw.active.profileSnapshot?.slots,jurisdictionFacts:raw.active.profileSnapshot?.jurisdictionFacts}))throw Error('Persisted activation confirmation invalid');
+   human(raw.active.actor,raw.active.confirmation.decisionSource);
+   applyActiveConfiguration(p,raw.active.countryPackResolution);activeConfig=deepFreeze(raw.active);
+  }
+ }
+ restore();
+ return {ctx,txMeta,contentRegistry,checkAuth,serializeMutation,createSale,createPurchase,importCsvText,reverseJournal,listTransactions,monthlyReport,summary,seedDemo,serializeJournal,pipelineDepsFor,
+  chartFor:()=>ctx.chart,onboardingTurn,onboardingDraft,onboardingPropose,onboardingValidate,onboardingConfirm,onboardingReadiness,onboardingActivate,onboardingState,onboardingHistory:()=>clone(history),setUiLanguage,editProfile,approvePack,workspaceProfile,aiStatus,applyActiveConfiguration,
+  countryPackState:()=>({resolution:resolve(),packs:contentRegistry.list(),approvals:clone(packApprovals)}),persist,
+ };
 }
-
-function createWebStore({ persistPath = null, orgId = null, authToken = null } = {}) {
-  const org = new Organization({ id: 'org-contoh', name: 'Contoh', jurisdiction: 'ID', baseCurrency: 'IDR' });
-  const periods = new PeriodRegistry();
-  periods.add(new FinancialPeriod({ id: 'per-2026', orgId: org.id, code: '2026', start: '2026-01-01', end: '2026-12-31' }));
-  const ledger = new Ledger();
-  const audit = new AuditTrail();
-  const idempotency = new IdempotencyStore();
-  const posting = new PostingService({ ledger, periods, audit, idempotency });
-  const reversal = new ReversalService({ posting });
-  const registry = new CountryPackRegistry();
-  registry.register(loadPackFromDir(ID_PACK_DIR));
-  registry.register(loadPackFromDir(SG_PACK_DIR));
-  const pack = registry.select('ID', '2026-06-01');
-  const charts = new Map();
-  for (const p of registry.list()) {
-    try { charts.set(p.manifest.jurisdiction, chartForPack(p)); } catch { /* skip invalid */ }
-  }
-  const chart = charts.get('ID') ?? chartForPack(pack);
-  const txMeta = new Map();
-  const scopeOrgId = orgId ?? org.id;
-  const requiredToken = authToken ?? process.env.BIGM_API_TOKEN ?? null;
-
-  function checkAuth(credential) {
-    if (!requiredToken) return;
-    if (credential !== requiredToken) throw new Error('Unauthorized: invalid API token');
-  }
-
-  function checkOrg(inputOrgId) {
-    if (!inputOrgId) throw new Error('orgId is required');
-    if (inputOrgId !== scopeOrgId) throw new Error(`Unknown org scope: ${inputOrgId}`);
-  }
-
-  const ctx = { org, periods, ledger, audit, idempotency, posting, reversal, registry, pack, chart };
-  const configurator = createConfigurator({ audit });
-  let draft = blankProfile();
-  // P1 zero-state: English base, no business defaults.
-  draft.userProfile.preferredLanguage = 'en';
-  draft.languageProfile.ui = 'en';
-  draft.organizationProfile = { id: '', name: '', domicile: '', businessField: '' };
-  draft.entityProfiles = [];
-  draft.jurisdictionProfiles = [];
-  draft.currencyProfile = { functional: '', otherCurrencies: [] };
-  draft.moduleConfiguration = [];
-  let lastProposal = null;
-  let lastValidation = null;
-  let activeConfig = null;
-  // P1 schema-driven profiler state: empty slots, one model call per turn.
-  let profileState = blankProfileState();
-  profileState.slots['user.language'].value = 'en';
-  profileState.slots['user.language'].status = 'active';
-  profileState.slots['user.language'].source = 'default-base';
-  let uiLanguage = 'en';
-  let aiCalls = 0;
-  let aiSuccesses = 0;
-  // P1 final: jurisdiction candidates + proposal confirmation hash.
-  let jurisdictionState = blankJurisdictionState();
-  let confirmedProposalHash = null;
-
-  function chartFor(jurisdiction) {
-    return charts.get(jurisdiction) ?? chart;
-  }
-
-  function pipelineDepsFor(input) {
-    const p = registry.select(input.jurisdiction, input.date);
-    if (!p) return { ...ctx };
-    return { ...ctx, pack: p, chart: chartFor(input.jurisdiction) };
-  }
-
-  function rememberMeta(kind, draft, result) {
-    const { revenueId, expenseId } = revenueExpenseIds(chartFor(draft.jurisdiction));
-    const want = kind === 'SALE' ? revenueId : expenseId;
-    const totalMinor = result.journal.lines
-      .filter((l) => l.accountId === want)
-      .reduce((acc, l) => (BigInt(acc) + BigInt(l.amountMinor)).toString(), '0');
-    txMeta.set(result.transactionId, {
-      id: result.transactionId,
-      kind,
-      date: draft.date,
-      currency: draft.currency,
-      totalMinor,
-      counterparty: draft.customer ?? draft.supplier ?? draft.counterparty ?? '-',
-      reference: draft.invoiceRef ?? draft.billRef ?? draft.reference ?? '-',
-      postingId: result.receipt.postingId,
-      journalId: result.journal.id,
-      demo: String(result.transactionId).startsWith('demo-'),
-    });
-  }
-
-  function syncMetaFromLedger() {
-    for (const entry of ledger.list()) {
-      const txId = entry.transactionId;
-      if (!txId || txMeta.has(txId)) continue;
-      const { revenueId, expenseId } = revenueExpenseIds(chartFor('ID'));
-      const ids = new Set(entry.lines.map((l) => l.accountId));
-      const allRevenue = [...charts.values()].map((c) => revenueExpenseIds(c).revenueId).filter(Boolean);
-      const allExpense = [...charts.values()].map((c) => revenueExpenseIds(c).expenseId).filter(Boolean);
-      const hasRevenue = allRevenue.some((id) => ids.has(id)) || (revenueId && ids.has(revenueId));
-      const hasExpense = allExpense.some((id) => ids.has(id)) || (expenseId && ids.has(expenseId));
-      const kind = hasRevenue && !hasExpense ? 'SALE' : hasExpense && !hasRevenue ? 'PURCHASE' : 'TRANSFER';
-      const want = kind === 'SALE'
-        ? (allRevenue.find((id) => ids.has(id)) ?? revenueId)
-        : (allExpense.find((id) => ids.has(id)) ?? expenseId);
-      const totalLine = want ? entry.lines.find((l) => l.accountId === want) : null;
-      txMeta.set(txId, {
-        id: txId,
-        kind: entry.reversalOf ? 'REVERSAL' : kind,
-        date: entry.date,
-        currency: entry.currency,
-        totalMinor: totalLine ? totalLine.money.amountMinor.toString() : '0',
-        counterparty: '-',
-        reference: '-',
-        postingId: entry.id,
-        journalId: entry.id,
-        demo: String(txId).startsWith('demo-'),
-      });
-    }
-  }
-
-  async function createSale(draft, opts = {}) {
-    checkOrg(draft?.orgId);
-    checkAuth(opts.authToken);
-    const result = await recordSale(pipelineDepsFor(draft), draft);
-    rememberMeta('SALE', draft, result);
-    persist();
-    return result;
-  }
-
-  async function createPurchase(draft, opts = {}) {
-    checkOrg(draft?.orgId);
-    checkAuth(opts.authToken);
-    const result = await recordPurchase(pipelineDepsFor(draft), draft);
-    rememberMeta('PURCHASE', draft, result);
-    persist();
-    return result;
-  }
-
-  async function importCsvText(csvText, opts = {}) {
-    checkAuth(opts.authToken);
-    const { parseCsv } = require('../import/csvImporter');
-    const { recordSale: sale } = require('../business/salesService');
-    const { recordPurchase: purchase } = require('../business/purchaseService');
-    const rows = parseCsv(csvText);
-    const seenInFile = new Set();
-    const existingIds = new Set(ledger.list().map((e) => e.transactionId).filter(Boolean));
-    const receipts = [];
-    const failures = [];
-    for (const row of rows) {
-      const rowNo = row.__row;
-      try {
-        if (!row.id) throw new Error('id is required');
-        if (seenInFile.has(row.id)) throw new Error(`duplicate id in CSV file: ${row.id}`);
-        if (existingIds.has(row.id)) throw new Error(`duplicate id already posted: ${row.id}`);
-        seenInFile.add(row.id);
-        const type = String(row.type || '').toUpperCase();
-        const base = {
-          id: row.id, orgId: row.orgId, date: row.date, jurisdiction: row.jurisdiction,
-          currency: row.currency, description: row.description, amountMajor: row.amountMajor,
-        };
-        checkOrg(base.orgId);
-        let result;
-        if (type === 'SALE') {
-          const d = { ...base, customer: row.counterparty, invoiceRef: row.reference };
-          result = await sale(pipelineDepsFor(d), d, opts);
-          rememberMeta('SALE', d, result);
-        } else if (type === 'PURCHASE') {
-          const d = { ...base, supplier: row.counterparty, billRef: row.reference };
-          result = await purchase(pipelineDepsFor(d), d, opts);
-          rememberMeta('PURCHASE', d, result);
-        } else {
-          throw new Error(`type must be SALE|PURCHASE, got: ${row.type}`);
-        }
-        existingIds.add(row.id);
-        receipts.push({ row: rowNo, id: row.id, postingId: result.receipt.postingId });
-      } catch (e2) {
-        failures.push({ row: rowNo, id: row.id || null, error: e2.message });
-      }
-    }
-    syncMetaFromLedger();
-    persist();
-    return Object.freeze({
-      total: rows.length, succeeded: receipts.length, failed: failures.length,
-      receipts: Object.freeze(receipts), failures: Object.freeze(failures),
-    });
-  }
-
-  function reverseJournal({ journalId, id, date, memo, actor = 'web', authToken = null }) {
-    checkAuth(authToken);
-    const original = ledger.get(journalId);
-    if (!original) throw new Error(`Unknown journal: ${journalId}`);
-    if (original.orgId !== scopeOrgId) throw new Error(`Unknown journal scope: ${journalId}`);
-    const { entry, receipt } = reversal.reverse(original, { id, date, memo, actor });
-    const meta = {
-      id: entry.transactionId, kind: 'REVERSAL', date: entry.date, currency: entry.currency,
-      totalMinor: '0', counterparty: '-', reference: `reversal-of:${original.id}`,
-      postingId: receipt.postingId, journalId: entry.id, demo: false,
-    };
-    txMeta.set(`${entry.id}`, meta);
-    persist();
-    return { entry: serializeJournal(entry), receipt };
-  }
-
-  function serializeJournal(entry) {
-    return {
-      id: entry.id, orgId: entry.orgId, date: entry.date, currency: entry.currency,
-      transactionId: entry.transactionId, reversalOf: entry.reversalOf ?? null,
-      memo: entry.memo ?? null, periodId: entry.periodId ?? null,
-      finalized: entry.finalized, finalizedAt: entry.finalizedAt ?? null,
-      balanced: entry.isBalanced(),
-      lines: entry.lines.map((l) => ({
-        accountId: l.accountId, side: l.side,
-        amountMinor: l.money.amountMinor.toString(), currency: l.money.currency,
-      })),
-    };
-  }
-
-  function deserializeJournal(obj) {
-    const lines = (obj.lines ?? []).map((l) => new JournalLine({
-      accountId: l.accountId, side: l.side,
-      money: Money.fromMinor(l.amountMinor, l.currency ?? obj.currency),
-    }));
-    const entry = new JournalEntry({
-      id: obj.id, orgId: obj.orgId, date: obj.date, currency: obj.currency,
-      lines, memo: obj.memo ?? null, transactionId: obj.transactionId ?? null,
-      periodId: obj.periodId ?? null, reversalOf: obj.reversalOf ?? null,
-    });
-    const at = obj.finalizedAt ?? new Date().toISOString();
-    entry.finalize(() => at);
-    return entry;
-  }
-
-  function listTransactions() {
-    syncMetaFromLedger();
-    return [...txMeta.values()].sort((a, b) => (a.date < b.date ? 1 : -1));
-  }
-
-  function monthlyReport(currency = 'IDR') {
-    const allRevenue = new Set();
-    const allExpense = new Set();
-    for (const c of charts.values()) {
-      const { revenueId, expenseId } = revenueExpenseIds(c);
-      if (revenueId) allRevenue.add(revenueId);
-      if (expenseId) allExpense.add(expenseId);
-    }
-    const buckets = new Map();
-    for (const entry of ledger.list()) {
-      if (entry.currency !== currency) continue;
-      if (entry.orgId !== org.id) continue;
-      const month = String(entry.date).slice(0, 7);
-      const b = buckets.get(month) ?? { month, revenueMinor: 0n, expenseMinor: 0n, count: 0 };
-      for (const line of entry.lines) {
-        const minor = BigInt(line.money.amountMinor);
-        if (allRevenue.has(line.accountId)) {
-          b.revenueMinor += line.side === 'CREDIT' ? minor : -minor;
-        }
-        if (allExpense.has(line.accountId)) {
-          b.expenseMinor += line.side === 'DEBIT' ? minor : -minor;
-        }
-      }
-      b.count += 1;
-      buckets.set(month, b);
-    }
-    return [...buckets.values()]
-      .sort((a, b) => (a.month < b.month ? -1 : 1))
-      .map((b) => ({
-        month: b.month, count: b.count,
-        revenueMinor: b.revenueMinor.toString(),
-        expenseMinor: b.expenseMinor.toString(),
-        netMinor: (b.revenueMinor - b.expenseMinor).toString(),
-      }));
-  }
-
-  async function seedDemo() {
-    if (txMeta.has('demo-sale-1')) return { seeded: false, reason: 'demo already loaded' };
-    await createSale({
-      id: 'demo-sale-1', orgId: org.id, date: '2026-06-01', jurisdiction: 'ID',
-      currency: 'IDR', customer: 'PT Demo Maju', invoiceRef: 'DEMO-INV-001',
-      description: '[DEMO] Jasa konsultasi', amountMajor: '10000000',
-    });
-    await createSale({
-      id: 'demo-sale-2', orgId: org.id, date: '2026-07-02', jurisdiction: 'ID',
-      currency: 'IDR', customer: 'PT Demo Jaya', invoiceRef: 'DEMO-INV-002',
-      description: '[DEMO] Jasa pendampingan', amountMajor: '5000000',
-    });
-    await createPurchase({
-      id: 'demo-buy-1', orgId: org.id, date: '2026-07-05', jurisdiction: 'ID',
-      currency: 'IDR', supplier: 'Toko Demo ATK', billRef: 'DEMO-KW-001',
-      description: '[DEMO] ATK kantor', amountMajor: '750000',
-    });
-    return { seeded: true, ids: ['demo-sale-1', 'demo-sale-2', 'demo-buy-1'] };
-  }
-
-  async function onboardingTurn(userText, { aiProvider = null } = {}) {
-    const text = String(userText ?? '');
-    // P1: one Meta call per meaningful turn; deterministic fallback otherwise.
-    let provider = aiProvider;
-    if (!provider && process.env.BIGM_META_API_URL && process.env.BIGM_META_API_KEY) {
-      provider = new MetaModelAdapter({});
-    }
-    if (provider && typeof provider.extractProfile === 'function') {
-      // P1 final: jurisdiction candidates extracted on every turn, even AI path.
-      for (const c of extractJurisdictionCandidates(text)) {
-        const r = addJurisdictionCandidate(jurisdictionState, c, text);
-        if (r.ok) jurisdictionState = r.state;
-      }
-      try {
-        aiCalls += 1;
-        profileState.aiCalls = aiCalls;
-        const raw = await provider.extractProfile({
-          system: SYSTEM_PROMPT,
-          user: JSON.stringify({ profile: profileState.slots, message: text, lang: uiLanguage }),
-        });
-        const checked = validateExtractorPayload(raw);
-        if (checked.ok) {
-          profileState = applyFacts(profileState, checked.extracted.facts, 'ai');
-          profileState.turnCount += 1;
-          aiSuccesses += 1;
-          if (checked.extracted.detectedLanguage) {
-            const lang = normalizeLanguageTag(checked.extracted.detectedLanguage);
-            uiLanguage = lang;
-            profileState.slots['user.language'].value = lang;
-            profileState.slots['user.language'].status = 'proposed';
-            profileState.slots['user.language'].source = 'ai';
-          }
-          const missing = gapAnalysis(profileState);
-          profileState.readyForProposal = missing.length === 0;
-          const question = checked.extracted.nextQuestion
-            ? { key: 'ai', text: checked.extracted.nextQuestion }
-            : planQuestion(profileState, uiLanguage);
-          syncDraftFromProfileState();
-          persist();
-          return { draft: onboardingDraft(), signals: {}, question, complete: question.key === 'done', aiLabel: 'ai-tervalidasi' };
-        }
-      } catch { /* fall through to deterministic */ }
-    }
-    let signals = {};
-    let aiLabel = 'deterministik';
-    if (aiProvider) {
-      try {
-        const raw = await aiProvider.explain({ text: String(userText ?? ''), task: 'onboarding-signals' });
-        if (raw && typeof raw === 'object' && raw.signals && typeof raw.signals === 'object') {
-          const allowed = ['jurisdiction', 'currency', 'businessField', 'language', 'orgName'];
-          for (const k of allowed) {
-            if (typeof raw.signals[k] === 'string' && raw.signals[k].trim() !== '') signals[k] = raw.signals[k].trim().slice(0, 60);
-          }
-          aiLabel = 'ai-tervalidasi';
-        }
-      } catch { /* fallback deterministik */ }
-    }
-    const { detectSignals } = require('../onboarding/conversation');
-    const det = detectSignals(text);
-    signals = { ...det, ...signals };
-    // P1 final: basis-aware jurisdiction extraction (no conflation).
-    for (const c of extractJurisdictionCandidates(text)) {
-      const r = addJurisdictionCandidate(jurisdictionState, c, text);
-      if (r.ok) jurisdictionState = r.state;
-    }
-    const out = conversationTurn(draft, text);
-    // Gabungkan sinyal AI tervalidasi bila ada, lalu terapkan ulang agar id org ikut terisi.
-    draft = out.draft;
-    if (Object.keys(signals).length > 0) {
-      const { applySignalsToDraft, nextQuestion } = require('../onboarding/conversation');
-      draft = applySignalsToDraft(draft, signals);
-      if (signals.language) uiLanguage = normalizeLanguageTag(signals.language);
-      mirrorProfileStateFromDraft(signals);
-      const question = nextQuestion(draft);
-      persist();
-      return { draft: JSON.parse(JSON.stringify(draft)), signals, question, complete: question.key === 'done', aiLabel };
-    }
-    persist();
-    return { draft: JSON.parse(JSON.stringify(draft)), signals: out.signals, question: out.question, complete: out.complete, aiLabel };
-  }
-
-  function mirrorProfileStateFromDraft(signals) {
-    const set = (key, value, source = 'conversation') => {
-      if (value === undefined || value === null || value === '') return;
-      const slot = profileState.slots[key];
-      if (!slot) return;
-      slot.value = value;
-      slot.status = 'proposed';
-      slot.source = source;
-    };
-    if (signals.orgName) set('org.name', signals.orgName);
-    // P1 final: deterministic conversation signals must not set registration
-    // jurisdiction. Operating/customer mentions stay in jurisdictionState only.
-    if (signals.currency) {
-      set('currency.functional', draft.currencyProfile.functional || signals.currency);
-      const others = draft.currencyProfile.otherCurrencies ?? [];
-      if (others.length) profileState.slots['currency.transactions'].value = [...others];
-      if (others.length) profileState.slots['currency.transactions'].status = 'proposed';
-      const rep = draft.currencyProfile.functional || signals.currency;
-      if (rep) set('currency.reporting', rep);
-    }
-    if (signals.businessField) set('org.businessType', signals.businessField);
-    if (signals.language) set('user.language', normalizeLanguageTag(signals.language));
-    if (draft.organizationProfile.name) set('org.name', draft.organizationProfile.name);
-    if (draft.organizationProfile.domicile) set('org.domicile', draft.organizationProfile.domicile);
-    if (draft.currencyProfile.functional) set('currency.functional', draft.currencyProfile.functional);
-    profileState.turnCount += 1;
-    profileState.readyForProposal = gapAnalysis(profileState).length === 0;
-  }
-
-  function syncDraftFromProfileState() {
-    const v = (k) => profileState.slots[k]?.value ?? null;
-    const name = v('org.name');
-    const dom = v('org.domicile') ?? v('org.entityJurisdiction');
-    const cur = v('currency.functional');
-    const lang = v('user.language') ?? 'en';
-    const next = JSON.parse(JSON.stringify(draft));
-    if (name) next.organizationProfile.name = String(name).slice(0, 60);
-    if (dom) {
-      next.organizationProfile.domicile = String(dom).toUpperCase();
-      next.entityProfiles = [{ id: 'ent-1', name: next.organizationProfile.name || 'Main entity', jurisdiction: String(dom).toUpperCase() }];
-      next.jurisdictionProfiles = [{ code: String(dom).toUpperCase(), packStatus: 'pending-validation', taxStatus: 'pending-verification' }];
-    }
-    if (cur) {
-      next.currencyProfile.functional = String(cur).toUpperCase();
-      const tx = v('currency.transactions');
-      if (Array.isArray(tx)) next.currencyProfile.otherCurrencies = tx.map((c) => String(c).toUpperCase());
-    }
-    next.userProfile.preferredLanguage = normalizeLanguageTag(lang);
-    next.languageProfile.ui = normalizeLanguageTag(lang);
-    if (next.organizationProfile.name && !next.organizationProfile.id) {
-      const slug = next.organizationProfile.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 24) || 'org';
-      next.organizationProfile.id = `org-${slug}`;
-    }
-    draft = next;
-  }
-
-  function onboardingDraft() {
-    return JSON.parse(JSON.stringify(draft));
-  }
-
-  function onboardingPropose() {
-    // P1: profile-driven plan first; legacy deterministic proposal as fallback.
-    const plan = planConfiguration(profileState);
-    if (plan.organizationName && plan.domicile && plan.functionalCurrency) {
-      const checked = validateConfiguration(plan, { registry });
-      if (checked.ok) {
-        lastProposal = {
-          language: checked.validated.language,
-          organizationId: draft.organizationProfile.id || 'org-draft',
-          organizationName: checked.validated.organizationName,
-          entities: [{ id: 'ent-1', jurisdiction: checked.validated.entityJurisdiction }],
-          jurisdictions: [checked.validated.entityJurisdiction],
-          functionalCurrency: checked.validated.functionalCurrency,
-          otherCurrencies: checked.validated.transactionCurrencies,
-          reportingCurrency: checked.validated.reportingCurrency,
-          modules: checked.validated.modules,
-          businessType: checked.validated.businessType,
-          period: { ...draft.accountingConfiguration },
-          taxStatus: 'pending-verification',
-          source: 'profile-driven',
-          version: (lastProposal?.version ?? 0) + 1,
-        };
-        lastProposal.hash = hashProposal(lastProposal);
-        confirmedProposalHash = null;
-        // Keep readiness green for profile-driven path: default MVP modules
-        // and normalized business type live on the proposal, not the slots.
-        if (!Array.isArray(profileState.slots['modules.enabled'].value) || profileState.slots['modules.enabled'].value.length === 0) {
-          profileState.slots['modules.enabled'].value = [...lastProposal.modules];
-          profileState.slots['modules.enabled'].status = 'proposed';
-          profileState.slots['modules.enabled'].source = 'default-mvp';
-        }
-        if (profileState.slots['org.businessType'].value && !['freelancer', 'small-business', 'umkm'].includes(profileState.slots['org.businessType'].value)) {
-          profileState.slots['org.businessType'].value = 'small-business';
-          profileState.slots['org.businessType'].status = 'proposed';
-          profileState.slots['org.businessType'].source = 'default-mvp';
-        }
-        persist();
-        return { ok: true, proposal: JSON.parse(JSON.stringify(lastProposal)) };
-      }
-    }
-    const out = proposeConfiguration(draft);
-    if (out.ok) {
-      lastProposal = { ...out.proposal, version: (lastProposal?.version ?? 0) + 1 };
-      lastProposal.hash = hashProposal(lastProposal);
-      confirmedProposalHash = null;
-      persist();
-    }
-    return out.ok ? { ok: true, proposal: JSON.parse(JSON.stringify(lastProposal)) } : out;
-  }
-
-  function onboardingValidate() {
-    if (!lastProposal) {
-      const p = proposeConfiguration(draft);
-      if (!p.ok) return p;
-      lastProposal = p.proposal;
-    }
-    const out = validateProposal(lastProposal, { registry });
-    if (out.ok) lastValidation = out.validated;
-    return out;
-  }
-
-  function onboardingConfirm({ proposalHash } = {}) {
-    if (!lastProposal) throw new Error('no proposal to confirm');
-    if (!proposalHash || proposalHash !== lastProposal.hash) {
-      throw new Error('confirmation must reference the latest proposal hash');
-    }
-    confirmedProposalHash = proposalHash;
-    persist();
-    return { ok: true, hash: confirmedProposalHash };
-  }
-
-  function onboardingReadiness() {
-    return evaluateReadiness({
-      profileSlots: profileState.slots,
-      jurisdictionState,
-      proposal: lastProposal,
-      confirmedHash: confirmedProposalHash,
-    });
-  }
-
-  function onboardingActivate({ activationKey, actor = 'onboarding' } = {}) {
-    // Back-compat: direct activation without a separate confirm() call counts
-    // as explicit user confirmation of the latest proposal hash.
-    if (lastProposal && !confirmedProposalHash) confirmedProposalHash = lastProposal.hash;
-    const readiness = onboardingReadiness();
-    if (!readiness.workspaceReady) {
-      const missing = Object.entries(readiness.slots).filter(([, st]) => st !== 'configured' && st !== 'not_applicable').map(([k, st]) => `${k}:${st}`);
-      throw new Error(`workspace not ready: ${missing.join(', ')}`);
-    }
-    if (!lastValidation) {
-      const v = onboardingValidate();
-      if (!v.ok) throw new Error(`cannot activate: ${v.errors.join('; ')}`);
-    }
-    const record = configurator.activate({ activationKey, proposal: lastValidation, actor });
-    activeConfig = record;
-    // Apply to runtime + persist across restart.
-    try {
-      if (lastValidation.organizationName) org.name = String(lastValidation.organizationName).slice(0, 120);
-      const j = lastValidation.jurisdictions?.[0] ?? lastValidation.entityJurisdiction;
-      if (j) org.jurisdiction = String(j).toUpperCase();
-      if (lastValidation.functionalCurrency) org.baseCurrency = String(lastValidation.functionalCurrency).toUpperCase();
-    } catch { /* runtime apply best-effort */ }
-    persist();
-    return record;
-  }
-
-  function onboardingHistory() {
-    return configurator.history();
-  }
-
-  function onboardingState() {
-    return {
-      draft: onboardingDraft(),
-      slots: JSON.parse(JSON.stringify(profileState.slots)),
-      missingSlots: gapAnalysis(profileState),
-      readyForProposal: profileState.readyForProposal,
-      readiness: onboardingReadiness(),
-      jurisdictionCandidates: JSON.parse(JSON.stringify(jurisdictionState.candidates)),
-      uiLanguage,
-      languages: supportedLanguages(),
-      jurisdictions: listJurisdictions(),
-      currencies: listCurrencies(),
-      proposal: lastProposal ? JSON.parse(JSON.stringify(lastProposal)) : null,
-      validated: lastValidation ? JSON.parse(JSON.stringify(lastValidation)) : null,
-      active: activeConfig ? JSON.parse(JSON.stringify(activeConfig)) : null,
-      history: onboardingHistory(),
-    };
-  }
-
-  function persist() {
-    if (!persistPath) return;
-    try {
-      const data = JSON.stringify({
-        version: 1,
-        scopeOrgId,
-        org: { id: org.id, name: org.name, jurisdiction: org.jurisdiction, baseCurrency: org.baseCurrency },
-        periods: periods.list().map((p) => ({
-          id: p.id, orgId: p.orgId, code: p.code, start: p.start, end: p.end, status: p.status,
-        })),
-        journals: ledger.list().map(serializeJournal),
-        audit: audit.list(),
-        idempotency: idempotency.toJSON(),
-        txMeta: [...txMeta.values()],
-        draft, lastProposal, lastValidation, active: activeConfig,
-        jurisdictionState, confirmedProposalHash, uiLanguage, profileState,
-        savedAt: new Date().toISOString(),
-      }, null, 2);
-      fs.mkdirSync(path.dirname(persistPath), { recursive: true });
-      const tmp = `${persistPath}.tmp`;
-      fs.writeFileSync(tmp, data, 'utf8');
-      fs.renameSync(tmp, persistPath);
-    } catch { /* persistensi best-effort, tidak menggagalkan transaksi */ }
-  }
-
-  function restore() {
-    if (!persistPath || !fs.existsSync(persistPath)) return false;
-    try {
-      const raw = JSON.parse(fs.readFileSync(persistPath, 'utf8'));
-      if (raw.scopeOrgId && raw.scopeOrgId !== scopeOrgId) return false;
-      if (Array.isArray(raw.periods)) {
-        for (const p of raw.periods) {
-          try {
-            const { FinancialPeriod: FP } = require('../domain/organization');
-            periods.add(new FP(p));
-          } catch { /* periode duplikat/di luar cakupan diabaikan */ }
-        }
-      }
-      if (Array.isArray(raw.journals)) {
-        for (const j of raw.journals) {
-          try {
-            if (j.orgId !== scopeOrgId) continue;
-            ledger.append(deserializeJournal(j));
-          } catch { /* duplikat/inkonsisten diabaikan agar restore idempotent */ }
-        }
-      }
-      if (Array.isArray(raw.audit)) {
-        try { audit._restoreAll(raw.audit); } catch { /* rantai rusak: mulai kosong */ }
-      }
-      if (raw.idempotency && typeof raw.idempotency === 'object') {
-        try { idempotency._restoreAll(raw.idempotency); } catch { /* abaikan */ }
-      }
-      if (Array.isArray(raw.txMeta)) {
-        for (const m of raw.txMeta) {
-          if (m && m.id && !txMeta.has(m.id)) txMeta.set(m.id, m);
-        }
-      }
-      syncMetaFromLedger();
-      if (raw.draft && validateProfile(raw.draft).ok) draft = validateProfile(raw.draft).profile;
-      else if (raw.draft) draft = raw.draft;
-      lastProposal = raw.lastProposal ?? null;
-      lastValidation = raw.lastValidation ?? null;
-      activeConfig = raw.active ?? null;
-      if (raw.jurisdictionState && Array.isArray(raw.jurisdictionState.candidates)) jurisdictionState = raw.jurisdictionState;
-      if (typeof raw.confirmedProposalHash === 'string') confirmedProposalHash = raw.confirmedProposalHash;
-      if (typeof raw.uiLanguage === 'string') uiLanguage = normalizeLanguageTag(raw.uiLanguage);
-      if (raw.profileState && raw.profileState.slots) profileState = raw.profileState;
-      return true;
-    } catch { return false; }
-  }
-
-  restore();
-
-  function aiStatus() {
-    const hasEndpoint = Boolean(process.env.BIGM_META_API_URL);
-    const hasKey = Boolean(process.env.BIGM_META_API_KEY);
-    return {
-      configured: hasEndpoint && hasKey,
-      mode: hasEndpoint && hasKey ? 'ai' : 'deterministik',
-      calls: aiCalls,
-      successes: aiSuccesses,
-      note: hasEndpoint && hasKey
-        ? 'AI terkonfigurasi; output tetap divalidasi deterministik.'
-        : 'AI tidak terkonfigurasi — memakai fallback deterministik (jujur, bukan klaim AI).',
-    };
-  }
-
-  function setUiLanguage(tag) {
-    uiLanguage = normalizeLanguageTag(tag);
-    profileState.slots['user.language'].value = uiLanguage;
-    profileState.slots['user.language'].status = 'proposed';
-    profileState.slots['user.language'].source = 'user-selection';
-    const next = JSON.parse(JSON.stringify(draft));
-    next.userProfile.preferredLanguage = uiLanguage;
-    next.languageProfile.ui = uiLanguage;
-    draft = next;
-    persist();
-    return uiLanguage;
-  }
-
-  function workspaceProfile() {
-    const plan = planConfiguration(profileState);
-    const active = activeConfig?.proposal ?? null;
-    return {
-      language: uiLanguage,
-      organizationName: active?.organizationName ?? plan.organizationName,
-      domicile: active?.jurisdictions?.[0] ?? plan.domicile,
-      functionalCurrency: active?.functionalCurrency ?? plan.functionalCurrency,
-      reportingCurrency: active?.reportingCurrency ?? plan.reportingCurrency,
-      modules: active?.modules ?? plan.modules,
-      activated: Boolean(activeConfig),
-      taxNote: t(uiLanguage, 'ob.taxNote'),
-      fxNote: t(uiLanguage, 'ob.fxNote'),
-    };
-  }
-
-  return {
-    ctx, txMeta, createSale, createPurchase, importCsvText, reverseJournal,
-    listTransactions, monthlyReport, seedDemo, serializeJournal,
-    summary: (currency) => getSummary(ctx, { currency: currency ?? org.baseCurrency }),
-    charts, chartFor, pipelineDepsFor,
-    onboardingTurn, onboardingDraft, onboardingPropose, onboardingValidate,
-    onboardingConfirm, onboardingReadiness,
-    onboardingActivate, onboardingHistory, onboardingState, aiStatus,
-    setUiLanguage, workspaceProfile,
-    configurator,
-  };
-}
-
-module.exports = { createWebStore };
+module.exports={createWebStore,proposalHash};

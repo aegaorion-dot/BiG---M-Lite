@@ -199,3 +199,14 @@ html,body{overflow-x:hidden}
 .shell,.ob-wrap,.ob-grid,.panel,.ob-chat,.ob-aside{max-width:100%}
 @media (max-width:920px){.ob-grid{grid-template-columns:1fr}.ob-wrap{max-width:680px}}
 
+/* Keep review content and tables within their own layout. */
+.ob-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr)}
+.ob-grid>*{min-width:0}
+.ob-kv{display:grid;grid-template-columns:minmax(90px,.8fr) minmax(0,1fr);align-items:start}
+.ob-kv span,.ob-kv strong{min-width:0;overflow-wrap:anywhere}
+.ob-kv .ob-badge{grid-column:2;justify-self:start;white-space:normal}
+.table-scroll{max-width:100%;overflow-x:auto}
+.tax-pending{padding:10px 12px;background:#fff4d6;border-radius:10px;color:#6b4a08}
+#view input:disabled,#view select:disabled{opacity:.65}
+@media(max-width:920px){.ob-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:440px){.topbar{padding:12px}.shell{padding:12px}.panel{padding:12px}.ob-kv{font-size:13px}.ob-input-row{flex-wrap:wrap}.ob-input-row input{flex-basis:100%}}

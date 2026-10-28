@@ -1,85 +1,94 @@
-# BiG-M Lite — Fondasi (Tahap 1–5)
+# BiG-M Lite
 
-Modular monolith sederhana untuk akuntansi + pajak multi-yurisdiksi.
-Dibangun fondasi dulu: domain → country pack → integritas → satu alur nyata → adapter AI.
+Universal business profiling → semantic jurisdiction facts → CountryPack resolution → proposed setup → human confirmation → a personal bookkeeping workspace.
 
-## Struktur
+Lite uses Node >=20 and built-in modules. The Money/BigInt, double-entry journal, PostingService, ledger, reversal and audit foundations remain in place.
 
-```
-src/
-  domain/        Money (BigInt, tanpa float), Organization, FinancialPeriod,
-                 ChartOfAccounts, Transaction, SourceEvidence, Journal, Ledger,
-                 AuditTrail (rantai hash), IdempotencyStore
-  accounting/    PostingService (seimbang + idempoten + periode OPEN),
-                 ReversalService (koreksi via jurnal baru, asli tak tersentuh)
-  tax/           TaxEngine: evaluasi rule deklaratif; placeholder tak pernah final
-  countrypack/   manifest + registry + validasi; packs/id = contoh kerja Indonesia
-  ai/            AIProvider, MetaModelAdapter (key via env), validasi usulan AI
-  app/           verticalSlice (input→klasifikasi→posting→ledger→laporan), report
-  business/      SalesService (REVENUE), PurchaseService (EXPENSE) via pipeline fondasi
-  import/        csvImporter (validasi ketat, anti-duplikasi, laporan baris gagal)
-  dashboard/     ringkasan baca-saja: saldo, transaksi, total, status audit
-test/            pengujian otomatis (node:test, tanpa dependensi)
-```
+## Run
 
-## Kontrak antarmodul (ringkas)
+    npm start
 
-- **Uang**: BigInt minor + kode ISO 4217. `fromMajor` hanya terima string desimal.
-- **Jurnal**: satu mata uang, ≥2 baris, total debit == total kredit, finalize → frozen permanen.
-- **Posting**: `idempotencyKey` wajib; replay kunci sama = receipt sama, tanpa posting ganda.
-- **Periode**: posting hanya ke periode OPEN yang memuat tanggal transaksi.
-- **Reversal**: jurnal baru bersisi terbalik + `reversalOf`; efek bersih nol.
-- **Country Pack**: JSON murni; kunci `eval/code/require/...` ditolak; versi semver;
-  pilih berdasar yurisdiksi + tanggal (versi tertinggi menang).
-- **Pajak**: rule non-placeholder wajib `source` + aksi `rate|exempt`; placeholder →
-  status `PLACEHOLDER`, amount null, dikecualikan dari total final.
-- **AI**: output mentah wajib lewat `validateClassification`; tolak/gagal → fallback
-  deterministik. Key hanya dari env (`BIGM_META_API_KEY`), tidak di repo.
+Open http://localhost:3100. The server binds to loopback. Optional port: BIGM_PORT.
 
-## Tahap 7 — Aplikasi Web "Ledger Atelier" + AI Onboarding
+The CLI loads a local .env without overwriting existing environment variables. State defaults to data/store.json; override with BIGM_DATA_PATH. Runtime data and .env are ignored by Git. Library/test factories use persistPath:null unless a path is explicitly provided.
 
-SPA tanpa dependensi (`public/`) + backend Node http bawaan (`src/web/`).
-Seluruh posting tetap lewat `PostingService`; frontend hanya menampilkan data.
+## Meta Muse Spark
 
-```sh
-node src/web/server.js        # http://localhost:3100  (BIGM_PORT=3100)
-```
+Set these server-side values in .env or the process environment:
 
-Fitur: **AI Onboarding** (tab default: chat DISCOVER→PROFILE→PROPOSE→VALIDATE→
-CONFIRM→ACTIVATE→AUDIT, fallback deterministik berlabel jujur), Dashboard
-(saldo, aktivitas, grafik bulanan SVG), Sales, Purchase, Accounting
-(jurnal/ledger/audit), Reports, CSV Import (pratinjau + laporan gagal),
-Tax & CountryPack (ID + SG, keduanya placeholder eksplisit), Settings, tombol
-**Muat data demo** (berlabel `[DEMO]`, bukan data nyata).
+    BIGM_META_API_URL=https://api.meta.ai/v1/responses
+    BIGM_META_API_KEY=your-local-key
+    BIGM_META_MODEL=an-enabled-model-id
 
-Onboarding: profil 9 bagian (`src/onboarding/profile.js`), percakapan
-deterministik ID/EN (`conversation.js`), konfigurator fail-closed
-(`configurator.js`), persistensi file JSON best-effort tanpa DB
-(`BIGM_ONBOARDING_FILE`), tanpa API key di frontend. Contoh:
-"perusahaan perdagangan di Singapura, bahasa Indonesia" → Bahasa Indonesia,
-Yurisdiksi SG, SGD (usulan), CountryPack SG perlu validasi, pajak menunggu
-verifikasi. CountryPack SG (`bigm-pack-sg`, SGD 2 desimal) placeholder-only:
-GST/CIT tanpa tarif final.
+Use a model available to your Meta account. The adapter consumes the Responses output envelope, reads assistant output_text, parses JSON and passes candidate facts through deterministic validation. The request supplies the response schema and available capabilities as context.
 
-## Impor CSV & Dashboard (Tahap 6)
+Each turn reports providerConfigured, providerUsed, model and fallbackReason. Missing configuration, invalid output or provider failure uses a clearly labeled, limited deterministic fallback. A configured provider does not imply that its answer was used.
 
-Format header: `type,id,orgId,date,jurisdiction,currency,description,amountMajor,counterparty,reference`
-dengan `type` = `SALE|PURCHASE`. Baris gagal masuk `failures` (`{ row, id, error }`)
-tanpa menghentikan baris lain; id duplikat (dalam file / sudah terposting) ditolak.
-`getSummary()` + `renderDashboardText()` hanya membaca ledger/audit (read-only).
+No key is sent to the browser. AI cannot approve source content, confirm a configuration, activate a workspace or post entries.
 
-## Menjalankan
+## Tests and one-request live smoke
 
-```sh
-npm test
-```
+    npm test
 
-Tanpa dependensi; Node >= 20. Copy `.env.example` ke `.env` untuk konfigurasi Meta API
-(lokal saja, tidak di-commit).
+The routine runner removes inherited API credentials, sets test mode and blocks external fetch requests. Local HTTP tests are allowed. The adapter and automatic provider selection also guard Node test contexts. No paid request belongs in the regression suite.
 
-## Status jujur
+The live smoke is a separate command. It is skipped without explicit opt-in:
 
-- Framework + contoh kerja Indonesia: **lengkap dan teruji**.
-- Tax Engine Indonesia: **framework saja** — seluruh aturan PPN/PPh masih
-  `placeholder` tanpa sumber terverifikasi dan tidak menghasilkan kewajiban final.
-- Berikutnya (Tahap 6): modul bisnis, dashboard, import CSV, optimasi terukur.
+    npm run smoke:meta
+
+To authorize exactly one request in PowerShell, after configuring credentials:
+
+    $env:BIGM_LIVE_SMOKE = '1'
+    npm run smoke:meta
+    Remove-Item Env:BIGM_LIVE_SMOKE
+
+There is no automatic retry. The smoke validates candidate extraction; it never activates or posts. Live integration remains unverified until this opt-in check succeeds for the configured account/model.
+
+## Profile and approval contract
+
+profileState is the single candidate source of truth. Slots retain value, semanticRole, source, supportingQuote, confidence and status. Jurisdiction facts live inside that same state under nine separate bases:
+
+ACCOUNT_LOCATION, INCORPORATION, TAX_RESIDENCE, SOURCE, REGISTRATION, BUSINESS_WORK_LOCATION, CUSTOMER_LOCATION, WITHHOLDING and POSSIBLE_PE.
+
+Nationality is a user fact, not a tax jurisdiction. Functional, transaction, reporting and foreign purchase currencies are distinct. FX source remains unknown until supplied. Unknown data is not substituted with a legal or business fact.
+
+Explicit corrections replace candidates; contradictions require clarification. A material change increments profileRevision and invalidates the proposal, validation and confirmation. The active workspace stays unchanged until another confirmation succeeds.
+
+The proposal binds its profile fingerprint, revision, period and CountryPack evaluation to a recursive canonical SHA-256 hash. Activation requires validation and explicit human confirmation of that exact proposal. Optional material pack selection additionally requires explicit packIds; ordinary bookkeeping confirmation does not approve tax content.
+
+One applyActiveConfiguration path builds new immutable runtime objects at activation and restore. Identity, scope, jurisdiction basis, currency, period and modules agree with the active configuration. Changes to currency/jurisdiction after posting require a reviewed migration; Lite does not silently rewrite historical entries.
+
+## CountryPack scope
+
+Jurisdiction metadata for ID, SG, US, AU and GB comes from Original. Metadata support does not mean that executable tax content exists.
+
+Two substantive Original artifacts are retained as structured reference content:
+
+| Pack | Version | Window | Subject | Tax | Rules |
+|---|---:|---|---|---|---:|
+| ID_CIT_REFERENCE | 2 | 2025-01-01 through 2025-12-31 | COMPANY | CIT | 18 |
+| ID_CIT_DETERMINATION_2025 | 2 | 2025-01-01 through 2025-12-31 | COMPANY | CIT | 3 |
+
+Rule identities, formulas, parameters, review conditions, legal references, version and dates are preserved. Original labels its source material verified; this port does not independently re-certify current law.
+
+These artifacts require M3/M5 consumers that Lite intentionally does not implement. They are not executable in Lite, including after source-content review. No 2026 rules or executable SG/US/AU/GB packs are invented.
+
+The resolver checks semantic basis, subject, tax type, complete accounting period, evaluation date, content review, explicit confirmation and consumer capability. Missing content, expired windows, incompatible subjects, retired versions, ambiguous overlaps and composition conflicts stay unresolved. Customer, bank and work location alone never select a tax pack.
+
+workspaceReady and taxReady are independent. An IDR bookkeeping workspace for a Bali coffee shop may activate while registration or tax settings need review. A 2026 period never runs the imported 2025 rules.
+
+Legacy JSON packs under src/countrypack/packs remain foundation test/examples. They are not presented as substantive law by the new resolver. The web posting path uses an explicitly neutral bookkeeping template and records no final tax liability.
+
+## Persistence and recovery
+
+Snapshots include candidate facts/revision, CountryPack review state, proposal, validation, human confirmation, active profile snapshot, activation history/idempotency, journals, audit, transaction idempotency and period state.
+
+Writes use a temporary snapshot followed by rename. Save errors are surfaced; activation/posting roll back their in-memory changes on failure. Restore validates the audit and active confirmation and uses the same runtime application path. Closed periods remain closed.
+
+Version-1 snapshots retain journals and periods but require setup review and reconfirmation; old auto-confirmed configuration is not silently promoted.
+
+The UI resumes the saved pending question after refresh. It does not claim to recover an unsaved full chat transcript. Reports keep other currencies separate without invented FX conversions.
+
+## Verification
+
+See docs/IMPLEMENTATION-REPORT.md for completed checks and limitations, and docs/ORIGINAL-PORT.md for source provenance and deliberately excluded enterprise scope.

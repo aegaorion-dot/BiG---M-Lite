@@ -8,7 +8,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test test/"
+    "test": "node scripts/test.js",
+    "start": "node src/web/server.js",
+    "smoke:meta": "node scripts/meta-smoke.js"
   },
   "license": "UNLICENSED"
 }

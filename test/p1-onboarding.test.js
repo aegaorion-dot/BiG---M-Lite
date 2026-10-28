@@ -1,111 +1,58 @@
 'use strict';
-
-const { describe, it } = require('node:test');
-const assert = require('node:assert/strict');
-const { createWebStore } = require('../src/web/store');
-const { handleApi } = require('../src/web/api');
-const { blankSlots } = require('../src/onboarding/slots');
-const { blankProfileState, validateExtractorPayload, gapAnalysis, planQuestion, planConfiguration, validateConfiguration, SYSTEM_PROMPT } = require('../src/onboarding/profiler');
-const { normalizeLanguageTag } = require('../src/i18n/languages');
-const { t } = require('../src/i18n/strings');
-const { listCurrencies } = require('../src/global/currencies');
-const { listJurisdictions } = require('../src/global/jurisdictions');
-
-function fakeExtractor(facts) {
-  return {
-    async extractProfile() {
-      return { detectedLanguage: 'en', facts, suggestions: [], missingCriticalSlots: [], nextQuestion: 'Which country is your business registered in?', readyForProposal: false };
-    },
-  };
-}
-
-describe('P1 — zero-state, slots, profiler, activation', () => {
-  it('fresh install: English base, empty business slots, no org/currency/jurisdiction', async () => {
-    const store = createWebStore();
-    const st = await handleApi(store, 'GET', '/api/onboarding/state', {}, null);
-    const body = JSON.parse(st.body);
-    assert.equal(body.uiLanguage, 'en');
-    assert.equal(body.slots['org.name'].value, null);
-    assert.equal(body.slots['currency.functional'].value, null);
-    assert.equal(body.slots['org.domicile'].value, null);
-    assert.equal(body.draft.organizationProfile.name, '');
-    assert.equal(body.draft.currencyProfile.functional, '');
-    assert.equal(body.active, null);
-    assert.ok(Array.isArray(body.languages) && body.languages.length >= 2);
-    assert.ok(Array.isArray(body.currencies) && body.currencies.length >= 5);
-    assert.ok(Array.isArray(body.jurisdictions) && body.jurisdictions.length >= 4);
-  });
-
-  it('slots carry required metadata; profiler validates structured output', () => {
-    const slots = blankSlots();
-    for (const s of Object.values(slots)) {
-      for (const k of ['key', 'type', 'value', 'status', 'source', 'confidence', 'validation', 'dependencies', 'requiresConfirmation']) {
-        assert.ok(k in s, `slot ${s.key} missing ${k}`);
-      }
-    }
-    const good = validateExtractorPayload({ detectedLanguage: 'en', facts: [{ slot: 'org.name', value: 'Kopi Bali', confidence: 0.9, evidence: 'I run Kopi Bali' }], suggestions: [], missingCriticalSlots: [], nextQuestion: 'Which country?', readyForProposal: false });
-    assert.equal(good.ok, true);
-    const bad = validateExtractorPayload({ facts: [{ slot: 'tax.rate', value: '11%' }] });
-    assert.equal(bad.ok, false);
-    assert.ok(SYSTEM_PROMPT.includes('Never infer jurisdiction solely from language'));
-  });
-
-  it('Meta extractor fills slots; invalid slots rejected; gaps drive questions', async () => {
-    const store = createWebStore();
-    const ai = fakeExtractor([
-      { slot: 'org.name', value: 'Kopi Bali', confidence: 0.95, evidence: 'I run Kopi Bali' },
-      { slot: 'org.domicile', value: 'ID', confidence: 0.9, evidence: 'in Bali' },
-      { slot: 'currency.functional', value: 'IDR', confidence: 0.9, evidence: 'transact IDR' },
-    ]);
-    await store.onboardingTurn('I run Kopi Bali coffee shop in Bali, transact in IDR', { aiProvider: ai });
-    const st = store.onboardingState();
-    assert.equal(st.slots['org.name'].value, 'Kopi Bali');
-    assert.equal(st.slots['org.domicile'].value, 'ID');
-    assert.equal(st.slots['currency.functional'].value, 'IDR');
-    assert.equal(store.aiStatus().successes, 1);
-    const gaps = gapAnalysis(blankProfileState());
-    assert.ok(gaps.includes('org.name'));
-    assert.ok(planQuestion(blankProfileState(), 'en').key);
-    const plan = planConfiguration(st.slots ? { slots: st.slots } : st);
-    assert.ok(plan);
-  });
-
-  it('language selection never sets jurisdiction or currency', async () => {
-    const store = createWebStore();
-    const r = await handleApi(store, 'POST', '/api/onboarding/language', {}, { language: 'id' });
-    assert.equal(JSON.parse(r.body).language, 'id');
-    const st = store.onboardingState();
-    assert.equal(st.uiLanguage, 'id');
-    assert.equal(st.slots['org.domicile'].value, null);
-    assert.equal(st.slots['currency.functional'].value, null);
-    assert.equal(normalizeLanguageTag('en-US'), 'en');
-    assert.equal(t('en', 'nav.dashboard'), 'Dashboard');
-    assert.equal(t('id', 'nav.dashboard'), 'Dasbor');
-  });
-
-  it('currency registry exposes correct minor units; workspace activates', async () => {
-    const curs = Object.fromEntries(listCurrencies().map((c) => [c.code, c.minorUnits]));
-    assert.equal(curs.IDR, 0);
-    assert.equal(curs.SGD, 2);
-    assert.ok(listJurisdictions().some((j) => j.code === 'ID'));
-    const store = createWebStore();
-    const ai = fakeExtractor([
-      { slot: 'org.name', value: 'Kopi Bali', confidence: 0.9, evidence: 'x' },
-      { slot: 'org.domicile', value: 'ID', confidence: 0.9, evidence: 'x' },
-      { slot: 'currency.functional', value: 'IDR', confidence: 0.9, evidence: 'x' },
-    ]);
-    await store.onboardingTurn('I run Kopi Bali in Bali, IDR', { aiProvider: ai });
-    const p = store.onboardingPropose();
-    assert.equal(p.ok, true);
-    const v = store.onboardingValidate();
-    assert.equal(v.ok, true);
-    const rec = store.onboardingActivate({ activationKey: 'p1-e2e-1' });
-    assert.equal(rec.activationKey, 'p1-e2e-1');
-    const ws = await handleApi(store, 'GET', '/api/workspace', {}, null);
-    const body = JSON.parse(ws.body).workspace;
-    assert.equal(body.activated, true);
-    assert.equal(body.functionalCurrency, 'IDR');
-    const bad = validateConfiguration({ organizationName: '', domicile: '', functionalCurrency: 'XX' }, {});
-    assert.equal(bad.ok, false);
-  });
+const {describe,it}=require('node:test'),assert=require('node:assert/strict');
+const {createWebStore}=require('../src/web/store');
+const {blankProfileState,validateExtractorPayload}=require('../src/onboarding/profiler');
+const {listJurisdictions,getJurisdiction}=require('../src/global/jurisdictions');
+const {listCurrencies}=require('../src/global/currencies');
+const fact=(slot,value,quote,extra={})=>({slot,value,source:'USER',supportingQuote:quote,confidence:.9,status:'CANDIDATE',operation:'SET',...extra});
+describe('Schema, evidence and candidate-only Meta authority',()=>{
+ it('fresh runtime has no organization, currency, chart, modules or registration',()=>{
+  const s=createWebStore(),st=s.onboardingState(),ws=s.workspaceProfile();
+  assert.equal(s.ctx.org,null);assert.equal(s.ctx.chart,null);assert.equal(st.slots['org.name'].value,null);
+  assert.equal(st.slots['currency.functional'].value,null);assert.deepEqual(st.jurisdictionCandidates,[]);assert.deepEqual(ws.modules,[]);assert.equal(ws.activated,false);
+ });
+ it('metadata contains Original ID/SG/US/AU/GB without a default fallback',()=>{
+  assert.deepEqual(listJurisdictions().map(j=>j.code),['ID','SG','US','AU','GB']);
+  for(const j of listJurisdictions()){assert.ok(j.taxAuthority);assert.ok(j.officialDomains.length);assert.ok(j.researchInstruction);assert.ok(j.disclaimer);assert.equal(j.metadataOnly,true);}
+  assert.equal(getJurisdiction('XX'),null);assert.ok(listCurrencies().some(c=>c.code==='GBP'));
+ });
+ it('rejects fabricated evidence, out-of-range confidence and unsupported values',()=>{
+  for(const f of [fact('org.name','Invented','not in message'),fact('org.name','Hello','Hello',{confidence:99}),fact('currency.functional','ZZZ','Hello'),fact('modules.enabled',['nuclear'],'Hello'),fact('org.name',{},'Hello'),fact('user.language','fr','Hello')]){
+   assert.equal(validateExtractorPayload({facts:[f]},{userText:'Hello'}).ok,false,JSON.stringify(f));
+  }
+ });
+ it('rejects AI self approval and the generic domicile slot',()=>{
+  assert.equal(validateExtractorPayload({facts:[fact('org.name','Hello','Hello',{status:'APPROVED'})]},{userText:'Hello'}).ok,false);
+  assert.equal(validateExtractorPayload({facts:[fact('org.domicile','ID','Indonesia')]},{userText:'Indonesia'}).ok,false);
+ });
+ it('preserves validated source, quote, confidence, role and CANDIDATE status',async()=>{
+  const s=createWebStore(),text='Business name is Kopi Bali.';
+  const aiProvider={model:'fixture-muse',extractProfile:async()=>({facts:[fact('org.name','Kopi Bali',text)],jurisdictionFacts:[]})};
+  const out=await s.onboardingTurn(text,{aiProvider}),f=s.onboardingState().slots['org.name'];
+  assert.equal(f.value,'Kopi Bali');assert.equal(f.supportingQuote,text);assert.equal(f.source,'USER');assert.equal(f.confidence,.9);assert.equal(f.semanticRole,'org.name');assert.equal(f.status,'CANDIDATE');
+  assert.equal(out.providerUsed,'meta');assert.equal(out.model,'fixture-muse');assert.equal(s.workspaceProfile().activated,false);
+ });
+ it('invalid model output is labeled fallback and cannot populate unsupported slots',async()=>{
+  const s=createWebStore(),r=await s.onboardingTurn('Hello',{aiProvider:{extractProfile:async()=>({facts:[fact('modules.enabled',['nuclear'],'Hello')]})}});
+  assert.equal(r.providerUsed,'fallback');assert.equal(r.fallbackReason,'AI_SCHEMA_VALIDATION_FAILED');assert.equal(s.aiStatus().successes,0);assert.deepEqual(s.onboardingState().slots['modules.enabled'].value,[]);
+ });
+ it('model failure is distinguishable from provider not configured',async()=>{
+  const s=createWebStore();const r=await s.onboardingTurn('Hello',{aiProvider:{extractProfile:async()=>{throw Error('private provider detail');}}});
+  assert.equal(r.providerConfigured,true);assert.equal(r.providerUsed,'fallback');assert.equal(r.fallbackReason,'PROVIDER_UNAVAILABLE_OR_INVALID_RESPONSE');assert.ok(!JSON.stringify(r).includes('private provider detail'));
+ });
+ it('routine tests cannot make a real automatic Meta call even with inherited credentials',async()=>{
+  const keys=['BIGM_META_API_URL','BIGM_META_API_KEY','BIGM_META_MODEL'],old=keys.map(k=>process.env[k]),originalFetch=globalThis.fetch;let calls=0;
+  try{process.env.BIGM_META_API_URL='https://api.meta.ai/v1/responses';process.env.BIGM_META_API_KEY='synthetic';process.env.BIGM_META_MODEL='fixture';globalThis.fetch=async()=>{calls++;throw Error('forbidden');};
+   const s=createWebStore(),r=await s.onboardingTurn('Hello');assert.equal(calls,0);assert.equal(r.fallbackReason,'LIVE_AI_DISABLED_IN_TESTS');assert.equal(r.providerConfigured,true);
+  }finally{keys.forEach((k,i)=>old[i]===undefined?delete process.env[k]:process.env[k]=old[i]);globalThis.fetch=originalFetch;}
+ });
+ it('selecting language changes no jurisdiction or currency',()=>{
+  const s=createWebStore();s.setUiLanguage('id');assert.deepEqual(s.onboardingState().jurisdictionCandidates,[]);assert.equal(s.onboardingState().slots['currency.functional'].value,null);
+  assert.throws(()=>s.setUiLanguage('fr'),/Unsupported/);
+ });
+ it('profile state is the only candidate state and read operations cannot mutate it',()=>{
+  const s=createWebStore(),st=s.onboardingState();st.slots['org.name'].value='External mutation';st.profileState.revision=99;
+  assert.equal(s.onboardingState().slots['org.name'].value,null);assert.equal(s.onboardingState().profileRevision,0);
+  assert.ok(blankProfileState().slots['currency.fxSource']);
+ });
 });

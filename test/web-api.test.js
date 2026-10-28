@@ -4,6 +4,7 @@ const { describe, it } = require('node:test');
 const assert = require('node:assert/strict');
 const { createWebStore } = require('../src/web/store');
 const { handleApi } = require('../src/web/api');
+const { createActiveStore } = require('./workspace-fixture');
 
 async function call(store, method, pathname, body = null, query = {}) {
   return handleApi(store, method, pathname, query, body);
@@ -17,18 +18,19 @@ function sale(id = 'ws-1') {
 }
 
 describe('Web layer — API nyata di atas engine (tanpa DB)', () => {
-  it('health + summary kosong + settings pack ID', async () => {
+  it('health + truly empty runtime before activation', async () => {
     const store = createWebStore();
     const h = await call(store, 'GET', '/api/health');
     assert.equal(h.status, 200);
     const s = await call(store, 'GET', '/api/summary');
     assert.equal(JSON.parse(s.body).summary.totals.netMinor, '0');
     const settings = await call(store, 'GET', '/api/settings');
-    assert.equal(JSON.parse(settings.body).pack.id, 'bigm-pack-id');
+    assert.equal(JSON.parse(settings.body).pack, null);
+    assert.equal(JSON.parse(settings.body).org, null);
   });
 
   it('sales + purchase via API memakai PostingService dan tercatat di ledger', async () => {
-    const store = createWebStore();
+    const store = createActiveStore();
     const r1 = await call(store, 'POST', '/api/sales', sale());
     assert.equal(r1.status, 201);
     const r2 = await call(store, 'POST', '/api/purchases', {
@@ -43,14 +45,14 @@ describe('Web layer — API nyata di atas engine (tanpa DB)', () => {
   });
 
   it('duplikasi idempotency tidak menggandakan ledger', async () => {
-    const store = createWebStore();
+    const store = createActiveStore();
     await call(store, 'POST', '/api/sales', sale('dup-w'));
     await call(store, 'POST', '/api/sales', sale('dup-w'));
     assert.equal(store.ctx.ledger.size, 1);
   });
 
   it('reversal API membuat jurnal pembalik; asli tak tersentuh', async () => {
-    const store = createWebStore();
+    const store = createActiveStore();
     await call(store, 'POST', '/api/sales', sale('rev-w'));
     const r = await call(store, 'POST', '/api/reversals', { journalId: 'j-rev-w', id: 'rev-w-1', date: '2026-08-03' });
     assert.equal(r.status, 201);
@@ -61,7 +63,7 @@ describe('Web layer — API nyata di atas engine (tanpa DB)', () => {
   });
 
   it('CSV API: sukses + gagal dilaporkan; monthly + tax placeholder terekspos', async () => {
-    const store = createWebStore();
+    const store = createActiveStore();
     const csv = [
       'type,id,orgId,date,jurisdiction,currency,description,amountMajor,counterparty,reference',
       'SALE,csv-w1,org-contoh,2026-08-01,ID,IDR,Jasa,400000,PT C,INV-C1',
@@ -74,11 +76,11 @@ describe('Web layer — API nyata di atas engine (tanpa DB)', () => {
     const monthly = JSON.parse((await call(store, 'GET', '/api/reports/monthly')).body);
     assert.equal(monthly.months[0].revenueMinor, '400000');
     const tax = JSON.parse((await call(store, 'GET', '/api/tax')).body);
-    assert.ok(tax.packs[0].rules.every((x) => x.placeholder === true));
+    assert.ok(tax.packs.every((x) => x.lite.executable === false));
   });
 
   it('route tak dikenal dan body CSV hilang memberi error jelas', async () => {
-    const store = createWebStore();
+    const store = createActiveStore();
     const a = await call(store, 'GET', '/api/tidak-ada');
     assert.equal(a.status, 404);
     const b = await call(store, 'POST', '/api/import/csv', {});

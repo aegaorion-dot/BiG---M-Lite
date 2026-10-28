@@ -1,149 +1,80 @@
 'use strict';
-
-const { describe, it } = require('node:test');
-const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const os = require('node:os');
-const path = require('node:path');
-const { createWebStore } = require('../src/web/store');
-const { verifyQuote, createEvidenceFact, applyEvidenceFacts } = require('../src/onboarding/evidence');
-const { extractJurisdictionCandidates, addJurisdictionCandidate, blankJurisdictionState } = require('../src/onboarding/jurisdictions');
-const { evaluateReadiness } = require('../src/onboarding/readiness');
-const { blankSlots } = require('../src/onboarding/slots');
-
-function mockedExtractor(facts, lang = 'en') {
-  return {
-    async extractProfile() {
-      return { detectedLanguage: lang, facts, suggestions: [], missingCriticalSlots: [], nextQuestion: 'Which country is your business registered in?', readyForProposal: false };
-    },
-  };
-}
-
-function fill(store, slots) {
-  for (const [k, v] of Object.entries(slots)) {
-    const s = store.onboardingState().slots;
-    void s;
-    store.__testSetSlot?.(k, v);
-  }
-}
-
-describe('P1 final — evidence, jurisdiction, readiness, scenarios A/B/C', () => {
-  it('evidence: USER facts need verbatim quote; AI cannot self-confirm', () => {
-    assert.equal(verifyQuote('Saya freelance desain', 'Saya freelance desain grafis'), true);
-    assert.equal(verifyQuote('dibuat AI', 'Saya freelance desain'), false);
-    const bad = createEvidenceFact({ slot: 'org.name', value: 'X', source: 'USER', supportingQuote: 'dibuat', userText: 'Saya freelance' });
-    assert.equal(bad.ok, false);
-    const ai = createEvidenceFact({ slot: 'org.name', value: 'X', source: 'AI_INFERENCE', supportingQuote: null, userText: 'halo', confidence: 0.5 });
-    assert.equal(ai.ok, true);
-    assert.equal(ai.fact.status, 'CANDIDATE');
-    const applied = applyEvidenceFacts(blankSlots(), [{ slot: 'org.name', value: 'Kopi', source: 'USER', supportingQuote: 'Kopi', confidence: 1 }], 'Kopi Bali');
-    assert.equal(applied.errors.length, 0);
-    assert.equal(applied.slots['org.name'].evidenceStatus, 'CONFIRMED');
-  });
-
-  it('jurisdiction: customer/operating/nationality never imply registration', () => {
-    const a = extractJurisdictionCandidates("I'm an Indonesian freelance graphic designer working with US clients. I prefer Indonesian for the app.");
-    assert.ok(a.some((c) => c.basis === 'CUSTOMER_LOCATION' && c.countryCode === 'US'));
-    assert.ok(!a.some((c) => c.basis === 'REGISTRATION'));
-    const c = extractJurisdictionCandidates("I'm Australian and run a coffee shop in Bali. Customers pay in rupiah, I sometimes import equipment, and I want the app in English.");
-    assert.ok(c.some((x) => x.basis === 'BUSINESS_WORK_LOCATION' && x.countryCode === 'ID'));
-    assert.ok(!c.some((x) => x.basis === 'REGISTRATION' && x.countryCode === 'AU'));
-    let st = blankJurisdictionState();
-    const r = addJurisdictionCandidate(st, { basis: 'REGISTRATION', countryCode: 'ID', supportingQuote: 'terdaftar di Indonesia', status: 'CONFIRMED' }, 'Usaha terdaftar di Indonesia');
-    assert.equal(r.ok, true);
-  });
-
-  it('readiness is deterministic: workspaceReady vs taxReady, approval hash', () => {
-    const slots = blankSlots();
-    slots['org.name'].value = 'Kopi';
-    slots['org.businessType'].value = 'small-business';
-    slots['user.language'].value = 'en';
-    slots['currency.functional'].value = 'IDR';
-    slots['modules.enabled'].value = ['sales'];
-    const js = { candidates: [{ basis: 'REGISTRATION', countryCode: 'ID', status: 'CONFIRMED', supportingQuote: 'x' }] };
-    const noApproval = evaluateReadiness({ profileSlots: slots, jurisdictionState: js, proposal: { hash: 'abc' }, confirmedHash: null });
-    assert.equal(noApproval.slots.approval, 'requires_user_input');
-    assert.equal(noApproval.workspaceReady, false);
-    assert.equal(noApproval.taxReady, false);
-    const ok = evaluateReadiness({ profileSlots: slots, jurisdictionState: js, proposal: { hash: 'abc' }, confirmedHash: 'abc' });
-    assert.equal(ok.workspaceReady, true);
-    assert.equal(ok.taxReady, false);
-  });
-
-  it('Scenario A — freelancer: US=customer only, asks jurisdiction+currency, no USD assumption', async () => {
-    const store = createWebStore();
-    const ai = mockedExtractor([
-      { slot: 'org.businessType', value: 'freelancer', confidence: 0.9, evidence: 'freelance graphic designer' },
-      { slot: 'user.language', value: 'id', confidence: 0.9, evidence: 'prefer Indonesian' },
-    ], 'id');
-    await store.onboardingTurn("I'm an Indonesian freelance graphic designer working with US clients. I prefer Indonesian for the app.", { aiProvider: ai });
-    const st = store.onboardingState();
-    assert.equal(st.slots['org.businessType'].value, 'freelancer');
-    assert.equal(st.slots['user.language'].value, 'id');
-    assert.ok(st.jurisdictionCandidates.some((c) => c.basis === 'CUSTOMER_LOCATION' && c.countryCode === 'US'));
-    assert.equal(st.slots['org.domicile'].value, null);
-    assert.equal(st.slots['currency.functional'].value, null);
-    assert.notEqual(st.slots['currency.functional'].value, 'USD');
-    const rd = store.onboardingReadiness();
-    assert.equal(rd.workspaceReady, false);
-    assert.equal(rd.taxReady, false);
-  });
-
-  it('Scenario B — Bandung coffee shop: operating ID, cash+QRIS noted, no auto tax', async () => {
-    const store = createWebStore();
-    await store.onboardingTurn('I run a small coffee shop in Bandung. Customers pay cash and QRIS.');
-    const st = store.onboardingState();
-    assert.ok(st.jurisdictionCandidates.some((c) => c.basis === 'BUSINESS_WORK_LOCATION' && c.countryCode === 'ID'));
-    assert.ok(!st.jurisdictionCandidates.some((c) => c.basis === 'REGISTRATION'));
-    assert.equal(st.slots['org.domicile'].value, null);
-    const rd = store.onboardingReadiness();
-    assert.equal(rd.slots['tax.pack'], 'not_applicable');
-    assert.equal(rd.taxReady, false);
-  });
-
-  it('Scenario C — expat Bali: EN UI, AU nationality only, IDR transaction, functional unknown, confirm+activate+persist', async () => {
-    const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'bigm-p1-')), 'store.json');
-    const store = createWebStore({ persistPath: tmp });
-    const ai = mockedExtractor([
-      { slot: 'org.name', value: 'Bali Coffee', confidence: 0.9, evidence: 'coffee shop in Bali' },
-      { slot: 'org.businessType', value: 'small-business', confidence: 0.9, evidence: 'coffee shop' },
-      { slot: 'user.language', value: 'en', confidence: 0.95, evidence: 'app in English' },
-      { slot: 'currency.transactions', value: ['IDR'], confidence: 0.9, evidence: 'pay in rupiah' },
-      { slot: 'modules.enabled', value: ['sales', 'purchase', 'accounting', 'reports'], confidence: 0.8, evidence: 'coffee shop' },
-    ], 'en');
-    await store.onboardingTurn("I'm Australian and run a coffee shop in Bali. Customers pay in rupiah, I sometimes import equipment, and I want the app in English.", { aiProvider: ai });
-    // Explicit registration + functional currency still unknown until confirmed.
-    let st = store.onboardingState();
-    assert.equal(st.slots['user.language'].value, 'en');
-    assert.ok(!st.jurisdictionCandidates.some((c) => c.basis === 'REGISTRATION' && c.countryCode === 'AU'));
-    assert.equal(st.slots['currency.functional'].value, null);
-    // Confirm registration + functional explicitly, then propose/confirm/activate.
-    const ai2 = mockedExtractor([
-      { slot: 'org.domicile', value: 'ID', confidence: 0.95, evidence: 'registered in Indonesia' },
-      { slot: 'org.entityJurisdiction', value: 'ID', confidence: 0.95, evidence: 'registered in Indonesia' },
-      { slot: 'currency.functional', value: 'IDR', confidence: 0.95, evidence: 'bookkeeping in IDR' },
-    ], 'en');
-    await store.onboardingTurn('The shop is registered in Indonesia. I do bookkeeping in IDR.', { aiProvider: ai2 });
-    const p = store.onboardingPropose();
-    assert.equal(p.ok, true);
-    assert.equal(p.proposal.functionalCurrency, 'IDR');
-    assert.ok(p.proposal.hash);
-    const rdBefore = store.onboardingReadiness();
-    assert.equal(rdBefore.workspaceReady, false);
-    const c = store.onboardingConfirm({ proposalHash: p.proposal.hash });
-    assert.equal(c.ok, true);
-    const rdAfter = store.onboardingReadiness();
-    assert.equal(rdAfter.workspaceReady, true);
-    const rec = store.onboardingActivate({ activationKey: 'p1-final-expat' });
-    assert.equal(rec.activationKey, 'p1-final-expat');
-    const ws = store.workspaceProfile();
-    assert.equal(ws.language, 'en');
-    assert.equal(ws.functionalCurrency, 'IDR');
-    // Persistence after restart.
-    const store2 = createWebStore({ persistPath: tmp });
-    const st2 = store2.onboardingState();
-    assert.equal(st2.active?.activationKey, 'p1-final-expat');
-    assert.equal(store2.workspaceProfile().functionalCurrency, 'IDR');
-    void fill;
-  });
+const {describe,it}=require('node:test'),assert=require('node:assert/strict');
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+const {createWebStore}=require('../src/web/store');
+const {createActiveStore}=require('./workspace-fixture');
+const {FinancialPeriod}=require('../src/domain/organization');
+const EXPAT="I'm Australian and I run a coffee shop in Bali. My customers pay in Indonesian rupiah, I sometimes import equipment, and I want the app in English.";
+function temp(t){const dir=fs.mkdtempSync(path.join(os.tmpdir(),'bigm-lite-'));t.after(()=>{if(path.dirname(dir)!==os.tmpdir())throw Error('unsafe cleanup target');fs.rmSync(dir,{recursive:true,force:true});});return path.join(dir,'store.json');}
+function activate(s,key='scenario'){const p=s.onboardingPropose();assert.equal(p.ok,true,JSON.stringify(p));s.onboardingValidate();s.onboardingConfirm({proposalHash:p.proposal.hash});return s.onboardingActivate({activationKey:key});}
+describe('Real descriptions and restart invariants',()=>{
+ it('mandatory expat initial profile separates nationality, work and payment currency',async()=>{
+  const s=createWebStore();await s.onboardingTurn(EXPAT);const st=s.onboardingState();
+  assert.equal(st.slots['user.nationality'].value,'AU');assert.equal(st.uiLanguage,'en');
+  assert.deepEqual(st.jurisdictionCandidates.map(f=>[f.basis,f.countryCode]),[['BUSINESS_WORK_LOCATION','ID']]);
+  assert.deepEqual(st.slots['currency.transactions'].value,['IDR']);assert.equal(st.slots['currency.functional'].value,null);
+  assert.deepEqual(st.slots['currency.foreignPurchases'].value,[]);assert.equal(st.question.key,'currency.functional');
+ });
+ it('mandatory second statement resolves candidates without running 2025 tax rules',async()=>{
+  const s=createWebStore();await s.onboardingTurn(EXPAT);await s.onboardingTurn('My business is registered in Indonesia and I want to keep my books in IDR.');
+  const st=s.onboardingState();assert.equal(st.slots['user.nationality'].value,'AU');assert.equal(st.slots['currency.functional'].value,'IDR');
+  assert.ok(st.jurisdictionCandidates.some(f=>f.basis==='REGISTRATION'&&f.countryCode==='ID'&&f.status==='CANDIDATE'));
+  const rec=activate(s);assert.equal(rec.countryPackResolution.status,'OUT_OF_PERIOD');assert.deepEqual(rec.countryPackResolution.selectedPackIds,[]);
+  assert.equal(s.onboardingReadiness().workspaceReady,true);assert.equal(s.onboardingReadiness().taxReady,false);assert.equal(s.ctx.org.jurisdiction,'ID');
+ });
+ it('bookkeeping can activate from Bali work location with registration unresolved',async()=>{
+  const s=createWebStore();await s.onboardingTurn(EXPAT);await s.onboardingTurn('I want my books in IDR.');activate(s);
+  assert.equal(s.workspaceProfile().jurisdictionBasis,'BUSINESS_WORK_LOCATION');assert.equal(s.onboardingDraft().organizationProfile.domicile,'');
+  assert.equal(s.workspaceProfile().taxReady,false);assert.equal(s.ctx.org.baseCurrency,'IDR');
+ });
+ it('freelancer nationality and US clients never become business registration',async()=>{
+  const s=createWebStore();await s.onboardingTurn("I'm an Indonesian freelance graphic designer working with US clients. I prefer Indonesian for the app.");
+  let st=s.onboardingState();assert.equal(st.slots['user.nationality'].value,'ID');assert.equal(st.uiLanguage,'id');
+  assert.deepEqual(st.jurisdictionCandidates.map(f=>[f.basis,f.countryCode]),[['CUSTOMER_LOCATION','US']]);assert.equal(st.slots['currency.functional'].value,null);
+  await s.onboardingTurn('Saya bekerja di Bandung. Pembukuan saya IDR.');activate(s);assert.equal(s.ctx.org.jurisdiction,'ID');
+ });
+ it('UMKM operational location does not establish registration',async()=>{
+  const s=createWebStore();await s.onboardingTurn('Saya punya warung kopi di Bandung, pelanggan bayar cash dan QRIS.');
+  assert.ok(s.onboardingState().jurisdictionCandidates.some(f=>f.basis==='BUSINESS_WORK_LOCATION'&&f.countryCode==='ID'));
+  assert.ok(!s.onboardingState().jurisdictionCandidates.some(f=>f.basis==='REGISTRATION'));
+  await s.onboardingTurn('Pembukuan dalam IDR.');activate(s);assert.equal(s.ctx.org.baseCurrency,'IDR');
+ });
+ it('Singapore registration, Bali work, US customers and Australian bank stay distinct',async()=>{
+  const s=createWebStore();await s.onboardingTurn('My company is registered in Singapore. I operate in Bali. My customers are in the United States. My bank account is in Australia. I keep my books in SGD.');
+  const facts=s.onboardingState().jurisdictionCandidates;
+  for(const [basis,country]of [['REGISTRATION','SG'],['BUSINESS_WORK_LOCATION','ID'],['CUSTOMER_LOCATION','US'],['ACCOUNT_LOCATION','AU']])assert.ok(facts.some(f=>f.basis===basis&&f.countryCode===country),basis);
+  activate(s);assert.equal(s.ctx.org.jurisdiction,'SG');assert.equal(s.workspaceProfile().countryPackResolution.status,'MISSING_COUNTRY_PACK');
+ });
+ it('negative registration and ambiguous country answers stay unapproved',async()=>{
+  const s=createWebStore();await s.onboardingTurn('No, I am NOT registered in Singapore.');await s.onboardingTurn('Maybe Indonesia or Singapore?');
+  assert.ok(!s.onboardingState().jurisdictionCandidates.some(f=>f.basis==='REGISTRATION'&&f.status==='CANDIDATE'));
+ });
+ it('mid-onboarding and confirmed state survive restore',async t=>{
+  const file=temp(t),s=createWebStore({persistPath:file});await s.onboardingTurn(EXPAT);
+  let restored=createWebStore({persistPath:file});assert.deepEqual(restored.onboardingState().profileState,s.onboardingState().profileState);
+  await restored.onboardingTurn('I keep my books in IDR.');const p=restored.onboardingPropose().proposal;restored.onboardingValidate();restored.onboardingConfirm({proposalHash:p.hash});
+  restored=createWebStore({persistPath:file});assert.equal(restored.onboardingReadiness().workspaceReady,true);assert.equal(restored.workspaceProfile().activated,false);
+ });
+ it('activation runtime, history, replay idempotency and CLOSED periods survive restart',t=>{
+  const file=temp(t),s=createActiveStore({persistPath:file},{country:'SG',currency:'SGD',name:'Persistent Singapore'});
+  const rec=s.onboardingHistory()[0],period=s.ctx.periods.list()[0];s.ctx.periods.replace(new FinancialPeriod({...period,status:'CLOSED'}));s.persist();
+  const r=createWebStore({persistPath:file});assert.deepEqual(r.workspaceProfile(),s.workspaceProfile());assert.deepEqual(r.ctx.org,s.ctx.org);assert.deepEqual(r.onboardingHistory(),s.onboardingHistory());
+  const n=r.ctx.audit.size;r.onboardingActivate({activationKey:rec.activationKey,actor:'test human'});assert.equal(r.ctx.audit.size,n);
+  assert.equal(r.ctx.periods.list()[0].status,'CLOSED');
+  assert.throws(()=>r.ctx.periods.getPostingPeriod(r.ctx.org.id,'2026-08-01'),/CLOSED/);
+ });
+ it('save failure rolls back activation and posting rather than returning success',async t=>{
+  const file=temp(t),s=createWebStore({persistPath:file});s.editProfile({slot:'currency.functional',value:'IDR'});const p=s.onboardingPropose().proposal;s.onboardingValidate();s.onboardingConfirm({proposalHash:p.hash});
+  const original=fs.renameSync;fs.renameSync=()=>{throw Error('simulated disk failure');};
+  try{assert.throws(()=>s.onboardingActivate({activationKey:'disk'}),/could not be saved/);assert.equal(s.workspaceProfile().activated,false);assert.equal(s.ctx.org,null);}
+  finally{fs.renameSync=original;}
+  s.onboardingActivate({activationKey:'disk'});
+  fs.renameSync=()=>{throw Error('disk failure');};
+  try{await assert.rejects(()=>s.createSale({id:'save-fail',orgId:s.ctx.org.id,date:'2026-08-01',jurisdiction:'ZZ',currency:'IDR',customer:'Test',invoiceRef:'INV',description:'Test',amountMajor:'10'}),/could not be saved/);assert.equal(s.ctx.ledger.size,0);assert.equal(s.ctx.idempotency.size,0);}
+  finally{fs.renameSync=original;}
+ });
+ it('pending corrections after activation survive restore without changing active runtime',t=>{
+  const file=temp(t),s=createActiveStore({persistPath:file});s.editProfile({slot:'currency.functional',value:'USD'});
+  const r=createWebStore({persistPath:file});assert.equal(r.onboardingState().slots['currency.functional'].value,'USD');assert.equal(r.workspaceProfile().functionalCurrency,'IDR');assert.equal(r.ctx.org.baseCurrency,'IDR');
+ });
 });
