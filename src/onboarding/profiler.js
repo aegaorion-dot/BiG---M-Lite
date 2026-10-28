@@ -5,7 +5,7 @@ const {isKnownJurisdiction}=require('../global/jurisdictions');
 const {BASES}=require('./jurisdictions');
 const {verifyQuote}=require('./evidence');
 const {assertDate}=require('../domain/organization');
-const {isFunctionalCorrection}=require('./currencyContext');
+const {isFunctionalCorrection,isDirectCurrencyAnswer,currencyMentionMatches}=require('./currencyContext');
 const ALLOWED_BUSINESS_TYPES=Object.freeze(['freelancer','small-business','umkm','perdagangan','jasa','kuliner','manufaktur']);
 const ALLOWED_MODULES=Object.freeze(['sales','purchase','accounting','reports','import']);
 const SUBJECT_TYPES=Object.freeze(['COMPANY','INDIVIDUAL','PARTNERSHIP']);
@@ -74,7 +74,8 @@ function validateExtractorPayload(raw,{userText=null,pendingQuestion=null,previo
   if(value==null){if(f.status!=='UNKNOWN'&&f.operation!=='REMOVE')errors.push(f.slot+': null requires UNKNOWN');}
   else if(f.status==='UNKNOWN'||!valueValid(f.slot,value))errors.push(f.slot+': unsupported value/type/status');
   const quote=f.supportingQuote??f.evidence;
-  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&pendingQuestion!=='currency.functional'&&!/book|pembukuan|fungsional|functional/i.test(quote??'')&&!isFunctionalCorrection(userText,previousCurrencyRole))errors.push('functional currency requires bookkeeping evidence');
+  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!isDirectCurrencyAnswer(userText,pendingQuestion,value)&&!/book|pembukuan|fungsional|functional/i.test(quote??'')&&!isFunctionalCorrection(userText,previousCurrencyRole))errors.push('functional currency requires bookkeeping evidence');
+  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!currencyMentionMatches(quote,value))errors.push('functional currency value must match the quoted currency');
   out.facts.push({...f,value,semanticRole:f.slot,source:f.source??'USER',supportingQuote:quote,confidence:f.confidence??null,status:f.status??'CANDIDATE',operation:f.operation??'SET'});
  }
  if(raw.jurisdictionFacts!==undefined&&!Array.isArray(raw.jurisdictionFacts))errors.push('jurisdictionFacts must be an array');

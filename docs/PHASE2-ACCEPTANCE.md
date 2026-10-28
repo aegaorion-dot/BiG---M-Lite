@@ -21,3 +21,7 @@ Summary and monthly report are projections of the same scoped ledger. No country
 - Existing sales/purchase/import/reversal/period/scope regression retained.
 
 Before Fabric: npm test: **146 passed, 0 failed** (137 original plus 9 independent gate tests). No paid AI calls. External fetch blocked in normal tests. No accounting expansion or UI changes.
+
+Additional Phase 2 verification: a fresh OS process now restores and compares profile, profileRevision, confirmation, active configuration, CountryPack status, CLOSED periods, activation history, scoped reports and posting idempotency. Replaying activation leaves the audit unchanged. See the final test in test/phase2-gate.test.js. This brings the independent gate to 10 tests; the pre-Fabric gate result above remains the recorded 146/146 milestone.
+
+Final-review hardening: a pending functional-currency question previously allowed an AI fact supported only by a customer-payment statement. The validator now accepts a direct currency answer or explicit bookkeeping evidence/context, and requires the proposed currency to match its exact supporting quote. An adversarial fake provider test proves schema rejection and deterministic fallback for both payment inference and a mismatched correction value. No paid model calls. Final independent gate: 11 tests.
