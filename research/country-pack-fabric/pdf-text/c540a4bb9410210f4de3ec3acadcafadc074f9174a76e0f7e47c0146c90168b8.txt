@@ -1,0 +1,787 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+IRAS e-Tax Guide 
+Simplified Record Keeping Requirements for 
+Small Businesses 
+(Fourth Edition) 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Published by 
+ 
+Inland Revenue Authority of Singapore 
+ 
+ 
+ 
+ 
+ 
+Published on 30 Jan 2026 
+First edition published on 31 Dec 2013 
+Second edition published on 20 Nov 2020 
+Third edition published on 21 Apr 2022 
+Fourth edition published on 23 Apr 2024 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Disclaimers: IRAS shall not be responsible or held accountable in any way for any damage, loss or expense 
+whatsoever, arising directly or indirectly from any inaccuracy or incompleteness in the Contents of this e-Tax 
+Guide, or errors or omissions  in the transmission of the Contents. IRAS shall not be responsible or held 
+accountable in any way for any decision made or action taken by you or any third party in reliance upon the 
+Contents in this e-Tax Guide. Except where specific contents carry legal force, this information aims to provide 
+a better general understanding of taxpayers’ tax obligations and is not intended to comprehensively address all 
+possible tax issues that may arise. While every effort has been made to ensure that this information is consistent 
+with existing law and practice, should  there be any changes, IRAS reserves  the right to vary our position 
+accordingly. 
+© Inland Revenue Authority of Singapore 
+ 
+ 
+All rights reserved. No part of this publication may be reproduced or transmitted in any form or by 
+any means, including photocopying and recording without the written permission of the copyright 
+holder, applicationfor which should be addressed to the publisher. Such written permission must 
+also be obtained before any part of this publication is stored in a retrieval system of any nature. 
+
+Table of Contents 
+ 
+Page 
+1 Aim 1 
+2 At a glance 1 
+3 Importance of record keeping for businesses 1 
+4 Qualifying conditions for simplified record keeping 2 
+5 Simplified record keeping requirements for qualifying small 3 
+businesses 
+6 Tips for record keeping 4 
+7 For more information and clarifications 4 
+8 Updates and amendments 5 
+9 Appendix 1 – Examples of how businesses may be considered to 
+have qualified for simplified record keeping 7 
+10 Appendix 2 – Daily revenue record 9 
+11 Appendix 3 – Daily purchases record 10 
+12 Appendix 4 - Monthly record of all business expenses 11 
+13 Appendix 5 - Details of daily transport expenses 12 
+14 Appendix 6 - Details of monthly staff remuneration expenses 13 
+15 Appendix 7 – Statement of accounts 14 
+16 Appendix 8 – Balance sheet 15 
+
+1  
+1. Aim 
+ 
+1.1. This e-Tax Guide aims to assist small businesses to comply with IRAS’ Simplified 
+Record Keeping (SRK) requirements. IRAS recognises that small businesses 
+typically have simpler business  and tax affairs. As long as they qualify  for SRK, 
+they can adopt the SRK requirements from 1 Jan 2014 for the Year of Assessment 
+2015. The qualifying conditions for SRK are defined in Section 4. 
+ 
+2. At a glance 
+ 
+2.1. All businesses must adhere to various record keeping requirements for tax 
+purposes. To simplify record keeping for small businesses, IRAS has further 
+streamlined these requirements. From 1 Jan 2014, small businesses (i.e., sole -
+proprietorships, partnerships and self-employed persons) that qualify for SRK will 
+only need to keep business records (e.g. registers, listings)  and not source 
+documents, such as receipts and invoices, which directly contribute to the 
+preparation of the business  records. For verification purposes, IRAS may request 
+for the original business records instead of the source documents. However, small 
+businesses will still need to retain all other source documents such as contracts 
+and correspondences that cannot be translated into a listing or register, and hence 
+cannot be verified based on a business record. 
+ 
+3. Importance of Record Keeping for Businesses 
+ 
+3.1. It is important for all businesses to keep proper records. This will enable you to: 
+a) Make better business decisions; 
+b) Be aware of the financial status of your business (e.g. profit or loss position, 
+whether there is any internal fraud or theft); 
+c) Reduce the cost and effort required to accurately file the annual income tax 
+return and to reply to IRAS’ queries (if any). 
+ 
+3.2. Businesses need to meet all the record keeping requirements (e.g. keeping all 
+source documents) specified in the following e -Tax Guides (whichever is 
+applicable): 
+- “Record Keeping Guide for Non-GST Registered Businesses”; 
+- “Record Keeping Guide for GST-Registered Businesses”. 
+ 
+3.3 You are required to keep records for a minimum period of 5 years after the date 
+on which your company/ sole-proprietorship/ partnership is struck off/ dissolved/ 
+wound up. 
+
+2  
+3.4 Non-compliance with record -keeping requirements may constitute an offence 
+where a maximum fine of $5,000 and / or a jail term of up  to six months may be 
+imposed1. 
+ 
+4. Qualifying Conditions for Simplified Record Keeping 
+ 
+4.1 A small business (i.e., sole-proprietorship, partnership and self-employed person) 
+that meets all the following conditions can qualify for SRK: 
+ 
+a) The business’ annual revenue2 must be $200,000 or less for the past two 
+financial years; 
+b) The business’ assets3 amounted to less than $100,000 as at the end of the 
+latest financial year; 
+c) The business is not in the business of investment holding 4 or property 
+development; and 
+d) The business is not GST-registered. 
+ 
+4.2 A qualifying small business may adopt the SRK  requirements (detailed in Section 
+5) once it has met the qualifying conditions (Paragraph 4.1). However, you should 
+ensure that your business will be able to maintain its eligibility for the foreseeable 
+future, as switching from  SRK requirements to full record keeping requirements 
+may incur significant business costs. If you do not foresee that your  business will 
+be able to maintain its eligibility 5, it is advisable to continue  meeting the record -
+keeping requirements specified in Paragraph 3.2. 
+4.3 A new business which has yet to file your first annual income tax return can choose 
+to meet the SRK requirements right  from the start of your  business operations, if 
+you expect to meet the qualifying conditions  (Paragraph 4.1) in the foreseeable 
+future. 
+4.4 You do not need to inform  IRAS on your choice to meet the SRK requirements. 
+Please refer to Appendix 1 for examples illustrating Paragraphs 4.1 to 4.3. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1 Under Section 67 of Income Tax Act 1947 and Section 46 of Goods and Services Tax Act 1993. 
+2 Refers to revenue before factoring in business discounts. 
+3 Value of assets refers to the total gross book value of fixed and current assets. 
+4 An investment holding company’s principal activity is to own investments such as properties and shares for long -term 
+investment and derive investment income such as dividends, interest and rental. 
+5 Businesses may foresee that they would not be able to maintain their eligibility if they are currently engaged in the 
+following activities e.g.: 
+- Negotiating a high-value business contract 
+- Acquiring a high-value piece of machinery or equipment 
+- Discussing a possible diversification of business operations into property development 
+
+3  
+5. Simplified record keeping requirements for qualifying small businesses 
+ 
+5.1 Qualifying small businesses should translate source documents  such as receipts 
+and invoices into businesses records and keep the following business records 6 
+(where applicable): 
+a) Daily Revenue Record (please refer to Appendix 2 for a sample); 
+ 
+b) Daily Purchases Record (please refer to Appendix 3 for a sample); 
+ 
+c) Monthly Record of All Business Expenses7 (please refer to Appendix 4 for a 
+sample); 
+ 
+d) Details of Daily Transport Expenses (please refer to Appendix 5 for a 
+sample); and 
+e) Details of Monthly Staff Remuneration Expenses (please refer to Appendix 
+6 for a sample). 
+5.2 Business records kept for a financial year can be used to prepare the Statement of 
+Accounts8 (please see Appendix 7 for a sample) and Balance Sheet9 (please see 
+Appendix 8 for a sample). A business can refer to the Statement of Accounts and 
+the Balance Sheet when preparing  its annual income tax return. Please  refer to 
+Appendices 2 to 8. 
+ 
+5.3 Qualifying small businesses are required to provide receipts upon request by their 
+customers. This is to allow customers who do not qualify  for SRK to meet their 
+record-keeping requirements. However, qualifying small businesses will not need 
+to keep the source documents. IRAS has published record keeping guidelines 
+and/or templates for selected industries10. If a qualifying small business belongs to 
+one of these industries,  it may choose to rely on the industry -specific guidelines 
+and templates instead. 
+ 
+ 
+ 
+6 Besides maintaining business records, businesses opting for SRK requirements are also required to keep the relevant 
+source documents if they wish to avail themselves of benefits under any cash payout scheme. Please note that under 
+Sections 37R(24) and (26) of the Income Tax Act  1947, businesses claiming cash payout under the Enterprise 
+Innovation Scheme must retain records for a period of 7 years. 
+7 Business expenses are expenses incurred in the course of running a business e.g. staff remuneration expenses, 
+rental, utility charges and telephone charges. 
+8 Statement of Accounts shows the financial results of a business for a financial year and should be prepared on an 
+accrual basis i.e. income is to be recorded on the date it is earned and expenses are to be recorded on the date they 
+are incurred. 
+9 Balance Sheet shows the assets and liabilities of, and money invested in a business as at the end of a financial year. 
+It should be prepared on an accrual basis. 
+10 For the list of selected industries (e.g. beauty and wellness operators,  entertainers and entertainment  organisers, 
+hawkers, sharing economy players),  please refer to IRAS  website at www.iras.gov.sg (Taxes > Individual Income 
+Tax > Self-Employed and Partnerships > Tax obligations by industry, trade or profession). 
+
+4  
+6 Tips for record keeping 
+ 
+6.1 You should keep records from the commencement of your business  operations. 
+Failure to do so may result in more time and effort spent on record keeping 
+subsequently. These are some tips for record keeping: 
+a) Set up a record -keeping system which can be understood by any person 
+familiar with the business operations, and not solely the accounts personnel. 
+Ensure the system  includes alerts for following -up on debts owed to your 
+business or taking action when payments are due; 
+b) Utilise digital systems, such as accounting software, to accurately and easily 
+record transactions; 
+c) Record transactions daily to keep records up-to-date; 
+d) Verify the accuracy of all transactions; and 
+e) Set up a bank account  for the business to enable clearer management of 
+business funds. 
+ 
+7 For more information and clarifications 
+ 
+7.1 For more information on record keeping, please visit IRAS website at 
+www.iras.gov.sg (Taxes > Individual Income Tax > Self -Employed and 
+Partnerships > Tax obligations of Self -Employed Persons > Keeping proper 
+records and accounts). 
+ 
+7.2 For clarifications on this e-Tax Guide, please email IRAS through our secured email 
+channel, myTax Mail by logging in to myTax Portal (www.mytax.iras.gov.sg) using 
+your Singpass or Singpass Foreign user Account (SFA). 
+
+5  
+8 Updates and amendments 
+ 
+ Date of 
+amendment Amendments made 
+1 20 Nov 2020 • Updated the qualifying conditions for SRK in 
+paragraph 4.1 by increasing the revenue threshold 
+from $100,000 to $200,000 from 1 Jan 2020 (i.e. 
+Year of Assessment 2021) onwards 
+• Updated the examples in Appendix 1 to reflect how 
+the revised qualifying conditions can be applied. 
+2 21 Apr 2022 • Updated the qualifying conditions for SRK in 
+paragraph 4.1 by clarifying that the annual revenue 
+reported by the business concerned must be 
+$200,000 or less for the past 2 financial years from 
+1 Jan 2020 onwards (i.e. Year of Assessment 
+2021), to qualify for the SRK initiative. 
+• Updated the citation  s (i.e. title change) of the 
+relevant tax acts in footnote  2 at page 1, to align 
+with the changes introduced under the 2020 
+Revised Edition of Acts that came into force on 31 
+Dec 2021. 
+• Updated the website paths in pages 3 and 4 as 
+well as Appendix  4 to facilitate  the tracing of the 
+website locations of the relevant information in 
+IRAS website. 
+• Indicated examples of specific industries or 
+professions where record keeping templates are 
+provided in IRAS website in footnote 5 at page 3. 
+3 23 Apr 2024 • Regular review: Made editorial edits for brevity. 
+ 
+• Updated the record keeping period required by 
+businesses claiming cash payout under the 
+Enterprise Innovation Scheme. 
+ 
+• Clarified circumstances where source documents 
+are still required to be maintained. 
+ 
+• Updated the tips for record keeping. 
+
+6  
+  • Updated examples in Appendix 1 to reflect self-
+employed persons. 
+4 30 Jan 2026 • Editorial changes in the e-Tax Guide. 
+
+7  
+Appendix 1 – Examples of how businesses may be considered to have qualified for 
+SRK 
+ 
+The following examples are discussed  in the context of a taxpayer who is considering 
+his/her record keeping obligations in relation to 2023 (i.e. Year of Assessment 2024). 
+Example 1 
+ 
+A sole-proprietorship in the business of selling clothes was set up on 1 January 2022, with 
+December being the business’ financial year-end. The total assets of the business as at 
+31 December 2023 amounted to $88,000 and the past business performance is as follows: 
+ 
+- Revenue for 2022: $180,000 
+- Revenue for 2023: $155,000 
+ 
+The sole-proprietorship can be considered to have met the qualifying conditions and can 
+choose to adhere to the SRK requirements with immediate effect if it expects to meet the 
+qualifying conditions in the foreseeable future. 
+ 
+Example 2 
+ 
+A sole-proprietorship in the Food and Beverages (F&B) industry was set up on 1 January 
+2022, with December being the business’ financial  year-end. The total assets of the 
+business as at 31 December 2023 amounted to $150,000 and the past business 
+performance is as follows: 
+ 
+- Revenue for 2022: $218,000 
+- Revenue for 2023: $95,000 
+ 
+The sole-proprietorship’s total assets as at the  latest financial year exceeded $100,000 
+and its annual revenue exceeded $200,000 for one financial year. It has failed to meet the 
+qualifying conditions and thus, cannot choose to adhere to the SRK requirements. 
+Example 3 
+ 
+A partnership selling hardware was set up on 1 January 2023,  with December being the 
+business’ financial year-end. The total assets of the business  as at 31 December  2023 
+amounted to $80,000 and the past business performance is as follows: 
+- Revenue for 2023: $195,000 
+The partnership has filed an income tax return for its first year of business. As the 
+partnership has only been set up for one financial year, it has failed to meet the qualifying 
+conditions and thus, cannot choose to adhere to the SRK requirements. 
+
+8  
+Example 4 
+ 
+A partnership in the business of investment holding was set up on 1 January 2022 with 
+December as its financial year-end. The total assets of the business  as at 31 December 
+2023 amounted to $500,000 and the past business performance is as follows: 
+- Revenue for 2022: $150,000 
+- Revenue for 2023: $170,000 
+ 
+As the partnership is in the business of investment holding and its assets exceeded 
+$100,000, it has failed to meet the qualifying conditions and thus, cannot choose to 
+adhere to the SRK requirements. 
+Example 5 
+ 
+A sole-proprietorship in the business of repairing computers is newly set up and has not 
+filed its first annual income tax return yet. The business’ financial year end is December. 
+The business can choose to meet the SRK requirements if it expects to meet the qualifying 
+conditions in the foreseeable future. 
+ 
+Example 6 
+A commission agent (self-employed person) started deriving commission income on 1 
+Jan 2022. His total assets in relation to  his commission income was $20,000. His past 
+commission income derived are as follows: 
+- Income for 2022: $185,000 
+- Income for 2023: $190,000 
+ 
+The commission agent can be considered to have met the qualifying conditions and can 
+choose to adhere to the SRK requirements with immediate effect if he expects to meet 
+the qualifying conditions in the foreseeable future. 
+Example 7 
+A hawker (self-employed person) started deriving business income on 1 Jan 2023. His 
+total assets in relation to his income was $50,000. His total income for the financial year 
+2023 was: 
+- Income for 2023: $150,000. 
+ 
+The hawker has filed an income tax return for his first year of receiving business income. 
+As the income was only for one financial year, the commission agent has failed to meet 
+the qualifying conditions and thus, cannot choose to adhere to the SRK requirements. 
+
+9  
+Appendix 2 – Daily revenue record 
+ 
+Name of Business / Taxpayer:   
+ 
+Financial Year:   
+ 
+S/N Month 
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec 
+1             
+2             
+3             
+4             
+5             
+6             
+7             
+8             
+9             
+10             
+11             
+12             
+13             
+14             
+15             
+16             
+17             
+18             
+19             
+20             
+21             
+22             
+23             
+24             
+25             
+26             
+27             
+28             
+29             
+30             
+31             
+Total             
+
+10  
+Appendix 3 – Daily purchases record 
+ 
+Name of Business / Taxpayer:   
+ 
+Financial Year:   
+Month:   
+ 
+S/N Date of 
+Purchase 
+Name of 
+Supplier 
+Description of Goods / 
+Services Received 
+Amount 
+Payable 
+Mode of 
+Payment 
+(Cash/Cheque) 
+1      
+2      
+3      
+4      
+5      
+6      
+7      
+8      
+9      
+10      
+11      
+12      
+13      
+14      
+15      
+16      
+17      
+18      
+19      
+20      
+21      
+22      
+23      
+24      
+25      
+26      
+27      
+28      
+29      
+30      
+31      
+32      
+33      
+34      
+35      
+36      
+37      
+38      
+39      
+40      
+Total      
+
+11  
+Appendix 4 – Monthly record of all business expenses 
+Name of Business / Taxpayer:    
+Financial Year:   
+Month:   
+ 
+S/N Date 
+Expense is 
+Incurred 
+Description of Expense11 (e.g. 
+rental, transport12, staff 
+remuneration2) 
+Amount 
+Payable 
+Mode of 
+Payment 
+(Cash/Cheque) 
+Amount 
+Payable to 
+1      
+2      
+3      
+4      
+5      
+6      
+7      
+8      
+9      
+10      
+11      
+12      
+13      
+14      
+15      
+16      
+17      
+18      
+19      
+20      
+21      
+22      
+23      
+24      
+25      
+26      
+27      
+28      
+29      
+30      
+31      
+32      
+33      
+34      
+35      
+36      
+37      
+38      
+39      
+40      
+Total      
+ 
+ 
+11 Only allowable expenses can be claimed for income tax purposes – please refer to IRAS website at www.iras.gov.sg 
+(Taxes > Individual Income Tax > Self-Employed and Partnerships > Business expenses and deductions). 
+12 For transport and staff remuneration expenses, details have to be recorded. Please see Appendices 5 and 6 for 
+sample templates. 
+
+12  
+Appendix 5 – Details of daily transport expenses 
+ 
+Name of Business / Taxpayer:   
+ 
+Financial Year:   
+Month:   
+ 
+S/N Date Purpose of trip Destination Mode of 
+transportation13 
+Person incurring 
+expense 
+(Name and Designation) 
+Amount 
+1       
+2       
+3       
+4       
+5       
+6       
+7       
+8       
+9       
+10       
+11       
+12       
+13       
+14       
+15       
+16       
+17       
+18       
+19       
+20       
+21       
+22       
+23       
+24       
+25       
+26       
+27       
+28       
+29       
+30       
+31       
+32       
+33       
+34       
+35       
+36       
+37       
+38       
+39       
+40       
+Total       
+ 
+13 Expenses incurred on private cars are disallowable expenses for income tax purposes 
+
+13  
+Appendix 6 – Details of monthly staff remuneration expenses 
+ 
+Name of Business / Taxpayer:   
+ 
+Financial Year:   
+Month:   
+ 
+S/N Name of 
+employee14 
+Designation Identification 
+number 
+Remuneration Employer 
+CPF 
+SDL15 FWL16 
+1        
+2        
+3        
+4        
+5        
+6        
+7        
+8        
+9        
+10        
+11        
+12        
+13        
+14        
+15        
+16        
+17        
+18        
+19        
+20        
+21        
+22        
+23        
+24        
+25        
+26        
+27        
+28        
+29        
+30        
+31        
+32        
+33        
+34        
+35        
+36        
+37        
+38        
+39        
+40        
+Total        
+ 
+ 
+ 
+14 Business owners’ salaries are disallowable expenses for income tax purposes. 
+15 SDL – Skills Development Levy 
+16 FWL – Foreign Worker Levy 
+
+14  
+Appendix 7 – Statement of accounts 
+NAME OF BUSINESS / TAXPAYER: 
+ 
+IDENTIFICATION NUMBER:   
+NATURE OF BUSINESS: 
+For Financial Year: 
+$ $ 
+REVENUE (Total Sales / Income) (Refer to Appendix 2 for daily business record template) Box 1 
+Cost of Goods Sold 
+{Opening Trading Stock + Trading Stock Purchased (Refer to 
+Appendix 3 for daily purchases record template)  – Closing 
+Trading Stock} 
+GROSS PROFIT / LOSS Box 2 
+{Revenue less Cost of Goods Sold} 
+BUSINESS EXPENSES17 (Refer to Appendix 4 for monthly business record template) 
+Telephone charges 
+Entertainment expenses 
+Utility charges 
+Rental 
+Stationery 
+Advertising 
+Transport expenses (Refer to Appendix 5 for daily business record template) 
+Staff remuneration expenses 
+(Refer to Appendix 6 for monthly business record template) 
+Other business expenses: 
+(Insert description of expense and corresponding amount below) 
+ i)  
+ ii)  
+iii) 
+  
+ 
+ 
+iv)    
+ 
+Total Business Expenses 
+NET PROFIT / (LOSS) 
+{Box 2 less Box 3} 
+ 
+Box 3 
+Box 4 
+ 
+Prepared by: Certified correct by: 
+ 
+Name:   Name:   
+ 
+Designation:   Designation:   
+Date:   Date:   
+ 
+Signature:   Signature:   
+ 
+ 
+ 
+17 Private and capital expenses (e.g. expenses incurred on private cars, business owners’ salaries and private medical costs) 
+are disallowable expenses for income tax purposes. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+15  
+Appendix 8 – Balance sheet* (Sample below is for a sole-proprietorship) 
+BALANCE SHEET AS AT DD MM 20XX 
+$ $ $ 
+ASSETS 
+NON-CURRENT 
+Motor Vehicle 
+ 
+Less: Accumulated Depreciation  X  XX 
+Machinery X 
+Less: Accumulated Depreciation  X   XX   XXX  
+ XXX  Box 1 
+CURRENT 
+Trading Stock XXX 
+Trade Debtors XXX 
+Prepayments and Deposits XXX 
+Cash and Bank Balances  XXX  
+ XXX  Box 2 
+TOTAL ASSETS  XXX  Box 3 
+{Box 1 plus Box 2} 
+ 
+LIABILITIES 
+NON-CURRENT LIABILITIES 
+Long–Term Loans  XXX  
+ XXX  Box 4 
+CURRENT LIABILITIES 
+Trade Creditors XXX 
+Short-Term Loans  XXX  
+ XXX  Box 5 
+TOTAL LIABILITIES  XXX  Box 6 
+{Box 4 plus Box 5} 
+ 
+PROPRIETOR’S FUNDS 
+Capital XXX 
+Retained Profits X 
+Current Year Profit  X  XX 
+Less: Drawings  XX   XXX  
+TOTAL PROPRIETOR’S FUNDS  XXX  Box 7 
+TOTAL LIABILITES AND 
+PROPRIETOR’S FUNDS 
+{Box 6 plus Box 7} 
+XXX 
+  Box 8 
+ 
+Prepared by: Certified correct by: 
+Name:   Name:   
+Designation:   Designation:   
+
+16  
+Date:   Date:   
+Signature:   Signature:   
+ 
+* In a correctly computed balance sheet, total assets should equal to total liabilities and proprietor’s funds. (i.e. Box 3 Should be equal to 
+Box 8) 

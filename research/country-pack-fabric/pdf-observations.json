@@ -1,0 +1,85 @@
+[
+  {
+    "rawContentHash": "c540a4bb9410210f4de3ec3acadcafadc074f9174a76e0f7e47c0146c90168b8",
+    "sourceId": "SG-IRAS",
+    "sourceUrl": "https://www.iras.gov.sg/media/docs/default-source/e-tax/etaxguide_srk-for-small-businesses.pdf?sfvrsn=763a89a5_12",
+    "extractor": "pypdf/6.12.2",
+    "pages": 19,
+    "textCharacters": 23388,
+    "pagesWithoutText": [],
+    "ocrAssessment": "TEXT_EXTRACTED_ALL_PAGES",
+    "textRef": "pdf-text/c540a4bb9410210f4de3ec3acadcafadc074f9174a76e0f7e47c0146c90168b8.txt",
+    "textHash": "b3f636216021bf8096e8716d5f60965033762076709397ab8dc68e3a71da8411",
+    "metadata": {
+      "/CreationDate": "D:20260325091357+08'00'",
+      "/MSIP_Label_5434c4c7-833e-41e4-b0ab-cdb227a2f6f7_ActionId": "0c22be44-6f09-49da-9c8c-e0773a99f995",
+      "/MSIP_Label_5434c4c7-833e-41e4-b0ab-cdb227a2f6f7_ContentBits": "0",
+      "/MSIP_Label_5434c4c7-833e-41e4-b0ab-cdb227a2f6f7_Enabled": "true",
+      "/MSIP_Label_5434c4c7-833e-41e4-b0ab-cdb227a2f6f7_Method": "Privileged",
+      "/MSIP_Label_5434c4c7-833e-41e4-b0ab-cdb227a2f6f7_Name": "Official (Open)",
+      "/MSIP_Label_5434c4c7-833e-41e4-b0ab-cdb227a2f6f7_SetDate": "2026-01-15T02:04:24Z",
+      "/MSIP_Label_5434c4c7-833e-41e4-b0ab-cdb227a2f6f7_SiteId": "0b11c524-9a1c-4e1b-84cb-6336aefc2243",
+      "/MSIP_Label_5434c4c7-833e-41e4-b0ab-cdb227a2f6f7_Tag": "10, 0, 1, 1",
+      "/ModDate": "D:20260325091357+08'00'"
+    },
+    "warning": "Text extraction is candidate evidence; reading order, tables, commencement and legal force require review."
+  },
+  {
+    "rawContentHash": "296b5bf34c4ec496b1e72ea6c9f878aee26ec68bb05afce2a21e4f469c7f3147",
+    "sourceId": "ID-DJPP",
+    "sourceUrl": "https://www.peraturan.go.id/files/uu7-2021bt.pdf",
+    "extractor": "pypdf/6.12.2",
+    "pages": 114,
+    "textCharacters": 162893,
+    "pagesWithoutText": [],
+    "ocrAssessment": "TEXT_EXTRACTED_ALL_PAGES",
+    "textRef": "pdf-text/296b5bf34c4ec496b1e72ea6c9f878aee26ec68bb05afce2a21e4f469c7f3147.txt",
+    "textHash": "3c042279395b91708769296e8014119fe7dd5dabcf31399d99c484088d7069ad",
+    "metadata": {
+      "/CreationDate": "D:20211119103059+07'00'",
+      "/ModDate": "D:20211119111248+07'00'",
+      "/Creator": "Microsoft® Word 2010",
+      "/Author": "Lenovo75",
+      "/Producer": "Microsoft® Word 2010"
+    },
+    "warning": "Text extraction is candidate evidence; reading order, tables, commencement and legal force require review."
+  },
+  {
+    "rawContentHash": "df37c0c6408e2fada7b19d2a78e7f83e30a29f551d618841ea2184eb1e2ccb6f",
+    "sourceId": "AU-ATO",
+    "sourceUrl": "https://www.ato.gov.au/api/public/content/0-61416407-4089-4d08-879c-7345ee017560",
+    "extractor": "pypdf/6.12.2",
+    "pages": 42,
+    "textCharacters": 55235,
+    "pagesWithoutText": [],
+    "ocrAssessment": "TEXT_EXTRACTED_ALL_PAGES",
+    "textRef": "pdf-text/df37c0c6408e2fada7b19d2a78e7f83e30a29f551d618841ea2184eb1e2ccb6f.txt",
+    "textHash": "43e99ecd8d7f2a948993bab6ae73a4ffbb06dfa5e693d396d9bcd33384dda4d2",
+    "metadata": {
+      "/CreationDate": "D:20261007231014+00'00'",
+      "/Creator": "IronPdf",
+      "/ModDate": "D:20261007231014+00'00'",
+      "/Producer": "IronPdf v2023.9.19098",
+      "/Title": ""
+    },
+    "warning": "Text extraction is candidate evidence; reading order, tables, commencement and legal force require review."
+  },
+  {
+    "rawContentHash": "97f6c6ca8e3bf87c382ec7d5f6856cfa2298b511fc30135fa914e34916307525",
+    "sourceId": "AU-ATO",
+    "sourceUrl": "https://www.ato.gov.au/law/view/pdf?DocID=TXR%2FTR20241%2FNAT%2FATO%2F00001&PiT=99991231235958&filename=law%2Fview%2Fpdf%2Fpbr%2Ftr2024-001.pdf",
+    "extractor": "pypdf/6.12.2",
+    "pages": 22,
+    "textCharacters": 61543,
+    "pagesWithoutText": [],
+    "ocrAssessment": "TEXT_EXTRACTED_ALL_PAGES",
+    "textRef": "pdf-text/97f6c6ca8e3bf87c382ec7d5f6856cfa2298b511fc30135fa914e34916307525.txt",
+    "textHash": "476bdc672571619d557bbd73ad6efa526b731bdab356ec0dcf02849a71ca8609",
+    "metadata": {
+      "/Producer": "htmldoc 1.9.8 Copyright 2011-2019 by Michael R Sweet / pdcat (www.pdf-tools.com)",
+      "/CreationDate": "D:20261028163149+0000",
+      "/Title": "Generated on: 29 October 2026, 03:31:48 AM"
+    },
+    "warning": "Text extraction is candidate evidence; reading order, tables, commencement and legal force require review."
+  }
+]

@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Produk Hukum Terbaru</title>
+        <link>https://jdih.kemenkeu.go.id/</link>
+        <description>Feed Produk Hukum terbaru Jaringan Dokumentasi dan Informasi Hukum (JDIH) Kementerian Keuangan</description>
+        <lastBuildDate>Wed, 28 Oct 2026 16:45:24 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>nextjs</generator>
+        <language>id</language>
+        <image>
+            <title>Produk Hukum Terbaru</title>
+            <url>https://jdih.kemenkeu.go.id/images/logo/logo-kemenkeu.png</url>
+            <link>https://jdih.kemenkeu.go.id/</link>
+        </image>
+        <copyright>Hak Cipta Kementerian Keuangan Republik Indonesia</copyright>
+        <atom:link href="https://jdih.kemenkeu.go.id/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[KMK 51/MK/EF.2/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-51mkef22026</link>
+            <guid isPermaLink="false">5a19624f-7e59-4314-b545-2142b4443a75</guid>
+            <pubDate>Tue, 27 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 28 Oktober 2026 Sampai Dengan 3 November 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KEP-218/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kep-218bc2026</link>
+            <guid isPermaLink="false">c6563129-0a2a-4782-be83-6e3c716ded0f</guid>
+            <pubDate>Mon, 19 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Pelaksanaan Uji Coba (Piloting) Sistem Aplikasi Fasilitas Kepabeanan Tahap Keempat]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 50/MK/EF.2/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-50mkef22026</link>
+            <guid isPermaLink="false">127046b0-1e92-4eab-b902-73a25ab192ae</guid>
+            <pubDate>Mon, 19 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 21 Oktober 2026 Sampai Dengan 27 Oktober 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[75/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/75mkbc2026</link>
+            <guid isPermaLink="false">951be650-a607-4d0c-8e0a-217c21413460</guid>
+            <pubDate>Wed, 14 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Harga Ekspor untuk Penghitungan Bea Keluar atas Produk Pertambangan yang Dikenakan Bea Keluar]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 49/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-49mkef22026</link>
+            <guid isPermaLink="false">3933558e-ac3f-4a9c-b560-16bc0615a273</guid>
+            <pubDate>Tue, 13 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 14 Oktober 2026 Sampai Dengan 20 Oktober 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 77 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-77-tahun-2026</link>
+            <guid isPermaLink="false">4cd6b766-19c6-4e83-a132-7b95327f02a1</guid>
+            <pubDate>Mon, 12 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Pajak Pertambahan Nilai atas Penyerahan Jasa Angkutan Udara Niaga Berjadwal Dalam Negeri Kelas Ekonomi pada Periode Libur Natal dan Tahun Baru yang Ditanggung Pemerintah Tahun Anggaran 2027]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 76 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-76-tahun-2026</link>
+            <guid isPermaLink="false">11b34ae5-de56-41f8-ae26-5e61ba9d8d31</guid>
+            <pubDate>Thu, 08 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Batas Maksimal Kumulatif Defisit Anggaran Pendapatan dan Belanja Daerah, Batas Maksimal Defisit Anggaran Pendapatan dan Belanja Daerah, dan Batas Maksimal Kumulatif Pembiayaan Utang
+Daerah Tahun Anggaran 2027]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[73/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/73mkbc2026</link>
+            <guid isPermaLink="false">cb4469cf-2f99-4d06-a9bc-38eef00bf16a</guid>
+            <pubDate>Thu, 08 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Jenis Satuan Barang yang Digunakan dalam Pemberitahuan Pabean Impor]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KEP-239/PJ/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kep-239pj2026</link>
+            <guid isPermaLink="false">b09fe1af-3a8a-4109-aa0c-c8e96e3dd32c</guid>
+            <pubDate>Thu, 08 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Kebijakan Perpajakan sehubungan dengan Pengurangan atau Penghapusan Sanksi Administratif]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[74/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/74mkbc2026</link>
+            <guid isPermaLink="false">f8291ece-31c8-4911-aa2b-ff595aef337d</guid>
+            <pubDate>Thu, 08 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Barang yang Dibatasi untuk Diimpor Berdasarkan Peraturan Menteri Perdagangan Nomor 24 Tahun 2025 tentang Kebijakan dan Pengaturan Impor Barang Dalam Keadaan Tidak Baru dan Limbah Non Bahan Berbahaya dan Beracun sebagaimana telah diubah dengan Peraturan Menteri Perdagangan Nomor 23 Tahun 2026 tentang Perubahan atas Peraturan Menteri Perdagangan Nomor 24 Tahun 2025 tentang Kebijakan dan Pengaturan Impor Barang Dalam Keadaan Tidak Baru dan Limbah Non Bahan Berbahaya dan Beracun]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 75 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-75-tahun-2026</link>
+            <guid isPermaLink="false">85229473-71be-4561-b436-3545a2ee59b2</guid>
+            <pubDate>Tue, 06 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Menteri Keuangan Nomor 85 Tahun 2023 tentang Jenis dan Tarif atas Jenis Penerimaan Negara Bukan Pajak yang Bersifat Volatil yang Berlaku pada Kementerian Pertanian]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 48/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-48mkef22026</link>
+            <guid isPermaLink="false">28f483b3-dd58-4115-8f74-7b2a7c8c3132</guid>
+            <pubDate>Tue, 06 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 7 Oktober 2026 Sampai Dengan 13 Oktober 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PER-13/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/per-13bc2026</link>
+            <guid isPermaLink="false">af783791-1856-4a63-8f4c-9c2e947fe034</guid>
+            <pubDate>Fri, 02 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Direktur Jenderal Bea dan Cukai Nomor PER-10/BC/2022 tentang Tata Laksana Pemotongan Kuota Barang Impor yang Mendapatkan Fasilitas Pembebasan atau Keringanan Bea Masuk atau Bea Masuk Ditanggung Pemerintah]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 72 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-72-tahun-2026</link>
+            <guid isPermaLink="false">6d921bbc-223f-4fc8-ab5e-8b0fdf98b4fd</guid>
+            <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Peraturan Menteri Keuangan tentang Perubahan atas Peraturan Menteri Keuangan Nomor 179/PMK.05/2017 tentang Sistem Akuntansi dan Pelaporan Keuangan Pengelolaan Pemberian Pinjaman]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 73 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-73-tahun-2026</link>
+            <guid isPermaLink="false">457920ad-0fbe-496b-921c-6a091555f736</guid>
+            <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tata Cara Pengalokasian, Pembayaran, dan Pertanggungjawaban Dana Bantuan untuk Kecukupan Dana Jaminan Sosial Kesehatan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 74 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-74-tahun-2026</link>
+            <guid isPermaLink="false">b1086565-80cd-4998-8ccd-eb86a364d941</guid>
+            <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tata Cara Pelaksanaan Kegiatan Subsidi Bunga/Subsidi Margin Kredit Perempuan Prasejahtera]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[71/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/71mkbc2026</link>
+            <guid isPermaLink="false">e7f8d8b4-9079-47fc-8b4b-add47984e192</guid>
+            <pubDate>Wed, 30 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Harga Ekspor Untuk Penghitungan Bea Keluar]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 47/MK/EF.2/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-47mkef22026</link>
+            <guid isPermaLink="false">04bd788d-16a0-4193-a4f8-b93c05a5ad0c</guid>
+            <pubDate>Wed, 30 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tarif Bunga Sebagai Dasar Penghitungan Sanksi Administratif Berupa Bunga Dan Pemberian Imbalan Bunga Periode 1 Oktober 2026 Sampai Dengan 31 Oktober 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 46/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-46mkef22026</link>
+            <guid isPermaLink="false">9036b74e-0e88-4616-947a-7d0f6a986293</guid>
+            <pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 30 September 2026 Sampai Dengan 6 Oktober 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 71 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-71-tahun-2026</link>
+            <guid isPermaLink="false">b74848d4-261b-49c5-a711-3282c66ffc16</guid>
+            <pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Menteri Keuangan Nomor 118 Tahun 2024 tentang Tata Cara Pembetulan, Keberatan, Pengurangan, Penghapusan, dan Pembatalan di Bidang Perpajakan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 70 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-70-tahun-2026</link>
+            <guid isPermaLink="false">94014ef5-2fa0-414e-9e7c-7d132318b907</guid>
+            <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penggunaan Penerimaan Pajak Rokok untuk Penegakan Hukum di Bidang Kepabeanan dan Cukai]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PER-12/PJ/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/per-12pj2026</link>
+            <guid isPermaLink="false">3b363822-6d42-404f-8c86-42c8f9492d38</guid>
+            <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Direktur Jenderal Pajak Nomor PER-11/PJ/2025 tentang Ketentuan Pelaporan Pajak Penghasilan, Pajak Pertambahan Nilai, Pajak Penjualan atas Barang Mewah, dan Bea Meterai dalam Rangka Pelaksanaan Sistem Inti Administrasi Perpajakan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 68 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-68-tahun-2026</link>
+            <guid isPermaLink="false">05912d1c-66c0-4c72-a403-a5c76275401f</guid>
+            <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan Keempat atas Peraturan Menteri Keuangan Nomor 26/PMK.010/2022 tentang Penetapan Sistem Klasifikasi Barang dan Pembebanan Tarif Bea Masuk atas Barang Impor]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 69 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-69-tahun-2026</link>
+            <guid isPermaLink="false">19be8538-f0d4-43a0-a6e4-e1719a353b03</guid>
+            <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Menteri Keuangan Nomor 60 Tahun 2026 tentang Penetapan Tarif Bea Masuk dalam Rangka Persetujuan antara Republik Indonesia dan Jepang mengenai suatu Kemitraan Ekonomi (Agreement between The Republic of Indonesia and Japan for an Economic Partnership)]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PER-12/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/per-12bc2026</link>
+            <guid isPermaLink="false">10280958-df1e-4b7b-a53c-845b82754cbf</guid>
+            <pubDate>Fri, 25 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tata Laksana Pemeriksaan Kepatuhan Pengusaha Barang Kena Cukai]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PER-11/PJ/2-26]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/per-11pj2-26</link>
+            <guid isPermaLink="false">d859e327-38eb-4a8f-bf0f-8c1c2f1b6e73</guid>
+            <pubDate>Tue, 22 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penyedia Printer Meterai Teraan Digital]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 45/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-45mkef22026</link>
+            <guid isPermaLink="false">ac33abff-350d-4c5c-ae40-fc73d79c6d0c</guid>
+            <pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 23 September 2026 Sampai Dengan 29 September 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 44/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-44mkef22026</link>
+            <guid isPermaLink="false">bf2dbcee-e887-4b87-a83f-0ba6757b9b0f</guid>
+            <pubDate>Tue, 15 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 16 September 2026 Sampai Dengan 22 September 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[66/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/66mkbc2026</link>
+            <guid isPermaLink="false">14cf3e53-0b1a-4a87-ad37-4afa246b9c4e</guid>
+            <pubDate>Mon, 14 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Harga Ekspor untuk Penghitungan Bea Keluar atas Produk Pertambangan yang Dikenakan Bea Keluar ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 42/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-42mkef22026</link>
+            <guid isPermaLink="false">1dade226-f616-49a3-babe-35f86ea88aba</guid>
+            <pubDate>Tue, 08 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 9 September 2026 Sampai Dengan 15 September 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KEP-185/PJ/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kep-185pj2026</link>
+            <guid isPermaLink="false">72d92e27-1492-43b9-a20d-c4602c231129</guid>
+            <pubDate>Wed, 02 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Kebijakan Administrasi Perpajakan sehubungan dengan Bencana Alam di Wilayah Provinsi Nusa Tenggara Timur Tahun 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 41/MK/EF.2/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-41mkef22026</link>
+            <guid isPermaLink="false">ee8fefef-848d-496c-915c-66b85425dc97</guid>
+            <pubDate>Tue, 01 Sep 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 2 September 2026 Sampai Dengan 8 September 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[61/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/61mkbc2026</link>
+            <guid isPermaLink="false">e9946ca0-d96a-4c07-80c3-65d7cd50c96e</guid>
+            <pubDate>Mon, 31 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Harga Ekspor untuk Penghitungan Bea Keluar]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 67 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-67-tahun-2026</link>
+            <guid isPermaLink="false">5a515fe0-1d04-465a-a398-816b6cf5baba</guid>
+            <pubDate>Mon, 31 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Strategi dan Pelaksanaan Pengelolaan Kelebihan dan Kekurangan Kas Pemerintah Pusat]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 40/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-40mkef22026</link>
+            <guid isPermaLink="false">315ceeed-864e-4173-8788-c1553d1072d7</guid>
+            <pubDate>Mon, 31 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tarif Bunga Sebagai Dasar Penghitungan Sanksi Administratif Berupa Bunga Dan Pemberian Imbalan Bunga Periode 1 September 2026 Sampai Dengan 30 September 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 66 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-66-tahun-2026</link>
+            <guid isPermaLink="false">f528aeba-90f3-4915-bc91-9cd90f165515</guid>
+            <pubDate>Thu, 27 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Menteri Keuangan Nomor 24 Tahun 2025 tentang Jenis dan Tarif atas Jenis Penerimaan Negara Bukan Pajak yang Bersifat Volatil yang Berlaku pada Badan Meteorologi, Klimatologi, dan Geofisika]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 65 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-65-tahun-2026</link>
+            <guid isPermaLink="false">f07abe8b-086f-46f2-aa05-80ceeae7fc4f</guid>
+            <pubDate>Wed, 26 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Menteri Keuangan Nomor 195/PMK.08/2020 tentang Lelang Surat Berharga Syariah Negara di Pasar Perdana Domestik]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 39/MK/EF.2/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-39mkef22026</link>
+            <guid isPermaLink="false">9162390a-62b4-42a8-a4ea-c566a44174ab</guid>
+            <pubDate>Tue, 25 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 26 Agustus 2026 Sampai Dengan 01 September 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 64 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-64-tahun-2026</link>
+            <guid isPermaLink="false">c3994484-9933-450f-84b1-833e532dee93</guid>
+            <pubDate>Fri, 21 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Petunjuk Teknis Akuntansi Penerimaan Negara Bukan Pajak dari Kegiatan Usaha Hulu Minyak dan Gas Bumi]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 38/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-38mkef22026</link>
+            <guid isPermaLink="false">c6db5d4c-be8d-44b2-b6b9-d4d25948c49f</guid>
+            <pubDate>Tue, 18 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 19 Agustus 2026 Sampai Dengan 25 Agustus 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PER-10/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/per-10bc2026</link>
+            <guid isPermaLink="false">a887a0d6-1d99-498d-bb9d-fdf1db2a9f4f</guid>
+            <pubDate>Tue, 18 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Pengelolaan Barang yang Dinyatakan Tidak Dikuasai, Barang yang Dikuasai Negara, dan Barang yang Menjadi Milik Negara di Tempat Penimbunan Pabean]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PER-9/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/per-9bc2026</link>
+            <guid isPermaLink="false">6685c31f-b32d-421c-b919-cf3f0c7859ef</guid>
+            <pubDate>Fri, 14 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Panduan Sistem Klasifikasi Barang Berupa Perhiasan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[57/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/57mkbc2026</link>
+            <guid isPermaLink="false">f121e76a-0f21-41df-9727-b6ad08eeef98</guid>
+            <pubDate>Fri, 14 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Harga Ekspor untuk Penghitungan Bea Keluar atas Produk Pertambangan yang Dikenakan Bea Keluar]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 63 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-63-tahun-2026</link>
+            <guid isPermaLink="false">fb811b56-0dff-42c1-b05e-58944d8b68a8</guid>
+            <pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Menteri Keuangan Nomor 98 Tahun 2024 tentang Jenis dan Tarif atas Jenis Penerimaan Negara Bukan Pajak yang Bersifat Volatil yang Berlaku pada Kementerian Agraria dan Tata Ruang/Badan Pertanahan Nasional]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 62 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-62-tahun-2026</link>
+            <guid isPermaLink="false">b113e7ff-c52d-48a4-a633-f83954a285f1</guid>
+            <pubDate>Tue, 11 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Jenis dan Tarif atas Jenis Penerimaan Negara Bukan Pajak yang Bersifat Volatil yang Berlaku pada Kementerian Pariwisata]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 37/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-37mkef22026</link>
+            <guid isPermaLink="false">77357d21-f58d-40d1-9932-35b829ae2473</guid>
+            <pubDate>Mon, 10 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 12 Agustus 2026 Sampai Dengan 18 Agustus 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 36/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-36mkef22026</link>
+            <guid isPermaLink="false">13add2f5-cd4a-4a77-9b05-90a642b26518</guid>
+            <pubDate>Tue, 04 Aug 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 05 Agustus 2026 Sampai Dengan 11 Agustus 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 60 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-60-tahun-2026</link>
+            <guid isPermaLink="false">d1978ab7-623b-4c7e-a1bb-52df2f93b4dc</guid>
+            <pubDate>Fri, 31 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Tarif Bea Masuk dalam rangka Persetujuan antara Republik Indonesia dan Jepang mengenai suatu Kemitraan Ekonomi (Agreement between The Republic of Indonesia and Japan for an Economic Partnership)]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[55/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/55mkbc2026</link>
+            <guid isPermaLink="false">963216f2-dccf-488d-9685-f0f941af1761</guid>
+            <pubDate>Fri, 31 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Harga Ekspor untuk Penghitungan Bea Keluar]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 61 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-61-tahun-2026</link>
+            <guid isPermaLink="false">63e843f0-2eae-4ce6-b489-c5764400deef</guid>
+            <pubDate>Fri, 31 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tata Cara Pemanfaatan Tarif Bea Masuk dengan Skema User Specific Duty Free Scheme dalam Rangka Persetujuan antara Republik Indonesia dan Jepang mengenai suatu Kemitraan Ekonomi (Agreement between the Republic of Indonesia and Japan for an Economic Partnership)]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 57 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-57-tahun-2026</link>
+            <guid isPermaLink="false">5d9aa216-fc02-47a7-8644-d8ff704a5bbf</guid>
+            <pubDate>Thu, 30 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Menteri Keuangan Nomor 52/PMK.04/2020 tentang Bentuk Fisik, Spesfikasi, dan Desain Pita Cukai]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 35/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-35mkef22026</link>
+            <guid isPermaLink="false">4aedefd8-d22f-43ad-b0d4-f36315b53f39</guid>
+            <pubDate>Thu, 30 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tarif Bunga Sebagai Dasar Penghitungan Sanksi Administratif Berupa Bunga Dan Pemberian Imbalan Bunga Periode 1 Agustus 2026 Sampai Dengan 31 Agustus 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 58 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-58-tahun-2026</link>
+            <guid isPermaLink="false">ea0daec2-cb33-4ff8-837d-f8aca16a946d</guid>
+            <pubDate>Thu, 30 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Organisasi dan Tata Kerja Instansi Vertikal Direktorat Jenderal Bea dan Cukai]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KEP-77/PP/2025]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kep-77pp2025</link>
+            <guid isPermaLink="false">9dd44cae-d1b9-4fa5-98d7-7b7fe6effe45</guid>
+            <pubDate>Thu, 30 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Pemberian Kompensasi bagi Penerima Layanan di Lingkungan Badan Pendidikan dan Pelatihan Keuangan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 59 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-59-tahun-2026</link>
+            <guid isPermaLink="false">a8a9d34d-b3e5-403f-b276-8529d0b5193f</guid>
+            <pubDate>Thu, 30 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Pajak Penghasilan Ditanggung Pemerintah atas Bunga atau Imbalan Surat Berharga Negara Dalam Valuta Asing yang Diterbitkan oleh Pemerintah di Pasar Perdana Domestik Tahun Anggaran 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 34/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-34mkef22026</link>
+            <guid isPermaLink="false">4ce48e57-e351-4c2f-bbda-8affdadad550</guid>
+            <pubDate>Tue, 28 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 29 Juli 2026 Sampai Dengan 04 Agustus 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PER-8/PJ/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/per-8pj2026</link>
+            <guid isPermaLink="false">132dd698-6713-4d40-ae12-50d6af1ab3a5</guid>
+            <pubDate>Tue, 28 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Direktur Jenderal Pajak Nomor PER-10/PJ/2024 tentang Ketentuan Pembayaran dan Penyetoran Pajak serta Pengembalian Kelebihan Pembayaran Pajak dalam Rangka Pelaksanaan Sistem Inti Administrasi Perpajakan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KEP-163/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kep-163bc2026</link>
+            <guid isPermaLink="false">2cb7a20a-ecc1-4d3c-a16a-077976fa23a2</guid>
+            <pubDate>Mon, 27 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penerapan Secara Penuh (Mandatory) CEISA 4.0 Tahap Kedua Puluh Lima]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 56 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-56-tahun-2026</link>
+            <guid isPermaLink="false">cb3debdc-6ea2-4505-bf13-fd5970621d4a</guid>
+            <pubDate>Fri, 24 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tata Cara Penyediaan, Pembayaran, dan Pertanggungjawaban Dana Untuk Diskon Biaya Listrik Tahun 2025]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 55 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-55-tahun-2026</link>
+            <guid isPermaLink="false">95e71d08-79e3-4713-80e9-8b01e815f47e</guid>
+            <pubDate>Wed, 22 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Konsultan Pajak dan Pihak Lain yang Bertindak sebagai Kuasa Wajib Pajak]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 54 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-54-tahun-2026</link>
+            <guid isPermaLink="false">a542d50f-87ce-4725-97f2-981bb68cece9</guid>
+            <pubDate>Wed, 22 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Standar Biaya Masukan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 53 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-53-tahun-2026</link>
+            <guid isPermaLink="false">a39dff43-18c4-4bbf-be8f-b31501d713d8</guid>
+            <pubDate>Wed, 22 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tata Cara Pengelolaan Dana Kerja Sama Pembangunan Internasional]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 33/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-33mkef22026</link>
+            <guid isPermaLink="false">1faf7a13-082a-46ab-a62c-b68118cb4f24</guid>
+            <pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 22 Juli 2026 Sampai Dengan 28 Juli 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 185 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-185-tahun-2026</link>
+            <guid isPermaLink="false">fbd45e3b-d170-4cdb-b4a5-dbae5e39f35e</guid>
+            <pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Pedoman Analisis Kebutuhan Pembelajaran Kementerian Keuangan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 50 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-50-tahun-2026</link>
+            <guid isPermaLink="false">ac7124b1-5cab-4962-b4c6-6a4374a902d6</guid>
+            <pubDate>Wed, 15 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan Ketiga atas Peraturan Menteri Keuangan Nomor 26/PMK.010/2022 tentang Penetapan Sistem Klasifikasi Barang dan Pembebanan Tarif Bea Masuk atas Barang Impor]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 52 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-52-tahun-2026</link>
+            <guid isPermaLink="false">7c2c80b1-ebee-49c0-b009-29a7f67a10c9</guid>
+            <pubDate>Wed, 15 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Impor Sementara dan Ekspor Sementara atas Pengemas yang Dapat Digunakan Secara Berulang]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 51 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-51-tahun-2026</link>
+            <guid isPermaLink="false">2864523c-facc-4e17-85b7-1f6676788be6</guid>
+            <pubDate>Wed, 15 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Angkut Terus atau Angkut Lanjut Barang Impor atau Barang Ekspor]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[48/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/48mkbc2026</link>
+            <guid isPermaLink="false">24e48e0e-0c8b-4ad7-a28f-207afc75e5a9</guid>
+            <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Harga Ekspor untuk Penghitungan Bea Keluar atas Produk Pertambangan yang Dikenakan Bea Keluar]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 49 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-49-tahun-2026</link>
+            <guid isPermaLink="false">7d60844d-0e4f-4756-9f52-1ad8828b8e6c</guid>
+            <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tata Cara Pemungutan Pajak Pertambahan Nilai Terhadap Transaksi Digital Luar Negeri yang Dilakukan melalui Sistem Pemungutan Pajak atas Transaksi Digital Luar Negeri]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 32/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-32mkef22026</link>
+            <guid isPermaLink="false">7b6b1307-6dda-4eae-9d99-3841903c6e33</guid>
+            <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 15 Juli 2026 Sampai Dengan 21 Juli 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[27/MK/PK/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/27mkpk2026</link>
+            <guid isPermaLink="false">b317695c-36f8-4bef-bdb7-08d09b07a08f</guid>
+            <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perpanjangan Batas Waktu Penyampaian Dokumen Persyaratan Penyaluran Dana Alokasi Khusus Fisik Tahun Anggaran 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 48 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-48-tahun-2026</link>
+            <guid isPermaLink="false">6401d742-6e25-4214-a197-8c3a50171259</guid>
+            <pubDate>Thu, 09 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Kriteria Eksportir yang Memenuhi Ketentuan Khusus dalam Pemenuhan Kewajiban Pemasukan, Penempatan, dan Penggunaan Devisa Hasil Ekspor Sumber Daya Alam]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KEP-59/PP/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kep-59pp2026</link>
+            <guid isPermaLink="false">1a9ec468-3a9d-4bca-8c4d-c00c44a30940</guid>
+            <pubDate>Wed, 08 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Standar Pelayanan di Lingkungan Badan Pendidikan dan Pelatihan Keuangan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 31/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-31mkef22026</link>
+            <guid isPermaLink="false">36016415-9ec7-4e92-b6c5-5e99b5665600</guid>
+            <pubDate>Tue, 07 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 08 Juli 2026 Sampai Dengan 14 Juli 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 47 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-47-tahun-2026</link>
+            <guid isPermaLink="false">6c17a8b2-7703-4924-bd30-e9dfe9842edd</guid>
+            <pubDate>Mon, 06 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Menteri Keuangan Nomor 64 Tahun 2024 tentang Tata Cara Pembentukan dan Pengelolaan Dana Abadi Daerah]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PP 30 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pp-30-tahun-2026</link>
+            <guid isPermaLink="false">f6964bad-22a9-490a-8113-495029b26d49</guid>
+            <pubDate>Thu, 02 Jul 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Jenis dan Tarif atas Jenis Penerimaan Negara Bukan Pajak yang Berlaku pada Kementerian Hukum]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[42/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/42mkbc2026</link>
+            <guid isPermaLink="false">f7d3716a-5388-4045-8274-712728929972</guid>
+            <pubDate>Tue, 30 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Harga Ekspor Untuk Penghitungan Bea Keluar]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 30/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-30mkef22026</link>
+            <guid isPermaLink="false">99dfc7a4-f9d2-4300-bbff-93d6e4c311da</guid>
+            <pubDate>Tue, 30 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 01 Juli 2026 Sampai Dengan 07 Juli 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PER-6/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/per-6bc2026</link>
+            <guid isPermaLink="false">c884e08d-ba9b-4ce0-a964-a5d977b17933</guid>
+            <pubDate>Mon, 29 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Peraturan Direktur Jenderal Bea dan Cukai Nomor PER-15/BC/2023 tentang Pedoman Pelaksanaan Distribusi Target Penerimaan Kepabeanan dan Cukai]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 29/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-29mkef22026</link>
+            <guid isPermaLink="false">0fdb7eb1-3855-44b5-8c4a-48f321754d54</guid>
+            <pubDate>Mon, 29 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tarif Bunga Sebagai Dasar Penghitungan Sanksi Administratif Berupa Bunga Dan Pemberian Imbalan Bunga Periode 1 Juli 2026 Sampai Dengan 31 Juli 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[41/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/41mkbc2026</link>
+            <guid isPermaLink="false">7c8e67dc-aa41-45b8-baea-110baa93fa7b</guid>
+            <pubDate>Mon, 29 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Jenis Satuan Barang yang Digunakan dalam Pemberitahuan Pabean Ekspor]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[40/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/40mkbc2026</link>
+            <guid isPermaLink="false">2c24d48b-dc19-40be-9474-37b63b282a7a</guid>
+            <pubDate>Fri, 26 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Barang yang Dibatasi untuk Diimpor Berdasarkan Peraturan Menteri Perdagangan Nomor 16 Tahun 2025 tentang Kebijakan dan Pengaturan Impor sebagaimana telah diubah terakhir dengan Peraturan Menteri Perdagangan Nomor 18 Tahun 2026 tentang Perubahan Kedua atas Peraturan Menteri Perdagangan Nomor 16 Tahun 2025 tentang Kebijakan dan Pengaturan Impor]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 26/MK/PK/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-26mkpk2026</link>
+            <guid isPermaLink="false">39953788-b9be-4125-abcb-52ded34ae93a</guid>
+            <pubDate>Fri, 26 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan Ketiga atas Keputusan Menteri Keuangan Republik Indonesia Nomor 11/KM.7/2024 tentang Penandaan Rincian Belanja Infrastruktur Pelayanan Publik untuk Evaluasi Pemenuhan Belanja Wajib dalam Anggaran Pendapatan dan Belanja Daerah]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 25/MK/PK/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-25mkpk2026</link>
+            <guid isPermaLink="false">dee6de8d-d12f-4a4d-9c82-eeb08cc419ce</guid>
+            <pubDate>Fri, 26 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan Ketiga atas Keputusan Menteri Keuangan Republik Indonesia Nomor 10/KM.7/2024 tentang Penandaan Rincian Belanja Pendidikan Untuk Evaluasi Pemenuhan Belanja Wajib Dalam Anggaran Pendapatan dan Belanja Daerah]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KEP-146/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kep-146bc2026</link>
+            <guid isPermaLink="false">ee6810df-56e3-4d09-9ef0-d77d784aa6a4</guid>
+            <pubDate>Thu, 25 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan Ketiga atas Keputusan Direktur Jenderal Bea dan Cukai Nomor KEP-173/BC/2024 tentang Penerapan Secara Penuh (Mandatory) Kesepakatan Pengakuan Timbal Balik Operator Ekonomi Bersertifikat (Mutual Recognition Arrangement on Authorized Economic Operator) antara Direktorat Jenderal Bea dan Cukai dengan Administrasi Kepabeanan Negara Anggota ASEAN]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 45 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-45-tahun-2026</link>
+            <guid isPermaLink="false">e108defc-8859-4bd9-a2c6-baa05ef66d5e</guid>
+            <pubDate>Wed, 24 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Pembebasan Bea Masuk atas Impor Persenjataan, Amunisi, Perlengkapan Militer dan Kepolisian, Termasuk Suku Cadang, serta Barang dan Bahan yang Dipergunakan untuk Menghasilkan Barang yang Dipergunakan bagi Keperluan Pertahanan dan Keamanan Negara]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 28/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-28mkef22026</link>
+            <guid isPermaLink="false">a458b38b-6b8e-4ac3-b410-a2503ff3bcf7</guid>
+            <pubDate>Tue, 23 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 24 Juni 2026 Sampai Dengan 30 Juni 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 44 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-44-tahun-2026</link>
+            <guid isPermaLink="false">7b91aac9-4c4c-4839-9873-cc29c0a9a70b</guid>
+            <pubDate>Mon, 22 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Persyaratan untuk Menjadi Kuasa di Bidang Perpajakan dan Tata Cara Pelaksanaan Hak dan Pemenuhan Kewajiban Kuasa di Bidang Perpajakan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 43 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-43-tahun-2026</link>
+            <guid isPermaLink="false">bb3581f3-95b2-4c81-92f2-f3aedd92c52f</guid>
+            <pubDate>Sat, 20 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Pajak Pertambahan Nilai atas Penyerahan Jasa Angkutan Udara Niaga Berjadwal Dalam Negeri Kelas Ekonomi pada Periode Libur Sekolah yang Ditanggung Pemerintah Tahun Anggaran 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[UU 4 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/uu-4-tahun-2026</link>
+            <guid isPermaLink="false">803feb95-9cd5-4e5c-b7c2-bb7c86344853</guid>
+            <pubDate>Wed, 17 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan atas Undang-Undang Nomor 4 Tahun 2023 tentang Pengembangan dan Penguatan Sektor Keuangan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 27/MK/EF.2/2026 ]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-27mkef22026</link>
+            <guid isPermaLink="false">77d99d84-a8c0-4ec7-8863-e06dbe8c22ad</guid>
+            <pubDate>Tue, 16 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 17 Juni 2026 Sampai Dengan 23 Juni 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PP 20 Tahun 2026: Keseimbangan antara Kemudahan dan Keadilan Pajak UMKM]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/df8d204b-cd6a-48d4-b6ab-cb3db785fda4</link>
+            <guid isPermaLink="false">df8d204b-cd6a-48d4-b6ab-cb3db785fda4</guid>
+            <pubDate>Mon, 15 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[PP 20 Tahun 2026: Keseimbangan antara Kemudahan dan Keadilan Pajak UMKM]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 42 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-42-tahun-2026</link>
+            <guid isPermaLink="false">473b61a7-8023-41b5-b3e9-02b14ed06294</guid>
+            <pubDate>Mon, 15 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penambahan Investasi Pemerintah Republik Indonesia pada Lembaga Keuangan Internasional Tahun Anggaran 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[36/MK/BC/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/36mkbc2026</link>
+            <guid isPermaLink="false">52963f50-99cd-407d-b90c-aa6d08e15e8e</guid>
+            <pubDate>Fri, 12 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penetapan Harga Ekspor untuk Penghitungan Bea Keluar atas Produk Pertambangan yang Dikenakan Bea Keluar]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 41 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-41-tahun-2026</link>
+            <guid isPermaLink="false">fe751e42-8429-4852-9d9a-7fd6b70009ec</guid>
+            <pubDate>Fri, 12 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Perubahan Kedua atas Peraturan Menteri Keuangan Nomor 62 Tahun 2023 tentang Perencanaan Anggaran, Pelaksanaan Anggaran, serta Akuntansi dan Pelaporan Keuangan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PER-1/PP/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/per-1pp2026</link>
+            <guid isPermaLink="false">5253720d-8f65-48e4-a338-b64f44fa1887</guid>
+            <pubDate>Wed, 10 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Tata Kelola Kurasi Aset Intelektual di Lingkungan Kementerian Keuangan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 26/MK/EF.2/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-26mkef22026</link>
+            <guid isPermaLink="false">221fece8-e72a-43ae-820c-077fc4a21234</guid>
+            <pubDate>Tue, 09 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 10 Juni 2026 Sampai Dengan 16 Juni 2026 ]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[Penerapan PP Nomor 20 Tahun 2026 terhadap Pajak UMKM: Reformasi Perpajakan untuk Mendorong Keadilan dan Kepatuhan]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/2e73ff69-f0bf-4a97-a97b-fe1cfb9fbb63</link>
+            <guid isPermaLink="false">2e73ff69-f0bf-4a97-a97b-fe1cfb9fbb63</guid>
+            <pubDate>Mon, 08 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Penerapan PP Nomor 20 Tahun 2026 terhadap Pajak UMKM: Reformasi Perpajakan untuk Mendorong Keadilan dan Kepatuhan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[PMK 40 TAHUN 2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/pmk-40-tahun-2026</link>
+            <guid isPermaLink="false">34881d42-3de5-40d3-85ec-7352d8df9317</guid>
+            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Pengenaan Bea Masuk Antidumping atas Impor Produk Kertas Karton Dupleks dari Republik Korea, Malaysia, dan Taiwan]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+        <item>
+            <title><![CDATA[KMK 25/MK/EF.2/2026]]></title>
+            <link>https://jdih.kemenkeu.go.id/dok/kmk-25mkef22026</link>
+            <guid isPermaLink="false">1b3748a1-7d9d-4800-8bd6-957d6b1f5cc7</guid>
+            <pubDate>Tue, 02 Jun 2026 12:00:00 GMT</pubDate>
+            <description><![CDATA[Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 3 Juni 2026 Sampai Dengan 9 Juni 2026]]></description>
+            <author>kemenkeu.prime@kemenkeu.go.id (JDIH Kementerian Keuangan)</author>
+        </item>
+    </channel>
+</rss>

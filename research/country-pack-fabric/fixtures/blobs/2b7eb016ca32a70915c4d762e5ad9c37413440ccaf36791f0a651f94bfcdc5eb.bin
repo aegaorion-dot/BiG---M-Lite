@@ -1,0 +1,1114 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Produk Hukum Terbaru",
+    "home_page_url": "https://jdih.kemenkeu.go.id/",
+    "feed_url": "https://jdih.kemenkeu.go.id/feed.json",
+    "description": "Feed Produk Hukum terbaru Jaringan Dokumentasi dan Informasi Hukum (JDIH) Kementerian Keuangan",
+    "icon": "https://jdih.kemenkeu.go.id/images/logo/logo-kemenkeu.png",
+    "author": {
+        "name": "JDIH Kementerian Keuangan",
+        "url": "https://jdih.kemenkeu.go.id"
+    },
+    "items": [
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-51mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 28 Oktober 2026 Sampai Dengan 3 November 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-51mkef22026",
+            "title": "KMK 51/MK/EF.2/2026",
+            "date_modified": "2026-10-27T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kep-218bc2026",
+            "content_html": "Pelaksanaan Uji Coba (Piloting) Sistem Aplikasi Fasilitas Kepabeanan Tahap Keempat",
+            "url": "https://jdih.kemenkeu.go.id/dok/kep-218bc2026",
+            "title": "KEP-218/BC/2026",
+            "date_modified": "2026-10-19T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-50mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 21 Oktober 2026 Sampai Dengan 27 Oktober 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-50mkef22026",
+            "title": "KMK 50/MK/EF.2/2026",
+            "date_modified": "2026-10-19T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/75mkbc2026",
+            "content_html": "Penetapan Harga Ekspor untuk Penghitungan Bea Keluar atas Produk Pertambangan yang Dikenakan Bea Keluar",
+            "url": "https://jdih.kemenkeu.go.id/dok/75mkbc2026",
+            "title": "75/MK/BC/2026",
+            "date_modified": "2026-10-14T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-49mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 14 Oktober 2026 Sampai Dengan 20 Oktober 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-49mkef22026",
+            "title": "KMK 49/MK/EF.2/2026 ",
+            "date_modified": "2026-10-13T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-77-tahun-2026",
+            "content_html": "Pajak Pertambahan Nilai atas Penyerahan Jasa Angkutan Udara Niaga Berjadwal Dalam Negeri Kelas Ekonomi pada Periode Libur Natal dan Tahun Baru yang Ditanggung Pemerintah Tahun Anggaran 2027",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-77-tahun-2026",
+            "title": "PMK 77 TAHUN 2026",
+            "date_modified": "2026-10-12T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-76-tahun-2026",
+            "content_html": "Batas Maksimal Kumulatif Defisit Anggaran Pendapatan dan Belanja Daerah, Batas Maksimal Defisit Anggaran Pendapatan dan Belanja Daerah, dan Batas Maksimal Kumulatif Pembiayaan Utang\nDaerah Tahun Anggaran 2027",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-76-tahun-2026",
+            "title": "PMK 76 TAHUN 2026",
+            "date_modified": "2026-10-08T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/73mkbc2026",
+            "content_html": "Penetapan Jenis Satuan Barang yang Digunakan dalam Pemberitahuan Pabean Impor",
+            "url": "https://jdih.kemenkeu.go.id/dok/73mkbc2026",
+            "title": "73/MK/BC/2026",
+            "date_modified": "2026-10-08T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kep-239pj2026",
+            "content_html": "Kebijakan Perpajakan sehubungan dengan Pengurangan atau Penghapusan Sanksi Administratif",
+            "url": "https://jdih.kemenkeu.go.id/dok/kep-239pj2026",
+            "title": "KEP-239/PJ/2026",
+            "date_modified": "2026-10-08T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/74mkbc2026",
+            "content_html": "Barang yang Dibatasi untuk Diimpor Berdasarkan Peraturan Menteri Perdagangan Nomor 24 Tahun 2025 tentang Kebijakan dan Pengaturan Impor Barang Dalam Keadaan Tidak Baru dan Limbah Non Bahan Berbahaya dan Beracun sebagaimana telah diubah dengan Peraturan Menteri Perdagangan Nomor 23 Tahun 2026 tentang Perubahan atas Peraturan Menteri Perdagangan Nomor 24 Tahun 2025 tentang Kebijakan dan Pengaturan Impor Barang Dalam Keadaan Tidak Baru dan Limbah Non Bahan Berbahaya dan Beracun",
+            "url": "https://jdih.kemenkeu.go.id/dok/74mkbc2026",
+            "title": "74/MK/BC/2026",
+            "date_modified": "2026-10-08T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-75-tahun-2026",
+            "content_html": "Perubahan atas Peraturan Menteri Keuangan Nomor 85 Tahun 2023 tentang Jenis dan Tarif atas Jenis Penerimaan Negara Bukan Pajak yang Bersifat Volatil yang Berlaku pada Kementerian Pertanian",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-75-tahun-2026",
+            "title": "PMK 75 TAHUN 2026",
+            "date_modified": "2026-10-06T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-48mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 7 Oktober 2026 Sampai Dengan 13 Oktober 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-48mkef22026",
+            "title": "KMK 48/MK/EF.2/2026 ",
+            "date_modified": "2026-10-06T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/per-13bc2026",
+            "content_html": "Perubahan atas Peraturan Direktur Jenderal Bea dan Cukai Nomor PER-10/BC/2022 tentang Tata Laksana Pemotongan Kuota Barang Impor yang Mendapatkan Fasilitas Pembebasan atau Keringanan Bea Masuk atau Bea Masuk Ditanggung Pemerintah",
+            "url": "https://jdih.kemenkeu.go.id/dok/per-13bc2026",
+            "title": "PER-13/BC/2026",
+            "date_modified": "2026-10-02T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-72-tahun-2026",
+            "content_html": "Peraturan Menteri Keuangan tentang Perubahan atas Peraturan Menteri Keuangan Nomor 179/PMK.05/2017 tentang Sistem Akuntansi dan Pelaporan Keuangan Pengelolaan Pemberian Pinjaman",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-72-tahun-2026",
+            "title": "PMK 72 TAHUN 2026",
+            "date_modified": "2026-10-01T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-73-tahun-2026",
+            "content_html": "Tata Cara Pengalokasian, Pembayaran, dan Pertanggungjawaban Dana Bantuan untuk Kecukupan Dana Jaminan Sosial Kesehatan",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-73-tahun-2026",
+            "title": "PMK 73 TAHUN 2026",
+            "date_modified": "2026-10-01T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-74-tahun-2026",
+            "content_html": "Tata Cara Pelaksanaan Kegiatan Subsidi Bunga/Subsidi Margin Kredit Perempuan Prasejahtera",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-74-tahun-2026",
+            "title": "PMK 74 TAHUN 2026",
+            "date_modified": "2026-10-01T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/71mkbc2026",
+            "content_html": "Penetapan Harga Ekspor Untuk Penghitungan Bea Keluar",
+            "url": "https://jdih.kemenkeu.go.id/dok/71mkbc2026",
+            "title": "71/MK/BC/2026",
+            "date_modified": "2026-09-30T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-47mkef22026",
+            "content_html": "Tarif Bunga Sebagai Dasar Penghitungan Sanksi Administratif Berupa Bunga Dan Pemberian Imbalan Bunga Periode 1 Oktober 2026 Sampai Dengan 31 Oktober 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-47mkef22026",
+            "title": "KMK 47/MK/EF.2/2026",
+            "date_modified": "2026-09-30T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-46mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 30 September 2026 Sampai Dengan 6 Oktober 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-46mkef22026",
+            "title": "KMK 46/MK/EF.2/2026 ",
+            "date_modified": "2026-09-29T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-71-tahun-2026",
+            "content_html": "Perubahan atas Peraturan Menteri Keuangan Nomor 118 Tahun 2024 tentang Tata Cara Pembetulan, Keberatan, Pengurangan, Penghapusan, dan Pembatalan di Bidang Perpajakan",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-71-tahun-2026",
+            "title": "PMK 71 TAHUN 2026",
+            "date_modified": "2026-09-29T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-70-tahun-2026",
+            "content_html": "Penggunaan Penerimaan Pajak Rokok untuk Penegakan Hukum di Bidang Kepabeanan dan Cukai",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-70-tahun-2026",
+            "title": "PMK 70 TAHUN 2026",
+            "date_modified": "2026-09-28T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/per-12pj2026",
+            "content_html": "Perubahan atas Peraturan Direktur Jenderal Pajak Nomor PER-11/PJ/2025 tentang Ketentuan Pelaporan Pajak Penghasilan, Pajak Pertambahan Nilai, Pajak Penjualan atas Barang Mewah, dan Bea Meterai dalam Rangka Pelaksanaan Sistem Inti Administrasi Perpajakan",
+            "url": "https://jdih.kemenkeu.go.id/dok/per-12pj2026",
+            "title": "PER-12/PJ/2026",
+            "date_modified": "2026-09-28T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-68-tahun-2026",
+            "content_html": "Perubahan Keempat atas Peraturan Menteri Keuangan Nomor 26/PMK.010/2022 tentang Penetapan Sistem Klasifikasi Barang dan Pembebanan Tarif Bea Masuk atas Barang Impor",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-68-tahun-2026",
+            "title": "PMK 68 TAHUN 2026",
+            "date_modified": "2026-09-28T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-69-tahun-2026",
+            "content_html": "Perubahan atas Peraturan Menteri Keuangan Nomor 60 Tahun 2026 tentang Penetapan Tarif Bea Masuk dalam Rangka Persetujuan antara Republik Indonesia dan Jepang mengenai suatu Kemitraan Ekonomi (Agreement between The Republic of Indonesia and Japan for an Economic Partnership)",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-69-tahun-2026",
+            "title": "PMK 69 TAHUN 2026",
+            "date_modified": "2026-09-28T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/per-12bc2026",
+            "content_html": "Tata Laksana Pemeriksaan Kepatuhan Pengusaha Barang Kena Cukai",
+            "url": "https://jdih.kemenkeu.go.id/dok/per-12bc2026",
+            "title": "PER-12/BC/2026",
+            "date_modified": "2026-09-25T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/per-11pj2-26",
+            "content_html": "Penyedia Printer Meterai Teraan Digital",
+            "url": "https://jdih.kemenkeu.go.id/dok/per-11pj2-26",
+            "title": "PER-11/PJ/2-26",
+            "date_modified": "2026-09-22T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-45mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 23 September 2026 Sampai Dengan 29 September 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-45mkef22026",
+            "title": "KMK 45/MK/EF.2/2026 ",
+            "date_modified": "2026-09-21T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-44mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 16 September 2026 Sampai Dengan 22 September 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-44mkef22026",
+            "title": "KMK 44/MK/EF.2/2026 ",
+            "date_modified": "2026-09-15T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/66mkbc2026",
+            "content_html": "Penetapan Harga Ekspor untuk Penghitungan Bea Keluar atas Produk Pertambangan yang Dikenakan Bea Keluar ",
+            "url": "https://jdih.kemenkeu.go.id/dok/66mkbc2026",
+            "title": "66/MK/BC/2026",
+            "date_modified": "2026-09-14T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-42mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 9 September 2026 Sampai Dengan 15 September 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-42mkef22026",
+            "title": "KMK 42/MK/EF.2/2026 ",
+            "date_modified": "2026-09-08T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kep-185pj2026",
+            "content_html": "Kebijakan Administrasi Perpajakan sehubungan dengan Bencana Alam di Wilayah Provinsi Nusa Tenggara Timur Tahun 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/kep-185pj2026",
+            "title": "KEP-185/PJ/2026",
+            "date_modified": "2026-09-02T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-41mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 2 September 2026 Sampai Dengan 8 September 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-41mkef22026",
+            "title": "KMK 41/MK/EF.2/2026",
+            "date_modified": "2026-09-01T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/61mkbc2026",
+            "content_html": "Penetapan Harga Ekspor untuk Penghitungan Bea Keluar",
+            "url": "https://jdih.kemenkeu.go.id/dok/61mkbc2026",
+            "title": "61/MK/BC/2026",
+            "date_modified": "2026-08-31T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-67-tahun-2026",
+            "content_html": "Strategi dan Pelaksanaan Pengelolaan Kelebihan dan Kekurangan Kas Pemerintah Pusat",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-67-tahun-2026",
+            "title": "PMK 67 TAHUN 2026",
+            "date_modified": "2026-08-31T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-40mkef22026",
+            "content_html": "Tarif Bunga Sebagai Dasar Penghitungan Sanksi Administratif Berupa Bunga Dan Pemberian Imbalan Bunga Periode 1 September 2026 Sampai Dengan 30 September 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-40mkef22026",
+            "title": "KMK 40/MK/EF.2/2026 ",
+            "date_modified": "2026-08-31T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-66-tahun-2026",
+            "content_html": "Perubahan atas Peraturan Menteri Keuangan Nomor 24 Tahun 2025 tentang Jenis dan Tarif atas Jenis Penerimaan Negara Bukan Pajak yang Bersifat Volatil yang Berlaku pada Badan Meteorologi, Klimatologi, dan Geofisika",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-66-tahun-2026",
+            "title": "PMK 66 TAHUN 2026",
+            "date_modified": "2026-08-27T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-65-tahun-2026",
+            "content_html": "Perubahan atas Peraturan Menteri Keuangan Nomor 195/PMK.08/2020 tentang Lelang Surat Berharga Syariah Negara di Pasar Perdana Domestik",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-65-tahun-2026",
+            "title": "PMK 65 TAHUN 2026",
+            "date_modified": "2026-08-26T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-39mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 26 Agustus 2026 Sampai Dengan 01 September 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-39mkef22026",
+            "title": "KMK 39/MK/EF.2/2026",
+            "date_modified": "2026-08-25T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-64-tahun-2026",
+            "content_html": "Petunjuk Teknis Akuntansi Penerimaan Negara Bukan Pajak dari Kegiatan Usaha Hulu Minyak dan Gas Bumi",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-64-tahun-2026",
+            "title": "PMK 64 TAHUN 2026",
+            "date_modified": "2026-08-21T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-38mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 19 Agustus 2026 Sampai Dengan 25 Agustus 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-38mkef22026",
+            "title": "KMK 38/MK/EF.2/2026 ",
+            "date_modified": "2026-08-18T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/per-10bc2026",
+            "content_html": "Pengelolaan Barang yang Dinyatakan Tidak Dikuasai, Barang yang Dikuasai Negara, dan Barang yang Menjadi Milik Negara di Tempat Penimbunan Pabean",
+            "url": "https://jdih.kemenkeu.go.id/dok/per-10bc2026",
+            "title": "PER-10/BC/2026",
+            "date_modified": "2026-08-18T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/per-9bc2026",
+            "content_html": "Panduan Sistem Klasifikasi Barang Berupa Perhiasan",
+            "url": "https://jdih.kemenkeu.go.id/dok/per-9bc2026",
+            "title": "PER-9/BC/2026",
+            "date_modified": "2026-08-14T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/57mkbc2026",
+            "content_html": "Penetapan Harga Ekspor untuk Penghitungan Bea Keluar atas Produk Pertambangan yang Dikenakan Bea Keluar",
+            "url": "https://jdih.kemenkeu.go.id/dok/57mkbc2026",
+            "title": "57/MK/BC/2026",
+            "date_modified": "2026-08-14T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-63-tahun-2026",
+            "content_html": "Perubahan atas Peraturan Menteri Keuangan Nomor 98 Tahun 2024 tentang Jenis dan Tarif atas Jenis Penerimaan Negara Bukan Pajak yang Bersifat Volatil yang Berlaku pada Kementerian Agraria dan Tata Ruang/Badan Pertanahan Nasional",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-63-tahun-2026",
+            "title": "PMK 63 TAHUN 2026",
+            "date_modified": "2026-08-11T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-62-tahun-2026",
+            "content_html": "Jenis dan Tarif atas Jenis Penerimaan Negara Bukan Pajak yang Bersifat Volatil yang Berlaku pada Kementerian Pariwisata",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-62-tahun-2026",
+            "title": "PMK 62 TAHUN 2026",
+            "date_modified": "2026-08-11T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-37mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 12 Agustus 2026 Sampai Dengan 18 Agustus 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-37mkef22026",
+            "title": "KMK 37/MK/EF.2/2026 ",
+            "date_modified": "2026-08-10T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-36mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 05 Agustus 2026 Sampai Dengan 11 Agustus 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-36mkef22026",
+            "title": "KMK 36/MK/EF.2/2026 ",
+            "date_modified": "2026-08-04T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-60-tahun-2026",
+            "content_html": "Penetapan Tarif Bea Masuk dalam rangka Persetujuan antara Republik Indonesia dan Jepang mengenai suatu Kemitraan Ekonomi (Agreement between The Republic of Indonesia and Japan for an Economic Partnership)",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-60-tahun-2026",
+            "title": "PMK 60 TAHUN 2026",
+            "date_modified": "2026-07-31T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/55mkbc2026",
+            "content_html": "Penetapan Harga Ekspor untuk Penghitungan Bea Keluar",
+            "url": "https://jdih.kemenkeu.go.id/dok/55mkbc2026",
+            "title": "55/MK/BC/2026",
+            "date_modified": "2026-07-31T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-61-tahun-2026",
+            "content_html": "Tata Cara Pemanfaatan Tarif Bea Masuk dengan Skema User Specific Duty Free Scheme dalam Rangka Persetujuan antara Republik Indonesia dan Jepang mengenai suatu Kemitraan Ekonomi (Agreement between the Republic of Indonesia and Japan for an Economic Partnership)",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-61-tahun-2026",
+            "title": "PMK 61 TAHUN 2026",
+            "date_modified": "2026-07-31T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-57-tahun-2026",
+            "content_html": "Perubahan atas Peraturan Menteri Keuangan Nomor 52/PMK.04/2020 tentang Bentuk Fisik, Spesfikasi, dan Desain Pita Cukai",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-57-tahun-2026",
+            "title": "PMK 57 TAHUN 2026",
+            "date_modified": "2026-07-30T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-35mkef22026",
+            "content_html": "Tarif Bunga Sebagai Dasar Penghitungan Sanksi Administratif Berupa Bunga Dan Pemberian Imbalan Bunga Periode 1 Agustus 2026 Sampai Dengan 31 Agustus 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-35mkef22026",
+            "title": "KMK 35/MK/EF.2/2026 ",
+            "date_modified": "2026-07-30T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-58-tahun-2026",
+            "content_html": "Organisasi dan Tata Kerja Instansi Vertikal Direktorat Jenderal Bea dan Cukai",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-58-tahun-2026",
+            "title": "PMK 58 TAHUN 2026",
+            "date_modified": "2026-07-30T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kep-77pp2025",
+            "content_html": "Pemberian Kompensasi bagi Penerima Layanan di Lingkungan Badan Pendidikan dan Pelatihan Keuangan",
+            "url": "https://jdih.kemenkeu.go.id/dok/kep-77pp2025",
+            "title": "KEP-77/PP/2025",
+            "date_modified": "2026-07-30T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-59-tahun-2026",
+            "content_html": "Pajak Penghasilan Ditanggung Pemerintah atas Bunga atau Imbalan Surat Berharga Negara Dalam Valuta Asing yang Diterbitkan oleh Pemerintah di Pasar Perdana Domestik Tahun Anggaran 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-59-tahun-2026",
+            "title": "PMK 59 TAHUN 2026",
+            "date_modified": "2026-07-30T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-34mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 29 Juli 2026 Sampai Dengan 04 Agustus 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-34mkef22026",
+            "title": "KMK 34/MK/EF.2/2026 ",
+            "date_modified": "2026-07-28T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/per-8pj2026",
+            "content_html": "Perubahan atas Peraturan Direktur Jenderal Pajak Nomor PER-10/PJ/2024 tentang Ketentuan Pembayaran dan Penyetoran Pajak serta Pengembalian Kelebihan Pembayaran Pajak dalam Rangka Pelaksanaan Sistem Inti Administrasi Perpajakan",
+            "url": "https://jdih.kemenkeu.go.id/dok/per-8pj2026",
+            "title": "PER-8/PJ/2026",
+            "date_modified": "2026-07-28T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kep-163bc2026",
+            "content_html": "Penerapan Secara Penuh (Mandatory) CEISA 4.0 Tahap Kedua Puluh Lima",
+            "url": "https://jdih.kemenkeu.go.id/dok/kep-163bc2026",
+            "title": "KEP-163/BC/2026",
+            "date_modified": "2026-07-27T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-56-tahun-2026",
+            "content_html": "Tata Cara Penyediaan, Pembayaran, dan Pertanggungjawaban Dana Untuk Diskon Biaya Listrik Tahun 2025",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-56-tahun-2026",
+            "title": "PMK 56 TAHUN 2026",
+            "date_modified": "2026-07-24T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-55-tahun-2026",
+            "content_html": "Konsultan Pajak dan Pihak Lain yang Bertindak sebagai Kuasa Wajib Pajak",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-55-tahun-2026",
+            "title": "PMK 55 TAHUN 2026",
+            "date_modified": "2026-07-22T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-54-tahun-2026",
+            "content_html": "Standar Biaya Masukan",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-54-tahun-2026",
+            "title": "PMK 54 TAHUN 2026",
+            "date_modified": "2026-07-22T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-53-tahun-2026",
+            "content_html": "Tata Cara Pengelolaan Dana Kerja Sama Pembangunan Internasional",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-53-tahun-2026",
+            "title": "PMK 53 TAHUN 2026",
+            "date_modified": "2026-07-22T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-33mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 22 Juli 2026 Sampai Dengan 28 Juli 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-33mkef22026",
+            "title": "KMK 33/MK/EF.2/2026 ",
+            "date_modified": "2026-07-21T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-185-tahun-2026",
+            "content_html": "Pedoman Analisis Kebutuhan Pembelajaran Kementerian Keuangan",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-185-tahun-2026",
+            "title": "KMK 185 TAHUN 2026",
+            "date_modified": "2026-07-21T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-50-tahun-2026",
+            "content_html": "Perubahan Ketiga atas Peraturan Menteri Keuangan Nomor 26/PMK.010/2022 tentang Penetapan Sistem Klasifikasi Barang dan Pembebanan Tarif Bea Masuk atas Barang Impor",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-50-tahun-2026",
+            "title": "PMK 50 TAHUN 2026",
+            "date_modified": "2026-07-15T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-52-tahun-2026",
+            "content_html": "Impor Sementara dan Ekspor Sementara atas Pengemas yang Dapat Digunakan Secara Berulang",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-52-tahun-2026",
+            "title": "PMK 52 TAHUN 2026",
+            "date_modified": "2026-07-15T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-51-tahun-2026",
+            "content_html": "Angkut Terus atau Angkut Lanjut Barang Impor atau Barang Ekspor",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-51-tahun-2026",
+            "title": "PMK 51 TAHUN 2026",
+            "date_modified": "2026-07-15T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/48mkbc2026",
+            "content_html": "Penetapan Harga Ekspor untuk Penghitungan Bea Keluar atas Produk Pertambangan yang Dikenakan Bea Keluar",
+            "url": "https://jdih.kemenkeu.go.id/dok/48mkbc2026",
+            "title": "48/MK/BC/2026",
+            "date_modified": "2026-07-14T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-49-tahun-2026",
+            "content_html": "Tata Cara Pemungutan Pajak Pertambahan Nilai Terhadap Transaksi Digital Luar Negeri yang Dilakukan melalui Sistem Pemungutan Pajak atas Transaksi Digital Luar Negeri",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-49-tahun-2026",
+            "title": "PMK 49 TAHUN 2026",
+            "date_modified": "2026-07-14T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-32mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 15 Juli 2026 Sampai Dengan 21 Juli 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-32mkef22026",
+            "title": "KMK 32/MK/EF.2/2026 ",
+            "date_modified": "2026-07-14T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/27mkpk2026",
+            "content_html": "Perpanjangan Batas Waktu Penyampaian Dokumen Persyaratan Penyaluran Dana Alokasi Khusus Fisik Tahun Anggaran 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/27mkpk2026",
+            "title": "27/MK/PK/2026",
+            "date_modified": "2026-07-14T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-48-tahun-2026",
+            "content_html": "Kriteria Eksportir yang Memenuhi Ketentuan Khusus dalam Pemenuhan Kewajiban Pemasukan, Penempatan, dan Penggunaan Devisa Hasil Ekspor Sumber Daya Alam",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-48-tahun-2026",
+            "title": "PMK 48 TAHUN 2026",
+            "date_modified": "2026-07-09T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kep-59pp2026",
+            "content_html": "Standar Pelayanan di Lingkungan Badan Pendidikan dan Pelatihan Keuangan",
+            "url": "https://jdih.kemenkeu.go.id/dok/kep-59pp2026",
+            "title": "KEP-59/PP/2026",
+            "date_modified": "2026-07-08T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-31mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 08 Juli 2026 Sampai Dengan 14 Juli 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-31mkef22026",
+            "title": "KMK 31/MK/EF.2/2026 ",
+            "date_modified": "2026-07-07T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-47-tahun-2026",
+            "content_html": "Perubahan atas Peraturan Menteri Keuangan Nomor 64 Tahun 2024 tentang Tata Cara Pembentukan dan Pengelolaan Dana Abadi Daerah",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-47-tahun-2026",
+            "title": "PMK 47 TAHUN 2026",
+            "date_modified": "2026-07-06T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pp-30-tahun-2026",
+            "content_html": "Jenis dan Tarif atas Jenis Penerimaan Negara Bukan Pajak yang Berlaku pada Kementerian Hukum",
+            "url": "https://jdih.kemenkeu.go.id/dok/pp-30-tahun-2026",
+            "title": "PP 30 TAHUN 2026",
+            "date_modified": "2026-07-02T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/42mkbc2026",
+            "content_html": "Penetapan Harga Ekspor Untuk Penghitungan Bea Keluar",
+            "url": "https://jdih.kemenkeu.go.id/dok/42mkbc2026",
+            "title": "42/MK/BC/2026",
+            "date_modified": "2026-06-30T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-30mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 01 Juli 2026 Sampai Dengan 07 Juli 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-30mkef22026",
+            "title": "KMK 30/MK/EF.2/2026 ",
+            "date_modified": "2026-06-30T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/per-6bc2026",
+            "content_html": "Perubahan atas Peraturan Direktur Jenderal Bea dan Cukai Nomor PER-15/BC/2023 tentang Pedoman Pelaksanaan Distribusi Target Penerimaan Kepabeanan dan Cukai",
+            "url": "https://jdih.kemenkeu.go.id/dok/per-6bc2026",
+            "title": "PER-6/BC/2026",
+            "date_modified": "2026-06-29T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-29mkef22026",
+            "content_html": "Tarif Bunga Sebagai Dasar Penghitungan Sanksi Administratif Berupa Bunga Dan Pemberian Imbalan Bunga Periode 1 Juli 2026 Sampai Dengan 31 Juli 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-29mkef22026",
+            "title": "KMK 29/MK/EF.2/2026 ",
+            "date_modified": "2026-06-29T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/41mkbc2026",
+            "content_html": "Penetapan Jenis Satuan Barang yang Digunakan dalam Pemberitahuan Pabean Ekspor",
+            "url": "https://jdih.kemenkeu.go.id/dok/41mkbc2026",
+            "title": "41/MK/BC/2026",
+            "date_modified": "2026-06-29T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/40mkbc2026",
+            "content_html": "Barang yang Dibatasi untuk Diimpor Berdasarkan Peraturan Menteri Perdagangan Nomor 16 Tahun 2025 tentang Kebijakan dan Pengaturan Impor sebagaimana telah diubah terakhir dengan Peraturan Menteri Perdagangan Nomor 18 Tahun 2026 tentang Perubahan Kedua atas Peraturan Menteri Perdagangan Nomor 16 Tahun 2025 tentang Kebijakan dan Pengaturan Impor",
+            "url": "https://jdih.kemenkeu.go.id/dok/40mkbc2026",
+            "title": "40/MK/BC/2026",
+            "date_modified": "2026-06-26T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-26mkpk2026",
+            "content_html": "Perubahan Ketiga atas Keputusan Menteri Keuangan Republik Indonesia Nomor 11/KM.7/2024 tentang Penandaan Rincian Belanja Infrastruktur Pelayanan Publik untuk Evaluasi Pemenuhan Belanja Wajib dalam Anggaran Pendapatan dan Belanja Daerah",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-26mkpk2026",
+            "title": "KMK 26/MK/PK/2026",
+            "date_modified": "2026-06-26T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-25mkpk2026",
+            "content_html": "Perubahan Ketiga atas Keputusan Menteri Keuangan Republik Indonesia Nomor 10/KM.7/2024 tentang Penandaan Rincian Belanja Pendidikan Untuk Evaluasi Pemenuhan Belanja Wajib Dalam Anggaran Pendapatan dan Belanja Daerah",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-25mkpk2026",
+            "title": "KMK 25/MK/PK/2026",
+            "date_modified": "2026-06-26T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kep-146bc2026",
+            "content_html": "Perubahan Ketiga atas Keputusan Direktur Jenderal Bea dan Cukai Nomor KEP-173/BC/2024 tentang Penerapan Secara Penuh (Mandatory) Kesepakatan Pengakuan Timbal Balik Operator Ekonomi Bersertifikat (Mutual Recognition Arrangement on Authorized Economic Operator) antara Direktorat Jenderal Bea dan Cukai dengan Administrasi Kepabeanan Negara Anggota ASEAN",
+            "url": "https://jdih.kemenkeu.go.id/dok/kep-146bc2026",
+            "title": "KEP-146/BC/2026",
+            "date_modified": "2026-06-25T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-45-tahun-2026",
+            "content_html": "Pembebasan Bea Masuk atas Impor Persenjataan, Amunisi, Perlengkapan Militer dan Kepolisian, Termasuk Suku Cadang, serta Barang dan Bahan yang Dipergunakan untuk Menghasilkan Barang yang Dipergunakan bagi Keperluan Pertahanan dan Keamanan Negara",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-45-tahun-2026",
+            "title": "PMK 45 TAHUN 2026",
+            "date_modified": "2026-06-24T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-28mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 24 Juni 2026 Sampai Dengan 30 Juni 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-28mkef22026",
+            "title": "KMK 28/MK/EF.2/2026 ",
+            "date_modified": "2026-06-23T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-44-tahun-2026",
+            "content_html": "Persyaratan untuk Menjadi Kuasa di Bidang Perpajakan dan Tata Cara Pelaksanaan Hak dan Pemenuhan Kewajiban Kuasa di Bidang Perpajakan",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-44-tahun-2026",
+            "title": "PMK 44 TAHUN 2026",
+            "date_modified": "2026-06-22T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-43-tahun-2026",
+            "content_html": "Pajak Pertambahan Nilai atas Penyerahan Jasa Angkutan Udara Niaga Berjadwal Dalam Negeri Kelas Ekonomi pada Periode Libur Sekolah yang Ditanggung Pemerintah Tahun Anggaran 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-43-tahun-2026",
+            "title": "PMK 43 TAHUN 2026",
+            "date_modified": "2026-06-20T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/uu-4-tahun-2026",
+            "content_html": "Perubahan atas Undang-Undang Nomor 4 Tahun 2023 tentang Pengembangan dan Penguatan Sektor Keuangan",
+            "url": "https://jdih.kemenkeu.go.id/dok/uu-4-tahun-2026",
+            "title": "UU 4 TAHUN 2026",
+            "date_modified": "2026-06-17T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-27mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 17 Juni 2026 Sampai Dengan 23 Juni 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-27mkef22026",
+            "title": "KMK 27/MK/EF.2/2026 ",
+            "date_modified": "2026-06-16T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/df8d204b-cd6a-48d4-b6ab-cb3db785fda4",
+            "content_html": "PP 20 Tahun 2026: Keseimbangan antara Kemudahan dan Keadilan Pajak UMKM",
+            "url": "https://jdih.kemenkeu.go.id/dok/df8d204b-cd6a-48d4-b6ab-cb3db785fda4",
+            "title": "PP 20 Tahun 2026: Keseimbangan antara Kemudahan dan Keadilan Pajak UMKM",
+            "date_modified": "2026-06-15T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-42-tahun-2026",
+            "content_html": "Penambahan Investasi Pemerintah Republik Indonesia pada Lembaga Keuangan Internasional Tahun Anggaran 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-42-tahun-2026",
+            "title": "PMK 42 TAHUN 2026",
+            "date_modified": "2026-06-15T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/36mkbc2026",
+            "content_html": "Penetapan Harga Ekspor untuk Penghitungan Bea Keluar atas Produk Pertambangan yang Dikenakan Bea Keluar",
+            "url": "https://jdih.kemenkeu.go.id/dok/36mkbc2026",
+            "title": "36/MK/BC/2026",
+            "date_modified": "2026-06-12T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-41-tahun-2026",
+            "content_html": "Perubahan Kedua atas Peraturan Menteri Keuangan Nomor 62 Tahun 2023 tentang Perencanaan Anggaran, Pelaksanaan Anggaran, serta Akuntansi dan Pelaporan Keuangan",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-41-tahun-2026",
+            "title": "PMK 41 TAHUN 2026",
+            "date_modified": "2026-06-12T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/per-1pp2026",
+            "content_html": "Tata Kelola Kurasi Aset Intelektual di Lingkungan Kementerian Keuangan",
+            "url": "https://jdih.kemenkeu.go.id/dok/per-1pp2026",
+            "title": "PER-1/PP/2026",
+            "date_modified": "2026-06-10T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-26mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 10 Juni 2026 Sampai Dengan 16 Juni 2026 ",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-26mkef22026",
+            "title": "KMK 26/MK/EF.2/2026",
+            "date_modified": "2026-06-09T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/2e73ff69-f0bf-4a97-a97b-fe1cfb9fbb63",
+            "content_html": "Penerapan PP Nomor 20 Tahun 2026 terhadap Pajak UMKM: Reformasi Perpajakan untuk Mendorong Keadilan dan Kepatuhan",
+            "url": "https://jdih.kemenkeu.go.id/dok/2e73ff69-f0bf-4a97-a97b-fe1cfb9fbb63",
+            "title": "Penerapan PP Nomor 20 Tahun 2026 terhadap Pajak UMKM: Reformasi Perpajakan untuk Mendorong Keadilan dan Kepatuhan",
+            "date_modified": "2026-06-08T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/pmk-40-tahun-2026",
+            "content_html": "Pengenaan Bea Masuk Antidumping atas Impor Produk Kertas Karton Dupleks dari Republik Korea, Malaysia, dan Taiwan",
+            "url": "https://jdih.kemenkeu.go.id/dok/pmk-40-tahun-2026",
+            "title": "PMK 40 TAHUN 2026",
+            "date_modified": "2026-06-03T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        },
+        {
+            "id": "https://jdih.kemenkeu.go.id/dok/kmk-25mkef22026",
+            "content_html": "Nilai Kurs Sebagai Dasar Pelunasan Bea Masuk, Pajak Pertambahan Nilai Barang Dan Jasa Dan Pajak Penjualan Atas Barang Mewah, Bea Keluar, Dan Pajak Penghasilan Yang Berlaku Untuk Tanggal 3 Juni 2026 Sampai Dengan 9 Juni 2026",
+            "url": "https://jdih.kemenkeu.go.id/dok/kmk-25mkef22026",
+            "title": "KMK 25/MK/EF.2/2026",
+            "date_modified": "2026-06-02T12:00:00.000Z",
+            "author": {
+                "name": "JDIH Kementerian Keuangan",
+                "url": "https://jdih.kemenkeu.go.id"
+            }
+        }
+    ]
+}

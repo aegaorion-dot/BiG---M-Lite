@@ -1,0 +1,36 @@
+{
+  "sourceId": "SG-IRAS",
+  "jurisdictionCode": "SG",
+  "authorityCode": "IRAS",
+  "sourceUrl": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax",
+  "finalUrl": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-filing-season-2026",
+  "redirects": [
+    {
+      "from": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax",
+      "to": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-filing-season-2026",
+      "status": 301,
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "sourceType": "HTML",
+  "retrievalMethod": "HTML",
+  "retrievedAt": "2026-10-28T16:31:48.072Z",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "language": null,
+  "officialDocumentId": null,
+  "title": null,
+  "publishedAt": null,
+  "effectiveFrom": null,
+  "effectiveTo": null,
+  "status": "DISCOVERED",
+  "etag": "W/\"ee50f025-fd12-4fc5-8b7f-2824317c165a\"",
+  "lastModified": "Wed, 28 Oct 2026 14:41:26 GMT",
+  "unstableUrl": false,
+  "artifactId": "61849a55-6d17-4ff5-bd7e-ac69d87c65e5",
+  "rawContentHash": "5fad8a4a91a19c3ccc55bf2811dbc5b223cedad83366bb5d40f7844cf0fee5ab",
+  "rawStorageRef": "blobs/5fad8a4a91a19c3ccc55bf2811dbc5b223cedad83366bb5d40f7844cf0fee5ab.bin",
+  "byteLength": 281014,
+  "parserVersion": "fabric-raw/1",
+  "duplicateContent": true
+}

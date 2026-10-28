@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bigm:canonical-legal-source:1",
+  "title": "CanonicalLegalSource envelope v1",
+  "type": "object",
+  "required": ["schemaVersion", "envelopeId", "sourceId", "jurisdictionCode", "metadata", "provenance", "authority", "temporal", "rawArtifactRef", "normalizedContent", "citationAnchors", "sourceSpecificMetadata", "status", "processingState"],
+  "properties": {
+    "schemaVersion": {"const": "fabric-envelope/1"},
+    "envelopeId": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "sourceId": {"type": "string"},
+    "jurisdictionCode": {"enum": ["ID", "SG", "AU", "US", "GB"]},
+    "metadata": {"type": "object", "required": ["title", "officialDocumentId", "language", "documentKind"]},
+    "provenance": {"type": "object", "required": ["artifactId", "rawContentHash", "sourceUrl", "finalUrl", "retrievedAt", "normalizerVersion"]},
+    "authority": {"type": "object", "required": ["authorityCode", "authorityName", "sourceRole", "legalForce"]},
+    "temporal": {"type": "object", "required": ["publishedAt", "effectiveFrom", "effectiveTo", "sourceTemporalAssertions", "status"]},
+    "rawArtifactRef": {"type": "object", "required": ["rawStorageRef", "rawContentHash"]},
+    "normalizedContent": {"type": "object", "required": ["text", "blocks"]},
+    "citationAnchors": {"type": "array", "items": {"type": "object", "required": ["anchorId", "locator", "start", "end", "quoteHash", "rawContentHash"]}},
+    "sourceSpecificMetadata": {"type": "object"},
+    "status": {"const": "REVIEW_REQUIRED"},
+    "processingState": {"enum": ["NORMALIZED", "HTTP_ERROR", "MIME_MISMATCH", "OCR_REQUIRED", "PDF_TEXT_EXTRACTION_REQUIRED", "UNSUPPORTED_FORMAT", "UNSUPPORTED_XML_DECLARATION", "NO_TEXT_REVIEW_REQUIRED"]}
+  },
+  "additionalProperties": true
+}

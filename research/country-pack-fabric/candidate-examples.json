@@ -1,0 +1,1077 @@
+[
+  {
+    "evidence": {
+      "jurisdictionCode": "ID",
+      "sourceId": "ID-DJP",
+      "envelopeId": "1b2251026d77ea5332a72eeca1c6220363c514699314d9b1187938a9b747a3be",
+      "provenance": {
+        "artifactId": "058f0b87-a7e3-47ea-a2e7-6ce47f96a6e4",
+        "rawContentHash": "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842",
+        "sourceUrl": "https://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi",
+        "finalUrl": "https://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi",
+        "retrievedAt": "2026-10-28T16:31:48.314Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "c75ebd8636ef2e593de6d1f16d3aefac68fd71b5c91af5bff8c1fbd578ef089e",
+        "locator": "html:article:48697",
+        "start": 0,
+        "end": 300,
+        "quote": "Body Wajib pajak orang pribadi, baik yang berstatus karyawan ataupun melakukan pekerjaan bebas, wajib melakukan penghitungan pajak terutang yang sebenarnya di akhir tahun untuk mengetahui posisi saldo pajak yang masih harus dibayar. Objek Pajak Penghasilan Objek Pajak Penghasilan adalah penghasilan,",
+        "quoteHash": "207e303357157c3ab1f1778c7b38c08e83db2e1d2f7d565a9fcf949acdaacdc3"
+      },
+      "authority": {
+        "authorityCode": "DJP",
+        "authorityName": "Direktorat Jenderal Pajak",
+        "sourceRole": "TAX_AUTHORITY",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "4b4d5caa615dac83e27baab3452ba10384eecb495ef895b6e0bba016d23ce3d0"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "ID",
+      "label": "ID-DJP guidance R&D candidate",
+      "evidenceIds": [
+        "4b4d5caa615dac83e27baab3452ba10384eecb495ef895b6e0bba016d23ce3d0"
+      ],
+      "provenance": [
+        {
+          "artifactId": "058f0b87-a7e3-47ea-a2e7-6ce47f96a6e4",
+          "rawContentHash": "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842",
+          "sourceUrl": "https://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi",
+          "finalUrl": "https://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi",
+          "retrievedAt": "2026-10-28T16:31:48.314Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "c75ebd8636ef2e593de6d1f16d3aefac68fd71b5c91af5bff8c1fbd578ef089e",
+          "locator": "html:article:48697",
+          "start": 0,
+          "end": 300,
+          "quote": "Body Wajib pajak orang pribadi, baik yang berstatus karyawan ataupun melakukan pekerjaan bebas, wajib melakukan penghitungan pajak terutang yang sebenarnya di akhir tahun untuk mengetahui posisi saldo pajak yang masih harus dibayar. Objek Pajak Penghasilan Objek Pajak Penghasilan adalah penghasilan,",
+          "quoteHash": "207e303357157c3ab1f1778c7b38c08e83db2e1d2f7d565a9fcf949acdaacdc3"
+        }
+      ],
+      "envelopeIds": [
+        "1b2251026d77ea5332a72eeca1c6220363c514699314d9b1187938a9b747a3be"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "a8f96e138299da4ab7e04b2e52d8046aaec944c455dfce7aa929315908be8f56"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "ID",
+      "sourceId": "ID-DJP",
+      "envelopeId": "444ec0f9f6cc47b33c05b8aa0c7b4dbe6d969edd72df5bdd07cfc52a22cd3bb6",
+      "provenance": {
+        "artifactId": "8f90e1f1-71a4-4a08-b2ff-6ff8b0b0f91b",
+        "rawContentHash": "d9d4a7a7a72f44c5c2e8675f99b507bd25145a18a4bb36e546f45c0bb45744f1",
+        "sourceUrl": "https://www.pajak.go.id/id/pajak-penghasilan",
+        "finalUrl": "https://www.pajak.go.id/id/pajak-penghasilan",
+        "retrievedAt": "2026-10-28T16:31:48.303Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "d890e76acb370d99567663873e9f8ea9bc0df3d3c413840412d7f52e3ca8a35a",
+        "locator": "html:article:48144",
+        "start": 0,
+        "end": 300,
+        "quote": "Undang-Undang 7 TAHUN 1983 Tanggal Peraturan 31-12-1983 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 7 TAHUN 1983 TENTANG PAJAK PENGHASILAN DENGAN RAHMAT TUHAN YANG MAHA ESA PRESIDEN REPUBLIK INDONESIA, Menimbang : a. publik Indonesia adalah negara hukum berdasarkan Pancasila dan Undang-Undang Dasar 1945 ",
+        "quoteHash": "9badeef96de65dedac4ccc059116277715efb39212454c0be019dbf19590d208"
+      },
+      "authority": {
+        "authorityCode": "DJP",
+        "authorityName": "Direktorat Jenderal Pajak",
+        "sourceRole": "TAX_AUTHORITY",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "ea302f9382ce997f9b50410978f4b2aebe0def86449a74faa6df6782378a9e6c"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "ID",
+      "label": "ID-DJP tax-page R&D candidate",
+      "evidenceIds": [
+        "ea302f9382ce997f9b50410978f4b2aebe0def86449a74faa6df6782378a9e6c"
+      ],
+      "provenance": [
+        {
+          "artifactId": "8f90e1f1-71a4-4a08-b2ff-6ff8b0b0f91b",
+          "rawContentHash": "d9d4a7a7a72f44c5c2e8675f99b507bd25145a18a4bb36e546f45c0bb45744f1",
+          "sourceUrl": "https://www.pajak.go.id/id/pajak-penghasilan",
+          "finalUrl": "https://www.pajak.go.id/id/pajak-penghasilan",
+          "retrievedAt": "2026-10-28T16:31:48.303Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "d890e76acb370d99567663873e9f8ea9bc0df3d3c413840412d7f52e3ca8a35a",
+          "locator": "html:article:48144",
+          "start": 0,
+          "end": 300,
+          "quote": "Undang-Undang 7 TAHUN 1983 Tanggal Peraturan 31-12-1983 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 7 TAHUN 1983 TENTANG PAJAK PENGHASILAN DENGAN RAHMAT TUHAN YANG MAHA ESA PRESIDEN REPUBLIK INDONESIA, Menimbang : a. publik Indonesia adalah negara hukum berdasarkan Pancasila dan Undang-Undang Dasar 1945 ",
+          "quoteHash": "9badeef96de65dedac4ccc059116277715efb39212454c0be019dbf19590d208"
+        }
+      ],
+      "envelopeIds": [
+        "444ec0f9f6cc47b33c05b8aa0c7b4dbe6d969edd72df5bdd07cfc52a22cd3bb6"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "7268f48e26b33499f3e7fc7087d1686c4fdf8b4a7b9c75bc4cbace00ba540c0a"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "ID",
+      "sourceId": "ID-BPK",
+      "envelopeId": "d40b732a66f40db280e0418b4fafaad12780cb22432301d37865eea48c518569",
+      "provenance": {
+        "artifactId": "e4ce8356-0bc3-4c23-90cc-5a815547b948",
+        "rawContentHash": "7ed4433b3113559490549eb6237d568a3ca9e87c8755985aa43c1a896e0a95c5",
+        "sourceUrl": "https://peraturan.bpk.go.id/Details/185162/uu-no-7-tahun-2021",
+        "finalUrl": "https://peraturan.bpk.go.id/Details/185162/uu-no-7-tahun-2021",
+        "retrievedAt": "2026-10-28T16:31:48.168Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "f136ca611b486ba9271c119b10c9c312289f19c5e1f7d1129aad4cd17b5dc5f1",
+        "locator": "html:document",
+        "start": 0,
+        "end": 300,
+        "quote": "UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan - JDIH BPK Beranda Subjek Jenis Tahun Glosarium Tematik Perwakilan Login Undang-undang (UU) Nomor 7 Tahun 2021 Harmonisasi Peraturan Perpajakan MATERI POKOK PERATURAN Abstrak UU ini mengatur mengenai materi Ketentuan Umum dan Tata Cara Per",
+        "quoteHash": "427f63579c5f1d2de7378d4781e03a1cbd5c7080d14041137bcd45e311e8f040"
+      },
+      "authority": {
+        "authorityCode": "BPK",
+        "authorityName": "Badan Pemeriksa Keuangan legislation database",
+        "sourceRole": "PRIMARY_LEGISLATION",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "ee641785c2300b6111bcadb42f21bdd1301969a22a5d04a0d3389b1d7fae0753"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "ID",
+      "label": "ID-BPK legislation-index R&D candidate",
+      "evidenceIds": [
+        "ee641785c2300b6111bcadb42f21bdd1301969a22a5d04a0d3389b1d7fae0753"
+      ],
+      "provenance": [
+        {
+          "artifactId": "e4ce8356-0bc3-4c23-90cc-5a815547b948",
+          "rawContentHash": "7ed4433b3113559490549eb6237d568a3ca9e87c8755985aa43c1a896e0a95c5",
+          "sourceUrl": "https://peraturan.bpk.go.id/Details/185162/uu-no-7-tahun-2021",
+          "finalUrl": "https://peraturan.bpk.go.id/Details/185162/uu-no-7-tahun-2021",
+          "retrievedAt": "2026-10-28T16:31:48.168Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "f136ca611b486ba9271c119b10c9c312289f19c5e1f7d1129aad4cd17b5dc5f1",
+          "locator": "html:document",
+          "start": 0,
+          "end": 300,
+          "quote": "UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan - JDIH BPK Beranda Subjek Jenis Tahun Glosarium Tematik Perwakilan Login Undang-undang (UU) Nomor 7 Tahun 2021 Harmonisasi Peraturan Perpajakan MATERI POKOK PERATURAN Abstrak UU ini mengatur mengenai materi Ketentuan Umum dan Tata Cara Per",
+          "quoteHash": "427f63579c5f1d2de7378d4781e03a1cbd5c7080d14041137bcd45e311e8f040"
+        }
+      ],
+      "envelopeIds": [
+        "d40b732a66f40db280e0418b4fafaad12780cb22432301d37865eea48c518569"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "61b0d578d45567214bc58d7c59712bbf654b7e8e2afbfb3f4dcd7240b9426a03"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "SG",
+      "sourceId": "SG-IRAS",
+      "envelopeId": "d192f9d0dc3813ca7ecea7d632c28e4b5e403998a522290b643f57ff47b4ecd7",
+      "provenance": {
+        "artifactId": "61849a55-6d17-4ff5-bd7e-ac69d87c65e5",
+        "rawContentHash": "5fad8a4a91a19c3ccc55bf2811dbc5b223cedad83366bb5d40f7844cf0fee5ab",
+        "sourceUrl": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax",
+        "finalUrl": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-filing-season-2026",
+        "retrievedAt": "2026-10-28T16:31:48.072Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "171a44ade689b58bad7d0eeae29b720f5f8c519feb639e3ebf02c290672bbfcb",
+        "locator": "html:main:233128",
+        "start": 0,
+        "end": 300,
+        "quote": "Home Taxes Corporate Income Tax Basics of Corporate Income Tax Corporate Income Tax Filing Season 2026 Basics of Corporate Income Tax Corporate Income Tax Filing Season 2026 Basic Guide to Corporate Income Tax for Companies Tax Residency of a Company/ Certificate of Residence Record Keeping Requirem",
+        "quoteHash": "b20a45a705aae74ec3ab026b835cdd5d222062f25d0b1e266037118be5c031df"
+      },
+      "authority": {
+        "authorityCode": "IRAS",
+        "authorityName": "Inland Revenue Authority of Singapore",
+        "sourceRole": "TAX_AUTHORITY",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "e4f883ca8bea58183847a8297598f06592d208eb9d7b619480959f9acae1aff0"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "SG",
+      "label": "SG-IRAS tax-page R&D candidate",
+      "evidenceIds": [
+        "e4f883ca8bea58183847a8297598f06592d208eb9d7b619480959f9acae1aff0"
+      ],
+      "provenance": [
+        {
+          "artifactId": "61849a55-6d17-4ff5-bd7e-ac69d87c65e5",
+          "rawContentHash": "5fad8a4a91a19c3ccc55bf2811dbc5b223cedad83366bb5d40f7844cf0fee5ab",
+          "sourceUrl": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax",
+          "finalUrl": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-filing-season-2026",
+          "retrievedAt": "2026-10-28T16:31:48.072Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "171a44ade689b58bad7d0eeae29b720f5f8c519feb639e3ebf02c290672bbfcb",
+          "locator": "html:main:233128",
+          "start": 0,
+          "end": 300,
+          "quote": "Home Taxes Corporate Income Tax Basics of Corporate Income Tax Corporate Income Tax Filing Season 2026 Basics of Corporate Income Tax Corporate Income Tax Filing Season 2026 Basic Guide to Corporate Income Tax for Companies Tax Residency of a Company/ Certificate of Residence Record Keeping Requirem",
+          "quoteHash": "b20a45a705aae74ec3ab026b835cdd5d222062f25d0b1e266037118be5c031df"
+        }
+      ],
+      "envelopeIds": [
+        "d192f9d0dc3813ca7ecea7d632c28e4b5e403998a522290b643f57ff47b4ecd7"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "edc2c5a52f52fa2a7cef683b2e63b46b7df61b5d096f9c5d326e8e8fa72bc676"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "SG",
+      "sourceId": "SG-MOF",
+      "envelopeId": "a8b46bc0a9c65a4bee1d1408106af7b955cdf3dab2f1e70a5b27519e5b6710ac",
+      "provenance": {
+        "artifactId": "7423a3b8-6b56-461c-b1e0-f9425a56e541",
+        "rawContentHash": "9578c06902b98acb0876c29d25bd821de8d730711cda17f02099e50efe17ab73",
+        "sourceUrl": "https://www.mof.gov.sg/news-resources/newsroom/public-consultation-on-proposed-finance-income-taxes--bill-2026/",
+        "finalUrl": "https://www.mof.gov.sg/news-resources/newsroom/public-consultation-on-proposed-finance-income-taxes--bill-2026/",
+        "retrievedAt": "2026-10-28T16:31:49.529Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "96f332bdad67c8cfe2f30d5ae7d97e635824dcb3336fe6edd1e3111e1b16da54",
+        "locator": "html:article:7810",
+        "start": 0,
+        "end": 111,
+        "quote": "Government agencies communicate via .gov.sg websites (e.g. go.gov.sg/open). Trusted websites (opens in new tab)",
+        "quoteHash": "db727818eddf7029b47721e9a81cc21f7b1711a51d3d782b6aba067bdcb5da57"
+      },
+      "authority": {
+        "authorityCode": "MOF",
+        "authorityName": "Ministry of Finance Singapore",
+        "sourceRole": "FINANCE_MINISTRY",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "1d610dc35eab24c5d0b583c2c1560ccaeaad2289231436ae91bf8d8effe90275"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "SG",
+      "label": "SG-MOF legislative-proposal-not-enacted R&D candidate",
+      "evidenceIds": [
+        "1d610dc35eab24c5d0b583c2c1560ccaeaad2289231436ae91bf8d8effe90275"
+      ],
+      "provenance": [
+        {
+          "artifactId": "7423a3b8-6b56-461c-b1e0-f9425a56e541",
+          "rawContentHash": "9578c06902b98acb0876c29d25bd821de8d730711cda17f02099e50efe17ab73",
+          "sourceUrl": "https://www.mof.gov.sg/news-resources/newsroom/public-consultation-on-proposed-finance-income-taxes--bill-2026/",
+          "finalUrl": "https://www.mof.gov.sg/news-resources/newsroom/public-consultation-on-proposed-finance-income-taxes--bill-2026/",
+          "retrievedAt": "2026-10-28T16:31:49.529Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "96f332bdad67c8cfe2f30d5ae7d97e635824dcb3336fe6edd1e3111e1b16da54",
+          "locator": "html:article:7810",
+          "start": 0,
+          "end": 111,
+          "quote": "Government agencies communicate via .gov.sg websites (e.g. go.gov.sg/open). Trusted websites (opens in new tab)",
+          "quoteHash": "db727818eddf7029b47721e9a81cc21f7b1711a51d3d782b6aba067bdcb5da57"
+        }
+      ],
+      "envelopeIds": [
+        "a8b46bc0a9c65a4bee1d1408106af7b955cdf3dab2f1e70a5b27519e5b6710ac"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "a977cf2b99463294f0b06ae497915582c1fdd8f9caaab6236de1bc6763d7388c"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "US",
+      "sourceId": "US-ECFR",
+      "envelopeId": "c7f952bcda7322b4776c5712f8771b4983c8c1d0ba71a7f5aff006ac21e46020",
+      "provenance": {
+        "artifactId": "c978c538-322f-4cba-becb-493fc6718915",
+        "rawContentHash": "af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399",
+        "sourceUrl": "https://www.ecfr.gov/api/versioner/v1/full/2026-10-26/title-26.xml?section=1.61-1",
+        "finalUrl": "https://www.ecfr.gov/api/versioner/v1/full/2026-10-26/title-26.xml?section=1.61-1",
+        "retrievedAt": "2026-10-28T16:35:22.914Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "24dbd5c9a604eefceaa452f4cd6f38f00e29afce8d636ffdb9eef45a73681bd8",
+        "locator": "xml:254",
+        "start": 0,
+        "end": 300,
+        "quote": "(a) General definition. Gross income means all income from whatever source derived, unless excluded by law. Gross income includes income realized in any form, whether in money, property, or services. Income may be realized, therefore, in the form of services, meals, accommodations, stock, or other p",
+        "quoteHash": "1d316815b289268b2007c627cba5b39eeac9fcde9544106508675a8ffaa4c806"
+      },
+      "authority": {
+        "authorityCode": "ECFR",
+        "authorityName": "Office of the Federal Register eCFR",
+        "sourceRole": "SECONDARY_LEGISLATION",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "58cf52ce7dd9bac7c28ed0715ff61e5f713f76fad7ecc653fa7f2b4048ec7b3a"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "US",
+      "label": "US-ECFR legislation-regulation R&D candidate",
+      "evidenceIds": [
+        "58cf52ce7dd9bac7c28ed0715ff61e5f713f76fad7ecc653fa7f2b4048ec7b3a"
+      ],
+      "provenance": [
+        {
+          "artifactId": "c978c538-322f-4cba-becb-493fc6718915",
+          "rawContentHash": "af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399",
+          "sourceUrl": "https://www.ecfr.gov/api/versioner/v1/full/2026-10-26/title-26.xml?section=1.61-1",
+          "finalUrl": "https://www.ecfr.gov/api/versioner/v1/full/2026-10-26/title-26.xml?section=1.61-1",
+          "retrievedAt": "2026-10-28T16:35:22.914Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "24dbd5c9a604eefceaa452f4cd6f38f00e29afce8d636ffdb9eef45a73681bd8",
+          "locator": "xml:254",
+          "start": 0,
+          "end": 300,
+          "quote": "(a) General definition. Gross income means all income from whatever source derived, unless excluded by law. Gross income includes income realized in any form, whether in money, property, or services. Income may be realized, therefore, in the form of services, meals, accommodations, stock, or other p",
+          "quoteHash": "1d316815b289268b2007c627cba5b39eeac9fcde9544106508675a8ffaa4c806"
+        }
+      ],
+      "envelopeIds": [
+        "c7f952bcda7322b4776c5712f8771b4983c8c1d0ba71a7f5aff006ac21e46020"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "29704307bbca114cf46064a24f51dc5c96068b511e496441470110a27f6a1466"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "US",
+      "sourceId": "US-IRS",
+      "envelopeId": "7ed65bdfcdd8919ba3c1a9aa268c8d8d664a7a0866285439b749d52c4bd31d5f",
+      "provenance": {
+        "artifactId": "94a29fd0-a76f-4926-b53a-ba76af16c698",
+        "rawContentHash": "ab3692eada7e7902dbf33245f87c75206f253ad356416cd645487c93cb79563f",
+        "sourceUrl": "https://www.irs.gov/publications/p334",
+        "finalUrl": "https://www.irs.gov/publications/p334",
+        "retrievedAt": "2026-10-28T16:31:44.444Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "3861b323e6ab8165980abd91624c8193402d57bae263e9586ee401dc8ec677f3",
+        "locator": "html:main:70216",
+        "start": 0,
+        "end": 300,
+        "quote": "Publication 334 - Introductory Material Future Developments Introduction This publication does not cover the topics listed in the following table. Are You Self-Employed? Are You a Statutory Employee? Business Owned and Operated by Spouses Additional Information What’s New for 2025 What’s New for 202",
+        "quoteHash": "5e9115105ec46d36aa3305c757c5b246ba4bf88cbe7094234b968f72a0696a1e"
+      },
+      "authority": {
+        "authorityCode": "IRS",
+        "authorityName": "Internal Revenue Service",
+        "sourceRole": "TAX_AUTHORITY",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "ee63ffe618db00604f99c7482c9ac5187e920343a9d4d22dd0fab8fdcb7d1eb3"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "US",
+      "label": "US-IRS guidance R&D candidate",
+      "evidenceIds": [
+        "ee63ffe618db00604f99c7482c9ac5187e920343a9d4d22dd0fab8fdcb7d1eb3"
+      ],
+      "provenance": [
+        {
+          "artifactId": "94a29fd0-a76f-4926-b53a-ba76af16c698",
+          "rawContentHash": "ab3692eada7e7902dbf33245f87c75206f253ad356416cd645487c93cb79563f",
+          "sourceUrl": "https://www.irs.gov/publications/p334",
+          "finalUrl": "https://www.irs.gov/publications/p334",
+          "retrievedAt": "2026-10-28T16:31:44.444Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "3861b323e6ab8165980abd91624c8193402d57bae263e9586ee401dc8ec677f3",
+          "locator": "html:main:70216",
+          "start": 0,
+          "end": 300,
+          "quote": "Publication 334 - Introductory Material Future Developments Introduction This publication does not cover the topics listed in the following table. Are You Self-Employed? Are You a Statutory Employee? Business Owned and Operated by Spouses Additional Information What’s New for 2025 What’s New for 202",
+          "quoteHash": "5e9115105ec46d36aa3305c757c5b246ba4bf88cbe7094234b968f72a0696a1e"
+        }
+      ],
+      "envelopeIds": [
+        "7ed65bdfcdd8919ba3c1a9aa268c8d8d664a7a0866285439b749d52c4bd31d5f"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "4543c54910b0ab3b656b590ad39af8e39c8dd4cef0c9223460e9657d62ef1cb6"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "US",
+      "sourceId": "US-IRS",
+      "envelopeId": "98a6f66ee63077327679df204c268ff582ceb2fd76b9b0810fe0e74d8655a6cc",
+      "provenance": {
+        "artifactId": "875b813b-4989-41ee-b931-6f09317622b8",
+        "rawContentHash": "33735cd7eea163b6885725240922cefdb7ab297fd2d58548e8596d46d9db8696",
+        "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center",
+        "finalUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center",
+        "retrievedAt": "2026-10-28T16:31:44.170Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "67a2609f51c96e6edda2476feafebad7ca46665586fc77c91f7d458e5da8837e",
+        "locator": "html:main:81409",
+        "start": 0,
+        "end": 300,
+        "quote": "Who is self-employed? What are my self-employed tax obligations? How do I make my quarterly payments? How do I file my annual return? Am I required to file an information return? Business structures Home office deduction Married couple’s business - What is a qualified joint venture? Considering a ta",
+        "quoteHash": "57b6392c43daf0f7c2d4c01d424f8cf02e9acf70ffc687eecb38d0bd859dbfc8"
+      },
+      "authority": {
+        "authorityCode": "IRS",
+        "authorityName": "Internal Revenue Service",
+        "sourceRole": "TAX_AUTHORITY",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "e62ad072bd88212d050909bca314c39ff26bd22584c07c6dc72a1c8b76219f29"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "US",
+      "label": "US-IRS tax-page R&D candidate",
+      "evidenceIds": [
+        "e62ad072bd88212d050909bca314c39ff26bd22584c07c6dc72a1c8b76219f29"
+      ],
+      "provenance": [
+        {
+          "artifactId": "875b813b-4989-41ee-b931-6f09317622b8",
+          "rawContentHash": "33735cd7eea163b6885725240922cefdb7ab297fd2d58548e8596d46d9db8696",
+          "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center",
+          "finalUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center",
+          "retrievedAt": "2026-10-28T16:31:44.170Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "67a2609f51c96e6edda2476feafebad7ca46665586fc77c91f7d458e5da8837e",
+          "locator": "html:main:81409",
+          "start": 0,
+          "end": 300,
+          "quote": "Who is self-employed? What are my self-employed tax obligations? How do I make my quarterly payments? How do I file my annual return? Am I required to file an information return? Business structures Home office deduction Married couple’s business - What is a qualified joint venture? Considering a ta",
+          "quoteHash": "57b6392c43daf0f7c2d4c01d424f8cf02e9acf70ffc687eecb38d0bd859dbfc8"
+        }
+      ],
+      "envelopeIds": [
+        "98a6f66ee63077327679df204c268ff582ceb2fd76b9b0810fe0e74d8655a6cc"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "07992e14396c47d4eadfbff85fb4ac5e918f22b81ca8c25d6f4a861af065d464"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "US",
+      "sourceId": "US-USCODE",
+      "envelopeId": "0d6739bed46f4ca56b629b67a099a305e86046e7897c180a908e5c1ee98e062e",
+      "provenance": {
+        "artifactId": "6fef2eed-2dd5-4042-8269-6625bb5d4a4a",
+        "rawContentHash": "cfb274216a41ba23cdfac2c27e0ed497bfc846a4cdd5a48f43f2edf068f21198",
+        "sourceUrl": "https://uscode.house.gov/download.html",
+        "finalUrl": "https://uscode.house.gov/download.html",
+        "retrievedAt": "2026-10-28T16:32:44.637Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "c08a6d20be2fa4c53d5580ff13fa3c796c50fa469a78b6a5925f6e814b42a763",
+        "locator": "html:document",
+        "start": 0,
+        "end": 300,
+        "quote": "Download the United States Code - US Code Home Notice: The uscode.house.gov website is currently operating in a temporary format. While the United States Code remains available from its authoritative source, some website features and functionality are temporarily unavailable. The United States Code ",
+        "quoteHash": "0bf2d9502224c03da15e51cb369f0e1dee0c4cacf789a45d9ae7eeeca95ced4e"
+      },
+      "authority": {
+        "authorityCode": "USCODE",
+        "authorityName": "Office of the Law Revision Counsel",
+        "sourceRole": "PRIMARY_LEGISLATION",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "8809e4ca8e2b2599464cf25931403fb3d98d1e0cbba12aa4b390b6ed6bdaa842"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "US",
+      "label": "US-USCODE download-index R&D candidate",
+      "evidenceIds": [
+        "8809e4ca8e2b2599464cf25931403fb3d98d1e0cbba12aa4b390b6ed6bdaa842"
+      ],
+      "provenance": [
+        {
+          "artifactId": "6fef2eed-2dd5-4042-8269-6625bb5d4a4a",
+          "rawContentHash": "cfb274216a41ba23cdfac2c27e0ed497bfc846a4cdd5a48f43f2edf068f21198",
+          "sourceUrl": "https://uscode.house.gov/download.html",
+          "finalUrl": "https://uscode.house.gov/download.html",
+          "retrievedAt": "2026-10-28T16:32:44.637Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "c08a6d20be2fa4c53d5580ff13fa3c796c50fa469a78b6a5925f6e814b42a763",
+          "locator": "html:document",
+          "start": 0,
+          "end": 300,
+          "quote": "Download the United States Code - US Code Home Notice: The uscode.house.gov website is currently operating in a temporary format. While the United States Code remains available from its authoritative source, some website features and functionality are temporarily unavailable. The United States Code ",
+          "quoteHash": "0bf2d9502224c03da15e51cb369f0e1dee0c4cacf789a45d9ae7eeeca95ced4e"
+        }
+      ],
+      "envelopeIds": [
+        "0d6739bed46f4ca56b629b67a099a305e86046e7897c180a908e5c1ee98e062e"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "3c8f194f4d6a576e1a23bb4bbeb3a75b25ca7a176d7861fbe66a5b8c87868821"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "AU",
+      "sourceId": "AU-FRL",
+      "envelopeId": "cfc7261db3578e4ffcd610c7822ff22b6d0cb76a127dfebb103b836836fe74a1",
+      "provenance": {
+        "artifactId": "7c696409-e147-4d4d-b57e-c4dbf12ad99a",
+        "rawContentHash": "dda76c5790fbf72caac6f9a75188c1535ca06ff9b2c8ea8151454e99da55649e",
+        "sourceUrl": "https://www.legislation.gov.au/F2024N00110/asmade/2024-01-31/text/original/epub/OEBPS/document_1/document_1.html",
+        "finalUrl": "https://www.legislation.gov.au/F2024N00110/asmade/2024-01-31/text/original/epub/OEBPS/document_1/document_1.html",
+        "retrievedAt": "2026-10-28T16:38:32.583Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "5160f36b8fa673e839d61dd47a62c2b1a606669be39e724f2aca1443e7996838",
+        "locator": "html:document",
+        "start": 0,
+        "end": 300,
+        "quote": "Notice of Rulings 31 January 2024 The Commissioner of Taxation, Chris Jordan, gives notice by notifiable instrument under subsection 358-5(4) of Schedule 1 to the Taxation Administration Act 1953 of the following public rulings, copies of which can be obtained from ato.gov.au/law NOTICE OF RULINGS R",
+        "quoteHash": "17f9c91e4cd7ad6438678b13f3719ea9b794feb9dbedc05a7eaa781097b42093"
+      },
+      "authority": {
+        "authorityCode": "FRL",
+        "authorityName": "Office of Parliamentary Counsel Federal Register",
+        "sourceRole": "PRIMARY_LEGISLATION",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "45edcc7f48b0ae6b5b65e83cb9100484b2910247c27a048c46e52359fdceb5d8"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "AU",
+      "label": "AU-FRL legislation R&D candidate",
+      "evidenceIds": [
+        "45edcc7f48b0ae6b5b65e83cb9100484b2910247c27a048c46e52359fdceb5d8"
+      ],
+      "provenance": [
+        {
+          "artifactId": "7c696409-e147-4d4d-b57e-c4dbf12ad99a",
+          "rawContentHash": "dda76c5790fbf72caac6f9a75188c1535ca06ff9b2c8ea8151454e99da55649e",
+          "sourceUrl": "https://www.legislation.gov.au/F2024N00110/asmade/2024-01-31/text/original/epub/OEBPS/document_1/document_1.html",
+          "finalUrl": "https://www.legislation.gov.au/F2024N00110/asmade/2024-01-31/text/original/epub/OEBPS/document_1/document_1.html",
+          "retrievedAt": "2026-10-28T16:38:32.583Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "5160f36b8fa673e839d61dd47a62c2b1a606669be39e724f2aca1443e7996838",
+          "locator": "html:document",
+          "start": 0,
+          "end": 300,
+          "quote": "Notice of Rulings 31 January 2024 The Commissioner of Taxation, Chris Jordan, gives notice by notifiable instrument under subsection 358-5(4) of Schedule 1 to the Taxation Administration Act 1953 of the following public rulings, copies of which can be obtained from ato.gov.au/law NOTICE OF RULINGS R",
+          "quoteHash": "17f9c91e4cd7ad6438678b13f3719ea9b794feb9dbedc05a7eaa781097b42093"
+        }
+      ],
+      "envelopeIds": [
+        "cfc7261db3578e4ffcd610c7822ff22b6d0cb76a127dfebb103b836836fe74a1"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "28b3545ee084d72bdd69b62ccf272ee5d11c0a9964f4d5a97c8cf58b1e656426"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "AU",
+      "sourceId": "AU-ATO",
+      "envelopeId": "bdbdc08b03d643c27bfd6a44f94d0bf50677c11c176832b4d48ddaf6680e7d0f",
+      "provenance": {
+        "artifactId": "019b7ba7-f856-4493-b1d9-defad2d10685",
+        "rawContentHash": "dacc9966c662cdfa4779622ddb17c08d52037c438eaff7a6455b5e0167b7e306",
+        "sourceUrl": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents",
+        "finalUrl": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents",
+        "retrievedAt": "2026-10-28T16:31:46.968Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "12e28caed36cc11d2cfe153a9d9a799a176a84b7c0415df2eb1f73743427394d",
+        "locator": "html:document",
+        "start": 0,
+        "end": 300,
+        "quote": "Tax rates – Australian resident | Australian Taxation Office ATO Community Legal Database What's New Log in to online services Log in Log in to ATO online services Access secure services, view your details and lodge online. Search Log in to online services Log in Log in to ATO online services Access",
+        "quoteHash": "40d2f7958180c1ef85f5f00453ce742b85bd97f33bd26ca39deef755639b154a"
+      },
+      "authority": {
+        "authorityCode": "ATO",
+        "authorityName": "Australian Taxation Office",
+        "sourceRole": "TAX_AUTHORITY",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "822c2b45579b71e86026af43287f049b025790cd999f3153aec3afe15fcd282c"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "AU",
+      "label": "AU-ATO tax-page R&D candidate",
+      "evidenceIds": [
+        "822c2b45579b71e86026af43287f049b025790cd999f3153aec3afe15fcd282c"
+      ],
+      "provenance": [
+        {
+          "artifactId": "019b7ba7-f856-4493-b1d9-defad2d10685",
+          "rawContentHash": "dacc9966c662cdfa4779622ddb17c08d52037c438eaff7a6455b5e0167b7e306",
+          "sourceUrl": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents",
+          "finalUrl": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents",
+          "retrievedAt": "2026-10-28T16:31:46.968Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "12e28caed36cc11d2cfe153a9d9a799a176a84b7c0415df2eb1f73743427394d",
+          "locator": "html:document",
+          "start": 0,
+          "end": 300,
+          "quote": "Tax rates – Australian resident | Australian Taxation Office ATO Community Legal Database What's New Log in to online services Log in Log in to ATO online services Access secure services, view your details and lodge online. Search Log in to online services Log in Log in to ATO online services Access",
+          "quoteHash": "40d2f7958180c1ef85f5f00453ce742b85bd97f33bd26ca39deef755639b154a"
+        }
+      ],
+      "envelopeIds": [
+        "bdbdc08b03d643c27bfd6a44f94d0bf50677c11c176832b4d48ddaf6680e7d0f"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "1e0466e025f770c5d6f71ae30049e8e21199a2f043f1afb10db575c9e8cd9c90"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "GB",
+      "sourceId": "GB-LEGISLATION",
+      "envelopeId": "3b8292cf677e3c3104615489e509cc94fe839be8f1d30003b92b5c2185ad7110",
+      "provenance": {
+        "artifactId": "20a78b29-9b30-4b82-85b5-2713bcc3a1dd",
+        "rawContentHash": "ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d",
+        "sourceUrl": "https://www.legislation.gov.uk/ukpga/2024/3/data.xml",
+        "finalUrl": "https://www.legislation.gov.uk/ukpga/2024/3/data.xml",
+        "retrievedAt": "2026-10-28T16:31:43.165Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "e690487c468c390cebbbead4645b550233e48d1022f061a2bee4443ca5f40f7e",
+        "locator": "xml:748",
+        "start": 0,
+        "end": 16,
+        "quote": "Finance Act 2024",
+        "quoteHash": "76346ef9cb93b128c218663eaa7e29c472ad0bcf0513cfcd1993a6b919b3f392"
+      },
+      "authority": {
+        "authorityCode": "LEGISLATION",
+        "authorityName": "The National Archives legislation.gov.uk",
+        "sourceRole": "PRIMARY_LEGISLATION",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": null,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [
+          {
+            "locator": "/Legislation/@RestrictStartDate",
+            "semantic": "VERSION_START_NOT_UNIVERSAL_COMMENCEMENT",
+            "value": "2026-06-25"
+          },
+          {
+            "locator": "//ukm:EnactmentDate/@Date",
+            "semantic": "ENACTMENT_NOT_UNIVERSAL_COMMENCEMENT",
+            "value": "2024-02-22"
+          }
+        ],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "506ac60f30842a220ae77bb8a2919353aff338243dd7c1423f04bfcf7a6cbc54"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "GB",
+      "label": "GB-LEGISLATION legislation R&D candidate",
+      "evidenceIds": [
+        "506ac60f30842a220ae77bb8a2919353aff338243dd7c1423f04bfcf7a6cbc54"
+      ],
+      "provenance": [
+        {
+          "artifactId": "20a78b29-9b30-4b82-85b5-2713bcc3a1dd",
+          "rawContentHash": "ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d",
+          "sourceUrl": "https://www.legislation.gov.uk/ukpga/2024/3/data.xml",
+          "finalUrl": "https://www.legislation.gov.uk/ukpga/2024/3/data.xml",
+          "retrievedAt": "2026-10-28T16:31:43.165Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "e690487c468c390cebbbead4645b550233e48d1022f061a2bee4443ca5f40f7e",
+          "locator": "xml:748",
+          "start": 0,
+          "end": 16,
+          "quote": "Finance Act 2024",
+          "quoteHash": "76346ef9cb93b128c218663eaa7e29c472ad0bcf0513cfcd1993a6b919b3f392"
+        }
+      ],
+      "envelopeIds": [
+        "3b8292cf677e3c3104615489e509cc94fe839be8f1d30003b92b5c2185ad7110"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "9d927909f27819032e53521c68e0325ddcec2792334a7bc814373522550a7471"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "GB",
+      "sourceId": "GB-GOVUK",
+      "envelopeId": "717925f913af9ddfda03694e801f7535866821f0fbe8189281864e80627aed5c",
+      "provenance": {
+        "artifactId": "1ad49723-521a-4f80-b384-7808c5bd1c79",
+        "rawContentHash": "9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df",
+        "sourceUrl": "https://www.gov.uk/api/content/self-assessment-tax-returns",
+        "finalUrl": "https://www.gov.uk/api/content/self-assessment-tax-returns",
+        "retrievedAt": "2026-10-28T16:31:43.058Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "01681eae3c9654df7ddcc4947a8d0084d66b69c0e0e2a85beff6afa1c826cb0f",
+        "locator": "#/details/parts/0/body",
+        "start": 0,
+        "end": 300,
+        "quote": "Self Assessment is a system HM Revenue and Customs ( HMRC ) uses to collect Income Tax. Tax is usually deducted automatically from wages and pensions. People and businesses with other income must report it in a Self Assessment tax return. If you need to send a Self Assessment tax return , fill it in",
+        "quoteHash": "e4ac6d6733825e6a8c2b251c5edcd877fd8654b9e53c449c2cc3a53e2c8aa2d9"
+      },
+      "authority": {
+        "authorityCode": "GOVUK",
+        "authorityName": "GOV.UK departments (document publisher must be checked)",
+        "sourceRole": "OFFICIAL_GUIDANCE",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": "2012-07-03T16:49:56+01:00",
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "e11e3957ff7900266af5cb25b3c262e0b61a368356708375853bffa30257c345"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "GB",
+      "label": "GB-GOVUK guidance R&D candidate",
+      "evidenceIds": [
+        "e11e3957ff7900266af5cb25b3c262e0b61a368356708375853bffa30257c345"
+      ],
+      "provenance": [
+        {
+          "artifactId": "1ad49723-521a-4f80-b384-7808c5bd1c79",
+          "rawContentHash": "9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df",
+          "sourceUrl": "https://www.gov.uk/api/content/self-assessment-tax-returns",
+          "finalUrl": "https://www.gov.uk/api/content/self-assessment-tax-returns",
+          "retrievedAt": "2026-10-28T16:31:43.058Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "01681eae3c9654df7ddcc4947a8d0084d66b69c0e0e2a85beff6afa1c826cb0f",
+          "locator": "#/details/parts/0/body",
+          "start": 0,
+          "end": 300,
+          "quote": "Self Assessment is a system HM Revenue and Customs ( HMRC ) uses to collect Income Tax. Tax is usually deducted automatically from wages and pensions. People and businesses with other income must report it in a Self Assessment tax return. If you need to send a Self Assessment tax return , fill it in",
+          "quoteHash": "e4ac6d6733825e6a8c2b251c5edcd877fd8654b9e53c449c2cc3a53e2c8aa2d9"
+        }
+      ],
+      "envelopeIds": [
+        "717925f913af9ddfda03694e801f7535866821f0fbe8189281864e80627aed5c"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "c8e75e4b3a7d6f48dcf9a3126f129fbe4a8082166d5516ebfef04b1023385f6a"
+    }
+  },
+  {
+    "evidence": {
+      "jurisdictionCode": "GB",
+      "sourceId": "GB-GOVUK",
+      "envelopeId": "e88fd3968eb2f05a770a9ff87e3455076e983733e140af7cdf285a80f15b341a",
+      "provenance": {
+        "artifactId": "66a93bc0-4732-4e82-9110-b5756fbc5b6f",
+        "rawContentHash": "e6fc3c984516087c06d91b775e3dc15da24491b0e636858fd5f11cef75668c91",
+        "sourceUrl": "https://www.gov.uk/api/content/income-tax-rates",
+        "finalUrl": "https://www.gov.uk/api/content/income-tax-rates",
+        "retrievedAt": "2026-10-28T16:31:43.040Z",
+        "normalizerVersion": "fabric-envelope/1",
+        "anchorId": "4a9d5a5299685593605b9461a59c316fd313b7355487918817771a2b2cf6c7c8",
+        "locator": "#/details/parts/0/body",
+        "start": 0,
+        "end": 300,
+        "quote": "How much Income Tax you pay in each tax year depends on: how much of your income is above your Personal Allowance how much of your income falls within each tax band Some income is tax-free . The current tax year is from 6 April 2026 to 5 April 2027. This guide is also available in Welsh (Cymraeg) . ",
+        "quoteHash": "3400b4a880a68928f958ab85a15547e30e9124c5b3ca05af01b2d3574602ba0d"
+      },
+      "authority": {
+        "authorityCode": "GOVUK",
+        "authorityName": "GOV.UK departments (document publisher must be checked)",
+        "sourceRole": "OFFICIAL_GUIDANCE",
+        "legalForce": "REVIEW_REQUIRED"
+      },
+      "temporal": {
+        "publishedAt": "2012-01-26T13:01:47+00:00",
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "sourceTemporalAssertions": [],
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "proposedBy": "DETERMINISTIC",
+      "evidenceId": "decd9d49b78923757e41c8839d811d7fa8de86d306b070da26c1e1b2e3735f08"
+    },
+    "candidate": {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "GB",
+      "label": "GB-GOVUK tax-page R&D candidate",
+      "evidenceIds": [
+        "decd9d49b78923757e41c8839d811d7fa8de86d306b070da26c1e1b2e3735f08"
+      ],
+      "provenance": [
+        {
+          "artifactId": "66a93bc0-4732-4e82-9110-b5756fbc5b6f",
+          "rawContentHash": "e6fc3c984516087c06d91b775e3dc15da24491b0e636858fd5f11cef75668c91",
+          "sourceUrl": "https://www.gov.uk/api/content/income-tax-rates",
+          "finalUrl": "https://www.gov.uk/api/content/income-tax-rates",
+          "retrievedAt": "2026-10-28T16:31:43.040Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "4a9d5a5299685593605b9461a59c316fd313b7355487918817771a2b2cf6c7c8",
+          "locator": "#/details/parts/0/body",
+          "start": 0,
+          "end": 300,
+          "quote": "How much Income Tax you pay in each tax year depends on: how much of your income is above your Personal Allowance how much of your income falls within each tax band Some income is tax-free . The current tax year is from 6 April 2026 to 5 April 2027. This guide is also available in Welsh (Cymraeg) . ",
+          "quoteHash": "3400b4a880a68928f958ab85a15547e30e9124c5b3ca05af01b2d3574602ba0d"
+        }
+      ],
+      "envelopeIds": [
+        "e88fd3968eb2f05a770a9ff87e3455076e983733e140af7cdf285a80f15b341a"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "1c0cf35499c35ec1c5c48f8bb6f8ec2e4a436d42b586c4a7b386ff9cb9251051"
+    }
+  }
+]

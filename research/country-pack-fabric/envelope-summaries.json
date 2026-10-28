@@ -1,0 +1,1856 @@
+[
+  {
+    "summaryOnly": true,
+    "envelopeId": "02e5058239013005548f6ba6263705fb757e3a6d7eb1dc3e7969b3295e8230ec",
+    "sourceId": "ID-DJPP",
+    "metadata": {
+      "title": null,
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "96b74da9-3726-4ca7-8aff-04619a8bfccf",
+      "rawContentHash": "296b5bf34c4ec496b1e72ea6c9f878aee26ec68bb05afce2a21e4f469c7f3147",
+      "sourceUrl": "https://www.peraturan.go.id/files/uu7-2021bt.pdf",
+      "finalUrl": "https://www.peraturan.go.id/files/uu7-2021bt.pdf",
+      "retrievedAt": "2026-10-28T16:31:48.719Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "DJPP",
+      "authorityName": "Directorate General of Legislation",
+      "sourceRole": "OFFICIAL_GAZETTE",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/296b5bf34c4ec496b1e72ea6c9f878aee26ec68bb05afce2a21e4f469c7f3147.bin",
+      "rawContentHash": "296b5bf34c4ec496b1e72ea6c9f878aee26ec68bb05afce2a21e4f469c7f3147"
+    },
+    "sourceSpecificMetadata": {},
+    "status": "REVIEW_REQUIRED",
+    "processingState": "PDF_TEXT_EXTRACTION_REQUIRED",
+    "normalizedTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "normalizedTextCharacters": 0,
+    "anchorCount": 0,
+    "firstAnchors": []
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "1b2251026d77ea5332a72eeca1c6220363c514699314d9b1187938a9b747a3be",
+    "sourceId": "ID-DJP",
+    "metadata": {
+      "title": "Mekanisme Penghitungan Pajak Penghasilan Orang Pribadi | Direktorat Jenderal Pajak",
+      "officialDocumentId": null,
+      "language": "id",
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "058f0b87-a7e3-47ea-a2e7-6ce47f96a6e4",
+      "rawContentHash": "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842",
+      "sourceUrl": "https://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi",
+      "finalUrl": "https://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi",
+      "retrievedAt": "2026-10-28T16:31:48.314Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "DJP",
+      "authorityName": "Direktorat Jenderal Pajak",
+      "sourceRole": "TAX_AUTHORITY",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842.bin",
+      "rawContentHash": "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842"
+    },
+    "sourceSpecificMetadata": {
+      "format": "HTML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842.bin",
+        "rawContentHash": "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842"
+      },
+      "metaTags": [
+        "<meta charset=\"utf-8\" />",
+        "<meta name=\"robots\" content=\"index, follow\" />",
+        "<meta name=\"description\" content=\"Wajib pajak orang pribadi, baik yang berstatus karyawan ataupun melakukan pekerjaan bebas, wajib melakukan penghitungan pajak terutang yang sebenarnya di akhir tahun untuk mengetahui posisi saldo pajak yang masih harus dibayar.\" />",
+        "<meta name=\"keywords\" content=\"pajak, djp, direktorat jenderal pajak, pph, kup, ppn, ppnbm, djponline\" />",
+        "<meta property=\"og:determiner\" content=\"An\" />",
+        "<meta property=\"og:site_name\" content=\"Direktorat Jenderal Pajak\" />",
+        "<meta property=\"og:url\" content=\"http://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi\" />",
+        "<meta property=\"og:title\" content=\"Mekanisme Penghitungan Pajak Penghasilan Orang Pribadi\" />",
+        "<meta property=\"og:description\" content=\"Wajib pajak orang pribadi, baik yang berstatus karyawan ataupun melakukan pekerjaan bebas, wajib melakukan penghitungan pajak terutang yang sebenarnya di akhir tahun untuk mengetahui posisi saldo pajak yang masih harus dibayar.\" />",
+        "<meta name=\"Generator\" content=\"Drupal 8 (https://www.drupal.org)\" />",
+        "<meta name=\"MobileOptimized\" content=\"width\" />",
+        "<meta name=\"HandheldFriendly\" content=\"true\" />",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+        "<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+        "<meta name=\"HandheldFriendly\" content=\"true\" />",
+        "<meta name=\"apple-touch-fullscreen\" content=\"YES\" />"
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "9774ec9516e07e7a0657ecd1489dd7264f51d5d4f589d157f318a2a519355c03",
+    "normalizedTextCharacters": 7859,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "c75ebd8636ef2e593de6d1f16d3aefac68fd71b5c91af5bff8c1fbd578ef089e",
+        "locator": "html:article:48697",
+        "start": 0,
+        "end": 7859,
+        "quoteHash": "9774ec9516e07e7a0657ecd1489dd7264f51d5d4f589d157f318a2a519355c03",
+        "rawContentHash": "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "444ec0f9f6cc47b33c05b8aa0c7b4dbe6d969edd72df5bdd07cfc52a22cd3bb6",
+    "sourceId": "ID-DJP",
+    "metadata": {
+      "title": "PAJAK PENGHASILAN | Direktorat Jenderal Pajak",
+      "officialDocumentId": null,
+      "language": "id",
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "8f90e1f1-71a4-4a08-b2ff-6ff8b0b0f91b",
+      "rawContentHash": "d9d4a7a7a72f44c5c2e8675f99b507bd25145a18a4bb36e546f45c0bb45744f1",
+      "sourceUrl": "https://www.pajak.go.id/id/pajak-penghasilan",
+      "finalUrl": "https://www.pajak.go.id/id/pajak-penghasilan",
+      "retrievedAt": "2026-10-28T16:31:48.303Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "DJP",
+      "authorityName": "Direktorat Jenderal Pajak",
+      "sourceRole": "TAX_AUTHORITY",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/d9d4a7a7a72f44c5c2e8675f99b507bd25145a18a4bb36e546f45c0bb45744f1.bin",
+      "rawContentHash": "d9d4a7a7a72f44c5c2e8675f99b507bd25145a18a4bb36e546f45c0bb45744f1"
+    },
+    "sourceSpecificMetadata": {
+      "format": "HTML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/d9d4a7a7a72f44c5c2e8675f99b507bd25145a18a4bb36e546f45c0bb45744f1.bin",
+        "rawContentHash": "d9d4a7a7a72f44c5c2e8675f99b507bd25145a18a4bb36e546f45c0bb45744f1"
+      },
+      "metaTags": [
+        "<meta charset=\"utf-8\" />",
+        "<meta name=\"robots\" content=\"index, follow\" />",
+        "<meta name=\"keywords\" content=\"pajak, djp, direktorat jenderal pajak, pph, kup, ppn, ppnbm, djponline\" />",
+        "<meta property=\"og:determiner\" content=\"An\" />",
+        "<meta property=\"og:site_name\" content=\"Direktorat Jenderal Pajak\" />",
+        "<meta property=\"og:url\" content=\"http://www.pajak.go.id/id/peraturan/pajak-penghasilan\" />",
+        "<meta property=\"og:title\" content=\"PAJAK PENGHASILAN\" />",
+        "<meta name=\"Generator\" content=\"Drupal 8 (https://www.drupal.org)\" />",
+        "<meta name=\"MobileOptimized\" content=\"width\" />",
+        "<meta name=\"HandheldFriendly\" content=\"true\" />",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+        "<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+        "<meta name=\"HandheldFriendly\" content=\"true\" />",
+        "<meta name=\"apple-touch-fullscreen\" content=\"YES\" />"
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "fea8dba72461c9dba09a5779886d59a98cba8ab581e6b0db6e15b99dd73bea6f",
+    "normalizedTextCharacters": 162916,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "d890e76acb370d99567663873e9f8ea9bc0df3d3c413840412d7f52e3ca8a35a",
+        "locator": "html:article:48144",
+        "start": 0,
+        "end": 162916,
+        "quoteHash": "fea8dba72461c9dba09a5779886d59a98cba8ab581e6b0db6e15b99dd73bea6f",
+        "rawContentHash": "d9d4a7a7a72f44c5c2e8675f99b507bd25145a18a4bb36e546f45c0bb45744f1"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "5c407cc14d53133119da2c632ccdbee9aa9d9e66817ff3d58838a3ff9593f2b6",
+    "sourceId": "ID-JDIH",
+    "metadata": {
+      "title": "Produk Hukum Terbaru",
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "DISCOVERY_FEED"
+    },
+    "provenance": {
+      "artifactId": "a700721d-2328-46d3-9c41-fd74109b81e9",
+      "rawContentHash": "2b7eb016ca32a70915c4d762e5ad9c37413440ccaf36791f0a651f94bfcdc5eb",
+      "sourceUrl": "https://jdih.kemenkeu.go.id/feed.json",
+      "finalUrl": "https://jdih.kemenkeu.go.id/feed.json",
+      "retrievedAt": "2026-10-28T16:45:52.689Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "JDIH",
+      "authorityName": "Ministry of Finance legal documentation",
+      "sourceRole": "SECONDARY_LEGISLATION",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/2b7eb016ca32a70915c4d762e5ad9c37413440ccaf36791f0a651f94bfcdc5eb.bin",
+      "rawContentHash": "2b7eb016ca32a70915c4d762e5ad9c37413440ccaf36791f0a651f94bfcdc5eb"
+    },
+    "sourceSpecificMetadata": {
+      "format": "JSON",
+      "topLevelKeys": [
+        "version",
+        "title",
+        "home_page_url",
+        "feed_url",
+        "description",
+        "icon",
+        "author",
+        "items"
+      ],
+      "payloadRef": {
+        "rawStorageRef": "blobs/2b7eb016ca32a70915c4d762e5ad9c37413440ccaf36791f0a651f94bfcdc5eb.bin",
+        "rawContentHash": "2b7eb016ca32a70915c4d762e5ad9c37413440ccaf36791f0a651f94bfcdc5eb"
+      }
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "5c3426b395452ba12f3a0e864af01295b2e3ca6ab561418530a5438cb7845d2d",
+    "normalizedTextCharacters": 17758,
+    "anchorCount": 100,
+    "firstAnchors": [
+      {
+        "anchorId": "80c3a456ce545b8d16125c98f44a6d51138ff32c6633ec2712313f2db2e97b95",
+        "locator": "#/items/0",
+        "start": 0,
+        "end": 251,
+        "quoteHash": "15ed1a6739f961a6f529667b57896e156c14df80c618dfe536f6e25476a0d95a",
+        "rawContentHash": "2b7eb016ca32a70915c4d762e5ad9c37413440ccaf36791f0a651f94bfcdc5eb"
+      },
+      {
+        "anchorId": "148461bbff097105ccbb6eda96e21ddac812b11cf10dffa7d1920d2c810bca84",
+        "locator": "#/items/1",
+        "start": 252,
+        "end": 350,
+        "quoteHash": "73899f305817ea7416408be919a61cfba2e108030522d8cff19d3ade9b6333f4",
+        "rawContentHash": "2b7eb016ca32a70915c4d762e5ad9c37413440ccaf36791f0a651f94bfcdc5eb"
+      },
+      {
+        "anchorId": "f13b84cdbbba760c0bb4e2d1ea54fb97263de48460b9d0479ad59a7c3ee5043b",
+        "locator": "#/items/2",
+        "start": 351,
+        "end": 602,
+        "quoteHash": "5a92d2595d715929e33591c72530d901b853e483b04a1d97ef424e3e113b08a1",
+        "rawContentHash": "2b7eb016ca32a70915c4d762e5ad9c37413440ccaf36791f0a651f94bfcdc5eb"
+      },
+      {
+        "anchorId": "c66ec00124c9e9d11b2c4b41f182f09467a09282860916b7e53e5a80cd649502",
+        "locator": "#/items/3",
+        "start": 603,
+        "end": 720,
+        "quoteHash": "83a909105554213b757ab179fd5efcc8c405092446e545c736c3f024891b83b9",
+        "rawContentHash": "2b7eb016ca32a70915c4d762e5ad9c37413440ccaf36791f0a651f94bfcdc5eb"
+      },
+      {
+        "anchorId": "2f98e10e5babb21d5a00e9887569020f3bf87c9f6bebd887194b224e2e70e654",
+        "locator": "#/items/4",
+        "start": 721,
+        "end": 972,
+        "quoteHash": "f3a925d36476b9189e25737de55d55892e1f3fffb157986a287d237481e533f1",
+        "rawContentHash": "2b7eb016ca32a70915c4d762e5ad9c37413440ccaf36791f0a651f94bfcdc5eb"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "348847115b96cfa03c79cba724bd7ae681e6dc7b1275ea691cf6a5bd83c7c410",
+    "sourceId": "ID-JDIH",
+    "metadata": {
+      "title": null,
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "DISCOVERY_FEED"
+    },
+    "provenance": {
+      "artifactId": "3fa44bcb-c8a4-4757-9c3f-4152b52a0fe7",
+      "rawContentHash": "bb0f962739336f7e00dd93bd2cf5c82e84b3d5730364d984214354e402c1c5d6",
+      "sourceUrl": "https://jdih.kemenkeu.go.id/rss.xml",
+      "finalUrl": "https://jdih.kemenkeu.go.id/rss.xml",
+      "retrievedAt": "2026-10-28T16:45:52.648Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "JDIH",
+      "authorityName": "Ministry of Finance legal documentation",
+      "sourceRole": "SECONDARY_LEGISLATION",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/bb0f962739336f7e00dd93bd2cf5c82e84b3d5730364d984214354e402c1c5d6.bin",
+      "rawContentHash": "bb0f962739336f7e00dd93bd2cf5c82e84b3d5730364d984214354e402c1c5d6"
+    },
+    "sourceSpecificMetadata": {
+      "format": "XML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/bb0f962739336f7e00dd93bd2cf5c82e84b3d5730364d984214354e402c1c5d6.bin",
+        "rawContentHash": "bb0f962739336f7e00dd93bd2cf5c82e84b3d5730364d984214354e402c1c5d6"
+      }
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "beb60aac4dddcc016977dddf73173bad550efa3207d123bd8af084ef41b3bd9c",
+    "normalizedTextCharacters": 41,
+    "anchorCount": 2,
+    "firstAnchors": [
+      {
+        "anchorId": "ea9b02d220f2289684940a4d8b9d2aef71321eca687cbb03d553bcae354be23b",
+        "locator": "xml:122",
+        "start": 0,
+        "end": 20,
+        "quoteHash": "ef1ffc5bc2e6f3dfdd014226ab1de0c4db5a87d5e2ff5d31f93299098a8e1ab5",
+        "rawContentHash": "bb0f962739336f7e00dd93bd2cf5c82e84b3d5730364d984214354e402c1c5d6"
+      },
+      {
+        "anchorId": "fb72c32cd0d97d614920d0d09022dd0cf99a0e27334bb70225eddad468cd6a3e",
+        "locator": "xml:571",
+        "start": 21,
+        "end": 41,
+        "quoteHash": "ef1ffc5bc2e6f3dfdd014226ab1de0c4db5a87d5e2ff5d31f93299098a8e1ab5",
+        "rawContentHash": "bb0f962739336f7e00dd93bd2cf5c82e84b3d5730364d984214354e402c1c5d6"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "d40b732a66f40db280e0418b4fafaad12780cb22432301d37865eea48c518569",
+    "sourceId": "ID-BPK",
+    "metadata": {
+      "title": "UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan - JDIH BPK",
+      "officialDocumentId": null,
+      "language": "id",
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "e4ce8356-0bc3-4c23-90cc-5a815547b948",
+      "rawContentHash": "7ed4433b3113559490549eb6237d568a3ca9e87c8755985aa43c1a896e0a95c5",
+      "sourceUrl": "https://peraturan.bpk.go.id/Details/185162/uu-no-7-tahun-2021",
+      "finalUrl": "https://peraturan.bpk.go.id/Details/185162/uu-no-7-tahun-2021",
+      "retrievedAt": "2026-10-28T16:31:48.168Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "BPK",
+      "authorityName": "Badan Pemeriksa Keuangan legislation database",
+      "sourceRole": "PRIMARY_LEGISLATION",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/7ed4433b3113559490549eb6237d568a3ca9e87c8755985aa43c1a896e0a95c5.bin",
+      "rawContentHash": "7ed4433b3113559490549eb6237d568a3ca9e87c8755985aa43c1a896e0a95c5"
+    },
+    "sourceSpecificMetadata": {
+      "format": "HTML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/7ed4433b3113559490549eb6237d568a3ca9e87c8755985aa43c1a896e0a95c5.bin",
+        "rawContentHash": "7ed4433b3113559490549eb6237d568a3ca9e87c8755985aa43c1a896e0a95c5"
+      },
+      "metaTags": [
+        "<meta charset=\"utf-8\" />",
+        "<meta name=\"description\" content=\"Undang-undang (UU) Nomor 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan. Status: Berlaku. Unduh dokumen dan abstrak UU No. 7 Tahun 2021 di JDIH BPK RI.\" />",
+        "<meta name=\"keywords\" content=\"peraturan, peraturan bpk, peraturan pusat, peraturan kementerian, peraturan lembaga, peraturan daerah\" />",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />",
+        "<meta name=\"robots\" content=\"index, follow\" />",
+        "<meta property=\"og:locale\" content=\"id_ID\" />",
+        "<meta property=\"og:type\" content=\"article\" />",
+        "<meta property=\"og:title\" content=\"UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan - JDIH BPK\" />",
+        "<meta property=\"og:url\" content=\"https://peraturan.bpk.go.id/Details/185162/uu-no-7-tahun-2021\" />",
+        "<meta property=\"og:site_name\" content=\"Database Peraturan | JDIH BPK\" />",
+        "<meta property=\"og:description\" content=\"Undang-undang (UU) Nomor 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan. Status: Berlaku. Unduh dokumen dan abstrak UU No. 7 Tahun 2021 di JDIH BPK RI.\" />",
+        "<meta property=\"og:image\" content=\"https://peraturan.bpk.go.id/images/peraturan-brand-banner.jpg\" />",
+        "<meta property=\"og:image:width\" content=\"1200\" />",
+        "<meta property=\"og:image:height\" content=\"630\" />",
+        "<meta name=\"twitter:card\" content=\"summary_large_image\" />",
+        "<meta name=\"twitter:title\" content=\"UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan - JDIH BPK\" />",
+        "<meta name=\"twitter:description\" content=\"Undang-undang (UU) Nomor 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan. Status: Berlaku. Unduh dokumen dan abstrak UU No. 7 Tahun 2021 di JDIH BPK RI.\" />",
+        "<meta name=\"twitter:image\" content=\"https://peraturan.bpk.go.id/images/peraturan-brand-banner.jpg\" />"
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "a12897a2bd7bb224a7aa10ab48abf8ce9fa0f3911444fd89bd3a281e63d11c52",
+    "normalizedTextCharacters": 9660,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "f136ca611b486ba9271c119b10c9c312289f19c5e1f7d1129aad4cd17b5dc5f1",
+        "locator": "html:document",
+        "start": 0,
+        "end": 9660,
+        "quoteHash": "a12897a2bd7bb224a7aa10ab48abf8ce9fa0f3911444fd89bd3a281e63d11c52",
+        "rawContentHash": "7ed4433b3113559490549eb6237d568a3ca9e87c8755985aa43c1a896e0a95c5"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "eb41fb7d1501a3b296a5db67d10eb37e11799c61af6e0f25af22cab5d12509d2",
+    "sourceId": "SG-SSO",
+    "metadata": {
+      "title": null,
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "67ae41da-fa86-4eca-92ce-bcd630e6d01f",
+      "rawContentHash": "144f4bf1a297ed159d0ffd157c2f37bb0202b04bc9c5dae1305404b4d96e0da5",
+      "sourceUrl": "https://sso.agc.gov.sg/Act/ITA1947",
+      "finalUrl": "https://sso.agc.gov.sg/Act/ITA1947",
+      "retrievedAt": "2026-10-28T16:31:47.381Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "SSO",
+      "authorityName": "Attorney-General Chambers Singapore Statutes Online",
+      "sourceRole": "PRIMARY_LEGISLATION",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/144f4bf1a297ed159d0ffd157c2f37bb0202b04bc9c5dae1305404b4d96e0da5.bin",
+      "rawContentHash": "144f4bf1a297ed159d0ffd157c2f37bb0202b04bc9c5dae1305404b4d96e0da5"
+    },
+    "sourceSpecificMetadata": {},
+    "status": "REVIEW_REQUIRED",
+    "processingState": "HTTP_ERROR",
+    "normalizedTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "normalizedTextCharacters": 0,
+    "anchorCount": 0,
+    "firstAnchors": []
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "0c320f03d83868f96695e3307c2ac4137480b0499d5c61313f7519e635df6198",
+    "sourceId": "SG-IRAS",
+    "metadata": {
+      "title": null,
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "8948d111-e1fc-4a04-a0aa-796b40a4e8bc",
+      "rawContentHash": "c540a4bb9410210f4de3ec3acadcafadc074f9174a76e0f7e47c0146c90168b8",
+      "sourceUrl": "https://www.iras.gov.sg/media/docs/default-source/e-tax/etaxguide_srk-for-small-businesses.pdf?sfvrsn=763a89a5_12",
+      "finalUrl": "https://www.iras.gov.sg/media/docs/default-source/e-tax/etaxguide_srk-for-small-businesses.pdf?sfvrsn=763a89a5_12",
+      "retrievedAt": "2026-10-28T16:31:47.731Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "IRAS",
+      "authorityName": "Inland Revenue Authority of Singapore",
+      "sourceRole": "TAX_AUTHORITY",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/c540a4bb9410210f4de3ec3acadcafadc074f9174a76e0f7e47c0146c90168b8.bin",
+      "rawContentHash": "c540a4bb9410210f4de3ec3acadcafadc074f9174a76e0f7e47c0146c90168b8"
+    },
+    "sourceSpecificMetadata": {},
+    "status": "REVIEW_REQUIRED",
+    "processingState": "PDF_TEXT_EXTRACTION_REQUIRED",
+    "normalizedTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "normalizedTextCharacters": 0,
+    "anchorCount": 0,
+    "firstAnchors": []
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "d192f9d0dc3813ca7ecea7d632c28e4b5e403998a522290b643f57ff47b4ecd7",
+    "sourceId": "SG-IRAS",
+    "metadata": {
+      "title": "IRAS | Corporate Income Tax Filing Season 2026",
+      "officialDocumentId": null,
+      "language": "en",
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "61849a55-6d17-4ff5-bd7e-ac69d87c65e5",
+      "rawContentHash": "5fad8a4a91a19c3ccc55bf2811dbc5b223cedad83366bb5d40f7844cf0fee5ab",
+      "sourceUrl": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax",
+      "finalUrl": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-filing-season-2026",
+      "retrievedAt": "2026-10-28T16:31:48.072Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "IRAS",
+      "authorityName": "Inland Revenue Authority of Singapore",
+      "sourceRole": "TAX_AUTHORITY",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/5fad8a4a91a19c3ccc55bf2811dbc5b223cedad83366bb5d40f7844cf0fee5ab.bin",
+      "rawContentHash": "5fad8a4a91a19c3ccc55bf2811dbc5b223cedad83366bb5d40f7844cf0fee5ab"
+    },
+    "sourceSpecificMetadata": {
+      "format": "HTML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/5fad8a4a91a19c3ccc55bf2811dbc5b223cedad83366bb5d40f7844cf0fee5ab.bin",
+        "rawContentHash": "5fad8a4a91a19c3ccc55bf2811dbc5b223cedad83366bb5d40f7844cf0fee5ab"
+      },
+      "metaTags": [
+        "<meta charset=\"utf-8\">",
+        "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+        "<meta name=\"theme-color\" content=\"#2D7BB9\">",
+        "<meta name=\"robots\" content=\"follow\">",
+        "<meta property=\"og:title\" content=\"IRAS | Corporate Income Tax Filing Season 2026\" />",
+        "<meta property=\"og:description\" content=\"Get information on Corporate Income Tax filing to help you better understand your company’s tax filing obligations.\" />",
+        "<meta property=\"og:url\" content=\"https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-filing-season-2026\" />",
+        "<meta property=\"og:type\" content=\"website\" />",
+        "<meta property=\"og:site_name\" content=\"Default\" />",
+        "<meta name=\"description\" content=\"Get information on Corporate Income Tax filing to help you better understand your company’s tax filing obligations.\" />"
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "b5f0303128500eb035879c33e01ee6f17675578ea298b5e985b5fc3ccb57efbe",
+    "normalizedTextCharacters": 11666,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "171a44ade689b58bad7d0eeae29b720f5f8c519feb639e3ebf02c290672bbfcb",
+        "locator": "html:main:233128",
+        "start": 0,
+        "end": 11666,
+        "quoteHash": "b5f0303128500eb035879c33e01ee6f17675578ea298b5e985b5fc3ccb57efbe",
+        "rawContentHash": "5fad8a4a91a19c3ccc55bf2811dbc5b223cedad83366bb5d40f7844cf0fee5ab"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "a8b46bc0a9c65a4bee1d1408106af7b955cdf3dab2f1e70a5b27519e5b6710ac",
+    "sourceId": "SG-MOF",
+    "metadata": {
+      "title": "Public Consultation on Proposed Finance (Income Taxes) Bill 2026 | Ministry of Finance (MOF)",
+      "officialDocumentId": null,
+      "language": "en",
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "7423a3b8-6b56-461c-b1e0-f9425a56e541",
+      "rawContentHash": "9578c06902b98acb0876c29d25bd821de8d730711cda17f02099e50efe17ab73",
+      "sourceUrl": "https://www.mof.gov.sg/news-resources/newsroom/public-consultation-on-proposed-finance-income-taxes--bill-2026/",
+      "finalUrl": "https://www.mof.gov.sg/news-resources/newsroom/public-consultation-on-proposed-finance-income-taxes--bill-2026/",
+      "retrievedAt": "2026-10-28T16:31:49.529Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "MOF",
+      "authorityName": "Ministry of Finance Singapore",
+      "sourceRole": "FINANCE_MINISTRY",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/9578c06902b98acb0876c29d25bd821de8d730711cda17f02099e50efe17ab73.bin",
+      "rawContentHash": "9578c06902b98acb0876c29d25bd821de8d730711cda17f02099e50efe17ab73"
+    },
+    "sourceSpecificMetadata": {
+      "format": "HTML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/9578c06902b98acb0876c29d25bd821de8d730711cda17f02099e50efe17ab73.bin",
+        "rawContentHash": "9578c06902b98acb0876c29d25bd821de8d730711cda17f02099e50efe17ab73"
+      },
+      "metaTags": [
+        "<meta charSet=\"utf-8\"/>",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>",
+        "<meta name=\"next-size-adjust\" content=\"\"/>",
+        "<meta name=\"description\" content=\" \"/>",
+        "<meta name=\"robots\" content=\"index\"/>",
+        "<meta property=\"og:title\" content=\"Public Consultation on Proposed Finance (Income Taxes) Bill 2026\"/>",
+        "<meta property=\"og:description\" content=\" \"/>",
+        "<meta property=\"og:url\" content=\"https://www.mof.gov.sg/news-resources/newsroom/public-consultation-on-proposed-finance-income-taxes--bill-2026/\"/>",
+        "<meta property=\"og:site_name\" content=\"Ministry of Finance (MOF)\"/>",
+        "<meta property=\"og:image\" content=\"https://isomer-user-content.by.gov.sg/153/75fa7680-c39e-4cb0-a3b9-866e3b85e9e5/logo.jpg\"/>",
+        "<meta property=\"og:type\" content=\"article\"/>",
+        "<meta name=\"twitter:card\" content=\"summary_large_image\"/>",
+        "<meta name=\"twitter:title\" content=\"Public Consultation on Proposed Finance (Income Taxes) Bill 2026\"/>",
+        "<meta name=\"twitter:description\" content=\" \"/>",
+        "<meta name=\"twitter:image\" content=\"https://isomer-user-content.by.gov.sg/153/75fa7680-c39e-4cb0-a3b9-866e3b85e9e5/logo.jpg\"/>"
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "db727818eddf7029b47721e9a81cc21f7b1711a51d3d782b6aba067bdcb5da57",
+    "normalizedTextCharacters": 111,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "96f332bdad67c8cfe2f30d5ae7d97e635824dcb3336fe6edd1e3111e1b16da54",
+        "locator": "html:article:7810",
+        "start": 0,
+        "end": 111,
+        "quoteHash": "db727818eddf7029b47721e9a81cc21f7b1711a51d3d782b6aba067bdcb5da57",
+        "rawContentHash": "9578c06902b98acb0876c29d25bd821de8d730711cda17f02099e50efe17ab73"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "c7f952bcda7322b4776c5712f8771b4983c8c1d0ba71a7f5aff006ac21e46020",
+    "sourceId": "US-ECFR",
+    "metadata": {
+      "title": "§ 1.61-1 Gross income.",
+      "officialDocumentId": "1.61-1",
+      "language": null,
+      "documentKind": "REGULATION"
+    },
+    "provenance": {
+      "artifactId": "c978c538-322f-4cba-becb-493fc6718915",
+      "rawContentHash": "af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399",
+      "sourceUrl": "https://www.ecfr.gov/api/versioner/v1/full/2026-10-26/title-26.xml?section=1.61-1",
+      "finalUrl": "https://www.ecfr.gov/api/versioner/v1/full/2026-10-26/title-26.xml?section=1.61-1",
+      "retrievedAt": "2026-10-28T16:35:22.914Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "ECFR",
+      "authorityName": "Office of the Federal Register eCFR",
+      "sourceRole": "SECONDARY_LEGISLATION",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399.bin",
+      "rawContentHash": "af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399"
+    },
+    "sourceSpecificMetadata": {
+      "format": "XML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399.bin",
+        "rawContentHash": "af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399"
+      }
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "032f1840cad45fac697d5dcca2fecf198e50d42eb82dd62175ceba9750977f92",
+    "normalizedTextCharacters": 1647,
+    "anchorCount": 5,
+    "firstAnchors": [
+      {
+        "anchorId": "24dbd5c9a604eefceaa452f4cd6f38f00e29afce8d636ffdb9eef45a73681bd8",
+        "locator": "xml:254",
+        "start": 0,
+        "end": 619,
+        "quoteHash": "85daf1893f23459d2e0384185d613e88089df29cc79cabb31b38695478ed931b",
+        "rawContentHash": "af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399"
+      },
+      {
+        "anchorId": "65d9e960d14ef5a9242bbc63156f97a1e0f9c79f44101ad34fd8e165af9dd5fb",
+        "locator": "xml:888",
+        "start": 620,
+        "end": 1213,
+        "quoteHash": "5500fbf5c16f6641acfcbbb8054036113b01fab4a1dcf40db340ea9e419db05d",
+        "rawContentHash": "af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399"
+      },
+      {
+        "anchorId": "be4d2cb44aa6055fe7e3d5baba332bd5080801be43f89e02f876f605a869a1db",
+        "locator": "xml:1496",
+        "start": 1214,
+        "end": 1355,
+        "quoteHash": "ee0fb2c87b0f88d08a7a72253cad40f2f15ac993da079ac3a6a4fc8d9ba8e854",
+        "rawContentHash": "af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399"
+      },
+      {
+        "anchorId": "32a9541cb3870cf988286ec13cba15614e7766987d43a8c731f21dac639942eb",
+        "locator": "xml:1645",
+        "start": 1356,
+        "end": 1501,
+        "quoteHash": "804784e98feb1f2fae65aa1d781ecbf367d463d30ddec6413d2dfd3175411998",
+        "rawContentHash": "af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399"
+      },
+      {
+        "anchorId": "a4fc40005babd2c88dde7dc16b980dd872305c90b7a96014f58020ff97ae05dd",
+        "locator": "xml:1798",
+        "start": 1502,
+        "end": 1647,
+        "quoteHash": "b93944de51b63b59d055f836bafbddcb375bf6996f3ec069ba88bbf775ab0fdc",
+        "rawContentHash": "af55ce1307dd1df798f0e31a191d853cc186112b1d30102b29910d59df208399"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "0c3564cdbc94d4b37705381208bc05d76e746f40a6a7eb0a0e6648bcadb5891b",
+    "sourceId": "US-ECFR",
+    "metadata": {
+      "title": null,
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "STRUCTURED_DATA"
+    },
+    "provenance": {
+      "artifactId": "28333d93-9f70-4d31-9a8e-7ebfec6751c6",
+      "rawContentHash": "3d53d8723c5f68c16248a02a735a4cc0935a67b7e4117726f0fb9d8931ee85fa",
+      "sourceUrl": "https://www.ecfr.gov/api/versioner/v1/titles.json",
+      "finalUrl": "https://www.ecfr.gov/api/versioner/v1/titles.json",
+      "retrievedAt": "2026-10-28T16:35:22.870Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "ECFR",
+      "authorityName": "Office of the Federal Register eCFR",
+      "sourceRole": "SECONDARY_LEGISLATION",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/3d53d8723c5f68c16248a02a735a4cc0935a67b7e4117726f0fb9d8931ee85fa.bin",
+      "rawContentHash": "3d53d8723c5f68c16248a02a735a4cc0935a67b7e4117726f0fb9d8931ee85fa"
+    },
+    "sourceSpecificMetadata": {
+      "format": "JSON",
+      "topLevelKeys": [
+        "titles",
+        "meta"
+      ],
+      "payloadRef": {
+        "rawStorageRef": "blobs/3d53d8723c5f68c16248a02a735a4cc0935a67b7e4117726f0fb9d8931ee85fa.bin",
+        "rawContentHash": "3d53d8723c5f68c16248a02a735a4cc0935a67b7e4117726f0fb9d8931ee85fa"
+      }
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "3d53d8723c5f68c16248a02a735a4cc0935a67b7e4117726f0fb9d8931ee85fa",
+    "normalizedTextCharacters": 8033,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "5e280d95480751ba05119098b192d8864ec67cd06b1979d711f2b22ff11652d3",
+        "locator": "#",
+        "start": 0,
+        "end": 8033,
+        "quoteHash": "3d53d8723c5f68c16248a02a735a4cc0935a67b7e4117726f0fb9d8931ee85fa",
+        "rawContentHash": "3d53d8723c5f68c16248a02a735a4cc0935a67b7e4117726f0fb9d8931ee85fa"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "7ed65bdfcdd8919ba3c1a9aa268c8d8d664a7a0866285439b749d52c4bd31d5f",
+    "sourceId": "US-IRS",
+    "metadata": {
+      "title": "Publication 334 (2025), Tax Guide for Small Business | Internal Revenue Service",
+      "officialDocumentId": null,
+      "language": "en",
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "94a29fd0-a76f-4926-b53a-ba76af16c698",
+      "rawContentHash": "ab3692eada7e7902dbf33245f87c75206f253ad356416cd645487c93cb79563f",
+      "sourceUrl": "https://www.irs.gov/publications/p334",
+      "finalUrl": "https://www.irs.gov/publications/p334",
+      "retrievedAt": "2026-10-28T16:31:44.444Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "IRS",
+      "authorityName": "Internal Revenue Service",
+      "sourceRole": "TAX_AUTHORITY",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/ab3692eada7e7902dbf33245f87c75206f253ad356416cd645487c93cb79563f.bin",
+      "rawContentHash": "ab3692eada7e7902dbf33245f87c75206f253ad356416cd645487c93cb79563f"
+    },
+    "sourceSpecificMetadata": {
+      "format": "HTML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/ab3692eada7e7902dbf33245f87c75206f253ad356416cd645487c93cb79563f.bin",
+        "rawContentHash": "ab3692eada7e7902dbf33245f87c75206f253ad356416cd645487c93cb79563f"
+      },
+      "metaTags": [
+        "<meta charset=\"utf-8\" />",
+        "<meta name=\"robots\" content=\"index, follow\" />",
+        "<meta name=\"rights\" content=\"United States Internal Revenue Services\" />",
+        "<meta property=\"og:image\" content=\"https://www.irs.gov/pub/image/irs_logo.jpg\" />",
+        "<meta property=\"og:image:type\" content=\"image/jpeg\" />",
+        "<meta property=\"og:image:alt\" content=\"IRS logo\" />",
+        "<meta name=\"twitter:card\" content=\"summary\" />",
+        "<meta name=\"twitter:description\" content=\"\" />",
+        "<meta name=\"twitter:title\" content=\"Publication 334 (2025), Tax Guide for Small Business | Internal Revenue Service\" />",
+        "<meta name=\"twitter:image:alt\" content=\"IRS logo\" />",
+        "<meta name=\"twitter:image\" content=\"https://www.irs.gov/pub/image/logo_small.jpg\" />",
+        "<meta name=\"apple-itunes-app\" content=\"app-id=414113282\" />",
+        "<meta name=\"Generator\" content=\"Drupal 10 (https://www.drupal.org)\" />",
+        "<meta name=\"MobileOptimized\" content=\"width\" />",
+        "<meta name=\"HandheldFriendly\" content=\"true\" />",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />",
+        "<meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\" />"
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "95bafb76e11c45d662cccc48cde9369d937bb1692daddb50580abb4b4e868ad5",
+    "normalizedTextCharacters": 272826,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "3861b323e6ab8165980abd91624c8193402d57bae263e9586ee401dc8ec677f3",
+        "locator": "html:main:70216",
+        "start": 0,
+        "end": 272826,
+        "quoteHash": "95bafb76e11c45d662cccc48cde9369d937bb1692daddb50580abb4b4e868ad5",
+        "rawContentHash": "ab3692eada7e7902dbf33245f87c75206f253ad356416cd645487c93cb79563f"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "98a6f66ee63077327679df204c268ff582ceb2fd76b9b0810fe0e74d8655a6cc",
+    "sourceId": "US-IRS",
+    "metadata": {
+      "title": "Self-employed individuals tax center | Internal Revenue Service",
+      "officialDocumentId": null,
+      "language": "en",
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "875b813b-4989-41ee-b931-6f09317622b8",
+      "rawContentHash": "33735cd7eea163b6885725240922cefdb7ab297fd2d58548e8596d46d9db8696",
+      "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center",
+      "finalUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center",
+      "retrievedAt": "2026-10-28T16:31:44.170Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "IRS",
+      "authorityName": "Internal Revenue Service",
+      "sourceRole": "TAX_AUTHORITY",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/33735cd7eea163b6885725240922cefdb7ab297fd2d58548e8596d46d9db8696.bin",
+      "rawContentHash": "33735cd7eea163b6885725240922cefdb7ab297fd2d58548e8596d46d9db8696"
+    },
+    "sourceSpecificMetadata": {
+      "format": "HTML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/33735cd7eea163b6885725240922cefdb7ab297fd2d58548e8596d46d9db8696.bin",
+        "rawContentHash": "33735cd7eea163b6885725240922cefdb7ab297fd2d58548e8596d46d9db8696"
+      },
+      "metaTags": [
+        "<meta charset=\"utf-8\" />",
+        "<meta name=\"description\" content=\"Find information on self-employment, including when and how to file your federal tax return and make estimated payments.\" />",
+        "<meta name=\"abstract\" content=\"Find information on self-employment, including when and how to file your federal tax return and make estimated payments.\" />",
+        "<meta name=\"robots\" content=\"index, follow\" />",
+        "<meta name=\"original-source\" content=\"https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center\" />",
+        "<meta name=\"rights\" content=\"United States Internal Revenue Services\" />",
+        "<meta property=\"og:image\" content=\"https://www.irs.gov/pub/image/irs_logo.jpg\" />",
+        "<meta property=\"og:image:type\" content=\"image/jpeg\" />",
+        "<meta property=\"og:image:alt\" content=\"IRS logo\" />",
+        "<meta name=\"twitter:card\" content=\"summary\" />",
+        "<meta name=\"twitter:description\" content=\"Find information on self-employment, including when and how to file your federal tax return and make estimated payments.\" />",
+        "<meta name=\"twitter:title\" content=\"Self-employed individuals tax center | Internal Revenue Service\" />",
+        "<meta name=\"twitter:image:alt\" content=\"IRS logo\" />",
+        "<meta name=\"twitter:image\" content=\"https://www.irs.gov/pub/image/logo_small.jpg\" />",
+        "<meta name=\"apple-itunes-app\" content=\"app-id=414113282\" />",
+        "<meta name=\"Generator\" content=\"Drupal 10 (https://www.drupal.org)\" />",
+        "<meta name=\"MobileOptimized\" content=\"width\" />",
+        "<meta name=\"HandheldFriendly\" content=\"true\" />",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />",
+        "<meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\" />"
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "6af13698ba2c93a882a04f3327904aadb85377505d037fc4cd14e61f8668a49a",
+    "normalizedTextCharacters": 6734,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "67a2609f51c96e6edda2476feafebad7ca46665586fc77c91f7d458e5da8837e",
+        "locator": "html:main:81409",
+        "start": 0,
+        "end": 6734,
+        "quoteHash": "6af13698ba2c93a882a04f3327904aadb85377505d037fc4cd14e61f8668a49a",
+        "rawContentHash": "33735cd7eea163b6885725240922cefdb7ab297fd2d58548e8596d46d9db8696"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "0d6739bed46f4ca56b629b67a099a305e86046e7897c180a908e5c1ee98e062e",
+    "sourceId": "US-USCODE",
+    "metadata": {
+      "title": "Download the United States Code - US Code",
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "6fef2eed-2dd5-4042-8269-6625bb5d4a4a",
+      "rawContentHash": "cfb274216a41ba23cdfac2c27e0ed497bfc846a4cdd5a48f43f2edf068f21198",
+      "sourceUrl": "https://uscode.house.gov/download.html",
+      "finalUrl": "https://uscode.house.gov/download.html",
+      "retrievedAt": "2026-10-28T16:32:44.637Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "USCODE",
+      "authorityName": "Office of the Law Revision Counsel",
+      "sourceRole": "PRIMARY_LEGISLATION",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/cfb274216a41ba23cdfac2c27e0ed497bfc846a4cdd5a48f43f2edf068f21198.bin",
+      "rawContentHash": "cfb274216a41ba23cdfac2c27e0ed497bfc846a4cdd5a48f43f2edf068f21198"
+    },
+    "sourceSpecificMetadata": {
+      "format": "HTML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/cfb274216a41ba23cdfac2c27e0ed497bfc846a4cdd5a48f43f2edf068f21198.bin",
+        "rawContentHash": "cfb274216a41ba23cdfac2c27e0ed497bfc846a4cdd5a48f43f2edf068f21198"
+      },
+      "metaTags": [
+        "<meta charset=\"UTF-8\">"
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "c548cf49807fd4d432f739eb4e00ba172881fc0978bc73237314f8ebd829daf8",
+    "normalizedTextCharacters": 5260,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "c08a6d20be2fa4c53d5580ff13fa3c796c50fa469a78b6a5925f6e814b42a763",
+        "locator": "html:document",
+        "start": 0,
+        "end": 5260,
+        "quoteHash": "c548cf49807fd4d432f739eb4e00ba172881fc0978bc73237314f8ebd829daf8",
+        "rawContentHash": "cfb274216a41ba23cdfac2c27e0ed497bfc846a4cdd5a48f43f2edf068f21198"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "cfc7261db3578e4ffcd610c7822ff22b6d0cb76a127dfebb103b836836fe74a1",
+    "sourceId": "AU-FRL",
+    "metadata": {
+      "title": null,
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "7c696409-e147-4d4d-b57e-c4dbf12ad99a",
+      "rawContentHash": "dda76c5790fbf72caac6f9a75188c1535ca06ff9b2c8ea8151454e99da55649e",
+      "sourceUrl": "https://www.legislation.gov.au/F2024N00110/asmade/2024-01-31/text/original/epub/OEBPS/document_1/document_1.html",
+      "finalUrl": "https://www.legislation.gov.au/F2024N00110/asmade/2024-01-31/text/original/epub/OEBPS/document_1/document_1.html",
+      "retrievedAt": "2026-10-28T16:38:32.583Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "FRL",
+      "authorityName": "Office of Parliamentary Counsel Federal Register",
+      "sourceRole": "PRIMARY_LEGISLATION",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/dda76c5790fbf72caac6f9a75188c1535ca06ff9b2c8ea8151454e99da55649e.bin",
+      "rawContentHash": "dda76c5790fbf72caac6f9a75188c1535ca06ff9b2c8ea8151454e99da55649e"
+    },
+    "sourceSpecificMetadata": {
+      "format": "HTML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/dda76c5790fbf72caac6f9a75188c1535ca06ff9b2c8ea8151454e99da55649e.bin",
+        "rawContentHash": "dda76c5790fbf72caac6f9a75188c1535ca06ff9b2c8ea8151454e99da55649e"
+      },
+      "metaTags": [
+        "<meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\" />",
+        "<meta http-equiv=\"Content-Style-Type\" content=\"text/css\" />"
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "7f6822c652340b53909f08c56e49b1a57bca68c81b0a34dc9f9adc6d77c806ba",
+    "normalizedTextCharacters": 1624,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "5160f36b8fa673e839d61dd47a62c2b1a606669be39e724f2aca1443e7996838",
+        "locator": "html:document",
+        "start": 0,
+        "end": 1624,
+        "quoteHash": "7f6822c652340b53909f08c56e49b1a57bca68c81b0a34dc9f9adc6d77c806ba",
+        "rawContentHash": "dda76c5790fbf72caac6f9a75188c1535ca06ff9b2c8ea8151454e99da55649e"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "344ca1bf7cac9d73984aa617d0dee2da3aa01f4febf79cdfe20663ad83f66431",
+    "sourceId": "AU-FRL",
+    "metadata": {
+      "title": null,
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "API_SCHEMA"
+    },
+    "provenance": {
+      "artifactId": "166c9434-7c77-49b3-905c-e058e74aa8c4",
+      "rawContentHash": "189bc60f7bf80fc68c8629224aec89badddaf371025a08fe94fd3fdf2a6f30e1",
+      "sourceUrl": "https://api.prod.legislation.gov.au/swagger/v1/swagger.json",
+      "finalUrl": "https://api.prod.legislation.gov.au/swagger/v1/swagger.json",
+      "retrievedAt": "2026-10-28T16:31:46.794Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "FRL",
+      "authorityName": "Office of Parliamentary Counsel Federal Register",
+      "sourceRole": "PRIMARY_LEGISLATION",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/189bc60f7bf80fc68c8629224aec89badddaf371025a08fe94fd3fdf2a6f30e1.bin",
+      "rawContentHash": "189bc60f7bf80fc68c8629224aec89badddaf371025a08fe94fd3fdf2a6f30e1"
+    },
+    "sourceSpecificMetadata": {
+      "format": "JSON",
+      "topLevelKeys": [
+        "openapi",
+        "info",
+        "paths",
+        "components",
+        "tags"
+      ],
+      "payloadRef": {
+        "rawStorageRef": "blobs/189bc60f7bf80fc68c8629224aec89badddaf371025a08fe94fd3fdf2a6f30e1.bin",
+        "rawContentHash": "189bc60f7bf80fc68c8629224aec89badddaf371025a08fe94fd3fdf2a6f30e1"
+      }
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "448ccc992408df8664b26b8adb461daab1b9e06d61539b37a5026550e7ad1579",
+    "normalizedTextCharacters": 353678,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "fa145a85c6094eb28c82b034a0664342ef3c0900b0e5c547152a97ac8694d9a2",
+        "locator": "#",
+        "start": 0,
+        "end": 353678,
+        "quoteHash": "448ccc992408df8664b26b8adb461daab1b9e06d61539b37a5026550e7ad1579",
+        "rawContentHash": "189bc60f7bf80fc68c8629224aec89badddaf371025a08fe94fd3fdf2a6f30e1"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "2260f59df6916c3c59c2d638642e61c8349adec67b93b26430b3ef7de776186e",
+    "sourceId": "AU-ATO",
+    "metadata": {
+      "title": null,
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "27dcdd92-8ce5-43df-bfd7-de8a79471cc3",
+      "rawContentHash": "97f6c6ca8e3bf87c382ec7d5f6856cfa2298b511fc30135fa914e34916307525",
+      "sourceUrl": "https://www.ato.gov.au/law/view/pdf?DocID=TXR%2FTR20241%2FNAT%2FATO%2F00001&PiT=99991231235958&filename=law%2Fview%2Fpdf%2Fpbr%2Ftr2024-001.pdf",
+      "finalUrl": "https://www.ato.gov.au/law/view/pdf?DocID=TXR%2FTR20241%2FNAT%2FATO%2F00001&PiT=99991231235958&filename=law%2Fview%2Fpdf%2Fpbr%2Ftr2024-001.pdf",
+      "retrievedAt": "2026-10-28T16:31:51.581Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "ATO",
+      "authorityName": "Australian Taxation Office",
+      "sourceRole": "TAX_AUTHORITY",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/97f6c6ca8e3bf87c382ec7d5f6856cfa2298b511fc30135fa914e34916307525.bin",
+      "rawContentHash": "97f6c6ca8e3bf87c382ec7d5f6856cfa2298b511fc30135fa914e34916307525"
+    },
+    "sourceSpecificMetadata": {},
+    "status": "REVIEW_REQUIRED",
+    "processingState": "PDF_TEXT_EXTRACTION_REQUIRED",
+    "normalizedTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "normalizedTextCharacters": 0,
+    "anchorCount": 0,
+    "firstAnchors": []
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "bdbdc08b03d643c27bfd6a44f94d0bf50677c11c176832b4d48ddaf6680e7d0f",
+    "sourceId": "AU-ATO",
+    "metadata": {
+      "title": "Tax rates – Australian resident | Australian Taxation Office",
+      "officialDocumentId": null,
+      "language": "en",
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "019b7ba7-f856-4493-b1d9-defad2d10685",
+      "rawContentHash": "dacc9966c662cdfa4779622ddb17c08d52037c438eaff7a6455b5e0167b7e306",
+      "sourceUrl": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents",
+      "finalUrl": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents",
+      "retrievedAt": "2026-10-28T16:31:46.968Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "ATO",
+      "authorityName": "Australian Taxation Office",
+      "sourceRole": "TAX_AUTHORITY",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/dacc9966c662cdfa4779622ddb17c08d52037c438eaff7a6455b5e0167b7e306.bin",
+      "rawContentHash": "dacc9966c662cdfa4779622ddb17c08d52037c438eaff7a6455b5e0167b7e306"
+    },
+    "sourceSpecificMetadata": {
+      "format": "HTML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/dacc9966c662cdfa4779622ddb17c08d52037c438eaff7a6455b5e0167b7e306.bin",
+        "rawContentHash": "dacc9966c662cdfa4779622ddb17c08d52037c438eaff7a6455b5e0167b7e306"
+      },
+      "metaTags": [
+        "<meta charSet=\"utf-8\" data-next-head=\"\"/>",
+        "<meta name=\"viewport\" content=\"width=device-width\" data-next-head=\"\"/>",
+        "<meta name=\"dcterms.title\" content=\"Tax rates – Australian resident\" data-next-head=\"\"/>",
+        "<meta name=\"dcterms.identifier\" content=\"https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents\" data-next-head=\"\"/>",
+        "<meta name=\"dcterms.description\" content=\"Tax rates for Australian residents for income years from 2027 back to 1984.\" data-next-head=\"\"/>",
+        "<meta name=\"dcterms.creator\" content=\"scheme=AGLSTERMS.AglsAgent; corporateName=Australian Taxation Office; address=GPO Box 9990 Canberra ACT 2600; contact=13 28 65\" data-next-head=\"\"/>",
+        "<meta name=\"dcterms.publisher\" content=\"scheme=AGLSTERMS.AglsAgent; corporateName=Australian Taxation Office; address=GPO Box 9990 Canberra ACT 2600; contact=13 28 65\" data-next-head=\"\"/>",
+        "<meta name=\"dcterms.modified\" content=\"scheme=dcterms.ISO8601; 2026-08-12T14:00:00.000+00:00\" data-next-head=\"\"/>",
+        "<meta name=\"dcterms.language\" content=\"dcterms.RFC4646; en\" data-next-head=\"\"/>",
+        "<meta name=\"dcterms.subject\" content=\"tax rates australian residents, australian residents income tax rates, rates, tax threshold, australian residents tax tables\" data-next-head=\"\"/>",
+        "<meta name=\"dcterms.type\" content=\"Content\" data-next-head=\"\"/>",
+        "<meta name=\"description\" content=\"Tax rates for Australian residents for income years from 2027 back to 1984.\" data-next-head=\"\"/>",
+        "<meta name=\"keywords\" content=\"tax rates australian residents, australian residents income tax rates, rates, tax threshold, australian residents tax tables\" data-next-head=\"\"/>",
+        "<meta name=\"robots\" content=\"index,follow\" data-next-head=\"\"/>",
+        "<meta name=\"twitter:card\" content=\"summary\" data-next-head=\"\"/>",
+        "<meta name=\"twitter:title\" content=\"Tax rates – Australian resident\" data-next-head=\"\"/>",
+        "<meta name=\"twitter:description\" content=\"Tax rates for Australian residents for income years from 2027 back to 1984.\" data-next-head=\"\"/>",
+        "<meta name=\"twitter:image\" content=\"https://www.ato.gov.au/-/media/ato/home-banner.jpg\" data-next-head=\"\"/>",
+        "<meta name=\"twitter:image:alt\" content=\"home banner\" data-next-head=\"\"/>",
+        "<meta name=\"twitter:image:width\" content=\"2550\" data-next-head=\"\"/>",
+        "<meta name=\"twitter:image:height\" content=\"1913\" data-next-head=\"\"/>",
+        "<meta name=\"twitter:url\" content=\"https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents\" data-next-head=\"\"/>",
+        "<meta name=\"twitter:site\" content=\"@ato_gov_au\" data-next-head=\"\"/>",
+        "<meta name=\"og:type\" content=\"website\" data-next-head=\"\"/>",
+        "<meta name=\"og:title\" content=\"Tax rates – Australian resident\" data-next-head=\"\"/>",
+        "<meta name=\"og:description\" content=\"Tax rates for Australian residents for income years from 2027 back to 1984.\" data-next-head=\"\"/>",
+        "<meta name=\"og:image\" content=\"https://www.ato.gov.au/-/media/ato/home-banner.jpg\" data-next-head=\"\"/>",
+        "<meta name=\"og:image:width\" content=\"2550\" data-next-head=\"\"/>",
+        "<meta name=\"og:image:height\" content=\"1913\" data-next-head=\"\"/>",
+        "<meta name=\"og:url\" content=\"https://www.ato.gov.au/tax-rates-and-codes/tax-rates-australian-residents\" data-next-head=\"\"/>",
+        "<meta name=\"fb:app_id\" content=\"123456789\" data-next-head=\"\"/>"
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "aed28c90f4f13eab3a83b15c1860d28ebbae941d6c0d11e1e03c8aab8004b89d",
+    "normalizedTextCharacters": 20172,
+    "anchorCount": 1,
+    "firstAnchors": [
+      {
+        "anchorId": "12e28caed36cc11d2cfe153a9d9a799a176a84b7c0415df2eb1f73743427394d",
+        "locator": "html:document",
+        "start": 0,
+        "end": 20172,
+        "quoteHash": "aed28c90f4f13eab3a83b15c1860d28ebbae941d6c0d11e1e03c8aab8004b89d",
+        "rawContentHash": "dacc9966c662cdfa4779622ddb17c08d52037c438eaff7a6455b5e0167b7e306"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "b224e2ad14fe7524fdd2684ee3e91e9adfcadea64164bf33a6806dc86c7531d3",
+    "sourceId": "AU-ATO",
+    "metadata": {
+      "title": null,
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "UNCLASSIFIED"
+    },
+    "provenance": {
+      "artifactId": "8505c1a3-a8e8-4f53-8515-7ddd98e74f2b",
+      "rawContentHash": "df37c0c6408e2fada7b19d2a78e7f83e30a29f551d618841ea2184eb1e2ccb6f",
+      "sourceUrl": "https://www.ato.gov.au/api/public/content/0-61416407-4089-4d08-879c-7345ee017560",
+      "finalUrl": "https://www.ato.gov.au/api/public/content/0-61416407-4089-4d08-879c-7345ee017560",
+      "retrievedAt": "2026-10-28T16:31:47.548Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "ATO",
+      "authorityName": "Australian Taxation Office",
+      "sourceRole": "TAX_AUTHORITY",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/df37c0c6408e2fada7b19d2a78e7f83e30a29f551d618841ea2184eb1e2ccb6f.bin",
+      "rawContentHash": "df37c0c6408e2fada7b19d2a78e7f83e30a29f551d618841ea2184eb1e2ccb6f"
+    },
+    "sourceSpecificMetadata": {},
+    "status": "REVIEW_REQUIRED",
+    "processingState": "PDF_TEXT_EXTRACTION_REQUIRED",
+    "normalizedTextHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "normalizedTextCharacters": 0,
+    "anchorCount": 0,
+    "firstAnchors": []
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "3b8292cf677e3c3104615489e509cc94fe839be8f1d30003b92b5c2185ad7110",
+    "sourceId": "GB-LEGISLATION",
+    "metadata": {
+      "title": "Finance Act 2024",
+      "officialDocumentId": "http://www.legislation.gov.uk/ukpga/2024/3",
+      "language": null,
+      "documentKind": "LEGISLATION"
+    },
+    "provenance": {
+      "artifactId": "20a78b29-9b30-4b82-85b5-2713bcc3a1dd",
+      "rawContentHash": "ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d",
+      "sourceUrl": "https://www.legislation.gov.uk/ukpga/2024/3/data.xml",
+      "finalUrl": "https://www.legislation.gov.uk/ukpga/2024/3/data.xml",
+      "retrievedAt": "2026-10-28T16:31:43.165Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "LEGISLATION",
+      "authorityName": "The National Archives legislation.gov.uk",
+      "sourceRole": "PRIMARY_LEGISLATION",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [
+        {
+          "locator": "/Legislation/@RestrictStartDate",
+          "semantic": "VERSION_START_NOT_UNIVERSAL_COMMENCEMENT",
+          "value": "2026-06-25"
+        },
+        {
+          "locator": "//ukm:EnactmentDate/@Date",
+          "semantic": "ENACTMENT_NOT_UNIVERSAL_COMMENCEMENT",
+          "value": "2024-02-22"
+        }
+      ],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d.bin",
+      "rawContentHash": "ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d"
+    },
+    "sourceSpecificMetadata": {
+      "format": "XML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d.bin",
+        "rawContentHash": "ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d"
+      },
+      "versionLinks": [
+        {
+          "relation": "replaces",
+          "url": "http://www.legislation.gov.uk/ukpga/2024/3/2026-04-01"
+        },
+        {
+          "relation": "hasVersion",
+          "url": "http://www.legislation.gov.uk/ukpga/2024/3/enacted"
+        },
+        {
+          "relation": "hasVersion",
+          "url": "http://www.legislation.gov.uk/ukpga/2024/3/2024-02-22"
+        },
+        {
+          "relation": "hasVersion",
+          "url": "http://www.legislation.gov.uk/ukpga/2024/3/2024-04-01"
+        },
+        {
+          "relation": "hasVersion",
+          "url": "http://www.legislation.gov.uk/ukpga/2024/3/2024-04-06"
+        },
+        {
+          "relation": "hasVersion",
+          "url": "http://www.legislation.gov.uk/ukpga/2024/3/2024-09-03"
+        },
+        {
+          "relation": "hasVersion",
+          "url": "http://www.legislation.gov.uk/ukpga/2024/3/2024-11-18"
+        },
+        {
+          "relation": "hasVersion",
+          "url": "http://www.legislation.gov.uk/ukpga/2024/3/2025-03-20"
+        },
+        {
+          "relation": "hasVersion",
+          "url": "http://www.legislation.gov.uk/ukpga/2024/3/2026-03-18"
+        },
+        {
+          "relation": "hasVersion",
+          "url": "http://www.legislation.gov.uk/ukpga/2024/3/2026-04-01"
+        },
+        {
+          "relation": "hasVersion",
+          "url": "http://www.legislation.gov.uk/ukpga/2024/3/2026-06-25"
+        }
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "85f1a82bdb4060b0eeb489219a232b7995bd1529f0b908eb89e5da32504af69e",
+    "normalizedTextCharacters": 607602,
+    "anchorCount": 5782,
+    "firstAnchors": [
+      {
+        "anchorId": "e690487c468c390cebbbead4645b550233e48d1022f061a2bee4443ca5f40f7e",
+        "locator": "xml:748",
+        "start": 0,
+        "end": 16,
+        "quoteHash": "76346ef9cb93b128c218663eaa7e29c472ad0bcf0513cfcd1993a6b919b3f392",
+        "rawContentHash": "ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d"
+      },
+      {
+        "anchorId": "cfc4807eea78e08cae39ebb523b7b4727d0825af8fc011e6b2b98da260ee1f2b",
+        "locator": "xml:5970",
+        "start": 17,
+        "end": 40,
+        "quoteHash": "a58a5f61f6b35ea67ab45f6cb53ce40435bec1c91d4c4a80565bc08434c875e4",
+        "rawContentHash": "ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d"
+      },
+      {
+        "anchorId": "df1327ec797e5e5723142ad4d7aafa9a856716afc62835ff33e113446b07beaa",
+        "locator": "xml:6058",
+        "start": 41,
+        "end": 698,
+        "quoteHash": "62a2444c7c9d10db9f22501fae12f723af7c35330c349092d00252e4d08aae8a",
+        "rawContentHash": "ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d"
+      },
+      {
+        "anchorId": "ddeae272ec6d30d2fb9ff9e9aef671b714db55fe44c1f4ad72dd3a3ef3d27b02",
+        "locator": "xml:8635",
+        "start": 699,
+        "end": 908,
+        "quoteHash": "722939c85c36659f924c1e6140026cf70dfe8cd088c8557ddf2c98d4d7e55e2c",
+        "rawContentHash": "ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d"
+      },
+      {
+        "anchorId": "8253ca5941fd11c37268e6833e44c3cfd2f23454f8a9b367a21c948407f993fa",
+        "locator": "xml:9061",
+        "start": 909,
+        "end": 965,
+        "quoteHash": "14886820e16b33379d332c75aebb4630cf20f81718f9ee26a99811aa4176df67",
+        "rawContentHash": "ca1bc650a860ddba6325793af258f0fff32128c5c65bbb071c2dd02c1316182d"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "39604ee05196f03e97d534283573887824d8c680b4c8404033c2b9141996f4f1",
+    "sourceId": "GB-LEGISLATION",
+    "metadata": {
+      "title": null,
+      "officialDocumentId": null,
+      "language": null,
+      "documentKind": "DISCOVERY_FEED"
+    },
+    "provenance": {
+      "artifactId": "849b10f0-b784-48b8-a992-d004ea5f15c2",
+      "rawContentHash": "2e17140471f98d382b4e1ca73c17b4bd227d47bc46ccb28442ce480eb12e7aec",
+      "sourceUrl": "https://www.legislation.gov.uk/ukpga/data.feed",
+      "finalUrl": "https://www.legislation.gov.uk/ukpga/data.feed",
+      "retrievedAt": "2026-10-28T16:31:43.453Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "LEGISLATION",
+      "authorityName": "The National Archives legislation.gov.uk",
+      "sourceRole": "PRIMARY_LEGISLATION",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": null,
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/2e17140471f98d382b4e1ca73c17b4bd227d47bc46ccb28442ce480eb12e7aec.bin",
+      "rawContentHash": "2e17140471f98d382b4e1ca73c17b4bd227d47bc46ccb28442ce480eb12e7aec"
+    },
+    "sourceSpecificMetadata": {
+      "format": "XML",
+      "payloadRef": {
+        "rawStorageRef": "blobs/2e17140471f98d382b4e1ca73c17b4bd227d47bc46ccb28442ce480eb12e7aec.bin",
+        "rawContentHash": "2e17140471f98d382b4e1ca73c17b4bd227d47bc46ccb28442ce480eb12e7aec"
+      }
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "e42520547b3dbd791d9d626a8d266e1ab4916154bae3d73222c51d4fc5b6fc3b",
+    "normalizedTextCharacters": 6340,
+    "anchorCount": 41,
+    "firstAnchors": [
+      {
+        "anchorId": "bf765057fea6a8addfd327e2533a9c7e5fce9b3ede048c85b11d82d7af80ad1a",
+        "locator": "xml:721",
+        "start": 0,
+        "end": 14,
+        "quoteHash": "39414102545e7861aec25ed038fcb11aafb75b34686705063f2a8ff268cbd368",
+        "rawContentHash": "2e17140471f98d382b4e1ca73c17b4bd227d47bc46ccb28442ce480eb12e7aec"
+      },
+      {
+        "anchorId": "b8b31215b73f6fa38657a777cbf583fb3d1335c52823d44f2ed32d31306b3d62",
+        "locator": "xml:23607",
+        "start": 15,
+        "end": 56,
+        "quoteHash": "f9ac388576ca9bbef7b451a1c2ba818600c64351c2895090282834966dbe13d6",
+        "rawContentHash": "2e17140471f98d382b4e1ca73c17b4bd227d47bc46ccb28442ce480eb12e7aec"
+      },
+      {
+        "anchorId": "d990173b95bb6939a6384b10e4d210a0668ded2020763d726180e38794afc42c",
+        "locator": "xml:25397",
+        "start": 57,
+        "end": 297,
+        "quoteHash": "64a2c5ce4100f43d76b5c929508e03139d02bc32d969b822f12b74f21fd1abbb",
+        "rawContentHash": "2e17140471f98d382b4e1ca73c17b4bd227d47bc46ccb28442ce480eb12e7aec"
+      },
+      {
+        "anchorId": "244f166644b1f157c6e8bf2d4527bce4753062be574058a2f65fe8f7e50dcef6",
+        "locator": "xml:25737",
+        "start": 298,
+        "end": 337,
+        "quoteHash": "e048b4e71e9aca65495bd3924e092365ab83abcc4b92a6e7ae9d3f095d3a0435",
+        "rawContentHash": "2e17140471f98d382b4e1ca73c17b4bd227d47bc46ccb28442ce480eb12e7aec"
+      },
+      {
+        "anchorId": "7aeb7609a9eb6e5a49ebe209e0393211fdbbda43f929256785e026af96bc53a4",
+        "locator": "xml:27525",
+        "start": 338,
+        "end": 516,
+        "quoteHash": "d91cc4dd50dbcb574ca16e27c81ebb190babdc7ba2ad1aa775c3dab99feb7301",
+        "rawContentHash": "2e17140471f98d382b4e1ca73c17b4bd227d47bc46ccb28442ce480eb12e7aec"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "717925f913af9ddfda03694e801f7535866821f0fbe8189281864e80627aed5c",
+    "sourceId": "GB-GOVUK",
+    "metadata": {
+      "title": "Self Assessment tax returns",
+      "officialDocumentId": "f29ca4a8-8ed9-4b0f-bb6a-11e373095dee",
+      "language": "en",
+      "documentKind": "GUIDANCE"
+    },
+    "provenance": {
+      "artifactId": "1ad49723-521a-4f80-b384-7808c5bd1c79",
+      "rawContentHash": "9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df",
+      "sourceUrl": "https://www.gov.uk/api/content/self-assessment-tax-returns",
+      "finalUrl": "https://www.gov.uk/api/content/self-assessment-tax-returns",
+      "retrievedAt": "2026-10-28T16:31:43.058Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "GOVUK",
+      "authorityName": "GOV.UK departments (document publisher must be checked)",
+      "sourceRole": "OFFICIAL_GUIDANCE",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": "2012-07-03T16:49:56+01:00",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df.bin",
+      "rawContentHash": "9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df"
+    },
+    "sourceSpecificMetadata": {
+      "format": "JSON",
+      "topLevelKeys": [
+        "analytics_identifier",
+        "base_path",
+        "content_id",
+        "description",
+        "details",
+        "document_type",
+        "first_published_at",
+        "links",
+        "locale",
+        "phase",
+        "public_updated_at",
+        "publishing_app",
+        "publishing_request_id",
+        "publishing_scheduled_at",
+        "rendering_app",
+        "scheduled_publishing_delay_seconds",
+        "schema_name",
+        "title",
+        "updated_at",
+        "withdrawn_notice"
+      ],
+      "payloadRef": {
+        "rawStorageRef": "blobs/9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df.bin",
+        "rawContentHash": "9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df"
+      },
+      "basePath": "/self-assessment-tax-returns",
+      "documentType": "guide",
+      "publicUpdatedAt": "2024-11-05T16:46:12+00:00",
+      "withdrawnNotice": {},
+      "publisherLinks": [
+        {
+          "analytics_identifier": "D25",
+          "api_path": "/api/content/government/organisations/hm-revenue-customs",
+          "api_url": "https://www.gov.uk/api/content/government/organisations/hm-revenue-customs",
+          "base_path": "/government/organisations/hm-revenue-customs",
+          "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+          "details": {
+            "acronym": "HMRC",
+            "brand": "hm-revenue-customs",
+            "default_news_image": {
+              "high_resolution_url": "https://assets.publishing.service.gov.uk/media/5efdb7ace90e075c58556288/s960_HMRC_sign__media_library_-_alternative__GOVUK_960.jpg",
+              "url": "https://assets.publishing.service.gov.uk/media/5efdb7ac3a6f4023cb365a65/s300_HMRC_sign__media_library_-_alternative__GOVUK_960.jpg"
+            },
+            "logo": {
+              "crest": "hmrc",
+              "formatted_title": "HM Revenue<br/>&amp; Customs"
+            },
+            "organisation_govuk_status": {
+              "status": "live",
+              "updated_at": null,
+              "url": null
+            }
+          },
+          "document_type": "organisation",
+          "links": {},
+          "locale": "en",
+          "schema_name": "organisation",
+          "title": "HM Revenue & Customs",
+          "web_url": "https://www.gov.uk/government/organisations/hm-revenue-customs",
+          "withdrawn": false
+        }
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "c4679eb16b82a14f836a8e74d6b7b47778f6b92e18f2a0f7b29979e5ed58abe4",
+    "normalizedTextCharacters": 21660,
+    "anchorCount": 11,
+    "firstAnchors": [
+      {
+        "anchorId": "01681eae3c9654df7ddcc4947a8d0084d66b69c0e0e2a85beff6afa1c826cb0f",
+        "locator": "#/details/parts/0/body",
+        "start": 0,
+        "end": 1632,
+        "quoteHash": "1af4cd97f6e93aa228219ae287f45c57b686f4ebdacc76b58df05807f285d533",
+        "rawContentHash": "9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df"
+      },
+      {
+        "anchorId": "ffa071ac18a867b1cca7f00ac7b352a941adece734fc52ebde3fbc8870b1be4d",
+        "locator": "#/details/parts/1/body",
+        "start": 1633,
+        "end": 3240,
+        "quoteHash": "6d4a20d65efb4207652c1d89d8d677a411fad99f01ec93d0634cd6aea01ede7b",
+        "rawContentHash": "9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df"
+      },
+      {
+        "anchorId": "dc90a4c80c3a003f10fb64149fd26cb9a5b0b628e8a18d876baaaa6b1a9ec5ae",
+        "locator": "#/details/parts/2/body",
+        "start": 3241,
+        "end": 4126,
+        "quoteHash": "7cfae7cba1b4565c7296b0677da1157721e41ad83c63a8abc82905c54a42c430",
+        "rawContentHash": "9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df"
+      },
+      {
+        "anchorId": "2d141c96ce8b98a0893d0ad2af1046975b79c51068f5816a95a699c67a5871ae",
+        "locator": "#/details/parts/3/body",
+        "start": 4127,
+        "end": 6816,
+        "quoteHash": "6ca89350a5400f878d8f8f115f6b6db0818d652f5cd2620f5bd69991a4311757",
+        "rawContentHash": "9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df"
+      },
+      {
+        "anchorId": "975d8bfa4a657e2203bbe9a194dba464e63d38bd1929a9e57e6b23f78195b103",
+        "locator": "#/details/parts/4/body",
+        "start": 6817,
+        "end": 8360,
+        "quoteHash": "e5eaf186d373de89b2843be7eecb372bf3c8dcd91e37ad26cf0e87d4e6c0662f",
+        "rawContentHash": "9243e24082e05c7593b2dc5ef74c5ab66cbe9944051e8effcbb8ae249a6840df"
+      }
+    ]
+  },
+  {
+    "summaryOnly": true,
+    "envelopeId": "e88fd3968eb2f05a770a9ff87e3455076e983733e140af7cdf285a80f15b341a",
+    "sourceId": "GB-GOVUK",
+    "metadata": {
+      "title": "Income Tax rates and Personal Allowances ",
+      "officialDocumentId": "9b8a4862-56dc-47b1-b56b-8a647fdd72e5",
+      "language": "en",
+      "documentKind": "GUIDANCE"
+    },
+    "provenance": {
+      "artifactId": "66a93bc0-4732-4e82-9110-b5756fbc5b6f",
+      "rawContentHash": "e6fc3c984516087c06d91b775e3dc15da24491b0e636858fd5f11cef75668c91",
+      "sourceUrl": "https://www.gov.uk/api/content/income-tax-rates",
+      "finalUrl": "https://www.gov.uk/api/content/income-tax-rates",
+      "retrievedAt": "2026-10-28T16:31:43.040Z",
+      "normalizerVersion": "fabric-envelope/1"
+    },
+    "authority": {
+      "authorityCode": "GOVUK",
+      "authorityName": "GOV.UK departments (document publisher must be checked)",
+      "sourceRole": "OFFICIAL_GUIDANCE",
+      "legalForce": "REVIEW_REQUIRED"
+    },
+    "temporal": {
+      "publishedAt": "2012-01-26T13:01:47+00:00",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "sourceTemporalAssertions": [],
+      "status": "REVIEW_REQUIRED"
+    },
+    "rawArtifactRef": {
+      "rawStorageRef": "blobs/e6fc3c984516087c06d91b775e3dc15da24491b0e636858fd5f11cef75668c91.bin",
+      "rawContentHash": "e6fc3c984516087c06d91b775e3dc15da24491b0e636858fd5f11cef75668c91"
+    },
+    "sourceSpecificMetadata": {
+      "format": "JSON",
+      "topLevelKeys": [
+        "analytics_identifier",
+        "base_path",
+        "content_id",
+        "description",
+        "details",
+        "document_type",
+        "first_published_at",
+        "links",
+        "locale",
+        "phase",
+        "public_updated_at",
+        "publishing_app",
+        "publishing_request_id",
+        "publishing_scheduled_at",
+        "rendering_app",
+        "scheduled_publishing_delay_seconds",
+        "schema_name",
+        "title",
+        "updated_at",
+        "withdrawn_notice"
+      ],
+      "payloadRef": {
+        "rawStorageRef": "blobs/e6fc3c984516087c06d91b775e3dc15da24491b0e636858fd5f11cef75668c91.bin",
+        "rawContentHash": "e6fc3c984516087c06d91b775e3dc15da24491b0e636858fd5f11cef75668c91"
+      },
+      "basePath": "/income-tax-rates",
+      "documentType": "guide",
+      "publicUpdatedAt": "2024-11-07T14:57:18+00:00",
+      "withdrawnNotice": {},
+      "publisherLinks": [
+        {
+          "analytics_identifier": "D25",
+          "api_path": "/api/content/government/organisations/hm-revenue-customs",
+          "api_url": "https://www.gov.uk/api/content/government/organisations/hm-revenue-customs",
+          "base_path": "/government/organisations/hm-revenue-customs",
+          "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+          "details": {
+            "acronym": "HMRC",
+            "brand": "hm-revenue-customs",
+            "default_news_image": {
+              "high_resolution_url": "https://assets.publishing.service.gov.uk/media/5efdb7ace90e075c58556288/s960_HMRC_sign__media_library_-_alternative__GOVUK_960.jpg",
+              "url": "https://assets.publishing.service.gov.uk/media/5efdb7ac3a6f4023cb365a65/s300_HMRC_sign__media_library_-_alternative__GOVUK_960.jpg"
+            },
+            "logo": {
+              "crest": "hmrc",
+              "formatted_title": "HM Revenue<br/>&amp; Customs"
+            },
+            "organisation_govuk_status": {
+              "status": "live",
+              "updated_at": null,
+              "url": null
+            }
+          },
+          "document_type": "organisation",
+          "links": {},
+          "locale": "en",
+          "schema_name": "organisation",
+          "title": "HM Revenue & Customs",
+          "web_url": "https://www.gov.uk/government/organisations/hm-revenue-customs",
+          "withdrawn": false
+        }
+      ]
+    },
+    "status": "REVIEW_REQUIRED",
+    "processingState": "NORMALIZED",
+    "normalizedTextHash": "67b54b9ca79c469fa596d18234b6ea20f32971fbaef46ae82a38544b00fff1e9",
+    "normalizedTextCharacters": 3492,
+    "anchorCount": 2,
+    "firstAnchors": [
+      {
+        "anchorId": "4a9d5a5299685593605b9461a59c316fd313b7355487918817771a2b2cf6c7c8",
+        "locator": "#/details/parts/0/body",
+        "start": 0,
+        "end": 2552,
+        "quoteHash": "a75163eccfaf02760b14b755a68b2dea8e1f7a70b1f3049b06ec2cb5053250a5",
+        "rawContentHash": "e6fc3c984516087c06d91b775e3dc15da24491b0e636858fd5f11cef75668c91"
+      },
+      {
+        "anchorId": "fcd76b9ed3aff56b500e933bb3d3b4fd12cb1a2fb967468b56f32bb447060f26",
+        "locator": "#/details/parts/1/body",
+        "start": 2553,
+        "end": 3492,
+        "quoteHash": "e81bfb72e2a79f90a9b58c2baa74aa4e7c82f91809ddb6890e86c1cafb35ea74",
+        "rawContentHash": "e6fc3c984516087c06d91b775e3dc15da24491b0e636858fd5f11cef75668c91"
+      }
+    ]
+  }
+]

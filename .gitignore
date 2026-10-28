@@ -5,3 +5,6 @@ data/
 .env
 .env.*
 !.env.example
+.tools/
+.phase2-gate-output.txt
+research/country-pack-fabric/captures/

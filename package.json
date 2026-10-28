@@ -10,7 +10,9 @@
   "scripts": {
     "test": "node scripts/test.js",
     "start": "node src/web/server.js",
-    "smoke:meta": "node scripts/meta-smoke.js"
+    "smoke:meta": "node scripts/meta-smoke.js",
+    "fabric:probe": "node scripts/fabric-probe.js",
+    "fabric:report": "node scripts/fabric-report.js"
   },
   "license": "UNLICENSED"
 }
