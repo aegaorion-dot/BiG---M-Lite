@@ -7,6 +7,9 @@ const tabsEl = $('#tabs');
 const toasts = $('#toasts');
 const auditPill = $('#auditPill');
 const demoNote = $('#demoNote');
+const demoBtn = $('#demoBtn');
+const tabsWrap = $('#tabs');
+const topLang = $('#topLang');
 
 const TABS = [
   ['onboarding', 'nav.onboarding'],
@@ -57,8 +60,19 @@ const fmtIDR = (minorStr) => {
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 function renderTabs() {
+  const active = Boolean(cache.ws && cache.ws.activated);
+  tabsEl.hidden = !active;
+  if (auditPill) auditPill.hidden = !active;
+  if (demoBtn) demoBtn.hidden = !active;
+  if (topLang && UILANG) topLang.value = UILANG;
+  if (!active) { tabsEl.innerHTML = ''; route = 'onboarding'; return; }
+  const allowed = new Set(['onboarding', 'dashboard', 'settings']);
+  const mods = Array.isArray(cache.ws?.modules) ? cache.ws.modules : [];
+  for (const m of mods) allowed.add(m);
   tabsEl.innerHTML = '';
   for (const [id, key] of TABS) {
+    if (id === 'tax') continue;
+    if (!allowed.has(id)) continue;
     const b = document.createElement('button');
     b.className = 'tab';
     b.type = 'button';
@@ -67,6 +81,7 @@ function renderTabs() {
     b.addEventListener('click', () => { route = id; render(); });
     tabsEl.appendChild(b);
   }
+  if (!allowed.has(route)) route = 'onboarding';
 }
 
 async function refresh(partial = false) {
@@ -211,27 +226,112 @@ function vTax() {
     </tbody></table><p class="footer-note">${esc(t.note)}</p></div>`).join('');
 }
 
+function obFriendly() {
+  const ob = cache.ob || {};
+  const slots = ob.slots || {};
+  const draft = ob.draft || {};
+  const cands = ob.jurisdictionCandidates || [];
+  const jMap = new Map((ob.jurisdictions || []).map((j) => [j.code, j.name]));
+  const lMap = new Map((ob.languages || []).map((l) => [l.tag, l.name]));
+  const val = (k) => slots[k]?.value ?? null;
+  const stOf = (k) => {
+    const s = slots[k];
+    if (!s) return 'unknown';
+    const v = s.value;
+    if (v === null || v === undefined || v === '' || (Array.isArray(v) && v.length === 0)) return 'unknown';
+    if (s.status === 'validated' || s.status === 'active' || s.evidenceStatus === 'CONFIRMED') return 'confirmed';
+    return 'needs';
+  };
+  const findCand = (b) => cands.find((c) => c.basis === b) || null;
+  const nameOf = (code) => (code ? (jMap.get(code) || code) : null);
+  const orgName = val('org.name') || draft.organizationProfile?.name || null;
+  const bTypeRaw = val('org.businessType') || draft.organizationProfile?.businessField || null;
+  const bType = bTypeRaw ? String(bTypeRaw).replace(/[-_]+/g, ' ') : null;
+  const biz = orgName && bType ? `${orgName} · ${bType}` : (orgName || bType || null);
+  const reg = findCand('REGISTRATION');
+  const work = findCand('BUSINESS_WORK_LOCATION');
+  const domSlot = val('org.domicile') || draft.organizationProfile?.domicile || null;
+  const whereCode = reg?.countryCode || work?.countryCode || domSlot || null;
+  let whereSt = 'unknown';
+  if (whereCode) {
+    const src = reg || work;
+    if (src && src.status === 'CONFIRMED') whereSt = 'confirmed';
+    else if (stOf('org.domicile') === 'confirmed') whereSt = 'confirmed';
+    else whereSt = 'needs';
+  }
+  const cur = val('currency.functional') || draft.currencyProfile?.functional || null;
+  const others = val('currency.transactions') || draft.currencyProfile?.otherCurrencies || [];
+  const langTag = val('user.language') || ob.uiLanguage || 'en';
+  const cust = findCand('CUSTOMER_LOCATION');
+  return {
+    biz, bizSt: biz ? stOf('org.name') : 'unknown',
+    where: nameOf(whereCode), whereCode, whereSt,
+    cur: cur || null, curSt: cur ? stOf('currency.functional') : 'unknown',
+    others: Array.isArray(others) ? others.filter(Boolean) : [],
+    lang: lMap.get(langTag) || (langTag === 'id' ? 'Bahasa Indonesia' : 'English'), langTag,
+    langSt: stOf('user.language') === 'unknown' ? 'needs' : stOf('user.language'),
+    custName: cust?.countryCode ? nameOf(cust.countryCode) : null,
+    custSt: cust?.countryCode ? (cust.status === 'CONFIRMED' ? 'confirmed' : 'needs') : 'unknown',
+  };
+}
+
 function vOnboarding() {
   const ob = cache.ob;
   const ws = cache.ws;
-  const msgs = obChat.map((m) => `<div class="chat-row ${m.who}"><div class="bubble"><strong>${m.who === 'ai' ? 'AI Assistant' : 'You'}</strong><p>${esc(m.text)}</p>${m.tag ? `<span class="tag ${m.tag === 'AI' ? 'sale' : 'warn'}">${esc(m.tag)}</span>` : ''}</div></div>`).join('');
-  const draft = ob?.draft;
-  const slots = ob?.slots ?? {};
-  const slotVal = (k) => slots[k]?.value ?? null;
-  const orgName = slotVal('org.name') ?? draft?.organizationProfile?.name ?? null;
-  const dom = slotVal('org.domicile') ?? draft?.organizationProfile?.domicile ?? null;
-  const cur = slotVal('currency.functional') ?? draft?.currencyProfile?.functional ?? null;
-  const langOpts = (ob?.languages ?? [{ tag: 'en', name: 'English' }, { tag: 'id', name: 'Bahasa Indonesia' }])
-    .map((l) => `<option value="${esc(l.tag)}" ${ob?.uiLanguage === l.tag ? 'selected' : ''}>${esc(l.name)}</option>`).join('');
-  const summary = `<div class="kv"><span>${esc(tr('ob.langLabel'))}</span><strong>${esc(ob?.uiLanguage || 'en')}</strong><span>Business</span><strong>${esc(orgName || '-')}</strong><span>Jurisdiction</span><strong>${esc(dom || '-')}</strong><span>Currency</span><strong>${esc(cur || '-')}</strong><span>CountryPack</span><strong>${esc(ob?.proposal ? 'Ready' : 'Needs validation')}</strong><span>Tax</span><strong>${esc(tr('ob.taxNote'))}</strong></div><p class="muted">${esc(tr('ob.fxNote'))}</p>`;
-  const wsBlock = ws?.activated ? `<div class="panel"><h3>${esc(ws.organizationName || '')} · ${esc(ws.functionalCurrency || '')} · ${esc(ws.domicile || '')}</h3><p class="muted">${esc(tr('ws.income'))} · ${esc(tr('ws.expenses'))} · ${esc(tr('ws.cash'))} · ${esc(tr('ws.summary'))}</p></div>` : '';
-  return `<div class="hero"><div class="panel hero-main"><p class="hero-kicker">${esc(tr('ob.kicker'))}</p><h1>${esc(tr('ob.title'))}</h1><p>${esc(tr('ob.subtitle'))}</p><p class="muted">${esc(ob?.ai?.note || '')}</p><label>${esc(tr('ob.langLabel'))} <select id="obLang">${langOpts}</select></label></div>
-  <div class="panel"><h3>${esc(tr('ob.reviewTitle'))}</h3>${summary}<div class="toolbar"><button class="btn navy" id="obPropose" type="button">${esc(tr('ob.propose'))}</button><button class="btn navy" id="obValidate" type="button">${esc(tr('ob.validate'))}</button><button class="btn gold" id="obActivate" type="button">${esc(tr('ob.activate'))}</button></div><div id="obOut"></div></div></div>${wsBlock}
-  <div class="panel"><h3>${esc(tr('ob.chatTitle'))}</h3><div class="chat" id="obChat">${msgs || `<p class="muted">${esc(tr('ob.hint'))}</p>`}</div>
-  <div class="toolbar"><input id="obInput" placeholder="${esc(tr('ob.placeholder'))}" style="flex:1" /><button class="btn gold" id="obSend" type="button">${esc(tr('ob.send'))}</button></div></div>`;
+  if (ws && ws.activated) {
+    const f = obFriendly();
+    return `<div class="ob-wrap"><div class="panel ob-done"><h2>${esc(tr('ob.confirmedOk'))}</h2>`
+      + `<p class="muted">${esc(ws.organizationName || '')} · ${esc(ws.domicile || '')} · ${esc(ws.functionalCurrency || '')}</p>`
+      + `<p class="muted">${esc(tr('ob.taxLater'))}</p></div></div>`;
+  }
+  const f = obFriendly();
+  const badge = (st) => st === 'confirmed' ? `<span class="ob-badge ok">${esc(tr('ob.confirmed'))}</span>` : st === 'needs' ? `<span class="ob-badge need">${esc(tr('ob.needsConfirm'))}</span>` : `<span class="muted">${esc(tr('ob.unknown'))}</span>`;
+  const msgs = obChat.map((m) => `<div class="chat-row ${m.who}"><div class="bubble"><p>${esc(m.text)}</p></div></div>`).join('');
+  const row = (label, disp, st) => `<div class="ob-kv"><span>${esc(label)}</span><strong>${disp ? esc(disp) : `<span class="muted">${esc(tr('ob.unknown'))}</span>`}</strong>${badge(st)}</div>`;
+  const understand = `<div class="panel ob-side-block"><h3>${esc(tr('ob.understandTitle'))}</h3>`
+    + row(tr('ob.fBusiness'), f.biz, f.bizSt)
+    + row(tr('ob.fWhere'), f.where, f.whereSt)
+    + row(tr('ob.fCurrency'), f.cur, f.curSt)
+    + row(tr('ob.fOther'), f.others.length ? f.others.join(', ') : null, f.others.length ? 'needs' : 'unknown')
+    + row(tr('ob.fLanguage'), f.lang, f.langSt)
+    + row(tr('ob.fCustomers'), f.custName, f.custSt)
+    + `</div>`;
+  const p = ob?.proposal || null;
+  let setup = `<div class="panel ob-side-block"><h3>${esc(tr('ob.setupTitle'))}</h3><p class="muted">${esc(tr('ob.working'))}</p></div>`;
+  if (p) {
+    const jMap = new Map((ob.jurisdictions || []).map((j) => [`${j.code}`, j.name]));
+    const locCode = (p.jurisdictions && p.jurisdictions[0]) || p.entityJurisdiction || f.whereCode || '';
+    const locName = jMap.get(locCode) || locCode || '';
+    const mods = Array.isArray(p.modules) ? p.modules : [];
+    const modNames = mods.length ? mods.join(', ') : '';
+    const langOpts = (ob.languages || [{ tag: 'en', name: 'English' }, { tag: 'id', name: 'Bahasa Indonesia' }])
+      .map((l) => `<option value="${esc(l.tag)}" ${String(p.language || f.langTag) === l.tag ? 'selected' : ''}>${esc(l.name)}</option>`).join('');
+    const jurOpts = `<option value="">${esc(tr('ob.unknown'))}</option>` + (ob.jurisdictions || []).map((j) => `<option value="${esc(j.code)}" ${locCode === j.code ? 'selected' : ''}>${esc(j.name)}</option>`).join('');
+    const curOpts = `<option value="">${esc(tr('ob.unknown'))}</option>` + (ob.currencies || []).map((c) => `<option value="${esc(c.code)}" ${String(p.functionalCurrency || '') === c.code ? 'selected' : ''}>${esc(c.code)} — ${esc(c.name)}</option>`).join('');
+    setup = `<div class="panel ob-side-block"><h3>${esc(tr('ob.setupTitle'))}</h3><p class="muted">${esc(tr('ob.readyNote'))}</p>`
+      + `<label class="ob-edit"><span>${esc(tr('ob.sBusinessType'))}</span><input id="setBiz" value="${esc(p.businessType || '')}" /></label>`
+      + `<label class="ob-edit"><span>${esc(tr('ob.sLanguage'))}</span><select id="setLang">${langOpts}</select></label>`
+      + `<label class="ob-edit"><span>${esc(tr('ob.sLocation'))}</span><select id="setJur">${jurOpts}</select></label>`
+      + `<label class="ob-edit"><span>${esc(tr('ob.sBookCurrency'))}</span><select id="setCur">${curOpts}</select></label>`
+      + `<div class="ob-kv"><span>${esc(tr('ob.sFeatures'))}</span><strong>${esc(modNames || tr('ob.unknown'))}</strong></div>`
+      + `<p class="muted">${esc(tr('ob.editHint'))}</p>`
+      + `<div class="ob-actions"><button class="btn gold" id="obUse" type="button">${esc(tr('ob.useSetup'))}</button>`
+      + `<button class="btn ghost dark" id="obChange" type="button">${esc(tr('ob.changeSomething'))}</button></div>`
+      + `<p class="muted">${esc(tr('ob.taxLater'))}</p><p class="err" id="obErr" hidden></p></div>`;
+  }
+  return `<div class="ob-wrap"><div class="ob-hero"><h1>${esc(tr('ob.headline'))}</h1><p>${esc(tr('ob.subheadline'))}</p></div>`
+    + `<div class="ob-grid"><div class="panel ob-chat"><div class="chat" id="obChat">${msgs || `<p class="muted">${esc(tr('ob.hint'))}</p>`}</div>`
+    + `<div class="ob-input-row"><input id="obInput" placeholder="${esc(tr('ob.bigPlaceholder'))}" autocomplete="off" /><button class="btn gold" id="obSend" type="button">${esc(tr('ob.send'))}</button></div>`
+    + `<p class="muted">${esc(tr('ob.taxLater'))}</p></div>`
+    + `<aside class="ob-aside">${understand}${setup}</aside></div></div>`;
 }
 
 function wireOnboarding() {
+  const autoPrepare = async () => {
+    try { await api('/api/onboarding/propose', { method: 'POST', body: '{}' }); } catch { /* not ready yet */ }
+    try { await api('/api/onboarding/validate', { method: 'POST', body: '{}' }); } catch { /* pending verification */ }
+    try { await refreshOb(); } catch { /* keep UI */ }
+  };
   const send = async () => {
     const el = $('#obInput');
     const text = String(el?.value || '').trim();
@@ -241,33 +341,82 @@ function wireOnboarding() {
     render();
     try {
       const r = await api('/api/onboarding/turn', { method: 'POST', body: JSON.stringify({ text }) });
-      obChat.push({ who: 'ai', text: r.question.text, tag: r.aiLabel === 'ai-tervalidasi' ? 'AI' : 'deterministik' });
+      obChat.push({ who: 'ai', text: r.question.text });
       await refreshOb();
-    } catch (e) { obChat.push({ who: 'ai', text: `Maaf: ${e.message}`, tag: 'deterministik' }); }
+      await autoPrepare();
+    } catch (e) { obChat.push({ who: 'ai', text: `Maaf: ${e.message}` }); }
     render();
   };
   $('#obSend')?.addEventListener('click', send);
   $('#obInput')?.addEventListener('keydown', (e) => { if (e.key === 'Enter') send(); });
-  $('#obLang')?.addEventListener('change', async (e) => {
+  const chat = $('#obChat');
+  if (chat) chat.scrollTop = chat.scrollHeight;
+  if (topLang) {
+    topLang.value = UILANG || 'en';
+    topLang.onchange = async (e) => {
+      try {
+        await api('/api/onboarding/language', { method: 'POST', body: JSON.stringify({ language: e.target.value }) });
+        await refreshAll();
+      } catch (err2) { toast(err2.message, 'error'); }
+    };
+  }
+  $('#setLang')?.addEventListener('change', async (e) => {
     try {
       await api('/api/onboarding/language', { method: 'POST', body: JSON.stringify({ language: e.target.value }) });
       await refreshAll();
     } catch (err2) { toast(err2.message, 'error'); }
   });
-  $('#obPropose')?.addEventListener('click', async () => {
-    try { const r = await api('/api/onboarding/propose', { method: 'POST', body: '{}' }); await refreshOb(); toast(`Usulan tersusun: ${r.proposal.functionalCurrency} · ${(r.proposal.jurisdictions || []).join(',')}`); render(); }
-    catch (e) { toast(e.message, 'error'); }
-  });
-  $('#obValidate')?.addEventListener('click', async () => {
-    try { await api('/api/onboarding/validate', { method: 'POST', body: '{}' }); await refreshOb(); toast('Validasi OK — placeholder, menunggu verifikasi'); render(); }
-    catch (e) { toast(e.message, 'error'); }
-  });
-  $('#obActivate')?.addEventListener('click', async () => {
+  const editTurn = async (text) => {
+    obChat.push({ who: 'user', text });
+    render();
     try {
+      const r = await api('/api/onboarding/turn', { method: 'POST', body: JSON.stringify({ text }) });
+      obChat.push({ who: 'ai', text: r.question.text });
+      await refreshOb();
+      await autoPrepare();
+    } catch (e) { obChat.push({ who: 'ai', text: `Maaf: ${e.message}` }); }
+    render();
+  };
+  $('#setJur')?.addEventListener('change', (e) => {
+    const code = String(e.target.value || '').trim();
+    if (!code) return;
+    editTurn(`Business location / registration is ${code}.`);
+  });
+  $('#setCur')?.addEventListener('change', (e) => {
+    const code = String(e.target.value || '').trim();
+    if (!code) return;
+    editTurn(`Bookkeeping currency is ${code}.`);
+  });
+  $('#setBiz')?.addEventListener('change', (e) => {
+    const v = String(e.target.value || '').trim();
+    if (!v) return;
+    editTurn(`Business type is ${v}.`);
+  });
+  $('#obChange')?.addEventListener('click', () => {
+    const el = $('#obInput');
+    if (el) el.focus();
+    toast(tr('ob.editHint'));
+  });
+  $('#obUse')?.addEventListener('click', async () => {
+    const errEl = $('#obErr');
+    try {
+      if (errEl) errEl.hidden = true;
+      let hash = cache.ob?.proposal?.hash || null;
+      if (!hash) {
+        try { await api('/api/onboarding/propose', { method: 'POST', body: '{}' }); await refreshOb(); } catch { /* show error below */ }
+        hash = cache.ob?.proposal?.hash || null;
+      }
+      if (!hash) throw new Error(tr('ob.working'));
+      await api('/api/onboarding/confirm', { method: 'POST', body: JSON.stringify({ proposalHash: hash }) });
       const key = `web-${Date.now()}`;
-      const r = await api('/api/onboarding/activate', { method: 'POST', body: JSON.stringify({ activationKey: key }) });
-      await refreshOb(); toast(`Aktif v${r.record.version} ✓`); render();
-    } catch (e) { toast(e.message, 'error'); }
+      await api('/api/onboarding/activate', { method: 'POST', body: JSON.stringify({ activationKey: key }) });
+      await refreshOb();
+      await refresh(true);
+      render();
+    } catch (e) {
+      if (errEl) { errEl.textContent = e.message; errEl.hidden = false; }
+      else toast(e.message, 'error');
+    }
   });
 }
 

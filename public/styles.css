@@ -170,3 +170,32 @@ pre.report {
 .chat-row .bubble p{margin:6px 0 8px}
 #obInput{padding:10px 12px;border-radius:12px;border:1px solid var(--line);font:inherit}
 
+/* Onboarding premium chat-first */
+.ob-wrap{max-width:880px;margin:0 auto;padding:8px 0 24px}
+.ob-hero{text-align:center;margin:18px 0 16px}
+.ob-hero h1{margin:0 0 8px;font-size:clamp(24px,3.4vw,34px);line-height:1.15}
+.ob-hero p{margin:0;color:var(--ink-soft)}
+.ob-grid{display:grid;grid-template-columns:1.35fr 0.9fr;gap:14px;align-items:start}
+.ob-chat{display:flex;flex-direction:column;gap:12px}
+.ob-chat .chat{max-height:380px;min-height:220px}
+.ob-input-row{display:flex;gap:10px}
+.ob-input-row input{flex:1;min-width:0}
+.ob-aside{display:grid;gap:12px}
+.ob-side-block h3{margin:0 0 10px}
+.ob-kv{display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.ob-kv:first-of-type{border-top:none}
+.ob-kv span{flex:0 0 150px;color:var(--ink-soft)}
+.ob-kv strong{flex:1;font-weight:700;overflow-wrap:anywhere}
+.ob-badge{font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.ob-badge.ok{background:#dff3e5;color:#14532d;border:1px solid #9fd3ae}
+.ob-badge.need{background:#fff0bd;color:#6b4a08;border:1px solid var(--gold-deep)}
+.ob-edit{display:grid;gap:6px;margin:8px 0}
+.ob-actions{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.btn.ghost.dark{color:var(--navy);border-color:var(--navy)}
+.ob-done{text-align:center}
+.lang-select{font:inherit;padding:8px 10px;border-radius:10px;border:1px solid rgba(255,233,176,.55);background:rgba(255,255,255,.12);color:#fff;max-width:140px}
+.lang-select option{color:#0e2a47}
+html,body{overflow-x:hidden}
+.shell,.ob-wrap,.ob-grid,.panel,.ob-chat,.ob-aside{max-width:100%}
+@media (max-width:920px){.ob-grid{grid-template-columns:1fr}.ob-wrap{max-width:680px}}
+
