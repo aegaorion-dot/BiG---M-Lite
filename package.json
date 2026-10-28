@@ -1,0 +1,14 @@
+{
+  "name": "bigm-lite",
+  "version": "0.1.0",
+  "description": "BiG-M Lite — modular monolith foundation: accounting engine, tax engine, country pack framework, AI adapter.",
+  "type": "commonjs",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "license": "UNLICENSED"
+}
