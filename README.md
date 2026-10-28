@@ -16,6 +16,9 @@ src/
   countrypack/   manifest + registry + validasi; packs/id = contoh kerja Indonesia
   ai/            AIProvider, MetaModelAdapter (key via env), validasi usulan AI
   app/           verticalSlice (input→klasifikasi→posting→ledger→laporan), report
+  business/      SalesService (REVENUE), PurchaseService (EXPENSE) via pipeline fondasi
+  import/        csvImporter (validasi ketat, anti-duplikasi, laporan baris gagal)
+  dashboard/     ringkasan baca-saja: saldo, transaksi, total, status audit
 test/            pengujian otomatis (node:test, tanpa dependensi)
 ```
 
@@ -32,6 +35,13 @@ test/            pengujian otomatis (node:test, tanpa dependensi)
   status `PLACEHOLDER`, amount null, dikecualikan dari total final.
 - **AI**: output mentah wajib lewat `validateClassification`; tolak/gagal → fallback
   deterministik. Key hanya dari env (`BIGM_META_API_KEY`), tidak di repo.
+
+## Impor CSV & Dashboard (Tahap 6)
+
+Format header: `type,id,orgId,date,jurisdiction,currency,description,amountMajor,counterparty,reference`
+dengan `type` = `SALE|PURCHASE`. Baris gagal masuk `failures` (`{ row, id, error }`)
+tanpa menghentikan baris lain; id duplikat (dalam file / sudah terposting) ditolak.
+`getSummary()` + `renderDashboardText()` hanya membaca ledger/audit (read-only).
 
 ## Menjalankan
 
