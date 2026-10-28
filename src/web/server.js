@@ -55,8 +55,8 @@ function readBody(req, limit = 512 * 1024) {
   });
 }
 
-function createServer({ port = 3100 } = {}) {
-  const store = createWebStore();
+function createServer({ port = 3100, persistPath = null, orgId = null, authToken = null } = {}) {
+  const store = createWebStore({ persistPath, orgId, authToken });
   const server = http.createServer(async (req, res) => {
     try {
       const url = new URL(req.url, 'http://localhost');
@@ -80,7 +80,9 @@ function createServer({ port = 3100 } = {}) {
 
 if (require.main === module) {
   const port = Number(process.env.BIGM_PORT ?? process.env.PORT ?? 3100);
-  const { server } = createServer({ port });
+  const persistPath = process.env.BIGM_DATA_PATH ?? null;
+  const authToken = process.env.BIGM_API_TOKEN ?? null;
+  const { server } = createServer({ port, persistPath, authToken });
   server.listen(port, () => {
     console.log(`BiG-M Lite web berjalan di http://localhost:${port}`);
   });

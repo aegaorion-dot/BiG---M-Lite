@@ -61,8 +61,12 @@ function getSummary(deps, { currency = 'IDR' } = {}) {
   const { revenueId, expenseId } = revenueExpenseIds(deps.chart ?? { list: () => [] });
   for (const e of relevant) {
     for (const line of e.lines) {
-      if (revenueId && line.accountId === revenueId && line.side === 'CREDIT') revenue = revenue.add(line.money);
-      if (expenseId && line.accountId === expenseId && line.side === 'DEBIT') expense = expense.add(line.money);
+      if (revenueId && line.accountId === revenueId) {
+        revenue = line.side === 'CREDIT' ? revenue.add(line.money) : revenue.sub(line.money);
+      }
+      if (expenseId && line.accountId === expenseId) {
+        expense = line.side === 'DEBIT' ? expense.add(line.money) : expense.sub(line.money);
+      }
     }
   }
   const net = revenue.sub(expense);

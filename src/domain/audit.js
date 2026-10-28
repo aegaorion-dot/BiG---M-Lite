@@ -56,6 +56,29 @@ class AuditTrail {
     return [...this._entries];
   }
 
+  _rollbackLast(seq) {
+    const last = this._entries[this._entries.length - 1];
+    if (last && last.seq === seq) this._entries.pop();
+  }
+
+  /** Hapus semua entri (hanya untuk restore dari persistensi). */
+  _clear() {
+    this._entries.length = 0;
+  }
+
+  /** Restore entri terverifikasi dari persistensi (tanpa record ulang). */
+  _restoreAll(entries) {
+    this._clear();
+    for (const e of entries ?? []) {
+      this._entries.push(Object.freeze({ ...e }));
+    }
+    const v = this.verifyChain();
+    if (!v.ok) {
+      this._clear();
+      throw new Error(`Persisted audit chain invalid at seq ${v.brokenAt}: ${v.reason}`);
+    }
+  }
+
   get size() {
     return this._entries.length;
   }
@@ -95,6 +118,21 @@ class IdempotencyStore {
     if (this._map.has(key)) throw new Error(`Idempotency key already stored: ${key}`);
     this._map.set(key, response);
     return response;
+  }
+
+  /** Hapus kunci (hanya untuk rollback atomik, bukan API bisnis). */
+  _delete(key) {
+    this._map.delete(key);
+  }
+
+  /** Restore snapshot idempotency dari persistensi. */
+  _restoreAll(obj) {
+    this._map.clear();
+    for (const [k, v] of Object.entries(obj ?? {})) this._map.set(k, v);
+  }
+
+  toJSON() {
+    return Object.fromEntries(this._map.entries());
   }
 
   get size() {

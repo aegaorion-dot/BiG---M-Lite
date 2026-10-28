@@ -38,6 +38,13 @@ class ReversalService {
   }
 
   reverse(original, { id, date, memo = null, actor = 'system', idempotencyKey = null } = {}) {
+    if (!original || typeof original.id !== 'string') throw new Error('Original journal is required');
+    const existing = this.posting && this.posting.ledger && typeof this.posting.ledger.findReversalOf === 'function'
+      ? this.posting.ledger.findReversalOf(original.id)
+      : null;
+    if (existing && existing.id !== id) {
+      throw new Error(`Journal ${original.id} already reversed by ${existing.id}`);
+    }
     const entry = buildReversal(original, { id, date, memo });
     return { entry, receipt: this.posting.post(entry, { actor, idempotencyKey: idempotencyKey ?? `reversal:${id}` }) };
   }

@@ -9,6 +9,8 @@
 
 const { Organization, FinancialPeriod, PeriodRegistry } = require('../domain/organization');
 const { Account, ChartOfAccounts } = require('../domain/chartOfAccounts');
+const { JournalEntry, JournalLine } = require('../domain/journal');
+const { Money } = require('../domain/money');
 const { Ledger } = require('../domain/ledger');
 const { AuditTrail, IdempotencyStore } = require('../domain/audit');
 const { PostingService } = require('../accounting/postingService');
@@ -45,7 +47,7 @@ function revenueExpenseIds(chart) {
   return { revenueId: byCode('401') ?? byType('REVENUE'), expenseId: byCode('501') ?? byType('EXPENSE') };
 }
 
-function createWebStore({ persistPath = null } = {}) {
+function createWebStore({ persistPath = null, orgId = null, authToken = null } = {}) {
   const org = new Organization({ id: 'org-contoh', name: 'Contoh', jurisdiction: 'ID', baseCurrency: 'IDR' });
   const periods = new PeriodRegistry();
   periods.add(new FinancialPeriod({ id: 'per-2026', orgId: org.id, code: '2026', start: '2026-01-01', end: '2026-12-31' }));
@@ -64,6 +66,18 @@ function createWebStore({ persistPath = null } = {}) {
   }
   const chart = charts.get('ID') ?? chartForPack(pack);
   const txMeta = new Map();
+  const scopeOrgId = orgId ?? org.id;
+  const requiredToken = authToken ?? process.env.BIGM_API_TOKEN ?? null;
+
+  function checkAuth(credential) {
+    if (!requiredToken) return;
+    if (credential !== requiredToken) throw new Error('Unauthorized: invalid API token');
+  }
+
+  function checkOrg(inputOrgId) {
+    if (!inputOrgId) throw new Error('orgId is required');
+    if (inputOrgId !== scopeOrgId) throw new Error(`Unknown org scope: ${inputOrgId}`);
+  }
 
   const ctx = { org, periods, ledger, audit, idempotency, posting, reversal, registry, pack, chart };
   const configurator = createConfigurator({ audit });
@@ -132,19 +146,26 @@ function createWebStore({ persistPath = null } = {}) {
     }
   }
 
-  async function createSale(draft) {
+  async function createSale(draft, opts = {}) {
+    checkOrg(draft?.orgId);
+    checkAuth(opts.authToken);
     const result = await recordSale(pipelineDepsFor(draft), draft);
     rememberMeta('SALE', draft, result);
+    persist();
     return result;
   }
 
-  async function createPurchase(draft) {
+  async function createPurchase(draft, opts = {}) {
+    checkOrg(draft?.orgId);
+    checkAuth(opts.authToken);
     const result = await recordPurchase(pipelineDepsFor(draft), draft);
     rememberMeta('PURCHASE', draft, result);
+    persist();
     return result;
   }
 
   async function importCsvText(csvText, opts = {}) {
+    checkAuth(opts.authToken);
     const { parseCsv } = require('../import/csvImporter');
     const { recordSale: sale } = require('../business/salesService');
     const { recordPurchase: purchase } = require('../business/purchaseService');
@@ -165,6 +186,7 @@ function createWebStore({ persistPath = null } = {}) {
           id: row.id, orgId: row.orgId, date: row.date, jurisdiction: row.jurisdiction,
           currency: row.currency, description: row.description, amountMajor: row.amountMajor,
         };
+        checkOrg(base.orgId);
         let result;
         if (type === 'SALE') {
           const d = { ...base, customer: row.counterparty, invoiceRef: row.reference };
@@ -184,15 +206,18 @@ function createWebStore({ persistPath = null } = {}) {
       }
     }
     syncMetaFromLedger();
+    persist();
     return Object.freeze({
       total: rows.length, succeeded: receipts.length, failed: failures.length,
       receipts: Object.freeze(receipts), failures: Object.freeze(failures),
     });
   }
 
-  function reverseJournal({ journalId, id, date, memo, actor = 'web' }) {
+  function reverseJournal({ journalId, id, date, memo, actor = 'web', authToken = null }) {
+    checkAuth(authToken);
     const original = ledger.get(journalId);
     if (!original) throw new Error(`Unknown journal: ${journalId}`);
+    if (original.orgId !== scopeOrgId) throw new Error(`Unknown journal scope: ${journalId}`);
     const { entry, receipt } = reversal.reverse(original, { id, date, memo, actor });
     const meta = {
       id: entry.transactionId, kind: 'REVERSAL', date: entry.date, currency: entry.currency,
@@ -200,6 +225,7 @@ function createWebStore({ persistPath = null } = {}) {
       postingId: receipt.postingId, journalId: entry.id, demo: false,
     };
     txMeta.set(`${entry.id}`, meta);
+    persist();
     return { entry: serializeJournal(entry), receipt };
   }
 
@@ -207,6 +233,7 @@ function createWebStore({ persistPath = null } = {}) {
     return {
       id: entry.id, orgId: entry.orgId, date: entry.date, currency: entry.currency,
       transactionId: entry.transactionId, reversalOf: entry.reversalOf ?? null,
+      memo: entry.memo ?? null, periodId: entry.periodId ?? null,
       finalized: entry.finalized, finalizedAt: entry.finalizedAt ?? null,
       balanced: entry.isBalanced(),
       lines: entry.lines.map((l) => ({
@@ -216,20 +243,49 @@ function createWebStore({ persistPath = null } = {}) {
     };
   }
 
+  function deserializeJournal(obj) {
+    const lines = (obj.lines ?? []).map((l) => new JournalLine({
+      accountId: l.accountId, side: l.side,
+      money: Money.fromMinor(l.amountMinor, l.currency ?? obj.currency),
+    }));
+    const entry = new JournalEntry({
+      id: obj.id, orgId: obj.orgId, date: obj.date, currency: obj.currency,
+      lines, memo: obj.memo ?? null, transactionId: obj.transactionId ?? null,
+      periodId: obj.periodId ?? null, reversalOf: obj.reversalOf ?? null,
+    });
+    const at = obj.finalizedAt ?? new Date().toISOString();
+    entry.finalize(() => at);
+    return entry;
+  }
+
   function listTransactions() {
     syncMetaFromLedger();
     return [...txMeta.values()].sort((a, b) => (a.date < b.date ? 1 : -1));
   }
 
   function monthlyReport(currency = 'IDR') {
-    syncMetaFromLedger();
+    const allRevenue = new Set();
+    const allExpense = new Set();
+    for (const c of charts.values()) {
+      const { revenueId, expenseId } = revenueExpenseIds(c);
+      if (revenueId) allRevenue.add(revenueId);
+      if (expenseId) allExpense.add(expenseId);
+    }
     const buckets = new Map();
-    for (const meta of txMeta.values()) {
-      if (meta.currency !== currency || meta.kind === 'REVERSAL') continue;
-      const month = String(meta.date).slice(0, 7);
+    for (const entry of ledger.list()) {
+      if (entry.currency !== currency) continue;
+      if (entry.orgId !== org.id) continue;
+      const month = String(entry.date).slice(0, 7);
       const b = buckets.get(month) ?? { month, revenueMinor: 0n, expenseMinor: 0n, count: 0 };
-      if (meta.kind === 'SALE') b.revenueMinor += BigInt(meta.totalMinor);
-      if (meta.kind === 'PURCHASE') b.expenseMinor += BigInt(meta.totalMinor);
+      for (const line of entry.lines) {
+        const minor = BigInt(line.money.amountMinor);
+        if (allRevenue.has(line.accountId)) {
+          b.revenueMinor += line.side === 'CREDIT' ? minor : -minor;
+        }
+        if (allExpense.has(line.accountId)) {
+          b.expenseMinor += line.side === 'DEBIT' ? minor : -minor;
+        }
+      }
       b.count += 1;
       buckets.set(month, b);
     }
@@ -345,11 +401,23 @@ function createWebStore({ persistPath = null } = {}) {
     if (!persistPath) return;
     try {
       const data = JSON.stringify({
+        version: 1,
+        scopeOrgId,
+        org: { id: org.id, name: org.name, jurisdiction: org.jurisdiction, baseCurrency: org.baseCurrency },
+        periods: periods.list().map((p) => ({
+          id: p.id, orgId: p.orgId, code: p.code, start: p.start, end: p.end, status: p.status,
+        })),
+        journals: ledger.list().map(serializeJournal),
+        audit: audit.list(),
+        idempotency: idempotency.toJSON(),
+        txMeta: [...txMeta.values()],
         draft, lastProposal, lastValidation, active: activeConfig,
         savedAt: new Date().toISOString(),
       }, null, 2);
       fs.mkdirSync(path.dirname(persistPath), { recursive: true });
-      fs.writeFileSync(persistPath, data, 'utf8');
+      const tmp = `${persistPath}.tmp`;
+      fs.writeFileSync(tmp, data, 'utf8');
+      fs.renameSync(tmp, persistPath);
     } catch { /* persistensi best-effort, tidak menggagalkan transaksi */ }
   }
 
@@ -357,6 +425,35 @@ function createWebStore({ persistPath = null } = {}) {
     if (!persistPath || !fs.existsSync(persistPath)) return false;
     try {
       const raw = JSON.parse(fs.readFileSync(persistPath, 'utf8'));
+      if (raw.scopeOrgId && raw.scopeOrgId !== scopeOrgId) return false;
+      if (Array.isArray(raw.periods)) {
+        for (const p of raw.periods) {
+          try {
+            const { FinancialPeriod: FP } = require('../domain/organization');
+            periods.add(new FP(p));
+          } catch { /* periode duplikat/di luar cakupan diabaikan */ }
+        }
+      }
+      if (Array.isArray(raw.journals)) {
+        for (const j of raw.journals) {
+          try {
+            if (j.orgId !== scopeOrgId) continue;
+            ledger.append(deserializeJournal(j));
+          } catch { /* duplikat/inkonsisten diabaikan agar restore idempotent */ }
+        }
+      }
+      if (Array.isArray(raw.audit)) {
+        try { audit._restoreAll(raw.audit); } catch { /* rantai rusak: mulai kosong */ }
+      }
+      if (raw.idempotency && typeof raw.idempotency === 'object') {
+        try { idempotency._restoreAll(raw.idempotency); } catch { /* abaikan */ }
+      }
+      if (Array.isArray(raw.txMeta)) {
+        for (const m of raw.txMeta) {
+          if (m && m.id && !txMeta.has(m.id)) txMeta.set(m.id, m);
+        }
+      }
+      syncMetaFromLedger();
       if (raw.draft && validateProfile(raw.draft).ok) draft = validateProfile(raw.draft).profile;
       else if (raw.draft) draft = raw.draft;
       lastProposal = raw.lastProposal ?? null;

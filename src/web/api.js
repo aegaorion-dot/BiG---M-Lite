@@ -14,6 +14,12 @@ function err(message, status = 400) {
   return json({ ok: false, error: message }, status);
 }
 
+function bearerToken(query, body) {
+  const fromQuery = query && typeof query.token === 'string' ? query.token : null;
+  const fromBody = body && typeof body.authToken === 'string' ? body.authToken : null;
+  return fromBody ?? fromQuery ?? null;
+}
+
 async function handleApi(store, method, pathname, query, body) {
   const { ctx } = store;
   try {
@@ -27,11 +33,11 @@ async function handleApi(store, method, pathname, query, body) {
       return json({ ok: true, transactions: store.listTransactions() });
     }
     if (method === 'POST' && pathname === '/api/sales') {
-      const result = await store.createSale(body);
+      const result = await store.createSale(body, { authToken: bearerToken(query, body) });
       return json({ ok: true, result: publicResult(result) }, 201);
     }
     if (method === 'POST' && pathname === '/api/purchases') {
-      const result = await store.createPurchase(body);
+      const result = await store.createPurchase(body, { authToken: bearerToken(query, body) });
       return json({ ok: true, result: publicResult(result) }, 201);
     }
     if (method === 'GET' && pathname === '/api/journals') {
@@ -51,7 +57,7 @@ async function handleApi(store, method, pathname, query, body) {
       return json({ ok: true, verify: ctx.audit.verifyChain(), entries: ctx.audit.list() });
     }
     if (method === 'POST' && pathname === '/api/reversals') {
-      const out = store.reverseJournal(body ?? {});
+      const out = store.reverseJournal({ ...(body ?? {}), authToken: bearerToken(query, body) });
       return json({ ok: true, ...out }, 201);
     }
     if (method === 'GET' && pathname === '/api/reports/monthly') {
@@ -59,7 +65,7 @@ async function handleApi(store, method, pathname, query, body) {
     }
     if (method === 'POST' && pathname === '/api/import/csv') {
       if (!body || typeof body.csv !== 'string') return err('body.csv (string) is required');
-      const report = await store.importCsvText(body.csv);
+      const report = await store.importCsvText(body.csv, { authToken: bearerToken(query, body) });
       return json({ ok: true, report }, 201);
     }
     if (method === 'GET' && pathname === '/api/tax') {
@@ -117,6 +123,7 @@ async function handleApi(store, method, pathname, query, body) {
     return err(`Unknown route ${method} ${pathname}`, 404);
   } catch (e) {
     const msg = e && e.message ? e.message : String(e);
+    if (/Unauthorized/i.test(msg)) return err(msg, 401);
     const status = /Unknown|No country pack|not configured/i.test(msg) ? 404 : 400;
     return err(msg, status);
   }
