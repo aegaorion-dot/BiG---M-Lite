@@ -36,6 +36,20 @@ test/            pengujian otomatis (node:test, tanpa dependensi)
 - **AI**: output mentah wajib lewat `validateClassification`; tolak/gagal → fallback
   deterministik. Key hanya dari env (`BIGM_META_API_KEY`), tidak di repo.
 
+## Tahap 7 — Aplikasi Web "Ledger Atelier"
+
+SPA tanpa dependensi (`public/`) + backend Node http bawaan (`src/web/`).
+Seluruh posting tetap lewat `PostingService`; frontend hanya menampilkan data.
+
+```sh
+node src/web/server.js        # http://localhost:3100  (BIGM_PORT=3100)
+```
+
+Fitur: Dashboard (saldo, aktivitas, grafik bulanan SVG), Sales, Purchase,
+Accounting (jurnal/ledger/audit), Reports, CSV Import (pratinjau + laporan
+gagal), Tax & CountryPack (placeholder eksplisit), Settings, tombol
+**Muat data demo** (berlabel `[DEMO]`, bukan data nyata).
+
 ## Impor CSV & Dashboard (Tahap 6)
 
 Format header: `type,id,orgId,date,jurisdiction,currency,description,amountMajor,counterparty,reference`
