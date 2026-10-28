@@ -161,3 +161,12 @@ pre.report {
   .bar-row { grid-template-columns: 58px 1fr; }
   .bar-row .num { display: none; }
 }
+
+.chat{display:flex;flex-direction:column;gap:10px;max-height:340px;overflow:auto;padding:6px 2px}
+.chat-row{display:flex}
+.chat-row.user{justify-content:flex-end}
+.chat-row .bubble{max-width:min(640px,92%);background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;box-shadow:var(--shadow)}
+.chat-row.user .bubble{background:#0e2a47;color:#fff;border-color:#0e2a47}
+.chat-row .bubble p{margin:6px 0 8px}
+#obInput{padding:10px 12px;border-radius:12px;border:1px solid var(--line);font:inherit}
+

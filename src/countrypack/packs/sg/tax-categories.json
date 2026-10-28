@@ -1,0 +1,16 @@
+[
+  {
+    "code": "GST",
+    "name": "Goods and Services Tax",
+    "status": "PLACEHOLDER",
+    "source": null,
+    "note": "Tarif dan aturan GST belum diverifikasi dari sumber resmi (IRAS). Placeholder: tidak menghasilkan kewajiban pajak final."
+  },
+  {
+    "code": "CIT",
+    "name": "Corporate Income Tax",
+    "status": "PLACEHOLDER",
+    "source": null,
+    "note": "Aturan CIT belum diverifikasi dari sumber resmi. Placeholder: tidak menghasilkan kewajiban pajak final."
+  }
+]

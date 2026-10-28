@@ -11,6 +11,28 @@
 
 const { Money } = require('../domain/money');
 
+function firstByType(chart, type) {
+  try {
+    const found = (chart.list() ?? []).find((a) => a.type === type);
+    return found ? found.id : null;
+  } catch { return null; }
+}
+
+function resolveByCodeOrType(chart, code, type) {
+  try {
+    return chart.getByCode(code).id;
+  } catch {
+    return firstByType(chart, type);
+  }
+}
+
+function revenueExpenseIds(chart) {
+  return {
+    revenueId: resolveByCodeOrType(chart, '401', 'REVENUE'),
+    expenseId: resolveByCodeOrType(chart, '501', 'EXPENSE'),
+  };
+}
+
 function getSummary(deps, { currency = 'IDR' } = {}) {
   if (!deps || !deps.ledger) throw new Error('getSummary needs deps with ledger');
   const entries = typeof deps.ledger.list === 'function' ? deps.ledger.list() : [];
@@ -36,10 +58,11 @@ function getSummary(deps, { currency = 'IDR' } = {}) {
     .sort((a, b) => (a.accountId < b.accountId ? -1 : 1));
   let revenue = Money.zero(currency);
   let expense = Money.zero(currency);
+  const { revenueId, expenseId } = revenueExpenseIds(deps.chart ?? { list: () => [] });
   for (const e of relevant) {
     for (const line of e.lines) {
-      if (line.accountId === 'id-revenue' && line.side === 'CREDIT') revenue = revenue.add(line.money);
-      if (line.accountId === 'id-expense' && line.side === 'DEBIT') expense = expense.add(line.money);
+      if (revenueId && line.accountId === revenueId && line.side === 'CREDIT') revenue = revenue.add(line.money);
+      if (expenseId && line.accountId === expenseId && line.side === 'DEBIT') expense = expense.add(line.money);
     }
   }
   const net = revenue.sub(expense);

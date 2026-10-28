@@ -9,6 +9,7 @@ const auditPill = $('#auditPill');
 const demoNote = $('#demoNote');
 
 const TABS = [
+  ['onboarding', 'AI Onboarding'],
   ['dashboard', 'Dashboard'],
   ['sales', 'Sales'],
   ['purchase', 'Purchase'],
@@ -18,8 +19,10 @@ const TABS = [
   ['tax', 'Tax & Pack'],
   ['settings', 'Settings'],
 ];
-let route = 'dashboard';
-let cache = { summary: null, txs: [], journals: [], audit: null, tax: null, settings: null, monthly: [] };
+let route = 'onboarding';
+let cache = { summary: null, txs: [], journals: [], audit: null, tax: null, settings: null, monthly: [], ob: null };
+let obChat = [];
+let obBooted = false;
 
 function toast(msg, kind = '') {
   const el = document.createElement('div');
@@ -76,6 +79,7 @@ async function refresh(partial = false) {
   if (!partial) {
     cache.tax = await api('/api/tax').catch(() => null);
     cache.settings = await api('/api/settings').catch(() => null);
+    await refreshOb();
   }
   const ok = cache.audit && cache.audit.verify && cache.audit.verify.ok === true;
   auditPill.textContent = ok ? 'audit OK' : 'audit ?';
@@ -200,6 +204,59 @@ function vTax() {
     </tbody></table><p class="footer-note">${esc(t.note)}</p></div>`).join('');
 }
 
+function vOnboarding() {
+  const ob = cache.ob;
+  const msgs = obChat.map((m) => `<div class="chat-row ${m.who}"><div class="bubble"><strong>${m.who === 'ai' ? 'AI Assistant' : 'Anda'}</strong><p>${esc(m.text)}</p>${m.tag ? `<span class="tag ${m.tag === 'AI' ? 'sale' : 'warn'}">${esc(m.tag)}</span>` : ''}</div></div>`).join('');
+  const draft = ob?.draft;
+  const summary = draft ? `<div class="kv"><span>Bahasa</span><strong>${esc(draft.languageProfile?.ui || '-')}</strong><span>Yurisdiksi</span><strong>${esc(draft.organizationProfile?.domicile || draft.jurisdictionProfiles?.[0]?.code || '-')}</strong><span>Mata uang</span><strong>${esc(draft.currencyProfile?.functional || '-')}${draft.currencyProfile?.otherCurrencies?.length ? ` (+${draft.currencyProfile.otherCurrencies.map(esc).join(', ')})` : ''} (usulan)</strong><span>CountryPack</span><strong>${esc(ob?.proposal ? 'Siap validasi' : 'Perlu validasi')}</strong><span>Status pajak</span><strong>menunggu verifikasi (placeholder)</strong></div>` : '<p class="muted">Memuat…</p>';
+  return `<div class="hero"><div class="panel hero-main"><p class="hero-kicker">AI-FIRST ONBOARDING · ONE ENGINE</p><h1>Selamat datang di BiG-M.</h1><p>Ceritakan sedikit tentang bisnis Anda. Saya akan membantu menyiapkan sistemnya.</p><p class="muted">${esc(ob?.ai?.note || '')}</p></div>
+  <div class="panel"><h3>Usulan konfigurasi</h3>${summary}<div class="toolbar"><button class="btn navy" id="obPropose" type="button">Susun usulan</button><button class="btn navy" id="obValidate" type="button">Validasi</button><button class="btn gold" id="obActivate" type="button">Konfirmasi &amp; Aktifkan</button></div><div id="obOut"></div></div></div>
+  <div class="panel"><h3>Percakapan</h3><div class="chat" id="obChat">${msgs || '<p class="muted">Mulai dengan menyapa, contoh: Saya punya perusahaan perdagangan di Singapura, tapi ingin memakai bahasa Indonesia.</p>'}</div>
+  <div class="toolbar"><input id="obInput" placeholder="Tulis jawaban Anda…" style="flex:1" /><button class="btn gold" id="obSend" type="button">Kirim</button></div></div>`;
+}
+
+function wireOnboarding() {
+  const send = async () => {
+    const el = $('#obInput');
+    const text = String(el?.value || '').trim();
+    if (!text) return;
+    obChat.push({ who: 'user', text });
+    el.value = '';
+    render();
+    try {
+      const r = await api('/api/onboarding/turn', { method: 'POST', body: JSON.stringify({ text }) });
+      obChat.push({ who: 'ai', text: r.question.text, tag: r.aiLabel === 'ai-tervalidasi' ? 'AI' : 'deterministik' });
+      await refreshOb();
+    } catch (e) { obChat.push({ who: 'ai', text: `Maaf: ${e.message}`, tag: 'deterministik' }); }
+    render();
+  };
+  $('#obSend')?.addEventListener('click', send);
+  $('#obInput')?.addEventListener('keydown', (e) => { if (e.key === 'Enter') send(); });
+  $('#obPropose')?.addEventListener('click', async () => {
+    try { const r = await api('/api/onboarding/propose', { method: 'POST', body: '{}' }); await refreshOb(); toast(`Usulan tersusun: ${r.proposal.functionalCurrency} · ${(r.proposal.jurisdictions || []).join(',')}`); render(); }
+    catch (e) { toast(e.message, 'error'); }
+  });
+  $('#obValidate')?.addEventListener('click', async () => {
+    try { await api('/api/onboarding/validate', { method: 'POST', body: '{}' }); await refreshOb(); toast('Validasi OK — placeholder, menunggu verifikasi'); render(); }
+    catch (e) { toast(e.message, 'error'); }
+  });
+  $('#obActivate')?.addEventListener('click', async () => {
+    try {
+      const key = `web-${Date.now()}`;
+      const r = await api('/api/onboarding/activate', { method: 'POST', body: JSON.stringify({ activationKey: key }) });
+      await refreshOb(); toast(`Aktif v${r.record.version} ✓`); render();
+    } catch (e) { toast(e.message, 'error'); }
+  });
+}
+
+async function refreshOb() {
+  cache.ob = await api('/api/onboarding/state').catch(() => null);
+  if (cache.ob && !obBooted && obChat.length === 0) {
+    obBooted = true;
+    obChat.push({ who: 'ai', text: 'Selamat datang di BiG-M. Ceritakan sedikit tentang bisnis Anda. Saya akan membantu menyiapkan sistemnya.', tag: 'deterministik' });
+  }
+}
+
 function vSettings() {
   const s = cache.settings;
   if (!s) return '<div class="panel">Memuat…</div>';
@@ -212,6 +269,7 @@ function vSettings() {
 
 function render() {
   renderTabs();
+  if (route === 'onboarding') { view.innerHTML = vOnboarding(); wireOnboarding(); return; }
   if (route === 'dashboard') view.innerHTML = vDashboard();
   else if (route === 'sales') view.innerHTML = vSalesPurchase('SALE');
   else if (route === 'purchase') view.innerHTML = vSalesPurchase('PURCHASE');

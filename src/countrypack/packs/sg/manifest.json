@@ -1,0 +1,12 @@
+{
+  "id": "bigm-pack-sg",
+  "jurisdiction": "SG",
+  "version": "0.1.0",
+  "validFrom": "2026-01-01",
+  "validTo": "2026-12-31",
+  "currency": "SGD",
+  "rounding": { "mode": "HALF_UP", "decimals": 2 },
+  "minFrameworkVersion": "0.1.0",
+  "displayName": "Singapore Country Pack (contoh kerja)",
+  "description": "Contoh kerja Country Pack Singapura. Seluruh aturan pajak masih PLACEHOLDER tanpa sumber terverifikasi dan tidak menghasilkan kewajiban pajak final."
+}

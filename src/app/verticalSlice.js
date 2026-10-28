@@ -20,6 +20,19 @@ const { determineTax } = require('../tax/taxEngine');
 const { validateClassification } = require('../ai/validation');
 const { renderTextReport } = require('./report');
 
+function firstByType(chart, type) {
+  const found = chart.list().find((a) => a.type === type);
+  return found ? found.id : null;
+}
+
+function resolveByCodeOrType(chart, code, type) {
+  try {
+    return chart.getByCode(code).id;
+  } catch {
+    return firstByType(chart, type);
+  }
+}
+
 function toTransaction(input) {
   const items = input.items.map((it) => new TransactionItem({
     description: it.description,
@@ -62,9 +75,9 @@ function buildJournal({ tx, tax, chart, transferAccounts = null, taxAccountId = 
   const id = journalId ?? `j-${tx.id}`;
   let lines;
   if (tx.kind === 'REVENUE') {
-    const cashId = 'id-cash';
-    const revenueId = 'id-revenue';
-    if (!chart.has(cashId) || !chart.has(revenueId)) throw new Error('Chart lacks id-cash/id-revenue');
+    const cashId = resolveByCodeOrType(chart, '101', 'ASSET');
+    const revenueId = resolveByCodeOrType(chart, '401', 'REVENUE');
+    if (!cashId || !revenueId) throw new Error('Chart lacks cash (101/ASSET) / revenue (401/REVENUE) accounts');
     const gross = total.add(finalTax);
     lines = [
       new JournalLine({ accountId: cashId, side: 'DEBIT', money: gross }),
@@ -77,9 +90,9 @@ function buildJournal({ tx, tax, chart, transferAccounts = null, taxAccountId = 
     if (!finalTax.isZero()) {
       throw new Error('Final tax on EXPENSE is out of scope for this slice (explicit, not silent)');
     }
-    const expenseId = 'id-expense';
-    const cashId = 'id-cash';
-    if (!chart.has(expenseId) || !chart.has(cashId)) throw new Error('Chart lacks id-expense/id-cash');
+    const expenseId = resolveByCodeOrType(chart, '501', 'EXPENSE');
+    const cashId = resolveByCodeOrType(chart, '101', 'ASSET');
+    if (!expenseId || !cashId) throw new Error('Chart lacks expense (501/EXPENSE) / cash (101/ASSET) accounts');
     lines = [
       new JournalLine({ accountId: expenseId, side: 'DEBIT', money: total }),
       new JournalLine({ accountId: cashId, side: 'CREDIT', money: total }),

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Pendapatan jasa SGD",
+    "input": {
+      "id": "tx-sg-001",
+      "orgId": "org-contoh",
+      "kind": "REVENUE",
+      "date": "2026-06-01",
+      "jurisdiction": "SG",
+      "currency": "SGD",
+      "items": [{ "description": "Jasa perdagangan", "amountMajor": "10000.00" }],
+      "evidence": { "kind": "INVOICE", "reference": "INV-SG-001" },
+      "idempotencyKey": "fixture:tx-sg-001",
+      "memo": "Fixture pack Singapura"
+    },
+    "expect": { "packId": "bigm-pack-sg", "taxFinalTotalMinor": "0", "taxHasPlaceholder": true }
+  }
+]

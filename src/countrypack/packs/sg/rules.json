@@ -1,0 +1,22 @@
+[
+  {
+    "id": "SG-GST-001",
+    "category": "GST",
+    "description": "Singapore domestic supply: GST determination deferred pending verified rate.",
+    "placeholder": true,
+    "source": null,
+    "condition": { "all": [{ "field": "jurisdiction", "op": "eq", "value": "SG" }] },
+    "action": { "kind": "manual" },
+    "note": "Placeholder — engine must not compute a final liability from this rule."
+  },
+  {
+    "id": "SG-CIT-001",
+    "category": "CIT",
+    "description": "Potentially CIT-relevant transaction: determination deferred pending verified rules.",
+    "placeholder": true,
+    "source": null,
+    "condition": { "all": [{ "field": "jurisdiction", "op": "eq", "value": "SG" }] },
+    "action": { "kind": "manual" },
+    "note": "Placeholder — engine must not compute a final liability from this rule."
+  }
+]

@@ -72,7 +72,35 @@ async function handleApi(store, method, pathname, query, body) {
           placeholder: r.placeholder === true, source: r.source ?? null, note: r.note ?? null,
         })),
       }));
-      return json({ ok: true, packs, note: 'Seluruh rule ID masih PLACEHOLDER: tidak ada kewajiban pajak final.' });
+      return json({ ok: true, packs, note: 'Seluruh rule ID+SG masih PLACEHOLDER: tidak ada kewajiban pajak final.' });
+    }
+    if (method === 'GET' && pathname === '/api/onboarding/state') {
+      return json({ ok: true, ...store.onboardingState(), ai: store.aiStatus() });
+    }
+    if (method === 'POST' && pathname === '/api/onboarding/turn') {
+      const out = await store.onboardingTurn(String(body?.text ?? ''));
+      return json({ ok: true, ...out }, 200);
+    }
+    if (method === 'POST' && pathname === '/api/onboarding/propose') {
+      const out = store.onboardingPropose();
+      if (!out.ok) return err(out.errors.join('; '), 400);
+      return json({ ok: true, proposal: out.proposal });
+    }
+    if (method === 'POST' && pathname === '/api/onboarding/validate') {
+      const out = store.onboardingValidate();
+      if (!out.ok) return err(out.errors.join('; '), 400);
+      return json({ ok: true, validated: out.validated });
+    }
+    if (method === 'POST' && pathname === '/api/onboarding/activate') {
+      try {
+        const record = store.onboardingActivate({ activationKey: body?.activationKey, actor: body?.actor ?? 'onboarding' });
+        return json({ ok: true, record }, 201);
+      } catch (e2) {
+        return err(e2.message, 400);
+      }
+    }
+    if (method === 'GET' && pathname === '/api/onboarding/history') {
+      return json({ ok: true, history: store.onboardingHistory(), ai: store.aiStatus() });
     }
     if (method === 'GET' && pathname === '/api/settings') {
       return json({

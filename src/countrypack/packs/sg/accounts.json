@@ -1,0 +1,9 @@
+[
+  { "id": "sg-cash", "code": "101", "name": "Cash", "type": "ASSET" },
+  { "id": "sg-receivable", "code": "102", "name": "Trade Receivables", "type": "ASSET" },
+  { "id": "sg-payable", "code": "201", "name": "Trade Payables", "type": "LIABILITY" },
+  { "id": "sg-tax-suspense", "code": "209", "name": "Tax Suspense (not a final liability)", "type": "LIABILITY" },
+  { "id": "sg-equity", "code": "301", "name": "Capital", "type": "EQUITY" },
+  { "id": "sg-revenue", "code": "401", "name": "Revenue", "type": "REVENUE" },
+  { "id": "sg-expense", "code": "501", "name": "Operating Expenses", "type": "EXPENSE" }
+]

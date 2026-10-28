@@ -36,7 +36,7 @@ test/            pengujian otomatis (node:test, tanpa dependensi)
 - **AI**: output mentah wajib lewat `validateClassification`; tolak/gagal → fallback
   deterministik. Key hanya dari env (`BIGM_META_API_KEY`), tidak di repo.
 
-## Tahap 7 — Aplikasi Web "Ledger Atelier"
+## Tahap 7 — Aplikasi Web "Ledger Atelier" + AI Onboarding
 
 SPA tanpa dependensi (`public/`) + backend Node http bawaan (`src/web/`).
 Seluruh posting tetap lewat `PostingService`; frontend hanya menampilkan data.
@@ -45,10 +45,21 @@ Seluruh posting tetap lewat `PostingService`; frontend hanya menampilkan data.
 node src/web/server.js        # http://localhost:3100  (BIGM_PORT=3100)
 ```
 
-Fitur: Dashboard (saldo, aktivitas, grafik bulanan SVG), Sales, Purchase,
-Accounting (jurnal/ledger/audit), Reports, CSV Import (pratinjau + laporan
-gagal), Tax & CountryPack (placeholder eksplisit), Settings, tombol
+Fitur: **AI Onboarding** (tab default: chat DISCOVER→PROFILE→PROPOSE→VALIDATE→
+CONFIRM→ACTIVATE→AUDIT, fallback deterministik berlabel jujur), Dashboard
+(saldo, aktivitas, grafik bulanan SVG), Sales, Purchase, Accounting
+(jurnal/ledger/audit), Reports, CSV Import (pratinjau + laporan gagal),
+Tax & CountryPack (ID + SG, keduanya placeholder eksplisit), Settings, tombol
 **Muat data demo** (berlabel `[DEMO]`, bukan data nyata).
+
+Onboarding: profil 9 bagian (`src/onboarding/profile.js`), percakapan
+deterministik ID/EN (`conversation.js`), konfigurator fail-closed
+(`configurator.js`), persistensi file JSON best-effort tanpa DB
+(`BIGM_ONBOARDING_FILE`), tanpa API key di frontend. Contoh:
+"perusahaan perdagangan di Singapura, bahasa Indonesia" → Bahasa Indonesia,
+Yurisdiksi SG, SGD (usulan), CountryPack SG perlu validasi, pajak menunggu
+verifikasi. CountryPack SG (`bigm-pack-sg`, SGD 2 desimal) placeholder-only:
+GST/CIT tanpa tarif final.
 
 ## Impor CSV & Dashboard (Tahap 6)
 
