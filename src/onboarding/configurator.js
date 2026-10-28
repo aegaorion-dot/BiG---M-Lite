@@ -42,6 +42,10 @@ function validateProposal(proposal, { registry, chartCurrencies = null } = {}) {
   const errors = [];
   if (!proposal || typeof proposal !== 'object') return { ok: false, errors: ['proposal must be an object'] };
   if (!registry) return { ok: false, errors: ['registry is required'] };
+  // P1 final: transaction currencies must not duplicate functional (dedupe first).
+  if (Array.isArray(proposal.otherCurrencies) && proposal.functionalCurrency) {
+    proposal.otherCurrencies = [...new Set(proposal.otherCurrencies)].filter((c) => c !== proposal.functionalCurrency);
+  }
   const date = proposal.period?.periodStart ?? proposal.period?.start;
   for (const code of proposal.jurisdictions ?? []) {
     let pack = null;

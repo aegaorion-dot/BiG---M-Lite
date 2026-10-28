@@ -89,7 +89,9 @@ function planConfiguration(state) {
     transactionCurrencies: v('currency.transactions') ?? [],
     reportingCurrency: v('currency.reporting') ?? v('currency.functional'),
     businessType: v('org.businessType') ?? 'small-business',
-    modules: v('modules.enabled') ?? ['sales', 'purchase', 'accounting', 'reports'],
+    modules: (Array.isArray(v('modules.enabled')) && v('modules.enabled').length > 0)
+      ? v('modules.enabled')
+      : ['sales', 'purchase', 'accounting', 'reports'],
   };
 }
 

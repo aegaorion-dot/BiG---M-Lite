@@ -97,6 +97,17 @@ async function handleApi(store, method, pathname, query, body) {
       if (!out.ok) return err(out.errors.join('; '), 400);
       return json({ ok: true, validated: out.validated });
     }
+    if (method === 'POST' && pathname === '/api/onboarding/confirm') {
+      try {
+        const out = store.onboardingConfirm({ proposalHash: body?.proposalHash ?? body?.hash });
+        return json({ ok: true, ...out }, 200);
+      } catch (e2) {
+        return err(e2.message, 400);
+      }
+    }
+    if (method === 'GET' && pathname === '/api/onboarding/readiness') {
+      return json({ ok: true, readiness: store.onboardingReadiness() });
+    }
     if (method === 'POST' && pathname === '/api/onboarding/activate') {
       try {
         const record = store.onboardingActivate({ activationKey: body?.activationKey, actor: body?.actor ?? 'onboarding' });

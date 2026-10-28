@@ -35,7 +35,12 @@ function detectSignals(text) {
   const t = lower(text);
   const signals = {};
   for (const j of JURISDICTIONS) {
-    if (j.aliases.some((a) => t.includes(a))) { signals.jurisdiction = j.code; break; }
+    const hit = j.aliases.some((a) => {
+      const alias = String(a).toLowerCase();
+      if (alias.length <= 2) return new RegExp(`\\b${alias}\\b`, 'i').test(t);
+      return t.includes(alias);
+    });
+    if (hit) { signals.jurisdiction = j.code; break; }
   }
   for (const c of CURRENCIES) {
     if (t.includes(c.toLowerCase())) { signals.currency = c; break; }

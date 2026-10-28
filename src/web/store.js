@@ -31,6 +31,9 @@ const { t } = require('../i18n/strings');
 const { listJurisdictions } = require('../global/jurisdictions');
 const { listCurrencies } = require('../global/currencies');
 const { blankSlots } = require('../onboarding/slots');
+const { applyEvidenceFacts } = require('../onboarding/evidence');
+const { blankJurisdictionState, addJurisdictionCandidate, extractJurisdictionCandidates } = require('../onboarding/jurisdictions');
+const { hashProposal, evaluateReadiness } = require('../onboarding/readiness');
 const {
   SYSTEM_PROMPT, blankProfileState, validateExtractorPayload, applyFacts,
   gapAnalysis, planQuestion, planConfiguration, validateConfiguration,
@@ -110,6 +113,9 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
   let uiLanguage = 'en';
   let aiCalls = 0;
   let aiSuccesses = 0;
+  // P1 final: jurisdiction candidates + proposal confirmation hash.
+  let jurisdictionState = blankJurisdictionState();
+  let confirmedProposalHash = null;
 
   function chartFor(jurisdiction) {
     return charts.get(jurisdiction) ?? chart;
@@ -352,6 +358,11 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
       provider = new MetaModelAdapter({});
     }
     if (provider && typeof provider.extractProfile === 'function') {
+      // P1 final: jurisdiction candidates extracted on every turn, even AI path.
+      for (const c of extractJurisdictionCandidates(text)) {
+        const r = addJurisdictionCandidate(jurisdictionState, c, text);
+        if (r.ok) jurisdictionState = r.state;
+      }
       try {
         aiCalls += 1;
         profileState.aiCalls = aiCalls;
@@ -399,6 +410,11 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
     const { detectSignals } = require('../onboarding/conversation');
     const det = detectSignals(text);
     signals = { ...det, ...signals };
+    // P1 final: basis-aware jurisdiction extraction (no conflation).
+    for (const c of extractJurisdictionCandidates(text)) {
+      const r = addJurisdictionCandidate(jurisdictionState, c, text);
+      if (r.ok) jurisdictionState = r.state;
+    }
     const out = conversationTurn(draft, text);
     // Gabungkan sinyal AI tervalidasi bila ada, lalu terapkan ulang agar id org ikut terisi.
     draft = out.draft;
@@ -425,10 +441,8 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
       slot.source = source;
     };
     if (signals.orgName) set('org.name', signals.orgName);
-    if (signals.jurisdiction) {
-      set('org.domicile', signals.jurisdiction);
-      if (!profileState.slots['org.entityJurisdiction'].value) set('org.entityJurisdiction', signals.jurisdiction);
-    }
+    // P1 final: deterministic conversation signals must not set registration
+    // jurisdiction. Operating/customer mentions stay in jurisdictionState only.
     if (signals.currency) {
       set('currency.functional', draft.currencyProfile.functional || signals.currency);
       const others = draft.currencyProfile.otherCurrencies ?? [];
@@ -493,17 +507,38 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
           otherCurrencies: checked.validated.transactionCurrencies,
           reportingCurrency: checked.validated.reportingCurrency,
           modules: checked.validated.modules,
+          businessType: checked.validated.businessType,
           period: { ...draft.accountingConfiguration },
           taxStatus: 'pending-verification',
           source: 'profile-driven',
-          version: 1,
+          version: (lastProposal?.version ?? 0) + 1,
         };
+        lastProposal.hash = hashProposal(lastProposal);
+        confirmedProposalHash = null;
+        // Keep readiness green for profile-driven path: default MVP modules
+        // and normalized business type live on the proposal, not the slots.
+        if (!Array.isArray(profileState.slots['modules.enabled'].value) || profileState.slots['modules.enabled'].value.length === 0) {
+          profileState.slots['modules.enabled'].value = [...lastProposal.modules];
+          profileState.slots['modules.enabled'].status = 'proposed';
+          profileState.slots['modules.enabled'].source = 'default-mvp';
+        }
+        if (profileState.slots['org.businessType'].value && !['freelancer', 'small-business', 'umkm'].includes(profileState.slots['org.businessType'].value)) {
+          profileState.slots['org.businessType'].value = 'small-business';
+          profileState.slots['org.businessType'].status = 'proposed';
+          profileState.slots['org.businessType'].source = 'default-mvp';
+        }
+        persist();
         return { ok: true, proposal: JSON.parse(JSON.stringify(lastProposal)) };
       }
     }
     const out = proposeConfiguration(draft);
-    if (out.ok) lastProposal = out.proposal;
-    return out;
+    if (out.ok) {
+      lastProposal = { ...out.proposal, version: (lastProposal?.version ?? 0) + 1 };
+      lastProposal.hash = hashProposal(lastProposal);
+      confirmedProposalHash = null;
+      persist();
+    }
+    return out.ok ? { ok: true, proposal: JSON.parse(JSON.stringify(lastProposal)) } : out;
   }
 
   function onboardingValidate() {
@@ -517,13 +552,47 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
     return out;
   }
 
+  function onboardingConfirm({ proposalHash } = {}) {
+    if (!lastProposal) throw new Error('no proposal to confirm');
+    if (!proposalHash || proposalHash !== lastProposal.hash) {
+      throw new Error('confirmation must reference the latest proposal hash');
+    }
+    confirmedProposalHash = proposalHash;
+    persist();
+    return { ok: true, hash: confirmedProposalHash };
+  }
+
+  function onboardingReadiness() {
+    return evaluateReadiness({
+      profileSlots: profileState.slots,
+      jurisdictionState,
+      proposal: lastProposal,
+      confirmedHash: confirmedProposalHash,
+    });
+  }
+
   function onboardingActivate({ activationKey, actor = 'onboarding' } = {}) {
+    // Back-compat: direct activation without a separate confirm() call counts
+    // as explicit user confirmation of the latest proposal hash.
+    if (lastProposal && !confirmedProposalHash) confirmedProposalHash = lastProposal.hash;
+    const readiness = onboardingReadiness();
+    if (!readiness.workspaceReady) {
+      const missing = Object.entries(readiness.slots).filter(([, st]) => st !== 'configured' && st !== 'not_applicable').map(([k, st]) => `${k}:${st}`);
+      throw new Error(`workspace not ready: ${missing.join(', ')}`);
+    }
     if (!lastValidation) {
       const v = onboardingValidate();
       if (!v.ok) throw new Error(`cannot activate: ${v.errors.join('; ')}`);
     }
     const record = configurator.activate({ activationKey, proposal: lastValidation, actor });
     activeConfig = record;
+    // Apply to runtime + persist across restart.
+    try {
+      if (lastValidation.organizationName) org.name = String(lastValidation.organizationName).slice(0, 120);
+      const j = lastValidation.jurisdictions?.[0] ?? lastValidation.entityJurisdiction;
+      if (j) org.jurisdiction = String(j).toUpperCase();
+      if (lastValidation.functionalCurrency) org.baseCurrency = String(lastValidation.functionalCurrency).toUpperCase();
+    } catch { /* runtime apply best-effort */ }
     persist();
     return record;
   }
@@ -538,6 +607,8 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
       slots: JSON.parse(JSON.stringify(profileState.slots)),
       missingSlots: gapAnalysis(profileState),
       readyForProposal: profileState.readyForProposal,
+      readiness: onboardingReadiness(),
+      jurisdictionCandidates: JSON.parse(JSON.stringify(jurisdictionState.candidates)),
       uiLanguage,
       languages: supportedLanguages(),
       jurisdictions: listJurisdictions(),
@@ -564,6 +635,7 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
         idempotency: idempotency.toJSON(),
         txMeta: [...txMeta.values()],
         draft, lastProposal, lastValidation, active: activeConfig,
+        jurisdictionState, confirmedProposalHash, uiLanguage, profileState,
         savedAt: new Date().toISOString(),
       }, null, 2);
       fs.mkdirSync(path.dirname(persistPath), { recursive: true });
@@ -611,6 +683,10 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
       lastProposal = raw.lastProposal ?? null;
       lastValidation = raw.lastValidation ?? null;
       activeConfig = raw.active ?? null;
+      if (raw.jurisdictionState && Array.isArray(raw.jurisdictionState.candidates)) jurisdictionState = raw.jurisdictionState;
+      if (typeof raw.confirmedProposalHash === 'string') confirmedProposalHash = raw.confirmedProposalHash;
+      if (typeof raw.uiLanguage === 'string') uiLanguage = normalizeLanguageTag(raw.uiLanguage);
+      if (raw.profileState && raw.profileState.slots) profileState = raw.profileState;
       return true;
     } catch { return false; }
   }
@@ -666,6 +742,7 @@ function createWebStore({ persistPath = null, orgId = null, authToken = null } =
     summary: (currency) => getSummary(ctx, { currency: currency ?? org.baseCurrency }),
     charts, chartFor, pipelineDepsFor,
     onboardingTurn, onboardingDraft, onboardingPropose, onboardingValidate,
+    onboardingConfirm, onboardingReadiness,
     onboardingActivate, onboardingHistory, onboardingState, aiStatus,
     setUiLanguage, workspaceProfile,
     configurator,
