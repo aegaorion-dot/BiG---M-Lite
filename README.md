@@ -1,0 +1,50 @@
+# BiG-M Lite — Fondasi (Tahap 1–5)
+
+Modular monolith sederhana untuk akuntansi + pajak multi-yurisdiksi.
+Dibangun fondasi dulu: domain → country pack → integritas → satu alur nyata → adapter AI.
+
+## Struktur
+
+```
+src/
+  domain/        Money (BigInt, tanpa float), Organization, FinancialPeriod,
+                 ChartOfAccounts, Transaction, SourceEvidence, Journal, Ledger,
+                 AuditTrail (rantai hash), IdempotencyStore
+  accounting/    PostingService (seimbang + idempoten + periode OPEN),
+                 ReversalService (koreksi via jurnal baru, asli tak tersentuh)
+  tax/           TaxEngine: evaluasi rule deklaratif; placeholder tak pernah final
+  countrypack/   manifest + registry + validasi; packs/id = contoh kerja Indonesia
+  ai/            AIProvider, MetaModelAdapter (key via env), validasi usulan AI
+  app/           verticalSlice (input→klasifikasi→posting→ledger→laporan), report
+test/            pengujian otomatis (node:test, tanpa dependensi)
+```
+
+## Kontrak antarmodul (ringkas)
+
+- **Uang**: BigInt minor + kode ISO 4217. `fromMajor` hanya terima string desimal.
+- **Jurnal**: satu mata uang, ≥2 baris, total debit == total kredit, finalize → frozen permanen.
+- **Posting**: `idempotencyKey` wajib; replay kunci sama = receipt sama, tanpa posting ganda.
+- **Periode**: posting hanya ke periode OPEN yang memuat tanggal transaksi.
+- **Reversal**: jurnal baru bersisi terbalik + `reversalOf`; efek bersih nol.
+- **Country Pack**: JSON murni; kunci `eval/code/require/...` ditolak; versi semver;
+  pilih berdasar yurisdiksi + tanggal (versi tertinggi menang).
+- **Pajak**: rule non-placeholder wajib `source` + aksi `rate|exempt`; placeholder →
+  status `PLACEHOLDER`, amount null, dikecualikan dari total final.
+- **AI**: output mentah wajib lewat `validateClassification`; tolak/gagal → fallback
+  deterministik. Key hanya dari env (`BIGM_META_API_KEY`), tidak di repo.
+
+## Menjalankan
+
+```sh
+npm test
+```
+
+Tanpa dependensi; Node >= 20. Copy `.env.example` ke `.env` untuk konfigurasi Meta API
+(lokal saja, tidak di-commit).
+
+## Status jujur
+
+- Framework + contoh kerja Indonesia: **lengkap dan teruji**.
+- Tax Engine Indonesia: **framework saja** — seluruh aturan PPN/PPh masih
+  `placeholder` tanpa sumber terverifikasi dan tidak menghasilkan kewajiban final.
+- Berikutnya (Tahap 6): modul bisnis, dashboard, import CSV, optimasi terukur.
