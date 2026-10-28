@@ -1,0 +1,979 @@
+{
+  "kind": "GOVERNED_CANDIDATES_NOT_AUTOMATIC_APPROVAL",
+  "candidates": [
+    {
+      "candidateId": "5fd6cc6fc2962d89d98471cc1d571d48540fec6676a1a06f2a63e7ce5ee23868",
+      "jurisdictionCode": "ID",
+      "evidenceIds": [
+        "ORIGINAL_CIT_0",
+        "ORIGINAL_CIT_1",
+        "ORIGINAL_CIT_2",
+        "ORIGINAL_CIT_3"
+      ],
+      "provenance": [
+        {
+          "evidenceId": "ORIGINAL_CIT_0",
+          "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+          "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+          "locator": "/legalSources/0",
+          "legalSourceUrl": "https://peraturan.bpk.go.id/Details/185162/uu-no-7-tahun-2021",
+          "legalLocator": "Pasal 4 angka 3, perubahan Pasal 17 ayat (1) huruf b, ayat (2b), dan ayat (4) UU PPh",
+          "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+          "originalSource": {
+            "repository": "aegaorion-dot/big-m-",
+            "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+            "path": "src/taxCountryPackIndonesiaM5.ts",
+            "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+          },
+          "originalReferenceVerifiedInOriginal": true
+        },
+        {
+          "evidenceId": "ORIGINAL_CIT_1",
+          "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+          "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+          "locator": "/legalSources/1",
+          "legalSourceUrl": "https://peraturan.bpk.go.id/Home/Download/29283/UU%20Nomor%2036%20Tahun%202008.pdf",
+          "legalLocator": "Pasal 31E ayat (1)",
+          "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+          "originalSource": {
+            "repository": "aegaorion-dot/big-m-",
+            "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+            "path": "src/taxCountryPackIndonesiaM5.ts",
+            "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+          },
+          "originalReferenceVerifiedInOriginal": true
+        },
+        {
+          "evidenceId": "ORIGINAL_CIT_2",
+          "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+          "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+          "locator": "/legalSources/2",
+          "legalSourceUrl": "https://peraturan.bpk.go.id/Home/Details/233488/pp-no-55-tahun-2022",
+          "legalLocator": "Penyesuaian pengaturan PPh dan penurunan tarif bagi perseroan terbuka",
+          "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+          "originalSource": {
+            "repository": "aegaorion-dot/big-m-",
+            "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+            "path": "src/taxCountryPackIndonesiaM5.ts",
+            "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+          },
+          "originalReferenceVerifiedInOriginal": true
+        },
+        {
+          "evidenceId": "ORIGINAL_CIT_3",
+          "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+          "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+          "locator": "/legalSources/3",
+          "legalSourceUrl": "https://www.pajak.go.id/sites/default/files/2024-09/Buku%20Manual%20Coretax%202024%20-%2016%20SPT%20PPh%20Badan.pdf",
+          "legalLocator": "Penghitungan PPh terutang: tarif umum, Pasal 31E, perseroan terbuka, dan pembulatan PKP",
+          "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+          "originalSource": {
+            "repository": "aegaorion-dot/big-m-",
+            "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+            "path": "src/taxCountryPackIndonesiaM5.ts",
+            "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+          },
+          "originalReferenceVerifiedInOriginal": true
+        }
+      ],
+      "envelopeIds": [],
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "runtimeExecutable": false,
+      "executorSupported": true,
+      "reviewHistory": [],
+      "sourceCandidateId": "9ac79ec85cc15d8274d8fe01f695318508af536470b0da580b56a148ed45b11b",
+      "contentKind": "COUNTRY_PACK",
+      "executableContent": {
+        "packId": "ID_CIT_DETERMINATION_2025",
+        "version": 2,
+        "jurisdictionCode": "ID",
+        "currency": "IDR",
+        "effectiveFrom": "2025-01-01",
+        "effectiveTo": "2025-12-31",
+        "rules": [
+          {
+            "ruleId": "ID_CIT_GENERAL_AND_ARTICLE_31E_2025",
+            "taxType": "CIT",
+            "subjectTypes": [
+              "COMPANY"
+            ],
+            "incomeOrEventType": "ANNUAL_COMPANY_INCOME",
+            "requiredFacts": {
+              "M3_TAXABLE_INCOME": "MONEY",
+              "ANNUAL_GROSS_TURNOVER": "MONEY",
+              "CIT_RATE_TREATMENT": "STRING",
+              "M3_RECONCILIATION_APPROVED": "BOOLEAN",
+              "CIT_OBLIGATION_APPLICABLE": "BOOLEAN"
+            },
+            "applicabilityPredicate": {
+              "op": "AND",
+              "args": [
+                {
+                  "op": "EQ",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "CIT_RATE_TREATMENT"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "STRING",
+                      "value": "GENERAL_OR_ARTICLE_31E"
+                    }
+                  ]
+                },
+                {
+                  "op": "GTE",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "ANNUAL_GROSS_TURNOVER"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "NUMBER",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ]
+            },
+            "requiredTrueFacts": [
+              "M3_RECONCILIATION_APPROVED",
+              "CIT_OBLIGATION_APPLICABLE"
+            ],
+            "taxBaseFormula": {
+              "op": "MULTIPLY",
+              "args": [
+                {
+                  "op": "ROUND",
+                  "args": [
+                    {
+                      "op": "DIVIDE",
+                      "args": [
+                        {
+                          "op": "MAX",
+                          "args": [
+                            {
+                              "op": "INPUT",
+                              "name": "M3_TAXABLE_INCOME"
+                            },
+                            {
+                              "op": "LITERAL",
+                              "valueType": "NUMBER",
+                              "value": "0"
+                            }
+                          ]
+                        },
+                        {
+                          "op": "PARAMETER",
+                          "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                        }
+                      ]
+                    }
+                  ],
+                  "rule": {
+                    "mode": "DOWN",
+                    "precision": 0
+                  }
+                },
+                {
+                  "op": "PARAMETER",
+                  "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                }
+              ]
+            },
+            "rateDefinition": {
+              "kind": "FORMULA_DERIVED"
+            },
+            "amountFormula": {
+              "op": "IF",
+              "args": [
+                {
+                  "op": "LTE",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "ANNUAL_GROSS_TURNOVER"
+                    },
+                    {
+                      "op": "PARAMETER",
+                      "code": "ARTICLE_31E_FULL_FACILITY_TURNOVER"
+                    }
+                  ]
+                },
+                {
+                  "op": "MULTIPLY",
+                  "args": [
+                    {
+                      "op": "MULTIPLY",
+                      "args": [
+                        {
+                          "op": "ROUND",
+                          "args": [
+                            {
+                              "op": "DIVIDE",
+                              "args": [
+                                {
+                                  "op": "MAX",
+                                  "args": [
+                                    {
+                                      "op": "INPUT",
+                                      "name": "M3_TAXABLE_INCOME"
+                                    },
+                                    {
+                                      "op": "LITERAL",
+                                      "valueType": "NUMBER",
+                                      "value": "0"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "PARAMETER",
+                                  "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                                }
+                              ]
+                            }
+                          ],
+                          "rule": {
+                            "mode": "DOWN",
+                            "precision": 0
+                          }
+                        },
+                        {
+                          "op": "PARAMETER",
+                          "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "PARAMETER",
+                      "code": "ARTICLE_31E_REDUCED_RATE"
+                    }
+                  ]
+                },
+                {
+                  "op": "IF",
+                  "args": [
+                    {
+                      "op": "LTE",
+                      "args": [
+                        {
+                          "op": "INPUT",
+                          "name": "ANNUAL_GROSS_TURNOVER"
+                        },
+                        {
+                          "op": "PARAMETER",
+                          "code": "ARTICLE_31E_MAX_TURNOVER"
+                        }
+                      ]
+                    },
+                    {
+                      "op": "ADD",
+                      "args": [
+                        {
+                          "op": "MULTIPLY",
+                          "args": [
+                            {
+                              "op": "MULTIPLY",
+                              "args": [
+                                {
+                                  "op": "MULTIPLY",
+                                  "args": [
+                                    {
+                                      "op": "ROUND",
+                                      "args": [
+                                        {
+                                          "op": "DIVIDE",
+                                          "args": [
+                                            {
+                                              "op": "MAX",
+                                              "args": [
+                                                {
+                                                  "op": "INPUT",
+                                                  "name": "M3_TAXABLE_INCOME"
+                                                },
+                                                {
+                                                  "op": "LITERAL",
+                                                  "valueType": "NUMBER",
+                                                  "value": "0"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "op": "PARAMETER",
+                                              "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "rule": {
+                                        "mode": "DOWN",
+                                        "precision": 0
+                                      }
+                                    },
+                                    {
+                                      "op": "PARAMETER",
+                                      "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "DIVIDE",
+                                  "args": [
+                                    {
+                                      "op": "PARAMETER",
+                                      "code": "ARTICLE_31E_FACILITY_TURNOVER"
+                                    },
+                                    {
+                                      "op": "INPUT",
+                                      "name": "ANNUAL_GROSS_TURNOVER"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "PARAMETER",
+                              "code": "ARTICLE_31E_REDUCED_RATE"
+                            }
+                          ]
+                        },
+                        {
+                          "op": "MULTIPLY",
+                          "args": [
+                            {
+                              "op": "SUBTRACT",
+                              "args": [
+                                {
+                                  "op": "MULTIPLY",
+                                  "args": [
+                                    {
+                                      "op": "ROUND",
+                                      "args": [
+                                        {
+                                          "op": "DIVIDE",
+                                          "args": [
+                                            {
+                                              "op": "MAX",
+                                              "args": [
+                                                {
+                                                  "op": "INPUT",
+                                                  "name": "M3_TAXABLE_INCOME"
+                                                },
+                                                {
+                                                  "op": "LITERAL",
+                                                  "valueType": "NUMBER",
+                                                  "value": "0"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "op": "PARAMETER",
+                                              "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                                            }
+                                          ]
+                                        }
+                                      ],
+                                      "rule": {
+                                        "mode": "DOWN",
+                                        "precision": 0
+                                      }
+                                    },
+                                    {
+                                      "op": "PARAMETER",
+                                      "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "MULTIPLY",
+                                  "args": [
+                                    {
+                                      "op": "MULTIPLY",
+                                      "args": [
+                                        {
+                                          "op": "ROUND",
+                                          "args": [
+                                            {
+                                              "op": "DIVIDE",
+                                              "args": [
+                                                {
+                                                  "op": "MAX",
+                                                  "args": [
+                                                    {
+                                                      "op": "INPUT",
+                                                      "name": "M3_TAXABLE_INCOME"
+                                                    },
+                                                    {
+                                                      "op": "LITERAL",
+                                                      "valueType": "NUMBER",
+                                                      "value": "0"
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "op": "PARAMETER",
+                                                  "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                                                }
+                                              ]
+                                            }
+                                          ],
+                                          "rule": {
+                                            "mode": "DOWN",
+                                            "precision": 0
+                                          }
+                                        },
+                                        {
+                                          "op": "PARAMETER",
+                                          "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "op": "DIVIDE",
+                                      "args": [
+                                        {
+                                          "op": "PARAMETER",
+                                          "code": "ARTICLE_31E_FACILITY_TURNOVER"
+                                        },
+                                        {
+                                          "op": "INPUT",
+                                          "name": "ANNUAL_GROSS_TURNOVER"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "PARAMETER",
+                              "code": "ORDINARY_CORPORATE_RATE"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "MULTIPLY",
+                      "args": [
+                        {
+                          "op": "MULTIPLY",
+                          "args": [
+                            {
+                              "op": "ROUND",
+                              "args": [
+                                {
+                                  "op": "DIVIDE",
+                                  "args": [
+                                    {
+                                      "op": "MAX",
+                                      "args": [
+                                        {
+                                          "op": "INPUT",
+                                          "name": "M3_TAXABLE_INCOME"
+                                        },
+                                        {
+                                          "op": "LITERAL",
+                                          "valueType": "NUMBER",
+                                          "value": "0"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "op": "PARAMETER",
+                                      "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "rule": {
+                                "mode": "DOWN",
+                                "precision": 0
+                              }
+                            },
+                            {
+                              "op": "PARAMETER",
+                              "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                            }
+                          ]
+                        },
+                        {
+                          "op": "PARAMETER",
+                          "code": "ORDINARY_CORPORATE_RATE"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "parameters": {
+              "ORDINARY_CORPORATE_RATE": {
+                "valueType": "NUMBER",
+                "value": "0.22"
+              },
+              "ARTICLE_31E_REDUCED_RATE": {
+                "valueType": "NUMBER",
+                "value": "0.11"
+              },
+              "ARTICLE_31E_FULL_FACILITY_TURNOVER": {
+                "valueType": "NUMBER",
+                "value": "4800000000"
+              },
+              "ARTICLE_31E_FACILITY_TURNOVER": {
+                "valueType": "NUMBER",
+                "value": "4800000000"
+              },
+              "ARTICLE_31E_MAX_TURNOVER": {
+                "valueType": "NUMBER",
+                "value": "50000000000"
+              },
+              "TAXABLE_INCOME_ROUNDING_UNIT": {
+                "valueType": "NUMBER",
+                "value": "1000"
+              }
+            },
+            "finalRounding": {
+              "mode": "HALF_UP",
+              "precision": 0
+            },
+            "effectiveFrom": "2025-01-01",
+            "effectiveTo": "2025-12-31",
+            "evidenceRefs": [
+              {
+                "evidenceId": "ORIGINAL_CIT_0",
+                "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+                "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+                "locator": "/legalSources/0",
+                "legalSourceUrl": "https://peraturan.bpk.go.id/Details/185162/uu-no-7-tahun-2021",
+                "legalLocator": "Pasal 4 angka 3, perubahan Pasal 17 ayat (1) huruf b, ayat (2b), dan ayat (4) UU PPh",
+                "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+                "originalSource": {
+                  "repository": "aegaorion-dot/big-m-",
+                  "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+                  "path": "src/taxCountryPackIndonesiaM5.ts",
+                  "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+                }
+              },
+              {
+                "evidenceId": "ORIGINAL_CIT_1",
+                "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+                "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+                "locator": "/legalSources/1",
+                "legalSourceUrl": "https://peraturan.bpk.go.id/Home/Download/29283/UU%20Nomor%2036%20Tahun%202008.pdf",
+                "legalLocator": "Pasal 31E ayat (1)",
+                "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+                "originalSource": {
+                  "repository": "aegaorion-dot/big-m-",
+                  "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+                  "path": "src/taxCountryPackIndonesiaM5.ts",
+                  "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+                }
+              },
+              {
+                "evidenceId": "ORIGINAL_CIT_2",
+                "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+                "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+                "locator": "/legalSources/2",
+                "legalSourceUrl": "https://peraturan.bpk.go.id/Home/Details/233488/pp-no-55-tahun-2022",
+                "legalLocator": "Penyesuaian pengaturan PPh dan penurunan tarif bagi perseroan terbuka",
+                "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+                "originalSource": {
+                  "repository": "aegaorion-dot/big-m-",
+                  "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+                  "path": "src/taxCountryPackIndonesiaM5.ts",
+                  "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+                }
+              },
+              {
+                "evidenceId": "ORIGINAL_CIT_3",
+                "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+                "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+                "locator": "/legalSources/3",
+                "legalSourceUrl": "https://www.pajak.go.id/sites/default/files/2024-09/Buku%20Manual%20Coretax%202024%20-%2016%20SPT%20PPh%20Badan.pdf",
+                "legalLocator": "Penghitungan PPh terutang: tarif umum, Pasal 31E, perseroan terbuka, dan pembulatan PKP",
+                "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+                "originalSource": {
+                  "repository": "aegaorion-dot/big-m-",
+                  "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+                  "path": "src/taxCountryPackIndonesiaM5.ts",
+                  "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+                }
+              }
+            ],
+            "treatyRelevant": true
+          },
+          {
+            "ruleId": "ID_CIT_LISTED_COMPANY_REDUCTION_2025",
+            "taxType": "CIT",
+            "subjectTypes": [
+              "COMPANY"
+            ],
+            "incomeOrEventType": "ANNUAL_COMPANY_INCOME",
+            "requiredFacts": {
+              "M3_TAXABLE_INCOME": "MONEY",
+              "CIT_RATE_TREATMENT": "STRING",
+              "PUBLIC_COMPANY_RATE_ELIGIBLE": "BOOLEAN",
+              "M3_RECONCILIATION_APPROVED": "BOOLEAN",
+              "CIT_OBLIGATION_APPLICABLE": "BOOLEAN"
+            },
+            "applicabilityPredicate": {
+              "op": "AND",
+              "args": [
+                {
+                  "op": "EQ",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "CIT_RATE_TREATMENT"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "STRING",
+                      "value": "PUBLIC_LISTED_REDUCTION"
+                    }
+                  ]
+                },
+                {
+                  "op": "EQ",
+                  "args": [
+                    {
+                      "op": "INPUT",
+                      "name": "PUBLIC_COMPANY_RATE_ELIGIBLE"
+                    },
+                    {
+                      "op": "LITERAL",
+                      "valueType": "BOOLEAN",
+                      "value": true
+                    }
+                  ]
+                }
+              ]
+            },
+            "requiredTrueFacts": [
+              "M3_RECONCILIATION_APPROVED",
+              "CIT_OBLIGATION_APPLICABLE"
+            ],
+            "taxBaseFormula": {
+              "op": "MULTIPLY",
+              "args": [
+                {
+                  "op": "ROUND",
+                  "args": [
+                    {
+                      "op": "DIVIDE",
+                      "args": [
+                        {
+                          "op": "MAX",
+                          "args": [
+                            {
+                              "op": "INPUT",
+                              "name": "M3_TAXABLE_INCOME"
+                            },
+                            {
+                              "op": "LITERAL",
+                              "valueType": "NUMBER",
+                              "value": "0"
+                            }
+                          ]
+                        },
+                        {
+                          "op": "PARAMETER",
+                          "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                        }
+                      ]
+                    }
+                  ],
+                  "rule": {
+                    "mode": "DOWN",
+                    "precision": 0
+                  }
+                },
+                {
+                  "op": "PARAMETER",
+                  "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                }
+              ]
+            },
+            "rateDefinition": {
+              "kind": "FORMULA_DERIVED"
+            },
+            "amountFormula": {
+              "op": "MULTIPLY",
+              "args": [
+                {
+                  "op": "MULTIPLY",
+                  "args": [
+                    {
+                      "op": "ROUND",
+                      "args": [
+                        {
+                          "op": "DIVIDE",
+                          "args": [
+                            {
+                              "op": "MAX",
+                              "args": [
+                                {
+                                  "op": "INPUT",
+                                  "name": "M3_TAXABLE_INCOME"
+                                },
+                                {
+                                  "op": "LITERAL",
+                                  "valueType": "NUMBER",
+                                  "value": "0"
+                                }
+                              ]
+                            },
+                            {
+                              "op": "PARAMETER",
+                              "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                            }
+                          ]
+                        }
+                      ],
+                      "rule": {
+                        "mode": "DOWN",
+                        "precision": 0
+                      }
+                    },
+                    {
+                      "op": "PARAMETER",
+                      "code": "TAXABLE_INCOME_ROUNDING_UNIT"
+                    }
+                  ]
+                },
+                {
+                  "op": "PARAMETER",
+                  "code": "LISTED_COMPANY_RATE"
+                }
+              ]
+            },
+            "parameters": {
+              "LISTED_COMPANY_RATE": {
+                "valueType": "NUMBER",
+                "value": "0.19"
+              },
+              "TAXABLE_INCOME_ROUNDING_UNIT": {
+                "valueType": "NUMBER",
+                "value": "1000"
+              }
+            },
+            "finalRounding": {
+              "mode": "HALF_UP",
+              "precision": 0
+            },
+            "effectiveFrom": "2025-01-01",
+            "effectiveTo": "2025-12-31",
+            "evidenceRefs": [
+              {
+                "evidenceId": "ORIGINAL_CIT_0",
+                "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+                "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+                "locator": "/legalSources/0",
+                "legalSourceUrl": "https://peraturan.bpk.go.id/Details/185162/uu-no-7-tahun-2021",
+                "legalLocator": "Pasal 4 angka 3, perubahan Pasal 17 ayat (1) huruf b, ayat (2b), dan ayat (4) UU PPh",
+                "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+                "originalSource": {
+                  "repository": "aegaorion-dot/big-m-",
+                  "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+                  "path": "src/taxCountryPackIndonesiaM5.ts",
+                  "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+                }
+              },
+              {
+                "evidenceId": "ORIGINAL_CIT_1",
+                "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+                "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+                "locator": "/legalSources/1",
+                "legalSourceUrl": "https://peraturan.bpk.go.id/Home/Download/29283/UU%20Nomor%2036%20Tahun%202008.pdf",
+                "legalLocator": "Pasal 31E ayat (1)",
+                "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+                "originalSource": {
+                  "repository": "aegaorion-dot/big-m-",
+                  "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+                  "path": "src/taxCountryPackIndonesiaM5.ts",
+                  "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+                }
+              },
+              {
+                "evidenceId": "ORIGINAL_CIT_2",
+                "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+                "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+                "locator": "/legalSources/2",
+                "legalSourceUrl": "https://peraturan.bpk.go.id/Home/Details/233488/pp-no-55-tahun-2022",
+                "legalLocator": "Penyesuaian pengaturan PPh dan penurunan tarif bagi perseroan terbuka",
+                "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+                "originalSource": {
+                  "repository": "aegaorion-dot/big-m-",
+                  "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+                  "path": "src/taxCountryPackIndonesiaM5.ts",
+                  "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+                }
+              },
+              {
+                "evidenceId": "ORIGINAL_CIT_3",
+                "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+                "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+                "locator": "/legalSources/3",
+                "legalSourceUrl": "https://www.pajak.go.id/sites/default/files/2024-09/Buku%20Manual%20Coretax%202024%20-%2016%20SPT%20PPh%20Badan.pdf",
+                "legalLocator": "Penghitungan PPh terutang: tarif umum, Pasal 31E, perseroan terbuka, dan pembulatan PKP",
+                "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+                "originalSource": {
+                  "repository": "aegaorion-dot/big-m-",
+                  "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+                  "path": "src/taxCountryPackIndonesiaM5.ts",
+                  "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+                }
+              }
+            ],
+            "treatyRelevant": true
+          }
+        ],
+        "evidenceRefs": [
+          {
+            "evidenceId": "ORIGINAL_CIT_0",
+            "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+            "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+            "locator": "/legalSources/0",
+            "legalSourceUrl": "https://peraturan.bpk.go.id/Details/185162/uu-no-7-tahun-2021",
+            "legalLocator": "Pasal 4 angka 3, perubahan Pasal 17 ayat (1) huruf b, ayat (2b), dan ayat (4) UU PPh",
+            "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+            "originalSource": {
+              "repository": "aegaorion-dot/big-m-",
+              "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+              "path": "src/taxCountryPackIndonesiaM5.ts",
+              "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+            }
+          },
+          {
+            "evidenceId": "ORIGINAL_CIT_1",
+            "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+            "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+            "locator": "/legalSources/1",
+            "legalSourceUrl": "https://peraturan.bpk.go.id/Home/Download/29283/UU%20Nomor%2036%20Tahun%202008.pdf",
+            "legalLocator": "Pasal 31E ayat (1)",
+            "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+            "originalSource": {
+              "repository": "aegaorion-dot/big-m-",
+              "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+              "path": "src/taxCountryPackIndonesiaM5.ts",
+              "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+            }
+          },
+          {
+            "evidenceId": "ORIGINAL_CIT_2",
+            "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+            "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+            "locator": "/legalSources/2",
+            "legalSourceUrl": "https://peraturan.bpk.go.id/Home/Details/233488/pp-no-55-tahun-2022",
+            "legalLocator": "Penyesuaian pengaturan PPh dan penurunan tarif bagi perseroan terbuka",
+            "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+            "originalSource": {
+              "repository": "aegaorion-dot/big-m-",
+              "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+              "path": "src/taxCountryPackIndonesiaM5.ts",
+              "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+            }
+          },
+          {
+            "evidenceId": "ORIGINAL_CIT_3",
+            "sourceUrl": "local-port:src/countrypack/content/indonesia-cit-determination-2025.json",
+            "rawContentHash": "a5b661be310217fbf5b9476a5633dd61bd01540e3a812c4a897d931a0f19d215",
+            "locator": "/legalSources/3",
+            "legalSourceUrl": "https://www.pajak.go.id/sites/default/files/2024-09/Buku%20Manual%20Coretax%202024%20-%2016%20SPT%20PPh%20Badan.pdf",
+            "legalLocator": "Penghitungan PPh terutang: tarif umum, Pasal 31E, perseroan terbuka, dan pembulatan PKP",
+            "sourceKind": "PORTED_REFERENCE_NOT_NEW_LEGAL_CAPTURE",
+            "originalSource": {
+              "repository": "aegaorion-dot/big-m-",
+              "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+              "path": "src/taxCountryPackIndonesiaM5.ts",
+              "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+            }
+          }
+        ],
+        "testOnly": false,
+        "originalSource": {
+          "repository": "aegaorion-dot/big-m-",
+          "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+          "path": "src/taxCountryPackIndonesiaM5.ts",
+          "blobSha": "2b5e00229ffc36d503ce7e2952a17b03d0ff2fe1"
+        },
+        "label": "Original COMPANY/CIT 2025 formulas; requires separate Lite human review; not individual income law"
+      },
+      "contentHash": "f66a4e36625b55d59474163107e045562f61afb54910be54f703f86673fda8dc"
+    },
+    {
+      "candidateId": "f04d43c97cb27784aa6d9d252cc459d07349b5eba485339c144b53af8118969a",
+      "jurisdictionCode": "ID",
+      "evidenceIds": [
+        "ORIGINAL_ID_SG_RESEARCH"
+      ],
+      "provenance": [
+        {
+          "evidenceId": "ORIGINAL_ID_SG_RESEARCH",
+          "sourceUrl": "https://github.com/aegaorion-dot/big-m-/blob/4d0da9a6acafc24f7db3778f66b4df6d7cf4764c/tests/tax-id-sg-first-real-cross-border.test.mjs",
+          "rawContentHash": "eaddbf5660e75ed89607f9c6495f068275f000008bfce7ee1e1bec3894eaae64",
+          "rawStorageRef": "research/phase3-tax/original-id-sg-test.mjs",
+          "locator": "RESEARCH_TEST_SOURCE_ONLY",
+          "sourceKind": "RESEARCH_CODE_NOT_LEGAL_EVIDENCE"
+        }
+      ],
+      "envelopeIds": [],
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "runtimeExecutable": false,
+      "executorSupported": false,
+      "reviewHistory": [],
+      "sourceCandidateId": "9d59a2de33c5e363eb3ac7303765107ab140bcce92dc26c4fb1e9006e9e2745d",
+      "contentKind": "TREATY_PACK",
+      "executableContent": {
+        "treatyPackId": "ID_SG_RESEARCH",
+        "treatyCode": "ID_SG",
+        "jurisdictionA": "ID",
+        "jurisdictionB": "SG",
+        "version": 1,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "coveredTaxes": [
+          "INCOME_TAX",
+          "CIT",
+          "WHT"
+        ],
+        "residenceRules": [],
+        "sourceRules": [],
+        "incomeArticles": [],
+        "permanentEstablishmentRules": [],
+        "withholdingLimits": [],
+        "reliefMethods": [],
+        "requiredFacts": {
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY"
+        },
+        "evidenceRefs": [
+          {
+            "evidenceId": "ORIGINAL_ID_SG_RESEARCH",
+            "sourceUrl": "https://github.com/aegaorion-dot/big-m-/blob/4d0da9a6acafc24f7db3778f66b4df6d7cf4764c/tests/tax-id-sg-first-real-cross-border.test.mjs",
+            "rawContentHash": "eaddbf5660e75ed89607f9c6495f068275f000008bfce7ee1e1bec3894eaae64",
+            "rawStorageRef": "research/phase3-tax/original-id-sg-test.mjs",
+            "locator": "RESEARCH_TEST_SOURCE_ONLY",
+            "sourceKind": "RESEARCH_CODE_NOT_LEGAL_EVIDENCE"
+          }
+        ],
+        "testOnly": false,
+        "coverageStatus": "REVIEW_REQUIRED",
+        "researchProvenance": {
+          "repository": "aegaorion-dot/big-m-",
+          "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+          "path": "tests/tax-id-sg-first-real-cross-border.test.mjs",
+          "blobSha": "4cef5943b422d011521234df99c2822632710b6e",
+          "scope": "Original COMPANY ordinary-interest demonstrator inspected. No treaty legal text or executable article imported."
+        },
+        "label": "ID-SG architecture demonstrator: no approved legal coverage, dates, caps or reliefs"
+      },
+      "contentHash": "674357fd6495219fd00f2bbe359da441bdc634a137050388490831dc2b08d1fd"
+    }
+  ]
+}

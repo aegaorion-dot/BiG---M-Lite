@@ -1,0 +1,109 @@
+{
+  "scopeId": "demo-only",
+  "subjectId": "fictional-subject",
+  "revision": 1,
+  "period": {
+    "periodStart": "2025-01-01",
+    "periodEnd": "2025-12-31"
+  },
+  "economicDate": "2025-06-01",
+  "currency": "IDR",
+  "facts": [
+    {
+      "name": "SUBJECT_TYPE",
+      "type": "STRING",
+      "value": "COMPANY",
+      "evidenceReference": "DEMO ONLY stipulated case: SUBJECT_TYPE"
+    },
+    {
+      "name": "INCOME_TYPE",
+      "type": "STRING",
+      "value": "ANNUAL_COMPANY_INCOME",
+      "evidenceReference": "DEMO ONLY stipulated case: INCOME_TYPE"
+    },
+    {
+      "name": "TAX_RESIDENCE",
+      "type": "COUNTRY",
+      "value": "ID",
+      "evidenceReference": "DEMO ONLY stipulated case: TAX_RESIDENCE"
+    },
+    {
+      "name": "REGISTRATION",
+      "type": "COUNTRY",
+      "value": "ID",
+      "evidenceReference": "DEMO ONLY stipulated case: REGISTRATION"
+    },
+    {
+      "name": "SOURCE",
+      "type": "COUNTRY",
+      "value": "ID",
+      "evidenceReference": "DEMO ONLY stipulated case: SOURCE"
+    },
+    {
+      "name": "NATIONALITY",
+      "type": "COUNTRY",
+      "value": "AU",
+      "evidenceReference": "DEMO ONLY stipulated case: NATIONALITY"
+    },
+    {
+      "name": "BUSINESS_WORK_LOCATION",
+      "type": "COUNTRY",
+      "value": "ID",
+      "evidenceReference": "DEMO ONLY stipulated case: BUSINESS_WORK_LOCATION"
+    },
+    {
+      "name": "AMOUNT",
+      "type": "MONEY",
+      "value": {
+        "amountMinor": "1000000",
+        "currency": "IDR"
+      },
+      "evidenceReference": "DEMO ONLY stipulated case: AMOUNT"
+    },
+    {
+      "name": "M3_TAXABLE_INCOME",
+      "type": "MONEY",
+      "value": {
+        "amountMinor": "100000123",
+        "currency": "IDR"
+      },
+      "evidenceReference": "DEMO ONLY stipulated case: M3_TAXABLE_INCOME"
+    },
+    {
+      "name": "ANNUAL_GROSS_TURNOVER",
+      "type": "MONEY",
+      "value": {
+        "amountMinor": "6000000000",
+        "currency": "IDR"
+      },
+      "evidenceReference": "DEMO ONLY stipulated case: ANNUAL_GROSS_TURNOVER"
+    },
+    {
+      "name": "CIT_RATE_TREATMENT",
+      "type": "STRING",
+      "value": "GENERAL_OR_ARTICLE_31E",
+      "evidenceReference": "DEMO ONLY stipulated case: CIT_RATE_TREATMENT"
+    },
+    {
+      "name": "M3_RECONCILIATION_APPROVED",
+      "type": "BOOLEAN",
+      "value": true,
+      "evidenceReference": "DEMO ONLY stipulated case: M3_RECONCILIATION_APPROVED"
+    },
+    {
+      "name": "CIT_OBLIGATION_APPLICABLE",
+      "type": "BOOLEAN",
+      "value": true,
+      "evidenceReference": "DEMO ONLY stipulated case: CIT_OBLIGATION_APPLICABLE"
+    }
+  ],
+  "status": "CONFIRMED",
+  "aiAuthority": "CANDIDATE_ONLY",
+  "snapshotHash": "e30d22a7462c330d1aa69276f46b35a8880975660f96365623ea1bbbf5285a22",
+  "confirmation": {
+    "decisionSource": "HUMAN",
+    "actor": "Demo human simulation",
+    "snapshotHash": "e30d22a7462c330d1aa69276f46b35a8880975660f96365623ea1bbbf5285a22",
+    "at": "2026-10-28T18:06:09.476Z"
+  }
+}

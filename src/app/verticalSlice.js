@@ -183,6 +183,11 @@ async function runTransactionPipeline(deps) {
     transactionId: tx.id, packId: pack.manifest.id, packVersion: pack.manifest.version,
     classification, aiNote,
     tax: {
+      status: tax.status,
+      taxReady: false,
+      testOnly: tax.testOnly,
+      finalLiabilityMinor: null,
+      bookkeepingTaxDeltaMinor: tax.finalTotal.amountMinor.toString(),
       finalTotalMinor: tax.finalTotal.amountMinor.toString(),
       hasPlaceholder: tax.hasPlaceholder,
       findings: tax.findings.map((f) => ({

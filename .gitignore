@@ -7,4 +7,6 @@ data/
 !.env.example
 .tools/
 .phase2-gate-output.txt
+.phase3-test-output.txt
+.phase3-demo-output.txt
 research/country-pack-fabric/captures/

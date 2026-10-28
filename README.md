@@ -71,7 +71,7 @@ Two substantive Original artifacts are retained as structured reference content:
 
 Rule identities, formulas, parameters, review conditions, legal references, version and dates are preserved. Original labels its source material verified; this port does not independently re-certify current law.
 
-These artifacts require M3/M5 consumers that Lite intentionally does not implement. They are not executable in Lite, including after source-content review. No 2026 rules or executable SG/US/AU/GB packs are invented.
+The original artifacts remain inert source snapshots. Phase 3 adapts the two existing COMPANY/CIT determination formulas into a governed declarative version consumed by one UniversalTaxEngine. Exact executable-version human approval and confirmed tax facts are required; source-content review alone does not enable execution. The complete M3/M5 systems are not recreated. No 2026 law or substantive SG/US/AU/GB rules are invented.
 
 The resolver checks semantic basis, subject, tax type, complete accounting period, evaluation date, content review, explicit confirmation and consumer capability. Missing content, expired windows, incompatible subjects, retired versions, ambiguous overlaps and composition conflicts stay unresolved. Customer, bank and work location alone never select a tax pack.
 
@@ -91,4 +91,11 @@ The UI resumes the saved pending question after refresh. It does not claim to re
 
 ## Verification
 
-See docs/IMPLEMENTATION-REPORT.md for completed checks and limitations, and docs/ORIGINAL-PORT.md for source provenance and deliberately excluded enterprise scope.
+See docs/IMPLEMENTATION-REPORT.md for the profiling baseline and docs/ORIGINAL-PORT.md for Original source provenance. Current engine architecture, coverage limits and validation are in [Phase 3 report](docs/PHASE3-TAX-REPORT.md) and [tax contracts/CLI](docs/PHASE3-TAX-CONTRACTS.md).
+
+## Offline tax engine
+
+    npm run tax -- catalog
+    npm run tax:demo
+
+The catalog contains candidates, not automatically approved law. The demo reports the individual/treaty coverage gaps and an isolated TEST ONLY positive calculation. Real available material is COMPANY/CIT 2025; it is not freelancer income law. Tax calculations never browse, invoke a model or post GL. The accounting handoff remains a mapping review plan targeting the existing PostingService.

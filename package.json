@@ -12,7 +12,9 @@
     "start": "node src/web/server.js",
     "smoke:meta": "node scripts/meta-smoke.js",
     "fabric:probe": "node scripts/fabric-probe.js",
-    "fabric:report": "node scripts/fabric-report.js"
+    "fabric:report": "node scripts/fabric-report.js",
+    "tax": "node scripts/tax-engine.js",
+    "tax:demo": "node scripts/tax-demo.js"
   },
   "license": "UNLICENSED"
 }

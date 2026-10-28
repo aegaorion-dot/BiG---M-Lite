@@ -1,0 +1,15 @@
+{
+  "scopeId": "demo-only",
+  "subjectId": "fictional-subject",
+  "requestKey": "TEST_POSITIVE",
+  "taxType": "CIT",
+  "jurisdictionCode": "ID",
+  "jurisdictionBasis": "TAX_RESIDENCE",
+  "incomeOrEventType": "ANNUAL_COMPANY_INCOME",
+  "currency": "IDR",
+  "period": {
+    "periodStart": "2025-01-01",
+    "periodEnd": "2025-12-31"
+  },
+  "economicDate": "2025-06-01"
+}
