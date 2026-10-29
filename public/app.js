@@ -14,23 +14,15 @@ async function api(path,body){
  const data=await res.json();if(!res.ok||data.ok===false)throw Error(data.error??'Request failed');return data;
 }
 function toast(text,error=false){const el=document.createElement('div');el.className='toast'+(error?' error':'');el.textContent=text;$('#toasts').appendChild(el);setTimeout(()=>el.remove(),5000);}
-function money(minor,currency=cache.ws?.functionalCurrency){
- if(!currency||minor==null)return '—';
- const decimals=cache.ob?.currencies?.find(c=>c.code===currency)?.minorUnits??2;
- const negative=String(minor).startsWith('-'),digits=String(minor).replace(/^-/,'').padStart(decimals+1,'0');
- const whole=decimals?digits.slice(0,-decimals):digits,fraction=decimals?digits.slice(-decimals):'';
- const locale=UILANG==='id'?'id-ID':'en-US',separator=UILANG==='id'?',':'.';
- const formatted=new Intl.NumberFormat(locale,{maximumFractionDigits:0}).format(BigInt(whole));
- return currency+' '+(negative?'-':'')+formatted+(decimals?separator+fraction:'');
-}
+function money(minor,currency=cache.ws?.functionalCurrency){if(!currency||minor==null)return '\u2014';const decimals=cache.ob?.currencies?.find(c=>c.code===currency)?.minorUnits??2;return BigmLocale.money(minor,currency,UILANG,decimals);}
 async function loadLanguage(lang){
- UILANG=lang;document.documentElement.lang=lang;
- if(loadedLanguage!==lang){const r=await fetch('/i18n/'+lang+'.json');STR=await r.json();loadedLanguage=lang;}
+ lang=BigmLocale.canonical(lang);UILANG=lang;document.documentElement.lang=lang;
+ if(loadedLanguage!==lang){const r=await api('/api/i18n/pack?locale='+encodeURIComponent(lang));STR=r.pack.strings;loadedLanguage=lang;}
  topLang.value=lang;
 }
 async function refreshOb(){
  const [ob,ws]=await Promise.all([api('/api/onboarding/state'),api('/api/workspace')]);cache.ob=ob;cache.ws=ws.workspace;
- await loadLanguage(route==='onboarding'?ob.uiLanguage:cache.ws.language);
+ await loadLanguage(ob.uiLocale??ob.uiLanguage);
  if(!chat.length){chat.push({who:'ai',text:ob.profileState.turnCount?tr('ob.resumed'):tr('ob.greeting')});if(ob.profileState.turnCount&&ob.question?.key!=='done')chat.push({who:'ai',text:ob.question.text});}
 }
 async function refresh(){
@@ -49,11 +41,11 @@ function renderTabs(){
  const allowed=new Set(['onboarding','dashboard','settings','intake',...cache.ws.modules]);
  tabsEl.innerHTML=TABS.filter(([id])=>allowed.has(id)).map(([id,key])=>'<button type="button" class="tab" data-route="'+id+'" aria-selected="'+(route===id)+'">'+esc(tr(key))+'</button>').join('');
  tabsEl.innerHTML+='<button type="button" class="tab" data-route="assistant" aria-selected="'+(route==='assistant')+'">'+esc(tr('muse.assistant'))+'</button>';
- tabsEl.querySelectorAll('[data-route]').forEach(b=>b.addEventListener('click',async()=>{if(pending)return;route=b.dataset.route;await loadLanguage(route==='onboarding'?cache.ob.uiLanguage:cache.ws.language);render();}));
+ tabsEl.querySelectorAll('[data-route]').forEach(b=>b.addEventListener('click',async()=>{if(pending)return;route=b.dataset.route;await loadLanguage(cache.ob.uiLocale??cache.ob.uiLanguage);render();}));
  $('#auditPill').textContent=cache.audit?.verify?.ok?tr('audit.valid'):tr('audit.review');
  $('#demoBtn').textContent=tr('demo.load');
 }
-function country(code){return cache.ob?.jurisdictions?.find(j=>j.code===code)?.name??code;}
+function country(code){if(!code)return code;try{return BigmLocale.region(code,UILANG);}catch{return code;}}
 function fact(key){return cache.ob?.slots?.[key]?.value??null;}
 function basisValues(basis){return (cache.ob?.jurisdictionCandidates??[]).filter(f=>f.basis===basis&&f.status!=='REJECTED').map(f=>country(f.countryCode)).join(', ');}
 function currentBasis(basis){return (cache.ob?.jurisdictionCandidates??[]).find(f=>f.basis===basis&&f.status==='CANDIDATE')?.countryCode??'';}
@@ -73,7 +65,7 @@ function vOnboarding(){
   row(tr('ob.fCurrency'),fact('currency.functional'))+
   row(tr('ob.fOther'),fact('currency.transactions')?.join(', '))+
   row(tr('ob.foreignPurchases'),fact('currency.foreignPurchases')?.join(', '))+'</div>';
- const countries=ob.jurisdictions.map(j=>[j.code,j.name]),currencies=ob.currencies.map(c=>[c.code,c.code+' — '+c.name]);
+ const countries=ob.jurisdictions.map(j=>[j.code,country(j.code)]),currencies=ob.currencies.map(c=>[c.code,c.code+' — '+c.name]);
  const biz=['small-business','freelancer','umkm','perdagangan','jasa','kuliner','manufaktur'];
  let setup='<div class="panel ob-side-block"><h3>'+esc(tr('ob.setupTitle'))+'</h3><p>'+esc(tr('ob.working'))+'</p></div>';
  if(p){
@@ -85,7 +77,8 @@ function vOnboarding(){
    field(tr('ob.workLocation'),'<select id="setWork">'+selectOptions(countries,currentBasis('BUSINESS_WORK_LOCATION'),true)+'</select>')+
    field(tr('ob.registration'),'<select id="setRegistration">'+selectOptions(countries,currentBasis('REGISTRATION'),true)+'</select>')+
    field(tr('ob.sBookCurrency'),'<select id="setCur">'+selectOptions(currencies,p.functionalCurrency)+'</select>')+
-   field(tr('ob.sLanguage'),'<select id="setLang">'+selectOptions([['en','English'],['id','Bahasa Indonesia']],p.language)+'</select>')+
+   field(tr('fx.reportingCurrency'),'<select id="setReportingCurrency">'+selectOptions(currencies,p.reportingCurrency)+'</select>')+
+   field(tr('ob.sLanguage'),'<select id="setLang">'+selectOptions(ob.languages.map(l=>[l.tag,l.name]),ob.uiLocale??ob.uiLanguage)+'</select>')+
    '<div class="grid2">'+field(tr('period.start'),'<input id="setStart" type="date" value="'+esc(p.period.periodStart)+'" />')+
    field(tr('period.end'),'<input id="setEnd" type="date" value="'+esc(p.period.periodEnd)+'" />')+'</div>'+
    '<p>'+esc(tr('ob.sFeatures'))+': '+p.modules.map(m=>esc(tr('nav.'+m))).join(', ')+'</p>'+
@@ -118,7 +111,7 @@ function wireOnboarding(){
  const edit=(selector,payload)=>$(selector)?.addEventListener('change',e=>run(async()=>{await api('/api/onboarding/edit',payload(e.target.value));await prepare();}));
  edit('#setName',v=>({slot:'org.name',value:v}));edit('#setBiz',v=>({slot:'org.businessType',value:v}));
  edit('#setWork',v=>({basis:'BUSINESS_WORK_LOCATION',countryCode:v||null}));edit('#setRegistration',v=>({basis:'REGISTRATION',countryCode:v||null}));
- edit('#setCur',v=>({slot:'currency.functional',value:v}));edit('#setLang',v=>({slot:'user.language',value:v}));
+ edit('#setCur',v=>({slot:'currency.functional',value:v}));edit('#setReportingCurrency',v=>({slot:'currency.reporting',value:v}));$('#setLang')?.addEventListener('change',e=>run(async()=>{await api('/api/onboarding/language',{language:e.target.value});await refreshOb();}));
  edit('#setStart',v=>({slot:'accounting.periodStart',value:v}));edit('#setEnd',v=>({slot:'accounting.periodEnd',value:v}));
  $('#obUse')?.addEventListener('click',()=>run(async()=>{
   const hash=cache.ob?.proposal?.hash;if(!hash)throw Error(tr('ob.working'));
@@ -129,7 +122,7 @@ function wireOnboarding(){
  const chatEl=$('#obChat');if(chatEl)chatEl.scrollTop=chatEl.scrollHeight;
 }
 function txRows(rows){
- return rows.map(tx=>'<tr><td>'+esc(tx.id)+(tx.demo?' <span class="tag demo">DEMO</span>':'')+'</td><td>'+esc(tx.date)+'</td><td>'+esc(tx.counterparty)+'</td><td class="num">'+esc(money(tx.totalMinor,tx.currency))+'</td></tr>').join('')||'<tr><td colspan="4" class="muted">'+esc(tr('ws.empty'))+'</td></tr>';
+ return rows.map(tx=>'<tr><td>'+esc(tx.id)+(tx.demo?' <span class="tag demo">DEMO</span>':'')+'</td><td>'+esc(BigmLocale.date(tx.date,UILANG))+'</td><td>'+esc(tx.counterparty)+'</td><td class="num">'+esc(money(tx.totalMinor,tx.currency))+'</td></tr>').join('')||'<tr><td colspan="4" class="muted">'+esc(tr('ws.empty'))+'</td></tr>';
 }
 function transactionTable(rows){return '<div class="table-scroll"><table><thead><tr><th>ID</th><th>'+esc(tr('date'))+'</th><th>'+esc(tr('counterparty'))+'</th><th>'+esc(tr('amount'))+'</th></tr></thead><tbody>'+txRows(rows)+'</tbody></table></div>';}
 function vDashboard(){
@@ -142,12 +135,12 @@ function vDashboard(){
 }
 function vTransactions(kind){return '<div class="panel"><h3>'+esc(tr(kind==='SALE'?'nav.sales':'nav.purchase'))+'</h3><button type="button" id="newTx" class="btn gold">'+esc(tr('action.new'))+'</button>'+transactionTable(cache.txs.filter(t=>t.kind===kind))+'</div>';}
 function vReports(){
- return '<div class="panel"><h3>'+esc(tr('nav.reports'))+' · '+esc(cache.ws.functionalCurrency)+'</h3><p class="tax-pending">'+esc(tr('tax.review'))+'</p><p class="muted">'+esc(tr('currency.noFx'))+'</p><div class="table-scroll"><table><thead><tr><th>'+esc(tr('month'))+'</th><th>'+esc(tr('ws.income'))+'</th><th>'+esc(tr('ws.expenses'))+'</th><th>'+esc(tr('ws.net'))+'</th></tr></thead><tbody>'+
+ return '<div class="panel"><h3>'+esc(tr('nav.reports'))+' · '+esc(cache.ws.functionalCurrency)+'</h3><p class="tax-pending">'+esc(tr('tax.review'))+'</p><p class="muted">'+esc(tr('currency.noFx'))+'</p>'+(cache.ws.reportingCurrency!==cache.ws.functionalCurrency?'<p>'+esc(tr('fx.reportingCurrency'))+': '+esc(cache.ws.reportingCurrency)+' - '+esc(tr('fx.reportingPending'))+'</p>':'')+'<div class="table-scroll"><table><thead><tr><th>'+esc(tr('month'))+'</th><th>'+esc(tr('ws.income'))+'</th><th>'+esc(tr('ws.expenses'))+'</th><th>'+esc(tr('ws.net'))+'</th></tr></thead><tbody>'+
  cache.monthly.map(m=>'<tr><td>'+esc(m.month)+'</td><td>'+esc(money(m.revenueMinor))+'</td><td>'+esc(money(m.expenseMinor))+'</td><td>'+esc(money(m.netMinor))+'</td></tr>').join('')+'</tbody></table></div></div>';
 }
 function vAccounting(){
  return '<div class="panel"><h3>'+esc(tr('nav.accounting'))+'</h3><p>'+esc(tr('accounting.corrections'))+'</p><div class="table-scroll"><table><tbody>'+
- cache.journals.map(j=>'<tr><td>'+esc(j.id)+'</td><td>'+esc(j.date)+'</td><td>'+j.lines.map(l=>esc(l.side+' '+l.accountId+' '+money(l.amountMinor,l.currency))).join('<br>')+'</td><td><button type="button" class="btn small navy" data-reverse="'+esc(j.id)+'">'+esc(tr('reversal'))+'</button></td></tr>').join('')+'</tbody></table></div></div>';
+ cache.journals.map(j=>'<tr><td>'+esc(j.id)+'</td><td>'+esc(BigmLocale.date(j.date,UILANG))+'</td><td>'+j.lines.map(l=>esc(l.side+' '+l.accountId+' '+money(l.amountMinor,l.currency))).join('<br>')+'</td><td><button type="button" class="btn small navy" data-reverse="'+esc(j.id)+'">'+esc(tr('reversal'))+'</button></td></tr>').join('')+'</tbody></table></div></div>';
 }
 function vSettings(){
  const s=cache.settings;
@@ -193,7 +186,7 @@ function vIntake(){
    field('paymentMethod',tr('intake.paymentMethod'),f.paymentMethod)+select('settlementStatus',tr('intake.settlement'),f.settlementStatus,[['PAID',tr('intake.paid')]])+'</div>'+
    '<p class="muted">'+esc(tr('intake.dateNote'))+' '+esc([f.documentDate&&'Document: '+f.documentDate,f.invoiceDate&&'Invoice: '+f.invoiceDate,f.paymentDate&&'Payment: '+f.paymentDate].filter(Boolean).join(' · '))+'</p>'+
    '<p>'+esc([...(validation.missingFields??[]),...(validation.conflicts??[])].join('; '))+'</p>'+duplicateControls(c)+(c.lastError?'<p class="err">'+esc(c.lastError)+'</p>':'')+
-   '<div class="dlg-actions">'+(editable?'<button class="btn ghost" type="submit">'+esc(tr('intake.save'))+'</button><button class="btn ghost" type="button" data-intake-action="reject" data-candidate="'+esc(c.candidateId)+'">'+esc(tr('intake.reject'))+'</button>':'')+
+   fxControls(c,editable)+'<div class="dlg-actions">'+(editable?'<button class="btn ghost" type="submit">'+esc(tr('intake.save'))+'</button><button class="btn ghost" type="button" data-intake-action="reject" data-candidate="'+esc(c.candidateId)+'">'+esc(tr('intake.reject'))+'</button>':'')+
    (c.status==='READY_TO_CONFIRM'||c.status==='CONFIRMED'?'<button class="btn gold" type="button" data-intake-action="confirm" data-candidate="'+esc(c.candidateId)+'">'+esc(c.status==='CONFIRMED'?tr('intake.retryPosting'):tr('intake.confirm'))+'</button>':'')+'</div></form>'+
    '<details><summary>'+esc(tr('intake.evidence'))+'</summary><pre>'+esc(JSON.stringify({fields:c.evidence,revisions:c.revisions,confirmation:c.confirmation,posting:c.posting},null,2))+'</pre></details>'+
    (c.posting?'<p role="status">'+esc(tr('intake.posted'))+' '+esc(c.posting.receipt.postingId)+'</p>':'')+'</article>';
@@ -201,6 +194,11 @@ function vIntake(){
  return '<div class="panel"><h2>'+esc(tr('nav.intake'))+'</h2><button class="btn ghost" id="reviewSetup" type="button">'+esc(tr('nav.onboarding'))+'</button><p>'+esc(tr('intake.hint'))+'</p><label>'+esc(tr('intake.chat'))+'<textarea id="intakeChat" rows="3">'+esc(intakeText)+'</textarea></label><button class="btn gold" id="intakeSend" type="button">'+esc(tr('intake.propose'))+'</button><label>'+esc(tr('intake.upload'))+'<input id="intakeFile" type="file" accept=".pdf,.png,.jpg,.jpeg,.txt,.csv" /></label><p role="status">'+esc(pending?tr('working'):intakeNotice)+'</p></div>'+
   vExternal()+intakeData.documents.map(d=>'<article class="panel"><strong>'+esc(d.originalFilename)+'</strong><p>'+esc(d.processingStatus)+(d.lastError?' · '+esc(d.lastError):'')+'</p><p class="muted">'+esc((d.warnings??[]).join(' '))+'</p>'+(d.profileFacts?.length?'<details><summary>'+esc(tr('intake.profileFacts'))+'</summary><pre>'+esc(JSON.stringify(d.profileFacts,null,2))+'</pre></details>':'')+'<a href="/api/intake/original?documentId='+encodeURIComponent(d.documentId)+'" download>'+esc(tr('intake.original'))+'</a>'+(d.processingStatus==='FAILED'?'<button class="btn ghost" type="button" data-retry-document="'+esc(d.documentId)+'">'+esc(tr('intake.retry'))+'</button>':'')+'</article>').join('')+
   intakeData.chats.map(c=>'<article class="panel"><p>'+esc(c.text)+'</p><small>'+esc(c.status)+(c.lastError?' · '+esc(c.lastError):'')+'</small></article>').join('')+candidates;
+}
+function fxControls(c,editable){
+ if(!cache.ws?.activated||c.current.currency===cache.ws.functionalCurrency||c.candidateType==='EXTERNAL_JOURNAL')return '';
+ const fx=c.fx,details=fx?.rate?'<p>'+esc(tr('fx.original'))+': '+esc(money(fx.conversion.original.amountMinor,fx.conversion.original.currency))+'; '+esc(tr('fx.functional'))+': '+esc(money(fx.conversion.functional.amountMinor,fx.conversion.functional.currency))+'</p><p>'+esc(tr('fx.rate'))+': '+esc(fx.rate.rate)+'; '+esc(tr('fx.date'))+': '+esc(BigmLocale.date(fx.rate.rateDate,UILANG))+'; '+esc(tr('fx.provider'))+': '+esc(fx.rate.provider)+'</p>':'';
+ return '<section><p>'+esc(tr('fx.review'))+'</p>'+details+'<p>'+esc(fx?.status??'FX_REQUIRED')+'</p>'+(editable?'<button type="button" class="btn ghost" data-intake-action="fx/resolve" data-candidate="'+esc(c.candidateId)+'">'+esc(tr('fx.resolve'))+'</button>':'')+(editable&&fx?.status==='AVAILABLE'?'<button type="button" class="btn gold" data-intake-action="fx/approve" data-candidate="'+esc(c.candidateId)+'">'+esc(tr('fx.approve'))+'</button>':'')+'</section>';
 }
 function wireIntake(){
  wireExternal();
@@ -214,7 +212,7 @@ function wireIntake(){
   const visibleFields=Object.fromEntries(new FormData(button.closest('form')));
   if(action==='confirm'&&c.status!=='CONFIRMED'&&Object.entries(visibleFields).some(([key,value])=>(value||null)!==(c.current[key]||null))){lastError=tr('intake.unsaved');toast(lastError,true);return;}
   return run(async()=>{
-   await api('/api/intake/'+action,{candidateId:c.candidateId,revision:c.revision,reviewHash:c.confirmation?.reviewHash??c.reviewHash,idempotencyKey:c.confirmation?.idempotencyKey??'confirm:'+c.candidateId+':'+c.revision,actor:'user'});await refresh();});
+   await api('/api/intake/'+action,{candidateId:c.candidateId,revision:c.revision,reviewHash:c.confirmation?.reviewHash??c.reviewHash,idempotencyKey:c.confirmation?.idempotencyKey??'confirm:'+c.candidateId+':'+c.revision,quoteHash:c.fx?.quoteHash,decisionSource:'HUMAN',actor:'user'});await refresh();});
  }));
  view.querySelectorAll('[data-retry-document]').forEach(button=>button.addEventListener('click',()=>run(async()=>{await api('/api/intake/retry',{documentId:button.dataset.retryDocument});await refresh();})));
 }
@@ -272,7 +270,7 @@ function openReversal(journalId){
  const dialog=$('#revDialog');dialog.innerHTML='<form class="dlg" id="revForm"><h3>'+esc(tr('reversal'))+'</h3><label>ID<input name="id" required value="rev-'+Date.now()+'" /></label><label>'+esc(tr('date'))+'<input name="date" type="date" required value="'+transactionDate()+'" /></label><label>'+esc(tr('description'))+'<input name="memo" /></label><p class="err" id="revErr" hidden></p><div class="dlg-actions"><button type="button" id="revCancel" class="btn ghost">'+esc(tr('action.cancel'))+'</button><button type="submit" class="btn gold">'+esc(tr('action.post'))+'</button></div></form>';
  $('#revCancel').addEventListener('click',()=>dialog.close());$('#revForm').addEventListener('submit',async e=>{e.preventDefault();if(pending)return;pending=true;try{const f=Object.fromEntries(new FormData(e.target));await api('/api/reversals',{journalId,...f});dialog.close();await refresh();render();}catch(error){$('#revErr').textContent=error.message;$('#revErr').hidden=false;}finally{pending=false;}});dialog.showModal();
 }
-topLang.addEventListener('change',e=>{const language=e.target.value;run(async()=>{route='onboarding';await api('/api/onboarding/language',{language});await prepare();});});
+topLang.addEventListener('change',e=>{const language=e.target.value;return run(async()=>{await api('/api/onboarding/language',{language});await refresh();});});
 $('#demoBtn').addEventListener('click',()=>run(async()=>{await api('/api/demo/seed',{});await refresh();}));
-async function boot(){view.innerHTML='<div class="panel">Loading…</div>';try{await refresh();if(cache.ws.activated&&cache.ob.active?.profileRevision===cache.ob.profileRevision){route='dashboard';await loadLanguage(cache.ws.language);}render();}catch(e){view.innerHTML='<div class="panel err">'+esc(e.message)+'</div>';}}
+async function boot(){view.innerHTML='<div class="panel">Loading…</div>';try{await refresh();if(cache.ws.activated&&cache.ob.active?.profileRevision===cache.ob.profileRevision){route='dashboard';await loadLanguage(cache.ob.uiLocale??cache.ob.uiLanguage);}render();}catch(e){view.innerHTML='<div class="panel err">'+esc(e.message)+'</div>';}}
 boot();

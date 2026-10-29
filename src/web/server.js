@@ -56,8 +56,8 @@ function readBody(req, limit = 512 * 1024) {
   });
 }
 
-function createServer({ port = 3100, persistPath = null, orgId = null, authToken = null, profileProvider = null, extractionProvider, semanticProvider, museRuntime } = {}) {
-  const store = createWebStore({ persistPath, orgId, authToken, profileProvider, extractionProvider, semanticProvider, museRuntime });
+function createServer({ port = 3100, persistPath = null, orgId = null, authToken = null, profileProvider = null, extractionProvider, semanticProvider, museRuntime, fxProvider, languagePackService } = {}) {
+  const store = createWebStore({ persistPath, orgId, authToken, profileProvider, extractionProvider, semanticProvider, museRuntime, fxProvider, languagePackService });
   const server = http.createServer(async (req, res) => {
     try {
       const url = new URL(req.url, 'http://localhost');

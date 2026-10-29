@@ -4,10 +4,10 @@
 const {JournalEntry,JournalLine}=require('../domain/journal');
 const {Money}=require('../domain/money');
 const {runTransactionPipeline}=require('../app/verticalSlice');
-const {validateCanonical}=require('./canonical');
+const {validateCanonical,accountingInput}=require('./canonical');
 async function postCanonical(deps,command,actor){
  validateCanonical(command);
- if(command.mode==='TRANSACTION_IMPORT')return runTransactionPipeline({...deps,input:command,accountSelection:command.accountSelection,actor});
+ if(command.mode==='TRANSACTION_IMPORT')return runTransactionPipeline({...deps,input:accountingInput(command),accountSelection:command.accountSelection,actor});
  if(command.journalLines.length<2||command.journalLines.length>2000)throw Error('Invalid canonical journal line count');
  const lines=command.journalLines.map(l=>{if(!deps.chart.has(l.accountId))throw Error('Unknown canonical account');return new JournalLine({accountId:l.accountId,side:l.side,money:Money.fromMajor(l.amount,command.currency)});});
  const entry=new JournalEntry({id:'j-'+command.id,orgId:command.orgId,date:command.date,currency:command.currency,transactionId:command.id,memo:command.description,lines});

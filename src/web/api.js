@@ -8,6 +8,8 @@ async function dispatch(store,method,path,query={},body={}){
   const currency=query.currency||ctx.org?.baseCurrency;
   if(path.startsWith('/api/intake')||path.startsWith('/api/muse')||path.startsWith('/api/tax/review'))store.checkAuth(body?.authToken??query.token??null);
   if(method==='GET'){
+   if(path==='/api/i18n/pack')return json({ok:true,pack:await store.languagePack(query.locale)});
+   if(path==='/api/reports/reporting-status')return json({ok:true,...store.reportingStatus()});
    if(path==='/api/muse/status')return json({ok:true,...store.museStatus()});
    if(path==='/api/muse/trace')return json({ok:true,...store.museTrace()});
    if(path==='/api/tax/review')return json({ok:true,readiness:store.taxReadiness()});
@@ -23,17 +25,20 @@ async function dispatch(store,method,path,query={},body={}){
    if(path==='/api/journals')return json({ok:true,journals:ctx.ledger.list().map(store.serializeJournal)});
    if(path==='/api/ledger')return json({ok:true,currency:currency??null,balances:currency?[...ctx.ledger.balances(currency)].map(([accountId,money])=>({accountId,netMinor:String(money.amountMinor),netMajor:money.toMajorString()})):[]});
    if(path==='/api/audit')return json({ok:true,verify:ctx.audit.verifyChain(),entries:ctx.audit.list()});
-   if(path==='/api/reports/monthly')return json({ok:true,currency:currency??null,months:store.monthlyReport(currency),fxConversionApplied:false});
+   if(path==='/api/reports/monthly'){if(ctx.org&&currency!==ctx.org.baseCurrency)return json({ok:true,currency,functionalCurrency:ctx.org.baseCurrency,status:'REPORTING_CONVERSION_REQUIRED',months:null,fxConversionApplied:false});return json({ok:true,currency:currency??null,months:store.monthlyReport(currency),fxConversionApplied:false});}
    if(path==='/api/tax'||path==='/api/country-packs')return json({ok:true,...store.countryPackState(),note:'Tax settings need review. Reference content does not authorize tax execution.'});
    if(path==='/api/onboarding/state')return json({ok:true,...store.onboardingState()});
    if(path==='/api/onboarding/readiness')return json({ok:true,readiness:store.onboardingReadiness()});
    if(path==='/api/onboarding/history')return json({ok:true,history:store.onboardingHistory(),ai:store.aiStatus()});
    if(path==='/api/workspace')return json({ok:true,workspace:store.workspaceProfile()});
-   if(path==='/api/i18n')return json({ok:true,state:{uiLanguage:store.workspaceProfile().activated?store.workspaceProfile().language:store.onboardingState().uiLanguage}});
+   if(path==='/api/i18n')return json({ok:true,state:{uiLanguage:store.onboardingState().uiLanguage,uiLocale:store.currentLocale(),conversationLocale:store.currentConversationLocale()}});
    if(path==='/api/settings')return json({ok:true,org:ctx.org,periods:ctx.periods.list(),chart:ctx.chart?.list()??[],pack:ctx.pack?{id:ctx.pack.manifest.id,version:ctx.pack.manifest.version,kind:'BOOKKEEPING_TEMPLATE'}:null,countryPackResolution:store.workspaceProfile().countryPackResolution});
   }
   if(method==='POST'){
    const token=body?.authToken??query.token??null;store.checkAuth(token);
+   if(path==='/api/intake/fx/resolve')return json({ok:true,candidate:await store.intake.resolveFx(body)});
+   if(path==='/api/intake/fx/approve')return json({ok:true,candidate:await store.intake.approveFx(body)});
+   if(path==='/api/i18n/conversation')return json({ok:true,locale:store.setConversationLocale(body.locale)});
    if(path==='/api/muse/assistant')return json({ok:true,...await store.museAssistant(body)});
    if(path==='/api/muse/discovery')return json({ok:true,...await store.museDiscovery()});
    if(path==='/api/tax/review/start')return json({ok:true,readiness:store.beginTaxReview(body.request)});

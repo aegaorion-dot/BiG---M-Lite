@@ -26,7 +26,7 @@ const clone=x=>JSON.parse(JSON.stringify(x));
 function human(actor,decisionSource='HUMAN'){
  if(decisionSource!=='HUMAN'||typeof actor!=='string'||!actor.trim()||/^(ai|model|muse|meta|system)(?:$|[: -])/i.test(actor))throw Error('Explicit human confirmation required');
 }
-function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvider=null,taxSystem=null,extractionProvider,semanticProvider,museRuntime=null}={}){
+function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvider=null,taxSystem=null,extractionProvider,semanticProvider,museRuntime=null,fxProvider=null,languagePackService=null}={}){
  const muse=museRuntime??createMuseRuntime();
  profileProvider??=muse.enabled?muse.profileProvider:null;semanticProvider??=muse.enabled?muse.semanticProvider:undefined;
  let museState={events:[],conversations:[],lastQuestion:null,discovery:null};
@@ -35,7 +35,11 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  const posting=new PostingService({ledger,periods,audit,idempotency}),reversal=new ReversalService({posting});
  const ctx={org:null,periods,ledger,audit,idempotency,posting,reversal,chart:null,pack:null,registry:null,modules:[],countryPackResolution:null};
  const contentRegistry=new ContentRegistry(),txMeta=new Map();
- const intakeState=blankIntakeState();
+ const intakeState=blankIntakeState(),fxState={rates:{}};
+ const {FxService}=require('../fx/rates');
+ const fxService=new FxService({provider:fxProvider??new (require('../fx/frankfurter').FrankfurterProvider)(),state:fxState,persist});
+ const languagePacks=languagePackService??new (require('../i18n/languagePacks').LanguagePackService)({persistPath:persistPath?path.join(path.dirname(persistPath),'language-packs.json'):null});
+ let uiLocale=null,conversationLocale=null;
  let profileState=blankProfileState(),lastProposal=null,lastValidation=null,confirmation=null,activeConfig=null,history=[],packApprovals=[],proposalVersion=0;
  let lastTurn={providerConfigured:false,providerUsed:'fallback',model:null,fallbackReason:'PROVIDER_NOT_CONFIGURED'},aiCalls=0,aiSuccesses=0,migrationNotice=null;
  let turnQueue=Promise.resolve(),mutationQueue=Promise.resolve();
@@ -108,7 +112,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   const entry=new JournalEntry({...o,lines:o.lines.map(l=>new JournalLine({accountId:l.accountId,side:l.side,money:Money.fromMinor(l.amountMinor,l.currency??o.currency)}))});
   entry.finalize(()=>o.finalizedAt??new Date().toISOString());return entry;
  }
- function snapshot(){return {version:2,scopeOrgId,org:ctx.org,periods:periods.list(),journals:ledger.list().map(serializeJournal),audit:audit.list(),idempotency:idempotency.toJSON(),txMeta:[...txMeta.values()],profileState,lastProposal,lastValidation,confirmation,active:activeConfig,history,packApprovals,proposalVersion,lastTurn,aiCalls,aiSuccesses,taxReviewContext,lastTaxProposal,intake:intakeState,muse:museState,savedAt:new Date().toISOString()};}
+ function snapshot(){return {version:2,scopeOrgId,org:ctx.org,periods:periods.list(),journals:ledger.list().map(serializeJournal),audit:audit.list(),idempotency:idempotency.toJSON(),txMeta:[...txMeta.values()],profileState,lastProposal,lastValidation,confirmation,active:activeConfig,history,packApprovals,proposalVersion,lastTurn,aiCalls,aiSuccesses,taxReviewContext,lastTaxProposal,intake:intakeState,muse:museState,fx:fxState,preferences:{uiLocale,conversationLocale},savedAt:new Date().toISOString()};}
  function persist(){
   if(!persistPath)return;
   const data=JSON.stringify(snapshot(),null,2),tmp=persistPath+'.tmp';
@@ -139,7 +143,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
    try{
     aiCalls++;
     const taxPlan=taxReadiness(),responseSchema=taxPlan?{...RESPONSE_SCHEMA,properties:{...RESPONSE_SCHEMA.properties,taxFacts:{type:'array',items:{type:'object',required:['name','type','value','supportingQuote','status'],additionalProperties:false,properties:{name:{enum:Object.keys(taxPlan.declarations)},type:{enum:['MONEY','NUMBER','BOOLEAN','STRING','COUNTRY']},value:{},supportingQuote:{type:'string'},status:{enum:['CANDIDATE']},operation:{enum:['SET','REPLACE','REMOVE']}}}}}}:RESPONSE_SCHEMA;
-    const raw=await provider.extractProfile({system:SYSTEM_PROMPT+'\nIf active tax requirements are supplied, ask only their questions. Tax answers use declared names/types, exact current-message quotes and CANDIDATE status. Never approve law, eligibility or facts.',user:JSON.stringify({message:text,previousCandidates:profileState,pendingQuestion:profileState.pendingQuestion,responseSchema,capabilities:{modules:ALLOWED_MODULES,jurisdictions:listJurisdictions().map(j=>j.code),currencies:listCurrencies().map(c=>c.code),...(taxPlan?{activeTaxRequirements:{status:taxPlan.status,questions:taxPlan.questions,declarations:taxPlan.declarations,authority:'CANDIDATE_ONLY'}}:{})}})});
+    const raw=await provider.extractProfile({system:SYSTEM_PROMPT+'\nIf active tax requirements are supplied, ask only their questions. Tax answers use declared names/types, exact current-message quotes and CANDIDATE status. Never approve law, eligibility or facts.',user:JSON.stringify({message:text,conversationLocale:currentConversationLocale(),previousCandidates:profileState,pendingQuestion:profileState.pendingQuestion,responseSchema,capabilities:{modules:ALLOWED_MODULES,jurisdictions:listJurisdictions().map(j=>j.code),currencies:listCurrencies().map(c=>c.code),...(taxPlan?{activeTaxRequirements:{status:taxPlan.status,questions:taxPlan.questions,declarations:taxPlan.declarations,authority:'CANDIDATE_ONLY'}}:{})}})});
     const checked=validateExtractorPayload(raw,{userText:text,pendingQuestion:profileState.pendingQuestion,previousCurrencyRole:profileState.lastCurrencyRole});
     if(!checked.ok)throw Error('AI_SCHEMA_VALIDATION_FAILED');
     if(raw.taxFacts?.length){if(!taxReviewContext)throw Error('Tax review context required');taxSnapshotCandidate=require('../tax/readiness').acceptTaxFactCandidates({registry:taxServices().registry,...taxReviewContext,answers:raw.taxFacts,userText:text,profileRevision:profileState.revision});}
@@ -156,7 +160,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   profileState=applyFacts(profileState,extracted.facts,'USER',{jurisdictionFacts:extracted.jurisdictionFacts});
   profileState.turnCount++;profileState.aiCalls=aiCalls;lastTurn=diagnostic;
   if(taxSnapshotCandidate&&profileState.revision===oldRevision&&taxReviewContext.profileFingerprint===profileFingerprint()){taxReviewContext={...taxReviewContext,snapshot:taxSnapshotCandidate};lastTaxProposal=null;}
-  const requirement=deterministicQuestion(),question=muse.enabled?await muse.naturalQuestion(requirement,{profileRevision:profileState.revision,language:slotValue(profileState,'user.language')??'en',governedRequirements:taxReadiness()?.requirements??null}):requirement;profileState.pendingQuestion=question.key;
+  const requirement=deterministicQuestion(),question=muse.enabled?await muse.naturalQuestion(requirement,{profileRevision:profileState.revision,language:currentConversationLocale(),governedRequirements:taxReadiness()?.requirements??null}):requirement;profileState.pendingQuestion=question.key;
   museState.lastQuestion={requirementHash:fingerprint(requirement),profileRevision:profileState.revision,question};
   if(profileState.revision!==oldRevision){
    invalidate();audit.record({actor:'user',action:'onboarding.profile.revised',entityType:'profile',entityId:scopeOrgId,detail:{profileRevision:profileState.revision,slots:extracted.facts.map(f=>f.slot),jurisdictionBases:extracted.jurisdictionFacts.map(f=>f.basis),providerUsed:diagnostic.providerUsed}});
@@ -173,7 +177,10 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   if(profileState.revision!==before.profileState.revision)audit.record({actor,action:'onboarding.profile.edited',entityType:'profile',entityId:scopeOrgId,detail:{slot,basis,profileRevision:profileState.revision}});
   try{persist();}catch(e){({profileState,lastProposal,lastValidation,confirmation,lastTaxProposal}=before);while(audit.size>n)audit._rollbackLast(audit.size);throw e;}return onboardingState();
  }
- function setUiLanguage(tag){if(!['en','id'].includes(tag))throw Error('Unsupported language');editProfile({slot:'user.language',value:tag});return tag;}
+ function currentLocale(){return uiLocale??(slotValue(profileState,'user.language')==='id'?'id-ID':'en');}
+ function currentConversationLocale(){return conversationLocale??currentLocale();}
+ function setUiLanguage(tag){const L=require('../../public/locale');if(!L.supported(tag))throw Error('Unsupported language');const before=uiLocale;uiLocale=L.canonical(tag);try{persist();}catch(e){uiLocale=before;throw e;}return L.base(uiLocale);}
+ function setConversationLocale(tag){const L=require('../../public/locale');if(!L.supported(tag))throw Error('Unsupported language');const before=conversationLocale;conversationLocale=L.canonical(tag);try{persist();}catch(e){conversationLocale=before;throw e;}return conversationLocale;}
  function onboardingPropose(){
   if(gapAnalysis(profileState).length)return {ok:false,errors:['Bookkeeping currency needs your answer']};
   const conflict=Object.values(profileState.slots).some(s=>s.status==='CONFLICT');if(conflict)return {ok:false,errors:['Conflicting answers need clarification']};
@@ -235,10 +242,10 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
    transactionCurrencies:p?.transactionCurrencies??[],foreignPurchaseCurrencies:p?.foreignPurchaseCurrencies??[],fxSource:p?.fxSource??null,period:p?.period??null,modules:p?.modules??[],
    countryPackResolution:activeConfig?.countryPackResolution??resolve(),taxReady:Boolean(p&&activeConfig.countryPackResolution.status==='RESOLVED'),taxNote:t(p?.language??'en','ob.taxNote'),fxNote:t(p?.language??'en','ob.fxNote')};
  }
- function deterministicQuestion(){return planQuestion(profileState,slotValue(profileState,'user.language')??'en',{taxReadiness:taxReadiness()});}
+ function deterministicQuestion(){return planQuestion(profileState,require('../../public/locale').base(currentConversationLocale()),{taxReadiness:taxReadiness()});}
  function currentQuestion(){const q=deterministicQuestion(),saved=museState.lastQuestion;return saved?.profileRevision===profileState.revision&&saved.requirementHash===fingerprint(q)?clone(saved.question):q;}
  function aiStatus(){return {...lastTurn,configured:Boolean(process.env.BIGM_META_API_URL&&process.env.BIGM_META_API_KEY&&process.env.BIGM_META_MODEL),mode:lastTurn.providerUsed,calls:aiCalls,successes:aiSuccesses,muse:muse.status()};}
- function onboardingState(){return {draft:onboardingDraft(),profileState:clone(profileState),profileRevision:profileState.revision,slots:clone(profileState.slots),missingSlots:gapAnalysis(profileState),readyForProposal:gapAnalysis(profileState).length===0,readiness:onboardingReadiness(),jurisdictionCandidates:clone(profileState.jurisdictionFacts),countryPackResolution:resolve(),uiLanguage:slotValue(profileState,'user.language')??'en',languages:supportedLanguages(),jurisdictions:listJurisdictions(),currencies:listCurrencies(),proposal:lastProposal?clone(lastProposal):null,validated:lastValidation?clone(lastValidation):null,confirmation:confirmation?clone(confirmation):null,active:activeConfig?clone(activeConfig):null,history:clone(history),question:currentQuestion(),taxReadiness:taxReadiness(),taxProposal:lastTaxProposal?clone(lastTaxProposal):null,ai:aiStatus(),migrationNotice};}
+ function onboardingState(){return {draft:onboardingDraft(),profileState:clone(profileState),profileRevision:profileState.revision,slots:clone(profileState.slots),missingSlots:gapAnalysis(profileState),readyForProposal:gapAnalysis(profileState).length===0,readiness:onboardingReadiness(),jurisdictionCandidates:clone(profileState.jurisdictionFacts),countryPackResolution:resolve(),uiLanguage:require('../../public/locale').base(currentLocale()),uiLocale:currentLocale(),conversationLocale:currentConversationLocale(),languages:supportedLanguages(),jurisdictions:listJurisdictions(),currencies:listCurrencies(),proposal:lastProposal?clone(lastProposal):null,validated:lastValidation?clone(lastValidation):null,confirmation:confirmation?clone(confirmation):null,active:activeConfig?clone(activeConfig):null,history:clone(history),question:currentQuestion(),taxReadiness:taxReadiness(),taxProposal:lastTaxProposal?clone(lastTaxProposal):null,ai:aiStatus(),migrationNotice};}
  function rememberMeta(kind,draft,result){
   const line=result.journal.lines.find(l=>l.accountId===ctx.chart.getByCode(kind==='SALE'?'401':'501').id);
   txMeta.set(result.transactionId,{id:result.transactionId,kind,date:draft.date,currency:draft.currency,totalMinor:line?.amountMinor??'0',counterparty:draft.customer??draft.supplier??'-',reference:draft.invoiceRef??draft.billRef??'-',postingId:result.receipt.postingId,journalId:result.journal.id,demo:String(result.transactionId).startsWith('demo-')});
@@ -282,6 +289,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   return [...buckets.values()].sort((a,b)=>a.month.localeCompare(b.month)).map(b=>({...b,revenueMinor:String(b.revenueMinor),expenseMinor:String(b.expenseMinor),netMinor:String(b.revenueMinor-b.expenseMinor)}));
  }
  function summary(currency=ctx.org?.baseCurrency){
+  if(ctx.org&&currency!==ctx.org.baseCurrency)return {currency,functionalCurrency:ctx.org.baseCurrency,status:'REPORTING_CONVERSION_REQUIRED',totals:null,converted:false};
   if(!ctx.chart||!currency)return {currency:null,transactionCount:0,balances:[],totals:{revenueMinor:'0',expenseMinor:'0',netMinor:'0'},auditOk:audit.verifyChain().ok,otherCurrencies:[]};
   return {...getSummary(ctx,{currency}),otherCurrencies:[...new Set(ledger.list().filter(e=>e.currency!==currency).map(e=>e.currency))],fxConversionApplied:false};
  }
@@ -298,6 +306,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   for(const j of raw.journals??[]){if(j.orgId!==scopeOrgId)throw Error('Persisted journal scope mismatch');ledger.append(deserializeJournal(j));}
   audit._restoreAll(raw.audit??[]);idempotency._restoreAll(raw.idempotency??{});for(const m of raw.txMeta??[])txMeta.set(m.id,m);
   if(raw.version!==2){migrationNotice='Previous setup needs review before activation. Journals and period states are preserved.';return;}
+  if(raw.fx)Object.assign(fxState,raw.fx);uiLocale=raw.preferences?.uiLocale??null;conversationLocale=raw.preferences?.conversationLocale??null;
   if(raw.muse)museState={...museState,...raw.muse,events:(raw.muse.events??[]).slice(-100),conversations:(raw.muse.conversations??[]).slice(-10)};
   profileState=raw.profileState;profileState.slots={...blankProfileState().slots,...profileState.slots};lastProposal=raw.lastProposal;lastValidation=raw.lastValidation;confirmation=raw.confirmation;packApprovals=raw.packApprovals??[];history=(raw.history??[]).map(deepFreeze);proposalVersion=raw.proposalVersion??0;lastTurn=raw.lastTurn??lastTurn;aiCalls=raw.aiCalls??0;aiSuccesses=raw.aiSuccesses??0;taxReviewContext=raw.taxReviewContext??null;lastTaxProposal=raw.lastTaxProposal??null;
   if(taxReviewContext){checkOrg(taxReviewContext.request.scopeId);taxReadiness();}
@@ -336,7 +345,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  async function commitIntakePosting(command,actor,finalize){
   const c=intakeState.candidates[command.provenance?.candidateId];
   if(!c?.confirmation||c.status!=='POSTING'||fingerprint(c.canonicalCommand)!==fingerprint(command))throw Error('Confirmed intake command required');
-  if(c.confirmation.reviewHash!==fingerprint({candidateId:c.candidateId,revision:c.revision,current:c.current,workspace:workspaceProfile()})||command.currency!==ctx.org?.baseCurrency)throw Error('Confirmed workspace changed; review required before posting');
+  if(c.confirmation.reviewHash!==require('../intake/canonical').reviewHash(c,workspaceProfile())||command.functionalCurrency!==ctx.org?.baseCurrency)throw Error('Confirmed workspace changed; review required before posting');
   const module=command.kind==='JOURNAL'?'accounting':command.kind==='REVENUE'?'sales':'purchase';requireActive(module);
   const deps=pipelineDepsFor(command),before=transactionCheckpoint();
   try{
@@ -344,15 +353,15 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
    result.tax={...result.tax,status:'requires_review',finalTotalMinor:null,finalLiabilityMinor:null};
    if(command.kind==='JOURNAL')txMeta.set(result.transactionId,{id:result.transactionId,kind:'JOURNAL_IMPORT',date:command.date,currency:command.currency,totalMinor:'0',counterparty:c.current.counterparty??'-',reference:c.current.referenceNumber??command.sourceRef.externalId,postingId:result.receipt.postingId,journalId:result.journal.id,demo:false});
    else rememberMeta(command.kind==='REVENUE'?'SALE':'PURCHASE',{date:command.date,currency:command.currency,customer:c.current.counterparty,invoiceRef:c.current.referenceNumber??command.evidence.reference},result);
-   txMeta.get(result.transactionId).totalMinor=Money.fromMajor(c.current.amount,c.current.currency).amountMinor.toString();
+   const meta=txMeta.get(result.transactionId);meta.totalMinor=Money.fromMajor(c.current.amount,c.current.currency).amountMinor.toString();if(command.fx)Object.assign(meta,{functionalCurrency:command.functionalCurrency,functionalAmount:command.functionalAmount,originalAmount:command.originalAmount,fx:command.fx});
    finalize(result);persist();return result;
   }catch(e){rollbackTransaction(before);throw e;}
  }
- const intake=createIntakeService({state:intakeState,getContext:()=>({...ctx,workspace:workspaceProfile(),journalFor:id=>{const j=ctx.ledger.get(id);return j?serializeJournal(j):null;}}),persist,commitPosting:commitIntakePosting,applyProfileFacts:applyDocumentFacts,extractionProvider,semanticProvider});
+ const intake=createIntakeService({state:intakeState,getContext:()=>({...ctx,workspace:workspaceProfile(),journalFor:id=>{const j=ctx.ledger.get(id);return j?serializeJournal(j):null;}}),persist,commitPosting:commitIntakePosting,applyProfileFacts:applyDocumentFacts,fxService,extractionProvider,semanticProvider});
  intake.recover();
  function recordMuse(event){museState.events.push(clone(event));if(museState.events.length>100)museState.events.shift();}
  const {governedCatalog,resolveSuggestion}=require('../ai/museCatalog');
- muse.attach({record:recordMuse,sources:{workspace:workspaceProfile,summary,profile:()=>profileState,question:deterministicQuestion,taxReadiness,
+ muse.attach({record:recordMuse,sources:{workspace:workspaceProfile,locale:currentConversationLocale,summary,profile:()=>profileState,question:deterministicQuestion,taxReadiness,
   candidates:id=>{if(id){const c=intakeState.candidates[id];return c?[intake.trace(id).candidate]:[];}return Object.values(intakeState.candidates).slice(-5).map(c=>intake.trace(c.candidateId).candidate);},
   determination:id=>taxReviewContext?taxServices().determinations.get(id,{scopeId:scopeOrgId,subjectId:taxReviewContext.request.subjectId}):null,
   catalog:()=>governedCatalog(taxServices().registry),resolveRule:entry=>resolveSuggestion(entry,taxServices().registry,taxReviewContext,taxReadiness())
@@ -366,7 +375,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  function museTrace(){if(!muse.traceEnabled)throw Error('Muse trace mode is disabled');return {flow:['USER','META_MUSE_SPARK','CANDIDATE_FACTS','GOVERNED_PACK_REQUIREMENTS','MISSING_FACTS','MUSE_QUESTION','CONFIRMED_PROFILE','DETERMINISTIC_RESOLVER','TAX_ACCOUNTING_ENGINE','MUSE_EXPLANATION'],events:clone(museState.events),profileRevision:profileState.revision,requirements:taxReadiness(),confirmation:confirmation?{profileRevision:confirmation.profileRevision,proposalHash:confirmation.proposalHash,actor:confirmation.actor}:null,accounting:{journalCount:ledger.size,auditVerified:audit.verifyChain().ok}};}
  return {ctx,txMeta,contentRegistry,checkAuth,serializeMutation,createSale,createPurchase,importCsvText,reverseJournal,listTransactions,monthlyReport,summary,seedDemo,serializeJournal,pipelineDepsFor,
   chartFor:()=>ctx.chart,onboardingTurn,onboardingDraft,onboardingPropose,onboardingValidate,onboardingConfirm,onboardingReadiness,onboardingActivate,onboardingState,onboardingHistory:()=>clone(history),setUiLanguage,editProfile,approvePack,workspaceProfile,aiStatus,applyActiveConfiguration,beginTaxReview,answerTaxReview,proposeTaxReview,taxReadiness,
-  countryPackState:()=>({resolution:resolve(),packs:contentRegistry.list(),approvals:clone(packApprovals)}),persist,intake,museAssistant,museDiscovery,museTrace,museStatus:()=>muse.status(),
+  countryPackState:()=>({resolution:resolve(),packs:contentRegistry.list(),approvals:clone(packApprovals)}),persist,intake,languagePack:locale=>languagePacks.ensure(locale??currentLocale()),currentLocale,currentConversationLocale,setConversationLocale,reportingStatus:()=>({functionalCurrency:ctx.org?.baseCurrency??null,reportingCurrency:workspaceProfile().reportingCurrency,status:workspaceProfile().reportingCurrency!==ctx.org?.baseCurrency?'REPORTING_CONVERSION_REQUIRED':'SAME_AS_FUNCTIONAL',converted:false}),museAssistant,museDiscovery,museTrace,museStatus:()=>muse.status(),
  };
 }
 module.exports={createWebStore,proposalHash};

@@ -10,6 +10,8 @@
   "scripts": {
     "test": "node scripts/test.js",
     "security:scan": "node scripts/scan-research-secrets.js",
+    "test:fx:live": "node scripts/international-smoke.js fx",
+    "test:meta:multilingual": "node scripts/international-smoke.js multilingual",
     "start": "node src/web/server.js",
     "smoke:meta": "node scripts/meta-smoke.js",
     "smoke:document-meta": "node scripts/meta-document-smoke.js",

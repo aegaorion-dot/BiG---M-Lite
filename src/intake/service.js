@@ -6,13 +6,14 @@ const {Money}=require('../domain/money');
 const {assertDate}=require('../domain/organization');
 const {isKnownCurrency}=require('../global/currencies');
 const {fingerprint}=require('../onboarding/canonical');
-const {canonicalCommand,economicFingerprint}=require('./canonical');
+const {canonicalCommand,economicFingerprint,reviewHash:canonicalReviewHash}=require('./canonical');
+const {approvedFx,binding,quoteHash,convert}=require('../fx/rates');
 const {blankExternalState,createExternalIntake}=require('./external');
 const clone=x=>structuredClone(x),now=()=>new Date().toISOString();
 const EDITABLE=['transactionDate','amount','currency','counterparty','proposedTransactionType','description','paymentMethod','referenceNumber','settlementStatus','classificationAccountId','paymentAccountId'];
 function blankIntakeState(){return {version:2,documents:{},extractions:{},interpretations:{},candidates:{},chats:{},keys:{},events:[],external:blankExternalState(),duplicateVersions:{}};}
 function human(actor){if(typeof actor!=='string'||!actor.trim()||actor.length>100||/^(ai|model|muse|meta|system)(?:$|[: -])/i.test(actor))throw Error('Explicit human actor required');}
-function createIntakeService({state,getContext,persist,commitPosting,applyProfileFacts,extractionProvider=new LocalExtractionProvider(),semanticProvider=new DeterministicSemanticProvider()}){
+function createIntakeService({state,getContext,persist,commitPosting,applyProfileFacts,fxService,extractionProvider=new LocalExtractionProvider(),semanticProvider=new DeterministicSemanticProvider()}){
  state.external??=blankExternalState();state.duplicateVersions??={};state.version=2;let external;
  const economicIndex=new Map(),indexed=new Map();
  function refreshIndex(c,initial=false){
@@ -40,7 +41,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   if(/yesterday|kemarin/i.test(c.evidence?.transactionDate?.quote??'')&&!c.revisions.some(r=>r.source==='USER_EDIT'&&Object.hasOwn(r.changes??{},'transactionDate')))conflicts.push('Relative date is a UTC-based proposal; enter an explicit transaction date to resolve timezone ambiguity');
   if(!ctx.org)conflicts.push('Activate a workspace before posting');
   if(f.currency&&!isKnownCurrency(f.currency))conflicts.push('Unsupported currency');
-  if(ctx.org&&f.currency&&f.currency!==ctx.org.baseCurrency)conflicts.push('FX_UNAVAILABLE: transaction currency differs from functional currency; review required');
+  if(ctx.org&&f.currency&&f.currency!==ctx.org.baseCurrency&&!approvedFx(c,ctx.workspace))conflicts.push('FX_UNAVAILABLE / FX_REQUIRED: transaction currency differs from functional currency; review dated FX quote');
   if(f.amount&&f.currency)try{const m=Money.fromMajor(f.amount,f.currency);if(m.amountMinor<=0n)conflicts.push('Amount must be positive');}catch{conflicts.push('Amount must be an exact positive decimal for this currency');}
   if(f.proposedTransactionType&&!['REVENUE','EXPENSE'].includes(f.proposedTransactionType))conflicts.push('Unsupported classification; transfers require a later reviewed workflow');
   if(f.settlementStatus!=='PAID')missingFields.push('settlementStatus: confirm paid cash/bank transaction; unpaid invoices are review-only');
@@ -58,9 +59,9 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    let debit=0n,credit=0n;for(const line of f.journalLines??[]){if(!ctx.chart?.has(line.accountId))conflicts.push('Unmapped or invalid journal account');try{const value=Money.fromMajor(line.amount,f.currency).amountMinor;if(value<=0n||!['DEBIT','CREDIT'].includes(line.side))throw Error();if(line.side==='DEBIT')debit+=value;else credit+=value;}catch{conflicts.push('Invalid journal line amount/side');}}
    if((f.journalLines??[]).length<2||debit!==credit||debit<=0n)conflicts.push('UNBALANCED_JOURNAL');if(!ctx.modules.includes('accounting'))conflicts.push('Accounting module not enabled');
   }
-  if(c.importRef){conflicts.push(...c.importRef.errors,...external.mappingIssues(c));if(ctx.org&&c.importRef.sourceFunctionalCurrency!==ctx.org.baseCurrency)conflicts.push('FX_REQUIRED: source functional currency differs from workspace');for(let i=0;i<conflicts.length;i++)if(/CLOSED/.test(conflicts[i])&&!conflicts[i].startsWith('CLOSED_PERIOD'))conflicts[i]='CLOSED_PERIOD: '+conflicts[i];}
+  if(c.importRef){conflicts.push(...c.importRef.errors,...external.mappingIssues(c));if(ctx.org&&c.importRef.sourceFunctionalCurrency!==ctx.org.baseCurrency&&(journal||!approvedFx(c,ctx.workspace)))conflicts.push('FX_REQUIRED: source functional currency differs from workspace');for(let i=0;i<conflicts.length;i++)if(/CLOSED/.test(conflicts[i])&&!conflicts[i].startsWith('CLOSED_PERIOD'))conflicts[i]='CLOSED_PERIOD: '+conflicts[i];}
   const duplicates=duplicateState(c);if(duplicates.status==='POSSIBLE_DUPLICATE')conflicts.push('POSSIBLE_DUPLICATE: explicit duplicate review required');
-  const reviewHash=fingerprint({candidateId:c.candidateId,revision:c.revision,current:f,workspace:ctx.workspace});
+  const reviewHash=canonicalReviewHash(c,ctx.workspace);
   return {missingFields,conflicts:[...new Set(conflicts)],duplicates,reviewHash,status:missingFields.length||conflicts.length?'REQUIRES_REVIEW':'READY_TO_CONFIRM'};
  }
  function view(c,ctx=getContext()){const validation=validate(c,ctx);return {...clone(c),...(['POSTED','REJECTED','CONFIRMED'].includes(c.status)?{validation,reviewHash:validation.reviewHash,duplicates:validation.duplicates}:validation)};}
@@ -76,7 +77,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    current.classificationAccountId=proposal.proposedAccounts?.classificationAccountId??(proposal.proposedTransactionType?ctx.chart?.list().find(a=>a.code===(proposal.proposedTransactionType==='REVENUE'?'401':'501'))?.id:null)??null;
    current.paymentAccountId=proposal.proposedAccounts?.paymentAccountId??(proposal.paymentMethod?ctx.chart?.list().find(a=>a.code==='101')?.id:null)??null;
    const c={candidateId:id,documentId,sourceChannel,sourceId,extractionId:interpretation.extractionId,interpretationId:interpretation.interpretationId,candidateType:proposal.candidateType,current,evidence:clone(proposal.evidence),confidence:proposal.confidence,status:'CANDIDATE',revision:1,revisions:[{revision:1,source:'SEMANTIC_PROPOSAL',at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};
-   c.semanticProvenance=clone(interpretation.modelProvenance??null);c.sourceRef={reference:documentId??sourceId,fileHash:documentId?state.documents[documentId].sha256:null};state.candidates[id]=c;refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_CREATED',id);
+   c.documentCurrency=sourceChannel==='DOCUMENT'?proposal.currency:null;c.semanticProvenance=clone(interpretation.modelProvenance??null);c.sourceRef={reference:documentId??sourceId,fileHash:documentId?state.documents[documentId].sha256:null};state.candidates[id]=c;refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_CREATED',id);
   }
  }
  async function interpret(extraction,{documentId=null,sourceId,sourceChannel,receivedAt}){
@@ -130,11 +131,22 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   human(actor);const c=candidate(candidateId);if(!['CANDIDATE','REQUIRES_REVIEW','READY_TO_CONFIRM'].includes(c.status))throw Error('Candidate is not editable');if(c.revision!==revision)throw Error('Stale candidate revision');
   if(c.candidateType==='EXTERNAL_JOURNAL')throw Error('Journal observations are immutable; review mapping or correct the source');
   if(!changes||!Object.keys(changes).length||Object.keys(changes).some(k=>!EDITABLE.includes(k))||Object.values(changes).some(v=>v!==null&&(typeof v!=='string'||v.length>500)))throw Error('Invalid candidate correction');
-  return atomic(()=>{Object.assign(c.current,changes);if(c.nativeInput){c.nativeInput.items=[{description:c.current.description,amountMajor:c.current.amount}];}c.revision++;c.revisions.push({revision:c.revision,source:'USER_EDIT',actor,at:now(),changes:clone(changes),fields:clone(c.current)});refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_EDITED',candidateId,{revision:c.revision,actor});return view(c);});
+  return atomic(()=>{Object.assign(c.current,changes);delete c.fx;if(c.nativeInput){c.nativeInput.items=[{description:c.current.description,amountMajor:c.current.amount}];}c.revision++;c.revisions.push({revision:c.revision,source:'USER_EDIT',actor,at:now(),changes:clone(changes),fields:clone(c.current)});refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_EDITED',candidateId,{revision:c.revision,actor});return view(c);});
  }
  function reject({candidateId,revision,actor}){
   human(actor);const c=candidate(candidateId);if(['POSTED','CONFIRMED'].includes(c.status))throw Error('Confirmed or posted candidates cannot be rejected; use existing reversal workflow');if(c.revision!==revision)throw Error('Stale candidate revision');
   return atomic(()=>{c.status='REJECTED';refreshIndex(c);c.rejection={actor,at:now(),revision};if(c.documentId)documentStatus(c.documentId);event('REJECTED',candidateId,{actor});return view(c);});
+ }
+ async function resolveFx({candidateId,revision}){
+  const c=candidate(candidateId),ctx=getContext();if(c.revision!==revision||['POSTED','CONFIRMED','REJECTED'].includes(c.status))throw Error('Stale or locked FX candidate');
+  if(c.current.currency===ctx.org?.baseCurrency)return view(c);
+  if(!ctx.org||!c.current.amount||!c.current.transactionDate||c.candidateType==='EXTERNAL_JOURNAL')throw Error('FX_REQUIRED: explicit amount/date/workspace and transaction workflow required');
+  const result=await fxService.resolve({baseCurrency:c.current.currency,quoteCurrency:ctx.org.baseCurrency,date:c.current.transactionDate});
+  return atomic(()=>{c.fx={...result,binding:binding(c,ctx.workspace)};if(result.status==='AVAILABLE'){c.fx.conversion=convert(c.current.amount,c.current.currency,result.rate);c.fx.quoteHash=quoteHash(c.fx);}c.revision++;c.status=validate(c).status;event('FX_QUOTED',candidateId,{status:result.status});return view(c);});
+ }
+ function approveFx({candidateId,revision,quoteHash:hash,actor,decisionSource='HUMAN'}){
+  human(actor);const c=candidate(candidateId);if(decisionSource!=='HUMAN'||c.revision!==revision||['POSTED','CONFIRMED','REJECTED'].includes(c.status)||c.fx?.status!=='AVAILABLE'||c.fx.quoteHash!==hash||quoteHash(c.fx)!==hash||c.fx.binding!==binding(c,getContext().workspace))throw Error('Exact current human FX quote review required');
+  return atomic(()=>{c.fx.status='APPROVED';c.fx.approval={actor,decisionSource,at:now(),quoteHash:hash};c.revision++;c.status=validate(c).status;event('FX_APPROVED',candidateId,{quoteHash:hash,actor});return view(c);});
  }
  async function confirm({candidateId,revision,reviewHash,idempotencyKey,actor}){
   human(actor);if(typeof idempotencyKey!=='string'||!idempotencyKey.trim()||idempotencyKey.length>180||['__proto__','constructor','prototype'].includes(idempotencyKey))throw Error('Confirmation idempotencyKey required');
@@ -179,7 +191,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
  }
  for(const b of Object.values(state.external.batches))if(hash(Buffer.from(b.originalBase64,'base64'))!==b.fileHash)throw Error('Persisted external original hash mismatch');
  external=createExternalIntake({state,getContext,atomic,registerCandidate,refreshIndex,view,confirm});rebuildIndex();
- return {upload:serial(upload),chat:serial(chat),native:serial(native),edit:serial(edit),reject:serial(reject),resolveDuplicate:serial(resolveDuplicate),confirm:serial(confirm),retry:serial(retry),list,trace,original,recover,
+ return {upload:serial(upload),chat:serial(chat),native:serial(native),edit:serial(edit),reject:serial(reject),resolveFx:serial(resolveFx),approveFx:serial(approveFx),resolveDuplicate:serial(resolveDuplicate),confirm:serial(confirm),retry:serial(retry),list,trace,original,recover,
   external:{...external,registerSource:serial(external.registerSource),approveMapping:serial(external.approveMapping),stage:serial(external.stage),confirmBatch:serial(external.confirmBatch)}};
 }
 module.exports={blankIntakeState,createIntakeService};

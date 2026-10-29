@@ -126,3 +126,9 @@ See the [Phase 6 report](docs/PHASE6-UNIVERSAL-INTAKE.md) for generic schemas, A
 Configured Meta Muse Spark supplies the shared semantic runtime for onboarding, requirement phrasing, chat/document interpretation, governed rule suggestions and the contextual BiG-M assistant. Deterministic state, resolvers, accounting/tax engines and human confirmation retain authority. Routine `npm test` makes no paid calls.
 
 See the [Phase 7 report](docs/PHASE7-MUSE-RUNTIME.md) for configuration, APIs/demo trace, explicit live commands, real verification and remaining limits. This checkpoint is local only; do not push yet.
+
+# Phase 8 international runtime
+
+UI and conversational locales are independent preferences with versioned local language packs and Intl formatting. Foreign transactions preserve their original currency and require explicit review of a dated FX quote before normal confirmation posts the functional amount. Historical applied rates survive restart and replay. Reporting conversion and foreign journal conversion remain explicit review gaps.
+
+See the [Phase 8 report](docs/PHASE8-INTERNATIONAL-RUNTIME.md) for architecture, APIs, controlled live evidence, regression results and limits. Commit locally only; do not push this checkpoint yet.

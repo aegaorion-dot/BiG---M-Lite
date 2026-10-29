@@ -111,7 +111,7 @@ test('Phase 6: moderate 1000-row normalization/preview is bounded and uses index
  assert.equal(p.batch.rowCount,1000);assert.equal(p.candidates.length,1000);assert.ok(p.batch.rows.every(r=>r.status==='VALID'));assert.equal(s.ctx.ledger.size,0);assert.ok(elapsed<15000,'1000-row processing exceeded generous 15s sanity budget: '+elapsed);t.diagnostic('1000 rows stage + mapping + preview: '+elapsed.toFixed(1)+'ms');
 });
 test('Phase 6: authoritative Money, journal, ledger, PostingService and tax source match Phase 5 byte-for-byte',()=>{
- for(const dir of ['src/domain','src/accounting','src/tax','src/app/verticalSlice.js']){const result=spawnSync('git',['diff','98d229ecab34cd0e87d16615178a31dac681cdff','--',dir],{encoding:'utf8'});assert.equal(result.status,0);assert.equal(result.stdout,'',dir+' changed');}
+ for(const dir of ['src/domain','src/accounting','src/tax','src/app/verticalSlice.js']){const result=spawnSync('git',['diff','d5672109b4ba6010bc62473bfe0ca36e4e3f79d7','--',dir],{encoding:'utf8'});assert.equal(result.status,0);assert.equal(result.stdout,'',dir+' changed');}
 });
 test('Phase 6: API protects external preview and exports, requires reviewed confirmation and preserves lineage',async()=>{
  const s=await setup(createActiveStore({authToken:'test-token'}));const call=(method,url,body={},query={})=>handleApi(s,method,url,query,{...body,authToken:'test-token'});

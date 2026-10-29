@@ -1,0 +1,123 @@
+{
+  "role": "multilingual",
+  "at": "2026-10-29T07:54:31.145Z",
+  "success": true,
+  "latencyMs": 4409,
+  "result": {
+    "locale": "id-ID",
+    "conversationLocale": "id-ID",
+    "model": "muse-spark-1.3",
+    "providerUsed": "meta",
+    "question": {
+      "key": "currency.functional",
+      "text": "Mata uang apa yang Anda gunakan untuk pembukuan?",
+      "provider": "meta",
+      "provenance": {
+        "requestId": "ceacc337-acc1-4271-9645-d2024f90045d",
+        "purpose": "pack-driven-question",
+        "provider": "meta",
+        "model": "muse-spark-1.3",
+        "success": true,
+        "parseSuccess": true,
+        "schemaValidationSuccess": true,
+        "fallbackUsed": false,
+        "cacheHit": false,
+        "attempts": 1,
+        "usage": {
+          "input_tokens": 204,
+          "output_tokens": 185,
+          "total_tokens": 389,
+          "reasoning_tokens": 148
+        },
+        "estimatedCost": null,
+        "costStatus": "NOT_REPORTED",
+        "at": "2026-10-29T07:54:30.090Z",
+        "responseStatus": "completed",
+        "responseId": "resp_6ae2fbb6a634d1263f644f00",
+        "latencyMs": 990
+      }
+    },
+    "candidates": {
+      "nationality": {
+        "key": "user.nationality",
+        "type": "country",
+        "semanticRole": "user.nationality",
+        "requiresConfirmation": true,
+        "dependencies": [],
+        "value": "AU",
+        "status": "CANDIDATE",
+        "evidenceStatus": "CANDIDATE",
+        "source": "USER",
+        "supportingQuote": "orang Australia",
+        "confidence": 0.9,
+        "validation": "schema-valid"
+      },
+      "jurisdictions": [
+        {
+          "basis": "BUSINESS_WORK_LOCATION",
+          "countryCode": "ID",
+          "source": "USER",
+          "supportingQuote": "di Bali",
+          "confidence": 0.9,
+          "status": "CANDIDATE",
+          "operation": "SET",
+          "semanticRole": "BUSINESS_WORK_LOCATION"
+        }
+      ]
+    },
+    "functionalCurrency": null,
+    "requests": 2,
+    "metrics": [
+      {
+        "requestId": "cf81c077-86ac-4e10-9abf-35986dd4ed6a",
+        "purpose": "business-profiling",
+        "provider": "meta",
+        "model": "muse-spark-1.3",
+        "success": true,
+        "parseSuccess": true,
+        "schemaValidationSuccess": true,
+        "fallbackUsed": false,
+        "cacheHit": false,
+        "attempts": 1,
+        "usage": {
+          "input_tokens": 1076,
+          "output_tokens": 590,
+          "total_tokens": 1666,
+          "reasoning_tokens": 352
+        },
+        "estimatedCost": null,
+        "costStatus": "NOT_REPORTED",
+        "at": "2026-10-29T07:54:26.854Z",
+        "responseStatus": "completed",
+        "responseId": "resp_6ae2fbb5a06aca65e69c4a05",
+        "latencyMs": 3227
+      },
+      {
+        "requestId": "ceacc337-acc1-4271-9645-d2024f90045d",
+        "purpose": "pack-driven-question",
+        "provider": "meta",
+        "model": "muse-spark-1.3",
+        "success": true,
+        "parseSuccess": true,
+        "schemaValidationSuccess": true,
+        "fallbackUsed": false,
+        "cacheHit": false,
+        "attempts": 1,
+        "usage": {
+          "input_tokens": 204,
+          "output_tokens": 185,
+          "total_tokens": 389,
+          "reasoning_tokens": 148
+        },
+        "estimatedCost": null,
+        "costStatus": "NOT_REPORTED",
+        "at": "2026-10-29T07:54:30.090Z",
+        "responseStatus": "completed",
+        "responseId": "resp_6ae2fbb6a634d1263f644f00",
+        "latencyMs": 990
+      }
+    ]
+  },
+  "failure": null,
+  "credentialsRecorded": false
+}

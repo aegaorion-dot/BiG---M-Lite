@@ -35,9 +35,22 @@ async function mount(store){
   return {ok:r.status<400,json:async()=>JSON.parse(r.body)};
  };
  const context=vm.createContext({document,fetch,console,Intl,Date,crypto:require('node:crypto').webcrypto,setTimeout:()=>0,FileReader:class{readAsDataURL(file){this.result='data:'+file.type+';base64,'+file.bytes.toString('base64');this.onload();}},FormData:class{constructor(form){this.form=form;}entries(){return Object.entries(this.form.fields??{});}[Symbol.iterator](){return this.entries()[Symbol.iterator]();}}});
+ await vm.runInContext(fs.readFileSync('public/locale.js','utf8'),context);
  await vm.runInContext(fs.readFileSync('public/app.js','utf8'),context);
  return {context,elements,read:code=>vm.runInContext(code,context)};
 }
+describe('Phase 8 international SPA',()=>{
+ it('changes locale while keeping profile, confirmation and active dashboard intact',async()=>{
+  const store=createActiveStore(),h=await mount(store),before=JSON.stringify({profile:store.onboardingState().profileState,confirmation:store.onboardingState().confirmation,workspace:store.workspaceProfile(),audit:store.ctx.audit.list()});await h.elements.get('#topLang').handlers.change({target:{value:'id-ID'}});assert.equal(h.read('UILANG'),'id-ID');assert.equal(h.read('route'),'dashboard');assert.equal(h.read("money('1250000','IDR')"),'IDR 1.250.000');assert.equal(JSON.stringify({profile:store.onboardingState().profileState,confirmation:store.onboardingState().confirmation,workspace:store.workspaceProfile(),audit:store.ctx.audit.list()}),before);
+ });
+ it('configures a separate reporting role and displays explicit pending conversion',async()=>{
+  const store=createWebStore();store.editProfile({slot:'currency.functional',value:'IDR'});store.onboardingPropose();const h=await mount(store);h.read("route='onboarding';render()");await h.elements.get('#setReportingCurrency').handlers.change({target:{value:'USD'}});assert.equal(store.onboardingState().proposal.reportingCurrency,'USD');assert.equal(store.onboardingState().proposal.functionalCurrency,'IDR');await h.elements.get('#obUse').handlers.click();h.read("route='reports';render()");assert.match(h.elements.get('#view').innerHTML,/Reporting currency: USD/);assert.match(h.elements.get('#view').innerHTML,/conversion is unavailable/);assert.equal(store.workspaceProfile().functionalCurrency,'IDR');
+ });
+ it('gets a dated FX quote, approves it, then separately confirms original SGD into IDR ledger',async()=>{
+  const {DeterministicFxProvider}=require('../src/fx/rates'),store=createActiveStore({fxProvider:new DeterministicFxProvider({'SGD|IDR|2026-06-01':'12000'})});const r=await store.intake.chat({text:'Client paid me SGD 2,000 on 2026-06-01.',requestId:'fx-ui'}),c=r.candidates[0];await store.intake.edit({candidateId:c.candidateId,revision:c.revision,changes:{counterparty:'Client',description:'Consulting',proposedTransactionType:'REVENUE',classificationAccountId:'id-revenue',paymentAccountId:'id-cash',settlementStatus:'PAID'},actor:'user'});const h=await mount(store);h.read("route='intake';render()");const click=async action=>h.elements.get('#view').intakeNodes['[data-intake-action]'].find(b=>b.dataset.intakeAction===action).handlers.click();await click('fx/resolve');assert.equal(store.ctx.ledger.size,0);assert.match(h.elements.get('#view').innerHTML,/12000/);await click('fx/approve');assert.equal(store.ctx.ledger.size,0);await click('confirm');assert.equal(store.ctx.ledger.size,1);assert.equal(store.ctx.ledger.list()[0].currency,'IDR');assert.equal(store.intake.list().candidates[0].current.currency,'SGD');
+ });
+});
+
 describe('Phase 7 contextual assistant SPA',()=>{
  it('opens before activation and renders authoritative unavailable state',async()=>{
   const store=createWebStore(),h=await mount(store);await h.elements.get('#openAssistant').handlers.click();assert.equal(h.read('route'),'assistant');assert.match(h.elements.get('#view').innerHTML,/MUSE_UNAVAILABLE/);h.elements.get('#assistantText').handlers.input({target:{value:'How much revenue?'}});await h.elements.get('#assistantSend').handlers.click();assert.match(h.elements.get('#view').innerHTML,/unavailable before workspace activation/);assert.equal(store.ctx.ledger.size,0);

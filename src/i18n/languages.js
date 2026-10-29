@@ -18,11 +18,11 @@ function normalizeLanguageTag(tag) {
 }
 
 function supportedLanguages() {
-  return LANGUAGES.map((l) => ({ ...l }));
+  const Locale=require('../../public/locale');return Locale.SUPPORTED.map(tag=>({tag,name:Locale.language(tag,tag),supported:true}));
 }
 
 function isSupported(tag) {
-  return LANGUAGES.some((l) => l.tag === normalizeLanguageTag(tag) && l.supported);
+  return require('../../public/locale').supported(tag);
 }
 
 module.exports = { LANGUAGES, normalizeLanguageTag, supportedLanguages, isSupported };

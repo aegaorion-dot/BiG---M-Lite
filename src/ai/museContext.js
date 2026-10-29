@@ -34,7 +34,7 @@ function buildContext({question,topic=null,candidateId=null,determinationId=null
   for(const [i,f]of p.jurisdictionFacts.slice(0,10).entries())add('jurisdiction.'+i,f.status==='CONFIRMED'?'FACT':'INFERENCE',{role:f.basis,value:f.countryCode,status:f.status,quote:f.supportingQuote},f.basis+': '+f.countryCode+' ('+f.status+').');
   const requirement=sources.question();if(requirement.key!=='done')add('profile.missing','MISSING_INFORMATION',requirement.key,requirement.text);allowedExplanations.push('FACTS_ARE_CANDIDATES');
  }
- const context={topic,facts,allowedExplanations};if(JSON.stringify(context).length>20000)throw Error('Cognitive context exceeds safe bound');return {...context,contextHash:fingerprint(context)};
+ const locale=sources.locale?.()??'en',context={topic,locale,facts:facts.map(f=>require('./museLanguage').localizedFact(f,locale)),allowedExplanations};if(JSON.stringify(context).length>20000)throw Error('Cognitive context exceeds safe bound');return {...context,contextHash:fingerprint(context)};
 }
 function catalogContext(sources){
  const context=buildContext({question:'Current business profile',topic:'PROFILE'},sources),catalog=sources.catalog().slice(0,50);
