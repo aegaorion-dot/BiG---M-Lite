@@ -6,6 +6,7 @@ let STR={},UILANG='en',loadedLanguage=null,pending=false,userInput='',chat=[],la
 const TABS=[['onboarding','nav.onboarding'],['dashboard','nav.dashboard'],['intake','nav.intake'],['sales','nav.sales'],['purchase','nav.purchase'],['accounting','nav.accounting'],['reports','nav.reports'],['import','nav.import'],['settings','nav.settings']];
 let intakeData={documents:[],chats:[],candidates:[]},intakeText='',intakeRequestId=null,intakeNotice='';
 let externalPreview=null,externalPage=0;
+let assistantText='',assistantResult=null,assistantDiscovery=null,assistantTrace=null;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const tr=k=>STR[k]??k;
 async function api(path,body){
@@ -44,9 +45,10 @@ async function refresh(){
 function renderTabs(){
  const active=Boolean(cache.ws?.activated);tabsEl.hidden=!active;$('#auditPill').hidden=!active;$('#demoBtn').hidden=!active;
  $('#demoNote').hidden=!cache.txs.some(t=>t.demo);
- if(!active){if(route!=='intake')route='onboarding';tabsEl.innerHTML='';return;}
+ if(!active){if(!['intake','assistant'].includes(route))route='onboarding';tabsEl.innerHTML='';return;}
  const allowed=new Set(['onboarding','dashboard','settings','intake',...cache.ws.modules]);
  tabsEl.innerHTML=TABS.filter(([id])=>allowed.has(id)).map(([id,key])=>'<button type="button" class="tab" data-route="'+id+'" aria-selected="'+(route===id)+'">'+esc(tr(key))+'</button>').join('');
+ tabsEl.innerHTML+='<button type="button" class="tab" data-route="assistant" aria-selected="'+(route==='assistant')+'">'+esc(tr('muse.assistant'))+'</button>';
  tabsEl.querySelectorAll('[data-route]').forEach(b=>b.addEventListener('click',async()=>{if(pending)return;route=b.dataset.route;await loadLanguage(route==='onboarding'?cache.ob.uiLanguage:cache.ws.language);render();}));
  $('#auditPill').textContent=cache.audit?.verify?.ok?tr('audit.valid'):tr('audit.review');
  $('#demoBtn').textContent=tr('demo.load');
@@ -183,7 +185,7 @@ function vIntake(){
   const f=c.current,locked=['CONFIRMED','POSTED','REJECTED'].includes(c.status),editable=!locked;
   const validation=c.validation??c;
   if(c.candidateType==='EXTERNAL_JOURNAL')return '<article class="panel intake-candidate"><h3>'+esc(c.sourceChannel)+' · '+esc(c.status)+'</h3><p>'+esc((validation.conflicts??[]).join('; '))+'</p>'+duplicateControls(c)+'<pre>'+esc(JSON.stringify({lines:f.journalLines,mappings:c.mappingRefs,confirmation:c.confirmation,posting:c.posting},null,2))+'</pre><form data-intake-form="'+esc(c.candidateId)+'">'+(c.status==='READY_TO_CONFIRM'||c.status==='CONFIRMED'?'<button type="button" class="btn gold" data-intake-action="confirm" data-candidate="'+esc(c.candidateId)+'">'+esc(tr('intake.confirm'))+'</button>':'')+(!locked?'<button type="button" class="btn ghost" data-intake-action="reject" data-candidate="'+esc(c.candidateId)+'">'+esc(tr('intake.reject'))+'</button>':'')+'</form></article>';
-  return '<article class="panel intake-candidate"><h3>'+esc(c.candidateType)+' · '+esc(c.status)+'</h3><p class="mono">'+esc(c.candidateId)+'</p><form data-intake-form="'+esc(c.candidateId)+'"><div class="grid2">'+
+  return '<article class="panel intake-candidate"><h3>'+esc(c.candidateType)+' · '+esc(c.status)+'</h3><p class="mono">'+esc(c.candidateId)+'</p>'+(c.semanticProvenance?.success?'<small>'+esc(tr('muse.understood'))+' / '+esc(c.semanticProvenance.model)+'</small>':'')+'<form data-intake-form="'+esc(c.candidateId)+'"><div class="grid2">'+
    field('transactionDate',tr('date'),f.transactionDate,'date')+field('amount',tr('amount'),f.amount)+field('currency',tr('currency'),f.currency)+field('counterparty',tr('counterparty'),f.counterparty)+field('description',tr('description'),f.description)+field('referenceNumber',tr('reference'),f.referenceNumber)+
    select('proposedTransactionType',tr('intake.classification'),f.proposedTransactionType,[['EXPENSE',tr('nav.purchase')],['REVENUE',tr('nav.sales')]])+
    select('classificationAccountId',tr('intake.account'),f.classificationAccountId,chart.filter(a=>['EXPENSE','REVENUE'].includes(a.type)).map(a=>[a.id,a.name]))+
@@ -216,9 +218,25 @@ function wireIntake(){
  }));
  view.querySelectorAll('[data-retry-document]').forEach(button=>button.addEventListener('click',()=>run(async()=>{await api('/api/intake/retry',{documentId:button.dataset.retryDocument});await refresh();})));
 }
+function vAssistant(){
+ const status=cache.ob?.ai?.muse;
+ return '<div class="panel"><h2>'+esc(tr('muse.assistant'))+'</h2><p role="status">'+esc(status?.enabled?tr('muse.available')+' · '+status.model:'MUSE_UNAVAILABLE')+'</p><label>'+esc(tr('muse.question'))+'<textarea id="assistantText" maxlength="2000" rows="3">'+esc(assistantText)+'</textarea></label><button type="button" class="btn gold" id="assistantSend">'+esc(tr('ob.send'))+'</button><button type="button" class="btn ghost" id="assistantRules">'+esc(tr('muse.rules'))+'</button><button type="button" class="btn ghost" id="reviewSetup">'+esc(tr('nav.onboarding'))+'</button>'+
+ (assistantResult?'<p role="status">'+esc(assistantResult.provider==='meta'?tr('muse.understood'):'MUSE_UNAVAILABLE')+'</p>'+assistantResult.sections.map(s=>'<section><h3>'+esc(s.kind.replaceAll('_',' '))+'</h3>'+s.facts.map(f=>'<p>'+esc(f.display)+'</p>').join('')+(s.explanation?'<p>'+esc(s.explanation)+'</p>':'')+'</section>').join(''):'')+
+ (assistantDiscovery?'<h3>'+esc(tr('muse.rules'))+'</h3><p>'+esc(assistantDiscovery.status)+'</p>'+assistantDiscovery.candidates.map(c=>'<p><strong>'+esc(c.ruleId)+'</strong> · CANDIDATE · '+esc(c.resolver.status)+'</p><p>'+esc(c.reason)+'</p><p>'+esc(tr('muse.missing'))+': '+esc(c.missingFacts.join(', '))+'</p>').join(''):'')+
+ (status?.traceEnabled?'<button type="button" class="btn ghost" id="assistantTrace">'+esc(tr('muse.trace'))+'</button>':'')+(assistantTrace?'<pre>'+esc(JSON.stringify(assistantTrace,null,2))+'</pre>':'')+'</div>';
+}
+function wireAssistant(){
+ $('#assistantText')?.addEventListener('input',e=>{assistantText=e.target.value;});
+ $('#assistantSend')?.addEventListener('click',()=>run(async()=>{assistantResult=await api('/api/muse/assistant',{question:assistantText});await refreshOb();}));
+ $('#assistantRules')?.addEventListener('click',()=>run(async()=>{assistantDiscovery=await api('/api/muse/discovery',{});await refreshOb();}));
+ $('#assistantTrace')?.addEventListener('click',()=>run(async()=>{assistantTrace=await api('/api/muse/trace');}));
+}
 function render(){
- renderTabs();view.innerHTML=route==='onboarding'?vOnboarding()+'<button type="button" class="btn ghost" id="openIntake">'+esc(tr('nav.intake'))+'</button>':route==='intake'?vIntake():route==='dashboard'?vDashboard():route==='sales'?vTransactions('SALE'):route==='purchase'?vTransactions('PURCHASE'):route==='reports'?vReports():route==='accounting'?vAccounting():route==='import'?vImport():vSettings();
+ renderTabs();view.innerHTML=route==='onboarding'?vOnboarding()+'<button type="button" class="btn ghost" id="openIntake">'+esc(tr('nav.intake'))+'</button>':route==='assistant'?vAssistant():route==='intake'?vIntake():route==='dashboard'?vDashboard():route==='sales'?vTransactions('SALE'):route==='purchase'?vTransactions('PURCHASE'):route==='reports'?vReports():route==='accounting'?vAccounting():route==='import'?vImport():vSettings();
+ if(route==='onboarding'||route==='intake')view.innerHTML+='<button type="button" class="btn ghost" id="openAssistant">'+esc(tr('muse.assistant'))+'</button>';
  topLang.disabled=pending;if(pending)view.querySelectorAll('input,select,textarea,button').forEach(el=>{el.disabled=true;});
+ $('#openAssistant')?.addEventListener('click',()=>{route='assistant';render();});
+ if(route==='assistant')wireAssistant();
  $('#openIntake')?.addEventListener('click',()=>{route='intake';render();});
  if(route==='onboarding'){wireOnboarding();return;}
  if(route==='intake')wireIntake();

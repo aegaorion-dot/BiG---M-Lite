@@ -144,5 +144,12 @@
   "csv.hint": "Use your active organization ID and work/registration country. Currency amounts remain separate.",
   "csv.import": "Import CSV",
   "csv.result": "Rows imported",
-  "tax.review": "Tax settings need review. No final tax liability has been calculated."
+  "tax.review": "Tax settings need review. No final tax liability has been calculated.",
+  "muse.assistant": "BiG-M assistant",
+  "muse.available": "Meta Muse Spark ready",
+  "muse.understood": "Understood with Meta Muse Spark",
+  "muse.question": "Ask about your business, tax readiness or reports",
+  "muse.rules": "Explore governed rule candidates",
+  "muse.missing": "Missing facts",
+  "muse.trace": "View demo trace"
 }

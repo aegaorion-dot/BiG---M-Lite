@@ -120,3 +120,9 @@ Run `npm ci` (Node >=20.19), `npm test`, and `npm start`. See [Phase 5 architect
 Native entry, Chat, Document/OCR, external transactions and external journals now converge on `universal-intake-v1` before the existing PostingService. In **Chat & documents**, register a source, upload generic CSV/JSON, approve account mappings, review rows and possible duplicates, then explicitly confirm. Closed periods, imbalance and missing FX remain blocked.
 
 See the [Phase 6 report](docs/PHASE6-UNIVERSAL-INTAKE.md) for generic schemas, APIs, Original inspection, replay/persistence, limits and the complete 309-test verification. This checkpoint is local only; it has not been pushed.
+
+# Phase 7 live Muse runtime
+
+Configured Meta Muse Spark supplies the shared semantic runtime for onboarding, requirement phrasing, chat/document interpretation, governed rule suggestions and the contextual BiG-M assistant. Deterministic state, resolvers, accounting/tax engines and human confirmation retain authority. Routine `npm test` makes no paid calls.
+
+See the [Phase 7 report](docs/PHASE7-MUSE-RUNTIME.md) for configuration, APIs/demo trace, explicit live commands, real verification and remaining limits. This checkpoint is local only; do not push yet.

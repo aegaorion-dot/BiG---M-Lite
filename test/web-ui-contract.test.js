@@ -38,6 +38,15 @@ async function mount(store){
  await vm.runInContext(fs.readFileSync('public/app.js','utf8'),context);
  return {context,elements,read:code=>vm.runInContext(code,context)};
 }
+describe('Phase 7 contextual assistant SPA',()=>{
+ it('opens before activation and renders authoritative unavailable state',async()=>{
+  const store=createWebStore(),h=await mount(store);await h.elements.get('#openAssistant').handlers.click();assert.equal(h.read('route'),'assistant');assert.match(h.elements.get('#view').innerHTML,/MUSE_UNAVAILABLE/);h.elements.get('#assistantText').handlers.input({target:{value:'How much revenue?'}});await h.elements.get('#assistantSend').handlers.click();assert.match(h.elements.get('#view').innerHTML,/unavailable before workspace activation/);assert.equal(store.ctx.ledger.size,0);
+ });
+ it('assistant discovery is advisory and cannot change the active ledger',async()=>{
+  const store=createActiveStore(),h=await mount(store);h.read("route='assistant';render()");await h.elements.get('#assistantRules').handlers.click();assert.equal(h.read('assistantDiscovery.status'),'MUSE_UNAVAILABLE');assert.equal(store.ctx.ledger.size,0);assert.equal(h.elements.get('#assistantTrace'),undefined);
+ });
+});
+
 describe('Phase 6 external intake SPA',()=>{
  it('registers source, uploads CSV, explicitly approves mappings and confirms through the same UI',async()=>{
   const store=createActiveStore(),h=await mount(store);h.read("route='intake';render()");for(const [id,value]of [['#extId','ui-source'],['#extName','UI source'],['#extCurrency','IDR']])h.elements.get(id).value=value;await h.elements.get('#extRegister').handlers.click();assert.equal(store.intake.list().externalSources.length,1);

@@ -144,5 +144,12 @@
   "csv.hint": "Gunakan ID organisasi aktif dan negara ruang kerja. Nominal setiap mata uang tetap terpisah.",
   "csv.import": "Impor CSV",
   "csv.result": "Baris diimpor",
-  "tax.review": "Pengaturan pajak perlu ditinjau. Kewajiban pajak final belum dihitung."
+  "tax.review": "Pengaturan pajak perlu ditinjau. Kewajiban pajak final belum dihitung.",
+  "muse.assistant": "Asisten BiG-M",
+  "muse.available": "Meta Muse Spark siap",
+  "muse.understood": "Dipahami dengan Meta Muse Spark",
+  "muse.question": "Tanyakan tentang usaha, kesiapan pajak atau laporan",
+  "muse.rules": "Jelajahi kandidat aturan terkelola",
+  "muse.missing": "Fakta belum tersedia",
+  "muse.trace": "Lihat jejak demo"
 }

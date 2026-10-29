@@ -76,14 +76,14 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    current.classificationAccountId=proposal.proposedAccounts?.classificationAccountId??(proposal.proposedTransactionType?ctx.chart?.list().find(a=>a.code===(proposal.proposedTransactionType==='REVENUE'?'401':'501'))?.id:null)??null;
    current.paymentAccountId=proposal.proposedAccounts?.paymentAccountId??(proposal.paymentMethod?ctx.chart?.list().find(a=>a.code==='101')?.id:null)??null;
    const c={candidateId:id,documentId,sourceChannel,sourceId,extractionId:interpretation.extractionId,interpretationId:interpretation.interpretationId,candidateType:proposal.candidateType,current,evidence:clone(proposal.evidence),confidence:proposal.confidence,status:'CANDIDATE',revision:1,revisions:[{revision:1,source:'SEMANTIC_PROPOSAL',at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};
-   c.sourceRef={reference:documentId??sourceId,fileHash:documentId?state.documents[documentId].sha256:null};state.candidates[id]=c;refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_CREATED',id);
+   c.semanticProvenance=clone(interpretation.modelProvenance??null);c.sourceRef={reference:documentId??sourceId,fileHash:documentId?state.documents[documentId].sha256:null};state.candidates[id]=c;refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_CREATED',id);
   }
  }
  async function interpret(extraction,{documentId=null,sourceId,sourceChannel,receivedAt}){
   const interpretationId='interpretation-'+sourceId;
-  const raw=await semanticProvider.interpret({extraction:clone(extraction),sourceChannel,receivedAt});
+  const raw=await semanticProvider.interpret({extraction:clone(extraction),sourceChannel,receivedAt,allowedAccounts:getContext().chart?.list().map(a=>({id:a.id,code:a.code,name:a.name,type:a.type}))??[]});
   const result=validateSemantics(raw,extraction);
-  const record={interpretationId,extractionId:extraction.extractionId,documentId,provider:semanticProvider.name??semanticProvider.constructor.name,createdAt:now(),raw:clone(raw),result};
+  const record={interpretationId,extractionId:extraction.extractionId,documentId,provider:semanticProvider.name??semanticProvider.constructor.name,modelProvenance:semanticProvider.provenance?.()??null,createdAt:now(),raw:clone(raw),result};
   // Profile mutations and intake state share the same durable web-store snapshot.
   const before=clone(state);
   try{

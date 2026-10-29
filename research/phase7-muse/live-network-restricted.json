@@ -1,0 +1,52 @@
+{
+  "verification": "Phase 7 controlled live Meta verification",
+  "role": "acceptance",
+  "at": "2026-10-29T03:58:26.187Z",
+  "model": "muse-spark-1.3",
+  "success": false,
+  "failure": "Live profiling must use Meta, not fallback\n+ actual - expected\n\n+ 'fallback'\n- 'meta'",
+  "journeys": [],
+  "metrics": [
+    {
+      "requestId": "7163b3e1-8e97-40f0-9654-8452b14e46db",
+      "purpose": "business-profiling",
+      "provider": "meta",
+      "model": "muse-spark-1.3",
+      "success": false,
+      "parseSuccess": false,
+      "schemaValidationSuccess": null,
+      "fallbackUsed": true,
+      "cacheHit": false,
+      "attempts": 1,
+      "usage": null,
+      "estimatedCost": null,
+      "costStatus": "NOT_REPORTED",
+      "at": "2026-10-29T03:58:25.984Z",
+      "latencyMs": 185,
+      "failure": "Meta request unavailable or timed out"
+    },
+    {
+      "requestId": "49c66c4e-8d42-4c14-b471-3ae93ab3cfbd",
+      "purpose": "pack-driven-question",
+      "provider": "meta",
+      "model": "muse-spark-1.3",
+      "success": false,
+      "parseSuccess": false,
+      "schemaValidationSuccess": null,
+      "fallbackUsed": true,
+      "cacheHit": false,
+      "attempts": 1,
+      "usage": null,
+      "estimatedCost": null,
+      "costStatus": "NOT_REPORTED",
+      "at": "2026-10-29T03:58:26.177Z",
+      "latencyMs": 4,
+      "failure": "Meta request unavailable or timed out"
+    }
+  ],
+  "requests": 2,
+  "requestCeiling": 8,
+  "syntheticOnly": true,
+  "liveEndpoint": "https://api.meta.ai/v1/responses",
+  "credentialsRecorded": false
+}

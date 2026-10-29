@@ -6,8 +6,11 @@ async function dispatch(store,method,path,query={},body={}){
  const {ctx}=store;
  try{
   const currency=query.currency||ctx.org?.baseCurrency;
-  if(path.startsWith('/api/intake'))store.checkAuth(body?.authToken??query.token??null);
+  if(path.startsWith('/api/intake')||path.startsWith('/api/muse')||path.startsWith('/api/tax/review'))store.checkAuth(body?.authToken??query.token??null);
   if(method==='GET'){
+   if(path==='/api/muse/status')return json({ok:true,...store.museStatus()});
+   if(path==='/api/muse/trace')return json({ok:true,...store.museTrace()});
+   if(path==='/api/tax/review')return json({ok:true,readiness:store.taxReadiness()});
    if(path==='/api/intake')return json({ok:true,...store.intake.list()});
    if(path==='/api/intake/trace')return json({ok:true,...store.intake.trace(query.candidateId)});
    if(path==='/api/intake/external/preview')return json({ok:true,...store.intake.external.preview(query.batchId)});
@@ -31,6 +34,11 @@ async function dispatch(store,method,path,query={},body={}){
   }
   if(method==='POST'){
    const token=body?.authToken??query.token??null;store.checkAuth(token);
+   if(path==='/api/muse/assistant')return json({ok:true,...await store.museAssistant(body)});
+   if(path==='/api/muse/discovery')return json({ok:true,...await store.museDiscovery()});
+   if(path==='/api/tax/review/start')return json({ok:true,readiness:store.beginTaxReview(body.request)});
+   if(path==='/api/tax/review/answer')return json({ok:true,readiness:store.answerTaxReview(body)});
+   if(path==='/api/tax/review/propose')return json({ok:true,proposal:store.proposeTaxReview()});
    if(path==='/api/intake/duplicates/review')return json({ok:true,candidate:await store.intake.resolveDuplicate(body)});
    if(path==='/api/intake/external/source')return json({ok:true,source:await store.intake.external.registerSource(body)},201);
    if(path==='/api/intake/external/mapping')return json({ok:true,mapping:await store.intake.external.approveMapping(body)});

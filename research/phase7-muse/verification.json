@@ -1,0 +1,82 @@
+{
+  "phase": 7,
+  "branch": "hackathon/live-muse-runtime",
+  "parentCheckpoint": "ecae4066783f78489c6fb1e3cebab2d0b56d8396",
+  "phase6Preserved": true,
+  "mainBefore": "d6ce3b0c586761cd9221c613c569fdc2644c504a",
+  "mainAtVerification": "d6ce3b0c586761cd9221c613c569fdc2644c504a",
+  "baseline": {
+    "tests": 309,
+    "passed": 309,
+    "failed": 0
+  },
+  "finalRegression": {
+    "command": "npm test",
+    "tests": 347,
+    "passed": 347,
+    "failed": 0,
+    "added": 38,
+    "routinePaidCalls": 0,
+    "networkGuard": true
+  },
+  "live": {
+    "model": "muse-spark-1.3",
+    "endpoint": "https://api.meta.ai/v1/responses",
+    "successfulRequests": 6,
+    "earlierReachableFailedRequests": 2,
+    "networkRestrictedAttemptsWithoutReportedUsage": 2,
+    "allReachableRequests": 8,
+    "usage": {
+      "input": 5104,
+      "output": 5305,
+      "total": 10409
+    },
+    "cost": null,
+    "costStatus": "NOT_REPORTED",
+    "automaticRetries": 0,
+    "successfulJourneys": [
+      "business-profiling",
+      "profile-correction",
+      "document-understanding",
+      "tax-readiness-explanation",
+      "accounting-explanation"
+    ],
+    "evidence": "live-acceptance.json",
+    "latencyRangeMs": [
+      1411,
+      4685
+    ]
+  },
+  "coreSourcesUnchanged": [
+    "src/accounting",
+    "src/domain",
+    "src/tax",
+    "src/countrypack",
+    "src/fabric",
+    "src/business"
+  ],
+  "credentialScan": {
+    "matches": 0,
+    "envIgnored": true,
+    "secretsPrinted": false
+  },
+  "fileGroups": [
+    "shared Meta client and cognitive runtime/contracts/context/catalog",
+    "web store/server/authenticated APIs",
+    "intake account context and candidate provenance",
+    "assistant SPA and existing-language labels",
+    "guarded finite live runner and test environment",
+    "mock/HTTP/SPA regression tests",
+    "configuration example, README, report and sanitized evidence"
+  ],
+  "remainingLimits": [
+    "live discovery and completed tax determination not exercised; mocked and existing engine regression cover contracts",
+    "scoped tax-pack questions mocked; live next question covered current currency requirement",
+    "structured grounded narrative, no unrestricted financial/legal prose",
+    "existing CLI/API remains tax-review surface; no new wizard or legal content approval",
+    "process request ceiling is not an account-wide spending cap"
+  ],
+  "pushed": false,
+  "historyRewritten": false,
+  "at": "2026-10-29T04:15:02.493Z"
+}
