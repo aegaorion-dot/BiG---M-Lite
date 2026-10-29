@@ -6,8 +6,9 @@ async function dispatch(store,method,path,query={},body={}){
  const {ctx}=store;
  try{
   const currency=query.currency||ctx.org?.baseCurrency;
-  if(path.startsWith('/api/intake')||path.startsWith('/api/muse')||path.startsWith('/api/tax/review'))store.checkAuth(body?.authToken??query.token??null);
+  if(path.startsWith('/api/intake')||path.startsWith('/api/muse')||path.startsWith('/api/tax/review')||path==='/api/financial-position')store.checkAuth(body?.authToken??query.token??null);
   if(method==='GET'){
+   if(path==='/api/financial-position')return json({ok:true,position:store.financialPosition()});
    if(path==='/api/product')return json({ok:true,...store.productState()});
    if(path==='/api/demo/status')return json({ok:true,...(store.demo??{enabled:false})});
    if(path==='/api/i18n/pack')return json({ok:true,pack:await store.languagePack(query.locale)});

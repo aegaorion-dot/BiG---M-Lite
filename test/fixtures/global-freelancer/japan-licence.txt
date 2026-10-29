@@ -1,0 +1,16 @@
+CUSTOMER INVOICE - SYNTHETIC DEMO
+Transaction date: 2026-10-09
+Payment date: 2026-10-09
+Customer: Demo payer JP
+Description: Software licence, IP retained
+Total JPY 400000
+Payment: bank
+Status: paid
+Reference: ENG-08
+Event type: INCOME_RECEIPT
+Income category: SOFTWARE_LICENCE
+Recognition status: EARNED
+Engagement: ENG-08
+Contract total: 400000
+Payer country: JP
+IP retained: YES

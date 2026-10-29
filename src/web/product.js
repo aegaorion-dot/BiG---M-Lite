@@ -3,7 +3,7 @@
 function productState(store, catalog=[]) {
  const ob=store.onboardingState(),ws=store.workspaceProfile(),review=store.taxReadiness(),active=ob.active?.profileSnapshot;
  const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b),facts=[];
- for(const key of ['org.name','org.businessType','user.nationality','currency.functional','currency.reporting']){
+ for(const key of ['org.name','org.businessType','org.legalForm','org.activities','user.nationality','user.homeCountry','user.physicalLocation','user.travelStatus','user.travelDays','org.entityDeclarations','user.taxResidenceDeclaration','user.withholdingDocumentation','currency.functional','currency.reporting']){
   const f=ob.slots[key];if(!f)continue;const confirmed=Boolean(active&&ob.active.profileRevision===ob.profileRevision&&same(active.slots[key]?.value,f.value));
   facts.push({role:key,value:f.value,status:f.value==null?'UNKNOWN':confirmed?'CONFIRMED':f.status==='CONFLICT'?'CONFLICT':'CANDIDATE'});
  }
@@ -18,7 +18,7 @@ function productState(store, catalog=[]) {
  if(!ws.activated||!review||review.requiredMissingFacts?.length)reasons.push({status:'MISSING_INFORMATION',code:!review?'TAX_SCOPE_REQUIRED':review.status,missing:review?.requiredMissingFacts??[]});
  if(resolution?.status==='OUT_OF_PERIOD'||review?.status==='OUT_OF_PERIOD')reasons.push({status:'OUT_OF_PERIOD',code:'OUT_OF_PERIOD'});
  if(!packs.some(p=>p.kind==='COUNTRY_PACK'&&p.governance==='APPROVED_EXECUTABLE'))reasons.push({status:'MISSING_APPROVED_RULE',code:'NO_APPROVED_EXECUTABLE_RULE'});
- if(contextCountries.size>1&&packs.some(p=>p.kind==='TREATY_PACK'))reasons.push({status:'TREATY_REVIEW_REQUIRED',code:'APPLICABILITY_NOT_ESTABLISHED'});
+ if(contextCountries.size>1&&(packs.some(p=>p.kind==='TREATY_PACK')||store.financialPosition?.().treatyContexts?.length))reasons.push({status:'TREATY_REVIEW_REQUIRED',code:'APPLICABILITY_NOT_ESTABLISHED'});
  if(review?.authoritativeDetermination&&review.taxReady)reasons.push({status:'READY',code:review.status});
  else reasons.push({status:'REVIEW_REQUIRED',code:review?.status??resolution?.reason??'EXPLICIT_TAX_REVIEW_REQUIRED'});
  const cash=ws.activated?store.summary().balances.filter(b=>b.code==='101'):[];

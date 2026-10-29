@@ -9,8 +9,9 @@ const {fingerprint}=require('../onboarding/canonical');
 const {canonicalCommand,economicFingerprint,reviewHash:canonicalReviewHash}=require('./canonical');
 const {approvedFx,binding,quoteHash,convert}=require('../fx/rates');
 const {blankExternalState,createExternalIntake}=require('./external');
+const financial=require('./financialReview');
 const clone=x=>structuredClone(x),now=()=>new Date().toISOString();
-const EDITABLE=['transactionDate','amount','currency','counterparty','proposedTransactionType','description','paymentMethod','referenceNumber','settlementStatus','classificationAccountId','paymentAccountId'];
+const EDITABLE=['transactionDate','amount','currency','counterparty','proposedTransactionType','description','paymentMethod','referenceNumber','settlementStatus','classificationAccountId','paymentAccountId',...financial.FIELDS];
 function blankIntakeState(){return {version:2,documents:{},extractions:{},interpretations:{},candidates:{},chats:{},keys:{},events:[],external:blankExternalState(),duplicateVersions:{}};}
 function human(actor){if(typeof actor!=='string'||!actor.trim()||actor.length>100||/^(ai|model|muse|meta|system)(?:$|[: -])/i.test(actor))throw Error('Explicit human actor required');}
 function createIntakeService({state,getContext,persist,commitPosting,applyProfileFacts,fxService,extractionProvider=new LocalExtractionProvider(),semanticProvider=new DeterministicSemanticProvider()}){
@@ -43,12 +44,13 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   if(f.currency&&!isKnownCurrency(f.currency))conflicts.push('Unsupported currency');
   if(ctx.org&&f.currency&&f.currency!==ctx.org.baseCurrency&&!approvedFx(c,ctx.workspace))conflicts.push('FX_UNAVAILABLE / FX_REQUIRED: transaction currency differs from functional currency; review dated FX quote');
   if(f.amount&&f.currency)try{const m=Money.fromMajor(f.amount,f.currency);if(m.amountMinor<=0n)conflicts.push('Amount must be positive');}catch{conflicts.push('Amount must be an exact positive decimal for this currency');}
-  if(f.proposedTransactionType&&!['REVENUE','EXPENSE'].includes(f.proposedTransactionType))conflicts.push('Unsupported classification; transfers require a later reviewed workflow');
+  if(f.eventType){conflicts.push(...financial.issues(f,ctx.chart));if(!['POSTED','REJECTED'].includes(c.status))conflicts.push(...financial.engagementIssues(c,Object.values(state.candidates),ctx.ledger.list()));}
+  else if(f.proposedTransactionType&&!['REVENUE','EXPENSE'].includes(f.proposedTransactionType))conflicts.push('Unsupported classification; transfers require a later reviewed workflow');
   if(f.settlementStatus!=='PAID')missingFields.push('settlementStatus: confirm paid cash/bank transaction; unpaid invoices are review-only');
   const expected=f.proposedTransactionType==='REVENUE'?'REVENUE':'EXPENSE';
-  for(const [key,type]of [['classificationAccountId',expected],['paymentAccountId','ASSET']])if(f[key]&&(!ctx.chart?.has(f[key])||ctx.chart.get(f[key]).type!==type||key==='paymentAccountId'&&ctx.chart.get(f[key]).code!=='101'))conflicts.push('Invalid '+key+' for existing chart / cash-bank posting path');
+  if(!f.eventType)for(const [key,type]of [['classificationAccountId',expected],['paymentAccountId','ASSET']])if(f[key]&&(!ctx.chart?.has(f[key])||ctx.chart.get(f[key]).type!==type||key==='paymentAccountId'&&ctx.chart.get(f[key]).code!=='101'))conflicts.push('Invalid '+key+' for existing chart / cash-bank posting path');
   if(ctx.org&&f.transactionDate)try{ctx.periods.getPostingPeriod(ctx.org.id,f.transactionDate);}catch(e){conflicts.push(e.message);}
-  if(ctx.org&&!ctx.modules.includes(f.proposedTransactionType==='REVENUE'?'sales':'purchase'))conflicts.push('Required workspace module is not enabled');
+  if(ctx.org&&!ctx.modules.includes(f.eventType?'accounting':f.proposedTransactionType==='REVENUE'?'sales':'purchase'))conflicts.push('Required workspace module is not enabled');
   if(f.amount&&f.currency&&f.taxAmount&&f.subtotal)try{if(!Money.fromMajor(f.subtotal,f.currency).add(Money.fromMajor(f.taxAmount,f.currency)).equals(Money.fromMajor(f.amount,f.currency)))conflicts.push('Subtotal plus observed tax differs from total');}catch{conflicts.push('Invalid observed subtotal/tax');}
   }else{
    for(const field of ['transactionDate','currency','description','amount'])if(!f[field])missingFields.push(field);
@@ -76,6 +78,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    const current=clone(proposal);delete current.evidence;delete current.confidence;delete current.proposedAccounts;
    current.classificationAccountId=proposal.proposedAccounts?.classificationAccountId??(proposal.proposedTransactionType?ctx.chart?.list().find(a=>a.code===(proposal.proposedTransactionType==='REVENUE'?'401':'501'))?.id:null)??null;
    current.paymentAccountId=proposal.proposedAccounts?.paymentAccountId??(proposal.paymentMethod?ctx.chart?.list().find(a=>a.code==='101')?.id:null)??null;
+   if(current.eventType){const codes=financial.accountCodes(current);current.classificationAccountId=ctx.chart?.list().find(a=>a.code===codes.classification)?.id??null;current.paymentAccountId=ctx.chart?.list().find(a=>a.code===codes.payment)?.id??null;}
    const c={candidateId:id,documentId,sourceChannel,sourceId,extractionId:interpretation.extractionId,interpretationId:interpretation.interpretationId,candidateType:proposal.candidateType,current,evidence:clone(proposal.evidence),confidence:proposal.confidence,status:'CANDIDATE',revision:1,revisions:[{revision:1,source:'SEMANTIC_PROPOSAL',at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};
    c.documentCurrency=sourceChannel==='DOCUMENT'?proposal.currency:null;c.semanticProvenance=clone(interpretation.modelProvenance??null);c.sourceRef={reference:documentId??sourceId,fileHash:documentId?state.documents[documentId].sha256:null};state.candidates[id]=c;refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_CREATED',id);
   }

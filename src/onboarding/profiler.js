@@ -9,6 +9,7 @@ const {isFunctionalCorrection,isDirectCurrencyAnswer,currencyMentionMatches}=req
 const ALLOWED_BUSINESS_TYPES=Object.freeze(['freelancer','small-business','umkm','perdagangan','jasa','kuliner','manufaktur']);
 const ALLOWED_MODULES=Object.freeze(['sales','purchase','accounting','reports','import']);
 const SUBJECT_TYPES=Object.freeze(['COMPANY','INDIVIDUAL','PARTNERSHIP']);
+const ACTIVITIES=Object.freeze(['INFLUENCER','CREATOR','FREELANCER','SOFTWARE_LICENSOR','AFFILIATE_MARKETER']);
 const ALLOWED_FACT_SLOTS=Object.freeze(Object.keys(blankSlots()));
 const CRITICAL_SLOTS=Object.freeze(['currency.functional']);
 const SYSTEM_PROMPT=[
@@ -17,6 +18,7 @@ const SYSTEM_PROMPT=[
  'Never invent missing business facts, jurisdiction, currency, tax laws, rates, FX sources, or approval.',
  'Each nonempty fact needs an exact contiguous supportingQuote from the current message.',
  'All extracted assertions remain CANDIDATE. Never return APPROVED or CONFIRMED.',
+ 'Preserve explicit home country (user.homeCountry), current physical location (user.physicalLocation), travel status/days, individual legal form and activities in separate slots. org.activities uses only the capability enum; retain multiple activities when evidenced. A vacation is not a tax-residence or registration assertion. Negated entity/residence statements are declarations, never positive jurisdiction facts.',
  'Keep nationality separate from work, registration, incorporation, tax residence, bank and customer location.',
  'Never infer jurisdiction solely from language, nationality, customers or bank location.',
  'Never infer functional currency solely from country, currency of payments or foreign purchases.',
@@ -35,6 +37,7 @@ function valueValid(key,value){
  if(type==='country')return typeof value==='string'&&isKnownJurisdiction(value);
  if(type==='currency')return typeof value==='string'&&isKnownCurrency(value);
  if(type==='currencies')return Array.isArray(value)&&value.every(c=>typeof c==='string'&&isKnownCurrency(c));
+ if(type==='activities')return Array.isArray(value)&&value.length<=10&&value.every(v=>ACTIVITIES.includes(v));
  if(type==='modules')return Array.isArray(value)&&value.length>0&&value.every(c=>ALLOWED_MODULES.includes(c));
  if(type==='businessType')return ALLOWED_BUSINESS_TYPES.includes(value);
  if(type==='subjectType')return SUBJECT_TYPES.includes(value);
@@ -48,7 +51,7 @@ function normalizeValue(key,value){
   if(['language','businessType'].includes(type))return value.trim().toLowerCase();
   return value.trim();
  }
- if(Array.isArray(value)&&value.every(v=>typeof v==='string'))return [...new Set(value.map(v=>type==='currencies'?v.trim().toUpperCase():v.trim().toLowerCase()))];
+ if(Array.isArray(value)&&value.every(v=>typeof v==='string'))return [...new Set(value.map(v=>['currencies','activities'].includes(type)?v.trim().toUpperCase():v.trim().toLowerCase()))];
  return value;
 }
 function validateExtractorPayload(raw,{userText=null,pendingQuestion=null,previousCurrencyRole=null}={}){
@@ -174,6 +177,6 @@ function validateConfiguration(plan){
  return errors.length?{ok:false,errors}:{ok:true,validated:JSON.parse(JSON.stringify(plan))};
 }
 const RESPONSE_SCHEMA={type:'object',required:['facts','jurisdictionFacts'],additionalProperties:false,properties:{
- facts:{type:'array',items:{type:'object',required:['slot','value','source','supportingQuote','confidence','status','operation'],properties:{slot:{enum:ALLOWED_FACT_SLOTS},value:{},source:{enum:['USER','AI_INFERENCE']},supportingQuote:{type:'string'},confidence:{type:['number','null']},status:{enum:['CANDIDATE','UNKNOWN']},operation:{enum:['SET','ADD','REPLACE','REMOVE']}}}},
- jurisdictionFacts:{type:'array',items:{type:'object',required:['basis','countryCode','source','supportingQuote','confidence','status','operation'],properties:{basis:{enum:BASES},countryCode:{type:['string','null']},source:{enum:['USER','AI_INFERENCE']},supportingQuote:{type:'string'},confidence:{type:['number','null']},status:{enum:['CANDIDATE','UNKNOWN','REJECTED']},operation:{enum:['SET','ADD','REPLACE','REMOVE']}}}}}};
-module.exports={SYSTEM_PROMPT,RESPONSE_SCHEMA,ALLOWED_FACT_SLOTS,ALLOWED_BUSINESS_TYPES,ALLOWED_MODULES,SUBJECT_TYPES,CRITICAL_SLOTS,blankProfileState,validateExtractorPayload,applyFacts,gapAnalysis,planQuestion,planConfiguration,validateConfiguration,slotValue,jurisdictionValue};
+ facts:{type:'array',items:{type:'object',required:['slot','value','source','supportingQuote','confidence','status','operation'],properties:{slot:{enum:ALLOWED_FACT_SLOTS},value:{},source:{enum:['USER','AI_INFERENCE']},supportingQuote:{type:'string',minLength:1,maxLength:200},confidence:{type:'number',minimum:0,maximum:1},status:{enum:['CANDIDATE','UNKNOWN']},operation:{enum:['SET','ADD','REPLACE','REMOVE']}}}},
+ jurisdictionFacts:{type:'array',items:{type:'object',required:['basis','countryCode','source','supportingQuote','confidence','status','operation'],properties:{basis:{enum:BASES},countryCode:{type:['string','null']},source:{enum:['USER','AI_INFERENCE']},supportingQuote:{type:'string',minLength:1,maxLength:200},confidence:{type:'number',minimum:0,maximum:1},status:{enum:['CANDIDATE','UNKNOWN','REJECTED']},operation:{enum:['SET','ADD','REPLACE','REMOVE']}}}}}};
+module.exports={SYSTEM_PROMPT,RESPONSE_SCHEMA,ALLOWED_FACT_SLOTS,ALLOWED_BUSINESS_TYPES,ACTIVITIES,ALLOWED_MODULES,SUBJECT_TYPES,CRITICAL_SLOTS,blankProfileState,validateExtractorPayload,applyFacts,gapAnalysis,planQuestion,planConfiguration,validateConfiguration,slotValue,jurisdictionValue};

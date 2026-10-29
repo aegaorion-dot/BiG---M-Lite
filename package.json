@@ -33,7 +33,10 @@
     "packs:probe": "node scripts/phase4-probe.js",
     "packs:normalize": "node scripts/phase4-normalize.js",
     "packs:build": "node scripts/phase4-build-catalog.js",
-    "packs:demo": "node scripts/phase4-demo.js"
+    "packs:demo": "node scripts/phase4-demo.js",
+    "test:global:freelancer": "node scripts/global-freelancer.js",
+    "test:global:browser": "node --experimental-websocket scripts/global-freelancer.js --browser",
+    "test:global:live": "node scripts/global-live.js"
   },
   "license": "UNLICENSED",
   "dependencies": {

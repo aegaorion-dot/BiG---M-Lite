@@ -1,0 +1,2907 @@
+{
+  "success": true,
+  "complete": true,
+  "timings": {
+    "onboardingMs": 6062,
+    "incomeNormalizationMs": 3496,
+    "statementImportMs": 19091
+  },
+  "totalMs": 56961,
+  "position": {
+    "available": true,
+    "hasFinancialEvents": true,
+    "currency": "USD",
+    "period": {
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-31"
+    },
+    "engagementCount": 15,
+    "eventCount": 30,
+    "legacyEventCount": 0,
+    "cashReceived": {
+      "amountMinor": "3205110",
+      "currency": "USD"
+    },
+    "cardSpending": {
+      "amountMinor": "600147",
+      "currency": "USD"
+    },
+    "totalSpending": {
+      "amountMinor": "600147",
+      "currency": "USD"
+    },
+    "businessClassifiedSpending": {
+      "amountMinor": "134514",
+      "currency": "USD"
+    },
+    "personalSpending": {
+      "amountMinor": "157934",
+      "currency": "USD"
+    },
+    "mixedSpending": {
+      "amountMinor": "307699",
+      "currency": "USD"
+    },
+    "businessRecognitionReview": {
+      "amountMinor": "99014",
+      "currency": "USD"
+    },
+    "cardRepayments": {
+      "amountMinor": "800000",
+      "currency": "USD"
+    },
+    "recognizedBusinessIncome": {
+      "amountMinor": "2494110",
+      "currency": "USD"
+    },
+    "confirmedBusinessExpenses": {
+      "amountMinor": "35500",
+      "currency": "USD"
+    },
+    "employmentWage": {
+      "amountMinor": "390000",
+      "currency": "USD"
+    },
+    "advances": {
+      "amountMinor": "321000",
+      "currency": "USD"
+    },
+    "cardLiability": {
+      "amountMinor": "50147",
+      "currency": "USD"
+    },
+    "cashBankBalance": {
+      "amountMinor": "4405110",
+      "currency": "USD"
+    },
+    "unallocatedSpending": {
+      "amountMinor": "406713",
+      "currency": "USD"
+    },
+    "personalDrawings": {
+      "amountMinor": "157934",
+      "currency": "USD"
+    },
+    "receivables": {
+      "items": [
+        {
+          "engagementId": "ENG-01",
+          "payerCountry": "JP",
+          "contractTotal": {
+            "amountMinor": "600000",
+            "currency": "JPY"
+          },
+          "received": {
+            "amountMinor": "300000",
+            "currency": "JPY"
+          },
+          "outstanding": {
+            "amountMinor": "300000",
+            "currency": "JPY"
+          },
+          "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+        },
+        {
+          "engagementId": "ENG-04",
+          "payerCountry": "EG",
+          "contractTotal": {
+            "amountMinor": "300000",
+            "currency": "USD"
+          },
+          "received": {
+            "amountMinor": "120000",
+            "currency": "USD"
+          },
+          "outstanding": {
+            "amountMinor": "180000",
+            "currency": "USD"
+          },
+          "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+        }
+      ],
+      "byCurrency": {
+        "JPY": {
+          "amountMinor": "300000",
+          "currency": "JPY"
+        },
+        "USD": {
+          "amountMinor": "180000",
+          "currency": "USD"
+        }
+      },
+      "functionalTotal": null,
+      "basis": "CONTRACTUAL_OUTSTANDING; NOT CASH; NO AUTOMATIC REVENUE_RECOGNITION"
+    },
+    "incomeByType": {
+      "ADVANCE_PAYMENT": {
+        "amountMinor": "321000",
+        "currency": "USD"
+      },
+      "AFFILIATE_COMMISSION": {
+        "amountMinor": "398000",
+        "currency": "USD"
+      },
+      "EMPLOYMENT_WAGE": {
+        "amountMinor": "390000",
+        "currency": "USD"
+      },
+      "PROJECT_SERVICE": {
+        "amountMinor": "1630110",
+        "currency": "USD"
+      },
+      "SOFTWARE_LICENCE": {
+        "amountMinor": "466000",
+        "currency": "USD"
+      }
+    },
+    "incomeByCurrency": {
+      "AED": {
+        "amountMinor": "700000",
+        "currency": "AED"
+      },
+      "AUD": {
+        "amountMinor": "1000000",
+        "currency": "AUD"
+      },
+      "GBP": {
+        "amountMinor": "610000",
+        "currency": "GBP"
+      },
+      "JPY": {
+        "amountMinor": "1450000",
+        "currency": "JPY"
+      },
+      "USD": {
+        "amountMinor": "590000",
+        "currency": "USD"
+      }
+    },
+    "expenseByType": {
+      "CARD_FEES": {
+        "amountMinor": "9500",
+        "currency": "USD"
+      },
+      "CLOTHING": {
+        "amountMinor": "27230",
+        "currency": "USD"
+      },
+      "ENTERTAINMENT": {
+        "amountMinor": "35399",
+        "currency": "USD"
+      },
+      "EQUIPMENT": {
+        "amountMinor": "49014",
+        "currency": "USD"
+      },
+      "FUEL_TRANSPORT": {
+        "amountMinor": "51737",
+        "currency": "USD"
+      },
+      "GROCERIES": {
+        "amountMinor": "40845",
+        "currency": "USD"
+      },
+      "HOTEL": {
+        "amountMinor": "245070",
+        "currency": "USD"
+      },
+      "MEALS": {
+        "amountMinor": "54460",
+        "currency": "USD"
+      },
+      "PHONE_DATA": {
+        "amountMinor": "10892",
+        "currency": "USD"
+      },
+      "SOFTWARE_LICENCE_PURCHASE": {
+        "amountMinor": "50000",
+        "currency": "USD"
+      },
+      "SUBSCRIPTION": {
+        "amountMinor": "26000",
+        "currency": "USD"
+      }
+    },
+    "spendingByPurpose": {
+      "BUSINESS": {
+        "amountMinor": "134514",
+        "currency": "USD"
+      },
+      "MIXED": {
+        "amountMinor": "307699",
+        "currency": "USD"
+      },
+      "PERSONAL": {
+        "amountMinor": "157934",
+        "currency": "USD"
+      }
+    },
+    "profit": {
+      "status": "PROVISIONAL_REVIEW_REQUIRED",
+      "provisionalRecognizedBusinessNet": {
+        "amountMinor": "2458610",
+        "currency": "USD"
+      },
+      "finalBusinessProfit": null
+    },
+    "countries": {
+      "citizenship": "US",
+      "homeCountry": "US",
+      "physicalLocation": "AE",
+      "workLocations": [
+        "AE"
+      ],
+      "taxResidence": [],
+      "registration": [],
+      "payerCountries": [
+        "AE",
+        "AU",
+        "EG",
+        "GB",
+        "JP",
+        "KE"
+      ],
+      "incomeSourceCountries": [],
+      "entityDeclaration": "No UAE company",
+      "travelStatus": "TEMPORARY_VACATION",
+      "travelDays": "30"
+    },
+    "treatyContexts": [
+      {
+        "homeCountry": "US",
+        "payerCountry": "AE",
+        "status": "TREATY_REVIEW_REQUIRED",
+        "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+        "applicabilityConfirmed": false
+      },
+      {
+        "homeCountry": "US",
+        "payerCountry": "AU",
+        "status": "TREATY_REVIEW_REQUIRED",
+        "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+        "applicabilityConfirmed": false
+      },
+      {
+        "homeCountry": "US",
+        "payerCountry": "EG",
+        "status": "TREATY_REVIEW_REQUIRED",
+        "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+        "applicabilityConfirmed": false
+      },
+      {
+        "homeCountry": "US",
+        "payerCountry": "GB",
+        "status": "TREATY_REVIEW_REQUIRED",
+        "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+        "applicabilityConfirmed": false
+      },
+      {
+        "homeCountry": "US",
+        "payerCountry": "JP",
+        "status": "TREATY_REVIEW_REQUIRED",
+        "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+        "applicabilityConfirmed": false
+      },
+      {
+        "homeCountry": "US",
+        "payerCountry": "KE",
+        "status": "TREATY_REVIEW_REQUIRED",
+        "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+        "applicabilityConfirmed": false
+      }
+    ],
+    "taxReadiness": {
+      "status": "REVIEW_REQUIRED",
+      "finalTax": null,
+      "withholding": "WITHHOLDING_UNKNOWN_DOCUMENT_REQUIRED",
+      "withholdingDeclaration": "MISSING",
+      "missingCoverage": [
+        "US",
+        "AE",
+        "AU",
+        "EG",
+        "GB",
+        "JP",
+        "KE"
+      ],
+      "scopedStatus": "CONFLICT",
+      "blockers": [
+        "APPROVED_COUNTRY_PACK_COVERAGE_REQUIRES_REVIEW",
+        "TAX_RESIDENCE_NOT_CONFIRMED",
+        "PAYER_COUNTRY_DOES_NOT_ESTABLISH_INCOME_SOURCE",
+        "TREATY_REVIEW_REQUIRED",
+        "WITHHOLDING_CERTIFICATES_MISSING",
+        "EARNING_REVIEW_REQUIRED",
+        "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+        "ALLOCATION_REVIEW_REQUIRED",
+        "EXPENSE_OR_ASSET_REVIEW_REQUIRED"
+      ]
+    },
+    "reviewItems": [
+      {
+        "id": "candidate-8c670f0acf23a6d48975474ab2f15039",
+        "status": "EARNING_REVIEW_REQUIRED",
+        "description": "Brand campaign deposit"
+      },
+      {
+        "id": "candidate-ffde9330136f0e95dc2c383d0e57d66c",
+        "status": "EARNING_REVIEW_REQUIRED",
+        "description": "Campaign deposit"
+      },
+      {
+        "id": "candidate-8bbb3d304939ee2f613bb8c4202b2290",
+        "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+        "description": "Software licence, IP retained"
+      },
+      {
+        "id": "candidate-da439768b240522916627303ace6d70a",
+        "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+        "description": "Software licence, IP retained"
+      },
+      {
+        "id": "candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+        "status": "ALLOCATION_REVIEW_REQUIRED",
+        "description": "Hotel Dubai",
+        "purpose": "MIXED",
+        "reason": "Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.",
+        "allocationPercent": null
+      },
+      {
+        "id": "candidate-70def772ae738e91a92bfdd8bb6a0c8364018985d39e9d54fcb1530e06c9a32a",
+        "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+        "description": "Editing software licence",
+        "purpose": "BUSINESS",
+        "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+        "allocationPercent": null
+      },
+      {
+        "id": "candidate-cf6ff0cc5ed3ada531961c010ca81ab2d37adb45d92852695dcf8c1f23eafab2",
+        "status": "ALLOCATION_REVIEW_REQUIRED",
+        "description": "Fuel",
+        "purpose": "MIXED",
+        "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+        "allocationPercent": null
+      },
+      {
+        "id": "candidate-9dc94f03ef59e36313df00c9e4dddcca702b627f6ecb138657dff0b89c6cf777",
+        "status": "ALLOCATION_REVIEW_REQUIRED",
+        "description": "Rideshare",
+        "purpose": "MIXED",
+        "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+        "allocationPercent": null
+      },
+      {
+        "id": "candidate-12296e8cb9156dc11ed4a667fd742cd4870963927f2854ca5d1a37f389b5a8e4",
+        "status": "ALLOCATION_REVIEW_REQUIRED",
+        "description": "Phone data",
+        "purpose": "MIXED",
+        "reason": "Phone/data used for both business calls and personal use.",
+        "allocationPercent": null
+      },
+      {
+        "id": "candidate-3ae5cebb6570a169e1cb60293513b0ee0d3a56a8b94d5f0a736f5b79b6a9acbe",
+        "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+        "description": "Camera accessory",
+        "purpose": "BUSINESS",
+        "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+        "allocationPercent": null
+      }
+    ],
+    "confirmedFacts": {
+      "profileConfirmed": true,
+      "taxLawApproved": false,
+      "allocationPercentageApproved": false
+    },
+    "accounting": {
+      "balanced": true,
+      "journalCount": 31
+    },
+    "lineage": [
+      {
+        "candidateId": "candidate-8c670f0acf23a6d48975474ab2f15039",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-8c670f0acf23a6d48975474ab2f15039",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-c9d47406e635ec2c092b1b861fceedd3",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-c9d47406e635ec2c092b1b861fceedd3",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-368d0543f7985916480e7419defed0c4",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-368d0543f7985916480e7419defed0c4",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-ffde9330136f0e95dc2c383d0e57d66c",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-ffde9330136f0e95dc2c383d0e57d66c",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-62933f5a006adc39ee6d211df41e1801",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-62933f5a006adc39ee6d211df41e1801",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-c6de536cb4c4ab25075a6768411a1859",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-c6de536cb4c4ab25075a6768411a1859",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-8396fbba307e09610671d5b8453a96fd",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-8396fbba307e09610671d5b8453a96fd",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-8bbb3d304939ee2f613bb8c4202b2290",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-8bbb3d304939ee2f613bb8c4202b2290",
+        "sourceChannel": "DOCUMENT"
+      },
+      {
+        "candidateId": "candidate-da439768b240522916627303ace6d70a",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-da439768b240522916627303ace6d70a",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-11ac4159768a2be715180dc21b774609",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-11ac4159768a2be715180dc21b774609",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-82dedbf44af910d9f14f30b5413c9b93",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-82dedbf44af910d9f14f30b5413c9b93",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-57b1c32d2ae72207f5e271bf6d458d85",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-57b1c32d2ae72207f5e271bf6d458d85",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-35ab9f0da0c64d04f8be33389648f77a",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-35ab9f0da0c64d04f8be33389648f77a",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-f7089b25e26fbb622d0e639c68f7aa95",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-f7089b25e26fbb622d0e639c68f7aa95",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-66ea63c33653a098d417d950827860b6",
+        "eventType": "INCOME_RECEIPT",
+        "journalId": "j-intake-candidate-66ea63c33653a098d417d950827860b6",
+        "sourceChannel": "CHAT"
+      },
+      {
+        "candidateId": "candidate-7c7aa3636ab8ab768ad512dec480a050",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-7c7aa3636ab8ab768ad512dec480a050",
+        "sourceChannel": "DOCUMENT"
+      },
+      {
+        "candidateId": "candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-8bfa06dd46445b3de0f10ab6b8d7824b0dc556b10d25ef650d2b187c3f4d90fd",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-8bfa06dd46445b3de0f10ab6b8d7824b0dc556b10d25ef650d2b187c3f4d90fd",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-70def772ae738e91a92bfdd8bb6a0c8364018985d39e9d54fcb1530e06c9a32a",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-70def772ae738e91a92bfdd8bb6a0c8364018985d39e9d54fcb1530e06c9a32a",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-cf6ff0cc5ed3ada531961c010ca81ab2d37adb45d92852695dcf8c1f23eafab2",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-cf6ff0cc5ed3ada531961c010ca81ab2d37adb45d92852695dcf8c1f23eafab2",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-9dc94f03ef59e36313df00c9e4dddcca702b627f6ecb138657dff0b89c6cf777",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-9dc94f03ef59e36313df00c9e4dddcca702b627f6ecb138657dff0b89c6cf777",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-bd144222c19fbd477b696526205bb8f276e04035e4ff952b8b0f66edece45574",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-bd144222c19fbd477b696526205bb8f276e04035e4ff952b8b0f66edece45574",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-04b3c14c06838508c3aa91d8d16367291cb42a88d8e60b14830f917f2c2dccfe",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-04b3c14c06838508c3aa91d8d16367291cb42a88d8e60b14830f917f2c2dccfe",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-812cb96e8cdc95d3eef8f9c130db526dcc4ad60b77e975c80ec9fa936e53dad8",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-812cb96e8cdc95d3eef8f9c130db526dcc4ad60b77e975c80ec9fa936e53dad8",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-12296e8cb9156dc11ed4a667fd742cd4870963927f2854ca5d1a37f389b5a8e4",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-12296e8cb9156dc11ed4a667fd742cd4870963927f2854ca5d1a37f389b5a8e4",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-3ae5cebb6570a169e1cb60293513b0ee0d3a56a8b94d5f0a736f5b79b6a9acbe",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-3ae5cebb6570a169e1cb60293513b0ee0d3a56a8b94d5f0a736f5b79b6a9acbe",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-ce9c5e3afce667d8684bb8915924367ab04829f26a81838bd23762b953ace5c8",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-ce9c5e3afce667d8684bb8915924367ab04829f26a81838bd23762b953ace5c8",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-1d9cd84f35070de1ec50ad49adc6103d8c334a648ae48e6c1f439b48ad4f6f6a",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-1d9cd84f35070de1ec50ad49adc6103d8c334a648ae48e6c1f439b48ad4f6f6a",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-69c68f3fd0b01d5d0e715843e65a7eee555c812b86f8778bca8dca649f292cb4",
+        "eventType": "CARD_PURCHASE",
+        "journalId": "j-intake-candidate-69c68f3fd0b01d5d0e715843e65a7eee555c812b86f8778bca8dca649f292cb4",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      },
+      {
+        "candidateId": "candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+        "eventType": "CARD_REPAYMENT",
+        "journalId": "j-intake-candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+        "sourceChannel": "EXTERNAL_TRANSACTION"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question": "How much money did I actually receive this month?",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "1dcb1dbbe8861fa1f7957c338cce97c073e52e8bc3ed9f0c6813de0725654c07",
+        "sections": [
+          {
+            "kind": "CALCULATED_RESULT",
+            "facts": [
+              {
+                "id": "position.cashReceived",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "amountMinor": "3205110",
+                  "currency": "USD"
+                },
+                "display": "Cash actually received: USD 32,051.10. Outstanding contract balances and opening funds are excluded."
+              },
+              {
+                "id": "position.receivables",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "items": [
+                    {
+                      "engagementId": "ENG-01",
+                      "payerCountry": "JP",
+                      "contractTotal": {
+                        "amountMinor": "600000",
+                        "currency": "JPY"
+                      },
+                      "received": {
+                        "amountMinor": "300000",
+                        "currency": "JPY"
+                      },
+                      "outstanding": {
+                        "amountMinor": "300000",
+                        "currency": "JPY"
+                      },
+                      "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+                    },
+                    {
+                      "engagementId": "ENG-04",
+                      "payerCountry": "EG",
+                      "contractTotal": {
+                        "amountMinor": "300000",
+                        "currency": "USD"
+                      },
+                      "received": {
+                        "amountMinor": "120000",
+                        "currency": "USD"
+                      },
+                      "outstanding": {
+                        "amountMinor": "180000",
+                        "currency": "USD"
+                      },
+                      "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+                    }
+                  ],
+                  "byCurrency": {
+                    "JPY": {
+                      "amountMinor": "300000",
+                      "currency": "JPY"
+                    },
+                    "USD": {
+                      "amountMinor": "180000",
+                      "currency": "USD"
+                    }
+                  },
+                  "functionalTotal": null,
+                  "basis": "CONTRACTUAL_OUTSTANDING; NOT CASH; NO AUTOMATIC REVENUE_RECOGNITION"
+                },
+                "display": "Clients contractually still owe: JPY 300,000; USD 1,800.00. These are original-currency contract balances, not cash or automatically recognized accounts receivable; no new FX valuation was invented."
+              },
+              {
+                "id": "position.incomeTypes",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "ADVANCE_PAYMENT": {
+                    "amountMinor": "321000",
+                    "currency": "USD"
+                  },
+                  "AFFILIATE_COMMISSION": {
+                    "amountMinor": "398000",
+                    "currency": "USD"
+                  },
+                  "EMPLOYMENT_WAGE": {
+                    "amountMinor": "390000",
+                    "currency": "USD"
+                  },
+                  "PROJECT_SERVICE": {
+                    "amountMinor": "1630110",
+                    "currency": "USD"
+                  },
+                  "SOFTWARE_LICENCE": {
+                    "amountMinor": "466000",
+                    "currency": "USD"
+                  }
+                },
+                "display": "Received by category: Advances received: USD 3,210.00; Affiliate commissions: USD 3,980.00; Employment wages: USD 3,900.00; Projects and services: USD 16,301.10; Software licences: USD 4,660.00. Advances of USD 3,210.00 remain a liability; employment wages of USD 3,900.00 are separate from business income. Licence receipts retain their licence/IP facts and require tax classification review."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "d313de58-6a0f-44cc-a2b2-df7a3c51aac8",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:24.938Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 2
+        }
+      }
+    },
+    {
+      "question": "How much do clients still owe me?",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "a883154ed05c4960c8adcaa5ec7f8f23d3c29cbf0989da471a07841b98fce8ac",
+        "sections": [
+          {
+            "kind": "CALCULATED_RESULT",
+            "facts": [
+              {
+                "id": "position.cashReceived",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "amountMinor": "3205110",
+                  "currency": "USD"
+                },
+                "display": "Cash actually received: USD 32,051.10. Outstanding contract balances and opening funds are excluded."
+              },
+              {
+                "id": "position.receivables",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "items": [
+                    {
+                      "engagementId": "ENG-01",
+                      "payerCountry": "JP",
+                      "contractTotal": {
+                        "amountMinor": "600000",
+                        "currency": "JPY"
+                      },
+                      "received": {
+                        "amountMinor": "300000",
+                        "currency": "JPY"
+                      },
+                      "outstanding": {
+                        "amountMinor": "300000",
+                        "currency": "JPY"
+                      },
+                      "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+                    },
+                    {
+                      "engagementId": "ENG-04",
+                      "payerCountry": "EG",
+                      "contractTotal": {
+                        "amountMinor": "300000",
+                        "currency": "USD"
+                      },
+                      "received": {
+                        "amountMinor": "120000",
+                        "currency": "USD"
+                      },
+                      "outstanding": {
+                        "amountMinor": "180000",
+                        "currency": "USD"
+                      },
+                      "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+                    }
+                  ],
+                  "byCurrency": {
+                    "JPY": {
+                      "amountMinor": "300000",
+                      "currency": "JPY"
+                    },
+                    "USD": {
+                      "amountMinor": "180000",
+                      "currency": "USD"
+                    }
+                  },
+                  "functionalTotal": null,
+                  "basis": "CONTRACTUAL_OUTSTANDING; NOT CASH; NO AUTOMATIC REVENUE_RECOGNITION"
+                },
+                "display": "Clients contractually still owe: JPY 300,000; USD 1,800.00. These are original-currency contract balances, not cash or automatically recognized accounts receivable; no new FX valuation was invented."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "24843be3-4a71-45c5-8ad0-9e3706cd49f3",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:25.473Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 1
+        }
+      }
+    },
+    {
+      "question": "How much did I spend?",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "a4e94d624e776057ebb1f21cb8fb49a3ea568ab1859993f24da8ce8b22c2adf6",
+        "sections": [
+          {
+            "kind": "CALCULATED_RESULT",
+            "facts": [
+              {
+                "id": "position.card",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "liability": {
+                    "amountMinor": "50147",
+                    "currency": "USD"
+                  },
+                  "repayments": {
+                    "amountMinor": "800000",
+                    "currency": "USD"
+                  },
+                  "lineage": [
+                    {
+                      "candidateId": "candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+                      "eventType": "CARD_REPAYMENT",
+                      "journalId": "j-intake-candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+                      "sourceChannel": "EXTERNAL_TRANSACTION"
+                    }
+                  ]
+                },
+                "display": "Card liability: USD 501.47. Card repayments of USD 8,000.00 debit the card liability and credit bank; the purchase was recorded separately, so repayment is not another expense."
+              },
+              {
+                "id": "position.spending",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "total": {
+                    "amountMinor": "600147",
+                    "currency": "USD"
+                  },
+                  "business": {
+                    "amountMinor": "134514",
+                    "currency": "USD"
+                  },
+                  "personal": {
+                    "amountMinor": "157934",
+                    "currency": "USD"
+                  },
+                  "mixed": {
+                    "amountMinor": "307699",
+                    "currency": "USD"
+                  },
+                  "recognized": {
+                    "amountMinor": "35500",
+                    "currency": "USD"
+                  },
+                  "policyReview": {
+                    "amountMinor": "99014",
+                    "currency": "USD"
+                  }
+                },
+                "display": "Purchases total USD 6,001.47: business-classified spending USD 1,345.14, personal USD 1,579.34, mixed USD 3,076.99. Recognized business expenses are USD 355.00; another USD 990.14 of business purchases needs expense-versus-asset review. Card repayments are excluded. Business classification does not establish tax deductibility."
+              }
+            ],
+            "explanation": null
+          },
+          {
+            "kind": "MISSING_INFORMATION",
+            "facts": [
+              {
+                "id": "position.policy",
+                "kind": "MISSING_INFORMATION",
+                "value": [
+                  {
+                    "id": "candidate-8c670f0acf23a6d48975474ab2f15039",
+                    "status": "EARNING_REVIEW_REQUIRED",
+                    "description": "Brand campaign deposit"
+                  },
+                  {
+                    "id": "candidate-ffde9330136f0e95dc2c383d0e57d66c",
+                    "status": "EARNING_REVIEW_REQUIRED",
+                    "description": "Campaign deposit"
+                  },
+                  {
+                    "id": "candidate-8bbb3d304939ee2f613bb8c4202b2290",
+                    "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "description": "Software licence, IP retained"
+                  },
+                  {
+                    "id": "candidate-da439768b240522916627303ace6d70a",
+                    "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "description": "Software licence, IP retained"
+                  },
+                  {
+                    "id": "candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Hotel Dubai",
+                    "purpose": "MIXED",
+                    "reason": "Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-70def772ae738e91a92bfdd8bb6a0c8364018985d39e9d54fcb1530e06c9a32a",
+                    "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                    "description": "Editing software licence",
+                    "purpose": "BUSINESS",
+                    "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-cf6ff0cc5ed3ada531961c010ca81ab2d37adb45d92852695dcf8c1f23eafab2",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Fuel",
+                    "purpose": "MIXED",
+                    "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-9dc94f03ef59e36313df00c9e4dddcca702b627f6ecb138657dff0b89c6cf777",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Rideshare",
+                    "purpose": "MIXED",
+                    "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-12296e8cb9156dc11ed4a667fd742cd4870963927f2854ca5d1a37f389b5a8e4",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Phone data",
+                    "purpose": "MIXED",
+                    "reason": "Phone/data used for both business calls and personal use.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-3ae5cebb6570a169e1cb60293513b0ee0d3a56a8b94d5f0a736f5b79b6a9acbe",
+                    "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                    "description": "Camera accessory",
+                    "purpose": "BUSINESS",
+                    "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                    "allocationPercent": null
+                  }
+                ],
+                "display": "There are 10 accounting/tax review items: mixed-use allocation, licence/IP treatment, advances and expense-versus-asset policy. Confirmed purchases and payments remain recorded; uncertain treatment is not silently approved."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "28bd0aab-eaaa-4d9c-9258-4d371ec81bf9",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:26.130Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 0
+        }
+      }
+    },
+    {
+      "question": "How much of that was business versus personal?",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "a4e94d624e776057ebb1f21cb8fb49a3ea568ab1859993f24da8ce8b22c2adf6",
+        "sections": [
+          {
+            "kind": "CALCULATED_RESULT",
+            "facts": [
+              {
+                "id": "position.card",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "liability": {
+                    "amountMinor": "50147",
+                    "currency": "USD"
+                  },
+                  "repayments": {
+                    "amountMinor": "800000",
+                    "currency": "USD"
+                  },
+                  "lineage": [
+                    {
+                      "candidateId": "candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+                      "eventType": "CARD_REPAYMENT",
+                      "journalId": "j-intake-candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+                      "sourceChannel": "EXTERNAL_TRANSACTION"
+                    }
+                  ]
+                },
+                "display": "Card liability: USD 501.47. Card repayments of USD 8,000.00 debit the card liability and credit bank; the purchase was recorded separately, so repayment is not another expense."
+              },
+              {
+                "id": "position.spending",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "total": {
+                    "amountMinor": "600147",
+                    "currency": "USD"
+                  },
+                  "business": {
+                    "amountMinor": "134514",
+                    "currency": "USD"
+                  },
+                  "personal": {
+                    "amountMinor": "157934",
+                    "currency": "USD"
+                  },
+                  "mixed": {
+                    "amountMinor": "307699",
+                    "currency": "USD"
+                  },
+                  "recognized": {
+                    "amountMinor": "35500",
+                    "currency": "USD"
+                  },
+                  "policyReview": {
+                    "amountMinor": "99014",
+                    "currency": "USD"
+                  }
+                },
+                "display": "Purchases total USD 6,001.47: business-classified spending USD 1,345.14, personal USD 1,579.34, mixed USD 3,076.99. Recognized business expenses are USD 355.00; another USD 990.14 of business purchases needs expense-versus-asset review. Card repayments are excluded. Business classification does not establish tax deductibility."
+              }
+            ],
+            "explanation": null
+          },
+          {
+            "kind": "MISSING_INFORMATION",
+            "facts": [
+              {
+                "id": "position.policy",
+                "kind": "MISSING_INFORMATION",
+                "value": [
+                  {
+                    "id": "candidate-8c670f0acf23a6d48975474ab2f15039",
+                    "status": "EARNING_REVIEW_REQUIRED",
+                    "description": "Brand campaign deposit"
+                  },
+                  {
+                    "id": "candidate-ffde9330136f0e95dc2c383d0e57d66c",
+                    "status": "EARNING_REVIEW_REQUIRED",
+                    "description": "Campaign deposit"
+                  },
+                  {
+                    "id": "candidate-8bbb3d304939ee2f613bb8c4202b2290",
+                    "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "description": "Software licence, IP retained"
+                  },
+                  {
+                    "id": "candidate-da439768b240522916627303ace6d70a",
+                    "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "description": "Software licence, IP retained"
+                  },
+                  {
+                    "id": "candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Hotel Dubai",
+                    "purpose": "MIXED",
+                    "reason": "Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-70def772ae738e91a92bfdd8bb6a0c8364018985d39e9d54fcb1530e06c9a32a",
+                    "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                    "description": "Editing software licence",
+                    "purpose": "BUSINESS",
+                    "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-cf6ff0cc5ed3ada531961c010ca81ab2d37adb45d92852695dcf8c1f23eafab2",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Fuel",
+                    "purpose": "MIXED",
+                    "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-9dc94f03ef59e36313df00c9e4dddcca702b627f6ecb138657dff0b89c6cf777",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Rideshare",
+                    "purpose": "MIXED",
+                    "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-12296e8cb9156dc11ed4a667fd742cd4870963927f2854ca5d1a37f389b5a8e4",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Phone data",
+                    "purpose": "MIXED",
+                    "reason": "Phone/data used for both business calls and personal use.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-3ae5cebb6570a169e1cb60293513b0ee0d3a56a8b94d5f0a736f5b79b6a9acbe",
+                    "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                    "description": "Camera accessory",
+                    "purpose": "BUSINESS",
+                    "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                    "allocationPercent": null
+                  }
+                ],
+                "display": "There are 10 accounting/tax review items: mixed-use allocation, licence/IP treatment, advances and expense-versus-asset policy. Confirmed purchases and payments remain recorded; uncertain treatment is not silently approved."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "ad1cb1ac-fdbd-455f-817b-290f24b4be04",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:26.562Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 1
+        }
+      }
+    },
+    {
+      "question": "How much profit did I make?",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "72c27a077ec3101b0d20b1bc5b9bfaa78e169ef526eb0441aba53fd4ee9a3ae6",
+        "sections": [
+          {
+            "kind": "CALCULATED_RESULT",
+            "facts": [
+              {
+                "id": "position.spending",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "total": {
+                    "amountMinor": "600147",
+                    "currency": "USD"
+                  },
+                  "business": {
+                    "amountMinor": "134514",
+                    "currency": "USD"
+                  },
+                  "personal": {
+                    "amountMinor": "157934",
+                    "currency": "USD"
+                  },
+                  "mixed": {
+                    "amountMinor": "307699",
+                    "currency": "USD"
+                  },
+                  "recognized": {
+                    "amountMinor": "35500",
+                    "currency": "USD"
+                  },
+                  "policyReview": {
+                    "amountMinor": "99014",
+                    "currency": "USD"
+                  }
+                },
+                "display": "Purchases total USD 6,001.47: business-classified spending USD 1,345.14, personal USD 1,579.34, mixed USD 3,076.99. Recognized business expenses are USD 355.00; another USD 990.14 of business purchases needs expense-versus-asset review. Card repayments are excluded. Business classification does not establish tax deductibility."
+              },
+              {
+                "id": "position.incomeTypes",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "ADVANCE_PAYMENT": {
+                    "amountMinor": "321000",
+                    "currency": "USD"
+                  },
+                  "AFFILIATE_COMMISSION": {
+                    "amountMinor": "398000",
+                    "currency": "USD"
+                  },
+                  "EMPLOYMENT_WAGE": {
+                    "amountMinor": "390000",
+                    "currency": "USD"
+                  },
+                  "PROJECT_SERVICE": {
+                    "amountMinor": "1630110",
+                    "currency": "USD"
+                  },
+                  "SOFTWARE_LICENCE": {
+                    "amountMinor": "466000",
+                    "currency": "USD"
+                  }
+                },
+                "display": "Received by category: Advances received: USD 3,210.00; Affiliate commissions: USD 3,980.00; Employment wages: USD 3,900.00; Projects and services: USD 16,301.10; Software licences: USD 4,660.00. Advances of USD 3,210.00 remain a liability; employment wages of USD 3,900.00 are separate from business income. Licence receipts retain their licence/IP facts and require tax classification review."
+              }
+            ],
+            "explanation": null
+          },
+          {
+            "kind": "MISSING_INFORMATION",
+            "facts": [
+              {
+                "id": "position.profit",
+                "kind": "MISSING_INFORMATION",
+                "value": {
+                  "status": "PROVISIONAL_REVIEW_REQUIRED",
+                  "provisionalRecognizedBusinessNet": {
+                    "amountMinor": "2458610",
+                    "currency": "USD"
+                  },
+                  "finalBusinessProfit": null
+                },
+                "display": "Recorded business income USD 24,941.10, recognized business expenses USD 355.00, provisional recorded net USD 24,586.10. Final business profit is not reliable while mixed purchases of USD 3,076.99 and business asset/expense review of USD 990.14 remain unresolved. Advances and personal wages are separate."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "443ebe9b-a75a-4d6f-bd1a-562cd16f70df",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:27.087Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 0
+        }
+      }
+    },
+    {
+      "question": "Why is the hotel not fully counted as a business expense?",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "efe17802fa26fc5f59f026f7f6a01a54de2025682b0c6e4708393b4925bb6eaa",
+        "sections": [
+          {
+            "kind": "CALCULATED_RESULT",
+            "facts": [
+              {
+                "id": "position.spending",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "total": {
+                    "amountMinor": "600147",
+                    "currency": "USD"
+                  },
+                  "business": {
+                    "amountMinor": "134514",
+                    "currency": "USD"
+                  },
+                  "personal": {
+                    "amountMinor": "157934",
+                    "currency": "USD"
+                  },
+                  "mixed": {
+                    "amountMinor": "307699",
+                    "currency": "USD"
+                  },
+                  "recognized": {
+                    "amountMinor": "35500",
+                    "currency": "USD"
+                  },
+                  "policyReview": {
+                    "amountMinor": "99014",
+                    "currency": "USD"
+                  }
+                },
+                "display": "Purchases total USD 6,001.47: business-classified spending USD 1,345.14, personal USD 1,579.34, mixed USD 3,076.99. Recognized business expenses are USD 355.00; another USD 990.14 of business purchases needs expense-versus-asset review. Card repayments are excluded. Business classification does not establish tax deductibility."
+              }
+            ],
+            "explanation": null
+          },
+          {
+            "kind": "MISSING_INFORMATION",
+            "facts": [
+              {
+                "id": "position.hotel",
+                "kind": "MISSING_INFORMATION",
+                "value": {
+                  "id": "candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+                  "status": "ALLOCATION_REVIEW_REQUIRED",
+                  "description": "Hotel Dubai",
+                  "purpose": "MIXED",
+                  "reason": "Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.",
+                  "allocationPercent": null
+                },
+                "display": "Hotel remains mixed-purpose pending allocation review. Your recorded reason: Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.. No business percentage, full business expense or tax deduction was invented."
+              },
+              {
+                "id": "position.policy",
+                "kind": "MISSING_INFORMATION",
+                "value": [
+                  {
+                    "id": "candidate-8c670f0acf23a6d48975474ab2f15039",
+                    "status": "EARNING_REVIEW_REQUIRED",
+                    "description": "Brand campaign deposit"
+                  },
+                  {
+                    "id": "candidate-ffde9330136f0e95dc2c383d0e57d66c",
+                    "status": "EARNING_REVIEW_REQUIRED",
+                    "description": "Campaign deposit"
+                  },
+                  {
+                    "id": "candidate-8bbb3d304939ee2f613bb8c4202b2290",
+                    "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "description": "Software licence, IP retained"
+                  },
+                  {
+                    "id": "candidate-da439768b240522916627303ace6d70a",
+                    "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "description": "Software licence, IP retained"
+                  },
+                  {
+                    "id": "candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Hotel Dubai",
+                    "purpose": "MIXED",
+                    "reason": "Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-70def772ae738e91a92bfdd8bb6a0c8364018985d39e9d54fcb1530e06c9a32a",
+                    "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                    "description": "Editing software licence",
+                    "purpose": "BUSINESS",
+                    "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-cf6ff0cc5ed3ada531961c010ca81ab2d37adb45d92852695dcf8c1f23eafab2",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Fuel",
+                    "purpose": "MIXED",
+                    "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-9dc94f03ef59e36313df00c9e4dddcca702b627f6ecb138657dff0b89c6cf777",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Rideshare",
+                    "purpose": "MIXED",
+                    "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-12296e8cb9156dc11ed4a667fd742cd4870963927f2854ca5d1a37f389b5a8e4",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Phone data",
+                    "purpose": "MIXED",
+                    "reason": "Phone/data used for both business calls and personal use.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-3ae5cebb6570a169e1cb60293513b0ee0d3a56a8b94d5f0a736f5b79b6a9acbe",
+                    "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                    "description": "Camera accessory",
+                    "purpose": "BUSINESS",
+                    "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                    "allocationPercent": null
+                  }
+                ],
+                "display": "There are 10 accounting/tax review items: mixed-use allocation, licence/IP treatment, advances and expense-versus-asset policy. Confirmed purchases and payments remain recorded; uncertain treatment is not silently approved."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "af3d45e6-1a27-48a8-b561-9e4c1efd9624",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:27.509Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 0
+        }
+      }
+    },
+    {
+      "question": "Why did my Mastercard payment not increase my expenses?",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "31f1565b0e4f25dc7f7e71a1cb5300914cbedd35536b4d22999d9746cc90a91d",
+        "sections": [
+          {
+            "kind": "CALCULATED_RESULT",
+            "facts": [
+              {
+                "id": "position.card",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "liability": {
+                    "amountMinor": "50147",
+                    "currency": "USD"
+                  },
+                  "repayments": {
+                    "amountMinor": "800000",
+                    "currency": "USD"
+                  },
+                  "lineage": [
+                    {
+                      "candidateId": "candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+                      "eventType": "CARD_REPAYMENT",
+                      "journalId": "j-intake-candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+                      "sourceChannel": "EXTERNAL_TRANSACTION"
+                    }
+                  ]
+                },
+                "display": "Card liability: USD 501.47. Card repayments of USD 8,000.00 debit the card liability and credit bank; the purchase was recorded separately, so repayment is not another expense."
+              },
+              {
+                "id": "position.spending",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "total": {
+                    "amountMinor": "600147",
+                    "currency": "USD"
+                  },
+                  "business": {
+                    "amountMinor": "134514",
+                    "currency": "USD"
+                  },
+                  "personal": {
+                    "amountMinor": "157934",
+                    "currency": "USD"
+                  },
+                  "mixed": {
+                    "amountMinor": "307699",
+                    "currency": "USD"
+                  },
+                  "recognized": {
+                    "amountMinor": "35500",
+                    "currency": "USD"
+                  },
+                  "policyReview": {
+                    "amountMinor": "99014",
+                    "currency": "USD"
+                  }
+                },
+                "display": "Purchases total USD 6,001.47: business-classified spending USD 1,345.14, personal USD 1,579.34, mixed USD 3,076.99. Recognized business expenses are USD 355.00; another USD 990.14 of business purchases needs expense-versus-asset review. Card repayments are excluded. Business classification does not establish tax deductibility."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "3a15f46c-1120-4362-8523-d6849b0e44f0",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:27.935Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 1
+        }
+      }
+    },
+    {
+      "question": "What kinds of income did I earn?",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "b1f63a1d3f2842d3e581dd0c2c81b9e9166ace2f8f72950f115ad68a6d912937",
+        "sections": [
+          {
+            "kind": "CALCULATED_RESULT",
+            "facts": [
+              {
+                "id": "position.incomeTypes",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "ADVANCE_PAYMENT": {
+                    "amountMinor": "321000",
+                    "currency": "USD"
+                  },
+                  "AFFILIATE_COMMISSION": {
+                    "amountMinor": "398000",
+                    "currency": "USD"
+                  },
+                  "EMPLOYMENT_WAGE": {
+                    "amountMinor": "390000",
+                    "currency": "USD"
+                  },
+                  "PROJECT_SERVICE": {
+                    "amountMinor": "1630110",
+                    "currency": "USD"
+                  },
+                  "SOFTWARE_LICENCE": {
+                    "amountMinor": "466000",
+                    "currency": "USD"
+                  }
+                },
+                "display": "Received by category: Advances received: USD 3,210.00; Affiliate commissions: USD 3,980.00; Employment wages: USD 3,900.00; Projects and services: USD 16,301.10; Software licences: USD 4,660.00. Advances of USD 3,210.00 remain a liability; employment wages of USD 3,900.00 are separate from business income. Licence receipts retain their licence/IP facts and require tax classification review."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "258d4e54-05c3-431b-8a5f-178157bf1ddc",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:28.414Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 0
+        }
+      }
+    },
+    {
+      "question": "Which countries matter for my tax situation?",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "ee2ab4ba834c00a25d4f49427af355736fa64f7b154dbc417a07df66fc36d5b0",
+        "sections": [
+          {
+            "kind": "FACT",
+            "facts": [
+              {
+                "id": "position.countries",
+                "kind": "FACT",
+                "value": {
+                  "citizenship": "US",
+                  "homeCountry": "US",
+                  "physicalLocation": "AE",
+                  "workLocations": [
+                    "AE"
+                  ],
+                  "taxResidence": [],
+                  "registration": [],
+                  "payerCountries": [
+                    "AE",
+                    "AU",
+                    "EG",
+                    "GB",
+                    "JP",
+                    "KE"
+                  ],
+                  "incomeSourceCountries": [],
+                  "entityDeclaration": "No UAE company",
+                  "travelStatus": "TEMPORARY_VACATION",
+                  "travelDays": "30"
+                },
+                "display": "Citizenship US; home US; current physical location AE; work AE. Temporary travel: 30 days. Entity declaration: No UAE company. Tax residence: Not confirmed; registration: Not confirmed. Payer countries: AE, AU, EG, GB, JP, KE. Payer country is not automatically an income source or proof of taxation."
+              }
+            ],
+            "explanation": null
+          },
+          {
+            "kind": "MISSING_INFORMATION",
+            "facts": [
+              {
+                "id": "position.tax",
+                "kind": "MISSING_INFORMATION",
+                "value": {
+                  "status": "REVIEW_REQUIRED",
+                  "finalTax": null,
+                  "withholding": "WITHHOLDING_UNKNOWN_DOCUMENT_REQUIRED",
+                  "withholdingDeclaration": "MISSING",
+                  "missingCoverage": [
+                    "US",
+                    "AE",
+                    "AU",
+                    "EG",
+                    "GB",
+                    "JP",
+                    "KE"
+                  ],
+                  "scopedStatus": "CONFLICT",
+                  "blockers": [
+                    "APPROVED_COUNTRY_PACK_COVERAGE_REQUIRES_REVIEW",
+                    "TAX_RESIDENCE_NOT_CONFIRMED",
+                    "PAYER_COUNTRY_DOES_NOT_ESTABLISH_INCOME_SOURCE",
+                    "TREATY_REVIEW_REQUIRED",
+                    "WITHHOLDING_CERTIFICATES_MISSING",
+                    "EARNING_REVIEW_REQUIRED",
+                    "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "ALLOCATION_REVIEW_REQUIRED",
+                    "EXPENSE_OR_ASSET_REVIEW_REQUIRED"
+                  ]
+                },
+                "display": "Final tax cannot yet be reliably determined. Blockers: approved CountryPack coverage is missing or unestablished; tax residence is not confirmed; income source is not established from payer country; TreatyPack applicability requires review; withholding certificates are missing; amounts remain unknown; advance earning recognition needs review; software licence/IP tax classification is unresolved; mixed costs have no approved allocation; expense-versus-asset policy needs review. No zero tax, withholding rate or treaty benefit is assumed."
+              },
+              {
+                "id": "position.treaties",
+                "kind": "MISSING_INFORMATION",
+                "value": [
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "AE",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  },
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "AU",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  },
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "EG",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  },
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "GB",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  },
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "JP",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  },
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "KE",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  }
+                ],
+                "display": "Potential research contexts: US / AE; US / AU; US / EG; US / GB; US / JP; US / KE. Treaty applicability is not established by citizenship, home or payer alone. Missing approved coverage remains review-required."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "79239b9b-a439-434a-8a3f-c8ee1a75026d",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:28.925Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 0
+        }
+      }
+    },
+    {
+      "question": "How much tax do I owe?",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "a883154ed05c4960c8adcaa5ec7f8f23d3c29cbf0989da471a07841b98fce8ac",
+        "sections": [
+          {
+            "kind": "CALCULATED_RESULT",
+            "facts": [
+              {
+                "id": "position.cashReceived",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "amountMinor": "3205110",
+                  "currency": "USD"
+                },
+                "display": "Cash actually received: USD 32,051.10. Outstanding contract balances and opening funds are excluded."
+              },
+              {
+                "id": "position.receivables",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "items": [
+                    {
+                      "engagementId": "ENG-01",
+                      "payerCountry": "JP",
+                      "contractTotal": {
+                        "amountMinor": "600000",
+                        "currency": "JPY"
+                      },
+                      "received": {
+                        "amountMinor": "300000",
+                        "currency": "JPY"
+                      },
+                      "outstanding": {
+                        "amountMinor": "300000",
+                        "currency": "JPY"
+                      },
+                      "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+                    },
+                    {
+                      "engagementId": "ENG-04",
+                      "payerCountry": "EG",
+                      "contractTotal": {
+                        "amountMinor": "300000",
+                        "currency": "USD"
+                      },
+                      "received": {
+                        "amountMinor": "120000",
+                        "currency": "USD"
+                      },
+                      "outstanding": {
+                        "amountMinor": "180000",
+                        "currency": "USD"
+                      },
+                      "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+                    }
+                  ],
+                  "byCurrency": {
+                    "JPY": {
+                      "amountMinor": "300000",
+                      "currency": "JPY"
+                    },
+                    "USD": {
+                      "amountMinor": "180000",
+                      "currency": "USD"
+                    }
+                  },
+                  "functionalTotal": null,
+                  "basis": "CONTRACTUAL_OUTSTANDING; NOT CASH; NO AUTOMATIC REVENUE_RECOGNITION"
+                },
+                "display": "Clients contractually still owe: JPY 300,000; USD 1,800.00. These are original-currency contract balances, not cash or automatically recognized accounts receivable; no new FX valuation was invented."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "ec4bd98b-24b4-4634-9e70-d97768c7ffb4",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:29.433Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 0
+        }
+      }
+    },
+    {
+      "question": "What do you know for sure, and what are you still unsure about?",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "15de4eba53c9a20dbfde2f60a51cd9ba2a41b5d6d855321e6774b90ed3fb3fe4",
+        "sections": [
+          {
+            "kind": "FACT",
+            "facts": [
+              {
+                "id": "position.countries",
+                "kind": "FACT",
+                "value": {
+                  "citizenship": "US",
+                  "homeCountry": "US",
+                  "physicalLocation": "AE",
+                  "workLocations": [
+                    "AE"
+                  ],
+                  "taxResidence": [],
+                  "registration": [],
+                  "payerCountries": [
+                    "AE",
+                    "AU",
+                    "EG",
+                    "GB",
+                    "JP",
+                    "KE"
+                  ],
+                  "incomeSourceCountries": [],
+                  "entityDeclaration": "No UAE company",
+                  "travelStatus": "TEMPORARY_VACATION",
+                  "travelDays": "30"
+                },
+                "display": "Citizenship US; home US; current physical location AE; work AE. Temporary travel: 30 days. Entity declaration: No UAE company. Tax residence: Not confirmed; registration: Not confirmed. Payer countries: AE, AU, EG, GB, JP, KE. Payer country is not automatically an income source or proof of taxation."
+              },
+              {
+                "id": "position.confirmed",
+                "kind": "FACT",
+                "value": {
+                  "profileConfirmed": true,
+                  "taxLawApproved": false,
+                  "allocationPercentageApproved": false
+                },
+                "display": "The recorded data contains 15 income engagements and balanced journals: true. Human-confirmed records are distinct from unapproved law, unknown withholding and unallocated costs."
+              }
+            ],
+            "explanation": null
+          },
+          {
+            "kind": "MISSING_INFORMATION",
+            "facts": [
+              {
+                "id": "position.tax",
+                "kind": "MISSING_INFORMATION",
+                "value": {
+                  "status": "REVIEW_REQUIRED",
+                  "finalTax": null,
+                  "withholding": "WITHHOLDING_UNKNOWN_DOCUMENT_REQUIRED",
+                  "withholdingDeclaration": "MISSING",
+                  "missingCoverage": [
+                    "US",
+                    "AE",
+                    "AU",
+                    "EG",
+                    "GB",
+                    "JP",
+                    "KE"
+                  ],
+                  "scopedStatus": "CONFLICT",
+                  "blockers": [
+                    "APPROVED_COUNTRY_PACK_COVERAGE_REQUIRES_REVIEW",
+                    "TAX_RESIDENCE_NOT_CONFIRMED",
+                    "PAYER_COUNTRY_DOES_NOT_ESTABLISH_INCOME_SOURCE",
+                    "TREATY_REVIEW_REQUIRED",
+                    "WITHHOLDING_CERTIFICATES_MISSING",
+                    "EARNING_REVIEW_REQUIRED",
+                    "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "ALLOCATION_REVIEW_REQUIRED",
+                    "EXPENSE_OR_ASSET_REVIEW_REQUIRED"
+                  ]
+                },
+                "display": "Final tax cannot yet be reliably determined. Blockers: approved CountryPack coverage is missing or unestablished; tax residence is not confirmed; income source is not established from payer country; TreatyPack applicability requires review; withholding certificates are missing; amounts remain unknown; advance earning recognition needs review; software licence/IP tax classification is unresolved; mixed costs have no approved allocation; expense-versus-asset policy needs review. No zero tax, withholding rate or treaty benefit is assumed."
+              },
+              {
+                "id": "position.profit",
+                "kind": "MISSING_INFORMATION",
+                "value": {
+                  "status": "PROVISIONAL_REVIEW_REQUIRED",
+                  "provisionalRecognizedBusinessNet": {
+                    "amountMinor": "2458610",
+                    "currency": "USD"
+                  },
+                  "finalBusinessProfit": null
+                },
+                "display": "Recorded business income USD 24,941.10, recognized business expenses USD 355.00, provisional recorded net USD 24,586.10. Final business profit is not reliable while mixed purchases of USD 3,076.99 and business asset/expense review of USD 990.14 remain unresolved. Advances and personal wages are separate."
+              },
+              {
+                "id": "position.policy",
+                "kind": "MISSING_INFORMATION",
+                "value": [
+                  {
+                    "id": "candidate-8c670f0acf23a6d48975474ab2f15039",
+                    "status": "EARNING_REVIEW_REQUIRED",
+                    "description": "Brand campaign deposit"
+                  },
+                  {
+                    "id": "candidate-ffde9330136f0e95dc2c383d0e57d66c",
+                    "status": "EARNING_REVIEW_REQUIRED",
+                    "description": "Campaign deposit"
+                  },
+                  {
+                    "id": "candidate-8bbb3d304939ee2f613bb8c4202b2290",
+                    "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "description": "Software licence, IP retained"
+                  },
+                  {
+                    "id": "candidate-da439768b240522916627303ace6d70a",
+                    "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "description": "Software licence, IP retained"
+                  },
+                  {
+                    "id": "candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Hotel Dubai",
+                    "purpose": "MIXED",
+                    "reason": "Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-70def772ae738e91a92bfdd8bb6a0c8364018985d39e9d54fcb1530e06c9a32a",
+                    "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                    "description": "Editing software licence",
+                    "purpose": "BUSINESS",
+                    "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-cf6ff0cc5ed3ada531961c010ca81ab2d37adb45d92852695dcf8c1f23eafab2",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Fuel",
+                    "purpose": "MIXED",
+                    "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-9dc94f03ef59e36313df00c9e4dddcca702b627f6ecb138657dff0b89c6cf777",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Rideshare",
+                    "purpose": "MIXED",
+                    "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-12296e8cb9156dc11ed4a667fd742cd4870963927f2854ca5d1a37f389b5a8e4",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Phone data",
+                    "purpose": "MIXED",
+                    "reason": "Phone/data used for both business calls and personal use.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-3ae5cebb6570a169e1cb60293513b0ee0d3a56a8b94d5f0a736f5b79b6a9acbe",
+                    "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                    "description": "Camera accessory",
+                    "purpose": "BUSINESS",
+                    "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                    "allocationPercent": null
+                  }
+                ],
+                "display": "There are 10 accounting/tax review items: mixed-use allocation, licence/IP treatment, advances and expense-versus-asset policy. Confirmed purchases and payments remain recorded; uncertain treatment is not silently approved."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "7614fb32-ec03-472f-b8d0-24078a9e377a",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:29.893Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 0
+        }
+      }
+    },
+    {
+      "question": "Explain my financial position in simple language.",
+      "answer": {
+        "ok": true,
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-fixture",
+        "contextHash": "05cbef16a4c1c7b87910322a4a61f50af4e5cff8ccdd25931bb6996c2a7a68fe",
+        "sections": [
+          {
+            "kind": "CALCULATED_RESULT",
+            "facts": [
+              {
+                "id": "position.cashReceived",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "amountMinor": "3205110",
+                  "currency": "USD"
+                },
+                "display": "Cash actually received: USD 32,051.10. Outstanding contract balances and opening funds are excluded."
+              },
+              {
+                "id": "position.receivables",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "items": [
+                    {
+                      "engagementId": "ENG-01",
+                      "payerCountry": "JP",
+                      "contractTotal": {
+                        "amountMinor": "600000",
+                        "currency": "JPY"
+                      },
+                      "received": {
+                        "amountMinor": "300000",
+                        "currency": "JPY"
+                      },
+                      "outstanding": {
+                        "amountMinor": "300000",
+                        "currency": "JPY"
+                      },
+                      "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+                    },
+                    {
+                      "engagementId": "ENG-04",
+                      "payerCountry": "EG",
+                      "contractTotal": {
+                        "amountMinor": "300000",
+                        "currency": "USD"
+                      },
+                      "received": {
+                        "amountMinor": "120000",
+                        "currency": "USD"
+                      },
+                      "outstanding": {
+                        "amountMinor": "180000",
+                        "currency": "USD"
+                      },
+                      "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+                    }
+                  ],
+                  "byCurrency": {
+                    "JPY": {
+                      "amountMinor": "300000",
+                      "currency": "JPY"
+                    },
+                    "USD": {
+                      "amountMinor": "180000",
+                      "currency": "USD"
+                    }
+                  },
+                  "functionalTotal": null,
+                  "basis": "CONTRACTUAL_OUTSTANDING; NOT CASH; NO AUTOMATIC REVENUE_RECOGNITION"
+                },
+                "display": "Clients contractually still owe: JPY 300,000; USD 1,800.00. These are original-currency contract balances, not cash or automatically recognized accounts receivable; no new FX valuation was invented."
+              },
+              {
+                "id": "position.card",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "liability": {
+                    "amountMinor": "50147",
+                    "currency": "USD"
+                  },
+                  "repayments": {
+                    "amountMinor": "800000",
+                    "currency": "USD"
+                  },
+                  "lineage": [
+                    {
+                      "candidateId": "candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+                      "eventType": "CARD_REPAYMENT",
+                      "journalId": "j-intake-candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+                      "sourceChannel": "EXTERNAL_TRANSACTION"
+                    }
+                  ]
+                },
+                "display": "Card liability: USD 501.47. Card repayments of USD 8,000.00 debit the card liability and credit bank; the purchase was recorded separately, so repayment is not another expense."
+              },
+              {
+                "id": "position.spending",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "total": {
+                    "amountMinor": "600147",
+                    "currency": "USD"
+                  },
+                  "business": {
+                    "amountMinor": "134514",
+                    "currency": "USD"
+                  },
+                  "personal": {
+                    "amountMinor": "157934",
+                    "currency": "USD"
+                  },
+                  "mixed": {
+                    "amountMinor": "307699",
+                    "currency": "USD"
+                  },
+                  "recognized": {
+                    "amountMinor": "35500",
+                    "currency": "USD"
+                  },
+                  "policyReview": {
+                    "amountMinor": "99014",
+                    "currency": "USD"
+                  }
+                },
+                "display": "Purchases total USD 6,001.47: business-classified spending USD 1,345.14, personal USD 1,579.34, mixed USD 3,076.99. Recognized business expenses are USD 355.00; another USD 990.14 of business purchases needs expense-versus-asset review. Card repayments are excluded. Business classification does not establish tax deductibility."
+              },
+              {
+                "id": "position.incomeTypes",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "ADVANCE_PAYMENT": {
+                    "amountMinor": "321000",
+                    "currency": "USD"
+                  },
+                  "AFFILIATE_COMMISSION": {
+                    "amountMinor": "398000",
+                    "currency": "USD"
+                  },
+                  "EMPLOYMENT_WAGE": {
+                    "amountMinor": "390000",
+                    "currency": "USD"
+                  },
+                  "PROJECT_SERVICE": {
+                    "amountMinor": "1630110",
+                    "currency": "USD"
+                  },
+                  "SOFTWARE_LICENCE": {
+                    "amountMinor": "466000",
+                    "currency": "USD"
+                  }
+                },
+                "display": "Received by category: Advances received: USD 3,210.00; Affiliate commissions: USD 3,980.00; Employment wages: USD 3,900.00; Projects and services: USD 16,301.10; Software licences: USD 4,660.00. Advances of USD 3,210.00 remain a liability; employment wages of USD 3,900.00 are separate from business income. Licence receipts retain their licence/IP facts and require tax classification review."
+              },
+              {
+                "id": "position.bank",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "amountMinor": "4405110",
+                  "currency": "USD"
+                },
+                "display": "Recorded bank balance: USD 44,051.10. This includes opening funds and is different from cash received during the recorded period."
+              }
+            ],
+            "explanation": null
+          },
+          {
+            "kind": "FACT",
+            "facts": [
+              {
+                "id": "position.countries",
+                "kind": "FACT",
+                "value": {
+                  "citizenship": "US",
+                  "homeCountry": "US",
+                  "physicalLocation": "AE",
+                  "workLocations": [
+                    "AE"
+                  ],
+                  "taxResidence": [],
+                  "registration": [],
+                  "payerCountries": [
+                    "AE",
+                    "AU",
+                    "EG",
+                    "GB",
+                    "JP",
+                    "KE"
+                  ],
+                  "incomeSourceCountries": [],
+                  "entityDeclaration": "No UAE company",
+                  "travelStatus": "TEMPORARY_VACATION",
+                  "travelDays": "30"
+                },
+                "display": "Citizenship US; home US; current physical location AE; work AE. Temporary travel: 30 days. Entity declaration: No UAE company. Tax residence: Not confirmed; registration: Not confirmed. Payer countries: AE, AU, EG, GB, JP, KE. Payer country is not automatically an income source or proof of taxation."
+              },
+              {
+                "id": "position.confirmed",
+                "kind": "FACT",
+                "value": {
+                  "profileConfirmed": true,
+                  "taxLawApproved": false,
+                  "allocationPercentageApproved": false
+                },
+                "display": "The recorded data contains 15 income engagements and balanced journals: true. Human-confirmed records are distinct from unapproved law, unknown withholding and unallocated costs."
+              }
+            ],
+            "explanation": null
+          },
+          {
+            "kind": "MISSING_INFORMATION",
+            "facts": [
+              {
+                "id": "position.tax",
+                "kind": "MISSING_INFORMATION",
+                "value": {
+                  "status": "REVIEW_REQUIRED",
+                  "finalTax": null,
+                  "withholding": "WITHHOLDING_UNKNOWN_DOCUMENT_REQUIRED",
+                  "withholdingDeclaration": "MISSING",
+                  "missingCoverage": [
+                    "US",
+                    "AE",
+                    "AU",
+                    "EG",
+                    "GB",
+                    "JP",
+                    "KE"
+                  ],
+                  "scopedStatus": "CONFLICT",
+                  "blockers": [
+                    "APPROVED_COUNTRY_PACK_COVERAGE_REQUIRES_REVIEW",
+                    "TAX_RESIDENCE_NOT_CONFIRMED",
+                    "PAYER_COUNTRY_DOES_NOT_ESTABLISH_INCOME_SOURCE",
+                    "TREATY_REVIEW_REQUIRED",
+                    "WITHHOLDING_CERTIFICATES_MISSING",
+                    "EARNING_REVIEW_REQUIRED",
+                    "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "ALLOCATION_REVIEW_REQUIRED",
+                    "EXPENSE_OR_ASSET_REVIEW_REQUIRED"
+                  ]
+                },
+                "display": "Final tax cannot yet be reliably determined. Blockers: approved CountryPack coverage is missing or unestablished; tax residence is not confirmed; income source is not established from payer country; TreatyPack applicability requires review; withholding certificates are missing; amounts remain unknown; advance earning recognition needs review; software licence/IP tax classification is unresolved; mixed costs have no approved allocation; expense-versus-asset policy needs review. No zero tax, withholding rate or treaty benefit is assumed."
+              },
+              {
+                "id": "position.profit",
+                "kind": "MISSING_INFORMATION",
+                "value": {
+                  "status": "PROVISIONAL_REVIEW_REQUIRED",
+                  "provisionalRecognizedBusinessNet": {
+                    "amountMinor": "2458610",
+                    "currency": "USD"
+                  },
+                  "finalBusinessProfit": null
+                },
+                "display": "Recorded business income USD 24,941.10, recognized business expenses USD 355.00, provisional recorded net USD 24,586.10. Final business profit is not reliable while mixed purchases of USD 3,076.99 and business asset/expense review of USD 990.14 remain unresolved. Advances and personal wages are separate."
+              },
+              {
+                "id": "position.hotel",
+                "kind": "MISSING_INFORMATION",
+                "value": {
+                  "id": "candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+                  "status": "ALLOCATION_REVIEW_REQUIRED",
+                  "description": "Hotel Dubai",
+                  "purpose": "MIXED",
+                  "reason": "Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.",
+                  "allocationPercent": null
+                },
+                "display": "Hotel remains mixed-purpose pending allocation review. Your recorded reason: Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.. No business percentage, full business expense or tax deduction was invented."
+              },
+              {
+                "id": "position.policy",
+                "kind": "MISSING_INFORMATION",
+                "value": [
+                  {
+                    "id": "candidate-8c670f0acf23a6d48975474ab2f15039",
+                    "status": "EARNING_REVIEW_REQUIRED",
+                    "description": "Brand campaign deposit"
+                  },
+                  {
+                    "id": "candidate-ffde9330136f0e95dc2c383d0e57d66c",
+                    "status": "EARNING_REVIEW_REQUIRED",
+                    "description": "Campaign deposit"
+                  },
+                  {
+                    "id": "candidate-8bbb3d304939ee2f613bb8c4202b2290",
+                    "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "description": "Software licence, IP retained"
+                  },
+                  {
+                    "id": "candidate-da439768b240522916627303ace6d70a",
+                    "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                    "description": "Software licence, IP retained"
+                  },
+                  {
+                    "id": "candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Hotel Dubai",
+                    "purpose": "MIXED",
+                    "reason": "Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-70def772ae738e91a92bfdd8bb6a0c8364018985d39e9d54fcb1530e06c9a32a",
+                    "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                    "description": "Editing software licence",
+                    "purpose": "BUSINESS",
+                    "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-cf6ff0cc5ed3ada531961c010ca81ab2d37adb45d92852695dcf8c1f23eafab2",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Fuel",
+                    "purpose": "MIXED",
+                    "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-9dc94f03ef59e36313df00c9e4dddcca702b627f6ecb138657dff0b89c6cf777",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Rideshare",
+                    "purpose": "MIXED",
+                    "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-12296e8cb9156dc11ed4a667fd742cd4870963927f2854ca5d1a37f389b5a8e4",
+                    "status": "ALLOCATION_REVIEW_REQUIRED",
+                    "description": "Phone data",
+                    "purpose": "MIXED",
+                    "reason": "Phone/data used for both business calls and personal use.",
+                    "allocationPercent": null
+                  },
+                  {
+                    "id": "candidate-3ae5cebb6570a169e1cb60293513b0ee0d3a56a8b94d5f0a736f5b79b6a9acbe",
+                    "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                    "description": "Camera accessory",
+                    "purpose": "BUSINESS",
+                    "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                    "allocationPercent": null
+                  }
+                ],
+                "display": "There are 10 accounting/tax review items: mixed-use allocation, licence/IP treatment, advances and expense-versus-asset policy. Confirmed purchases and payments remain recorded; uncertain treatment is not silently approved."
+              },
+              {
+                "id": "position.treaties",
+                "kind": "MISSING_INFORMATION",
+                "value": [
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "AE",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  },
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "AU",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  },
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "EG",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  },
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "GB",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  },
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "JP",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  },
+                  {
+                    "homeCountry": "US",
+                    "payerCountry": "KE",
+                    "status": "TREATY_REVIEW_REQUIRED",
+                    "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                    "applicabilityConfirmed": false
+                  }
+                ],
+                "display": "Potential research contexts: US / AE; US / AU; US / EG; US / GB; US / JP; US / KE. Treaty applicability is not established by citizenship, home or payer alone. Missing approved coverage remains review-required."
+              }
+            ],
+            "explanation": null
+          }
+        ],
+        "provenance": {
+          "requestId": "9f0749fe-90f5-401b-b056-2f7b2e4d6ed0",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-fixture",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": null,
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T11:46:30.770Z",
+          "responseStatus": "completed",
+          "responseId": null,
+          "latencyMs": 1
+        }
+      }
+    }
+  ],
+  "indonesian": {
+    "ok": true,
+    "status": "MUSE_UNDERSTOOD",
+    "provider": "meta",
+    "model": "muse-spark-fixture",
+    "contextHash": "0e9956ada2d3f0c236eac2e0732c710eaa78be65d4bc9b5c2d8a11c3591636ec",
+    "sections": [
+      {
+        "kind": "CALCULATED_RESULT",
+        "facts": [
+          {
+            "id": "position.cashReceived",
+            "kind": "CALCULATED_RESULT",
+            "value": {
+              "amountMinor": "3205110",
+              "currency": "USD"
+            },
+            "display": "Uang yang benar-benar diterima: USD 32.051,10. Saldo kontrak yang belum dibayar dan saldo awal tidak termasuk."
+          },
+          {
+            "id": "position.receivables",
+            "kind": "CALCULATED_RESULT",
+            "value": {
+              "items": [
+                {
+                  "engagementId": "ENG-01",
+                  "payerCountry": "JP",
+                  "contractTotal": {
+                    "amountMinor": "600000",
+                    "currency": "JPY"
+                  },
+                  "received": {
+                    "amountMinor": "300000",
+                    "currency": "JPY"
+                  },
+                  "outstanding": {
+                    "amountMinor": "300000",
+                    "currency": "JPY"
+                  },
+                  "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+                },
+                {
+                  "engagementId": "ENG-04",
+                  "payerCountry": "EG",
+                  "contractTotal": {
+                    "amountMinor": "300000",
+                    "currency": "USD"
+                  },
+                  "received": {
+                    "amountMinor": "120000",
+                    "currency": "USD"
+                  },
+                  "outstanding": {
+                    "amountMinor": "180000",
+                    "currency": "USD"
+                  },
+                  "basis": "CONTRACTUAL_OUTSTANDING_NOT_RECOGNIZED_RECEIVABLE"
+                }
+              ],
+              "byCurrency": {
+                "JPY": {
+                  "amountMinor": "300000",
+                  "currency": "JPY"
+                },
+                "USD": {
+                  "amountMinor": "180000",
+                  "currency": "USD"
+                }
+              },
+              "functionalTotal": null,
+              "basis": "CONTRACTUAL_OUTSTANDING; NOT CASH; NO AUTOMATIC REVENUE_RECOGNITION"
+            },
+            "display": "Saldo kontrak yang masih harus dibayar klien: JPY 300.000; USD 1.800,00. Ini adalah saldo kontrak dalam mata uang asli, bukan kas atau piutang yang otomatis diakui; penilaian FX baru tidak dibuat."
+          },
+          {
+            "id": "position.card",
+            "kind": "CALCULATED_RESULT",
+            "value": {
+              "liability": {
+                "amountMinor": "50147",
+                "currency": "USD"
+              },
+              "repayments": {
+                "amountMinor": "800000",
+                "currency": "USD"
+              },
+              "lineage": [
+                {
+                  "candidateId": "candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+                  "eventType": "CARD_REPAYMENT",
+                  "journalId": "j-intake-candidate-ef0b618da2dded6624626c5fb10752f270cce5b81e7a4d68ad4f28f387e5a39b",
+                  "sourceChannel": "EXTERNAL_TRANSACTION"
+                }
+              ]
+            },
+            "display": "Utang kartu: USD 501,47. Pembayaran kartu sebesar USD 8.000,00 mendebit utang kartu dan mengkredit bank; pembelian dicatat terpisah sehingga pembayaran kartu bukan beban baru."
+          },
+          {
+            "id": "position.spending",
+            "kind": "CALCULATED_RESULT",
+            "value": {
+              "total": {
+                "amountMinor": "600147",
+                "currency": "USD"
+              },
+              "business": {
+                "amountMinor": "134514",
+                "currency": "USD"
+              },
+              "personal": {
+                "amountMinor": "157934",
+                "currency": "USD"
+              },
+              "mixed": {
+                "amountMinor": "307699",
+                "currency": "USD"
+              },
+              "recognized": {
+                "amountMinor": "35500",
+                "currency": "USD"
+              },
+              "policyReview": {
+                "amountMinor": "99014",
+                "currency": "USD"
+              }
+            },
+            "display": "Total pembelian USD 6.001,47: pengeluaran berklasifikasi usaha USD 1.345,14, pribadi USD 1.579,34, campuran USD 3.076,99. Beban usaha yang diakui USD 355,00; pembelian usaha lain sebesar USD 990,14 memerlukan tinjauan beban atau aset. Pembayaran kartu tidak termasuk. Klasifikasi usaha tidak menetapkan pengurang pajak."
+          },
+          {
+            "id": "position.incomeTypes",
+            "kind": "CALCULATED_RESULT",
+            "value": {
+              "ADVANCE_PAYMENT": {
+                "amountMinor": "321000",
+                "currency": "USD"
+              },
+              "AFFILIATE_COMMISSION": {
+                "amountMinor": "398000",
+                "currency": "USD"
+              },
+              "EMPLOYMENT_WAGE": {
+                "amountMinor": "390000",
+                "currency": "USD"
+              },
+              "PROJECT_SERVICE": {
+                "amountMinor": "1630110",
+                "currency": "USD"
+              },
+              "SOFTWARE_LICENCE": {
+                "amountMinor": "466000",
+                "currency": "USD"
+              }
+            },
+            "display": "Penerimaan per kategori: Uang muka diterima: USD 3.210,00; Komisi afiliasi: USD 3.980,00; Upah pekerjaan: USD 3.900,00; Proyek dan jasa: USD 16.301,10; Lisensi perangkat lunak: USD 4.660,00. Uang muka sebesar USD 3.210,00 tetap menjadi kewajiban; upah pekerjaan sebesar USD 3.900,00 terpisah dari penghasilan usaha. Penerimaan lisensi mempertahankan fakta lisensi/IP dan memerlukan tinjauan klasifikasi pajak."
+          },
+          {
+            "id": "position.bank",
+            "kind": "CALCULATED_RESULT",
+            "value": {
+              "amountMinor": "4405110",
+              "currency": "USD"
+            },
+            "display": "Saldo bank tercatat: USD 44.051,10. Ini mencakup saldo awal dan berbeda dari penerimaan kas selama periode tercatat."
+          }
+        ],
+        "explanation": null
+      },
+      {
+        "kind": "FACT",
+        "facts": [
+          {
+            "id": "position.countries",
+            "kind": "FACT",
+            "value": {
+              "citizenship": "US",
+              "homeCountry": "US",
+              "physicalLocation": "AE",
+              "workLocations": [
+                "AE"
+              ],
+              "taxResidence": [],
+              "registration": [],
+              "payerCountries": [
+                "AE",
+                "AU",
+                "EG",
+                "GB",
+                "JP",
+                "KE"
+              ],
+              "incomeSourceCountries": [],
+              "entityDeclaration": "No UAE company",
+              "travelStatus": "TEMPORARY_VACATION",
+              "travelDays": "30"
+            },
+            "display": "Kewarganegaraan US; tempat tinggal biasa US; lokasi fisik saat ini AE; lokasi kerja AE. Perjalanan sementara: 30 hari. Pernyataan entitas: No UAE company. Domisili pajak: Belum dikonfirmasi; pendaftaran: Belum dikonfirmasi. Negara pembayar: AE, AU, EG, GB, JP, KE. Negara pembayar bukan otomatis sumber penghasilan atau bukti kewajiban pajak."
+          },
+          {
+            "id": "position.confirmed",
+            "kind": "FACT",
+            "value": {
+              "profileConfirmed": true,
+              "taxLawApproved": false,
+              "allocationPercentageApproved": false
+            },
+            "display": "Data tercatat berisi 15 perikatan penghasilan dan jurnal seimbang: true. Catatan yang dikonfirmasi manusia terpisah dari hukum yang belum disetujui, pemotongan belum diketahui, dan biaya belum dialokasikan."
+          }
+        ],
+        "explanation": null
+      },
+      {
+        "kind": "MISSING_INFORMATION",
+        "facts": [
+          {
+            "id": "position.tax",
+            "kind": "MISSING_INFORMATION",
+            "value": {
+              "status": "REVIEW_REQUIRED",
+              "finalTax": null,
+              "withholding": "WITHHOLDING_UNKNOWN_DOCUMENT_REQUIRED",
+              "withholdingDeclaration": "MISSING",
+              "missingCoverage": [
+                "US",
+                "AE",
+                "AU",
+                "EG",
+                "GB",
+                "JP",
+                "KE"
+              ],
+              "scopedStatus": "CONFLICT",
+              "blockers": [
+                "APPROVED_COUNTRY_PACK_COVERAGE_REQUIRES_REVIEW",
+                "TAX_RESIDENCE_NOT_CONFIRMED",
+                "PAYER_COUNTRY_DOES_NOT_ESTABLISH_INCOME_SOURCE",
+                "TREATY_REVIEW_REQUIRED",
+                "WITHHOLDING_CERTIFICATES_MISSING",
+                "EARNING_REVIEW_REQUIRED",
+                "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                "ALLOCATION_REVIEW_REQUIRED",
+                "EXPENSE_OR_ASSET_REVIEW_REQUIRED"
+              ]
+            },
+            "display": "Pajak akhir belum dapat ditentukan secara andal. Kendala: cakupan CountryPack disetujui belum tersedia atau belum ditetapkan; domisili pajak belum dikonfirmasi; sumber penghasilan tidak ditetapkan dari negara pembayar; penerapan TreatyPack perlu ditinjau; sertifikat pemotongan belum tersedia; nominal tetap belum diketahui; pengakuan uang muka sebagai penghasilan perlu ditinjau; klasifikasi pajak lisensi perangkat lunak/IP belum terselesaikan; biaya campuran belum memiliki alokasi yang disetujui; kebijakan beban atau aset perlu ditinjau. Tidak diasumsikan pajak nol, tarif pemotongan, atau manfaat perjanjian."
+          },
+          {
+            "id": "position.profit",
+            "kind": "MISSING_INFORMATION",
+            "value": {
+              "status": "PROVISIONAL_REVIEW_REQUIRED",
+              "provisionalRecognizedBusinessNet": {
+                "amountMinor": "2458610",
+                "currency": "USD"
+              },
+              "finalBusinessProfit": null
+            },
+            "display": "Penghasilan usaha tercatat USD 24.941,10, beban usaha diakui USD 355,00, hasil bersih tercatat sementara USD 24.586,10. Laba usaha akhir belum andal selama pembelian campuran USD 3.076,99 dan tinjauan aset/beban usaha USD 990,14 belum terselesaikan. Uang muka dan upah pribadi terpisah."
+          },
+          {
+            "id": "position.hotel",
+            "kind": "MISSING_INFORMATION",
+            "value": {
+              "id": "candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+              "status": "ALLOCATION_REVIEW_REQUIRED",
+              "description": "Hotel Dubai",
+              "purpose": "MIXED",
+              "reason": "Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.",
+              "allocationPercent": null
+            },
+            "display": "Hotel tetap bertujuan campuran sambil menunggu tinjauan alokasi. Alasan Anda yang tercatat: Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.. Tidak dibuat persentase usaha, beban usaha penuh, atau pengurang pajak."
+          },
+          {
+            "id": "position.policy",
+            "kind": "MISSING_INFORMATION",
+            "value": [
+              {
+                "id": "candidate-8c670f0acf23a6d48975474ab2f15039",
+                "status": "EARNING_REVIEW_REQUIRED",
+                "description": "Brand campaign deposit"
+              },
+              {
+                "id": "candidate-ffde9330136f0e95dc2c383d0e57d66c",
+                "status": "EARNING_REVIEW_REQUIRED",
+                "description": "Campaign deposit"
+              },
+              {
+                "id": "candidate-8bbb3d304939ee2f613bb8c4202b2290",
+                "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                "description": "Software licence, IP retained"
+              },
+              {
+                "id": "candidate-da439768b240522916627303ace6d70a",
+                "status": "IP_TAX_CLASSIFICATION_REVIEW_REQUIRED",
+                "description": "Software licence, IP retained"
+              },
+              {
+                "id": "candidate-0aeea7fadb6199fada332cdc25f097d51291c01a72590cecb6711779e8974ba3",
+                "status": "ALLOCATION_REVIEW_REQUIRED",
+                "description": "Hotel Dubai",
+                "purpose": "MIXED",
+                "reason": "Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.",
+                "allocationPercent": null
+              },
+              {
+                "id": "candidate-70def772ae738e91a92bfdd8bb6a0c8364018985d39e9d54fcb1530e06c9a32a",
+                "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                "description": "Editing software licence",
+                "purpose": "BUSINESS",
+                "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                "allocationPercent": null
+              },
+              {
+                "id": "candidate-cf6ff0cc5ed3ada531961c010ca81ab2d37adb45d92852695dcf8c1f23eafab2",
+                "status": "ALLOCATION_REVIEW_REQUIRED",
+                "description": "Fuel",
+                "purpose": "MIXED",
+                "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                "allocationPercent": null
+              },
+              {
+                "id": "candidate-9dc94f03ef59e36313df00c9e4dddcca702b627f6ecb138657dff0b89c6cf777",
+                "status": "ALLOCATION_REVIEW_REQUIRED",
+                "description": "Rideshare",
+                "purpose": "MIXED",
+                "reason": "The rental car and fuel were used both for client meetings and personal travel.",
+                "allocationPercent": null
+              },
+              {
+                "id": "candidate-12296e8cb9156dc11ed4a667fd742cd4870963927f2854ca5d1a37f389b5a8e4",
+                "status": "ALLOCATION_REVIEW_REQUIRED",
+                "description": "Phone data",
+                "purpose": "MIXED",
+                "reason": "Phone/data used for both business calls and personal use.",
+                "allocationPercent": null
+              },
+              {
+                "id": "candidate-3ae5cebb6570a169e1cb60293513b0ee0d3a56a8b94d5f0a736f5b79b6a9acbe",
+                "status": "EXPENSE_OR_ASSET_REVIEW_REQUIRED",
+                "description": "Camera accessory",
+                "purpose": "BUSINESS",
+                "reason": "The restaurants were personal vacation meals. The software and camera are for business, but expense versus capital policy has not been reviewed. The 95 USD card fee is wholly attributable to business foreign purchases.",
+                "allocationPercent": null
+              }
+            ],
+            "display": "Ada 10 item tinjauan akuntansi/pajak: alokasi penggunaan campuran, perlakuan lisensi/IP, uang muka, dan kebijakan beban atau aset. Pembelian dan pembayaran yang dikonfirmasi tetap tercatat; perlakuan yang belum pasti tidak diam-diam disetujui."
+          },
+          {
+            "id": "position.treaties",
+            "kind": "MISSING_INFORMATION",
+            "value": [
+              {
+                "homeCountry": "US",
+                "payerCountry": "AE",
+                "status": "TREATY_REVIEW_REQUIRED",
+                "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                "applicabilityConfirmed": false
+              },
+              {
+                "homeCountry": "US",
+                "payerCountry": "AU",
+                "status": "TREATY_REVIEW_REQUIRED",
+                "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                "applicabilityConfirmed": false
+              },
+              {
+                "homeCountry": "US",
+                "payerCountry": "EG",
+                "status": "TREATY_REVIEW_REQUIRED",
+                "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                "applicabilityConfirmed": false
+              },
+              {
+                "homeCountry": "US",
+                "payerCountry": "GB",
+                "status": "TREATY_REVIEW_REQUIRED",
+                "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                "applicabilityConfirmed": false
+              },
+              {
+                "homeCountry": "US",
+                "payerCountry": "JP",
+                "status": "TREATY_REVIEW_REQUIRED",
+                "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                "applicabilityConfirmed": false
+              },
+              {
+                "homeCountry": "US",
+                "payerCountry": "KE",
+                "status": "TREATY_REVIEW_REQUIRED",
+                "basis": "RESEARCH_CONTEXT_ONLY_NOT_APPLICABILITY",
+                "applicabilityConfirmed": false
+              }
+            ],
+            "display": "Konteks riset potensial: US / AE; US / AU; US / EG; US / GB; US / JP; US / KE. Penerapan perjanjian tidak ditetapkan hanya oleh kewarganegaraan, tempat tinggal biasa, atau pembayar. Cakupan disetujui yang belum tersedia tetap perlu ditinjau."
+          }
+        ],
+        "explanation": null
+      }
+    ],
+    "provenance": {
+      "requestId": "b3777549-4f99-42de-803f-f4e6cb926253",
+      "purpose": "contextual-assistant",
+      "provider": "meta",
+      "model": "muse-spark-fixture",
+      "success": true,
+      "parseSuccess": true,
+      "schemaValidationSuccess": true,
+      "fallbackUsed": false,
+      "cacheHit": false,
+      "attempts": 1,
+      "usage": null,
+      "estimatedCost": null,
+      "costStatus": "NOT_REPORTED",
+      "at": "2026-10-29T11:46:45.167Z",
+      "responseStatus": "completed",
+      "responseId": null,
+      "latencyMs": 2
+    }
+  },
+  "postedJournals": 31,
+  "museMockCalls": 32,
+  "duplicatesControlled": true,
+  "languageInvariant": true,
+  "restartVerified": true,
+  "apiUrl": "http://127.0.0.1:55174"
+}

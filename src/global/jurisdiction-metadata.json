@@ -160,5 +160,45 @@
       "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
       "path": "jurisdiction.ts"
     }
+  },
+  {
+    "code": "JP",
+    "name": "Japan",
+    "currency": "JPY",
+    "locale": "en",
+    "metadataOnly": true,
+    "officialDomains": [],
+    "coverageStatus": "NO_APPROVED_TAX_COVERAGE",
+    "source": "Platform Intl region metadata; no legal rules added"
+  },
+  {
+    "code": "EG",
+    "name": "Egypt",
+    "currency": null,
+    "locale": "en",
+    "metadataOnly": true,
+    "officialDomains": [],
+    "coverageStatus": "NO_APPROVED_TAX_COVERAGE",
+    "source": "Platform Intl region metadata; no legal rules added"
+  },
+  {
+    "code": "KE",
+    "name": "Kenya",
+    "currency": null,
+    "locale": "en",
+    "metadataOnly": true,
+    "officialDomains": [],
+    "coverageStatus": "NO_APPROVED_TAX_COVERAGE",
+    "source": "Platform Intl region metadata; no legal rules added"
+  },
+  {
+    "code": "AE",
+    "name": "United Arab Emirates",
+    "currency": "AED",
+    "locale": "en",
+    "metadataOnly": true,
+    "officialDomains": [],
+    "coverageStatus": "NO_APPROVED_TAX_COVERAGE",
+    "source": "Platform Intl region metadata; no legal rules added"
   }
 ]

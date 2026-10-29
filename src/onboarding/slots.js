@@ -1,6 +1,9 @@
 'use strict';
 const DEFS = {
   'user.language':'language', 'user.nationality':'country', 'user.displayName':'string',
+  'user.homeCountry':'country','user.physicalLocation':'country','user.travelStatus':'string','user.travelDays':'string',
+  'user.taxResidenceDeclaration':'string','user.withholdingDocumentation':'string',
+  'org.legalForm':'string','org.activities':'activities','org.entityDeclarations':'string',
   'org.name':'string', 'org.businessType':'businessType', 'org.subjectType':'subjectType',
   'org.taxRegistrationNumber':'string', 'org.address':'string', 'org.registrationStatus':'string',
   'currency.functional':'currency', 'currency.transactions':'currencies',

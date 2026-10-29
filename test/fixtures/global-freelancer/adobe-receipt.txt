@@ -1,0 +1,13 @@
+RECEIPT - SYNTHETIC DEMO
+Transaction date: 2026-10-06
+Date: 2026-10-06
+Vendor: Adobe subscription
+Description: Adobe subscription
+Total USD 60
+Payment: card
+Status: paid
+Reference: CARD-02
+Event type: CARD_PURCHASE
+Purpose: BUSINESS
+Recognition status: EXPENSE
+Expense category: SUBSCRIPTION

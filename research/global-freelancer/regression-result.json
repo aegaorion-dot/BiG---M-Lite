@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-29T11:49:23.790Z",
+  "command": "npm test",
+  "baselineCommit": "72469ecb68af37bcd7c700eabff8b9fbcb51ddf4",
+  "baselineTests": 402,
+  "tests": 414,
+  "pass": 414,
+  "fail": 0,
+  "skipped": 0,
+  "suites": 29,
+  "durationMs": 126357.0492,
+  "externalCalls": 0,
+  "networkGuard": true,
+  "passed": true
+}

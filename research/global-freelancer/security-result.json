@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-29T12:00:58.385Z",
+  "workingFilesScanned": 460,
+  "configuredCredentialPresent": true,
+  "configuredCredentialMatches": 0,
+  "unresolvedCredentials": 0,
+  "findings": [],
+  "reviewedSyntheticFixtureMatches": 22,
+  "history": {
+    "reachableBlobsScanned": 603,
+    "reachableCommitsScanned": 76,
+    "knownCredentialMatches": 0,
+    "unresolvedCredentials": 0,
+    "findings": [],
+    "reviewedSyntheticFixtureMatches": 19,
+    "trackedEnvironmentFiles": [],
+    "committedLogFiles": [],
+    "passed": true
+  },
+  "envIgnored": true,
+  "envTracked": false,
+  "coreEnginesAndSanitizerUnchanged": true,
+  "passed": true
+}

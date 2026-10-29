@@ -1,0 +1,156 @@
+{
+  "at": "2026-10-29T11:47:56.550Z",
+  "success": true,
+  "syntheticOnly": true,
+  "explicitUserAuthorization": "One additional profiling request after the original two-request run",
+  "requests": 1,
+  "requestCeiling": 1,
+  "retries": 0,
+  "elapsedMs": 7490,
+  "provider": "meta",
+  "failure": null,
+  "strictValidatorAccepted": true,
+  "candidates": {
+    "user.language": {
+      "value": "en",
+      "status": "CANDIDATE",
+      "supportingQuote": null
+    },
+    "user.nationality": {
+      "value": "US",
+      "status": "CANDIDATE",
+      "supportingQuote": "a synthetic US citizen"
+    },
+    "user.displayName": {
+      "value": "Alex Morgan",
+      "status": "CANDIDATE",
+      "supportingQuote": "I'm Alex Morgan"
+    },
+    "user.homeCountry": {
+      "value": "US",
+      "status": "CANDIDATE",
+      "supportingQuote": "normally based in Miami, USA."
+    },
+    "user.physicalLocation": {
+      "value": "AE",
+      "status": "CANDIDATE",
+      "supportingQuote": "spending 30 days in Dubai, UAE on vacation"
+    },
+    "user.travelStatus": {
+      "value": "on vacation",
+      "status": "CANDIDATE",
+      "supportingQuote": "in Dubai, UAE on vacation"
+    },
+    "user.travelDays": {
+      "value": "30",
+      "status": "CANDIDATE",
+      "supportingQuote": "spending 30 days in Dubai, UAE"
+    },
+    "org.legalForm": {
+      "value": "individual sole proprietor",
+      "status": "CANDIDATE",
+      "supportingQuote": "working as an individual sole proprietor."
+    },
+    "org.activities": {
+      "value": [
+        "INFLUENCER",
+        "CREATOR",
+        "FREELANCER",
+        "AFFILIATE_MARKETER",
+        "SOFTWARE_LICENSOR"
+      ],
+      "status": "CANDIDATE",
+      "supportingQuote": "I'm an influencer, creator and freelancer"
+    },
+    "org.businessType": {
+      "value": "freelancer",
+      "status": "CANDIDATE",
+      "supportingQuote": "freelancer working as an individual sole proprietor."
+    },
+    "org.subjectType": {
+      "value": "INDIVIDUAL",
+      "status": "CANDIDATE",
+      "supportingQuote": "working as an individual sole proprietor."
+    },
+    "currency.functional": {
+      "value": "USD",
+      "status": "CANDIDATE",
+      "supportingQuote": "My business books use USD."
+    },
+    "currency.transactions": {
+      "value": [],
+      "status": "UNKNOWN",
+      "supportingQuote": null
+    },
+    "currency.foreignPurchases": {
+      "value": [],
+      "status": "UNKNOWN",
+      "supportingQuote": null
+    },
+    "modules.enabled": {
+      "value": [],
+      "status": "UNKNOWN",
+      "supportingQuote": null
+    }
+  },
+  "jurisdictions": [
+    {
+      "basis": "BUSINESS_WORK_LOCATION",
+      "countryCode": "AE",
+      "status": "CANDIDATE",
+      "supportingQuote": "I'm still working remotely while I'm here."
+    },
+    {
+      "basis": "CUSTOMER_LOCATION",
+      "countryCode": "JP",
+      "status": "CANDIDATE",
+      "supportingQuote": "with payers in Japan, Egypt, the UK, Kenya, Australia and UAE."
+    },
+    {
+      "basis": "CUSTOMER_LOCATION",
+      "countryCode": "EG",
+      "status": "CANDIDATE",
+      "supportingQuote": "with payers in Japan, Egypt, the UK, Kenya, Australia and UAE."
+    },
+    {
+      "basis": "CUSTOMER_LOCATION",
+      "countryCode": "GB",
+      "status": "CANDIDATE",
+      "supportingQuote": "with payers in Japan, Egypt, the UK, Kenya, Australia and UAE."
+    },
+    {
+      "basis": "CUSTOMER_LOCATION",
+      "countryCode": "KE",
+      "status": "CANDIDATE",
+      "supportingQuote": "with payers in Japan, Egypt, the UK, Kenya, Australia and UAE."
+    },
+    {
+      "basis": "CUSTOMER_LOCATION",
+      "countryCode": "AU",
+      "status": "CANDIDATE",
+      "supportingQuote": "with payers in Japan, Egypt, the UK, Kenya, Australia and UAE."
+    },
+    {
+      "basis": "CUSTOMER_LOCATION",
+      "countryCode": "AE",
+      "status": "CANDIDATE",
+      "supportingQuote": "with payers in Japan, Egypt, the UK, Kenya, Australia and UAE."
+    }
+  ],
+  "metrics": [
+    {
+      "purpose": "business-profiling",
+      "success": true,
+      "schemaValidationSuccess": true,
+      "latencyMs": 7402,
+      "usage": {
+        "input_tokens": 1613,
+        "output_tokens": 1744,
+        "total_tokens": 3357,
+        "reasoning_tokens": 601
+      },
+      "failure": null
+    }
+  ],
+  "credentialsRecorded": false
+}

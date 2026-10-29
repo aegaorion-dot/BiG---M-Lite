@@ -1,0 +1,64 @@
+[
+  {
+    "command": "npm test",
+    "stage": "accepted baseline",
+    "tests": 402,
+    "pass": 402,
+    "fail": 0,
+    "globalJourneyIncluded": false
+  },
+  {
+    "command": "node --require ./scripts/test-network-guard.cjs --test test/global-freelancer.test.js",
+    "stage": "initial focused suite",
+    "tests": 11,
+    "pass": 7,
+    "fail": 4,
+    "globalJourneyPassed": true,
+    "detail": "Parent failed from two harness subtests (await and active jurisdiction) and response-cap expectation; corrected without relaxing product validation."
+  },
+  {
+    "command": "node --require ./scripts/test-network-guard.cjs --test test/global-freelancer.test.js",
+    "stage": "corrected focused suite",
+    "tests": 11,
+    "pass": 11,
+    "fail": 0,
+    "globalJourneyPassed": true,
+    "durationMs": 15420.6971
+  },
+  {
+    "command": "npm test",
+    "stage": "first complete suite",
+    "tests": 413,
+    "pass": 412,
+    "fail": 1,
+    "globalJourneyPassed": true,
+    "durationMs": 148322.4225,
+    "detail": "Original metadata exact-list assertion extended while retaining every original metadata check."
+  },
+  {
+    "command": "npm test",
+    "stage": "second complete suite",
+    "tests": 413,
+    "pass": 413,
+    "fail": 0,
+    "globalJourneyPassed": true,
+    "durationMs": 126733.6095
+  },
+  {
+    "command": "npm test",
+    "stage": "final complete suite",
+    "at": "2026-10-29T11:49:23.790Z",
+    "baselineCommit": "72469ecb68af37bcd7c700eabff8b9fbcb51ddf4",
+    "baselineTests": 402,
+    "tests": 414,
+    "pass": 414,
+    "fail": 0,
+    "skipped": 0,
+    "suites": 29,
+    "durationMs": 126357.0492,
+    "externalCalls": 0,
+    "networkGuard": true,
+    "passed": true,
+    "globalJourneyPassed": true
+  }
+]

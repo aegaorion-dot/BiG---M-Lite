@@ -152,3 +152,9 @@ Reporting-currency conversion, foreign multi-line journal conversion, unpaid inv
 - Earlier details: [Phase 5 intake/OCR](docs/PHASE5-DOCUMENT-INTAKE.md), [Phase 6 convergence](docs/PHASE6-UNIVERSAL-INTAKE.md), [Phase 7 Muse](docs/PHASE7-MUSE-RUNTIME.md), [Phase 3 tax contracts](docs/PHASE3-TAX-CONTRACTS.md), [Phase 4 governed packs](docs/PHASE4-PACKS-REPORT.md).
 
 Submission materials follow the supplied Stage One requirements: demonstrate the product and make Meta API use observable. The official hackathon theme, full criteria and submission form were not supplied, so eligibility, scoring claims and final submission remain pending. This checkpoint is committed locally only; no automatic push or submission occurs.
+
+## Global freelancer acceptance journey
+
+The October 2026 synthetic journey exercises the final product with 15 international engagements, mixed-use card spending, advances, contractual client balances, reviewed historical FX and grounded Q&A. Dashboard/reports distinguish wages, business income, advances, personal/mixed purchases, card debt and provisional business results. Mixed allocation, asset policy, tax residence, withholding and unsupported CountryPack/TreatyPack applicability remain explicit review items.
+
+Run `npm run test:global:freelancer` for the public HTTP journey, or `npm run test:global:browser` for installed-Chromium interaction and fresh-process restart/replay. Routine tests use mocked Muse transport and dated synthetic FX; no paid calls. See [the complete acceptance report](docs/GLOBAL-FREELANCER-E2E.md) for results, reruns, live evidence, security and remaining governance work. The original demo quick start remains available.
