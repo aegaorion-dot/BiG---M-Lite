@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "aif-training-plan/0.1",
+  "specialist": "Muse-BiG-M Regulatory v0.1",
+  "provider": "FIREWORKS",
+  "baseModel": "accounts/fireworks/models/muse-spark-open-nvfp4",
+  "tokenizer": "meta-models/Muse-Spark-Open-816B-A42B-NVFP4",
+  "method": "LORA_SFT",
+  "sdk": "fireworks-ai==1.2.30",
+  "endpoint": "https://api.fireworks.ai/training/v1/serverless",
+  "rank": 8,
+  "epochs": 1,
+  "batchSize": 4,
+  "learningRate": 0.00001,
+  "maxSequenceLength": 16384,
+  "maxOptimizerSteps": 25,
+  "maxTrainingRuns": 1,
+  "maxEvaluationCalls": 34,
+  "automaticRetries": 0,
+  "status": "NOT_SUBMITTED",
+  "jobId": null,
+  "providerSessionId": null,
+  "resultingAdapterId": null,
+  "cost": null,
+  "costStatus": "NOT_EXPOSED",
+  "activationAllowed": false,
+  "verifiedOn": "2026-10-30",
+  "sourceVerification": {
+    "status": "OFFICIAL_DOCUMENTATION_VERIFIED_ACCOUNT_ACCESS_UNVERIFIED",
+    "sources": [
+      "https://dev.meta.ai/docs/muse-spark-open/post-training",
+      "https://docs.fireworks.ai/fine-tuning/training-api/serverless",
+      "https://fireworks.ai/models/fireworks/muse-spark-open"
+    ],
+    "surface": "Serverless training SDK; managed fine-tuning UI is not the supported path for this model."
+  },
+  "datasetHash": "97a30357cd0d31ddc588ec07ddb52b7badb0e2d0843ed9f0cc00f1d9fa0960ac",
+  "datasetVersion": "aif-regulatory-v0.1"
+}

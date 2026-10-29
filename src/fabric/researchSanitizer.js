@@ -18,7 +18,7 @@ function sanitizeResearchText(input){
   try{const result=sanitizeResearchUrl(value.replace(/&amp;/gi,'&'));return result.redactionReason?result.url:value;}catch{return '[REDACTED_INVALID_RESEARCH_URL]';}
  }).replace(/-----BEGIN (?:RSA |EC |OPENSSH |DSA |ENCRYPTED )?PRIVATE KEY-----[\s\S]*?-----END (?:RSA |EC |OPENSSH |DSA |ENCRYPTED )?PRIVATE KEY-----/g,'[REDACTED_PRIVATE_KEY]')
  .replace(/\bBearer\s+[A-Za-z0-9_.~+\/-]{16,}=*/gi,'Bearer [REDACTED_CREDENTIAL]')
- .replace(/\b(?:AIza[0-9A-Za-z_-]{30,}|sk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|(?:AKIA|ASIA)[A-Z0-9]{16}|EAA[A-Za-z0-9]{50,})\b/g,'[REDACTED_CREDENTIAL]');
+ .replace(/\b(?:AIza[0-9A-Za-z_-]{30,}|sk-(?:proj-|svcacct-)?[A-Za-z0-9_-]{20,}|fw_[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|(?:AKIA|ASIA)[A-Z0-9]{16}|EAA[A-Za-z0-9]{50,})\b/g,'[REDACTED_CREDENTIAL]');
 }
 function sanitizeResearchRecord(value){
  if(typeof value==='string')return sanitizeResearchText(value);

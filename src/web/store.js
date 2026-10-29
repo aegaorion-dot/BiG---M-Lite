@@ -45,7 +45,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  let turnQueue=Promise.resolve(),mutationQueue=Promise.resolve();
  let taxReviewContext=null,lastTaxProposal=null;
  function taxServices(){
-  if(!taxSystem){const dir=persistPath?path.join(path.dirname(persistPath),'tax'):null;taxSystem=require('../tax').createTaxSystem({governancePath:dir?path.join(dir,'fabric.json'):null,determinationPath:dir?path.join(dir,'determinations.json'):null});}return taxSystem;
+  if(!taxSystem){const dir=persistPath?path.join(path.dirname(persistPath),'tax'):null;taxSystem=require('../tax').createTaxSystem({governancePath:dir?path.join(dir,'fabric.json'):null,determinationPath:dir?path.join(dir,'determinations.json'):null});require('./scopedTaxCatalog').registerHistoricalCatalog(taxSystem.registry);}return taxSystem;
  }
  function profileFingerprint(){return fingerprint({slots:profileState.slots,jurisdictionFacts:profileState.jurisdictionFacts});}
  function taxReadiness(){
@@ -361,7 +361,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  }
  const intake=createIntakeService({state:intakeState,getContext:()=>({...ctx,workspace:workspaceProfile(),journalFor:id=>{const j=ctx.ledger.get(id);return j?serializeJournal(j):null;}}),persist,commitPosting:commitIntakePosting,applyProfileFacts:applyDocumentFacts,fxService,extractionProvider,semanticProvider});
  intake.recover();
- const scopedTax=require('../tax/scopedCalculation').createScopedCalculation({state:scopedTaxState,system:taxServices,financial:baseFinancialPosition,workspace:workspaceProfile,profileRevision:()=>profileState.revision,persist});
+ const scopedTax=require('./scopedTax').createScopedCalculation({state:scopedTaxState,system:taxServices,financial:baseFinancialPosition,workspace:workspaceProfile,profileRevision:()=>profileState.revision,persist});
  function recordMuse(event){museState.events.push(clone(event));if(museState.events.length>100)museState.events.shift();}
  function packSummary(){return taxServices().registry.snapshot().map(c=>{const p=c.executableContent;return {packId:p.packId??p.treatyPackId,version:p.version,kind:c.contentKind,jurisdictions:p.jurisdictionCode?[p.jurisdictionCode]:[p.jurisdictionA,p.jurisdictionB],effectiveFrom:p.effectiveFrom,effectiveTo:p.effectiveTo,governance:c.status,sourceStatus:c.reviewPackage?.sourceStatus??'REVIEW_REQUIRED',coverage:p.coverageStatus??null};});}
  const {governedCatalog,resolveSuggestion}=require('../ai/museCatalog');

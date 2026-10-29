@@ -8,6 +8,14 @@ Small businesses should not have to translate their lives into accounting softwa
 
 ![Indonesian demo home](research/phase9-demo/screenshots/dashboard-laptop.png)
 
+## Final hackathon checkpoint: Youssef
+
+The final demonstration follows a Moroccan expat in **Darija (ar-MA)** with employment, household spending, two installments, a mixed-use villa, a cafe and a gym investment. Its consistently dated **October 2025** company example reaches **CALCULATED: IDR 750,000 payable**, from IDR 150,000,000 gross turnover at the governed PP 55/2022 rate of 0.5%. The UI exposes facts, approval, rule, period, official evidence and the deterministic trace. Personal salary/residence/villa/treaty gaps remain separately REVIEW_REQUIRED.
+
+Run npm run test:moroccan:browser for the complete automated product journey, or npm run test:moroccan for its HTTP-contract version. These use synthetic fixtures and mocked model turns. A separate one-request live Muse tax explanation passed in Darija with no retry or state change. No additional regulatory calls are required for rehearsal.
+
+[Three-minute video](docs/submission/BiG-M-Lite-3-minute-demo.mp4), [architecture deck](docs/submission/BiG-M-Lite-Architecture.pptx), [final report](docs/MOROCCAN-EXPAT-E2E.md), [demo instructions](docs/submission/DEMO.md), [submission copy](docs/submission/SUBMISSION.md) and [work disclosure](docs/submission/WORK-DISCLOSURE.md) distinguish completed features, prior work, synthetic data and remaining legal gaps. Adaptive Intelligence/post-training is stopped and inactive. The original Phase 9 fast demo below remains available.
+
 ## What works in the demo
 
 The primary persona is an Australian freelancer operating in Bali with Singapore clients. Nationality, work location, registration, tax residence, customer location, UI language and currency remain independent.

@@ -1,6 +1,6 @@
 'use strict';
 // Bounded official-source-backed slices. No approval or model-supplied law.
-const fs=require('node:fs'),path=require('node:path'),{officialEvidence}=require('../src/tax/officialEvidence'),{countryPackCandidate,attachExecutableContent}=require('../src/fabric/candidates'),{validateCountryPack,validateTreatyPack}=require('../src/tax/contracts');
+const fs=require('node:fs'),path=require('node:path'),{officialEvidence}=require('../src/fabric/officialEvidence'),{countryPackCandidate,attachExecutableContent}=require('../src/fabric/candidates'),{validateCountryPack,validateTreatyPack}=require('../src/tax/contracts');
 const official=officialEvidence(),r=(id,start,end,legalCitation,extra={})=>official.reference(id,{start,end,legalCitation,...extra}),sources={
  income:r('UU7_2021','BAB III PAJAK PENGHASILAN','2. Ketentuan ayat (1) Pasal 6','UU 7/2021, amended Income Tax Act article 4'),
  allowance:r('UU7_2021','Pasal 7 (1)','4. Ketentuan','UU 7/2021, Income Tax Act article 7'),

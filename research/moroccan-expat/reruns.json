@@ -106,5 +106,87 @@
       "cardAndDocumentMs": 14309
     },
     "error": null
+  },
+  {
+    "run": 9,
+    "at": "2026-10-29T18:18:18.254Z",
+    "success": true,
+    "complete": true,
+    "taxYear": "2025",
+    "browser": false,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 52919,
+    "timings": {
+      "firstProfileAndQuestionMs": 106,
+      "profileResolutionMs": 54,
+      "activityBatchMs": 27598,
+      "cardAndDocumentMs": 14858
+    },
+    "error": null
+  },
+  {
+    "run": 10,
+    "at": "2026-10-29T22:30:12.093Z",
+    "success": false,
+    "complete": false,
+    "taxYear": "2025",
+    "browser": false,
+    "stage": "startup",
+    "elapsedMs": 25925,
+    "timings": null,
+    "error": "Browser command timeout: Runtime.enable"
+  },
+  {
+    "run": 11,
+    "at": "2026-10-29T22:31:52.856Z",
+    "success": false,
+    "complete": false,
+    "taxYear": "2025",
+    "browser": false,
+    "stage": "startup",
+    "elapsedMs": 25327,
+    "timings": null,
+    "error": "Browser command timeout: Runtime.enable"
+  },
+  {
+    "run": 12,
+    "at": "2026-10-29T22:35:37.362Z",
+    "success": false,
+    "complete": false,
+    "taxYear": "2025",
+    "browser": true,
+    "stage": "supported-historical-tax",
+    "elapsedMs": 200592,
+    "timings": null,
+    "error": "Product UI action failed: Error: Missing UI input"
+  },
+  {
+    "run": 13,
+    "at": "2026-10-29T22:38:44.989Z",
+    "success": false,
+    "complete": false,
+    "taxYear": "2025",
+    "browser": true,
+    "stage": "supported-historical-tax",
+    "elapsedMs": 126799,
+    "timings": null,
+    "error": "Product UI action failed: Error: Missing UI input"
+  },
+  {
+    "run": 14,
+    "at": "2026-10-29T22:43:46.942Z",
+    "success": true,
+    "complete": true,
+    "taxYear": "2025",
+    "browser": true,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 200687,
+    "timings": {
+      "firstProfileAndQuestionMs": 6366,
+      "profileResolutionMs": 197,
+      "activityBatchMs": 77962,
+      "cardAndDocumentMs": 25840
+    },
+    "error": null
   }
 ]
