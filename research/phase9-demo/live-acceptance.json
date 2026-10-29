@@ -1,0 +1,247 @@
+{
+  "phase": 9,
+  "at": "2026-10-29T09:34:14.701Z",
+  "success": true,
+  "syntheticOnly": true,
+  "locale": "id-ID",
+  "model": "muse-spark-1.3",
+  "requestCeiling": 5,
+  "requests": 5,
+  "elapsedMs": 15579,
+  "steps": [
+    {
+      "stage": "profiling",
+      "provider": "meta",
+      "question": "Mata uang apa yang Anda gunakan untuk pembukuan?",
+      "nationality": "AU",
+      "jurisdictions": [
+        {
+          "basis": "BUSINESS_WORK_LOCATION",
+          "countryCode": "ID",
+          "status": "CANDIDATE"
+        },
+        {
+          "basis": "CUSTOMER_LOCATION",
+          "countryCode": "SG",
+          "status": "CANDIDATE"
+        }
+      ],
+      "functionalCurrency": null
+    },
+    {
+      "stage": "document",
+      "provider": "meta",
+      "extractionMethod": "TEXT",
+      "posted": true,
+      "currency": "IDR",
+      "amountMinor": "125000"
+    },
+    {
+      "stage": "fx",
+      "mode": "RECORDED_DEMO_FIXTURE",
+      "original": {
+        "amountMinor": "200000",
+        "currency": "SGD"
+      },
+      "functional": {
+        "amountMinor": "27946000",
+        "currency": "IDR"
+      },
+      "rate": "13973",
+      "date": "2026-06-01"
+    },
+    {
+      "stage": "tax-explanation",
+      "provider": "meta",
+      "status": "MUSE_UNDERSTOOD",
+      "sections": [
+        {
+          "kind": "FACT",
+          "facts": [
+            {
+              "id": "tax.workspaceReady",
+              "display": "Kesiapan pajak ruang kerja: belum siap."
+            },
+            {
+              "id": "tax.packStatus",
+              "display": "Status resolusi CountryPack: REVIEW_REQUIRED."
+            },
+            {
+              "id": "tax.readiness",
+              "display": "Status tinjauan pajak: MISSING_REQUIRED_FACT."
+            }
+          ],
+          "explanation": null
+        },
+        {
+          "kind": "MISSING_INFORMATION",
+          "facts": [
+            {
+              "id": "tax.missing.SUBJECT_TYPE",
+              "display": "Tinjauan pajak terkelola memerlukan: Jenis wajib pajak."
+            },
+            {
+              "id": "tax.missing.TAX_RESIDENCE",
+              "display": "Tinjauan pajak terkelola memerlukan: Domisili pajak."
+            },
+            {
+              "id": "tax.missing.SOURCE",
+              "display": "Tinjauan pajak terkelola memerlukan: Yurisdiksi sumber penghasilan."
+            },
+            {
+              "id": "tax.missing.BUSINESS_CAPACITY",
+              "display": "Tinjauan pajak terkelola memerlukan: Kapasitas penerima penghasilan."
+            },
+            {
+              "id": "tax.missing.INCOME_REGIME",
+              "display": "Tinjauan pajak terkelola memerlukan: Rezim pajak penghasilan yang ditinjau."
+            },
+            {
+              "id": "tax.missing.REVIEWED_TAXABLE_INCOME",
+              "display": "Tinjauan pajak terkelola memerlukan: Penghasilan kena pajak yang ditinjau secara independen."
+            },
+            {
+              "id": "tax.missing.TAXABLE_INCOME_RECONCILIATION_APPROVED",
+              "display": "Tinjauan pajak terkelola memerlukan: Tinjauan manusia atas rekonsiliasi fiskal."
+            },
+            {
+              "id": "tax.missing.ANNUAL_TAX_PERIOD_REVIEWED",
+              "display": "Tinjauan pajak terkelola memerlukan: Periode pajak tahunan yang ditinjau."
+            }
+          ],
+          "explanation": null
+        },
+        {
+          "kind": "GOVERNED_RULE",
+          "facts": [
+            {
+              "id": "tax.selectedPacks",
+              "display": "CountryPack terpilih: belum ada."
+            },
+            {
+              "id": "tax.catalog.ID_CIT_DETERMINATION_2025",
+              "display": "Paket ID_CIT_DETERMINATION_2025@2: tata kelola CANDIDATE; cakupan 2025-01-01 hingga 2025-12-31."
+            },
+            {
+              "id": "tax.catalog.ID_SG_RESEARCH",
+              "display": "Paket ID_SG_RESEARCH@1: tata kelola CANDIDATE; cakupan ? hingga ?."
+            }
+          ],
+          "explanation": "Fakta kandidat dan usulan aturan memerlukan konfirmasi terpisah serta tinjauan keberlakuan terkelola."
+        }
+      ]
+    },
+    {
+      "stage": "report-explanation",
+      "provider": "meta",
+      "status": "MUSE_UNDERSTOOD",
+      "sections": [
+        {
+          "kind": "CALCULATED_RESULT",
+          "facts": [
+            {
+              "id": "report.revenueMinor",
+              "display": "Pendapatan: IDR 29.446.000."
+            },
+            {
+              "id": "report.expenseMinor",
+              "display": "Beban: IDR 125.000."
+            },
+            {
+              "id": "report.netMinor",
+              "display": "Laba bersih pembukuan: IDR 29.321.000."
+            }
+          ],
+          "explanation": "Nilai tercatat ini menunjukkan hasil pembukuan; perlakuan pajak akhir memerlukan tinjauan pajak terkelola."
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "revenueMinor": "29446000",
+    "expenseMinor": "125000",
+    "netMinor": "29321000",
+    "revenueMajor": "29446000",
+    "expenseMajor": "125000",
+    "netMajor": "29321000"
+  },
+  "failure": null,
+  "metrics": [
+    {
+      "purpose": "business-profiling",
+      "success": true,
+      "schemaValidationSuccess": true,
+      "cacheHit": false,
+      "fallbackUsed": false,
+      "latencyMs": 4855,
+      "usage": {
+        "input_tokens": 1083,
+        "output_tokens": 879,
+        "total_tokens": 1962,
+        "reasoning_tokens": 586
+      },
+      "failure": null
+    },
+    {
+      "purpose": "pack-driven-question",
+      "success": true,
+      "schemaValidationSuccess": true,
+      "cacheHit": false,
+      "fallbackUsed": false,
+      "latencyMs": 2233,
+      "usage": {
+        "input_tokens": 204,
+        "output_tokens": 204,
+        "total_tokens": 408,
+        "reasoning_tokens": 163
+      },
+      "failure": null
+    },
+    {
+      "purpose": "document-understanding",
+      "success": true,
+      "schemaValidationSuccess": true,
+      "cacheHit": false,
+      "fallbackUsed": false,
+      "latencyMs": 2840,
+      "usage": {
+        "input_tokens": 805,
+        "output_tokens": 559,
+        "total_tokens": 1364,
+        "reasoning_tokens": 262
+      },
+      "failure": null
+    },
+    {
+      "purpose": "contextual-assistant",
+      "success": true,
+      "schemaValidationSuccess": true,
+      "cacheHit": false,
+      "fallbackUsed": false,
+      "latencyMs": 2630,
+      "usage": {
+        "input_tokens": 2421,
+        "output_tokens": 439,
+        "total_tokens": 2860,
+        "reasoning_tokens": 229
+      },
+      "failure": null
+    },
+    {
+      "purpose": "contextual-assistant",
+      "success": true,
+      "schemaValidationSuccess": true,
+      "cacheHit": false,
+      "fallbackUsed": false,
+      "latencyMs": 1189,
+      "usage": {
+        "input_tokens": 476,
+        "output_tokens": 316,
+        "total_tokens": 792,
+        "reasoning_tokens": 261
+      },
+      "failure": null
+    }
+  ],
+  "credentialsRecorded": false
+}

@@ -8,6 +8,8 @@ async function dispatch(store,method,path,query={},body={}){
   const currency=query.currency||ctx.org?.baseCurrency;
   if(path.startsWith('/api/intake')||path.startsWith('/api/muse')||path.startsWith('/api/tax/review'))store.checkAuth(body?.authToken??query.token??null);
   if(method==='GET'){
+   if(path==='/api/product')return json({ok:true,...store.productState()});
+   if(path==='/api/demo/status')return json({ok:true,...(store.demo??{enabled:false})});
    if(path==='/api/i18n/pack')return json({ok:true,pack:await store.languagePack(query.locale)});
    if(path==='/api/reports/reporting-status')return json({ok:true,...store.reportingStatus()});
    if(path==='/api/muse/status')return json({ok:true,...store.museStatus()});
@@ -36,6 +38,7 @@ async function dispatch(store,method,path,query={},body={}){
   }
   if(method==='POST'){
    const token=body?.authToken??query.token??null;store.checkAuth(token);
+   if(path==='/api/demo/document'){if(!store.demo?.enabled||!store.demoDocument)return err('Demo workspace required',403);return json({ok:true,...await store.demoDocument(body.sample)},201);}
    if(path==='/api/intake/fx/resolve')return json({ok:true,candidate:await store.intake.resolveFx(body)});
    if(path==='/api/intake/fx/approve')return json({ok:true,candidate:await store.intake.approveFx(body)});
    if(path==='/api/i18n/conversation')return json({ok:true,locale:store.setConversationLocale(body.locale)});

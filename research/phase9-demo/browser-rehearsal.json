@@ -1,0 +1,154 @@
+{
+  "success": true,
+  "syntheticOnly": true,
+  "liveMetaCalls": 0,
+  "engineJournals": 3,
+  "checks": [
+    {
+      "viewport": "desktop",
+      "page": "dashboard",
+      "width": 1440,
+      "documentWidth": 1425,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Ringkasan sederhana"
+    },
+    {
+      "viewport": "desktop",
+      "page": "intake",
+      "width": 1440,
+      "documentWidth": 1425,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Chat & dokumen"
+    },
+    {
+      "viewport": "desktop",
+      "page": "documents",
+      "width": 1440,
+      "documentWidth": 1425,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Dokumen"
+    },
+    {
+      "viewport": "desktop",
+      "page": "tax",
+      "width": 1440,
+      "documentWidth": 1425,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Kesiapan pajak"
+    },
+    {
+      "viewport": "desktop",
+      "page": "reports",
+      "width": 1440,
+      "documentWidth": 1440,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Laporan · IDR"
+    },
+    {
+      "viewport": "desktop",
+      "page": "assistant",
+      "width": 1440,
+      "documentWidth": 1440,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Asisten BiG-M"
+    },
+    {
+      "viewport": "desktop",
+      "page": "settings",
+      "width": 1440,
+      "documentWidth": 1440,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Pengaturan"
+    },
+    {
+      "viewport": "laptop",
+      "page": "dashboard",
+      "width": 1280,
+      "documentWidth": 1265,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Ringkasan sederhana"
+    },
+    {
+      "viewport": "laptop",
+      "page": "intake",
+      "width": 1280,
+      "documentWidth": 1265,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Chat & dokumen"
+    },
+    {
+      "viewport": "laptop",
+      "page": "documents",
+      "width": 1280,
+      "documentWidth": 1265,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Dokumen"
+    },
+    {
+      "viewport": "laptop",
+      "page": "tax",
+      "width": 1280,
+      "documentWidth": 1265,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Kesiapan pajak"
+    },
+    {
+      "viewport": "laptop",
+      "page": "reports",
+      "width": 1280,
+      "documentWidth": 1280,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Laporan · IDR"
+    },
+    {
+      "viewport": "laptop",
+      "page": "assistant",
+      "width": 1280,
+      "documentWidth": 1280,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Asisten BiG-M"
+    },
+    {
+      "viewport": "laptop",
+      "page": "settings",
+      "width": 1280,
+      "documentWidth": 1280,
+      "visibleJson": 0,
+      "untranslated": false,
+      "heading": "Pengaturan"
+    }
+  ],
+  "consoleErrors": [],
+  "languageSwitchPreservedRoute": true,
+  "fallbackExplanationMatchesEngine": true,
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "screenshots": [
+    "dashboard-desktop.png",
+    "dashboard-laptop.png",
+    "documents-laptop.png",
+    "reports-laptop.png",
+    "tax-laptop.png"
+  ]
+}

@@ -39,6 +39,15 @@ async function mount(store){
  await vm.runInContext(fs.readFileSync('public/app.js','utf8'),context);
  return {context,elements,read:code=>vm.runInContext(code,context)};
 }
+describe('Phase 9 product experience',()=>{
+ it('shows useful empty home and separate tax blockers without invented results',async()=>{
+  const store=createActiveStore(),h=await mount(store);assert.match(h.elements.get('#view').innerHTML,/No transactions yet/);assert.ok(!h.elements.get('#view').innerHTML.includes('class="stat"'));const nav=h.elements.get('#tabs').innerHTML;for(const id of ['dashboard','assistant','intake','documents','tax','reports','settings'])assert.ok(nav.includes('data-route="'+id+'"'));h.read("route='tax';render()");assert.match(h.elements.get('#view').innerHTML,/Missing approved rule/);assert.match(h.elements.get('#view').innerHTML,/has not been determined/);assert.ok(!h.elements.get('#view').innerHTML.includes('IDR 0'));
+ });
+ it('shows actual document stages and historical FX with clear prepared-data provenance',async()=>{
+  const {createDemoStore,prepareDemo}=require('../src/web/demo'),store=createDemoStore();await prepareDemo(store);const h=await mount(store);h.read("route='documents';render()");const html=h.elements.get('#view').innerHTML;assert.match(html,/document-steps/);assert.match(html,/Local interpretation/);assert.match(html,/Recorded Frankfurter demo rate/);assert.match(html,/IDR 27,946,000/);assert.match(html,/SGD 2,000.00/);assert.ok(!h.elements.get('#intakeChat'));h.read("route='tax';render()");await h.elements.get('#explainTax').handlers.click();assert.equal(h.read('route'),'assistant');assert.match(h.elements.get('#view').innerHTML,/treaty applicability is not established/);assert.equal(store.ctx.ledger.size,3);
+ });
+});
+
 describe('Phase 8 international SPA',()=>{
  it('changes locale while keeping profile, confirmation and active dashboard intact',async()=>{
   const store=createActiveStore(),h=await mount(store),before=JSON.stringify({profile:store.onboardingState().profileState,confirmation:store.onboardingState().confirmation,workspace:store.workspaceProfile(),audit:store.ctx.audit.list()});await h.elements.get('#topLang').handlers.change({target:{value:'id-ID'}});assert.equal(h.read('UILANG'),'id-ID');assert.equal(h.read('route'),'dashboard');assert.equal(h.read("money('1250000','IDR')"),'IDR 1.250.000');assert.equal(JSON.stringify({profile:store.onboardingState().profileState,confirmation:store.onboardingState().confirmation,workspace:store.workspaceProfile(),audit:store.ctx.audit.list()}),before);

@@ -10,6 +10,12 @@
   "scripts": {
     "test": "node scripts/test.js",
     "security:scan": "node scripts/scan-research-secrets.js",
+    "demo": "node scripts/demo.js start",
+    "demo:reset": "node scripts/demo.js reset",
+    "demo:prepare": "node scripts/demo.js prepare",
+    "test:demo": "node --require ./scripts/test-network-guard.cjs --test test/demo-submission.test.js",
+    "test:demo:live": "node scripts/demo-live.js",
+    "test:demo:browser": "node --experimental-websocket scripts/demo-browser.js",
     "test:fx:live": "node scripts/international-smoke.js fx",
     "test:meta:multilingual": "node scripts/international-smoke.js multilingual",
     "start": "node src/web/server.js",

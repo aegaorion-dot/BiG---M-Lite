@@ -1,0 +1,40 @@
+flowchart TB
+  User[User / business owner]
+  UI[Local UI: Home, Assistant, Transactions, Documents, Tax readiness, Reports, Settings]
+  Locale[Versioned local language packs + Intl formatting]
+  Muse[Shared Meta Muse Spark runtime: schema-validated candidates]
+  OCR[Existing local extraction / OCR: originals retained]
+  Profile[Structured profile and independent jurisdiction / currency facts]
+  Fabric[CountryPack Fabric: sanitized source evidence and candidate envelopes]
+  Packs[Governed CountryPack / TreatyPack candidates]
+  Resolve[Existing deterministic applicability / missing-fact resolvers]
+  Tax[ONE Universal Tax Engine: separately scoped, governed calculation]
+  Review[Human profile, rule, mapping and transaction review]
+  Intake[Existing Universal Intake: Native / Chat / Document / External]
+  FX[Existing explicit historical FX quote + human approval; original retained]
+  Accounting[ONE Accounting Engine: exact Money, journals, audit, periods, idempotency]
+  Reports[Deterministic recorded reports; stored historical FX replay]
+  Explain[Grounded Muse fact selection + validated local rendering]
+  User --> UI
+  Locale --> UI
+  UI -->|conversation| Muse
+  UI -->|document| OCR
+  OCR -->|untrusted extracted evidence| Muse
+  Muse -->|candidate facts only| Profile
+  Fabric --> Packs
+  Profile --> Resolve
+  Packs --> Resolve
+  Resolve -->|requirements and explicit rule review| Review
+  Review -->|scoped facts and governed approvals| Tax
+  UI --> Intake
+  Muse -->|transaction candidates only| Intake
+  Intake --> Review
+  Review -->|foreign transaction: dated quote review| FX
+  FX -->|approved functional amount + original evidence| Intake
+  Review -->|explicit transaction confirmation| Intake
+  Intake -->|validated canonical command through existing boundary| Accounting
+  Accounting --> Reports
+  Tax -->|authoritative result when available| Explain
+  Reports --> Explain
+  Resolve -->|actual readiness and missing facts| Explain
+  Explain --> UI

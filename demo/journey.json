@@ -1,0 +1,25 @@
+{
+  "syntheticOnly": true,
+  "persona": "Australian freelancer operating in Bali with Singapore clients",
+  "profiling": "Saya orang Australia dan menjalankan usaha jasa desain di Bali. Pelanggan saya di Singapura.",
+  "correction": "Koreksi, nama usaha saya adalah Bali Design Demo.",
+  "functionalCurrencyAnswer": "Saya menggunakan IDR untuk pembukuan.",
+  "localPayment": "Client paid me IDR 1500000 for design service on 2026-06-01. Payment: bank.",
+  "foreignPayment": "Singapore client paid me SGD 2000 for design service on 2026-06-01. Payment: bank.",
+  "taxQuestion": "Mengapa pajak saya belum siap?",
+  "reportQuestion": "Jelaskan hasil usaha dan pendapatan saya.",
+  "recordedFx": {
+    "baseCurrency": "SGD",
+    "quoteCurrency": "IDR",
+    "date": "2026-06-01",
+    "rate": "13973",
+    "mode": "RECORDED_DEMO_FIXTURE",
+    "capturedProvider": "frankfurter-v2",
+    "evidence": "research/phase8-international/live-fx.json"
+  },
+  "expectedPreparedTotalsMinor": {
+    "revenue": "29446000",
+    "expenses": "125000",
+    "net": "29321000"
+  }
+}

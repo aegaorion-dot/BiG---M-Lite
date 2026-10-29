@@ -1,0 +1,217 @@
+{
+  "phase": 9,
+  "branch": "hackathon/demo-submission",
+  "preservedPhase8": "a1e2d402fb42f5d94c677f81ccfdedf03d4bf40d",
+  "checkpointPolicy": "LOCAL_COMMIT_ONLY_NO_PUSH_OR_SUBMISSION",
+  "baseline": {
+    "passed": 396,
+    "clean": true
+  },
+  "regression": {
+    "command": "npm test",
+    "tests": 402,
+    "passed": 402,
+    "failed": 0,
+    "skipped": 0,
+    "suites": 29,
+    "newChecks": 6,
+    "liveCalls": 0
+  },
+  "primaryE2E": {
+    "passed": true,
+    "transport": "REAL_LOOPBACK_HTTP",
+    "muse": "INJECTED_FIXTURE_SHARED_ADAPTER",
+    "steps": [
+      "Indonesian profile",
+      "Correction",
+      "Explicit functional currency",
+      "Human profile confirmation and activation",
+      "Local transaction review and posting",
+      "Receipt understanding and human review",
+      "Original SGD and separately approved historical FX",
+      "Scoped actual tax requirements",
+      "Grounded tax/report explanation",
+      "Locale switch with unchanged financial state",
+      "Historical restart/replay"
+    ],
+    "expectedTotalsMinor": {
+      "revenue": "29446000",
+      "expenses": "125000",
+      "net": "29321000"
+    }
+  },
+  "liveAcceptance": {
+    "passed": true,
+    "requests": 5,
+    "requestCeiling": 5,
+    "retries": 0,
+    "elapsedMs": 15579,
+    "inputTokens": 4989,
+    "outputTokens": 2397,
+    "totalTokens": 7386,
+    "evidence": "live-acceptance.json",
+    "liveFxRequests": 0,
+    "credentialsRecorded": false
+  },
+  "browserRehearsal": {
+    "passed": true,
+    "checks": 14,
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "width": 1280,
+        "height": 800
+      }
+    ],
+    "consoleErrors": [],
+    "visibleJsonByDefault": false,
+    "overflow": false,
+    "languageSwitchPreservedRoute": true,
+    "fallbackExplanationMatchesEngine": true,
+    "evidence": "browser-rehearsal.json",
+    "nativeComputerUse": "UNAVAILABLE_MISSING_PIPE_AND_RUNTIME",
+    "fallback": "INSTALLED_HEADLESS_CHROME"
+  },
+  "demo": {
+    "reset": "npm run demo:reset",
+    "prepare": "npm run demo:prepare",
+    "start": "npm run demo",
+    "defaultMode": "OFFLINE_SYNTHETIC",
+    "dataDirectory": "data/demo",
+    "normalDataPathIgnored": true,
+    "cliResetPrepareStartupPassed": true,
+    "liveProcessCeiling": 12,
+    "fxMode": "RECORDED_DEMO_FIXTURE",
+    "recordedFx": {
+      "base": "SGD",
+      "quote": "IDR",
+      "date": "2026-06-01",
+      "rate": "13973",
+      "originalMinor": "200000",
+      "functionalMinor": "27946000"
+    },
+    "taxReview": "Explicit 2026 ID ordinary individual-income candidate scope; eight missing governed facts; no eligibility/residence/rule approval",
+    "secondaryUmkmJourney": "NOT_ADDED_PRIMARY_PRIORITIZED"
+  },
+  "productAreas": [
+    "Home / Business",
+    "Assistant",
+    "Transactions",
+    "Documents",
+    "Tax readiness",
+    "Reports",
+    "Settings"
+  ],
+  "security": {
+    "workingTreeScan": {
+      "filesScannedBeforeVerification": 433,
+      "configuredCredentialPrivatelyCompared": true,
+      "knownCredentialMatches": 0,
+      "unresolvedCredentials": 0,
+      "findings": [],
+      "reviewedSyntheticFixtureMatches": 19,
+      "environmentFiles": [],
+      "logs": [],
+      "passed": true
+    },
+    "envIgnored": true,
+    "envTracked": false,
+    "researchSanitizerUnchanged": true,
+    "reachableHistoryBeforeCommit": {
+      "blobs": 567,
+      "commits": 75,
+      "unresolvedCredentials": 0
+    },
+    "postCommitHistoryScanRequired": true
+  },
+  "frozenSourceUnchanged": [
+    "src/domain",
+    "src/accounting",
+    "src/tax",
+    "src/countrypack",
+    "src/fabric",
+    "src/fx",
+    "src/intake",
+    "src/i18n/languagePacks.js",
+    "src/app/verticalSlice.js"
+  ],
+  "newEngineOrArchitecture": false,
+  "newJurisdictionOrTaxRule": false,
+  "newDependencies": false,
+  "preservedRefs": {
+    "refs/heads/hackathon/country-pack-fabric": "729e6317c627d0c152573fec5131733fc34506f2",
+    "refs/heads/hackathon/document-intake-ocr": "d5672109b4ba6010bc62473bfe0ca36e4e3f79d7",
+    "refs/heads/hackathon/freelancer-umkm-packs": "4bd0096d2395f0dc81b0dbbfca578bf38967fd69",
+    "refs/heads/hackathon/international-runtime": "a1e2d402fb42f5d94c677f81ccfdedf03d4bf40d",
+    "refs/heads/hackathon/live-muse-runtime": "1567627c93f9198f6d759bd2eed10f0fd26ebc9c",
+    "refs/heads/hackathon/universal-intake": "a850eb107cd41ecf17dab865a3bfe4725fc351c8",
+    "refs/heads/hackathon/universal-profiling-country-packs": "46c159df79f2c160e59e42fc00e4626c3480043c",
+    "refs/heads/hackathon/universal-tax-engine": "9b6ef031f231de3c8cdfcf62f79bfc8848dbf0de",
+    "refs/heads/main": "d6ce3b0c586761cd9221c613c569fdc2644c504a",
+    "refs/remotes/origin/HEAD": "729e6317c627d0c152573fec5131733fc34506f2",
+    "refs/remotes/origin/hackathon/country-pack-fabric": "729e6317c627d0c152573fec5131733fc34506f2",
+    "refs/remotes/origin/hackathon/document-intake-ocr": "d5672109b4ba6010bc62473bfe0ca36e4e3f79d7",
+    "refs/remotes/origin/hackathon/freelancer-umkm-packs": "4bd0096d2395f0dc81b0dbbfca578bf38967fd69",
+    "refs/remotes/origin/hackathon/live-muse-runtime": "1567627c93f9198f6d759bd2eed10f0fd26ebc9c",
+    "refs/remotes/origin/hackathon/universal-intake": "a850eb107cd41ecf17dab865a3bfe4725fc351c8",
+    "refs/remotes/origin/hackathon/universal-tax-engine": "9b6ef031f231de3c8cdfcf62f79bfc8848dbf0de"
+  },
+  "documentation": [
+    "README.md",
+    "docs/PHASE9-DEMO-SUBMISSION.md",
+    "docs/DEMO-REHEARSAL.md",
+    "docs/HACKATHON-TECHNICAL-SUMMARY.md",
+    "docs/architecture/phase9.mmd"
+  ],
+  "remainingLimits": [
+    "No automatic tax liability/compliance; approvals and treaty applicability unresolved",
+    "Reporting currency conversion and foreign multi-line journal conversion pending",
+    "Unpaid accrual, revaluation, consolidation, payroll/inventory outside scope",
+    "Recorded demo FX supports one exact historical pair/date",
+    "OCR quality and live Meta availability can require human correction",
+    "Grounded templated explanations select actual state; technical IDs remain in details",
+    "Local prototype; exhaustive mobile/accessibility and multi-user production not claimed",
+    "Official theme/full judging criteria and final submission form not supplied"
+  ],
+  "filesChanged": [
+    ".env.example",
+    "README.md",
+    "demo/invoice-sgd.txt",
+    "demo/journey.json",
+    "demo/receipt-id.txt",
+    "docs/DEMO-REHEARSAL.md",
+    "docs/HACKATHON-TECHNICAL-SUMMARY.md",
+    "docs/PHASE9-DEMO-SUBMISSION.md",
+    "docs/architecture/phase9.mmd",
+    "package.json",
+    "public/app.js",
+    "public/i18n/en.json",
+    "public/i18n/id.json",
+    "public/styles.css",
+    "research/phase9-demo/browser-rehearsal.json",
+    "research/phase9-demo/live-acceptance.json",
+    "research/phase9-demo/screenshots/dashboard-desktop.png",
+    "research/phase9-demo/screenshots/dashboard-laptop.png",
+    "research/phase9-demo/screenshots/documents-laptop.png",
+    "research/phase9-demo/screenshots/reports-laptop.png",
+    "research/phase9-demo/screenshots/tax-laptop.png",
+    "research/phase9-demo/verification.json",
+    "scripts/demo-browser.js",
+    "scripts/demo-live.js",
+    "scripts/demo.js",
+    "scripts/test.js",
+    "src/ai/museContext.js",
+    "src/ai/museLanguage.js",
+    "src/ai/museRuntime.js",
+    "src/web/api.js",
+    "src/web/demo.js",
+    "src/web/product.js",
+    "src/web/server.js",
+    "src/web/store.js",
+    "test/demo-submission.test.js",
+    "test/web-ui-contract.test.js"
+  ]
+}

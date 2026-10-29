@@ -1,0 +1,8 @@
+STRUK / RECEIPT - SYNTHETIC DEMO
+Tanggal: 2026-06-01
+Vendor: Toko Contoh Demo
+Deskripsi: Perlengkapan usaha
+TOTAL IDR 125000
+Payment: bank
+Status: paid / lunas
+Reference: DEMO-RECEIPT-001

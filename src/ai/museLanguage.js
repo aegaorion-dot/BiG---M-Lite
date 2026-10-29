@@ -15,8 +15,10 @@ function localizedFact(f,locale){
  else if(f.id==='tax.packStatus')display=text('packStatus',{status:v});
  else if(f.id==='tax.selectedPacks')display=text('selectedPacks',{packs:v.join(', ')||'belum ada'});
  else if(f.id==='tax.reviewMissing')display=text('taxReviewMissing');
+ else if(f.id==='tax.treatyReview')display=text('treatyReview');
+ else if(f.id.startsWith('tax.catalog.'))display=text('packSummary',{pack:v.packId,version:v.version,status:v.governance,from:v.effectiveFrom??'?',to:v.effectiveTo??'?'});
  else if(f.id==='tax.readiness')display=text('taxReviewStatus',{status:v});
- else if(f.kind==='MISSING_INFORMATION'&&f.id.startsWith('tax.')&&typeof v==='string')display=text('missing',{fact:v});
+ else if(f.kind==='MISSING_INFORMATION'&&f.id.startsWith('tax.')&&typeof v==='string'){const key='product.taxFact.'+v,label=t(locale,key);display=text('missing',{fact:label===key?v:label});}
  else if(f.id==='intake.unavailable'||f.id==='tax.determinationUnavailable')display=text('unavailable');
  else if(f.id.startsWith('candidate.'))display=text('candidate',{id:v.candidateId,status:v.status,issues:[...(v.conflicts??[]),...(v.missingFields??[])].join('; ')});
  else if(f.id==='tax.determinationStatus')display=text('determination',{status:v.status,reason:v.reason??'belum ada'});
