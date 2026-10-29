@@ -3,6 +3,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const {SOURCES,classifyLink}=require('../src/fabric/registry');
 const {RawArtifactStore}=require('../src/fabric/artifacts');
+const {sanitizeResearchRecord}=require('../src/fabric/researchSanitizer');
 const root=path.resolve(__dirname,'../research/country-pack-fabric');
 const rows=fs.readFileSync(path.join(root,'observations.jsonl'),'utf8').trim().split('\n').map(JSON.parse),store=new RawArtifactStore(path.join(root,'captures'));
 const categories={API:/(?:\/|\.)api(?:\/|\.)|\/(?:swagger|openapi|odata)(?:\/|[?#]|$)|api\.w\.org/i,JSON:/\.json(?:[?#]|$)|jsonfeed/i,XML:/\.xml(?:[?#]|$)/i,RSS_ATOM:/rss|atom|feed/i,PDF:/\.pdf(?:[?#]|$)/i,ZIP:/\.zip(?:[?#]|$)/i,SEARCH:/search|pencarian|browse/i,PAGINATION:/[?&](?:page|offset|limit|pagesize)=/i};
@@ -14,4 +15,4 @@ const result=SOURCES.map(s=>{
  }
  return {sourceId:s.sourceId,checks:Object.fromEntries(Object.entries(categories).map(([category,pattern])=>[category,links.filter(u=>pattern.test(u)).slice(0,15).map(url=>({url,classification:classifyLink(s.jurisdictionCode,url),access:rows.some(r=>r.url===url)?'SEE_REQUEST_OBSERVATIONS':'LINK_OBSERVED_NOT_REQUESTED'}))])),note:'Empty category means not observed in captured links, not proof of absence. Search/pagination links are discovery only, not tested search result semantics.'};
 });
-fs.writeFileSync(path.join(root,'access-link-discovery.json'),JSON.stringify(result,null,2)+'\n');console.log('Inspected captured links for',result.length,'registered families; no new trust added.');
+fs.writeFileSync(path.join(root,'access-link-discovery.json'),JSON.stringify(sanitizeResearchRecord(result),null,2)+'\n');console.log('Inspected captured links for',result.length,'registered families; no new trust added.');

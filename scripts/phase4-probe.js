@@ -4,6 +4,7 @@ const fs=require('node:fs'),path=require('node:path');
 const {RawArtifactStore}=require('../src/fabric/artifacts');
 const {SourceConnector}=require('../src/fabric/connector');
 const {getSource}=require('../src/fabric/registry');
+const {sanitizeResearchRecord}=require('../src/fabric/researchSanitizer');
 async function main(){
  if(!process.argv.includes('--live')||process.env.NODE_TEST_CONTEXT||process.env.NODE_ENV==='test')throw Error('Explicit --live required outside tests');
  const root=path.resolve(__dirname,'../research/phase4-packs');fs.mkdirSync(root,{recursive:true});
@@ -13,7 +14,7 @@ async function main(){
  async function worker(){while(next<targets.length){const t=targets[next++],timestamp=new Date().toISOString();let artifact=null,error=null;
   try{artifact=await connector.retrieve(t);}catch(e){error={message:e.message,cause:e.cause?.code??null,redirects:e.redirects??[],finalUrl:e.finalUrl??null};}
   const row={...t,timestamp,authority:getSource(t.sourceId).authorityName,success:artifact?.status==='DISCOVERED',httpStatus:artifact?.httpStatus??null,resolvedUrl:artifact?.finalUrl??error?.finalUrl??null,contentType:artifact?.contentType??null,retrievalMethod:t.method,responseHash:artifact?.rawContentHash??null,failureReason:error?.message??(artifact?.status==='DISCOVERED'?null:artifact?.status),artifact,error};
-  fs.appendFileSync(path.join(root,'observations.jsonl'),JSON.stringify(row)+'\n');console.log(t.id,row.httpStatus??'FAILED',artifact?.sourceType??'',row.failureReason??'OK');
+  fs.appendFileSync(path.join(root,'observations.jsonl'),JSON.stringify(sanitizeResearchRecord(row))+'\n');console.log(t.id,row.httpStatus??'FAILED',artifact?.sourceType??'',row.failureReason??'OK');
  }}
  await Promise.all(Array.from({length:3},worker));
 }

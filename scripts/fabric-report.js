@@ -5,6 +5,7 @@ const {SOURCES}=require('../src/fabric/registry');
 const {RawArtifactStore,detectType,hash}=require('../src/fabric/artifacts');
 const {normalizeArtifact}=require('../src/fabric/normalizer');
 const {evidenceCandidate,countryPackCandidate}=require('../src/fabric/candidates');
+const {sanitizeResearchRecord}=require('../src/fabric/researchSanitizer');
 function main(){
  const root=path.resolve(__dirname,'../research/country-pack-fabric');
  const observations=fs.readFileSync(path.join(root,'observations.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
@@ -49,7 +50,7 @@ function main(){
    metadataSamples:samples.filter(s=>s.sourceId===source.sourceId).map(s=>({kind:s.kind,documentId:s.officialDocumentId,publishedAt:s.publication,effectiveDate:s.effectiveDate,versionInfo:!!s.versionMetadata?.length,citationGranularity:s.citationGranularity,ocr:s.ocr})),
    limitations:'No API/format claim from absence. Homepage/sitemap success does not establish document or judgment availability. Discovered links are not automatically fetched or trusted. Publication, snapshot, amendment and commencement are distinct.'};
  });
- function write(file,value){fs.writeFileSync(path.join(root,file),JSON.stringify(value,null,2)+'\n');}
+ function write(file,value){fs.writeFileSync(path.join(root,file),JSON.stringify(sanitizeResearchRecord(value),null,2)+'\n');}
  write('sample-manifest.json',samples);write('fixtures/artifacts.json',samples.map(s=>s.artifact));write('access-matrix.json',matrix);
  // Candidate exports are review artifacts, deliberately separate from the runtime CountryPack registry.
  write('candidate-examples.json',candidates);

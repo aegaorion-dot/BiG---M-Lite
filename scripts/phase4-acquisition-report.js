@@ -2,6 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),{createHash}=require('node:crypto');
 const {loadSources}=require('./phase4-normalize');
 const {RawArtifactStore}=require('../src/fabric/artifacts');
+const {sanitizeResearchRecord}=require('../src/fabric/researchSanitizer');
 const root=path.resolve(__dirname,'../research/phase4-packs'),sources=loadSources(),store=new RawArtifactStore(path.join(root,'raw'));
 const rows=fs.readFileSync(path.join(root,'observations.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
 const findings=rows.map(r=>{
@@ -18,5 +19,5 @@ const original=JSON.parse(fs.readFileSync(path.join(root,'original-inspection.js
  const bytes=fs.readFileSync(path.join(root,m.localPath)),gitSha=createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex'),pdf=rows.find(r=>r.id==='sg-treaty-pdf'&&r.success);
  return {...m,snapshotGitBlobSha:gitSha,exactGitBlobMatch:gitSha===m.blobSha,newOfficialPdfHash:pdf.responseHash,officialPdfHashMatchesOriginal:pdf.responseHash===m.reportedOriginalPdfSha256};
 });
-fs.writeFileSync(path.join(root,'acquisition-findings.json'),JSON.stringify({findings,originalInspection:original},null,2)+'\n');
+fs.writeFileSync(path.join(root,'acquisition-findings.json'),JSON.stringify(sanitizeResearchRecord({findings,originalInspection:original})),null,2)+'\n');
 console.log(JSON.stringify({attempts:rows.length,rawArtifacts:rows.filter(r=>r.artifact).length,failures:findings.filter(r=>!r.transportSuccess).length,softFailures:findings.filter(r=>r.disposition==='SOFT_FAILURE_NOT_LEGAL_EVIDENCE').length,originalExactMatches:original.every(m=>m.exactGitBlobMatch&&m.officialPdfHashMatchesOriginal)}));

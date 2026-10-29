@@ -1,6 +1,7 @@
 'use strict';
 const {getSource,lookupSource,classifyLink,preferAccess}=require('./registry');
 const {detectType,mimeMatches}=require('./artifacts');
+const {assertPublicResearchUrl,sanitizeResearchRecord}=require('./researchSanitizer');
 class SourceConnector{
  constructor({store,fetchImpl=globalThis.fetch,maxBytes=2*1024*1024,timeoutMs=20000,maxRedirects=4}={}){
   if(!store||!Number.isInteger(maxBytes)||maxBytes<1||maxBytes>10*1024*1024||!Number.isInteger(timeoutMs)||timeoutMs<1||timeoutMs>60000||!Number.isInteger(maxRedirects)||maxRedirects<0||maxRedirects>10)throw Error('Bounded artifact store and network limits required');
@@ -15,12 +16,13 @@ class SourceConnector{
    remaining.splice(remaining.indexOf(selected),1);
    try{const artifact=await this.retrieve({sourceId,url:selected.url,method:selected.method});
     if(artifact.status==='DISCOVERED')return artifact;
-    attempts.push({url:selected.url,artifactId:artifact.artifactId,status:artifact.status});
-   }catch(e){attempts.push({url:selected.url,error:e.message});}
+    attempts.push(sanitizeResearchRecord({url:selected.url,artifactId:artifact.artifactId,status:artifact.status}));
+   }catch(e){attempts.push(sanitizeResearchRecord({url:selected.url,error:e.message}));}
   }
   const error=Error('No verified registered access method succeeded');error.attempts=attempts;throw error;
  }
  async retrieve({sourceId,url,method='HTML'}){
+  assertPublicResearchUrl(url);
   const source=getSource(sourceId);if(!source||lookupSource(source.jurisdictionCode,url)?.sourceId!==sourceId)throw Error('Source URL not allowlisted for this authority/jurisdiction');
   if(!source.preferredAccessMethods.includes(method))throw Error('Unsupported access method');
   const sourceUrl=new URL(url).href;let current=sourceUrl;const redirects=[];
@@ -32,7 +34,8 @@ class SourceConnector{
    if([301,302,303,307,308].includes(response.status)){
     const location=response.headers.get('location');await response.body?.cancel();if(!location)throw Error('Redirect without location');
     const next=new URL(location,current).href,classification=classifyLink(source.jurisdictionCode,next);
-    redirects.push({from:current,to:next,status:response.status,classification});
+    redirects.push(sanitizeResearchRecord({from:current,to:next,status:response.status,classification}));
+    assertPublicResearchUrl(next);
     if(lookupSource(source.jurisdictionCode,next)?.sourceId!==sourceId){const error=Error('Redirect blocked: '+classification);error.redirects=redirects;error.finalUrl=current;throw error;}
     if(hop===this.maxRedirects)throw Error('Too many redirects');current=next;continue;
    }

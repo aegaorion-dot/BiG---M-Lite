@@ -2,6 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),{createHash,randomUUID}=require('node:crypto');
 const {deepFreeze}=require('../onboarding/canonical');
 const {validateRawArtifact}=require('./contracts');
+const {sanitizeResearchRecord,sanitizeResearchBytes}=require('./researchSanitizer');
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 const PARSER_VERSION='fabric-raw/1';
 function detectType(bytes){
@@ -22,6 +23,8 @@ class RawArtifactStore{
  constructor(root){this.root=path.resolve(root);fs.mkdirSync(path.join(this.root,'blobs'),{recursive:true});fs.mkdirSync(path.join(this.root,'artifacts'),{recursive:true});}
  save(bytes,metadata){
   if(!Buffer.isBuffer(bytes))throw Error('Raw bytes required');
+  const sanitized=sanitizeResearchBytes(bytes);bytes=sanitized.bytes;metadata=sanitizeResearchRecord(metadata);
+  if(sanitized.redacted)metadata={...metadata,securityRedaction:{originalContentSha256:sanitized.originalContentSha256,redactionReason:sanitized.redactionReason}};
   const rawContentHash=hash(bytes),rawStorageRef='blobs/'+rawContentHash+'.bin',target=path.join(this.root,rawStorageRef),duplicate=fs.existsSync(target);
   const record=deepFreeze({...metadata,artifactId:randomUUID(),rawContentHash,rawStorageRef,byteLength:bytes.length,parserVersion:PARSER_VERSION,duplicateContent:duplicate});
   const validation=validateRawArtifact(record);if(!validation.ok)throw Error(validation.errors.join('; '));
