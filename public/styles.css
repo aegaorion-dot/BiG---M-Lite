@@ -248,6 +248,14 @@ details{margin:12px 0}summary{cursor:pointer;font-weight:700;line-height:1.5}det
 pre{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;max-height:28rem;overflow:auto;font:12px var(--mono)}
 .table-scroll table{min-width:460px}td{overflow-wrap:anywhere}.short-id{font:11px var(--mono);color:var(--ink-soft)}
 input,select,textarea{min-width:0}.drop{margin-top:18px}.drop input{margin-top:8px}.cash-summary{font-size:14px;color:var(--ink-soft)}
+html[dir="rtl"] body{font-family:"Segoe UI",Tahoma,Arial,sans-serif}
+html[dir="rtl"] .advanced-nav{margin-left:0;margin-right:auto}
+html[dir="rtl"] .advanced-nav>div{right:auto;left:0}
+html[dir="rtl"] .processing{border-left:0;border-right:4px solid var(--navy)}
+html[dir="rtl"] input,html[dir="rtl"] select,html[dir="rtl"] textarea,html[dir="rtl"] th,html[dir="rtl"] td{text-align:start}
+html[dir="rtl"] input[type="date"],html[dir="rtl"] input[name="amount"],html[dir="rtl"] input[name="currency"],html[dir="rtl"] input[name="contractTotal"],html[dir="rtl"] .num,html[dir="rtl"] bdi.money{direction:ltr;unicode-bidi:isolate;text-align:end}
+html[dir="rtl"] .ob-chat .bubble{margin-left:0;margin-right:0}
+.scope-position .cards{align-items:start}.scope-position .fact-row{gap:12px}.scope-position bdi{white-space:nowrap}
 button:focus-visible,summary:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--gold-deep);outline-offset:3px}
 @media(max-width:1000px){.product-hero{grid-template-columns:minmax(0,1.3fr) minmax(230px,1fr)}.cards{grid-template-columns:minmax(0,1fr)}.topbar{padding:12px 18px}.readiness-list{gap:10px}}
 @media(max-width:650px){.product-hero,.readiness-list,.product-stats{grid-template-columns:minmax(0,1fr)}.product-hero .hero-main{padding:20px}.product-hero h1{font-size:27px}.tabs{gap:2px}.tab{font-size:12px;padding:8px}.advanced-nav{margin-left:0}.advanced-nav>div{left:0;right:auto}.topbar{position:static}.dlg-actions{flex-wrap:wrap}.lang-select{max-width:170px;min-width:0}}

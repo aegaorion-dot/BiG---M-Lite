@@ -1,0 +1,516 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "ID-DJP",
+  "jurisdictionCode": "ID",
+  "metadata": {
+    "title": "PENGESAHAN PERSETUJUAN ANTARA PEMERINTAH REPUBLIK INDONESIA DAN PEMERINTAH PERSATUAN EMIRAT ARAB TENTANG PENGHINDARAN PAJAK BERGANDA DAN PENCEGAHAN PENGELAKAN PAJAK ATAS PENGHASILAN (AGREEMENT BETWEEN THE GOVERNMENT OF THE REPUBLIC OF INDONESIA AND THE GOVERNMENT OF THE UNITED ARAB EMIRATES FOR THE AVOIDANCE OF DOUBLE TAXATION AND THE PREVENTION OF FISCAL EVASION WITH RESPECT TO TAXES ON INCOME) | Direktorat Jenderal Pajak",
+    "officialDocumentId": null,
+    "language": "id",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "139f0d1f-f415-44c5-99ea-a45aa84600be",
+    "rawContentHash": "d2c76d74f1bb329dd455edeeb43947b543ab743dc5b89567a0c8215c609a1f18",
+    "sourceUrl": "https://pajak.go.id/id/peraturan/pengesahan-persetujuan-antara-pemerintah-republik-indonesia-dan-pemerintah-persatuan",
+    "finalUrl": "https://pajak.go.id/id/peraturan/pengesahan-persetujuan-antara-pemerintah-republik-indonesia-dan-pemerintah-persatuan",
+    "retrievedAt": "2026-10-29T14:39:25.946Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "DJP",
+    "authorityName": "Direktorat Jenderal Pajak",
+    "sourceRole": "TAX_AUTHORITY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/d2c76d74f1bb329dd455edeeb43947b543ab743dc5b89567a0c8215c609a1f18.bin",
+    "rawContentHash": "d2c76d74f1bb329dd455edeeb43947b543ab743dc5b89567a0c8215c609a1f18"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/d2c76d74f1bb329dd455edeeb43947b543ab743dc5b89567a0c8215c609a1f18.bin",
+      "rawContentHash": "d2c76d74f1bb329dd455edeeb43947b543ab743dc5b89567a0c8215c609a1f18"
+    },
+    "metaTags": [
+      "<meta charset=\"utf-8\" />",
+      "<meta name=\"robots\" content=\"index, follow\" />",
+      "<meta name=\"keywords\" content=\"pajak, djp, direktorat jenderal pajak, pph, kup, ppn, ppnbm, djponline\" />",
+      "<meta property=\"og:determiner\" content=\"An\" />",
+      "<meta property=\"og:site_name\" content=\"Direktorat Jenderal Pajak\" />",
+      "<meta property=\"og:url\" content=\"http://pajak.go.id/id/peraturan/pengesahan-persetujuan-antara-pemerintah-republik-indonesia-dan-pemerintah-persatuan\" />",
+      "<meta property=\"og:title\" content=\"PENGESAHAN PERSETUJUAN ANTARA PEMERINTAH REPUBLIK INDONESIA DAN PEMERINTAH PERSATUAN EMIRAT ARAB TENTANG PENGHINDARAN PAJAK BERGANDA DAN PENCEGAHAN PENGELAKAN PAJAK ATAS PENGHASILAN (AGREEMENT BETWEEN THE GOVERNMENT OF THE REPUBLIC OF INDONESIA AND THE GOVERNMENT OF THE UNITED ARAB EMIRATES FOR THE AVOIDANCE OF DOUBLE TAXATION AND THE PREVENTION OF FISCAL EVASION WITH RESPECT TO TAXES ON INCOME)\" />",
+      "<meta name=\"Generator\" content=\"Drupal 8 (https://www.drupal.org)\" />",
+      "<meta name=\"MobileOptimized\" content=\"width\" />",
+      "<meta name=\"HandheldFriendly\" content=\"true\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+      "<meta name=\"HandheldFriendly\" content=\"true\" />",
+      "<meta name=\"apple-touch-fullscreen\" content=\"YES\" />"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Peraturan Presiden 34 TAHUN 2021 Tanggal Peraturan 04-05-2021 PERATURAN PRESIDEN REPUBLIK INDONESIA NOMOR 34 TAHUN 2021 TENTANG PENGESAHAN PERSETUJUAN ANTARA PEMERINTAH REPUBLIK INDONESIA DAN PEMERINTAH PERSATUAN EMIRAT ARAB TENTANG PENGHINDARAN PAJAK BERGANDA DAN PENCEGAHAN PENGELAKAN PAJAK ATAS PENGHASILAN ( AGREEMENT BETWEEN THE GOVERNMENT OF THE REPUBLIC OF INDONESIA AND THE GOVERNMENT OF THE UNITED ARAB EMIRATES FOR THE AVOIDANCE OF DOUBLE TAXATION AND THE PREVENTION OF FISCAL EVASION WITH RESPECT TO TAXES ON INCOME ) DENGAN RAHMAT TUHAN YANG MAHA ESA PRESIDEN REPUBLIK INDONESIA, Menimbang : a. bahwa untuk meningkatkan hubungan bilateral antara Indonesia dan Persatuan Emirat Arab khususnya kerja sama di bidang ekonomi, serta untuk menyesuaikan dengan perkembangan standar pajak internasional terkini, Pemerintah Republik Indonesia dan pemerintah Persatuan Emirat Arab telah menyepakati persetujuan baru di bidang perpajakan tentang penghindaran pajak berganda dan pencegahan pengelakan pajak atas penghasilan; b. bahwa di Bogor, Indonesia pada tanggal 24 Juli 2019, Pemerintah Republik Indonesia dan pemerintah Persatuan Emirat Arab telah menandatangani Persetujuan antara Pemerintah Republik Indonesia dan Pemerintah Persatuan Emirat Arab tentang penghindaran Pajak Berganda dan Pencegahan pengelakan pajak atas Penghasilan (Agreement between the Government of the Republic of Indonesia and the Government of the United Arab Emirates for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income) untuk menggantikan Persetujuan antara Pemerintah Republik Indonesia dan Pemerintah Uni Emirat Arab tentang Penghindaran Pajak Berganda dan Pencegahan Pengelakan Pajak atas Penghasilan ( Agreement between the Government of the Republic of Indonesia and the Government of the United Arab Emirates for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income ) yang ditandatangani di Jakarta, Indonesia pada tanggal 30 November 1995; c. bahwa persetujuan sebagaimana dimaksud dalam huruf b perlu disahkan sebagai dasar hukum bagi pemberlakuan Persetujuan antara Pemerintah Republik Indonesia dan Pemerintah Persatuan Emirat Arab tentang Penghindaran Pajak Berganda dan Pencegahan Pengelakan Pajak atas Penghasilan; d. bahwa berdasarkan pertimbangan sebagaimana dimaksud dalam huruf a, huruf b, dan huruf c, perlu menetapkan Peraturan Presiden tentang Pengesahan Persetujuan antara Pemerintah Republik Indonesia dan Pemerintah Persatuan Emirat Arab tentang Penghindaran Pajak Berganda dan Pencegahan Pengelakan Pajak atas Penghasilan ( Agreement between the Government of the Republic of Indonesia and the Government of the United Arab Emirates for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income ); Mengingat : 1. Pasal 4 ayat (1) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 2. Undang-Undang Nomor 24 Tahun 2000 tentang Perjanjian Internasional (Lembaran Negara Repubtik Indonesia Tahun 2000 Nomor 185 Tambahan Lembaran Indonesia Nomor 4012); MEMUTUSKAN: Menetapkan : PERATURAN PRESIDEN TENTANG PENGESAHAN PERSETUJUAN ANTARA PEMERINTAH REPUBLIK INDONESIA DAN PEMERINTAH PERSATUAN EMIRAT ARAB TENTANG PENGHINDARAN PAJAK BERGANDA DAN PENCEGAHAN PENGELAKAN PAJAK ATAS PENGHASILAN ( AGREEMENT BETWEEN THE GOVERNMENT OF THE REPUBLIC OF INDONESIA AND THE GOVERNMENT OF THE UNITED ARAB EMIRATES FOR THE AVOIDANCE OF DOUBLE TAXATION AND THE PREVENTION OF FISCAL EVASION WITH RESPECT TO TAXES ON INCOME ). Pasal 1 (1) Mengesahkan Persetujuan antara Pemerintah Republik Indonesia dan Pemerintah Persatuan Emirat Arab tentang Penghindaran Pajak Berganda dan Pencegahan Pengelakan Pajak atas Penghasilan ( Agreement between the Government of the Republic of Indonesia and the Government of the United Arab Emirates for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income ) yang telah ditandatangani di Bogor, Indonesia pada tanggal 24 Juli 2019. (2) Salinan naskah asli Persetujuan sebagaimana dimaksud pada ayat (1) dalam bahasa Indonesia, bahasa Arab, dan bahasa Inggris sebagaimana terlampir dan merupakan bagian yang tidak terpisahkan dari Peraturan Presiden ini. Pasal 2 Peraturan Presiden ini mulai berlaku pada tanggal diundangkan. Agar setiap orang mengetahuinya, memerintahkan pengundangan Peraturan Presiden ini dengan penempatannya dalam Lembaran Negara Republik Indonesia. Ditetapkan di Jakarta Pada tanggal 4 Mei 2021 PRESIDEN REPUBLIK INDONESIA, ttd. JOKO WIDODO Diundangkan di Jakarta Pada tanggal 5 Mei 2021 MENTERI HUKUM DAN HAK ASASI MANUSIA REPUBLIK INDONESIA, ttd. YASONNA H. LAOLY LEMBARAN NEGARA REPUBLIK INDONESIA TAHUN 2021 NOMOR 112 Lampiran Peraturan Lampiran PERPRES34TAHUN2021.pdf Status Peraturan Aktif Kategori Peraturan Lainnya",
+    "blocks": [
+      {
+        "locator": "html:article:49698",
+        "text": "Peraturan Presiden 34 TAHUN 2021 Tanggal Peraturan 04-05-2021 PERATURAN PRESIDEN REPUBLIK INDONESIA NOMOR 34 TAHUN 2021 TENTANG PENGESAHAN PERSETUJUAN ANTARA PEMERINTAH REPUBLIK INDONESIA DAN PEMERINTAH PERSATUAN EMIRAT ARAB TENTANG PENGHINDARAN PAJAK BERGANDA DAN PENCEGAHAN PENGELAKAN PAJAK ATAS PENGHASILAN ( AGREEMENT BETWEEN THE GOVERNMENT OF THE REPUBLIC OF INDONESIA AND THE GOVERNMENT OF THE UNITED ARAB EMIRATES FOR THE AVOIDANCE OF DOUBLE TAXATION AND THE PREVENTION OF FISCAL EVASION WITH RESPECT TO TAXES ON INCOME ) DENGAN RAHMAT TUHAN YANG MAHA ESA PRESIDEN REPUBLIK INDONESIA, Menimbang : a. bahwa untuk meningkatkan hubungan bilateral antara Indonesia dan Persatuan Emirat Arab khususnya kerja sama di bidang ekonomi, serta untuk menyesuaikan dengan perkembangan standar pajak internasional terkini, Pemerintah Republik Indonesia dan pemerintah Persatuan Emirat Arab telah menyepakati persetujuan baru di bidang perpajakan tentang penghindaran pajak berganda dan pencegahan pengelakan pajak atas penghasilan; b. bahwa di Bogor, Indonesia pada tanggal 24 Juli 2019, Pemerintah Republik Indonesia dan pemerintah Persatuan Emirat Arab telah menandatangani Persetujuan antara Pemerintah Republik Indonesia dan Pemerintah Persatuan Emirat Arab tentang penghindaran Pajak Berganda dan Pencegahan pengelakan pajak atas Penghasilan (Agreement between the Government of the Republic of Indonesia and the Government of the United Arab Emirates for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income) untuk menggantikan Persetujuan antara Pemerintah Republik Indonesia dan Pemerintah Uni Emirat Arab tentang Penghindaran Pajak Berganda dan Pencegahan Pengelakan Pajak atas Penghasilan ( Agreement between the Government of the Republic of Indonesia and the Government of the United Arab Emirates for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income ) yang ditandatangani di Jakarta, Indonesia pada tanggal 30 November 1995; c. bahwa persetujuan sebagaimana dimaksud dalam huruf b perlu disahkan sebagai dasar hukum bagi pemberlakuan Persetujuan antara Pemerintah Republik Indonesia dan Pemerintah Persatuan Emirat Arab tentang Penghindaran Pajak Berganda dan Pencegahan Pengelakan Pajak atas Penghasilan; d. bahwa berdasarkan pertimbangan sebagaimana dimaksud dalam huruf a, huruf b, dan huruf c, perlu menetapkan Peraturan Presiden tentang Pengesahan Persetujuan antara Pemerintah Republik Indonesia dan Pemerintah Persatuan Emirat Arab tentang Penghindaran Pajak Berganda dan Pencegahan Pengelakan Pajak atas Penghasilan ( Agreement between the Government of the Republic of Indonesia and the Government of the United Arab Emirates for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income ); Mengingat : 1. Pasal 4 ayat (1) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 2. Undang-Undang Nomor 24 Tahun 2000 tentang Perjanjian Internasional (Lembaran Negara Repubtik Indonesia Tahun 2000 Nomor 185 Tambahan Lembaran Indonesia Nomor 4012); MEMUTUSKAN: Menetapkan : PERATURAN PRESIDEN TENTANG PENGESAHAN PERSETUJUAN ANTARA PEMERINTAH REPUBLIK INDONESIA DAN PEMERINTAH PERSATUAN EMIRAT ARAB TENTANG PENGHINDARAN PAJAK BERGANDA DAN PENCEGAHAN PENGELAKAN PAJAK ATAS PENGHASILAN ( AGREEMENT BETWEEN THE GOVERNMENT OF THE REPUBLIC OF INDONESIA AND THE GOVERNMENT OF THE UNITED ARAB EMIRATES FOR THE AVOIDANCE OF DOUBLE TAXATION AND THE PREVENTION OF FISCAL EVASION WITH RESPECT TO TAXES ON INCOME ). Pasal 1 (1) Mengesahkan Persetujuan antara Pemerintah Republik Indonesia dan Pemerintah Persatuan Emirat Arab tentang Penghindaran Pajak Berganda dan Pencegahan Pengelakan Pajak atas Penghasilan ( Agreement between the Government of the Republic of Indonesia and the Government of the United Arab Emirates for the Avoidance of Double Taxation and the Prevention of Fiscal Evasion with Respect to Taxes on Income ) yang telah ditandatangani di Bogor, Indonesia pada tanggal 24 Juli 2019. (2) Salinan naskah asli Persetujuan sebagaimana dimaksud pada ayat (1) dalam bahasa Indonesia, bahasa Arab, dan bahasa Inggris sebagaimana terlampir dan merupakan bagian yang tidak terpisahkan dari Peraturan Presiden ini. Pasal 2 Peraturan Presiden ini mulai berlaku pada tanggal diundangkan. Agar setiap orang mengetahuinya, memerintahkan pengundangan Peraturan Presiden ini dengan penempatannya dalam Lembaran Negara Republik Indonesia. Ditetapkan di Jakarta Pada tanggal 4 Mei 2021 PRESIDEN REPUBLIK INDONESIA, ttd. JOKO WIDODO Diundangkan di Jakarta Pada tanggal 5 Mei 2021 MENTERI HUKUM DAN HAK ASASI MANUSIA REPUBLIK INDONESIA, ttd. YASONNA H. LAOLY LEMBARAN NEGARA REPUBLIK INDONESIA TAHUN 2021 NOMOR 112 Lampiran Peraturan Lampiran PERPRES34TAHUN2021.pdf Status Peraturan Aktif Kategori Peraturan Lainnya",
+        "anchorId": "a5cea1b13547052db2bee6ad83dc52fe41badd4fd817362e18cf358d06046b8e"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "a5cea1b13547052db2bee6ad83dc52fe41badd4fd817362e18cf358d06046b8e",
+      "locator": "html:article:49698",
+      "start": 0,
+      "end": 4862,
+      "quoteHash": "db5e1445c3267e39f1dfdb3206bfee1548062736ba8a9de0b113b5eed94b0120",
+      "rawContentHash": "d2c76d74f1bb329dd455edeeb43947b543ab743dc5b89567a0c8215c609a1f18"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://pajak.go.id/id/peraturan/pengesahan-persetujuan-antara-pemerintah-republik-indonesia-dan-pemerintah-persatuan#main-content",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/selayang-pandang",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/visi-misi-tujuan-dan-maklumat-pelayanan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/tugas-dan-fungsi-0",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/logo-direktorat-jenderal-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/kode-etik-dan-kode-perilaku",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/daftar-pejabat-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/unit-kerja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/halaman-infografis-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/peraturan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kurs-pajak",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kmk-tarif-bunga",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/aplikasi-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/formulir-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/informasi-yang-wajib-disediakan-dan-diumumkan-secara-berkala",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/informasi-yang-wajib-diumumkan-secara-serta-merta",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/informasi-publik-tersedia-setiap-saat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/rencana-kerja-dan-anggaran-0",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/daftar-isian-pelaksanaan-anggaran",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/realisasi-belanja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/keuangan-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/rencana-strategis-direktorat-jenderal-pajak-2025-2029",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/rencana-kerja-ditjen-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/kinerja-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/laporan-kinerja-unit-kerja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/tahunan-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/realisasi-pendapatan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/layanan-digital/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/akses-informasi-publik-melalui-layanan-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/gambaran-singkat-pembentukan-ppid-tingkat-i",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/regulasi-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/prosedur-permohonan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/laporan-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/statistik-akses-informasi-publik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/jalur-dan-waktu-layanan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/saluran-pengaduan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/penyediaan-pembicara-pembahas-atau-moderator-pada-kegiatan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/standar-pelayanan-di-lingkungan-direktorat-jenderal-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/en/apa-map-homepage",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/eoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/eoi/aeoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/eoi/crs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/eoi/cbcr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/eoi/aeoi-wht",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/eoi/fatca",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/eoi/carf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/eoi/eoir",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/eoi/seoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/globe",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/tax-treaty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/en/tax-treaty-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/taxtreaty-mli",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/uu-hpp",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/PPS",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/covid19",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/pajakdigital",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/halaman-infografis-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://ejurnal.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://pajak.go.id/id/lapor-tahunan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/buku-elektronik-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/kerja-sama-dan-kemitraan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/klaster-kemudahan-berusaha-bidang-perpajakan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/penegakan-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/faq-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PLDDScx7l7xS1tqRfrYTuZVcHzoeIsKv7w",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://open.spotify.com/show/6jOGiW7J1T4B81LYNxttOk?si=DumG1PAmTp-RLdf9p7Fnlw",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/reformdjp",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/reformdjp/coretax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://edukasi.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://pajak.go.id/index-belajar-pajak/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/en/index-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://coretaxdjp.pajak.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/index-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/index-konsultan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/index-pjap",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/reformdjp/coretax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/peraturan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/sites/default/files/Lampiran%20PERPRES34TAHUN2021.pdf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/taxonomy/term/13933",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/katalog-peraturan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/apbnkita",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://pajak.go.id/reformdjp/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/prasyarat-pengguna",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/hubungi-kami",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/form/contact",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.facebook.com/DitjenPajakRI/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.twitter.com/DitjenPajakRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/user/DitjenPajakRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/ditjenpajakri/?hl=id",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://pengaduan.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "708ac394e263e48c7ff41f6be50e3ac9564006bf1471229b4d3607f4c89ae893"
+}

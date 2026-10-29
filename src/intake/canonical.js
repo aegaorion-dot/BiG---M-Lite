@@ -8,7 +8,7 @@ const CHANNELS=Object.freeze(['NATIVE','CHAT','DOCUMENT','EXTERNAL_TRANSACTION',
 function canonicalCommand(c,ctx){
  const f=c.current,journal=c.candidateType==='EXTERNAL_JOURNAL',reference=c.documentId??c.sourceId;
  return {contractVersion:'universal-intake-v1',mode:journal?'JOURNAL_IMPORT':'TRANSACTION_IMPORT',intakeId:c.candidateId,intakeChannel:c.sourceChannel,sourceRef:c.sourceRef??{reference},sourceRevision:c.revision,
-  economicDate:f.transactionDate,description:f.description,counterparty:f.counterparty??null,amount:f.amount,currency:f.currency,functionalCurrency:ctx.org.baseCurrency,transactionType:journal?'JOURNAL':f.proposedTransactionType,
+  economicDate:f.transactionDate,...(f.economicScopeId?{economicScopeId:f.economicScopeId}:{}),description:f.description,counterparty:f.counterparty??null,amount:f.amount,currency:f.currency,functionalCurrency:ctx.org.baseCurrency,transactionType:journal?'JOURNAL':f.proposedTransactionType,
   proposedAccounting:journal?{lines:structuredClone(f.journalLines)}:{classificationAccountId:f.classificationAccountId,paymentAccountId:f.paymentAccountId},
   evidenceRefs:structuredClone(c.evidence),taxCandidateRefs:{taxAmount:f.taxAmount??null,subtotal:f.subtotal??null,status:'REQUIRES_GOVERNED_TAX_REVIEW'},status:'CONFIRMED',revisions:structuredClone(c.revisions),confirmation:structuredClone(c.confirmation),
   id:c.nativeInput?.id??'intake-'+c.candidateId,orgId:ctx.org.id,date:f.transactionDate,jurisdiction:ctx.org.jurisdiction,kind:journal?'JOURNAL':f.proposedTransactionType,

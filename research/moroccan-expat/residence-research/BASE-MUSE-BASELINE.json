@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "base-muse-frozen-baseline/1",
+  "name": "BASE-MUSE",
+  "frozen": true,
+  "liveResearch": "FROZEN_NO_REQUEST_21",
+  "liveRequests": 20,
+  "automaticRetries": 0,
+  "regressionBaseline": 449,
+  "securityPassed": true,
+  "sanitizedEvaluationCases": 20,
+  "model": "muse-spark-1.3",
+  "residenceGates": {
+    "MA": "UNRESOLVED",
+    "ID": "UNRESOLVED"
+  },
+  "ungovernedRulesActivated": 0,
+  "artifactSha256": {
+    "run-1/job.json": "279e68cbf2d85a1a264d1e1e1b715993bfaa894615773d9768a8fa905a9e02a7",
+    "run-2/evaluation-cases.json": "85786247ade5320117ac8062549f9223c1fcdb565f8d2e7ea63763a6cc674124",
+    "run-2/brief.json": "670cce38e74ed42c97a815028c0a6ee55f67ce48c16e9266d0432cd14ad5949a",
+    "run-2/job.json": "2a9e13b033eee926344f716b59928e75a7cb2cab9552da461396740ab53be138",
+    "run-2/final-job.json": "62c1ad63fea0126f17a8f05272daa2c9f632d1a67bbe1e161c1b0065f64c26a4",
+    "run-2/replay.json": "de6f28a448705124376cbbb31b5b8d157b73194a1dc75cafb1c74894b66dbea9",
+    "run-2/final-replay.json": "57f4c5dde2f0458c757b2030c60dcf408da16dcfa8d29d5632aa605f0303c17f",
+    "run-2/final-result.json": "c3011028eb0bf09d4dedca4101c016cc34fae692722f601262bbac5f9b5b659a",
+    "run-2/governance.json": "6f187b9a0f440bb1677ece60b5bbc4195962ebc6b322ff05021dd79033083d95"
+  },
+  "integrityHash": "eb9f66c2a21f3ee2743504882b3d4937ac114e86962f9e394ef0663ae8e4945b"
+}

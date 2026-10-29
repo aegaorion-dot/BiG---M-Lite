@@ -10,7 +10,7 @@ function confidence(v){if(!Number.isFinite(v)||v<0||v>1)throw Error('Invalid con
 function profile(raw,context){
  keys(raw,['facts','jurisdictionFacts','taxFacts','detectedLanguage'],['facts','jurisdictionFacts']);
  if(!Array.isArray(raw.facts)||!Array.isArray(raw.jurisdictionFacts))throw Error('Invalid fact arrays');
- if(raw.detectedLanguage!=null&&!['en','id'].includes(raw.detectedLanguage))throw Error('Unknown detected language');
+ if(raw.detectedLanguage!=null&&!['en','id','ar','ar-MA'].includes(raw.detectedLanguage))throw Error('Unknown detected language');
  if(raw.taxFacts!=null){
   if(!Array.isArray(raw.taxFacts)||raw.taxFacts.length>40)throw Error('Invalid tax candidate array');
   for(const f of raw.taxFacts){keys(f,['name','type','value','supportingQuote','status','operation'],['name','type','value','supportingQuote','status']);if(context.taxDeclarations?.[f.name]!==f.type||f.status!=='CANDIDATE'||!require('../onboarding/evidence').verifyQuote(f.supportingQuote,context.message)||f.operation&&!['SET','REPLACE','REMOVE'].includes(f.operation))throw Error('Unknown or unevidenced tax candidate');}
@@ -18,7 +18,7 @@ function profile(raw,context){
  for(const f of [...raw.facts,...raw.jurisdictionFacts]){keys(f,['slot','value','basis','countryCode','source','supportingQuote','confidence','status','operation','semanticRole'],['source','supportingQuote','confidence','status']);confidence(f.confidence);}
  for(const f of raw.jurisdictionFacts){
   const quote=f.supportingQuote??'';
-  const anchors={REGISTRATION:/register|registration|terdaftar|pendaftaran/i,INCORPORATION:/incorporat|company incorporated|didirikan|badan hukum/i,TAX_RESIDENCE:/tax residen|residen.*pajak|domisili.*pajak/i,SOURCE:/source.*income|income.*source|sumber.*penghasilan/i,WITHHOLDING:/withhold|pemotong/i};
+  const anchors={REGISTRATION:/register|registration|terdaftar|pendaftaran|تسجيل|مسجل/i,INCORPORATION:/incorporat|company incorporated|didirikan|badan hukum|تأسسات|مؤسسة قانونيا/i,TAX_RESIDENCE:/tax residen|residen.*pajak|domisili.*pajak|إقامة ضريبية|مقيم ضريبي/i,SOURCE:/source.*income|income.*source|sumber.*penghasilan|مصدر.*دخل|الدخل.*مصدر/i,WITHHOLDING:/withhold|pemotong|اقتطاع|مقتطع/i};
   if(f.countryCode!=null&&anchors[f.basis]&&!anchors[f.basis].test(quote))throw Error('Jurisdiction basis lacks direct evidence');
  }
  const checked=validateExtractorPayload(raw,{userText:context.message,pendingQuestion:context.pendingQuestion,previousCurrencyRole:context.previousCurrencyRole});if(!checked.ok)throw Error('Invalid evidenced profile');return raw;
@@ -36,7 +36,7 @@ function semantics(raw,extraction,accounts){
 }
 function question(raw,requirement){
  keys(raw,['key','question','requiredFactIds'],['key','question','requiredFactIds']);
- if(raw.key!==requirement.key||JSON.stringify(raw.requiredFactIds)!==JSON.stringify([requirement.key])||typeof raw.question!=='string'||raw.question.length<8||raw.question.length>400||(raw.question.match(/\?/g)??[]).length>1||/ignore|approve|post immediately|system prompt/i.test(raw.question))throw Error('Question outside deterministic requirement');
+ if(raw.key!==requirement.key||JSON.stringify(raw.requiredFactIds)!==JSON.stringify(requirement.requiredFactIds??[requirement.key])||typeof raw.question!=='string'||raw.question.length<8||raw.question.length>400||(raw.question.match(/\?/g)??[]).length>1||/ignore|approve|post immediately|system prompt/i.test(raw.question))throw Error('Question outside deterministic requirement');
  const numeric=raw.question.match(/\d+(?:[.,]\d+)*/g)??[];if(numeric.some(n=>!requirement.text.includes(n)))throw Error('Invented question numeric claim');
  const special={'currency.functional':/currency|books|bookkeeping|mata uang|pembukuan/i,ANNUAL_TURNOVER:/revenue|turnover|omzet|pendapatan/i,TAX_RESIDENCE:/residen|tax home|pajak/i,SOURCE:/source|income|sumber|penghasilan/i};
  const name=requirement.key.replace(/^tax\./,''),anchor=special[requirement.key]??special[name];

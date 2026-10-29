@@ -1,0 +1,110 @@
+[
+  {
+    "run": 1,
+    "at": "2026-10-29T13:13:11.496Z",
+    "success": true,
+    "complete": true,
+    "browser": false,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 34094,
+    "timings": {
+      "firstProfileAndQuestionMs": 141,
+      "profileResolutionMs": 67,
+      "activityBatchMs": 17259,
+      "cardAndDocumentMs": 7584
+    },
+    "error": null
+  },
+  {
+    "run": 2,
+    "at": "2026-10-29T13:14:36.800Z",
+    "success": false,
+    "complete": false,
+    "browser": true,
+    "stage": "salary-villa-cafe-and-investment",
+    "elapsedMs": 15409,
+    "timings": null,
+    "error": "Product UI action failed: Error: Missing UI control"
+  },
+  {
+    "run": 3,
+    "at": "2026-10-29T13:17:52.829Z",
+    "success": false,
+    "complete": false,
+    "browser": true,
+    "stage": "salary-villa-cafe-and-investment",
+    "elapsedMs": 12843,
+    "timings": null,
+    "error": "Product UI action failed: Error: Missing UI control: [data-intake-action=\"fx/resolve\"][data-candidate=\"candidate-d0ac6ed4d7a9fb4b3f1df6373e8c3d47c0e90c7c0103c6d5f5af15a0bc17e954\"]"
+  },
+  {
+    "run": 4,
+    "at": "2026-10-29T14:24:29.035Z",
+    "success": true,
+    "complete": true,
+    "browser": true,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 98650,
+    "timings": {
+      "firstProfileAndQuestionMs": 5904,
+      "profileResolutionMs": 224,
+      "activityBatchMs": 38223,
+      "cardAndDocumentMs": 14421
+    },
+    "error": null
+  },
+  {
+    "run": 5,
+    "at": "2026-10-29T14:46:15.495Z",
+    "success": false,
+    "complete": false,
+    "browser": false,
+    "stage": "tax-and-fifteen-grounded-questions",
+    "elapsedMs": 35128,
+    "timings": null,
+    "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ '22495500'\n- '22095500'\n     ^"
+  },
+  {
+    "run": 6,
+    "at": "2026-10-29T14:48:35.803Z",
+    "success": true,
+    "complete": true,
+    "browser": false,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 71078,
+    "timings": {
+      "firstProfileAndQuestionMs": 138,
+      "profileResolutionMs": 148,
+      "activityBatchMs": 37294,
+      "cardAndDocumentMs": 19575
+    },
+    "error": null
+  },
+  {
+    "run": 7,
+    "at": "2026-10-29T14:58:06.645Z",
+    "success": false,
+    "complete": false,
+    "browser": false,
+    "stage": "salary-villa-cafe-and-investment",
+    "elapsedMs": 52572,
+    "timings": null,
+    "error": "{\"id\":\"P-FAMILY\",\"f\":{\"transactionDate\":\"2026-10-28\",\"description\":\"مصاريف عائلية شخصية\",\"counterparty\":\"طرف تجريبي\",\"amount\":\"1000000\",\"currency\":\"IDR\",\"proposedTransactionType\":\"EXPENSE\",\"classificationAccountId\":\"book-drawings\",\"paymentAccountId\":\"book-cash\",\"paymentMethod\":\"bank\",\"referenceNumber\":\"P-FAMILY\",\"settlementStatus\":\"PAID\",\"taxAmount\":null,\"subtotal\":null,\"economicScopeId\":\"PERSONAL\",\"eventType\":\"CASH_PURCHASE\",\"expenseCategory\":\"FAMILY\",\"purpose\":\"PERSONAL\",\"recognitionStatus\":\"PERSONAL\",\"reviewReason\":\"راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة.\"},\"conflicts\":[\"POSSIBLE_DUPLICATE: explicit duplicate review required\"],\"missing\":[]}\n+ actual - expected\n\n+ 'REQUIRES_REVIEW'\n- 'READY_TO_CONFIRM'\n     ^"
+  },
+  {
+    "run": 8,
+    "at": "2026-10-29T15:01:16.279Z",
+    "success": true,
+    "complete": true,
+    "browser": false,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 56451,
+    "timings": {
+      "firstProfileAndQuestionMs": 113,
+      "profileResolutionMs": 54,
+      "activityBatchMs": 29287,
+      "cardAndDocumentMs": 14309
+    },
+    "error": null
+  }
+]

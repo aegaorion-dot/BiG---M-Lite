@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "moroccan-official-tax-evidence/1",
+  "records": [
+    {
+      "identity": "PP55_2022",
+      "artifactId": "59f1cec2-fc8a-4de4-81a4-7c608cded6a6",
+      "rawContentHash": "369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2",
+      "envelopeId": "a837df3a83540cbd04cb94d77242f638396098bd57b81c03a76ec78a0aacdb8f",
+      "retrievedAt": "2026-10-29T14:24:00.384Z",
+      "sourceUrl": "https://www.pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan"
+    },
+    {
+      "identity": "PP20_2026",
+      "artifactId": "90a25601-09b7-4917-a93e-177bb1f563e7",
+      "rawContentHash": "99d9a1abd749e7d237430758e387cb5c16a009095f848a2b5febf1b9f795c9b0",
+      "envelopeId": "1fd821f1448c0de8d0870c1a672e8dc0fdfb2970707d62e1a44fce718cd5f1a6",
+      "retrievedAt": "2026-10-29T14:24:00.863Z",
+      "sourceUrl": "https://pajak.go.id/id/peraturan/perubahan-atas-peraturan-pemerintah-nomor-55-tahun-2022-tentang-penyesuaian-pengaturan-di"
+    },
+    {
+      "identity": "UU7_2021",
+      "artifactId": "bd828a20-40ba-49ca-acdb-6dc6b3d9e22e",
+      "rawContentHash": "50fc97ab3917e7a282987b22edf32340453efa75768e4ad3d3f4751e35a3ead2",
+      "envelopeId": "ad9ecb17ed4cf34b96043584c112afed7a2dca35b039ec3e6ade1203a57c2297",
+      "retrievedAt": "2026-10-29T14:26:38.803Z",
+      "sourceUrl": "https://www.pajak.go.id/id/peraturan/harmonisasi-peraturan-perpajakan"
+    },
+    {
+      "identity": "ID_RESIDENCE_2025",
+      "artifactId": "30d3380d-15b6-4ae9-b363-6a918d8e2069",
+      "rawContentHash": "e1f7f679c24a829237d9c711971c504cccae327b18e479c67db672cbb839e174",
+      "envelopeId": "e8126e4cd9e1abdf0f21d3d4954d9c4448a5c3e0e2495ebc71fffa184b027acc",
+      "retrievedAt": "2026-10-29T14:39:24.405Z",
+      "sourceUrl": "https://www.pajak.go.id/id/peraturan/penentuan-subjek-pajak-dalam-negeri-dan-subjek-pajak-luar-negeri-0"
+    },
+    {
+      "identity": "ID_RENT_PP34_2017",
+      "artifactId": "24b449b3-3a79-4583-8666-d19933d96bc7",
+      "rawContentHash": "35bfc734b81e90d8991767ce4fa0d55c079b8e8360b8df0672aa56babd503fab",
+      "envelopeId": "1d466ba9241c20b6f4769aec9b751d96c9fba6f503300cea1b98fd673a0808c4",
+      "retrievedAt": "2026-10-29T14:39:24.598Z",
+      "sourceUrl": "https://www.pajak.go.id/id/pajak-penghasilan-atas-penghasilan-dari-persewaan-tanah-danatau-bangunan"
+    },
+    {
+      "identity": "ID_FTC_PMK192_2018",
+      "artifactId": "aa997788-dbf5-4a71-bd88-b6b2aa64516b",
+      "rawContentHash": "b6fc2009ad679b692c9d9e4c3da476c47e1b413d7bbc19a121283bfe39d148e3",
+      "envelopeId": "184c5f34b7de51722fd4cf7e877b22bdbef001fd26f8d0aca026d8fca015525e",
+      "retrievedAt": "2026-10-29T14:39:25.250Z",
+      "sourceUrl": "https://www.pajak.go.id/index.php/en/node/63184"
+    },
+    {
+      "identity": "ID_AE_RATIFICATION",
+      "artifactId": "139f0d1f-f415-44c5-99ea-a45aa84600be",
+      "rawContentHash": "d2c76d74f1bb329dd455edeeb43947b543ab743dc5b89567a0c8215c609a1f18",
+      "envelopeId": "708ac394e263e48c7ff41f6be50e3ac9564006bf1471229b4d3607f4c89ae893",
+      "retrievedAt": "2026-10-29T14:39:25.946Z",
+      "sourceUrl": "https://pajak.go.id/id/peraturan/pengesahan-persetujuan-antara-pemerintah-republik-indonesia-dan-pemerintah-persatuan"
+    },
+    {
+      "identity": "ID_GB_TREATY_MLI",
+      "artifactId": "d4b674fc-fd7d-48a9-bf69-666ef5195727",
+      "rawContentHash": "b21d06bdb3fe4725ed4a9f03a375609f57a3e3ffbc7e6528b9da4b631dc48e2b",
+      "envelopeId": "65c4fb88cb82a84d65198f50df46f04792457b85ef5b153212f18f1d0e2b81ca",
+      "retrievedAt": "2026-10-29T14:41:11.003Z",
+      "sourceUrl": "https://www.pajak.go.id/index.php/id/p3b/mli-inggris"
+    },
+    {
+      "identity": "UK_OVERSEAS_EMPLOYMENT",
+      "artifactId": "7639cffe-61d4-4179-a612-1132c56fa944",
+      "rawContentHash": "0d258180664a3979b0e69e7112858316ccecce4ff12754909015840018cc957a",
+      "envelopeId": "3384e399110f15383ca0620b0c583380007acba521217cca05a3396f8783c0f8",
+      "retrievedAt": "2026-10-29T14:39:26.288Z",
+      "sourceUrl": "https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax"
+    },
+    {
+      "identity": "AE_WAGES",
+      "artifactId": "9fe9a859-09ef-47d0-b035-09e3a50ef21b",
+      "rawContentHash": "d0b624901333d87aebace225b3fc1b1880e7f75df65a50be67551c4c1f3ac37d",
+      "envelopeId": "46b24663c96997fd3faa6c28cef1f5e8a974177b0dd2bc71b1504030d3f83032",
+      "retrievedAt": "2026-10-29T14:39:35.058Z",
+      "sourceUrl": "https://www.tax.gov.ae/en/taxes/corporate.tax/faqs.aspx"
+    },
+    {
+      "identity": "AE_WAGE_SCOPE",
+      "artifactId": "55992af6-6adb-4eba-ac3c-11ae91731a70",
+      "rawContentHash": "5737b1509360e575458807051c4ffe38234d330c72bf4fcc4de81d3ca12b9202",
+      "envelopeId": "536f46925f889a035cd7fbcb17093f53101ddcb19a5a510152febb1e0f10eb27",
+      "retrievedAt": "2026-10-29T14:41:13.667Z",
+      "sourceUrl": "https://www.tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.natural.person.aspx"
+    },
+    {
+      "identity": "MA_CRI_IDENTITY",
+      "artifactId": "1fe828f0-eeb0-4e3c-b867-33d4bf7b0b9d",
+      "rawContentHash": "323909e21fd24a8aca48956ca7e35dd27fc7163092c2323fea18e1d56bbb5c36",
+      "envelopeId": "b4c4f6a976a8704bfa5bfe20f1d5ec89e1ee02c26b0adbed966b556157bd63b5",
+      "retrievedAt": "2026-10-29T14:44:52.947Z",
+      "sourceUrl": "https://www.casainvest.ma/fr/mentions-l%C3%A9galesCRICS"
+    },
+    {
+      "identity": "MA_CGI_2026",
+      "artifactId": "8eb9a87e-4700-43ba-8ab1-7051f0e2f3bd",
+      "rawContentHash": "fe03c94471aefd23a9be9de11da5bff0593b45a72c2f90939eeaae7298b413e1",
+      "envelopeId": "0df5149580c0c7b5d0990d6b4cd686e400d66fee556b8b7ad1c9fe9e78077db2",
+      "retrievedAt": "2026-10-29T14:45:48.989Z",
+      "sourceUrl": "https://casainvest.ma/sites/default/files/2026-02/Code%20impo%CC%82ts%202026.pdf",
+      "extractionStorageRef": "research/moroccan-tax/extractions/MA_CGI_2026.json"
+    },
+    {
+      "identity": "AE_PERSONAL_TAX",
+      "artifactId": "ea4d3d71-0b30-424b-9194-909ac6fa6582",
+      "rawContentHash": "49cdcdfc7eff9cf81ae523cb7eb698aa37f3ca484b864b9da26424ee8fd778bb",
+      "envelopeId": "b6ceaba51c20a3587ca890ff4e9a33ce138fbd3e2c6298de3d5898a33bffdc73",
+      "retrievedAt": "2026-10-29T15:00:59.651Z",
+      "sourceUrl": "https://u.ae/en/information-and-services/finance-and-investment/taxation"
+    },
+    {
+      "identity": "UK_RESIDENCE",
+      "artifactId": "be383023-b324-4598-8ecd-3a6a9a2586af",
+      "rawContentHash": "41c8873f733d6f47b6c0cbb02548b809bb0cea2aab2b7475996fc5427d9377b0",
+      "envelopeId": "783bdd82fb0a0cda13eab49830576275c72bda64335766db24fb9e823bef2eaf",
+      "retrievedAt": "2026-10-29T15:01:00.160Z",
+      "sourceUrl": "https://www.gov.uk/tax-foreign-income/residence"
+    },
+    {
+      "identity": "AE_PERSONAL_GUIDANCE",
+      "artifactId": "c0242632-e740-48ee-9399-50d133741cd5",
+      "rawContentHash": "829dd22753dc9f603c48d81f60fb215109eed187c4ae82a9583091945d7f787b",
+      "envelopeId": "dd04cdaef0b40b9468f06b00db44d2d33e7b81d6a5e24acbf134060411ef6d77",
+      "retrievedAt": "2026-10-29T15:03:24.221Z",
+      "sourceUrl": "https://adro.gov.ae/en/Living-in-Abu-Dhabi/Money-And-Taxation"
+    }
+  ]
+}

@@ -200,5 +200,15 @@
     "officialDomains": [],
     "coverageStatus": "NO_APPROVED_TAX_COVERAGE",
     "source": "Platform Intl region metadata; no legal rules added"
+  },
+  {
+    "code": "MA",
+    "name": "Morocco",
+    "currency": "MAD",
+    "locale": "ar-MA",
+    "metadataOnly": true,
+    "officialDomains": [],
+    "coverageStatus": "NO_APPROVED_TAX_COVERAGE",
+    "source": "Platform Intl region metadata; no legal rules added"
   }
 ]

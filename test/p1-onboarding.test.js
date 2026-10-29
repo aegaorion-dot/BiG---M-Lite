@@ -12,9 +12,9 @@ describe('Schema, evidence and candidate-only Meta authority',()=>{
   assert.equal(st.slots['currency.functional'].value,null);assert.deepEqual(st.jurisdictionCandidates,[]);assert.deepEqual(ws.modules,[]);assert.equal(ws.activated,false);
  });
  it('metadata preserves Original ID/SG/US/AU/GB and explicit unsupported payer metadata without a default fallback',()=>{
-  assert.deepEqual(listJurisdictions().map(j=>j.code),['ID','SG','US','AU','GB','JP','EG','KE','AE']);
+  assert.deepEqual(listJurisdictions().map(j=>j.code),['ID','SG','US','AU','GB','JP','EG','KE','AE','MA']);
   for(const code of ['ID','SG','US','AU','GB']){const j=getJurisdiction(code);assert.ok(j.taxAuthority);assert.ok(j.officialDomains.length);assert.ok(j.researchInstruction);assert.ok(j.disclaimer);assert.equal(j.metadataOnly,true);}
-  for(const code of ['JP','EG','KE','AE']){const j=getJurisdiction(code);assert.equal(j.metadataOnly,true);assert.equal(j.coverageStatus,'NO_APPROVED_TAX_COVERAGE');assert.deepEqual(j.officialDomains,[]);assert.equal(j.taxAuthority,undefined);}
+  for(const code of ['JP','EG','KE','AE','MA']){const j=getJurisdiction(code);assert.equal(j.metadataOnly,true);assert.equal(j.coverageStatus,'NO_APPROVED_TAX_COVERAGE');assert.deepEqual(j.officialDomains,[]);assert.equal(j.taxAuthority,undefined);}
   assert.equal(getJurisdiction('XX'),null);assert.ok(listCurrencies().some(c=>c.code==='GBP'));
  });
  it('rejects fabricated evidence, out-of-range confidence and unsupported values',()=>{

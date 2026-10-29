@@ -1,0 +1,1136 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "AE-FTA",
+  "jurisdictionCode": "AE",
+  "metadata": {
+    "title": "Federal Tax Authority - Corporate Tax Topics",
+    "officialDocumentId": null,
+    "language": "en",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "55992af6-6adb-4eba-ac3c-11ae91731a70",
+    "rawContentHash": "5737b1509360e575458807051c4ffe38234d330c72bf4fcc4de81d3ca12b9202",
+    "sourceUrl": "https://www.tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.natural.person.aspx",
+    "finalUrl": "https://www.tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.natural.person.aspx",
+    "retrievedAt": "2026-10-29T14:41:13.667Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "FTA",
+    "authorityName": "United Arab Emirates Federal Tax Authority",
+    "sourceRole": "TAX_AUTHORITY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/5737b1509360e575458807051c4ffe38234d330c72bf4fcc4de81d3ca12b9202.bin",
+    "rawContentHash": "5737b1509360e575458807051c4ffe38234d330c72bf4fcc4de81d3ca12b9202"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/5737b1509360e575458807051c4ffe38234d330c72bf4fcc4de81d3ca12b9202.bin",
+      "rawContentHash": "5737b1509360e575458807051c4ffe38234d330c72bf4fcc4de81d3ca12b9202"
+    },
+    "metaTags": [
+      "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />",
+      "<meta charset=\"utf-8\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=1,maximum-scale=5.0\" />",
+      "<meta name=\"author\" content=\"Federal Tax Authority\" />",
+      "<meta name=\"robots\" content=\"index,follow\" />",
+      "<meta name=\"revisit-after\" content=\"7 days\" />"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Corporate Tax Corporate Tax Topics Small Business Relief Exempt Person: Failure to meet conditions Exempt Person Basis of Taxation Non-Residents Basis of Taxation - Natural Person Permanent Establishment Effectively managed and controlled in UAE Resident Juridical Person Corporate Tax Webinars Corporate Tax Workshops FAQs Guides, References & Public Clarifications E-learning Basis of Taxation - Natural Person A Natural Person is subject to Corporate Tax only if: They Conduct Business or Business Activity in the UAE; and Total Turnover derived from Business or Business Activities exceeds AED 1 million within the calendar year (Jan to Dec) Sources generating the following income streams are not considered as Business or Business Activities: Wages Personal Investment Income Real Estate Investment Income Natural Persons should not register if: they do not conduct a Business or Business Activity in the UAE; or conduct a Business or Business Activity generating a turnover not exceeding AED 1 million",
+    "blocks": [
+      {
+        "locator": "html:main:315801",
+        "text": "Corporate Tax Corporate Tax Topics Small Business Relief Exempt Person: Failure to meet conditions Exempt Person Basis of Taxation Non-Residents Basis of Taxation - Natural Person Permanent Establishment Effectively managed and controlled in UAE Resident Juridical Person Corporate Tax Webinars Corporate Tax Workshops FAQs Guides, References & Public Clarifications E-learning Basis of Taxation - Natural Person A Natural Person is subject to Corporate Tax only if: They Conduct Business or Business Activity in the UAE; and Total Turnover derived from Business or Business Activities exceeds AED 1 million within the calendar year (Jan to Dec) Sources generating the following income streams are not considered as Business or Business Activities: Wages Personal Investment Income Real Estate Investment Income Natural Persons should not register if: they do not conduct a Business or Business Activity in the UAE; or conduct a Business or Business Activity generating a turnover not exceeding AED 1 million",
+        "anchorId": "f29448496c76bf431e52bcbc682219046bffc3c9eae0cdc35fd3202680e50217"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "f29448496c76bf431e52bcbc682219046bffc3c9eae0cdc35fd3202680e50217",
+      "locator": "html:main:315801",
+      "start": 0,
+      "end": 1008,
+      "quoteHash": "365ffd33d2e3d2f5dd9b410448b73b22256046eb02f3aede2ed1e032895bd6bb",
+      "rawContentHash": "5737b1509360e575458807051c4ffe38234d330c72bf4fcc4de81d3ca12b9202"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://selfcare.uaepass.ae/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/who.we.are.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/message.from.the.director.general.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/why.have.taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.strategy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.awards.and.certificates.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/zgb.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/taxpayer.charter.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/excellence.initiatives.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/faq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/vat.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/refunds.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.tax.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excisetax.scenarios.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.tax.refunds.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/guides.listing.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/events.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/Workshops.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/faqs.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.guide.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tasheel.centers.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/uae.tax.agent.programme.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://beta-ask.u.ae/en/uask",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/business.advisory.group.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/clearing.companies.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/how.to.become.a.tax.agent.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/registered.tax.agents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/tax.agent.renewal.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.accounting.software.vendors.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=3&typename=customr.service",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=4&typename=registration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=5&typename=refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/content/dts.app.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/emaratax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services/services.with.partners.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/visual.open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://mof.gov.ae/federal-budgets-2015-2023/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.publication.plan.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.3d.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://bayanat.ae/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.archive.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/user/login.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/who.we.are.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/message.from.the.director.general.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/why.have.taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.strategy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.awards.and.certificates.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/zgb.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/taxpayer.charter.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/excellence.initiatives.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/faq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.guide.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tasheel.centers.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/uae.tax.agent.programme.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://beta-ask.u.ae/en/uask",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/business.advisory.group.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.accounting.software.vendors.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/clearing.companies.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=3&typename=customr.service",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=4&typename=registration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=5&typename=refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/content/dts.app.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/emaratax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services/services.with.partners.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/visual.open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://mof.gov.ae/federal-budgets-2015-2023/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.publication.plan.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.3d.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://bayanat.ae/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.archive.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://eservices.tax.gov.ae/en-us",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/who.we.are.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/message.from.the.director.general.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/why.have.taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.strategy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.awards.and.certificates.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/zgb.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/taxpayer.charter.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/excellence.initiatives.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/faq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/vat.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/refunds.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.tax.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excisetax.scenarios.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.tax.refunds.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/guides.listing.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/events.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/Workshops.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/faqs.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.guide.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tasheel.centers.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/uae.tax.agent.programme.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://beta-ask.u.ae/en/uask",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/business.advisory.group.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/clearing.companies.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/how.to.become.a.tax.agent.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/registered.tax.agents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/tax.agent.renewal.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.accounting.software.vendors.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=3&typename=customr.service",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=4&typename=registration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=5&typename=refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/content/dts.app.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/emaratax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services/services.with.partners.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/visual.open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://mof.gov.ae/federal-budgets-2015-2023/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.publication.plan.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.3d.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://bayanat.ae/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.archive.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/user/login.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://app-as.readspeaker.com/cgi-bin/rsent?customerid=12549&lang=en_uk&readclass=mainContent,footer-1,footer-2&url=https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.natural.person.aspx?",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.natural.person.aspx#emergencyModal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/contact.us.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/whistleblowing.form.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/emaratax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/ects/process.key.message/submit.and.pay.tax.return.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/taxes/corporate.tax/faqs.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/vat/guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services/vat.registration.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services/corporate.tax.registration.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/faq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/whistleblowing.form.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/statuscheck.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/refunds/uae.nationals.building.new.residences.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/eligibility.questionnaire.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/announcements.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/emergency.notifications.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.natural.person.aspx#trnVerifyResultsModal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.natural.person.aspx#rateTRNResultsModal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.natural.person.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/ar/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.natural.person.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://gsr.ae/en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.highlights.experience.in.expanding.smart.tax.systems.at.belt.and.road.initiative.tax.administration.cooperation.forum.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.calls.on.persons.subject.to.einvoicing.to.comply.wit.the.prescribed.legal.deadlines.and.avoid.administrative.penalties.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/building.on.the.authoritys.efforts.to.foster.a.culture.of.constructive.community.dialogue.and.enhance.tax.awareness.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.launches.worlds.firstofitskind.aipowered.digital.platform.for.tourist.tax.refunds.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.issues.new.guide.on.scope.and.registration.for.topup.tax.on.multinational.enterprises.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.participates.in.brics.tax.experts.and.tax.heads.meeting.2026in.new.delhi.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.organises.joint.awareness.meeting.for.accredited.service.providers.and.persons.subject.to.the.einvoicing.system.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/small.business.relief.23.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/exempt.person.failure.to.meet.conditions.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/exempt.person.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.nonresidents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.natural.person.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/permanent.establishment.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/effectively.managed.and.controlled.in.uae.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/resident.juridical.person.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/events.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/Workshops.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/faqs.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/uae.einvoicing.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://uaelegislation.gov.ae/en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/eparticipation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/media.centre/news.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/media.centre.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/whistleblowing.form.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/muwafaq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/accredited.collection.agencies.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/about.fta.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/careers.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/about.fta/smart.applications.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/about.fta/labaih.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/about.fta/taxpayer.charter.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/complaints.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/contact.us.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/accessibility.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/faq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/about.fta/knowledge.Center.Page.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/glossary.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/tax.dispute.resolution.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/ftasitemap.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/terms.conditions.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/privacy.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/disclaimer.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/accessibility.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://171.ae/en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/Theuaetaxes/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/uaetax/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.linkedin.com/company/federal-tax-authority",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://twitter.com/uaetax",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCgBXwwAIAHrHjK-XwWJU1VA/videos",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://ask.u.ae/en/",
+      "classification": "REJECTED_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "536f46925f889a035cd7fbcb17093f53101ddcb19a5a510152febb1e0f10eb27"
+}

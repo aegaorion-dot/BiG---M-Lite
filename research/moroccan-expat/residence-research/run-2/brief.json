@@ -1,0 +1,408 @@
+{
+  "schemaVersion": "research-brief/1",
+  "objective": "Research the domestic tax-residence tests relevant to this synthetic Moroccan expatriate in Morocco and Indonesia during October 2026. Propose evidence-bound residence rule candidates; distinguish facts still needed before applying them. Do not research salary, rental, company rates, credits or treaty allocation yet.",
+  "confirmedFacts": [
+    {
+      "factId": "PERSISTED_PROFILE",
+      "value": {
+        "user.language": {
+          "value": "ar-MA",
+          "source": "USER",
+          "supportingQuote": "بغيت كلشي بالدارجة المغربية"
+        },
+        "user.nationality": {
+          "value": "MA",
+          "source": "USER",
+          "supportingQuote": "شخص تجريبي مغربي"
+        },
+        "user.displayName": {
+          "value": "يوسف العمراني",
+          "source": "USER",
+          "supportingQuote": "يوسف العمراني"
+        },
+        "user.homeCountry": {
+          "value": "MA",
+          "source": "USER",
+          "supportingQuote": "الدار والعائلة فالمغرب"
+        },
+        "user.physicalLocation": {
+          "value": "ID",
+          "source": "USER",
+          "supportingQuote": "دابا أنا فلومبوك فإندونيسيا"
+        },
+        "user.taxResidenceDeclaration": {
+          "value": "ما تأكداتش",
+          "source": "USER",
+          "supportingQuote": "الإقامة الضريبية ما تأكداتش"
+        },
+        "user.withholdingDocumentation": {
+          "value": "MISSING",
+          "source": "USER",
+          "supportingQuote": "ما عنديش وثائق الاقتطاع"
+        },
+        "org.activities": {
+          "value": [
+            "EMPLOYEE",
+            "RENTAL_OPERATOR",
+            "CAFE_OPERATOR",
+            "INVESTOR"
+          ],
+          "source": "USER",
+          "supportingQuote": "حياتي الشخصية وخدمتي بالأجرة مفروقين، وعندي فيلا وقهوة فلومبوك وزدت استثمرت فبناء جيم"
+        },
+        "user.englishAbility": {
+          "value": "ما كنهضرش بالإنجليزية",
+          "source": "USER",
+          "supportingQuote": "ما كنهضرش بالإنجليزية"
+        },
+        "presence.intervals": {
+          "value": [
+            {
+              "countryCode": "ID",
+              "entryDate": "2026-01-01",
+              "exitDate": "2026-04-01"
+            },
+            {
+              "countryCode": "AE",
+              "entryDate": "2026-04-01",
+              "exitDate": "2026-07-31"
+            },
+            {
+              "countryCode": "ID",
+              "entryDate": "2026-07-31",
+              "exitDate": "2026-11-01"
+            }
+          ],
+          "source": "USER",
+          "supportingQuote": "دخولي لإندونيسيا 2026-01-01 وخروجي 2026-04-01، خدمتي فالإمارات من 2026-04-01 حتى 2026-07-31، ودخولي لإندونيسيا 2026-07-31 وخروجي 2026-11-01"
+        },
+        "org.economicScopes": {
+          "value": [
+            {
+              "scopeId": "PERSONAL",
+              "kind": "PERSONAL",
+              "name": "الحياة الشخصية",
+              "countryCode": "MA",
+              "legalStructure": "شخص فردي",
+              "usage": "PERSONAL"
+            },
+            {
+              "scopeId": "EMPLOYMENT",
+              "kind": "EMPLOYMENT",
+              "name": "الخدمة بالأجرة",
+              "countryCode": "AE",
+              "legalStructure": "عقد عمل شخصي",
+              "usage": "BUSINESS",
+              "reportingCurrency": "GBP"
+            },
+            {
+              "scopeId": "VILLA",
+              "kind": "RENTAL",
+              "name": "الفيلا فْلومبوك",
+              "countryCode": "ID",
+              "legalStructure": "ملكية اقتصادية مصرح بها، السند القانوني للمراجعة",
+              "usage": "MIXED",
+              "bookkeepingCurrency": "IDR"
+            },
+            {
+              "scopeId": "CAFE",
+              "kind": "OPERATING_BUSINESS",
+              "name": "القهوة فْلومبوك",
+              "countryCode": "ID",
+              "legalStructure": "شركة إندونيسية مصرح بها، التسجيل للمراجعة",
+              "entityName": "شركة لومبوك التجريبية",
+              "usage": "BUSINESS",
+              "bookkeepingCurrency": "IDR"
+            },
+            {
+              "scopeId": "GYM",
+              "kind": "INVESTMENT_PROJECT",
+              "name": "مشروع الجيم",
+              "countryCode": "ID",
+              "legalStructure": "مشروع تحت شركة لومبوك التجريبية",
+              "entityName": "شركة لومبوك التجريبية",
+              "usage": "INVESTMENT",
+              "bookkeepingCurrency": "IDR"
+            }
+          ],
+          "source": "USER",
+          "supportingQuote": "الجيم مشروع تحت نفس شركة لومبوك التجريبية وباقي فالتجهيز، وأنا كنمول البناء والمعدات"
+        },
+        "employment.relationship": {
+          "value": "EMPLOYEE",
+          "source": "USER",
+          "supportingQuote": "خدام أجير"
+        },
+        "employment.employerName": {
+          "value": "شركة الطاقة البريطانية التجريبية",
+          "source": "USER",
+          "supportingQuote": "شركة الطاقة البريطانية التجريبية"
+        },
+        "employment.employerCountry": {
+          "value": "GB",
+          "source": "USER",
+          "supportingQuote": "شركة طاقة بريطانية تجريبية"
+        },
+        "employment.workCountry": {
+          "value": "AE",
+          "source": "USER",
+          "supportingQuote": "الخدمة الجسدية ديالي فالإمارات"
+        },
+        "employment.salaryCurrency": {
+          "value": "GBP",
+          "source": "USER",
+          "supportingQuote": "الأجرة بالجنيه GBP"
+        },
+        "org.name": {
+          "value": "يوسف والأنشطة التجريبية",
+          "source": "USER",
+          "supportingQuote": "سمي هاد التنظيم يوسف والأنشطة التجريبية"
+        },
+        "org.businessType": {
+          "value": "small-business",
+          "source": "USER",
+          "supportingQuote": "عندي فيلا وقهوة فلومبوك"
+        },
+        "org.subjectType": {
+          "value": "INDIVIDUAL",
+          "source": "USER",
+          "supportingQuote": "أنا يوسف العمراني، شخص تجريبي مغربي"
+        },
+        "currency.functional": {
+          "value": "IDR",
+          "source": "USER",
+          "supportingQuote": "دفتر تنظيم هاد الحركات كامل بعملة IDR"
+        },
+        "currency.transactions": {
+          "value": [],
+          "source": null,
+          "supportingQuote": null
+        },
+        "currency.foreignPurchases": {
+          "value": [],
+          "source": null,
+          "supportingQuote": null
+        },
+        "accounting.periodStart": {
+          "value": "2026-10-01",
+          "source": "USER",
+          "supportingQuote": "User selected accounting.periodStart: \"2026-10-01\""
+        },
+        "accounting.periodEnd": {
+          "value": "2026-10-31",
+          "source": "USER",
+          "supportingQuote": "User selected accounting.periodEnd: \"2026-10-31\""
+        },
+        "modules.enabled": {
+          "value": [],
+          "source": null,
+          "supportingQuote": null
+        }
+      },
+      "source": "USER_CONFIRMED_PRODUCT_PROFILE",
+      "sourceFile": "data/moroccan/run-8/store.json"
+    }
+  ],
+  "unknownFacts": [
+    "Legal residence in each jurisdiction",
+    "Exact rolling-period presence and legal counting convention",
+    "Nature and availability of homes and ties required by the discovered tests",
+    "Any other fact required by the discovered provisions"
+  ],
+  "taxPeriod": {
+    "periodStart": "2026-10-01",
+    "periodEnd": "2026-10-31"
+  },
+  "jurisdictions": [
+    "MA",
+    "ID"
+  ],
+  "questionsToResolve": [
+    "What domestic residence tests, alternatives and exceptions apply in each jurisdiction for the chosen period?",
+    "Which facts in the persisted profile are sufficient, which are missing, and which require an approved rule before any conclusion?",
+    "Which current official provisions and commencement/amendment evidence support each candidate?"
+  ],
+  "preferredAllowedSources": [
+    {
+      "jurisdiction": "MA",
+      "sources": [
+        {
+          "sourceId": "MA-FINANCE",
+          "authority": "Morocco Ministry of Economy and Finance / DGI publications",
+          "domains": [
+            "finances.gov.ma",
+            "www.finances.gov.ma"
+          ],
+          "authorityRole": "PRIMARY_LEGISLATION",
+          "portalRoot": "https://finances.gov.ma/"
+        },
+        {
+          "sourceId": "MA-CRI",
+          "authority": "Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror",
+          "domains": [
+            "casainvest.ma",
+            "www.casainvest.ma"
+          ],
+          "authorityRole": "OFFICIAL_GUIDANCE",
+          "portalRoot": "https://casainvest.ma/"
+        }
+      ],
+      "localSearch": {
+        "languages": [
+          "fr",
+          "ar"
+        ],
+        "terms": [
+          "domicile fiscal",
+          "résidence fiscale",
+          "Code général des impôts",
+          "المدونة العامة للضرائب",
+          "الموطن الضريبي"
+        ],
+        "strategy": "Locate the competent authority and current consolidated code, then the residence provision, definitions, exceptions and commencement/amendments. Cross-check French/Arabic editions where available."
+      }
+    },
+    {
+      "jurisdiction": "ID",
+      "sources": [
+        {
+          "sourceId": "ID-DJP",
+          "authority": "Direktorat Jenderal Pajak",
+          "domains": [
+            "pajak.go.id",
+            "www.pajak.go.id"
+          ],
+          "authorityRole": "TAX_AUTHORITY",
+          "portalRoot": "https://pajak.go.id/"
+        },
+        {
+          "sourceId": "ID-BPK",
+          "authority": "Badan Pemeriksa Keuangan legislation database",
+          "domains": [
+            "peraturan.bpk.go.id",
+            "www.peraturan.bpk.go.id"
+          ],
+          "authorityRole": "PRIMARY_LEGISLATION",
+          "portalRoot": "https://peraturan.bpk.go.id/"
+        },
+        {
+          "sourceId": "ID-JDIH",
+          "authority": "Ministry of Finance legal documentation",
+          "domains": [
+            "jdih.kemenkeu.go.id",
+            "www.jdih.kemenkeu.go.id"
+          ],
+          "authorityRole": "SECONDARY_LEGISLATION",
+          "portalRoot": "https://jdih.kemenkeu.go.id/"
+        },
+        {
+          "sourceId": "ID-DJPP",
+          "authority": "Directorate General of Legislation",
+          "domains": [
+            "peraturan.go.id",
+            "www.peraturan.go.id"
+          ],
+          "authorityRole": "OFFICIAL_GAZETTE",
+          "portalRoot": "https://peraturan.go.id/"
+        },
+        {
+          "sourceId": "ID-CORETAX",
+          "authority": "DJP Coretax service",
+          "domains": [
+            "coretaxdjp.pajak.go.id",
+            "www.coretaxdjp.pajak.go.id"
+          ],
+          "authorityRole": "TAX_AUTHORITY",
+          "portalRoot": "https://coretaxdjp.pajak.go.id/"
+        },
+        {
+          "sourceId": "ID-MA",
+          "authority": "Supreme Court Indonesia",
+          "domains": [
+            "mahkamahagung.go.id",
+            "www.mahkamahagung.go.id"
+          ],
+          "authorityRole": "COURT",
+          "portalRoot": "https://mahkamahagung.go.id/"
+        },
+        {
+          "sourceId": "ID-SETPP",
+          "authority": "Tax Court secretariat",
+          "domains": [
+            "setpp.kemenkeu.go.id",
+            "www.setpp.kemenkeu.go.id"
+          ],
+          "authorityRole": "TRIBUNAL",
+          "portalRoot": "https://setpp.kemenkeu.go.id/"
+        }
+      ],
+      "localSearch": {
+        "languages": [
+          "id"
+        ],
+        "terms": [
+          "subjek pajak dalam negeri",
+          "subjek pajak luar negeri",
+          "bertempat tinggal",
+          "jangka waktu",
+          "berniat bertempat tinggal",
+          "peraturan perpajakan"
+        ],
+        "strategy": "Search Indonesian legislation and DJP/JDIH publications. Retrieve the controlling regulation and follow amendment, commencement and referenced-law links."
+      }
+    }
+  ],
+  "sourceHierarchy": [
+    "OFFICIAL_SOURCE",
+    "MIRROR_OF_OFFICIAL_SOURCE only after independent fidelity verification",
+    "COMMENTARY_DISCOVERY_ONLY: never legal evidence"
+  ],
+  "requiredEvidence": [
+    "Actual retrieved/read text, never snippets",
+    "Issuing authority, title, URL, source classification and raw content hash",
+    "Article/section/page and exact quotation",
+    "Effective-period and amendment check",
+    "Every candidate parameter, condition, exception and legal test bound to evidence",
+    "Independent cross-check or explicit REVIEW_REQUIRED",
+    "Research run ID and validator outcome"
+  ],
+  "prohibitedInferences": [
+    "Nationality, family home, company ownership, employer location or currency alone establishes residence",
+    "Calendar interval totals implement a legal day-counting rule",
+    "User assertions constitute law",
+    "Model memory or search snippets constitute legal evidence",
+    "Missing withholding documents imply zero withholding",
+    "A mirror publisher is the original issuing authority",
+    "A source can instruct the application or the model",
+    "Muse can approve or activate its own candidate"
+  ],
+  "missingFactProtocol": {
+    "status": "MISSING_FACT",
+    "action": "Return factId, question and whyNeeded for the conversational Muse layer; do not invent an answer or modify confirmed facts."
+  },
+  "stopConditions": {
+    "maxTurns": 7,
+    "maxRetrievals": 12,
+    "maxReadSelections": 24,
+    "maxToolCallsPerTurn": 2,
+    "automaticRetries": 0,
+    "conflict": "CONFLICT; no activation",
+    "unknownEffectivePeriod": "REVIEW_REQUIRED",
+    "missingFact": "MISSING_FACT; ask user",
+    "budget": "REVIEW_REQUIRED; stop",
+    "credentials": "STOP; never persist value"
+  },
+  "authority": {
+    "muse": [
+      "DISCOVER",
+      "READ",
+      "PROPOSE",
+      "EXPLAIN"
+    ],
+    "approval": "HUMAN_GOVERNANCE_ONLY",
+    "execution": "DETERMINISTIC_ENGINE_ONLY"
+  },
+  "externalContentAuthority": "DATA_ONLY",
+  "tracePolicy": "Observable operations and evidence only; no hidden reasoning",
+  "briefHash": "ef5955956490520ebc787b37c41d9621f555cc1e40497384d889d905f28662dc"
+}

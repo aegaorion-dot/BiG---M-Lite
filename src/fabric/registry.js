@@ -1,6 +1,11 @@
 'use strict';
 const {deepFreeze}=require('../onboarding/canonical');
 const rows=[
+ ['MA','FINANCE','Morocco Ministry of Economy and Finance / DGI publications','PRIMARY_LEGISLATION','finances.gov.ma','fr'],
+ ['MA','CRI','Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror','OFFICIAL_GUIDANCE','casainvest.ma','fr'],
+ ['AE','FTA','United Arab Emirates Federal Tax Authority','TAX_AUTHORITY','tax.gov.ae','en'],
+ ['AE','GOV','United Arab Emirates official government portal','OFFICIAL_GUIDANCE','u.ae','en'],
+ ['AE','ADRO','Abu Dhabi Residents Office, government guidance','OFFICIAL_GUIDANCE','adro.gov.ae','en'],
  ['ID','DJP','Direktorat Jenderal Pajak','TAX_AUTHORITY','pajak.go.id','id'],
  ['ID','BPK','Badan Pemeriksa Keuangan legislation database','PRIMARY_LEGISLATION','peraturan.bpk.go.id','id'],
  ['ID','JDIH','Ministry of Finance legal documentation','SECONDARY_LEGISLATION','jdih.kemenkeu.go.id','id'],

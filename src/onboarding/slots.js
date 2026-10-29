@@ -4,6 +4,8 @@ const DEFS = {
   'user.homeCountry':'country','user.physicalLocation':'country','user.travelStatus':'string','user.travelDays':'string',
   'user.taxResidenceDeclaration':'string','user.withholdingDocumentation':'string',
   'org.legalForm':'string','org.activities':'activities','org.entityDeclarations':'string',
+  'user.englishAbility':'string','presence.intervals':'presence','org.economicScopes':'scopes',
+  'employment.relationship':'string','employment.employerName':'string','employment.employerCountry':'country','employment.workCountry':'country','employment.salaryCurrency':'currency',
   'org.name':'string', 'org.businessType':'businessType', 'org.subjectType':'subjectType',
   'org.taxRegistrationNumber':'string', 'org.address':'string', 'org.registrationStatus':'string',
   'currency.functional':'currency', 'currency.transactions':'currencies',

@@ -9,7 +9,7 @@ const {isFunctionalCorrection,isDirectCurrencyAnswer,currencyMentionMatches}=req
 const ALLOWED_BUSINESS_TYPES=Object.freeze(['freelancer','small-business','umkm','perdagangan','jasa','kuliner','manufaktur']);
 const ALLOWED_MODULES=Object.freeze(['sales','purchase','accounting','reports','import']);
 const SUBJECT_TYPES=Object.freeze(['COMPANY','INDIVIDUAL','PARTNERSHIP']);
-const ACTIVITIES=Object.freeze(['INFLUENCER','CREATOR','FREELANCER','SOFTWARE_LICENSOR','AFFILIATE_MARKETER']);
+const ACTIVITIES=Object.freeze(['INFLUENCER','CREATOR','FREELANCER','SOFTWARE_LICENSOR','AFFILIATE_MARKETER','EMPLOYEE','RENTAL_OPERATOR','CAFE_OPERATOR','INVESTOR']);
 const ALLOWED_FACT_SLOTS=Object.freeze(Object.keys(blankSlots()));
 const CRITICAL_SLOTS=Object.freeze(['currency.functional']);
 const SYSTEM_PROMPT=[
@@ -33,7 +33,8 @@ function blankProfileState(){
 function valueValid(key,value){
  const type=blankSlots()[key]?.type;
  if(type==='string')return typeof value==='string'&&value.trim().length>0&&value.length<=120;
- if(type==='language')return ['en','id'].includes(value);
+ if(type==='language')return ['en','id','ar-MA'].includes(value);
+ if(type==='scopes'||type==='presence'){try{require('./economicContext')[type==='scopes'?'validateScopes':'validatePresence'](value);return true;}catch{return false;}}
  if(type==='country')return typeof value==='string'&&isKnownJurisdiction(value);
  if(type==='currency')return typeof value==='string'&&isKnownCurrency(value);
  if(type==='currencies')return Array.isArray(value)&&value.every(c=>typeof c==='string'&&isKnownCurrency(c));
@@ -48,7 +49,8 @@ function normalizeValue(key,value){
  const type=blankSlots()[key]?.type;
  if(typeof value==='string'){
   if(['currency','country','subjectType'].includes(type))return value.trim().toUpperCase();
-  if(['language','businessType'].includes(type))return value.trim().toLowerCase();
+  if(type==='language')return /^ar(?:-ma)?$/i.test(value.trim())?'ar-MA':value.trim().toLowerCase();
+  if(type==='businessType')return value.trim().toLowerCase();
   return value.trim();
  }
  if(Array.isArray(value)&&value.every(v=>typeof v==='string'))return [...new Set(value.map(v=>['currencies','activities'].includes(type)?v.trim().toUpperCase():v.trim().toLowerCase()))];
@@ -77,7 +79,7 @@ function validateExtractorPayload(raw,{userText=null,pendingQuestion=null,previo
   if(value==null){if(f.status!=='UNKNOWN'&&f.operation!=='REMOVE')errors.push(f.slot+': null requires UNKNOWN');}
   else if(f.status==='UNKNOWN'||!valueValid(f.slot,value))errors.push(f.slot+': unsupported value/type/status');
   const quote=f.supportingQuote??f.evidence;
-  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!isDirectCurrencyAnswer(userText,pendingQuestion,value)&&!/book|pembukuan|fungsional|functional/i.test(quote??'')&&!isFunctionalCorrection(userText,previousCurrencyRole))errors.push('functional currency requires bookkeeping evidence');
+  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!isDirectCurrencyAnswer(userText,pendingQuestion,value)&&!/book|pembukuan|fungsional|functional|دفتر|محاسب|نسجلو/i.test(quote??'')&&!isFunctionalCorrection(userText,previousCurrencyRole))errors.push('functional currency requires bookkeeping evidence');
   if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!currencyMentionMatches(quote,value))errors.push('functional currency value must match the quoted currency');
   out.facts.push({...f,value,semanticRole:f.slot,source:f.source??'USER',supportingQuote:quote,confidence:f.confidence??null,status:f.status??'CANDIDATE',operation:f.operation??'SET'});
  }
@@ -102,7 +104,13 @@ function applyFacts(state,facts,source='USER',{jurisdictionFacts=[],correction=f
   if(f.operation==='REMOVE'&&prev.value!=null&&!Array.isArray(prev.value)&&f.value!=null&&prev.value!==f.value)continue;
   let value=f.value;
   const replace=correction||f.operation==='REPLACE';
-  if(Array.isArray(value)&&Array.isArray(prev.value)&&!replace)value=[...new Set([...prev.value,...value])];
+  if(Array.isArray(value)&&Array.isArray(prev.value)&&!replace){
+   if(prev.type==='scopes')value=[...new Map([...prev.value,...value].map(s=>[s.scopeId,s])).values()];
+   else if(prev.type==='presence')value=[...new Map([...prev.value,...value].map(s=>[JSON.stringify(s),s])).values()];
+   else value=[...new Set([...prev.value,...value])];
+   if(prev.type==='scopes')require('./economicContext').validateScopes(value);
+   if(prev.type==='presence')require('./economicContext').validatePresence(value);
+  }
   let status=(f.operation==='REMOVE'||f.status==='UNKNOWN'||f.status==='REJECTED')?'UNKNOWN':'CANDIDATE';
   if(status==='UNKNOWN'){
    value=Array.isArray(prev.value)?(f.operation==='REMOVE'&&Array.isArray(f.value)?prev.value.filter(v=>!f.value.includes(v)):[]):null;
@@ -145,12 +153,17 @@ function slotValue(state,key){const s=state.slots[key];return s&&s.status!=='CON
 function jurisdictionValue(state,basis){return state.jurisdictionFacts.find(f=>f.basis===basis&&['CANDIDATE','CONFIRMED'].includes(f.status))?.countryCode??null;}
 function gapAnalysis(state){return CRITICAL_SLOTS.filter(k=>!slotValue(state,k));}
 function planQuestion(state,lang='en',{taxReadiness=null}={}){
+ const grouped=require('./economicContext').groupedRequirement(state,lang);if(grouped)return grouped;
  const conflict=Object.entries(state.slots).find(([,s])=>s.status==='CONFLICT');
  const jurisdictionConflict=state.jurisdictionFacts.find(f=>f.status==='CONFLICT');
+ if(conflict&&lang==='ar')return {key:conflict[0],text:require('../i18n/strings').t('ar-MA','question.conflict')};
  if(conflict)return {key:conflict[0],text:lang==='id'?'Ada jawaban yang berbeda. Tolong nyatakan koreksi untuk pengaturan yang ingin Anda gunakan.':'Those answers differ. Please state a correction for the setup you want to use.'};
+ if(jurisdictionConflict&&lang==='ar')return {key:'jurisdiction.'+jurisdictionConflict.basis,text:require('../i18n/strings').t('ar-MA','question.jurisdiction')};
  if(jurisdictionConflict)return {key:'jurisdiction.'+jurisdictionConflict.basis,text:lang==='id'?'Lokasi tersebut berbeda. Tolong jelaskan lokasi pendaftaran dan lokasi kerja secara terpisah.':'Those locations differ. Please clarify registration and work location separately.'};
+ if(lang==='ar'&&gapAnalysis(state).length)return {key:'currency.functional',text:require('../i18n/strings').t('ar-MA','question.currency')};
  if(gapAnalysis(state).length)return {key:'currency.functional',text:lang==='id'?'Mata uang apa yang Anda gunakan untuk pembukuan? Pembayaran pelanggan bisa berbeda.':'Which currency do you want to keep your books in? Customer payments can use another currency.'};
- const taxQuestion=require('../tax/readiness').taxQuestion(taxReadiness);if(taxQuestion)return taxQuestion;
+ const taxQuestion=require('../tax/readiness').taxQuestion(taxReadiness);if(taxQuestion)return lang==='ar'?{...taxQuestion,text:require('../i18n/strings').interpolate(require('../i18n/strings').t('ar-MA','question.tax'),{fact:require('../i18n/strings').t('ar-MA','product.taxFact.'+taxQuestion.key.replace(/^tax\./,''))})}:taxQuestion;
+ if(lang==='ar')return {key:'done',text:require('../i18n/strings').t('ar-MA','question.done')};
  return {key:'done',text:lang==='id'?'Silakan tinjau pengaturan. Pengaturan pajak dapat ditinjau nanti.':'Please review your setup. Tax settings can be reviewed later.'};
 }
 function planConfiguration(state,{year=new Date().getUTCFullYear(),organizationId='org-contoh'}={}){
@@ -170,7 +183,7 @@ function validateConfiguration(plan){
  const errors=[];
  if(!plan.organizationName||typeof plan.organizationName!=='string')errors.push('organization name required');
  if(!isKnownCurrency(plan.functionalCurrency))errors.push('supported functional currency required');
- if(!['en','id'].includes(plan.language))errors.push('unsupported language');
+ if(!['en','id','ar-MA'].includes(plan.language))errors.push('unsupported language');
  if(!Array.isArray(plan.modules)||!plan.modules.length||plan.modules.some(m=>!ALLOWED_MODULES.includes(m)))errors.push('unsupported modules');
  if(plan.domicile&&!isKnownJurisdiction(plan.domicile))errors.push('unsupported jurisdiction');
  try{assertDate(plan.period.periodStart,'period start');assertDate(plan.period.periodEnd,'period end');if(plan.period.periodStart>plan.period.periodEnd)errors.push('invalid period range');}catch(e){errors.push(e.message);}

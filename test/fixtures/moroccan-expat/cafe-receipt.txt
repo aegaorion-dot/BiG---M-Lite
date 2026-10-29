@@ -1,0 +1,14 @@
+RECEIPT - SYNTHETIC
+Transaction date: 2026-10-08
+Date: 2026-10-08
+Vendor: مورد القهوة التجريبي
+Description: مواد إضافية للقهوة
+Total IDR 1200000
+Payment: card
+Status: paid
+Reference: CARD-09
+Event type: CARD_PURCHASE
+Purpose: BUSINESS
+Recognition status: EXPENSE
+Expense category: INGREDIENTS
+Economic scope: CAFE

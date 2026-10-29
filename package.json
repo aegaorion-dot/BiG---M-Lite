@@ -36,7 +36,11 @@
     "packs:demo": "node scripts/phase4-demo.js",
     "test:global:freelancer": "node scripts/global-freelancer.js",
     "test:global:browser": "node --experimental-websocket scripts/global-freelancer.js --browser",
-    "test:global:live": "node scripts/global-live.js"
+    "test:global:live": "node scripts/global-live.js",
+    "fixtures:moroccan": "node scripts/moroccan-fixtures.js",
+    "test:moroccan": "node scripts/moroccan-expat.js",
+    "test:moroccan:browser": "node --experimental-websocket scripts/moroccan-expat.js --browser",
+    "test:moroccan:live": "node --experimental-websocket scripts/moroccan-live.js"
   },
   "license": "UNLICENSED",
   "dependencies": {

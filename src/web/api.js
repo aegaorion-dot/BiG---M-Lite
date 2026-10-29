@@ -6,7 +6,7 @@ async function dispatch(store,method,path,query={},body={}){
  const {ctx}=store;
  try{
   const currency=query.currency||ctx.org?.baseCurrency;
-  if(path.startsWith('/api/intake')||path.startsWith('/api/muse')||path.startsWith('/api/tax/review')||path==='/api/financial-position')store.checkAuth(body?.authToken??query.token??null);
+  if(path.startsWith('/api/intake')||path.startsWith('/api/muse')||path.startsWith('/api/tax/review')||path.startsWith('/api/tax/scoped')||path==='/api/financial-position')store.checkAuth(body?.authToken??query.token??null);
   if(method==='GET'){
    if(path==='/api/financial-position')return json({ok:true,position:store.financialPosition()});
    if(path==='/api/product')return json({ok:true,...store.productState()});
@@ -16,6 +16,8 @@ async function dispatch(store,method,path,query={},body={}){
    if(path==='/api/muse/status')return json({ok:true,...store.museStatus()});
    if(path==='/api/muse/trace')return json({ok:true,...store.museTrace()});
    if(path==='/api/tax/review')return json({ok:true,readiness:store.taxReadiness()});
+   if(path==='/api/tax/scoped')return json({ok:true,...store.scopedTax.view()});
+   if(path==='/api/tax/scoped/law')return json({ok:true,candidates:store.scopedTax.law()});
    if(path==='/api/intake')return json({ok:true,...store.intake.list()});
    if(path==='/api/intake/trace')return json({ok:true,...store.intake.trace(query.candidateId)});
    if(path==='/api/intake/external/preview')return json({ok:true,...store.intake.external.preview(query.batchId)});
@@ -46,6 +48,9 @@ async function dispatch(store,method,path,query={},body={}){
    if(path==='/api/muse/assistant')return json({ok:true,...await store.museAssistant(body)});
    if(path==='/api/muse/discovery')return json({ok:true,...await store.museDiscovery()});
    if(path==='/api/tax/review/start')return json({ok:true,readiness:store.beginTaxReview(body.request)});
+   if(path==='/api/tax/scoped/propose')return json({ok:true,...store.scopedTax.propose(body)});
+   if(path==='/api/tax/scoped/law/review')return json({ok:true,candidates:store.scopedTax.reviewLaw(body)});
+   if(path==='/api/tax/scoped/confirm')return json({ok:true,...store.scopedTax.confirm(body)});
    if(path==='/api/tax/review/answer')return json({ok:true,readiness:store.answerTaxReview(body)});
    if(path==='/api/tax/review/propose')return json({ok:true,proposal:store.proposeTaxReview()});
    if(path==='/api/intake/duplicates/review')return json({ok:true,candidate:await store.intake.resolveDuplicate(body)});

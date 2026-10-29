@@ -1,0 +1,5 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),{RawArtifactStore}=require('../src/fabric/artifacts'),{normalizePdfExtraction}=require('../src/fabric/normalizer');
+const root=path.resolve(__dirname,'../research/moroccan-tax'),store=new RawArtifactStore(path.join(root,'raw')),sources=JSON.parse(fs.readFileSync(path.join(root,'sources.json'),'utf8'));
+for(const s of sources.records){const a=JSON.parse(fs.readFileSync(path.join(root,'raw/artifacts',s.artifactId+'.json'),'utf8'));if(a.sourceType!=='PDF')continue;const extraction=JSON.parse(fs.readFileSync(path.join(root,'extractions',s.identity+'.json'),'utf8')),e=normalizePdfExtraction(store,a,extraction);if(e.processingState!=='NORMALIZED')throw Error('Incomplete official PDF extraction');fs.writeFileSync(path.join(root,'normalized',s.identity+'.json'),JSON.stringify(e,null,2)+'\n');s.envelopeId=e.envelopeId;s.extractionStorageRef='research/moroccan-tax/extractions/'+s.identity+'.json';}
+fs.writeFileSync(path.join(root,'sources.json'),JSON.stringify(sources,null,2)+'\n');console.log('Official PDF hash-bound normalization complete. No legal approval performed.');

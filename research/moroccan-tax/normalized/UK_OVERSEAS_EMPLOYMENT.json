@@ -1,0 +1,467 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "GB-GOVUK",
+  "jurisdictionCode": "GB",
+  "metadata": {
+    "title": "Effect of residence on an employee’s liability to UK income tax - GOV.UK",
+    "officialDocumentId": null,
+    "language": "en",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "7639cffe-61d4-4179-a612-1132c56fa944",
+    "rawContentHash": "0d258180664a3979b0e69e7112858316ccecce4ff12754909015840018cc957a",
+    "sourceUrl": "https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax",
+    "finalUrl": "https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax",
+    "retrievedAt": "2026-10-29T14:39:26.288Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "GOVUK",
+    "authorityName": "GOV.UK departments (document publisher must be checked)",
+    "sourceRole": "OFFICIAL_GUIDANCE",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/0d258180664a3979b0e69e7112858316ccecce4ff12754909015840018cc957a.bin",
+    "rawContentHash": "0d258180664a3979b0e69e7112858316ccecce4ff12754909015840018cc957a"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/0d258180664a3979b0e69e7112858316ccecce4ff12754909015840018cc957a.bin",
+      "rawContentHash": "0d258180664a3979b0e69e7112858316ccecce4ff12754909015840018cc957a"
+    },
+    "metaTags": [
+      "<meta charset=\"utf-8\">",
+      "<meta name=\"govuk:components_gem_version\" content=\"71.0.1\">",
+      "<meta name=\"csrf-param\" content=\"authenticity_token\" />",
+      "<meta name=\"csrf-token\" content=\"s6F8Lj3ZlT46KbXL9yfvWSuOkGR2fndjGEI6qDU8qROpeCSoqBjOPw8nWCLUpz8Loi05OWFmeWkHqXlAwP3yPg\" />",
+      "<meta name=\"theme-color\" content=\"#1d70b8\">",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "<meta property=\"og:image\" content=\"https://www.gov.uk/assets/frontend/govuk-opengraph-image-4196a4d6333cf92aaf720047f56cfd91b3532d7635fc21ebcf0d5897df6b5f77.png\">",
+      "<meta property=\"og:site_name\" content=\"GOV.UK\">",
+      "<meta property=\"og:type\" content=\"article\">",
+      "<meta property=\"og:url\" content=\"https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax\">",
+      "<meta property=\"og:title\" content=\"Effect of residence on an employee’s liability to UK income tax\">",
+      "<meta property=\"og:description\" content=\"\">",
+      "<meta name=\"twitter:card\" content=\"summary\">",
+      "<meta name=\"csp-nonce\" content=\"7ZgIyfgst+hNSfHjJiAL2Q==\" />",
+      "<meta name=\"govuk:format\" content=\"html_publication\">",
+      "<meta name=\"govuk:publishing-app\" content=\"whitehall\">",
+      "<meta name=\"govuk:rendering-app\" content=\"frontend\">",
+      "<meta name=\"govuk:schema-name\" content=\"html_publication\">",
+      "<meta name=\"govuk:content-id\" content=\"98943233-5a1a-425a-96b7-112739a1d70e\">",
+      "<meta name=\"govuk:ga4-base-path\" content=\"/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax\">",
+      "<meta name=\"govuk:first-published-at\" content=\"2025-04-06T00:15:14+01:00\">",
+      "<meta name=\"govuk:updated-at\" content=\"2026-09-30T10:14:05+01:00\">",
+      "<meta name=\"govuk:public-updated-at\" content=\"2026-04-06T00:15:17+01:00\">",
+      "<meta name=\"govuk:primary-publishing-organisation\" content=\"HM Revenue &amp; Customs\">",
+      "<meta name=\"govuk:organisations\" content=\"&lt;D25&gt;\">"
+    ]
+  },
+  "normalizedContent": {
+    "text": "HM Revenue & Customs Guidance Effect of residence on an employee’s liability to UK income tax Updated 6 April 2026 Contents When are an employee’s general earnings chargeable to UK Income Tax Overseas Workday Relief Trailing income Double taxation relief Case examples Print this page © Crown copyright 2026 This publication is licensed under the terms of the Open Government Licence v3.0 except where otherwise stated. To view this licence, visit nationalarchives.gov.uk/doc/open-government-licence/version/3 or write to the Information Policy Team, The National Archives, Kew, London TW9 4DU, or email: psi@nationalarchives.gov.uk . Where we have identified any third party copyright information you will need to obtain permission from the copyright holders concerned. This publication is available at https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax This guidance tells you about the scope of the charge to UK Income Tax on an employee’s general earnings from 6 April 2025. You should read this guidance together with both the: Statutory Residence Test (SRT) Foreign Income and Gains regime When are an employee’s general earnings chargeable to UK Income Tax Whether an employee’s general earnings are subject to UK Income Tax normally depends on their residence position for the tax year they were earned. From 2013 to 2014, an employee’s residence for a tax year is determined under the SRT. You can read more about when an employee’s general earnings are earned in manual EIM40000 —Employment Income Manual . Chargeable overseas earnings are earnings from an employment with a foreign employer. The employment duties are carried out wholly outside the UK. Under the remittance basis, where an employee elected to be taxed on the remittance basis for a tax year which they were not eligible for Overseas Workday Relief ( OWR ), any of their chargeable overseas earnings for that tax year would be taxable on remittance. You can read more about OWR under the remittance basis in RDR4 Overseas Workday Relief . Under the new residence-based regime (known as the Foreign Income and Gains regime), relief will no longer be available on chargeable overseas earnings earned after 5‌‌‌ April‌‌‌ 2025. That’s unless they are qualifying foreign employment income for the purposes of Overseas Workday Relief. Tax years for which an employee is UK resident From 6 April 2025, an employee’s general earnings that are earned in a tax year for which they are UK resident are taxable in the UK when they are received, unless they are excluded earnings. General earnings can only be excluded earnings where they are earned in a year which is a split year. A split year can occur if an individual who lives in the UK starts to live or work abroad in the tax year, or an individual comes from abroad to live and work in the UK. The tax year can be split when certain circumstances are met into a UK part and an overseas part. Under the split year treatment, the UK part of a tax year is the part of the tax year when you are charged UK Income Tax as a UK resident. You can read more about split years in manual RFIG21000 . Any general earnings attributable to the overseas part of a split year will be excluded earnings if they do not relate to employment duties carried out in the UK and are not from overseas Crown employment subject to UK Income Tax. You can read more on general earnings from overseas Crown employment subject to UK Income in manual EIM40205 — Employment Income Manual . Tax years for which an employee is not UK resident An employee’s general earnings that are earned in a tax year for which they are not a UK resident are subject to UK Income Tax if they relate to employment duties carried out in the UK during that tax year. Any general earnings earned in a tax year for which the employee is not a UK resident that are chargeable to UK Income Tax, are taxable when they are received. You can read more about when general earnings are received in manual EIM42260 — Employment Income Manual . Overseas Workday Relief From 6 April 2025, tax relief may be available on general earnings which relate to employment duties carried on outside the UK during a tax year for which the employee is a ‘qualifying new resident’. An employee is eligible for Overseas Workday Relief ( OWR ) in a tax year if they are a qualifying new resident in that tax year. Subject to certain transitional provisions, an employee is a qualifying new resident in a tax year, if all of the following apply: they’re UK resident in the tax year they’ve been non-UK resident for a continuous period of at least 10 tax years immediately prior to that tax year they’re not disqualified for the tax year You can read more about transitional provisions in manual EIM43605 ). An employee who is a qualifying new resident in a tax year will remain so in any tax year during the following 3-year period in which they’re UK resident, so that they can be a qualifying new resident in up to 4 tax years. You can read more on qualifying new residents in manual RFIG44000 . The extent to which income relates to employment duties carried out overseas is determined on a just and reasonable basis. In most cases we would expect an apportionment based on workdays to be considered just and reasonable, although ultimately this will depend on the employee’s particular facts and circumstances. This is known as Overseas Workday Relief ( OWR ) and it replaces the former remittance based OWR . Certain other types of employment income can also benefit from OWR . You can read more about OWR for periods: up to 5 April 2025 in RDR4 Overseas Workday Relief . from the 6 April 2025 in the guidance on Overseas Workday Relief . Trailing income Most earnings are usually received shortly after they are earned. However, an employee may receive some earnings in one tax year so that they are taxable in that year, which are for an earlier tax year. For example a bonus, which is for an earlier tax year because it relates to employment duties they carried out in that earlier year. This means an employee may carry out employment duties in: one tax year but receive some of their earnings for those employment duties in a later tax year an overseas or UK part of a split year, but receive payment in the other part of the split year (UK or overseas), or in another tax year It’s your employee’s circumstances in the period that the employment income was earned that determines whether those earnings are chargeable to UK Income Tax, not your employee’s circumstances in the year they receive them. You can read more about trailing income in manual EIM40008 . Double taxation relief Where an employee works in more than one country or works in a country they are not resident in, the whole or part of their earnings may be taxable in more than one country. The UK has various Double Taxation Agreements with other countries which may enable the employee to claim relief to prevent double taxation on their earnings. Employees should consider this when completing their Self-Assessment tax return. You can read more about double taxation agreements in manual INTM154000. Case examples Example 1 Medha was resident in the UK until May 2026 when she left the UK to take up employment in Germany. In her new role, all of her employment duties were carried out in Germany. In the 2026 to 2027 tax year, as Medha is no longer resident in the UK and she carries out no employment duties in the UK, she is not liable to pay UK Income Tax on her earnings from Germany. However, Medha did receive a bonus in July 2026 that related to the employment duties she undertook under her UK employment for the 2025 to 2026 tax year. She will therefore be liable for UK Income Tax on this amount. Example 2 Kwame has always been resident in France. In the 2026 to 2027 tax year, he started a new role with a multinational firm based in Paris. As part of his employment duties, he comes to the UK to work for 4 months per year. Kwame will need to look at the Statutory Residence Test to determine whether he becomes resident in the UK for any tax year in which he carries out the duties of this employment. This is to determine the tax treatment of his general earnings from employment. If Kwame: remains non-resident for the tax year, only his general earnings for that tax year earned while he was in the UK will be taxable was to become UK resident for the tax year, all his worldwide income earned or arising in that tax year will be taxable, but may be eligible to benefit from the FIG regime and OWR Also, if Kwame became resident of both the UK and France for the tax year and is taxed in both countries, he would need to consider the Double Taxation Agreement with France to determine both which country: has taxing rights to his employment income would be required to provide tax relief Example 3 Abdul has always been a resident of Germany and has never previously been to the UK. On 1 August 2026 he moves to the UK on secondment. He works in the UK continuously for 3 years and returns to Germany on 31 July 2029. Under the Statutory Residence Test, Abdul will be UK resident for the 2026 to 2027 tax year as he has spent over 183 days in the tax year. As he was UK resident in the tax year, he must also consider whether split year treatment applies to his circumstances. Abdul meets case 5 (starting full time work in the UK) under split year treatment so that the tax year is split. The overseas part of the year is the period 6 April 2026 to 31 July 2026. The UK part of the year is the period 1 August 2026 to 5 April 2027. Abdul does meet a case for split year treatment and the tax year is split. The period before 31 July 2026 Abdul is considered non-resident and from 1 August 2026 to the end of the tax year, Abdul is considered resident. Earnings that Abdul receives after 1 August 2026 that relate to employment duties carried out before 31 July 2026 will not be taxable in the UK. Back to top",
+    "blocks": [
+      {
+        "locator": "html:main:49795",
+        "text": "HM Revenue & Customs Guidance Effect of residence on an employee’s liability to UK income tax Updated 6 April 2026 Contents When are an employee’s general earnings chargeable to UK Income Tax Overseas Workday Relief Trailing income Double taxation relief Case examples Print this page © Crown copyright 2026 This publication is licensed under the terms of the Open Government Licence v3.0 except where otherwise stated. To view this licence, visit nationalarchives.gov.uk/doc/open-government-licence/version/3 or write to the Information Policy Team, The National Archives, Kew, London TW9 4DU, or email: psi@nationalarchives.gov.uk . Where we have identified any third party copyright information you will need to obtain permission from the copyright holders concerned. This publication is available at https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax This guidance tells you about the scope of the charge to UK Income Tax on an employee’s general earnings from 6 April 2025. You should read this guidance together with both the: Statutory Residence Test (SRT) Foreign Income and Gains regime When are an employee’s general earnings chargeable to UK Income Tax Whether an employee’s general earnings are subject to UK Income Tax normally depends on their residence position for the tax year they were earned. From 2013 to 2014, an employee’s residence for a tax year is determined under the SRT. You can read more about when an employee’s general earnings are earned in manual EIM40000 —Employment Income Manual . Chargeable overseas earnings are earnings from an employment with a foreign employer. The employment duties are carried out wholly outside the UK. Under the remittance basis, where an employee elected to be taxed on the remittance basis for a tax year which they were not eligible for Overseas Workday Relief ( OWR ), any of their chargeable overseas earnings for that tax year would be taxable on remittance. You can read more about OWR under the remittance basis in RDR4 Overseas Workday Relief . Under the new residence-based regime (known as the Foreign Income and Gains regime), relief will no longer be available on chargeable overseas earnings earned after 5‌‌‌ April‌‌‌ 2025. That’s unless they are qualifying foreign employment income for the purposes of Overseas Workday Relief. Tax years for which an employee is UK resident From 6 April 2025, an employee’s general earnings that are earned in a tax year for which they are UK resident are taxable in the UK when they are received, unless they are excluded earnings. General earnings can only be excluded earnings where they are earned in a year which is a split year. A split year can occur if an individual who lives in the UK starts to live or work abroad in the tax year, or an individual comes from abroad to live and work in the UK. The tax year can be split when certain circumstances are met into a UK part and an overseas part. Under the split year treatment, the UK part of a tax year is the part of the tax year when you are charged UK Income Tax as a UK resident. You can read more about split years in manual RFIG21000 . Any general earnings attributable to the overseas part of a split year will be excluded earnings if they do not relate to employment duties carried out in the UK and are not from overseas Crown employment subject to UK Income Tax. You can read more on general earnings from overseas Crown employment subject to UK Income in manual EIM40205 — Employment Income Manual . Tax years for which an employee is not UK resident An employee’s general earnings that are earned in a tax year for which they are not a UK resident are subject to UK Income Tax if they relate to employment duties carried out in the UK during that tax year. Any general earnings earned in a tax year for which the employee is not a UK resident that are chargeable to UK Income Tax, are taxable when they are received. You can read more about when general earnings are received in manual EIM42260 — Employment Income Manual . Overseas Workday Relief From 6 April 2025, tax relief may be available on general earnings which relate to employment duties carried on outside the UK during a tax year for which the employee is a ‘qualifying new resident’. An employee is eligible for Overseas Workday Relief ( OWR ) in a tax year if they are a qualifying new resident in that tax year. Subject to certain transitional provisions, an employee is a qualifying new resident in a tax year, if all of the following apply: they’re UK resident in the tax year they’ve been non-UK resident for a continuous period of at least 10 tax years immediately prior to that tax year they’re not disqualified for the tax year You can read more about transitional provisions in manual EIM43605 ). An employee who is a qualifying new resident in a tax year will remain so in any tax year during the following 3-year period in which they’re UK resident, so that they can be a qualifying new resident in up to 4 tax years. You can read more on qualifying new residents in manual RFIG44000 . The extent to which income relates to employment duties carried out overseas is determined on a just and reasonable basis. In most cases we would expect an apportionment based on workdays to be considered just and reasonable, although ultimately this will depend on the employee’s particular facts and circumstances. This is known as Overseas Workday Relief ( OWR ) and it replaces the former remittance based OWR . Certain other types of employment income can also benefit from OWR . You can read more about OWR for periods: up to 5 April 2025 in RDR4 Overseas Workday Relief . from the 6 April 2025 in the guidance on Overseas Workday Relief . Trailing income Most earnings are usually received shortly after they are earned. However, an employee may receive some earnings in one tax year so that they are taxable in that year, which are for an earlier tax year. For example a bonus, which is for an earlier tax year because it relates to employment duties they carried out in that earlier year. This means an employee may carry out employment duties in: one tax year but receive some of their earnings for those employment duties in a later tax year an overseas or UK part of a split year, but receive payment in the other part of the split year (UK or overseas), or in another tax year It’s your employee’s circumstances in the period that the employment income was earned that determines whether those earnings are chargeable to UK Income Tax, not your employee’s circumstances in the year they receive them. You can read more about trailing income in manual EIM40008 . Double taxation relief Where an employee works in more than one country or works in a country they are not resident in, the whole or part of their earnings may be taxable in more than one country. The UK has various Double Taxation Agreements with other countries which may enable the employee to claim relief to prevent double taxation on their earnings. Employees should consider this when completing their Self-Assessment tax return. You can read more about double taxation agreements in manual INTM154000. Case examples Example 1 Medha was resident in the UK until May 2026 when she left the UK to take up employment in Germany. In her new role, all of her employment duties were carried out in Germany. In the 2026 to 2027 tax year, as Medha is no longer resident in the UK and she carries out no employment duties in the UK, she is not liable to pay UK Income Tax on her earnings from Germany. However, Medha did receive a bonus in July 2026 that related to the employment duties she undertook under her UK employment for the 2025 to 2026 tax year. She will therefore be liable for UK Income Tax on this amount. Example 2 Kwame has always been resident in France. In the 2026 to 2027 tax year, he started a new role with a multinational firm based in Paris. As part of his employment duties, he comes to the UK to work for 4 months per year. Kwame will need to look at the Statutory Residence Test to determine whether he becomes resident in the UK for any tax year in which he carries out the duties of this employment. This is to determine the tax treatment of his general earnings from employment. If Kwame: remains non-resident for the tax year, only his general earnings for that tax year earned while he was in the UK will be taxable was to become UK resident for the tax year, all his worldwide income earned or arising in that tax year will be taxable, but may be eligible to benefit from the FIG regime and OWR Also, if Kwame became resident of both the UK and France for the tax year and is taxed in both countries, he would need to consider the Double Taxation Agreement with France to determine both which country: has taxing rights to his employment income would be required to provide tax relief Example 3 Abdul has always been a resident of Germany and has never previously been to the UK. On 1 August 2026 he moves to the UK on secondment. He works in the UK continuously for 3 years and returns to Germany on 31 July 2029. Under the Statutory Residence Test, Abdul will be UK resident for the 2026 to 2027 tax year as he has spent over 183 days in the tax year. As he was UK resident in the tax year, he must also consider whether split year treatment applies to his circumstances. Abdul meets case 5 (starting full time work in the UK) under split year treatment so that the tax year is split. The overseas part of the year is the period 6 April 2026 to 31 July 2026. The UK part of the year is the period 1 August 2026 to 5 April 2027. Abdul does meet a case for split year treatment and the tax year is split. The period before 31 July 2026 Abdul is considered non-resident and from 1 August 2026 to the end of the tax year, Abdul is considered resident. Earnings that Abdul receives after 1 August 2026 that relate to employment duties carried out before 31 July 2026 will not be taxable in the UK. Back to top",
+        "anchorId": "f58fc0295e626e7139843388def10dd84dc990d9152630f06e88520c1e469e31"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "f58fc0295e626e7139843388def10dd84dc990d9152630f06e88520c1e469e31",
+      "locator": "html:main:49795",
+      "start": 0,
+      "end": 10036,
+      "quoteHash": "cc938def0172f487aba11e13bfadcc032efdd324e79c33db5b40544bdef1cd49",
+      "rawContentHash": "0d258180664a3979b0e69e7112858316ccecce4ff12754909015840018cc957a"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.gov.uk/help/cookies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/cookies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/cookies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax#content",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/benefits",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/births-deaths-marriages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/business",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/childcare-parenting",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/citizenship",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/justice",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/disabilities",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/driving",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/education",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/employing-people",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/environment-countryside",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/housing-local-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/abroad",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/visas-immigration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/working",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/organisations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/news-and-communications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/guidance-and-regulation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/research-and-statistics",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/policy-papers-and-consultations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/transparency-and-freedom-of-information-releases",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/money",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/money/business-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/money/paye",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/globally-mobile-employees",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/organisations/hm-revenue-customs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax#when-are-an-employees-general-earnings-chargeable-to-uk-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax#overseas-workday-relief",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax#trailing-income",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax#double-taxation-relief",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax#case-examples",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/rdr3-statutory-residence-test-srt",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/guidance/check-if-you-can-claim-the-4-year-foreign-income-and-gains-regime",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim40000",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/rdr4-overseas-workday-relief-owr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/hmrc-internal-manuals/residence-and-fig-regime-manual/rfig21000",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim40205",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim42260",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim43605",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/hmrc-internal-manuals/residence-and-fig-regime-manual/rfig44000",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/rdr4-overseas-workday-relief-owr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/globally-mobile-employees",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim40008",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/hmrc-internal-manuals/international-manual/intm154000",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/hmrc-internal-manuals/residence-and-fig-regime-manual/rfig21170",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/globally-mobile-employees/effect-of-residence-on-an-employees-liability-to-uk-income-tax#contents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/contact/govuk",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.smartsurvey.co.uk/s/gov-uk-banner/?c=no-js",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/benefits",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/births-deaths-marriages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/business",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/childcare-parenting",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/citizenship",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/justice",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/disabilities",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/driving",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/education",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/employing-people",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/environment-countryside",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/housing-local-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/abroad",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/visas-immigration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/working",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/organisations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/news-and-communications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/guidance-and-regulation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/research-and-statistics",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/policy-papers-and-consultations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/transparency-and-freedom-of-information-releases",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/how-government-works",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/get-involved",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/privacy-notice",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/cookies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/accessibility-statement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/contact",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/terms-conditions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/cymraeg",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/organisations/government-digital-service",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "3384e399110f15383ca0620b0c583380007acba521217cca05a3396f8783c0f8"
+}

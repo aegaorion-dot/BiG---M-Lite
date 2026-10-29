@@ -1,0 +1,36 @@
+{
+  "sourceId": "ID-JDIH",
+  "jurisdictionCode": "ID",
+  "authorityCode": "JDIH",
+  "sourceUrl": "https://jdih.kemenkeu.go.id/",
+  "finalUrl": "https://jdih.kemenkeu.go.id/home",
+  "redirects": [
+    {
+      "from": "https://jdih.kemenkeu.go.id/",
+      "to": "https://jdih.kemenkeu.go.id/home",
+      "status": 307,
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "sourceType": "HTML",
+  "retrievalMethod": "HTML",
+  "retrievedAt": "2026-10-29T15:43:42.988Z",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "language": null,
+  "officialDocumentId": null,
+  "title": null,
+  "publishedAt": null,
+  "effectiveFrom": null,
+  "effectiveTo": null,
+  "status": "DISCOVERED",
+  "etag": null,
+  "lastModified": null,
+  "unstableUrl": false,
+  "artifactId": "83b93205-ca2c-41d4-ad23-8020ef0ed475",
+  "rawContentHash": "9b004fada0caba617a2e6002fc7e23eee174b370495750f14fbaf572467edca3",
+  "rawStorageRef": "blobs/9b004fada0caba617a2e6002fc7e23eee174b370495750f14fbaf572467edca3.bin",
+  "byteLength": 215457,
+  "parserVersion": "fabric-raw/1",
+  "duplicateContent": false
+}

@@ -20,7 +20,7 @@ function decimal(raw,currency=null){
  const [whole,fraction='']=s.split('.'),scale=10n**BigInt(fraction.length),numerator=BigInt(whole+fraction)*multiplier;
  const resultWhole=numerator/scale,rem=numerator%scale;return resultWhole.toString()+(rem?'.'+rem.toString().padStart(fraction.length,'0').replace(/0+$/,''):'');
 }
-function currencyIn(text){const matches=[...text.matchAll(/\b(IDR|SGD|USD|AUD|GBP|EUR|JPY|AED)\b|\bRp(?=\s*\d)/gi)].map(m=>/^rp$/i.test(m[0])?'IDR':m[0].toUpperCase());const set=[...new Set(matches)];return set.length===1?set[0]:null;}
+function currencyIn(text){const matches=[...text.matchAll(/\b(IDR|SGD|USD|AUD|GBP|EUR|JPY|AED|MAD)\b|\bRp(?=\s*\d)/gi)].map(m=>/^rp$/i.test(m[0])?'IDR':m[0].toUpperCase());const set=[...new Set(matches)];return set.length===1?set[0]:null;}
 class DeterministicSemanticProvider extends SemanticDocumentProvider {
  get name(){return 'deterministic';}
  async interpret({extraction,sourceChannel,receivedAt}){
@@ -50,7 +50,7 @@ class DeterministicSemanticProvider extends SemanticDocumentProvider {
    const paymentMethod=find('paymentMethod',/\b(cash|bank|tunai)\b/i);
    const referenceNumber=find('referenceNumber',/^(?:reference|ref|invoice no|nomor)\s*:\s*([^\n]{1,120})/i);
    const paid=candidateType==='RECEIPT'||/\bpaid\b|\blunas\b|\bbought\b/i.test(all);if(paid)evidence.settlementStatus={blockId:group.find(b=>/receipt|struk|paid|lunas|bought/i.test(b.text))?.blockId??group[0].blockId,quote:(group.find(b=>/receipt|struk|paid|lunas|bought/i.test(b.text))??group[0]).text.slice(0,200)};
-   const financial={};for(const [field,label]of Object.entries({eventType:'Event type',incomeCategory:'Income category',expenseCategory:'Expense category',purpose:'Purpose',recognitionStatus:'Recognition status',engagementId:'Engagement',contractTotal:'Contract total',payerCountry:'Payer country',ipRetained:'IP retained'})){const value=find(field,new RegExp('^'+label+':\\s*(.{1,120})$','i'));if(value!=null)financial[field]=value;}
+   const financial={};for(const [field,label]of Object.entries({eventType:'Event type',incomeCategory:'Income category',expenseCategory:'Expense category',purpose:'Purpose',recognitionStatus:'Recognition status',engagementId:'Engagement',contractTotal:'Contract total',payerCountry:'Payer country',ipRetained:'IP retained',economicScopeId:'Economic scope',reviewReason:'Review reason'})){const value=find(field,new RegExp('^'+label+':\\s*(.{1,120})$','i'));if(value!=null)financial[field]=value;}
    return {...financial,candidateType,transactionDate,documentDate:docDate,invoiceDate:candidateType.includes('INVOICE')?docDate:null,paymentDate,counterparty,description,amount:decimal(amountRaw,currency),currency,taxAmount:decimal(taxRaw,currency),subtotal:decimal(subtotalRaw,currency),paymentMethod,referenceNumber,proposedTransactionType:kind,proposedAccounts:null,settlementStatus:paid?'PAID':null,confidence:0.7,evidence:{...evidence,...(candidateType.includes('INVOICE')&&docDate?{invoiceDate:evidence.documentDate}:{})}};
   }
   if(extraction.tables.length){

@@ -36,6 +36,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
  function candidate(id){const c=state.candidates[id];if(!c)throw Error('Unknown candidate');return c;}
  function validate(c,ctx=getContext()){
   const f=c.current,missingFields=[],conflicts=[],journal=c.candidateType==='EXTERNAL_JOURNAL';
+  if(ctx.workspace.economicScopes?.length){const scope=ctx.workspace.economicScopes.find(s=>s.scopeId===f.economicScopeId);if(!scope)conflicts.push('ECONOMIC_SCOPE_REVIEW_REQUIRED');if(!journal&&!f.eventType)conflicts.push('Explicit reviewed financial event required for scoped posting');if(['INSTALLMENT_OPENING','INSTALLMENT_PAYMENT'].includes(f.eventType)&&scope?.kind!=='PERSONAL')conflicts.push('Installments require the personal economic scope');if(scope?.kind==='EMPLOYMENT'&&f.eventType==='INCOME_RECEIPT'&&f.incomeCategory!=='EMPLOYMENT_WAGE')conflicts.push('Employment receipt cannot become business revenue');if(scope&&scope.kind!=='EMPLOYMENT'&&f.incomeCategory==='EMPLOYMENT_WAGE')conflicts.push('Employment salary requires its employment scope');if(scope?.kind==='PERSONAL'&&f.purpose==='BUSINESS')conflicts.push('Personal scope cannot silently receive business expenses');}
   if(!journal){
   for(const key of ['transactionDate','counterparty','description','amount','currency','proposedTransactionType','classificationAccountId','paymentAccountId'])if(!f[key])missingFields.push(key);
   if(f.transactionDate)try{assertDate(f.transactionDate,'transactionDate');}catch{conflicts.push('Date must be an unambiguous valid YYYY-MM-DD');}
@@ -85,7 +86,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
  }
  async function interpret(extraction,{documentId=null,sourceId,sourceChannel,receivedAt}){
   const interpretationId='interpretation-'+sourceId;
-  const raw=await semanticProvider.interpret({extraction:clone(extraction),sourceChannel,receivedAt,allowedAccounts:getContext().chart?.list().map(a=>({id:a.id,code:a.code,name:a.name,type:a.type}))??[]});
+  const raw=await semanticProvider.interpret({extraction:clone(extraction),sourceChannel,receivedAt,allowedEconomicScopes:getContext().workspace.economicScopes??[],allowedAccounts:getContext().chart?.list().map(a=>({id:a.id,code:a.code,name:a.name,type:a.type}))??[]});
   const result=validateSemantics(raw,extraction);
   const record={interpretationId,extractionId:extraction.extractionId,documentId,provider:semanticProvider.name??semanticProvider.constructor.name,modelProvenance:semanticProvider.provenance?.()??null,createdAt:now(),raw:clone(raw),result};
   // Profile mutations and intake state share the same durable web-store snapshot.
