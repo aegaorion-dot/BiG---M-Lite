@@ -210,3 +210,5 @@ html,body{overflow-x:hidden}
 #view input:disabled,#view select:disabled{opacity:.65}
 @media(max-width:920px){.ob-grid{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:440px){.topbar{padding:12px}.shell{padding:12px}.panel{padding:12px}.ob-kv{font-size:13px}.ob-input-row{flex-wrap:wrap}.ob-input-row input{flex-basis:100%}}
+.intake-candidate { margin-top: 1rem; }
+.intake-candidate pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 28rem; overflow: auto; }

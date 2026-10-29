@@ -12,6 +12,16 @@ async function mount(store){
    addEventListener(name,handler){this.handlers[name]=handler;},appendChild(){},remove(){},showModal(){this.open=true;},close(){this.open=false;},
    querySelectorAll(selector){
     if(selector==='[data-route]')return [...this.html.matchAll(/data-route="([^"]+)"/g)].map(m=>{const b=make('route-'+m[1]);b.dataset.route=m[1];return b;});
+    if(['[data-intake-form]','[data-intake-action]','[data-retry-document]'].includes(selector)){
+     const attr=selector.slice(1,-1);const matches=[];
+     for(const m of this.html.matchAll(new RegExp('<(form|button)\\b[^>]*'+attr+'="[^"]+"[^>]*>','g'))){
+      const node=make('intake-node');for(const a of m[0].matchAll(/data-([a-z-]+)="([^"]*)"/g))node.dataset[a[1].replace(/-([a-z])/g,(_s,c)=>c.toUpperCase())]=a[2];
+      if(m[1]==='form'){const start=m.index+m[0].length,end=this.html.indexOf('</form>',start),html=this.html.slice(start,end);node.fields={};for(const field of html.matchAll(/<input\b[^>]*name="([^"]+)"[^>]*value="([^"]*)"/g))node.fields[field[1]]=field[2];for(const field of html.matchAll(/<select\b[^>]*name="([^"]+)"[^>]*>([\s\S]*?)<\/select>/g))node.fields[field[1]]=field[2].match(/value="([^"]*)" selected/)?.[1]??'';}
+      if(m[1]==='button'){const form=this.intakeNodes?.['[data-intake-form]']?.find(f=>f.dataset.intakeForm===node.dataset.candidate);node.closest=()=>form;}
+      matches.push(node);
+     }
+     this.intakeNodes??={};this.intakeNodes[selector]=matches;return matches;
+    }
     return [];
    },querySelector(){return make('submit');},html:'',owned:[]};
   Object.defineProperty(el,'innerHTML',{get(){return this.html;},set(html){this.html=html;for(const key of this.owned)elements.delete(key);this.owned=[];for(const m of html.matchAll(/\bid="([^"]+)"/g)){const key='#'+m[1];elements.set(key,make(key));this.owned.push(key);}}});
@@ -24,10 +34,33 @@ async function mount(store){
   const parsed=new URL(url,'http://test'),r=await handleApi(store,options?.method??'GET',parsed.pathname,Object.fromEntries(parsed.searchParams),options?.body?JSON.parse(options.body):null);
   return {ok:r.status<400,json:async()=>JSON.parse(r.body)};
  };
- const context=vm.createContext({document,fetch,console,Intl,Date,setTimeout:()=>0,FormData:class{constructor(form){this.form=form;}entries(){return Object.entries(this.form.fields??{});}[Symbol.iterator](){return this.entries()[Symbol.iterator]();}}});
+ const context=vm.createContext({document,fetch,console,Intl,Date,crypto:require('node:crypto').webcrypto,setTimeout:()=>0,FileReader:class{readAsDataURL(file){this.result='data:'+file.type+';base64,'+file.bytes.toString('base64');this.onload();}},FormData:class{constructor(form){this.form=form;}entries(){return Object.entries(this.form.fields??{});}[Symbol.iterator](){return this.entries()[Symbol.iterator]();}}});
  await vm.runInContext(fs.readFileSync('public/app.js','utf8'),context);
  return {context,elements,read:code=>vm.runInContext(code,context)};
 }
+describe('Phase 5 SPA intake interactions',()=>{
+ it('opens intake before activation and renders document profile proposals safely',async()=>{
+  const store=createWebStore(),h=await mount(store);await h.elements.get('#openIntake').handlers.click();assert.equal(h.read('route'),'intake');assert.ok(h.elements.get('#intakeFile'));assert.ok(h.elements.get('#intakeChat'));assert.ok(h.elements.get('#view').innerHTML.includes('Chat &amp; documents'));
+ });
+ it('chat -> candidate review -> save correction -> explicit confirm -> one journal',async()=>{
+  const store=createActiveStore(),h=await mount(store);h.read("route='intake';render()");h.elements.get('#intakeChat').handlers.input({target:{value:'Client paid me Rp5 juta for website design.'}});await h.elements.get('#intakeSend').handlers.click();assert.equal(store.ctx.ledger.size,0);
+  const view=h.elements.get('#view'),form=view.intakeNodes['[data-intake-form]'][0];form.fields.transactionDate='2026-10-20';form.fields.paymentAccountId='id-cash';await form.handlers.submit({preventDefault(){}});
+  const confirm=view.intakeNodes['[data-intake-action]'].find(b=>b.dataset.intakeAction==='confirm');assert.ok(confirm);await confirm.handlers.click();assert.equal(store.ctx.ledger.size,1);assert.ok(view.innerHTML.includes('Posted journal:'));assert.ok(view.innerHTML.includes('POSTED'));
+ });
+ it('upload control retains receipt and duplicate notification without posting',async()=>{
+  const store=createActiveStore(),h=await mount(store);h.read("route='intake';render()");const file={name:'receipt.txt',type:'text/plain',bytes:fs.readFileSync('test/fixtures/intake/receipt-id.txt')};file.size=file.bytes.length;
+  await h.elements.get('#intakeFile').handlers.change({target:{files:[file]}});await new Promise(resolve=>setImmediate(resolve));await new Promise(resolve=>setImmediate(resolve));
+  assert.equal(store.intake.list().documents.length,1);assert.equal(store.ctx.ledger.size,0);assert.ok(h.elements.get('#view').innerHTML.includes('Download original'));
+  await h.elements.get('#intakeFile').handlers.change({target:{files:[file]}});await new Promise(resolve=>setImmediate(resolve));await new Promise(resolve=>setImmediate(resolve));assert.equal(store.intake.list().candidates.length,1);assert.ok(h.elements.get('#view').innerHTML.includes('Duplicate document found'));
+ });
+ it('reject control persists rejection and removes confirm action',async()=>{
+  const store=createActiveStore();await store.intake.upload({bytes:fs.readFileSync('test/fixtures/intake/receipt-id.txt'),originalFilename:'receipt.txt'});const h=await mount(store);h.read("route='intake';render()");const view=h.elements.get('#view'),button=view.intakeNodes['[data-intake-action]'].find(b=>b.dataset.intakeAction==='reject');await button.handlers.click();assert.equal(store.intake.list().candidates[0].status,'REJECTED');assert.equal(store.ctx.ledger.size,0);assert.equal(view.intakeNodes['[data-intake-action]'].length,0);
+ });
+ it('unsaved visible edits cannot confirm an older server candidate',async()=>{
+  const store=createActiveStore();await store.intake.upload({bytes:fs.readFileSync('test/fixtures/intake/receipt-id.txt'),originalFilename:'receipt.txt'});const h=await mount(store);h.read("route='intake';render()");const view=h.elements.get('#view');view.intakeNodes['[data-intake-form]'][0].fields.amount='1';await view.intakeNodes['[data-intake-action]'].find(b=>b.dataset.intakeAction==='confirm').handlers.click();assert.equal(store.ctx.ledger.size,0);assert.ok(h.read('lastError').includes('Save your corrections'));
+ });
+});
+
 describe('Actual SPA interaction contracts',()=>{
  it('fresh boot renders a translated greeting and hides runtime navigation',async()=>{
   const h=await mount(createWebStore());assert.equal(h.elements.get('#tabs').hidden,true);

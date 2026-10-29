@@ -6,3 +6,8 @@ research/phase4-packs/raw/blobs/*.bin binary
 research/phase4-packs/extractions/*.txt binary
 research/phase4-packs/extractions/*.json text eol=lf
 research/phase4-packs/original/*.json binary
+test/fixtures/intake/*.pdf binary
+test/fixtures/intake/*.png binary
+test/fixtures/intake/*.jpg binary
+test/fixtures/intake/*.txt text eol=lf
+test/fixtures/intake/*.csv text eol=lf

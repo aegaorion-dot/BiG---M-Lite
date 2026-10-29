@@ -63,7 +63,7 @@ function toTransaction(input) {
  * @param {object} [args.transferAccounts] { debitAccountId, creditAccountId } untuk TRANSFER
  * @param {string|null} [args.taxAccountId] akun kewajiban pajak (wajib bila pajak final > 0)
  */
-function buildJournal({ tx, tax, chart, transferAccounts = null, taxAccountId = null, journalId = null }) {
+function buildJournal({ tx, tax, chart, transferAccounts = null, taxAccountId = null, journalId = null, accountSelection = null }) {
   const total = tx.total();
   const finalTax = tax.finalTotal;
   if (!finalTax.isZero() && !taxAccountId) {
@@ -73,10 +73,17 @@ function buildJournal({ tx, tax, chart, transferAccounts = null, taxAccountId = 
     throw new Error(`Unknown taxAccountId: ${taxAccountId}`);
   }
   const id = journalId ?? `j-${tx.id}`;
+  if (accountSelection) {
+    const classification = chart.get(accountSelection.classificationAccountId);
+    const payment = chart.get(accountSelection.paymentAccountId);
+    if (!['REVENUE', 'EXPENSE'].includes(tx.kind) || classification.type !== tx.kind || payment.type !== 'ASSET' || payment.code !== '101') {
+      throw new Error('Invalid confirmed posting accounts');
+    }
+  }
   let lines;
   if (tx.kind === 'REVENUE') {
-    const cashId = resolveByCodeOrType(chart, '101', 'ASSET');
-    const revenueId = resolveByCodeOrType(chart, '401', 'REVENUE');
+    const cashId = accountSelection?.paymentAccountId ?? resolveByCodeOrType(chart, '101', 'ASSET');
+    const revenueId = accountSelection?.classificationAccountId ?? resolveByCodeOrType(chart, '401', 'REVENUE');
     if (!cashId || !revenueId) throw new Error('Chart lacks cash (101/ASSET) / revenue (401/REVENUE) accounts');
     const gross = total.add(finalTax);
     lines = [
@@ -90,8 +97,8 @@ function buildJournal({ tx, tax, chart, transferAccounts = null, taxAccountId = 
     if (!finalTax.isZero()) {
       throw new Error('Final tax on EXPENSE is out of scope for this slice (explicit, not silent)');
     }
-    const expenseId = resolveByCodeOrType(chart, '501', 'EXPENSE');
-    const cashId = resolveByCodeOrType(chart, '101', 'ASSET');
+    const expenseId = accountSelection?.classificationAccountId ?? resolveByCodeOrType(chart, '501', 'EXPENSE');
+    const cashId = accountSelection?.paymentAccountId ?? resolveByCodeOrType(chart, '101', 'ASSET');
     if (!expenseId || !cashId) throw new Error('Chart lacks expense (501/EXPENSE) / cash (101/ASSET) accounts');
     lines = [
       new JournalLine({ accountId: expenseId, side: 'DEBIT', money: total }),
@@ -130,7 +137,7 @@ async function runTransactionPipeline(deps) {
   const {
     periods, posting, ledger, audit: _audit, idempotency: _idem,
     registry, chart, aiProvider = null, input,
-    actor = 'app', transferAccounts = null, taxAccountId = null, journalId = null,
+    actor = 'app', transferAccounts = null, taxAccountId = null, journalId = null, accountSelection = null,
   } = deps;
   void _audit; void _idem;
   if (!periods || !posting || !ledger || !registry || !chart || !input) {
@@ -168,7 +175,7 @@ async function runTransactionPipeline(deps) {
     pack,
   );
 
-  const journal = buildJournal({ tx, tax, chart, transferAccounts, taxAccountId, journalId });
+  const journal = buildJournal({ tx, tax, chart, transferAccounts, taxAccountId, journalId, accountSelection });
   const receipt = posting.post(journal, { actor, idempotencyKey: tx.idempotencyKey });
 
   const balances = [...ledger.balances(tx.currency).entries()]

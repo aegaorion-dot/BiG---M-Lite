@@ -1,0 +1,9 @@
+CUSTOMER INVOICE
+Invoice date: 2026-10-18
+Payment date: 2026-10-22
+Customer: Synthetic Singapore Client
+Description: Design service
+Total SGD 2000.00
+Payment: bank
+Status: paid
+Reference: TEST-SGD-001

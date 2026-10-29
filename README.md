@@ -110,3 +110,8 @@ Indonesia includes review-ready individual PKP, monthly UMKM and narrow withhold
 Selected packs drive tax-readiness questions through the existing profiler and optional web-store tax-review context. AI answers remain candidates. Human fact confirmation and legal approval are separate; profile corrections invalidate tax proposals. Bookkeeping remains available while tax is unresolved.
 
 Use the [Phase 4 review workflow](docs/PHASE4-REVIEW-WORKFLOW.md) to inspect evidence and perform explicit human review. Tax calculations never browse, invoke a model or post GL. The existing accounting boundary still requires mapping review and rejects TEST ONLY amounts.
+# Phase 5 document intake
+
+Chat and document uploads converge on reviewed transaction candidates. PDF text, scanned PDF, PNG/JPEG OCR, UTF-8 text and simple statement CSV work locally. Review evidence, save corrections, then explicitly confirm before the existing accounting pipeline posts. Foreign-currency/FX gaps and unpaid invoices stay review-only.
+
+Run `npm ci` (Node >=20.19), `npm test`, and `npm start`. See [Phase 5 architecture, limits, API, verification and Original inspection](docs/PHASE5-DOCUMENT-INTAKE.md). Paid document semantics are opt-in; `npm run smoke:document-meta` skips by default.

@@ -23,16 +23,18 @@ const {fingerprint,deepFreeze}=require('../onboarding/canonical');
 const {ContentRegistry,resolveCountryPacks,approveContent}=require('../countrypack/resolver');
 const {proposeConfiguration,validateProposal}=require('../onboarding/configurator');
 const {hashProposal:proposalHash,evaluateReadiness}=require('../onboarding/readiness');
+const {blankIntakeState,createIntakeService}=require('../intake/service');
 const clone=x=>JSON.parse(JSON.stringify(x));
 function human(actor,decisionSource='HUMAN'){
  if(decisionSource!=='HUMAN'||typeof actor!=='string'||!actor.trim()||/^(ai|model|muse|meta|system)(?:$|[: -])/i.test(actor))throw Error('Explicit human confirmation required');
 }
-function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvider=null,taxSystem=null}={}){
+function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvider=null,taxSystem=null,extractionProvider,semanticProvider}={}){
  const scopeOrgId=orgId??'org-contoh',requiredToken=authToken??process.env.BIGM_API_TOKEN??null;
  const periods=new PeriodRegistry(),ledger=new Ledger(),audit=new AuditTrail(),idempotency=new IdempotencyStore();
  const posting=new PostingService({ledger,periods,audit,idempotency}),reversal=new ReversalService({posting});
  const ctx={org:null,periods,ledger,audit,idempotency,posting,reversal,chart:null,pack:null,registry:null,modules:[],countryPackResolution:null};
  const contentRegistry=new ContentRegistry(),txMeta=new Map();
+ const intakeState=blankIntakeState();
  let profileState=blankProfileState(),lastProposal=null,lastValidation=null,confirmation=null,activeConfig=null,history=[],packApprovals=[],proposalVersion=0;
  let lastTurn={providerConfigured:false,providerUsed:'fallback',model:null,fallbackReason:'PROVIDER_NOT_CONFIGURED'},aiCalls=0,aiSuccesses=0,migrationNotice=null;
  let turnQueue=Promise.resolve(),mutationQueue=Promise.resolve();
@@ -105,7 +107,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   const entry=new JournalEntry({...o,lines:o.lines.map(l=>new JournalLine({accountId:l.accountId,side:l.side,money:Money.fromMinor(l.amountMinor,l.currency??o.currency)}))});
   entry.finalize(()=>o.finalizedAt??new Date().toISOString());return entry;
  }
- function snapshot(){return {version:2,scopeOrgId,org:ctx.org,periods:periods.list(),journals:ledger.list().map(serializeJournal),audit:audit.list(),idempotency:idempotency.toJSON(),txMeta:[...txMeta.values()],profileState,lastProposal,lastValidation,confirmation,active:activeConfig,history,packApprovals,proposalVersion,lastTurn,aiCalls,aiSuccesses,taxReviewContext,lastTaxProposal,savedAt:new Date().toISOString()};}
+ function snapshot(){return {version:2,scopeOrgId,org:ctx.org,periods:periods.list(),journals:ledger.list().map(serializeJournal),audit:audit.list(),idempotency:idempotency.toJSON(),txMeta:[...txMeta.values()],profileState,lastProposal,lastValidation,confirmation,active:activeConfig,history,packApprovals,proposalVersion,lastTurn,aiCalls,aiSuccesses,taxReviewContext,lastTaxProposal,intake:intakeState,savedAt:new Date().toISOString()};}
  function persist(){
   if(!persistPath)return;
   const data=JSON.stringify(snapshot(),null,2),tmp=persistPath+'.tmp';
@@ -290,11 +292,12 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  function restore(){
   if(!persistPath||!fs.existsSync(persistPath))return;
   const raw=JSON.parse(fs.readFileSync(persistPath,'utf8'));if(raw.scopeOrgId&&raw.scopeOrgId!==scopeOrgId)throw Error('Persisted organization scope mismatch');
+  if(raw.intake){Object.assign(intakeState,raw.intake);for(const d of Object.values(intakeState.documents)){if(require('../intake/files').hash(Buffer.from(d.originalBase64,'base64'))!==d.sha256)throw Error('Persisted original document hash mismatch');}}
   for(const p of raw.periods??[])periods.add(new FinancialPeriod(p));
   for(const j of raw.journals??[]){if(j.orgId!==scopeOrgId)throw Error('Persisted journal scope mismatch');ledger.append(deserializeJournal(j));}
   audit._restoreAll(raw.audit??[]);idempotency._restoreAll(raw.idempotency??{});for(const m of raw.txMeta??[])txMeta.set(m.id,m);
   if(raw.version!==2){migrationNotice='Previous setup needs review before activation. Journals and period states are preserved.';return;}
-  profileState=raw.profileState;lastProposal=raw.lastProposal;lastValidation=raw.lastValidation;confirmation=raw.confirmation;packApprovals=raw.packApprovals??[];history=(raw.history??[]).map(deepFreeze);proposalVersion=raw.proposalVersion??0;lastTurn=raw.lastTurn??lastTurn;aiCalls=raw.aiCalls??0;aiSuccesses=raw.aiSuccesses??0;taxReviewContext=raw.taxReviewContext??null;lastTaxProposal=raw.lastTaxProposal??null;
+  profileState=raw.profileState;profileState.slots={...blankProfileState().slots,...profileState.slots};lastProposal=raw.lastProposal;lastValidation=raw.lastValidation;confirmation=raw.confirmation;packApprovals=raw.packApprovals??[];history=(raw.history??[]).map(deepFreeze);proposalVersion=raw.proposalVersion??0;lastTurn=raw.lastTurn??lastTurn;aiCalls=raw.aiCalls??0;aiSuccesses=raw.aiSuccesses??0;taxReviewContext=raw.taxReviewContext??null;lastTaxProposal=raw.lastTaxProposal??null;
   if(taxReviewContext){checkOrg(taxReviewContext.request.scopeId);taxReadiness();}
   if(raw.active){
    const p=raw.active.proposal;
@@ -304,9 +307,49 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   }
  }
  restore();
+ function applyDocumentFacts(facts,save){
+  const before={profileState,lastProposal,lastValidation,confirmation,lastTaxProposal};
+  try{
+   for(const fact of facts){
+    const provenance={...fact,status:'CANDIDATE',evidenceLocation:fact.evidence};
+    if(fact.slot){
+     const previous=profileState.slots[fact.slot],nonempty=previous.value!=null&&previous.value!==''&&(!Array.isArray(previous.value)||previous.value.length);
+     const conflict=nonempty&&JSON.stringify(previous.value)!==JSON.stringify(fact.value);
+     // Facts join the existing profileState. Established values are retained;
+     // a conflicting document is an alternative awaiting explicit profile edit.
+     profileState=clone(profileState);
+     profileState.history.push({revision:profileState.revision,slot:fact.slot,previous:clone(previous),documentFact:provenance});
+     profileState.slots[fact.slot]={...previous,...(!nonempty?{value:fact.value,source:fact.source,documentId:fact.documentId,extractionId:fact.extractionId,evidenceLocation:fact.evidence,supportingQuote:fact.supportingQuote,confidence:fact.confidence}:{}),status:conflict?'CONFLICT':nonempty?previous.status:'CANDIDATE',documentCandidates:[...(previous.documentCandidates??[]),provenance]};
+     if(conflict)profileState.slots[fact.slot].alternatives=[...new Set([previous.value,fact.value])];
+    }else{
+     const existing=profileState.jurisdictionFacts.find(j=>j.basis===fact.basis&&j.countryCode===fact.countryCode&&j.status!=='REJECTED');
+     if(existing){profileState=clone(profileState);const target=profileState.jurisdictionFacts.find(j=>j.basis===fact.basis&&j.countryCode===fact.countryCode&&j.status!=='REJECTED');target.documentCandidates=[...(target.documentCandidates??[]),provenance];}
+     else profileState=applyFacts(profileState,[],'DOCUMENT',{jurisdictionFacts:[provenance]});
+    }
+    profileState.revision++;invalidate();
+   }
+   save();
+  }catch(e){({profileState,lastProposal,lastValidation,confirmation,lastTaxProposal}=before);throw e;}
+ }
+ async function commitIntakePosting(command,actor,finalize){
+  const c=intakeState.candidates[command.provenance?.candidateId];
+  if(!c?.confirmation||c.status!=='POSTING'||fingerprint(c.canonicalCommand)!==fingerprint(command))throw Error('Confirmed intake command required');
+  if(c.confirmation.reviewHash!==fingerprint({candidateId:c.candidateId,revision:c.revision,current:c.current,workspace:workspaceProfile()})||command.currency!==ctx.org?.baseCurrency)throw Error('Confirmed workspace changed; review required before posting');
+  const module=command.kind==='REVENUE'?'sales':'purchase';requireActive(module);
+  const deps=pipelineDepsFor(command),before=transactionCheckpoint();
+  try{
+   const result=await require('../app/verticalSlice').runTransactionPipeline({...deps,input:command,accountSelection:command.accountSelection,actor});
+   result.tax={...result.tax,status:'requires_review',finalTotalMinor:null,finalLiabilityMinor:null};
+   rememberMeta(command.kind==='REVENUE'?'SALE':'PURCHASE',{date:command.date,currency:command.currency,customer:c.current.counterparty,invoiceRef:c.current.referenceNumber??command.evidence.reference},result);
+   txMeta.get(result.transactionId).totalMinor=Money.fromMajor(c.current.amount,c.current.currency).amountMinor.toString();
+   const safe={transactionId:result.transactionId,receipt:result.receipt,journal:result.journal,tax:result.tax};finalize(safe);persist();return safe;
+  }catch(e){rollbackTransaction(before);throw e;}
+ }
+ const intake=createIntakeService({state:intakeState,getContext:()=>({...ctx,workspace:workspaceProfile(),journals:ctx.ledger.list().map(serializeJournal)}),persist,commitPosting:commitIntakePosting,applyProfileFacts:applyDocumentFacts,extractionProvider,semanticProvider});
+ intake.recover();
  return {ctx,txMeta,contentRegistry,checkAuth,serializeMutation,createSale,createPurchase,importCsvText,reverseJournal,listTransactions,monthlyReport,summary,seedDemo,serializeJournal,pipelineDepsFor,
   chartFor:()=>ctx.chart,onboardingTurn,onboardingDraft,onboardingPropose,onboardingValidate,onboardingConfirm,onboardingReadiness,onboardingActivate,onboardingState,onboardingHistory:()=>clone(history),setUiLanguage,editProfile,approvePack,workspaceProfile,aiStatus,applyActiveConfiguration,beginTaxReview,answerTaxReview,proposeTaxReview,taxReadiness,
-  countryPackState:()=>({resolution:resolve(),packs:contentRegistry.list(),approvals:clone(packApprovals)}),persist,
+  countryPackState:()=>({resolution:resolve(),packs:contentRegistry.list(),approvals:clone(packApprovals)}),persist,intake,
  };
 }
 module.exports={createWebStore,proposalHash};

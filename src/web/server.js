@@ -47,32 +47,35 @@ function readBody(req, limit = 512 * 1024) {
     const chunks = [];
     req.on('data', (c) => {
       size += c.length;
-      if (size > limit) { reject(new Error('Request body too large')); req.destroy(); return; }
+      if (size > limit) { chunks.length=0;reject(Object.assign(new Error('Request body too large'),{status:413}));return; }
       chunks.push(c);
     });
-    req.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
+    req.on('end', () => {if(size<=limit)resolve(Buffer.concat(chunks).toString('utf8'));});
     req.on('error', reject);
+    req.setTimeout(30000,()=>{reject(Object.assign(Error('Upload timed out'),{status:408}));req.destroy();});
   });
 }
 
-function createServer({ port = 3100, persistPath = null, orgId = null, authToken = null, profileProvider = null } = {}) {
-  const store = createWebStore({ persistPath, orgId, authToken, profileProvider });
+function createServer({ port = 3100, persistPath = null, orgId = null, authToken = null, profileProvider = null, extractionProvider, semanticProvider } = {}) {
+  const store = createWebStore({ persistPath, orgId, authToken, profileProvider, extractionProvider, semanticProvider });
   const server = http.createServer(async (req, res) => {
     try {
       const url = new URL(req.url, 'http://localhost');
       if (url.pathname.startsWith('/api/')) {
         let body = null;
         if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
-          const raw = await readBody(req);
+          const raw = await readBody(req,url.pathname==='/api/intake/upload'?12*1024*1024:512*1024);
           body = raw ? JSON.parse(raw) : {};
         }
-        const out = await handleApi(store, req.method, url.pathname, Object.fromEntries(url.searchParams), body);
+        const query=Object.fromEntries(url.searchParams),bearer=req.headers.authorization?.match(/^Bearer (.+)$/)?.[1];
+        if(bearer){if(body)body.authToken=bearer;else query.token=bearer;}
+        const out = await handleApi(store, req.method, url.pathname, query, body);
         return send(res, out.status, out.headers, out.body);
       }
       if (req.method !== 'GET') return send(res, 405, { 'content-type': 'text/plain' }, 'Method not allowed');
       return serveStatic(url.pathname, res);
     } catch (e) {
-      return send(res, 500, { 'content-type': 'application/json' }, JSON.stringify({ ok: false, error: e.message }));
+      return send(res, e.status??(e instanceof SyntaxError?400:500), { 'content-type': 'application/json' }, JSON.stringify({ ok: false, error: e.message }));
     }
   });
   return { server, store, port };
@@ -83,7 +86,8 @@ if (require.main === module) {
   const port = Number(process.env.BIGM_PORT ?? process.env.PORT ?? 3100);
   const persistPath = process.env.BIGM_DATA_PATH || path.join(__dirname, '..', '..', 'data', 'store.json');
   const authToken = process.env.BIGM_API_TOKEN ?? null;
-  const { server } = createServer({ port, persistPath, authToken });
+  const semanticProvider=process.env.BIGM_META_DOCUMENT_LIVE==='1'?new (require('../intake/semantics').MetaSemanticDocumentProvider)({optIn:true}):undefined;
+  const { server } = createServer({ port, persistPath, authToken,semanticProvider });
   server.listen(port, '127.0.0.1', () => {
     console.log(`BiG-M Lite web berjalan di http://localhost:${port}`);
   });

@@ -1,0 +1,75 @@
+{
+  "repository": "aegaorion-dot/big-m-",
+  "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+  "inspection": "Direct GitHub connector reads of pinned Original source before Phase 5 design. No Original runtime executed or source copied.",
+  "modules": [
+    {
+      "path": "src/intakeUpload.ts",
+      "blobSha": "0b2e2cd5a36fdb4f3f012076d524dc1bdfae21f9",
+      "scope": "complete file"
+    },
+    {
+      "path": "src/intakeFileReader.ts",
+      "blobSha": "b492b2e079912b959febe02f04f78b4ba6b1419a",
+      "scope": "complete file"
+    },
+    {
+      "path": "src/intakeByteRetention.ts",
+      "blobSha": "a12a585c1f046ddbc1a34514ab640a64b0b9c2de",
+      "scope": "complete file"
+    },
+    {
+      "path": "src/nativeIntakeContract.ts",
+      "blobSha": "be4a6dfe975f8b232b7497b109172ca8b8fbe40c",
+      "scope": "complete file"
+    },
+    {
+      "path": "src/intakeAiContract.ts",
+      "blobSha": "663fc2991d59dfd1f038470d34d32beace995527",
+      "scope": "complete file"
+    },
+    {
+      "path": "src/accountingReceiptFacts.ts",
+      "blobSha": "ef7d2b010a384e8b0995ecf7968c59dc50f598f5",
+      "scope": "complete file"
+    },
+    {
+      "path": "src/companionDocumentExtract.ts",
+      "blobSha": "47c104b824161bc26828fc71ba12eb237a050a08",
+      "scope": "lines 1-200"
+    },
+    {
+      "path": "src/companionOrchestrator.ts",
+      "blobSha": "0eb047d17428117e6cad73b730bd59508fa3ae8b",
+      "scope": "lines 1-105"
+    },
+    {
+      "path": "src/canonicalBusinessEventFacts.ts",
+      "blobSha": "364a73404c0dbc80096e5f3ba5fbaffef45ace5a",
+      "scope": "lines 1-105"
+    },
+    {
+      "path": "src/nativeIntakeServer.ts",
+      "blobSha": "81fa4d7425d793cde423548bab49232855fb8813",
+      "scope": "lines 1-105"
+    }
+  ],
+  "adapted": [
+    "Bounded upload and unsafe filename rejection",
+    "Immutable retained bytes addressed by SHA256",
+    "Separate observations, semantic candidates and approved canonical commands",
+    "Exact source line/page/row/box evidence",
+    "Candidate-only AI with strict schema and no tools",
+    "Separate observed date roles; fail closed on ambiguity",
+    "Single existing native accounting posting boundary"
+  ],
+  "notPorted": [
+    "Original PostgreSQL byte retention tables and triggers",
+    "Durable database job workers and multi-tenant enterprise orchestration",
+    "XLS/XLSX workbook and formula handling",
+    "AP/AR settlement masters and reconciliation",
+    "External GL and direct-tax intake lanes",
+    "Original floating-point amount parsing and ambiguous-date defaults",
+    "Original companion document extractor has no OCR; Lite uses local PDF.js and Tesseract instead"
+  ]
+}

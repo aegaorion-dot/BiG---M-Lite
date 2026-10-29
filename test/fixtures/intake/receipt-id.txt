@@ -1,0 +1,7 @@
+STRUK / RECEIPT
+Tanggal: 2026-10-20
+Vendor: Kopi Contoh Sintetis
+Deskripsi: Biji kopi untuk usaha
+TOTAL Rp850.000
+Payment: bank
+Reference: TEST-RECEIPT-001

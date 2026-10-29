@@ -6,7 +6,11 @@ async function dispatch(store,method,path,query={},body={}){
  const {ctx}=store;
  try{
   const currency=query.currency||ctx.org?.baseCurrency;
+  if(path.startsWith('/api/intake'))store.checkAuth(body?.authToken??query.token??null);
   if(method==='GET'){
+   if(path==='/api/intake')return json({ok:true,...store.intake.list()});
+   if(path==='/api/intake/trace')return json({ok:true,...store.intake.trace(query.candidateId)});
+   if(path==='/api/intake/original'){const original=store.intake.original(query.documentId);return {status:200,headers:{'content-type':'application/octet-stream','content-disposition':"attachment; filename*=UTF-8''"+encodeURIComponent(original.filename),'cache-control':'no-store'},body:original.bytes};}
    if(path==='/api/health')return json({ok:true,service:'bigm-lite-web',framework:'0.1.0'});
    if(path==='/api/summary')return json({ok:true,summary:store.summary(currency)});
    if(path==='/api/transactions')return json({ok:true,transactions:store.listTransactions()});
@@ -24,6 +28,17 @@ async function dispatch(store,method,path,query={},body={}){
   }
   if(method==='POST'){
    const token=body?.authToken??query.token??null;store.checkAuth(token);
+   if(path==='/api/intake/upload'){
+    const encoded=body?.base64;
+    if(typeof encoded!=='string'||!encoded.length||encoded.length>Math.ceil(8*1024*1024/3)*4||encoded.length%4!==0||!/^[A-Za-z0-9+/]*={0,2}$/.test(encoded))return err('Invalid or oversized base64 upload');
+    const bytes=Buffer.from(encoded,'base64');if(bytes.toString('base64')!==encoded)return err('Malformed base64 upload');
+    return json({ok:true,...await store.intake.upload({bytes,originalFilename:body.originalFilename,declaredMimeType:body.declaredMimeType})},201);
+   }
+   if(path==='/api/intake/chat')return json({ok:true,...await store.intake.chat(body)},201);
+   if(path==='/api/intake/edit')return json({ok:true,candidate:await store.intake.edit(body)});
+   if(path==='/api/intake/reject')return json({ok:true,candidate:await store.intake.reject(body)});
+   if(path==='/api/intake/confirm')return json({ok:true,candidate:await store.intake.confirm(body)});
+   if(path==='/api/intake/retry')return json({ok:true,document:await store.intake.retry(body)});
    if(path==='/api/onboarding/turn')return json({ok:true,...await store.onboardingTurn(body?.text)});
    if(path==='/api/onboarding/edit')return json({ok:true,...store.editProfile(body)});
    if(path==='/api/onboarding/language')return json({ok:true,language:store.setUiLanguage(body?.language??body?.tag)});

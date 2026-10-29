@@ -2,6 +2,7 @@
 const DEFS = {
   'user.language':'language', 'user.nationality':'country', 'user.displayName':'string',
   'org.name':'string', 'org.businessType':'businessType', 'org.subjectType':'subjectType',
+  'org.taxRegistrationNumber':'string', 'org.address':'string', 'org.registrationStatus':'string',
   'currency.functional':'currency', 'currency.transactions':'currencies',
   'currency.reporting':'currency', 'currency.foreignPurchases':'currencies', 'currency.fxSource':'string',
   'accounting.periodStart':'date', 'accounting.periodEnd':'date', 'modules.enabled':'modules',

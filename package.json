@@ -5,12 +5,14 @@
   "type": "commonjs",
   "private": true,
   "engines": {
-    "node": ">=20"
+    "node": ">=20.19"
   },
   "scripts": {
     "test": "node scripts/test.js",
     "start": "node src/web/server.js",
     "smoke:meta": "node scripts/meta-smoke.js",
+    "smoke:document-meta": "node scripts/meta-document-smoke.js",
+    "fixtures:intake": "node scripts/intake-fixtures.js",
     "fabric:probe": "node scripts/fabric-probe.js",
     "fabric:report": "node scripts/fabric-report.js",
     "tax": "node scripts/tax-engine.js",
@@ -20,5 +22,12 @@
     "packs:build": "node scripts/phase4-build-catalog.js",
     "packs:demo": "node scripts/phase4-demo.js"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100",
+    "@tesseract.js-data/eng": "1.0.0",
+    "@tesseract.js-data/ind": "1.0.0",
+    "pdfjs-dist": "5.5.207",
+    "tesseract.js": "7.0.0"
+  }
 }

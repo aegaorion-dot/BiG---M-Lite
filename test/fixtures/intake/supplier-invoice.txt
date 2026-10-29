@@ -1,0 +1,7 @@
+SUPPLIER INVOICE
+Invoice date: 2026-10-19
+Supplier: Synthetic Supplies
+Description: Office supplies
+Total IDR 1250000
+Payment: bank
+Reference: TEST-SUP-001

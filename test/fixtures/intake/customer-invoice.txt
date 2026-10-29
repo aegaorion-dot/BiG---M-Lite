@@ -1,0 +1,9 @@
+CUSTOMER INVOICE
+Invoice date: 2026-10-18
+Payment date: 2026-10-22
+Customer: Synthetic Client
+Description: Website design
+Total IDR 5000000
+Payment: bank
+Status: paid
+Reference: TEST-CUST-001
