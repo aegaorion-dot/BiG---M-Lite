@@ -64,7 +64,7 @@ function createServer({ port = 3100, persistPath = null, orgId = null, authToken
       if (url.pathname.startsWith('/api/')) {
         let body = null;
         if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
-          const raw = await readBody(req,url.pathname==='/api/intake/upload'?12*1024*1024:512*1024);
+          const raw = await readBody(req,['/api/intake/upload','/api/intake/external/upload'].includes(url.pathname)?12*1024*1024:512*1024);
           body = raw ? JSON.parse(raw) : {};
         }
         const query=Object.fromEntries(url.searchParams),bearer=req.headers.authorization?.match(/^Bearer (.+)$/)?.[1];

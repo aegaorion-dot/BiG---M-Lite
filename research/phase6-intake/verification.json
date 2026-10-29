@@ -1,0 +1,14 @@
+{
+  "baselineCommit": "98d229ecab34cd0e87d16615178a31dac681cdff",
+  "branch": "hackathon/universal-intake",
+  "baselineTests": 278,
+  "finalTests": 309,
+  "newTests": 31,
+  "failures": 0,
+  "skipped": 0,
+  "paidMetaCalls": 0,
+  "batchSanity": {"rows": 1000, "milliseconds": 1261.8, "scope": "stage, mapping approval and preview; no automatic posting", "sanityBudgetMs": 15000},
+  "unchangedSource": ["src/domain", "src/accounting", "src/tax", "src/app/verticalSlice.js"],
+  "mainCommit": "d6ce3b0c586761cd9221c613c569fdc2644c504a",
+  "pushed": false
+}

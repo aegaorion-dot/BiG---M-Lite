@@ -6,18 +6,35 @@ const {Money}=require('../domain/money');
 const {assertDate}=require('../domain/organization');
 const {isKnownCurrency}=require('../global/currencies');
 const {fingerprint}=require('../onboarding/canonical');
+const {canonicalCommand,economicFingerprint}=require('./canonical');
+const {blankExternalState,createExternalIntake}=require('./external');
 const clone=x=>structuredClone(x),now=()=>new Date().toISOString();
 const EDITABLE=['transactionDate','amount','currency','counterparty','proposedTransactionType','description','paymentMethod','referenceNumber','settlementStatus','classificationAccountId','paymentAccountId'];
-function blankIntakeState(){return {version:1,documents:{},extractions:{},interpretations:{},candidates:{},chats:{},keys:{},events:[]};}
+function blankIntakeState(){return {version:2,documents:{},extractions:{},interpretations:{},candidates:{},chats:{},keys:{},events:[],external:blankExternalState(),duplicateVersions:{}};}
 function human(actor){if(typeof actor!=='string'||!actor.trim()||actor.length>100||/^(ai|model|muse|meta|system)(?:$|[: -])/i.test(actor))throw Error('Explicit human actor required');}
 function createIntakeService({state,getContext,persist,commitPosting,applyProfileFacts,extractionProvider=new LocalExtractionProvider(),semanticProvider=new DeterministicSemanticProvider()}){
+ state.external??=blankExternalState();state.duplicateVersions??={};state.version=2;let external;
+ const economicIndex=new Map(),indexed=new Map();
+ function refreshIndex(c,initial=false){
+  const old=indexed.get(c.candidateId),key=c.status==='REJECTED'?null:economicFingerprint(c);if(old?.key===key&&old?.revision===c.revision)return;
+  if(old?.key){economicIndex.get(old.key)?.delete(c.candidateId);if(!initial)state.duplicateVersions[old.key]=(state.duplicateVersions[old.key]??0)+1;}
+  if(key){if(!economicIndex.has(key))economicIndex.set(key,new Set());economicIndex.get(key).add(c.candidateId);if(!initial)state.duplicateVersions[key]=(state.duplicateVersions[key]??0)+1;}
+  indexed.set(c.candidateId,{key,revision:c.revision});
+ }
+ function rebuildIndex(){economicIndex.clear();indexed.clear();for(const c of Object.values(state.candidates))refreshIndex(c,true);}
+ function duplicateState(c){const key=indexed.get(c.candidateId)?.key,peers=key?economicIndex.get(key):null,count=(peers?.size??0)-(peers?.has(c.candidateId)?1:0),matches=[];
+  if(count>0)for(const id of peers){if(id===c.candidateId)continue;const p=state.candidates[id];matches.push({candidateId:id,sourceChannel:p.sourceChannel,sourceRef:p.sourceRef??{sourceId:p.sourceId,documentId:p.documentId},revision:p.revision,postingId:p.posting?.receipt.postingId??null});if(matches.length===20)break;}
+  const decision=c.duplicateDecision,version=state.duplicateVersions[key]??0,resolved=decision?.decision==='DISTINCT'&&decision.revision===c.revision&&decision.fingerprint===key&&decision.groupVersion===version;
+  return {fingerprint:key,groupVersion:version,count,matches,resolved,status:count&&!resolved?'POSSIBLE_DUPLICATE':'CLEAR'};
+ }
  let queue=Promise.resolve();
  const serial=fn=>(...args)=>{const task=queue.then(()=>fn(...args));queue=task.catch(()=>{});return task;};
  function event(type,id,detail={}){state.events.push({type,id,at:now(),detail:clone(detail)});}
- function atomic(fn){const before=clone(state);try{const result=fn();persist();return result;}catch(e){for(const k of Object.keys(state))delete state[k];Object.assign(state,before);throw e;}}
+ function atomic(fn){const before=clone(state);try{const result=fn();persist();return result;}catch(e){for(const k of Object.keys(state))delete state[k];Object.assign(state,before);rebuildIndex();external?.rebind?.();throw e;}}
  function candidate(id){const c=state.candidates[id];if(!c)throw Error('Unknown candidate');return c;}
- function validate(c){
-  const f=c.current,ctx=getContext(),missingFields=[],conflicts=[];
+ function validate(c,ctx=getContext()){
+  const f=c.current,missingFields=[],conflicts=[],journal=c.candidateType==='EXTERNAL_JOURNAL';
+  if(!journal){
   for(const key of ['transactionDate','counterparty','description','amount','currency','proposedTransactionType','classificationAccountId','paymentAccountId'])if(!f[key])missingFields.push(key);
   if(f.transactionDate)try{assertDate(f.transactionDate,'transactionDate');}catch{conflicts.push('Date must be an unambiguous valid YYYY-MM-DD');}
   if(/yesterday|kemarin/i.test(c.evidence?.transactionDate?.quote??'')&&!c.revisions.some(r=>r.source==='USER_EDIT'&&Object.hasOwn(r.changes??{},'transactionDate')))conflicts.push('Relative date is a UTC-based proposal; enter an explicit transaction date to resolve timezone ambiguity');
@@ -32,10 +49,24 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   if(ctx.org&&f.transactionDate)try{ctx.periods.getPostingPeriod(ctx.org.id,f.transactionDate);}catch(e){conflicts.push(e.message);}
   if(ctx.org&&!ctx.modules.includes(f.proposedTransactionType==='REVENUE'?'sales':'purchase'))conflicts.push('Required workspace module is not enabled');
   if(f.amount&&f.currency&&f.taxAmount&&f.subtotal)try{if(!Money.fromMajor(f.subtotal,f.currency).add(Money.fromMajor(f.taxAmount,f.currency)).equals(Money.fromMajor(f.amount,f.currency)))conflicts.push('Subtotal plus observed tax differs from total');}catch{conflicts.push('Invalid observed subtotal/tax');}
+  }else{
+   for(const field of ['transactionDate','currency','description','amount'])if(!f[field])missingFields.push(field);
+   if(!ctx.org)conflicts.push('Workspace activation required');
+   try{assertDate(f.transactionDate,'journal date');if(ctx.org)ctx.periods.getPostingPeriod(ctx.org.id,f.transactionDate);}catch(e){conflicts.push(/CLOSED/.test(e.message)?'CLOSED_PERIOD: '+e.message:e.message);}
+   if(!isKnownCurrency(f.currency))conflicts.push('Unsupported currency');
+   if(ctx.org&&f.currency!==ctx.org.baseCurrency)conflicts.push('FX_REQUIRED: journal currency differs from functional currency');
+   let debit=0n,credit=0n;for(const line of f.journalLines??[]){if(!ctx.chart?.has(line.accountId))conflicts.push('Unmapped or invalid journal account');try{const value=Money.fromMajor(line.amount,f.currency).amountMinor;if(value<=0n||!['DEBIT','CREDIT'].includes(line.side))throw Error();if(line.side==='DEBIT')debit+=value;else credit+=value;}catch{conflicts.push('Invalid journal line amount/side');}}
+   if((f.journalLines??[]).length<2||debit!==credit||debit<=0n)conflicts.push('UNBALANCED_JOURNAL');if(!ctx.modules.includes('accounting'))conflicts.push('Accounting module not enabled');
+  }
+  if(c.importRef){conflicts.push(...c.importRef.errors,...external.mappingIssues(c));if(ctx.org&&c.importRef.sourceFunctionalCurrency!==ctx.org.baseCurrency)conflicts.push('FX_REQUIRED: source functional currency differs from workspace');for(let i=0;i<conflicts.length;i++)if(/CLOSED/.test(conflicts[i])&&!conflicts[i].startsWith('CLOSED_PERIOD'))conflicts[i]='CLOSED_PERIOD: '+conflicts[i];}
+  const duplicates=duplicateState(c);if(duplicates.status==='POSSIBLE_DUPLICATE')conflicts.push('POSSIBLE_DUPLICATE: explicit duplicate review required');
   const reviewHash=fingerprint({candidateId:c.candidateId,revision:c.revision,current:f,workspace:ctx.workspace});
-  return {missingFields,conflicts,reviewHash,status:missingFields.length||conflicts.length?'REQUIRES_REVIEW':'READY_TO_CONFIRM'};
+  return {missingFields,conflicts:[...new Set(conflicts)],duplicates,reviewHash,status:missingFields.length||conflicts.length?'REQUIRES_REVIEW':'READY_TO_CONFIRM'};
  }
- function view(c){return {...clone(c),...(['POSTED','REJECTED','CONFIRMED'].includes(c.status)?{validation:validate(c),reviewHash:validate(c).reviewHash}:validate(c))};}
+ function view(c,ctx=getContext()){const validation=validate(c,ctx);return {...clone(c),...(['POSTED','REJECTED','CONFIRMED'].includes(c.status)?{validation,reviewHash:validation.reviewHash,duplicates:validation.duplicates}:validation)};}
+ function registerCandidate({candidateId,sourceChannel,sourceId,candidateType,current,evidence={},sourceRef=null,importRef=null,nativeInput=null}){
+  const c={candidateId,documentId:null,sourceChannel,sourceId,sourceRef,candidateType,current:clone(current),evidence:clone(evidence),importRef,nativeInput,extractionId:null,interpretationId:null,confidence:null,status:'CANDIDATE',revision:1,revisions:[{revision:1,source:sourceChannel,at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};state.candidates[candidateId]=c;refreshIndex(c);event('CANDIDATE_CREATED',candidateId);return c;
+ }
  function documentStatus(id){const d=state.documents[id];if(!d)return;const cs=Object.values(state.candidates).filter(c=>c.documentId===id);d.processingStatus=cs.length&&cs.every(c=>c.status==='POSTED')?'POSTED':cs.length&&cs.every(c=>c.status==='REJECTED')?'REJECTED':'REQUIRES_REVIEW';}
  function addCandidates(interpretation,documentId,sourceChannel,sourceId){
   const ctx=getContext();let n=0;
@@ -45,7 +76,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    current.classificationAccountId=proposal.proposedAccounts?.classificationAccountId??(proposal.proposedTransactionType?ctx.chart?.list().find(a=>a.code===(proposal.proposedTransactionType==='REVENUE'?'401':'501'))?.id:null)??null;
    current.paymentAccountId=proposal.proposedAccounts?.paymentAccountId??(proposal.paymentMethod?ctx.chart?.list().find(a=>a.code==='101')?.id:null)??null;
    const c={candidateId:id,documentId,sourceChannel,sourceId,extractionId:interpretation.extractionId,interpretationId:interpretation.interpretationId,candidateType:proposal.candidateType,current,evidence:clone(proposal.evidence),confidence:proposal.confidence,status:'CANDIDATE',revision:1,revisions:[{revision:1,source:'SEMANTIC_PROPOSAL',at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};
-   c.status=validate(c).status;state.candidates[id]=c;event('CANDIDATE_CREATED',id);
+   c.sourceRef={reference:documentId??sourceId,fileHash:documentId?state.documents[documentId].sha256:null};state.candidates[id]=c;refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_CREATED',id);
   }
  }
  async function interpret(extraction,{documentId=null,sourceId,sourceChannel,receivedAt}){
@@ -60,7 +91,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    if(documentId)documentStatus(documentId);
    event('INTERPRETED',sourceId,{interpretationId});
    applyProfileFacts(result.profileFacts.map(f=>({...f,source:documentId?'DOCUMENT':'USER',documentId,sourceChatId:documentId?null:sourceId,extractionId:extraction.extractionId})),persist);
-  }catch(e){Object.assign(state,before);throw e;}
+  }catch(e){Object.assign(state,before);rebuildIndex();external.rebind();throw e;}
  }
  async function processDocument(id){
   const d=state.documents[id];if(!d)throw Error('Unknown document');
@@ -76,7 +107,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   }catch(e){atomic(()=>{state.documents[id].processingStatus='FAILED';state.documents[id].lastError=e.message;event('FAILED',id,{error:e.message});});}
   return documentView(id);
  }
- function documentView(id){const d=state.documents[id];if(!d)throw Error('Unknown document');const {originalBase64,...metadata}=d,extraction=state.extractions['extraction-'+id],interpretation=state.interpretations['interpretation-'+id];return {...clone(metadata),warnings:clone(extraction?.warnings??[]),extraction:extraction?{extractionId:extraction.extractionId,method:extraction.method,pages:clone(extraction.pages),confidence:extraction.confidence}:null,profileFacts:clone(interpretation?.result.profileFacts??[]).map(f=>({...f,documentId:id,status:'CANDIDATE'})),candidates:Object.values(state.candidates).filter(c=>c.documentId===id).map(view)};}
+ function documentView(id){const d=state.documents[id];if(!d)throw Error('Unknown document');const {originalBase64,...metadata}=d,extraction=state.extractions['extraction-'+id],interpretation=state.interpretations['interpretation-'+id];return {...clone(metadata),warnings:clone(extraction?.warnings??[]),extraction:extraction?{extractionId:extraction.extractionId,method:extraction.method,pages:clone(extraction.pages),confidence:extraction.confidence}:null,profileFacts:clone(interpretation?.result.profileFacts??[]).map(f=>({...f,documentId:id,status:'CANDIDATE'})),candidates:Object.values(state.candidates).filter(c=>c.documentId===id).map(c=>view(c))};}
  async function upload({bytes,originalFilename,declaredMimeType='application/octet-stream'}){
   const inspected=inspectFile({bytes,originalFilename,declaredMimeType});const existing=Object.values(state.documents).find(d=>d.sha256===inspected.sha256);
   if(existing)return {duplicate:true,document:documentView(existing.documentId)};
@@ -94,15 +125,16 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   catch(e){atomic(()=>{state.chats[requestId].status='FAILED';state.chats[requestId].lastError=e.message;});}
   return chatView(requestId);
  }
- function chatView(id){return {...clone(state.chats[id]),candidates:Object.values(state.candidates).filter(c=>c.sourceId==='chat-'+hash(Buffer.from(id))).map(view)};}
+ function chatView(id){return {...clone(state.chats[id]),candidates:Object.values(state.candidates).filter(c=>c.sourceId==='chat-'+hash(Buffer.from(id))).map(c=>view(c))};}
  function edit({candidateId,revision,changes,actor}){
   human(actor);const c=candidate(candidateId);if(!['CANDIDATE','REQUIRES_REVIEW','READY_TO_CONFIRM'].includes(c.status))throw Error('Candidate is not editable');if(c.revision!==revision)throw Error('Stale candidate revision');
+  if(c.candidateType==='EXTERNAL_JOURNAL')throw Error('Journal observations are immutable; review mapping or correct the source');
   if(!changes||!Object.keys(changes).length||Object.keys(changes).some(k=>!EDITABLE.includes(k))||Object.values(changes).some(v=>v!==null&&(typeof v!=='string'||v.length>500)))throw Error('Invalid candidate correction');
-  return atomic(()=>{Object.assign(c.current,changes);c.revision++;c.revisions.push({revision:c.revision,source:'USER_EDIT',actor,at:now(),changes:clone(changes),fields:clone(c.current)});c.status=validate(c).status;event('CANDIDATE_EDITED',candidateId,{revision:c.revision,actor});return view(c);});
+  return atomic(()=>{Object.assign(c.current,changes);if(c.nativeInput){c.nativeInput.items=[{description:c.current.description,amountMajor:c.current.amount}];}c.revision++;c.revisions.push({revision:c.revision,source:'USER_EDIT',actor,at:now(),changes:clone(changes),fields:clone(c.current)});refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_EDITED',candidateId,{revision:c.revision,actor});return view(c);});
  }
  function reject({candidateId,revision,actor}){
   human(actor);const c=candidate(candidateId);if(['POSTED','CONFIRMED'].includes(c.status))throw Error('Confirmed or posted candidates cannot be rejected; use existing reversal workflow');if(c.revision!==revision)throw Error('Stale candidate revision');
-  return atomic(()=>{c.status='REJECTED';c.rejection={actor,at:now(),revision};if(c.documentId)documentStatus(c.documentId);event('REJECTED',candidateId,{actor});return view(c);});
+  return atomic(()=>{c.status='REJECTED';refreshIndex(c);c.rejection={actor,at:now(),revision};if(c.documentId)documentStatus(c.documentId);event('REJECTED',candidateId,{actor});return view(c);});
  }
  async function confirm({candidateId,revision,reviewHash,idempotencyKey,actor}){
   human(actor);if(typeof idempotencyKey!=='string'||!idempotencyKey.trim()||idempotencyKey.length>180||['__proto__','constructor','prototype'].includes(idempotencyKey))throw Error('Confirmation idempotencyKey required');
@@ -114,24 +146,40 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    const checked=validate(c);if(checked.status!=='READY_TO_CONFIRM')throw Error('Candidate requires review: '+[...checked.missingFields,...checked.conflicts].join('; '));if(checked.reviewHash!==reviewHash)throw Error('Stale candidate review hash');
    atomic(()=>{
     const ctx=getContext(),f=c.current;
-    c.confirmation={actor,at:now(),revision,reviewHash,idempotencyKey,decisionSource:'HUMAN'};
-    c.canonicalCommand={id:'intake-'+candidateId,orgId:ctx.org.id,date:f.transactionDate,jurisdiction:ctx.org.jurisdiction,currency:f.currency,kind:f.proposedTransactionType,items:[{description:f.description,amountMajor:f.amount}],evidence:{kind:c.candidateType==='BANK_ROW'?'BANK_STATEMENT':c.documentId?'RECEIPT':'OTHER',reference:c.documentId??c.sourceId,hash:c.documentId?state.documents[c.documentId].sha256:null},idempotencyKey:'document-intake:'+candidateId,memo:f.description,accountSelection:{classificationAccountId:f.classificationAccountId,paymentAccountId:f.paymentAccountId},provenance:{candidateId,revision,documentId:c.documentId,extractionId:c.extractionId,interpretationId:c.interpretationId},taxCandidates:{taxAmount:f.taxAmount??null,subtotal:f.subtotal??null,status:'REQUIRES_GOVERNED_TAX_REVIEW'}};
+    c.confirmation={actor,at:now(),revision,reviewHash,idempotencyKey,decisionSource:'HUMAN',duplicateDecision:clone(c.duplicateDecision??null)};
+    c.canonicalCommand=canonicalCommand(c,{...ctx,documentHash:c.documentId?state.documents[c.documentId].sha256:null});
     c.status='CONFIRMED';state.keys[idempotencyKey]={candidateId,revision};event('CONFIRMED',candidateId,c.confirmation);
    });
   }
   // The confirmation is durable BEFORE calling the sole accounting pipeline.
+  const currentCheck=validate(c);if(currentCheck.status!=='READY_TO_CONFIRM')throw Error('Confirmed candidate requires renewed review: '+currentCheck.conflicts.join('; '));
   const before=clone(state);
   try{
    c.status='POSTING';event('POSTING',candidateId);
    await commitPosting(clone(c.canonicalCommand),actor,result=>{c.status='POSTED';c.posting=clone(result);c.lastError=null;if(c.documentId)documentStatus(c.documentId);event('POSTED',candidateId,{postingId:result.receipt.postingId});});
-  }catch(e){Object.assign(state,before);const restored=candidate(candidateId);restored.lastError=e.message;event('POSTING_FAILED',candidateId,{error:e.message});persist();throw e;}
+  }catch(e){Object.assign(state,before);rebuildIndex();external.rebind();const restored=candidate(candidateId);restored.lastError=e.message;event('POSTING_FAILED',candidateId,{error:e.message});persist();throw e;}
   return view(candidate(candidateId));
  }
  function retry({documentId}){const d=state.documents[documentId];if(!d||d.processingStatus!=='FAILED')throw Error('Only failed documents can be retried');return processDocument(documentId);}
- function list(){return {documents:Object.keys(state.documents).map(documentView),chats:Object.keys(state.chats).map(chatView),candidates:Object.values(state.candidates).map(view)};}
- function trace(id){const c=candidate(id);return {candidate:view(c),document:c.documentId?documentView(c.documentId):null,extraction:clone(state.extractions[c.extractionId]),interpretation:clone(state.interpretations[c.interpretationId]),events:clone(state.events.filter(e=>[c.candidateId,c.documentId,c.sourceId].includes(e.id))),posting:c.posting?getContext().journals.find(j=>j.id===c.posting.receipt.postingId):null};}
+ function list(){const ctx=getContext();return {documents:Object.keys(state.documents).map(documentView),chats:Object.keys(state.chats).map(chatView),candidates:Object.values(state.candidates).map(c=>view(c,ctx)),externalSources:external.sources(),externalBatches:external.batches()};}
+ function trace(id){const c=candidate(id);return {candidate:view(c),document:c.documentId?documentView(c.documentId):null,extraction:clone(state.extractions[c.extractionId]),interpretation:clone(state.interpretations[c.interpretationId]),external:external.trace(c),events:clone(state.events.filter(e=>[c.candidateId,c.documentId,c.sourceId].includes(e.id))),posting:c.posting?getContext().journalFor(c.posting.receipt.postingId):null};}
  function original(id){const d=state.documents[id];if(!d)throw Error('Unknown document');const bytes=Buffer.from(d.originalBase64,'base64');if(hash(bytes)!==d.sha256)throw Error('Original document hash mismatch');return {bytes,mime:d.detectedMimeType,filename:d.originalFilename};}
  function recover(){let changed=false;for(const d of Object.values(state.documents))if(['UPLOADED','EXTRACTING','EXTRACTED','INTERPRETING'].includes(d.processingStatus)){d.processingStatus='FAILED';d.lastError='Processing interrupted by restart; retry explicitly';changed=true;}for(const c of Object.values(state.chats))if(c.status==='INTERPRETING'){c.status='FAILED';c.lastError='Interpretation interrupted by restart';changed=true;}if(changed)persist();}
- return {upload:serial(upload),chat:serial(chat),edit:serial(edit),reject:serial(reject),confirm:serial(confirm),retry:serial(retry),list,trace,original,recover};
+ function native({input,actor='user'}){
+  human(actor);const ctx=getContext(),id='candidate-'+fingerprint(['NATIVE',input.orgId,input.id]),originalHash=fingerprint(input),existing=state.candidates[id];
+  if(input.orgId!==ctx.org?.id||input.jurisdiction!==ctx.org?.jurisdiction||!['REVENUE','EXPENSE'].includes(input.kind)||!input.counterparty)throw Error('Invalid native organization scope or transaction');
+  if(existing){if(existing.originalHash!==originalHash)throw Error('Duplicate transaction id with different payload');return view(existing);}
+  const amount=input.items.reduce((m,i)=>m.add(i.amountMinor!=null?Money.fromMinor(i.amountMinor,input.currency):Money.fromMajor(i.amountMajor,input.currency)),Money.zero(input.currency)).toMajorString();
+  return atomic(()=>{const c=registerCandidate({candidateId:id,sourceChannel:'NATIVE',sourceId:input.id,candidateType:'TRANSACTION',nativeInput:clone(input),sourceRef:{reference:input.evidence.reference,requestId:input.id},current:{transactionDate:input.date,description:input.items.map(i=>i.description).join('; '),counterparty:input.counterparty,amount,currency:input.currency,proposedTransactionType:input.kind,classificationAccountId:ctx.chart?.getByCode(input.kind==='REVENUE'?'401':'501').id,paymentAccountId:ctx.chart?.getByCode('101').id,referenceNumber:input.evidence.reference,settlementStatus:'PAID',paymentMethod:'cash/bank'},evidence:{native:{reference:input.evidence.reference,submittedFields:clone(input)}}});c.originalHash=originalHash;return view(c);});
+ }
+ function resolveDuplicate({candidateId,revision,decision,actor,reason}){
+  human(actor);const c=candidate(candidateId);if(c.revision!==revision||['CONFIRMED','POSTED','REJECTED'].includes(c.status)||!['DISTINCT','DUPLICATE'].includes(decision)||typeof reason!=='string'||!reason.trim()||reason.length>500)throw Error('Invalid duplicate review');
+  const duplicates=duplicateState(c);if(!duplicates.count)throw Error('No duplicate match to review');
+  return atomic(()=>{c.duplicateDecision={decision,revision,actor,reason,at:now(),fingerprint:duplicates.fingerprint,groupVersion:duplicates.groupVersion,matches:duplicates.matches};if(decision==='DUPLICATE'){c.status='REJECTED';refreshIndex(c);}event('DUPLICATE_REVIEW',candidateId,c.duplicateDecision);return view(c);});
+ }
+ for(const b of Object.values(state.external.batches))if(hash(Buffer.from(b.originalBase64,'base64'))!==b.fileHash)throw Error('Persisted external original hash mismatch');
+ external=createExternalIntake({state,getContext,atomic,registerCandidate,refreshIndex,view,confirm});rebuildIndex();
+ return {upload:serial(upload),chat:serial(chat),native:serial(native),edit:serial(edit),reject:serial(reject),resolveDuplicate:serial(resolveDuplicate),confirm:serial(confirm),retry:serial(retry),list,trace,original,recover,
+  external:{...external,registerSource:serial(external.registerSource),approveMapping:serial(external.approveMapping),stage:serial(external.stage),confirmBatch:serial(external.confirmBatch)}};
 }
 module.exports={blankIntakeState,createIntakeService};

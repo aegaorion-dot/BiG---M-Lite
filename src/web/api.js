@@ -10,6 +10,9 @@ async function dispatch(store,method,path,query={},body={}){
   if(method==='GET'){
    if(path==='/api/intake')return json({ok:true,...store.intake.list()});
    if(path==='/api/intake/trace')return json({ok:true,...store.intake.trace(query.candidateId)});
+   if(path==='/api/intake/external/preview')return json({ok:true,...store.intake.external.preview(query.batchId)});
+   if(path==='/api/intake/external/export')return {status:200,headers:{'content-type':'text/csv; charset=utf-8','content-disposition':'attachment; filename="reviewed-import-preview.csv"','cache-control':'no-store'},body:store.intake.external.exportCsv(query.batchId)};
+   if(path==='/api/intake/external/original'){const original=store.intake.external.original(query.batchId);return {status:200,headers:{'content-type':'application/octet-stream','content-disposition':"attachment; filename*=UTF-8''"+encodeURIComponent(original.filename),'cache-control':'no-store'},body:original.bytes};}
    if(path==='/api/intake/original'){const original=store.intake.original(query.documentId);return {status:200,headers:{'content-type':'application/octet-stream','content-disposition':"attachment; filename*=UTF-8''"+encodeURIComponent(original.filename),'cache-control':'no-store'},body:original.bytes};}
    if(path==='/api/health')return json({ok:true,service:'bigm-lite-web',framework:'0.1.0'});
    if(path==='/api/summary')return json({ok:true,summary:store.summary(currency)});
@@ -28,6 +31,14 @@ async function dispatch(store,method,path,query={},body={}){
   }
   if(method==='POST'){
    const token=body?.authToken??query.token??null;store.checkAuth(token);
+   if(path==='/api/intake/duplicates/review')return json({ok:true,candidate:await store.intake.resolveDuplicate(body)});
+   if(path==='/api/intake/external/source')return json({ok:true,source:await store.intake.external.registerSource(body)},201);
+   if(path==='/api/intake/external/mapping')return json({ok:true,mapping:await store.intake.external.approveMapping(body)});
+   if(path==='/api/intake/external/upload'){
+    const encoded=body?.base64;if(typeof encoded!=='string'||encoded.length>Math.ceil(8*1024*1024/3)*4||!encoded.length||!/^[A-Za-z0-9+/]*={0,2}$/.test(encoded))return err('Invalid external upload');
+    const bytes=Buffer.from(encoded,'base64');if(bytes.toString('base64')!==encoded)return err('Malformed base64');return json({ok:true,...await store.intake.external.stage({...body,bytes})},201);
+   }
+   if(path==='/api/intake/external/confirm')return json({ok:true,...await store.intake.external.confirmBatch(body)});
    if(path==='/api/intake/upload'){
     const encoded=body?.base64;
     if(typeof encoded!=='string'||!encoded.length||encoded.length>Math.ceil(8*1024*1024/3)*4||encoded.length%4!==0||!/^[A-Za-z0-9+/]*={0,2}$/.test(encoded))return err('Invalid or oversized base64 upload');

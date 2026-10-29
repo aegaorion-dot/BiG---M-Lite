@@ -115,3 +115,8 @@ Use the [Phase 4 review workflow](docs/PHASE4-REVIEW-WORKFLOW.md) to inspect evi
 Chat and document uploads converge on reviewed transaction candidates. PDF text, scanned PDF, PNG/JPEG OCR, UTF-8 text and simple statement CSV work locally. Review evidence, save corrections, then explicitly confirm before the existing accounting pipeline posts. Foreign-currency/FX gaps and unpaid invoices stay review-only.
 
 Run `npm ci` (Node >=20.19), `npm test`, and `npm start`. See [Phase 5 architecture, limits, API, verification and Original inspection](docs/PHASE5-DOCUMENT-INTAKE.md). Paid document semantics are opt-in; `npm run smoke:document-meta` skips by default.
+# Phase 6 universal intake
+
+Native entry, Chat, Document/OCR, external transactions and external journals now converge on `universal-intake-v1` before the existing PostingService. In **Chat & documents**, register a source, upload generic CSV/JSON, approve account mappings, review rows and possible duplicates, then explicitly confirm. Closed periods, imbalance and missing FX remain blocked.
+
+See the [Phase 6 report](docs/PHASE6-UNIVERSAL-INTAKE.md) for generic schemas, APIs, Original inspection, replay/persistence, limits and the complete 309-test verification. This checkpoint is local only; it has not been pushed.

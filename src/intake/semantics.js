@@ -41,7 +41,7 @@ class DeterministicSemanticProvider extends SemanticDocumentProvider {
     transactionDate=find('transactionDate',/\b(\d{4}-\d{2}-\d{2})\b/);
     if(!transactionDate&&/\byesterday\b|\bkemarin\b/i.test(all)){const d=new Date(receivedAt);d.setUTCDate(d.getUTCDate()-1);transactionDate=d.toISOString().slice(0,10);const b=group.find(b=>/yesterday|kemarin/i.test(b.text));evidence.transactionDate={blockId:b.blockId,quote:b.text.match(/yesterday|kemarin/i)[0]};}
    }
-   const kind=candidateType==='CUSTOMER_INVOICE'?'REVENUE':['SUPPLIER_INVOICE','RECEIPT'].includes(candidateType)?'EXPENSE':/client.*paid|paid me|customer.*paid|pelanggan.*bayar/i.test(all)?'REVENUE':/\b(bought|paid electricity|beli|membeli|bayar listrik)\b/i.test(all)?'EXPENSE':null;
+   const kind=candidateType==='CUSTOMER_INVOICE'?'REVENUE':['SUPPLIER_INVOICE','RECEIPT'].includes(candidateType)?'EXPENSE':/client.*paid|paid me|customer.*paid|pelanggan.*bayar/i.test(all)?'REVENUE':/\b(bought|I paid|paid electricity|beli|membeli|bayar listrik)\b/i.test(all)?'EXPENSE':null;
    if(kind)evidence.proposedTransactionType={blockId:group[0].blockId,quote:group[0].text.slice(0,200)};
    const counterparty=find('counterparty',/^(?:supplier|vendor|customer|client|counterparty|penjual|pelanggan)\s*:\s*(.{1,120})/i)??(sourceChannel==='CHAT'?find('counterparty',/\b(client|customer|pelanggan)\b/i):null);
    const description=find('description',/^(?:description|deskripsi|item)\s*:\s*(.{1,200})/i)??all.slice(0,200);if(!evidence.description)evidence.description={blockId:group[0].blockId,quote:group[0].text.slice(0,200)};

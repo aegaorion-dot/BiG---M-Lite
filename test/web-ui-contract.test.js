@@ -12,7 +12,7 @@ async function mount(store){
    addEventListener(name,handler){this.handlers[name]=handler;},appendChild(){},remove(){},showModal(){this.open=true;},close(){this.open=false;},
    querySelectorAll(selector){
     if(selector==='[data-route]')return [...this.html.matchAll(/data-route="([^"]+)"/g)].map(m=>{const b=make('route-'+m[1]);b.dataset.route=m[1];return b;});
-    if(['[data-intake-form]','[data-intake-action]','[data-retry-document]'].includes(selector)){
+    if(['[data-intake-form]','[data-intake-action]','[data-retry-document]','[data-ext-batch]','[data-ext-map]','[data-dup-id]'].includes(selector)){
      const attr=selector.slice(1,-1);const matches=[];
      for(const m of this.html.matchAll(new RegExp('<(form|button)\\b[^>]*'+attr+'="[^"]+"[^>]*>','g'))){
       const node=make('intake-node');for(const a of m[0].matchAll(/data-([a-z-]+)="([^"]*)"/g))node.dataset[a[1].replace(/-([a-z])/g,(_s,c)=>c.toUpperCase())]=a[2];
@@ -38,6 +38,23 @@ async function mount(store){
  await vm.runInContext(fs.readFileSync('public/app.js','utf8'),context);
  return {context,elements,read:code=>vm.runInContext(code,context)};
 }
+describe('Phase 6 external intake SPA',()=>{
+ it('registers source, uploads CSV, explicitly approves mappings and confirms through the same UI',async()=>{
+  const store=createActiveStore(),h=await mount(store);h.read("route='intake';render()");for(const [id,value]of [['#extId','ui-source'],['#extName','UI source'],['#extCurrency','IDR']])h.elements.get(id).value=value;await h.elements.get('#extRegister').handlers.click();assert.equal(store.intake.list().externalSources.length,1);
+  h.elements.get('#extSource').value='ui-source';h.elements.get('#extMode').value='TRANSACTION_IMPORT';const bytes=fs.readFileSync('test/fixtures/intake/external-transactions.csv');await h.elements.get('#extFile').handlers.change({target:{files:[{name:'office.csv',type:'text/csv',bytes,size:bytes.length}]}});assert.equal(store.ctx.ledger.size,0);
+  const mappings=h.read('externalPreview.mappings');for(const m of mappings){h.elements.get('#map-'+m.mappingId).value=m.externalAccountCode==='BANK'?'id-cash':'id-expense';h.elements.get('#reason-'+m.mappingId).value='I checked source account meaning';await h.elements.get('#view').intakeNodes['[data-ext-map]'].find(b=>b.dataset.extMap===m.mappingId).handlers.click();}
+  assert.equal(h.read('externalPreview.candidates[0].status'),'READY_TO_CONFIRM');await h.elements.get('#extConfirm').handlers.click();assert.equal(store.ctx.ledger.size,1);assert.equal(store.intake.list().candidates[0].canonicalCommand.intakeChannel,'EXTERNAL_TRANSACTION');
+ });
+ it('balanced journal review displays mapped lines and uses explicit confirmation',async()=>{
+  const store=createActiveStore(),e=store.intake.external;await e.registerSource({externalSourceId:'journal-ui',name:'Journal UI',functionalCurrency:'IDR',actor:'user'});let p=await e.stage({externalSourceId:'journal-ui',mode:'JOURNAL_IMPORT',bytes:fs.readFileSync('test/fixtures/intake/external-journals.csv'),originalFilename:'journals.csv',actor:'user'});for(const m of p.mappings)await e.approveMapping({mappingId:m.mappingId,revision:m.revision,canonicalAccountId:m.externalAccountCode==='BANK'?'id-cash':'id-expense',actor:'user',reason:'Reviewed'});
+  const h=await mount(store);h.read("route='intake';render()");await h.elements.get('#view').intakeNodes['[data-ext-batch]'][0].handlers.click();assert.ok(h.elements.get('#view').innerHTML.includes('EXTERNAL_JOURNAL'));assert.equal(store.ctx.ledger.size,0);await h.elements.get('#extConfirm').handlers.click();assert.equal(store.ctx.ledger.size,1);assert.ok(store.ctx.ledger.list()[0].isBalanced());
+ });
+ it('duplicate review preserves both sources and rejects the second posting explicitly',async()=>{
+  const store=createActiveStore();await store.createPurchase({id:'ui-original',orgId:'org-contoh',date:'2026-10-20',jurisdiction:'ID',currency:'IDR',description:'Office supplies',amountMajor:'500000',supplier:'Synthetic Office Store',billRef:'OFFICE-001'});const e=store.intake.external;await e.registerSource({externalSourceId:'duplicate-ui',name:'Duplicate UI',functionalCurrency:'IDR',actor:'user'});let p=await e.stage({externalSourceId:'duplicate-ui',mode:'TRANSACTION_IMPORT',bytes:fs.readFileSync('test/fixtures/intake/external-transactions.csv'),originalFilename:'duplicate.csv',actor:'user'});for(const m of p.mappings)await e.approveMapping({mappingId:m.mappingId,revision:m.revision,canonicalAccountId:m.externalAccountCode==='BANK'?'id-cash':'id-expense',actor:'user',reason:'Reviewed'});
+  const h=await mount(store);h.read("route='intake';render()");await h.elements.get('#view').intakeNodes['[data-ext-batch]'][0].handlers.click();const c=h.read('externalPreview.candidates[0]');assert.equal(c.duplicates.status,'POSSIBLE_DUPLICATE');h.elements.get('#dup-'+c.candidateId).value='This purchase is already in the ledger';await h.elements.get('#view').intakeNodes['[data-dup-id]'].find(b=>b.dataset.decision==='DUPLICATE').handlers.click();assert.equal(store.ctx.ledger.size,1);assert.equal(h.read('externalPreview.candidates[0].status'),'REJECTED');
+ });
+});
+
 describe('Phase 5 SPA intake interactions',()=>{
  it('opens intake before activation and renders document profile proposals safely',async()=>{
   const store=createWebStore(),h=await mount(store);await h.elements.get('#openIntake').handlers.click();assert.equal(h.read('route'),'intake');assert.ok(h.elements.get('#intakeFile'));assert.ok(h.elements.get('#intakeChat'));assert.ok(h.elements.get('#view').innerHTML.includes('Chat &amp; documents'));

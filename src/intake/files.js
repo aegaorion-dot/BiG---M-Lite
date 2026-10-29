@@ -3,18 +3,18 @@ const {createHash}=require('node:crypto');
 const LIMITS=Object.freeze({fileBytes:8*1024*1024,totalBytes:64*1024*1024,textChars:200000,pages:20,rows:500,pixels:16000000});
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 function textOf(bytes){try{return new TextDecoder('utf-8',{fatal:true}).decode(bytes).replace(/^\uFEFF/,'');}catch{throw Error('Malformed UTF-8 document');}}
-function csvRows(text){
+function csvRows(text,{maxRows=LIMITS.rows,preserveRaw=false,allowRagged=false}={}){
  const rows=[];let row=[],cell='',quoted=false,closed=false;
  for(let i=0;i<text.length;i++){
   const c=text[i];if(quoted){if(c==='"'){if(text[i+1]==='"'){cell+='"';i++;}else{quoted=false;closed=true;}}else cell+=c;}
   else if(c==='"'){if(cell||closed)throw Error('Malformed CSV quoting');quoted=true;}
-  else if(c===','||c==='\n'){row.push(cell.trim());cell='';closed=false;if(c==='\n'){if(row.some(Boolean))rows.push(row);row=[];}}
+  else if(c===','||c==='\n'){row.push(preserveRaw?cell:cell.trim());cell='';closed=false;if(c==='\n'){if(row.some(Boolean))rows.push(row);row=[];}}
   else if(c==='\r'&&text[i+1]==='\n')continue;
   else {if(closed)throw Error('Malformed CSV quoting');cell+=c;}
-  if(cell.length>2000||row.length>30||rows.length>LIMITS.rows+1)throw Error('CSV content limit exceeded');
+  if(cell.length>2000||row.length>30||rows.length>maxRows+1)throw Error('CSV content limit exceeded');
  }
- if(quoted)throw Error('Malformed CSV quoting');row.push(cell.trim());if(row.some(Boolean))rows.push(row);
- if(rows.length>LIMITS.rows+1||rows.length<2||new Set(rows[0]).size!==rows[0].length||rows.some(r=>r.length!==rows[0].length))throw Error('Malformed CSV rows');
+ if(quoted)throw Error('Malformed CSV quoting');row.push(preserveRaw?cell:cell.trim());if(row.some(Boolean))rows.push(row);
+ if(rows.length>maxRows+1||rows.length<2||new Set(rows[0]).size!==rows[0].length||rows.some(r=>r.length>30||!allowRagged&&r.length!==rows[0].length))throw Error('Malformed CSV rows');
  return rows;
 }
 function inspectFile({bytes,originalFilename,declaredMimeType}){

@@ -8,8 +8,6 @@ const {Ledger}=require('../domain/ledger');
 const {AuditTrail,IdempotencyStore}=require('../domain/audit');
 const {PostingService}=require('../accounting/postingService');
 const {ReversalService}=require('../accounting/reversalService');
-const {recordSale}=require('../business/salesService');
-const {recordPurchase}=require('../business/purchaseService');
 const {getSummary}=require('../dashboard/dashboard');
 const {parseCsv}=require('../import/csvImporter');
 const {MetaModelAdapter}=require('../ai/aiAdapter');
@@ -245,20 +243,20 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  function transactionCheckpoint(){return {ledgerSize:ledger.size,auditSize:audit.size,idempotency:idempotency.toJSON(),metadata:clone([...txMeta.entries()])};}
  function rollbackTransaction(s){while(ledger.size>s.ledgerSize)ledger._rollbackLast(ledger.list().at(-1).id);while(audit.size>s.auditSize)audit._rollbackLast(audit.size);idempotency._restoreAll(s.idempotency);txMeta.clear();for(const [k,v]of s.metadata)txMeta.set(k,v);}
  async function createTransaction(kind,draft,opts){
-  checkAuth(opts.authToken);checkOrg(draft?.orgId);requireActive(kind==='SALE'?'sales':'purchase');const deps=pipelineDepsFor(draft),before=transactionCheckpoint();
-  try{
-   const result=await (kind==='SALE'?recordSale:recordPurchase)(deps,draft);
-   result.tax={...result.tax,status:'requires_review',finalTotalMinor:null,finalLiabilityMinor:null,note:'Tax settings need review. Bookkeeping entry contains no final tax calculation.'};
-   result.report='Bookkeeping entry recorded. Tax settings need review; no final liability has been calculated.';
-   rememberMeta(kind,draft,result);persist();return result;
-  }catch(e){rollbackTransaction(before);throw e;}
+  checkAuth(opts.authToken);checkOrg(draft?.orgId);requireActive(kind==='SALE'?'sales':'purchase');pipelineDepsFor(draft);
+  const input=(kind==='SALE'?require('../business/salesService').buildSaleInput:require('../business/purchaseService').buildPurchaseInput)(draft);input.counterparty=draft.customer??draft.supplier;
+  const c=await intake.native({input,actor:opts.actor??'user'});
+  if(c.revision!==1&&!c.confirmation)throw Error('Native candidate changed; review and confirm the current intake candidate');
+  // Existing native Create/Post is itself an explicit human submission. It now
+  // uses the same durable candidate, validation and confirmation as other inputs.
+  const confirmed=await intake.confirm({candidateId:c.candidateId,revision:c.revision,reviewHash:c.confirmation?.reviewHash??c.reviewHash,idempotencyKey:c.confirmation?.idempotencyKey??'native-confirm:'+c.candidateId,actor:opts.actor??'user'});return confirmed.posting;
  }
  const createSale=(draft,opts={})=>createTransaction('SALE',draft,opts),createPurchase=(draft,opts={})=>createTransaction('PURCHASE',draft,opts);
  async function importCsvText(csv,opts={}){
   checkAuth(opts.authToken);requireActive('import');
-  const rows=parseCsv(csv),seen=new Set(),receipts=[],failures=[];
+  const rows=parseCsv(csv),seen=new Set(ledger.list().map(e=>e.transactionId)),receipts=[],failures=[];
   for(const row of rows){try{
-   if(!row.id||seen.has(row.id)||ledger.list().some(e=>e.transactionId===row.id))throw Error('Missing or duplicate transaction id');
+   if(!row.id||seen.has(row.id))throw Error('Missing or duplicate transaction id');
    seen.add(row.id);
    const base={id:row.id,orgId:row.orgId,date:row.date,jurisdiction:row.jurisdiction,currency:row.currency,description:row.description,amountMajor:row.amountMajor};
    const type=String(row.type).toUpperCase();if(!['SALE','PURCHASE'].includes(type))throw Error('type must be SALE|PURCHASE');
@@ -335,17 +333,18 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   const c=intakeState.candidates[command.provenance?.candidateId];
   if(!c?.confirmation||c.status!=='POSTING'||fingerprint(c.canonicalCommand)!==fingerprint(command))throw Error('Confirmed intake command required');
   if(c.confirmation.reviewHash!==fingerprint({candidateId:c.candidateId,revision:c.revision,current:c.current,workspace:workspaceProfile()})||command.currency!==ctx.org?.baseCurrency)throw Error('Confirmed workspace changed; review required before posting');
-  const module=command.kind==='REVENUE'?'sales':'purchase';requireActive(module);
+  const module=command.kind==='JOURNAL'?'accounting':command.kind==='REVENUE'?'sales':'purchase';requireActive(module);
   const deps=pipelineDepsFor(command),before=transactionCheckpoint();
   try{
-   const result=await require('../app/verticalSlice').runTransactionPipeline({...deps,input:command,accountSelection:command.accountSelection,actor});
+   const result=await require('../intake/accountingBoundary').postCanonical(deps,command,actor);
    result.tax={...result.tax,status:'requires_review',finalTotalMinor:null,finalLiabilityMinor:null};
-   rememberMeta(command.kind==='REVENUE'?'SALE':'PURCHASE',{date:command.date,currency:command.currency,customer:c.current.counterparty,invoiceRef:c.current.referenceNumber??command.evidence.reference},result);
+   if(command.kind==='JOURNAL')txMeta.set(result.transactionId,{id:result.transactionId,kind:'JOURNAL_IMPORT',date:command.date,currency:command.currency,totalMinor:'0',counterparty:c.current.counterparty??'-',reference:c.current.referenceNumber??command.sourceRef.externalId,postingId:result.receipt.postingId,journalId:result.journal.id,demo:false});
+   else rememberMeta(command.kind==='REVENUE'?'SALE':'PURCHASE',{date:command.date,currency:command.currency,customer:c.current.counterparty,invoiceRef:c.current.referenceNumber??command.evidence.reference},result);
    txMeta.get(result.transactionId).totalMinor=Money.fromMajor(c.current.amount,c.current.currency).amountMinor.toString();
-   const safe={transactionId:result.transactionId,receipt:result.receipt,journal:result.journal,tax:result.tax};finalize(safe);persist();return safe;
+   finalize(result);persist();return result;
   }catch(e){rollbackTransaction(before);throw e;}
  }
- const intake=createIntakeService({state:intakeState,getContext:()=>({...ctx,workspace:workspaceProfile(),journals:ctx.ledger.list().map(serializeJournal)}),persist,commitPosting:commitIntakePosting,applyProfileFacts:applyDocumentFacts,extractionProvider,semanticProvider});
+ const intake=createIntakeService({state:intakeState,getContext:()=>({...ctx,workspace:workspaceProfile(),journalFor:id=>{const j=ctx.ledger.get(id);return j?serializeJournal(j):null;}}),persist,commitPosting:commitIntakePosting,applyProfileFacts:applyDocumentFacts,extractionProvider,semanticProvider});
  intake.recover();
  return {ctx,txMeta,contentRegistry,checkAuth,serializeMutation,createSale,createPurchase,importCsvText,reverseJournal,listTransactions,monthlyReport,summary,seedDemo,serializeJournal,pipelineDepsFor,
   chartFor:()=>ctx.chart,onboardingTurn,onboardingDraft,onboardingPropose,onboardingValidate,onboardingConfirm,onboardingReadiness,onboardingActivate,onboardingState,onboardingHistory:()=>clone(history),setUiLanguage,editProfile,approvePack,workspaceProfile,aiStatus,applyActiveConfiguration,beginTaxReview,answerTaxReview,proposeTaxReview,taxReadiness,
