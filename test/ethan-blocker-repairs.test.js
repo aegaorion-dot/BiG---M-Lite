@@ -3,6 +3,7 @@
 // Muse call, no tax-law research, no CountryPack creation.
 const {it,describe}=require('node:test'),assert=require('node:assert/strict');
 const {candidateTaxFacts,confirmTaxFacts,inspectFacts,profileTaxFactCandidates,planTaxReadiness,discoverResearchNeed,taxQuestion,createTaxSystem}=require('../src/tax');
+const {createWebStore}=require('../src/web/store');
 const SCOPE={scopeId:'repair-test-org',subjectId:'person-1',period:{periodStart:'2025-04-01',periodEnd:'2025-12-31'},economicDate:'2025-12-31',currency:'JPY'};
 function fact(name,value){return {name,type:'COUNTRY',value,evidenceReference:'TEST ONLY synthetic evidence: '+name+value};}
 function ethanProfile(){
@@ -52,6 +53,18 @@ describe('Ethan blocker repairs (synthetic)',()=>{
   assert.ok(need.questionsToResolve.includes('TAX_RESIDENCE'));
   assert.ok(need.questionsToResolve.includes('SOURCE'));
   assert.match(need.objective,/governed law/);
+ });
+ it('E: live product tax review exposes the automatically discovered ResearchNeed',()=>{
+  const store=createWebStore({taxSystem:createTaxSystem({includePhase4:false})});
+  for(const [slot,value]of [['user.nationality','US'],['user.physicalLocation','JP'],['org.businessType','freelancer'],['org.subjectType','INDIVIDUAL']])store.editProfile({slot,value});
+  store.editProfile({basis:'BUSINESS_WORK_LOCATION',countryCode:'JP'});
+  store.editProfile({basis:'CUSTOMER_LOCATION',countryCode:'US'});
+  const plan=store.beginTaxReview({...SCOPE,scopeId:'org-contoh',subjectId:'person-1',requestKey:'ethan-jp-product',taxType:'INCOME_TAX',jurisdictionCode:'JP',jurisdictionBasis:'TAX_RESIDENCE',incomeOrEventType:'FREELANCE_SERVICES'});
+  assert.equal(plan.status,'RESEARCH_REQUIRED');
+  assert.equal(plan.researchSignal.recognized,true);
+  assert.equal(plan.researchNeed.kind,'ResearchNeed');
+  assert.ok(plan.researchNeed.questionsToResolve.includes('TAX_RESIDENCE'));
+  assert.ok(plan.researchNeed.questionsToResolve.includes('SOURCE'));
  });
  it('F: fail-closed behavior remains intact',()=>{
   const {registry,engine}=createTaxSystem({includePhase4:false});

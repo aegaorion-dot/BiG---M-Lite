@@ -50,9 +50,10 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  function profileFingerprint(){return fingerprint({slots:profileState.slots,jurisdictionFacts:profileState.jurisdictionFacts});}
  function taxReadiness(){
   if(!taxReviewContext)return null;
-  const plan=require('../tax/readiness').planTaxReadiness({registry:taxServices().registry,request:taxReviewContext.request,snapshot:taxReviewContext.snapshot,profileRevision:profileState.revision});
+  const readiness=require('../tax/readiness'),plan=readiness.planTaxReadiness({registry:taxServices().registry,request:taxReviewContext.request,snapshot:taxReviewContext.snapshot,profileRevision:profileState.revision,profileState});
   if(taxReviewContext.profileFingerprint!==profileFingerprint())return {...plan,status:'PROFILE_REVISION_CHANGED',questions:[],taxReady:false,proposalCurrent:false};
-  return {...plan,proposalCurrent:lastTaxProposal?require('../tax/readiness').isTaxProposalCurrent(lastTaxProposal,{registry:taxServices().registry,...taxReviewContext,profileState}):false};
+  const researchNeed=readiness.discoverResearchNeed({profileState,request:taxReviewContext.request,plan});
+  return {...plan,...(researchNeed?{researchNeed}:{}),proposalCurrent:lastTaxProposal?readiness.isTaxProposalCurrent(lastTaxProposal,{registry:taxServices().registry,...taxReviewContext,profileState}):false};
  }
  function beginTaxReview(request){
   checkOrg(request.scopeId);require('../tax/contracts').validateCalculationRequest(request);
