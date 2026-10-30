@@ -25,6 +25,10 @@ const rows=[
  ['US','CONGRESS','Library of Congress Congress.gov','PRIMARY_LEGISLATION','congress.gov','en'],
  ['US','TAXCOURT','United States Tax Court','COURT','ustaxcourt.gov','en'],
  ['US','COURTS','Administrative Office of the US Courts','COURT','uscourts.gov','en'],
+ ['US','TREASURY','United States Department of the Treasury','FINANCE_MINISTRY','treasury.gov','en'],
+ ['JP','NTA','Japan National Tax Agency','TAX_AUTHORITY','nta.go.jp','ja'],
+ ['JP','MOF','Japan Ministry of Finance','FINANCE_MINISTRY','mof.go.jp','ja'],
+ ['JP','EGOV','e-Gov Japanese law search','PRIMARY_LEGISLATION','elaws.e-gov.go.jp','ja'],
  ['AU','ATO','Australian Taxation Office','TAX_AUTHORITY','ato.gov.au','en'],
  ['AU','FRL','Office of Parliamentary Counsel Federal Register','PRIMARY_LEGISLATION','legislation.gov.au','en'],
  ['AU','TREASURY','Australian Treasury','FINANCE_MINISTRY','treasury.gov.au','en'],
@@ -68,10 +72,11 @@ function classifyLink(jurisdiction,input,{registryVersion=null}={}){
  const registered=lookupSource(jurisdiction,input);
  // Normalizer v1 discovery labels are historical data. Adding an authority must
  // not mutate old normalized envelopes or silently upgrade previously seen links.
- if(registered&&!(registryVersion===1&&['MA-DGI','ID-FISCAL'].includes(registered.sourceId)))return 'REGISTERED_OFFICIAL_SOURCE';
+ if(registered&&!(registryVersion===1&&['MA-DGI','ID-FISCAL','US-TREASURY','JP-NTA','JP-MOF','JP-EGOV'].includes(registered.sourceId)))return 'REGISTERED_OFFICIAL_SOURCE';
  let u;try{u=new URL(input);}catch{return 'REJECTED_SOURCE';}
  if(u.protocol!=='https:'||u.username||u.password||u.port&&u.port!=='443')return 'REJECTED_SOURCE';
- return /(?:\.go\.id|\.gov\.sg|\.gov\.au|\.gov\.uk|\.gov)$/.test(u.hostname)?'UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE':'REJECTED_SOURCE';
+ if(registryVersion===1)return /(?:\.go\.id|\.gov\.sg|\.gov\.au|\.gov\.uk|\.gov)$/.test(u.hostname)?'UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE':'REJECTED_SOURCE';
+ return /(?:\.go\.id|\.go\.jp|\.gov\.sg|\.gov\.au|\.gov\.uk|\.gov)$/.test(u.hostname)?'UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE':'REJECTED_SOURCE';
 }
 function preferAccess(options){const order=SOURCES[0].preferredAccessMethods;return [...options].filter(o=>o.verified===true&&order.includes(o.method)).sort((a,b)=>order.indexOf(a.method)-order.indexOf(b.method))[0]??null;}
 module.exports={SOURCES,getSource,listSources,lookupSource,classifyLink,preferAccess};
