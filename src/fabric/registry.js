@@ -55,7 +55,8 @@ const structured={
 const SOURCES=deepFreeze(rows.map(([jurisdictionCode,authorityCode,authorityName,sourceRole,domain,language])=>{
  const sourceId=jurisdictionCode+'-'+authorityCode;
  const hosts=[domain,'www.'+domain];if(sourceId==='JP-EGOV')hosts.push('laws.e-gov.go.jp');if(sourceId==='AU-FRL')hosts.push('api.prod.legislation.gov.au');if(sourceId==='US-CONGRESS')hosts.push('api.congress.gov');
- return {sourceId,jurisdictionCode,authorityCode,authorityName,sourceRole,baseUrl:'https://'+domain+'/',officialDomains:hosts,
+ const baseUrl=sourceId==='JP-EGOV'?'https://laws.e-gov.go.jp/':'https://'+domain+'/';
+ return {sourceId,jurisdictionCode,authorityCode,authorityName,sourceRole,baseUrl,officialDomains:hosts,
   preferredAccessMethods:['API','STRUCTURED_DOWNLOAD','FEED','HTML','PDF_TEXT','PDF_OCR'],apiEndpoints:api[sourceId]??[],structuredEndpoints:structured[sourceId]??[],
   contentTypes:['application/json','application/feed+json','application/xml','text/xml','application/atom+xml','application/rss+xml','text/html','application/xhtml+xml','application/pdf','application/zip'],languages:[language],trustLevel:'OFFICIAL_SOURCE_ONLY',
   seed:sourceId==='AU-TREASURY'?'USER_PHASE2_ADDITION':'ORIGINAL_JURISDICTION_TS',

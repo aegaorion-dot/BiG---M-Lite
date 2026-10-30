@@ -14,6 +14,7 @@ it('US/JP official families route synthetic retrieval without legal interpretati
  assert.equal(lookupSource('JP','https://www.nta.go.jp/taxes/').sourceId,'JP-NTA');
  assert.equal(lookupSource('JP','https://www.mof.go.jp/tax_policy/').sourceId,'JP-MOF');
  assert.equal(lookupSource('JP','https://laws.e-gov.go.jp/law/340AC0000000033').sourceId,'JP-EGOV');
+ assert.equal(getSource('JP-EGOV').baseUrl,'https://laws.e-gov.go.jp/');
  assert.equal(lookupSource('US','https://home.treasury.gov/policy-issues/tax-policy'),null);
  assert.equal(lookupSource('US','https://www.treasury.gov/resource-center/tax-policy/').sourceId,'US-TREASURY');
  assert.equal(classifyLink('JP','https://www.nta.go.jp.evil.example/'),'REJECTED_SOURCE');
