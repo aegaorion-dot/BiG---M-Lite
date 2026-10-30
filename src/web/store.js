@@ -58,7 +58,8 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  function beginTaxReview(request){
   checkOrg(request.scopeId);require('../tax/contracts').validateCalculationRequest(request);
   const {profileTaxFactCandidates,candidateTaxFacts}=require('../tax/facts');
-  const initial=profileTaxFactCandidates(profileState,request),snapshot=candidateTaxFacts({...initial,facts:[...initial.facts,{name:'INCOME_TYPE',type:'STRING',value:request.incomeOrEventType,evidenceReference:'Explicit tax-review event selection: '+request.incomeOrEventType}]});
+  const initial=profileTaxFactCandidates(profileState,request),incomeFact={name:'INCOME_TYPE',type:'STRING',value:request.incomeOrEventType,evidenceReference:'User-selected tax-review income scope: '+request.incomeOrEventType,...(taxServices().registry.policyMode==='HACKATHON_DEMO'?{confirmationAuthority:'USER_INPUT'}:{})};let snapshot=candidateTaxFacts({...initial,facts:[...initial.facts,incomeFact]});
+  if(taxServices().registry.policyMode==='HACKATHON_DEMO'&&snapshot.facts.length&&snapshot.facts.every(f=>f.confirmationAuthority==='USER_INPUT'))snapshot=require('../tax/facts').confirmTaxFacts(snapshot,{decisionSource:'USER_INPUT',policyMode:'HACKATHON_DEMO',reviewedSnapshotHash:snapshot.snapshotHash});
   const before={taxReviewContext,lastTaxProposal};taxReviewContext={request:clone(request),snapshot,profileFingerprint:profileFingerprint()};lastTaxProposal=null;
   try{const plan=taxReadiness();persist();return plan;}catch(e){({taxReviewContext,lastTaxProposal}=before);throw e;}
  }

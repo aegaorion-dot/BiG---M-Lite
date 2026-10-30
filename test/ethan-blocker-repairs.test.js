@@ -75,4 +75,16 @@ describe('Ethan blocker repairs (synthetic)',()=>{
   assert.equal(r.taxAmount,null);
   assert.throws(()=>confirmTaxFacts(snap,{decisionSource:'AI',actor:'Muse',reviewedSnapshotHash:snap.snapshotHash}),/human/i);
  });
+ it('G: demo confirms direct USER facts without treating AI legal classifications as user input',()=>{
+  const profile=ethanProfile();profile.jurisdictionFacts[0].source='AI_INFERENCE';profile.slots['org.subjectType'].source='USER';
+  const snap=profileTaxFactCandidates(profile,SCOPE);
+  assert.ok(snap.facts.find(f=>f.name==='SUBJECT_TYPE').confirmationAuthority==='USER_INPUT');
+  assert.equal(snap.facts.find(f=>f.name==='BUSINESS_WORK_LOCATION').confirmationAuthority,undefined);
+  const userOnly=candidateTaxFacts({...SCOPE,revision:1,facts:[{name:'SUBJECT_TYPE',type:'STRING',value:'INDIVIDUAL',evidenceReference:'I am an individual',confirmationAuthority:'USER_INPUT'}]});
+  const confirmed=confirmTaxFacts(userOnly,{decisionSource:'USER_INPUT',policyMode:'HACKATHON_DEMO',reviewedSnapshotHash:userOnly.snapshotHash});
+  assert.equal(inspectFacts(confirmed,{policyMode:'HACKATHON_DEMO'}).status,'CONFIRMED');
+  assert.equal(inspectFacts(confirmed).status,'REVIEW_REQUIRED');
+  const inferred=candidateTaxFacts({...SCOPE,revision:1,facts:[{name:'TAX_RESIDENCE',type:'COUNTRY',value:'JP',evidenceReference:'Muse legal conclusion',confirmationAuthority:'BIGM_DEMO_POLICY'}]});
+  assert.throws(()=>confirmTaxFacts(inferred,{decisionSource:'USER_INPUT',policyMode:'HACKATHON_DEMO',reviewedSnapshotHash:inferred.snapshotHash}),/direct user-input provenance/i);
+ });
 });

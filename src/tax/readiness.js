@@ -59,7 +59,7 @@ function planTaxReadiness({registry,request,snapshot,profileRevision=snapshot?.r
  const researchGaps=requiredMissingFacts.filter(legalClassificationGap);
  const userFactsNeeded=requiredMissingFacts.filter(k=>!legalClassificationGap(k));
  const researchSignal=profileState?detectResearchSignal({profileState,request,requiredMissingFacts,researchGaps}):null;
- const status=conflict?'CONFLICT':semanticMismatch?'CONTEXT_REVIEW_REQUIRED':profileRevision!==snapshot.revision?'PROFILE_REVISION_CHANGED':requiredMissingFacts.length?(researchGaps.length&&!userFactsNeeded.length?'RESEARCH_REQUIRED':'MISSING_REQUIRED_FACT'):!contributors.length?scoped.length?'OUT_OF_PERIOD':'MISSING_APPROVED_RULE':inspectFacts(snapshot).status!=='CONFIRMED'?'FACT_CONFIRMATION_REQUIRED':contributors.some(c=>c.stage!=='APPROVED_EXECUTABLE')?'GOVERNANCE_REVIEW_REQUIRED':'READY_FOR_ENGINE_REVIEW';
+ const status=conflict?'CONFLICT':semanticMismatch?'CONTEXT_REVIEW_REQUIRED':profileRevision!==snapshot.revision?'PROFILE_REVISION_CHANGED':requiredMissingFacts.length?(researchGaps.length&&!userFactsNeeded.length?'RESEARCH_REQUIRED':'MISSING_REQUIRED_FACT'):!contributors.length?scoped.length?'OUT_OF_PERIOD':'MISSING_APPROVED_RULE':inspectFacts(snapshot,{policyMode:registry.policyMode}).status!=='CONFIRMED'?'FACT_CONFIRMATION_REQUIRED':contributors.some(c=>c.stage!=='APPROVED_EXECUTABLE')?'GOVERNANCE_REVIEW_REQUIRED':'READY_FOR_ENGINE_REVIEW';
  const questions=['CONFLICT','CONTEXT_REVIEW_REQUIRED','PROFILE_REVISION_CHANGED'].includes(status)?[]:userFactsNeeded.map(name=>({key:'tax.'+name,name,factType:requirements[name],semanticRole:name,text:prompts[name]??'Please provide the reviewed value for '+name.toLowerCase().replaceAll('_',' ')+'.',authority:'CANDIDATE_ONLY',purpose:'TAX_READINESS_REVIEW',candidateIds:contributors.map(c=>c.candidateId)}));
  const result={status,taxReady:false,authoritativeDetermination:false,profileRevision,snapshotHash:snapshot.snapshotHash,requestHash:fingerprint(request),requirements,declarations,requiredMissingFacts,researchGaps,userFactsNeeded,researchSignal,questions,contributors,candidatePredicatePreviewOnly:true,predicateUnknown,possibleRuleCount:possible,postingPerformed:false};
  return deepFreeze({...result,requirementsHash:fingerprint({requirements,contributors,requestHash:result.requestHash})});
@@ -104,11 +104,13 @@ function acceptTaxFactCandidates({registry,request,snapshot,answers,userText,pro
  for(const answer of answers){
   if(!answer||Object.keys(answer).some(k=>!['name','type','value','supportingQuote','operation','status'].includes(k))||!plan.declarations[answer.name]||answer.type!==plan.declarations[answer.name]||seen.has(answer.name)||answer.status&&answer.status!=='CANDIDATE'||!verifyQuote(answer.supportingQuote,userText)||answer.operation&&!['SET','REPLACE','REMOVE'].includes(answer.operation))throw Error('Only declared, typed, current-message evidenced tax candidates are accepted');
   seen.add(answer.name);
-  if(answer.operation==='REMOVE')next.delete(answer.name);else next.set(answer.name,{name:answer.name,type:answer.type,value:answer.value,evidenceReference:answer.supportingQuote});
+  if(answer.operation==='REMOVE')next.delete(answer.name);else next.set(answer.name,{name:answer.name,type:answer.type,value:answer.value,evidenceReference:answer.supportingQuote,...(registry.policyMode==='HACKATHON_DEMO'?{confirmationAuthority:'USER_INPUT'}:{})});
  }
  // A tax answer invalidates the entire earlier confirmation, including answers
  // previously confirmed. Profile revision is tracked independently of fact changes.
- return candidateTaxFacts({...snapshot,revision:profileRevision,facts:[...next.values()]});
+ const candidate=candidateTaxFacts({...snapshot,revision:profileRevision,facts:[...next.values()]});
+ if(registry.policyMode==='HACKATHON_DEMO'&&candidate.facts.length&&candidate.facts.every(f=>f.confirmationAuthority==='USER_INPUT'))return require('./facts').confirmTaxFacts(candidate,{decisionSource:'USER_INPUT',policyMode:'HACKATHON_DEMO',reviewedSnapshotHash:candidate.snapshotHash});
+ return candidate;
 }
 function taxReadinessProposal({registry,request,snapshot,profileState}){
  const plan=planTaxReadiness({registry,request,snapshot,profileRevision:profileState.revision});

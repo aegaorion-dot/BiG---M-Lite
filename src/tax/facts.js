@@ -10,13 +10,18 @@ function candidateTaxFacts({scopeId,subjectId,revision,period,economicDate,curre
  for(const f of facts){if(!NAME.test(f.name??'')||!FACT_TYPES.includes(f.type)||!Object.hasOwn(f,'value')||typeof f.evidenceReference!=='string'||!f.evidenceReference.trim())throw Error('Typed, evidenced semantic fact required');if(f.type==='MONEY')fromMoney(f.value,currency);else if(f.type==='NUMBER')numberValue(f.value);else if(f.type==='BOOLEAN'?typeof f.value!=='boolean':typeof f.value!=='string')throw Error('Invalid fact value type');if(f.type==='COUNTRY'&&!/^[A-Z]{2}$/.test(f.value))throw Error('Explicit ISO country code required');}
  return deepFreeze({...JSON.parse(JSON.stringify(data)),status:'CANDIDATE',aiAuthority:'CANDIDATE_ONLY',snapshotHash:fingerprint(data),confirmation:null});
 }
-function confirmTaxFacts(candidate,{decisionSource,actor,reviewedSnapshotHash}={}){
+function confirmTaxFacts(candidate,{decisionSource,actor,reviewedSnapshotHash,policyMode='STRICT'}={}){
+ if(decisionSource==='USER_INPUT'&&policyMode==='HACKATHON_DEMO'){
+  if(reviewedSnapshotHash!==candidate.snapshotHash||!candidate.facts.length||candidate.facts.some(f=>f.confirmationAuthority!=='USER_INPUT'))throw Error('Every demo-confirmed fact must have direct user-input provenance');
+  const rebuilt=candidateTaxFacts(candidate);if(rebuilt.snapshotHash!==candidate.snapshotHash)throw Error('Tax facts changed');
+  return deepFreeze({...rebuilt,status:'CONFIRMED',confirmation:{decisionSource:'USER_INPUT',confirmationAuthority:'USER_INPUT',policyMode,actor:'USER',snapshotHash:rebuilt.snapshotHash,at:new Date().toISOString()}});
+ }
  if(decisionSource!=='HUMAN'||typeof actor!=='string'||!actor.trim()||/^(ai|model|meta|muse|system)(?:$|[: -])/i.test(actor)||reviewedSnapshotHash!==candidate.snapshotHash)throw Error('Explicit human confirmation of exact tax facts required');
  const rebuilt=candidateTaxFacts(candidate);if(rebuilt.snapshotHash!==candidate.snapshotHash)throw Error('Tax facts changed');
  return deepFreeze({...rebuilt,status:'CONFIRMED',confirmation:{decisionSource,actor,snapshotHash:rebuilt.snapshotHash,at:new Date().toISOString()}});
 }
-function inspectFacts(snapshot){
- try{const rebuilt=candidateTaxFacts(snapshot);if(rebuilt.snapshotHash!==snapshot.snapshotHash||snapshot.status!=='CONFIRMED'||snapshot.confirmation?.snapshotHash!==rebuilt.snapshotHash||snapshot.confirmation?.decisionSource!=='HUMAN'||typeof snapshot.confirmation.actor!=='string'||!snapshot.confirmation.actor.trim()||/^(ai|model|meta|muse|system)(?:$|[: -])/i.test(snapshot.confirmation.actor))return {status:'REVIEW_REQUIRED',reason:'CONFIRMED_TAX_FACTS_REQUIRED'};
+function inspectFacts(snapshot,{policyMode='STRICT'}={}){
+ try{const rebuilt=candidateTaxFacts(snapshot);const userConfirmed=policyMode==='HACKATHON_DEMO'&&snapshot.confirmation?.decisionSource==='USER_INPUT'&&snapshot.confirmation?.policyMode==='HACKATHON_DEMO'&&snapshot.facts.every(f=>f.confirmationAuthority==='USER_INPUT');if(rebuilt.snapshotHash!==snapshot.snapshotHash||snapshot.status!=='CONFIRMED'||snapshot.confirmation?.snapshotHash!==rebuilt.snapshotHash||(!userConfirmed&&(snapshot.confirmation?.decisionSource!=='HUMAN'||typeof snapshot.confirmation.actor!=='string'||!snapshot.confirmation.actor.trim()||/^(ai|model|meta|muse|system)(?:$|[: -])/i.test(snapshot.confirmation.actor))))return {status:'REVIEW_REQUIRED',reason:'CONFIRMED_TAX_FACTS_REQUIRED'};
   const facts=new Map();for(const f of snapshot.facts){
    if(!facts.has(f.name)){facts.set(f.name,f);continue;}
    if(fingerprint(facts.get(f.name))===fingerprint(f))continue;
@@ -31,9 +36,9 @@ function inspectFacts(snapshot){
 function profileTaxFactCandidates(profileState,{scopeId,subjectId,period,economicDate,currency}={}){
  const facts=[];for(const f of profileState.jurisdictionFacts??[]){if(f.countryCode&&['CANDIDATE','CONFIRMED'].includes(f.status)&&['REGISTRATION','TAX_RESIDENCE','SOURCE','WITHHOLDING','BUSINESS_WORK_LOCATION','CUSTOMER_LOCATION','POSSIBLE_PE','ACCOUNT_LOCATION'].includes(f.basis)){
   const multi=MULTI_VALUE_FACT_BASES.has(f.basis);
-  facts.push({name:multi?`${f.basis}_${f.countryCode}`:f.basis,type:'COUNTRY',value:f.countryCode,evidenceReference:f.supportingQuote??'Profile candidate: '+f.basis});}}
- const subject=profileState.slots?.['org.subjectType'];if(subject?.value&&['CANDIDATE','CONFIRMED'].includes(subject.status))facts.push({name:'SUBJECT_TYPE',type:'STRING',value:subject.value,evidenceReference:subject.supportingQuote??'Profile candidate subject type'});
- const nationality=profileState.slots?.['user.nationality'];if(nationality?.value)facts.push({name:'NATIONALITY',type:'COUNTRY',value:nationality.value,evidenceReference:nationality.supportingQuote??'Profile candidate nationality'});
+  facts.push({name:multi?`${f.basis}_${f.countryCode}`:f.basis,type:'COUNTRY',value:f.countryCode,evidenceReference:f.supportingQuote??'Profile candidate: '+f.basis,...(f.source==='USER'&&f.supportingQuote?{confirmationAuthority:'USER_INPUT'}:{})});}}
+ const subject=profileState.slots?.['org.subjectType'];if(subject?.value&&['CANDIDATE','CONFIRMED'].includes(subject.status))facts.push({name:'SUBJECT_TYPE',type:'STRING',value:subject.value,evidenceReference:subject.supportingQuote??'Profile candidate subject type',...(subject.source==='USER'&&subject.supportingQuote?{confirmationAuthority:'USER_INPUT'}:{})});
+ const nationality=profileState.slots?.['user.nationality'];if(nationality?.value)facts.push({name:'NATIONALITY',type:'COUNTRY',value:nationality.value,evidenceReference:nationality.supportingQuote??'Profile candidate nationality',...(nationality.source==='USER'&&nationality.supportingQuote?{confirmationAuthority:'USER_INPUT'}:{})});
  return candidateTaxFacts({scopeId,subjectId,revision:profileState.revision,period,economicDate,currency,facts});
 }
 module.exports={candidateTaxFacts,confirmTaxFacts,inspectFacts,profileTaxFactCandidates,MULTI_VALUE_FACT_BASES};

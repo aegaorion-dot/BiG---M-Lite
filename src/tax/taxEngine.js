@@ -32,7 +32,7 @@ class UniversalTaxEngine{
   const trace=[],base={status:'REVIEW_REQUIRED',reason:null,taxReady:false,taxType:request.taxType,jurisdictionCode:request.jurisdictionCode??null,period:request.period??null,economicDate:request.economicDate??null,currency:request.currency??null,appliedRules:[],demoDisclosures:[],taxableBase:null,rate:null,taxAmount:null,reliefs:[],withholding:null,treatyResult:null,evidenceRefs:[],packId:null,packVersion:null,domesticCandidate:null,requiredMissingFacts:[],calculationTrace:trace,postingPerformed:false};
   const finish=(status,reason,extra={})=>({...base,status,reason,...extra});
   if(!TYPES.includes(request.taxType))return finish('UNSUPPORTED_TAX_TYPE','TAX_TYPE_OUTSIDE_LITE_CAPABILITIES');
-  const inspected=inspectFacts(snapshot);if(inspected.status!=='CONFIRMED')return finish(inspected.status,inspected.reason);
+  const inspected=inspectFacts(snapshot,{policyMode:this.registry.policyMode});if(inspected.status!=='CONFIRMED')return finish(inspected.status,inspected.reason);
   if(snapshot.scopeId!==request.scopeId||snapshot.subjectId!==request.subjectId||snapshot.economicDate!==request.economicDate||snapshot.currency!==request.currency||fingerprint(snapshot.period)!==fingerprint(request.period))return finish('REVIEW_REQUIRED','FACT_SCOPE_PERIOD_DATE_OR_CURRENCY_MISMATCH');
   const facts=inspected.facts,subject=facts.get('SUBJECT_TYPE'),income=facts.get('INCOME_TYPE'),jurisdiction=facts.get(request.jurisdictionBasis);
   const missing=['SUBJECT_TYPE','INCOME_TYPE'].filter(k=>!facts.has(k));if(!BASIS.includes(request.jurisdictionBasis)||!jurisdiction)missing.push(BASIS.includes(request.jurisdictionBasis)?request.jurisdictionBasis:'EXPLICIT_TAX_JURISDICTION_BASIS');
