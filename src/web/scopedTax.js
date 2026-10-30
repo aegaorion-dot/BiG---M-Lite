@@ -4,7 +4,7 @@ const {Money}=require('../domain/money'),{fingerprint,deepFreeze}=require('../on
 const copy=x=>JSON.parse(JSON.stringify(x));
 function createScopedCalculation({state,system,financial,workspace,profileRevision,persist}){
  const services=()=>system();
- const supportedPack=id=>['ID_PP55_PT_2025','ID_PP20_TRANSITIONAL_PT_2026'].includes(id);
+ const supportedPack=id=>['ID_PP55_PT_2025','ID_PP20_TRANSITIONAL_PT_2026',...require('../../research/moroccan-tax/expanded-catalog.json').candidates.map(c=>c.executableContent.packId??c.executableContent.treatyPackId)].includes(id);
  const binding=(position,ids)=>fingerprint({period:workspace().period,profileRevision:profileRevision(),scopes:position.scopePosition?.scopes.filter(s=>ids.includes(s.scopeId)),journalCount:position.accounting.journalCount});
  function view(position=financial()){
   if(!state.proposal)return {status:'NOT_REQUESTED',result:null,proposal:null};
@@ -28,8 +28,8 @@ function createScopedCalculation({state,system,financial,workspace,profileRevisi
   const data={request:copy(request),ownership:copy(ownership),snapshot,financialHash,incomeByScope:selected.map(s=>({scopeId:s.scopeId,name:s.name,grossIncome:s.amounts.revenue,capital:s.amounts.capital,recordedExpenses:s.amounts.expenses,journalIds:s.journalIds})),excludedScopes:rows.filter(s=>!ownership.scopeIds.includes(s.scopeId)).map(s=>({scopeId:s.scopeId,name:s.name,reason:'SEPARATE_TAX_SUBJECT_REVIEW_REQUIRED'}))};
   const proposal=deepFreeze({...data,proposalHash:fingerprint(data)}),before=copy(state);state.proposal=proposal;state.result=null;try{services();persist();return view();}catch(e){Object.assign(state,before);throw e;}
  }
- function law(){const s=services();return s.registry.list('COUNTRY_PACK').filter(c=>supportedPack(c.executableContent.packId)).map(c=>({candidateId:c.candidateId,contentHash:c.contentHash,governanceStatus:c.status,reviewedHashes:[...new Set(c.provenance.map(p=>p.rawContentHash))].sort(),pack:c.executableContent}));}
- function reviewLaw({candidateId,contentHash,actor,decisionSource,reviewedHashes,reason}){const s=services(),c=s.registry.governance.get(candidateId);if(!c||c.contentHash!==contentHash||!supportedPack(c.executableContent.packId))throw Error('Review the exact current scoped legal content');s.registry.governance.review(candidateId,{actor,decisionSource,decision:'APPROVED',reviewedHashes,reason});return law();}
+ function law(){const s=services();return s.registry.snapshot().filter(c=>supportedPack(c.executableContent.packId??c.executableContent.treatyPackId)).map(c=>({candidateId:c.candidateId,contentHash:c.contentHash,governanceStatus:c.status,reviewedHashes:[...new Set(c.provenance.map(p=>p.rawContentHash))].sort(),pack:c.executableContent}));}
+ function reviewLaw({candidateId,contentHash,actor,decisionSource,reviewedHashes,reason}){const s=services(),c=s.registry.governance.get(candidateId);if(!c||c.contentHash!==contentHash||!supportedPack(c.executableContent.packId??c.executableContent.treatyPackId))throw Error('Review the exact current scoped legal content');s.registry.governance.review(candidateId,{actor,decisionSource,decision:'APPROVED',reviewedHashes,reason});return law();}
  function confirm({proposalHash,actor,decisionSource}){
   const p=state.proposal;if(!p||proposalHash!==p.proposalHash||binding(financial(),p.ownership.scopeIds)!==p.financialHash)throw Error('Current exact financial/tax proposal review required');
   const snapshot=confirmTaxFacts(p.snapshot,{actor,decisionSource,reviewedSnapshotHash:p.snapshot.snapshotHash}),s=services(),record=s.engine.determine(p.request,snapshot);

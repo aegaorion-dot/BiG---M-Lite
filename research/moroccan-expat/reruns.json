@@ -188,5 +188,34 @@
       "cardAndDocumentMs": 25840
     },
     "error": null
+  },
+  {
+    "run": 15,
+    "at": "2026-10-29T23:38:43.947Z",
+    "success": true,
+    "complete": true,
+    "taxYear": "2025",
+    "browser": false,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 102493,
+    "timings": {
+      "firstProfileAndQuestionMs": 139,
+      "profileResolutionMs": 52,
+      "activityBatchMs": 30825,
+      "cardAndDocumentMs": 12930
+    },
+    "error": null
+  },
+  {
+    "run": 16,
+    "at": "2026-10-29T23:42:35.419Z",
+    "success": false,
+    "complete": false,
+    "taxYear": "2025",
+    "browser": true,
+    "stage": "process-restart-and-replay",
+    "elapsedMs": 189512,
+    "timings": null,
+    "error": "Expected values to be strictly deep-equal:\n+ actual - expected ... Lines skipped\n\n  [\n    {\n...\n      facts: [\n        {\n+         display: 'الإقامة الداخلية فإندونيسيا مدعومة بـ 184 يوم حضور فعلي حتى 31 أكتوبر 2025 حسب PER43/PJ/2011، وكنحسبو حتى جزء النهار. عدد تقويم السفر اللي ما كيحسبش نهار الخروج مختلف. إقامة المغرب والإمارات للاتفاقيات باقية للمراجعة.',\n-         display: 'ما نقدرش نحكم أنك مقيم ضريبي فإندونيسيا. من 2025-01-01 حتى قبل 2025-11-01 سجلنا 183 يوم فإندونيسيا. الفترات المصرح بها: إندونيسيا: 2025-01-01 / 2025-04-01; الإمارات العربية المتحدة: 2025-04-01 / 2025-07-31; إندونيسيا: 2025-07-31 / 2025-11-01. الحساب شامل يوم الدخول وما شاملش يوم الخروج؛ هادي طريقة عرض تقويمية ماشي قاعدة قانونية. الإقامة الضريبية خاصها وقائع وقواعد معتمدة ومراجعة. 184 / PER43/PJ/2011',\n          id: 'scope.residence',\n...\n      kind: 'CALCULATED_RESULT'\n    }\n  ]"
   }
 ]

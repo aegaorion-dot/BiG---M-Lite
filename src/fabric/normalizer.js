@@ -1,5 +1,6 @@
 'use strict';
-const {getSource,lookupSource,classifyLink}=require('./registry');
+const {getSource,lookupSource,classifyLink:currentLinkClassification}=require('./registry');
+const classifyLink=(jurisdiction,url)=>currentLinkClassification(jurisdiction,url,{registryVersion:1});
 const {hash,detectType,mimeMatches}=require('./artifacts');
 const {deepFreeze}=require('../onboarding/canonical');
 const VERSION='fabric-envelope/1';

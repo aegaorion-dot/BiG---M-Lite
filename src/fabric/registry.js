@@ -2,11 +2,13 @@
 const {deepFreeze}=require('../onboarding/canonical');
 const rows=[
  ['MA','FINANCE','Morocco Ministry of Economy and Finance / DGI publications','PRIMARY_LEGISLATION','finances.gov.ma','fr'],
+ ['MA','DGI','Morocco Direction Generale des Impots','TAX_AUTHORITY','tax.gov.ma','fr'],
  ['MA','CRI','Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror','OFFICIAL_GUIDANCE','casainvest.ma','fr'],
  ['AE','FTA','United Arab Emirates Federal Tax Authority','TAX_AUTHORITY','tax.gov.ae','en'],
  ['AE','GOV','United Arab Emirates official government portal','OFFICIAL_GUIDANCE','u.ae','en'],
  ['AE','ADRO','Abu Dhabi Residents Office, government guidance','OFFICIAL_GUIDANCE','adro.gov.ae','en'],
  ['ID','DJP','Direktorat Jenderal Pajak','TAX_AUTHORITY','pajak.go.id','id'],
+ ['ID','FISCAL','Indonesia Ministry of Finance fiscal tax exchange-rate decisions','FINANCE_MINISTRY','fiskal.kemenkeu.go.id','id'],
  ['ID','BPK','Badan Pemeriksa Keuangan legislation database','PRIMARY_LEGISLATION','peraturan.bpk.go.id','id'],
  ['ID','JDIH','Ministry of Finance legal documentation','SECONDARY_LEGISLATION','jdih.kemenkeu.go.id','id'],
  ['ID','DJPP','Directorate General of Legislation','OFFICIAL_GAZETTE','peraturan.go.id','id'],
@@ -62,8 +64,11 @@ function lookupSource(jurisdiction,input){
  if(u.protocol!=='https:'||u.username||u.password||u.port&&u.port!=='443')return null;
  return listSources(jurisdiction).find(s=>s.officialDomains.includes(u.hostname))??null;
 }
-function classifyLink(jurisdiction,input){
- if(lookupSource(jurisdiction,input))return 'REGISTERED_OFFICIAL_SOURCE';
+function classifyLink(jurisdiction,input,{registryVersion=null}={}){
+ const registered=lookupSource(jurisdiction,input);
+ // Normalizer v1 discovery labels are historical data. Adding an authority must
+ // not mutate old normalized envelopes or silently upgrade previously seen links.
+ if(registered&&!(registryVersion===1&&['MA-DGI','ID-FISCAL'].includes(registered.sourceId)))return 'REGISTERED_OFFICIAL_SOURCE';
  let u;try{u=new URL(input);}catch{return 'REJECTED_SOURCE';}
  if(u.protocol!=='https:'||u.username||u.password||u.port&&u.port!=='443')return 'REJECTED_SOURCE';
  return /(?:\.go\.id|\.gov\.sg|\.gov\.au|\.gov\.uk|\.gov)$/.test(u.hostname)?'UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE':'REJECTED_SOURCE';

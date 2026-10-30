@@ -129,6 +129,76 @@
       "envelopeId": "dd04cdaef0b40b9468f06b00db44d2d33e7b81d6a5e24acbf134060411ef6d77",
       "retrievedAt": "2026-10-29T15:03:24.221Z",
       "sourceUrl": "https://adro.gov.ae/en/Living-in-Abu-Dhabi/Money-And-Taxation"
+    },
+    {
+      "identity": "AE_NATURAL_2023",
+      "artifactId": "c892e4af-b419-48ea-a177-a59af2e7df2e",
+      "rawContentHash": "a365c742ebcc2277067cb3b7416b7960f42390dea3c3b21c982daaf67a48b9ef",
+      "envelopeId": "ec4cd4360f257b4fdf614a881ba6bfec94b7a6a156d24c0c363f612addac949f",
+      "retrievedAt": "2026-10-29T23:18:00.633Z",
+      "sourceUrl": "https://tax.gov.ae/Datafolder/Files/Guides/CT/Taxation%20of%20natural%20persons%20-%2025%2011%202023.pdf",
+      "extractionStorageRef": "research/moroccan-tax/extractions/AE_NATURAL_2023.json"
+    },
+    {
+      "identity": "ID_MA_TREATY",
+      "artifactId": "bb9d3586-c436-48fa-8564-2ca11c535d71",
+      "rawContentHash": "05cbd3dd853e6455c54cd3796fa5709828124b99a5fbcdea85ea9cb1d089a698",
+      "envelopeId": "e738c3562c5c53f9eefd1144c18c739916fa80e199dfc774f06540a717e5b615",
+      "retrievedAt": "2026-10-29T23:18:01.230Z",
+      "sourceUrl": "https://pajak.go.id/id/p3b/maroko"
+    },
+    {
+      "identity": "ID_FX_2025_OCT28",
+      "artifactId": "1f9a2b6d-97aa-4d24-8ce9-1117a8331d88",
+      "rawContentHash": "47296cf8ca097258435838e7d826d3e8f506ca57b51442030be614734adc725e",
+      "envelopeId": "2e10bdda7581db126a3f1d16cf40f32f530742d40181e32f50209cf365f982a4",
+      "retrievedAt": "2026-10-29T23:20:01.872Z",
+      "sourceUrl": "https://fiskal.kemenkeu.go.id/files/kurs/file/1761030247_nilai_kurs_22_-_28_okt_2025.pdf",
+      "extractionStorageRef": "research/moroccan-tax/extractions/ID_FX_2025_OCT28.json"
+    },
+    {
+      "identity": "ID_RESIDENCE_2011",
+      "artifactId": "7d598830-63bd-48b9-873d-65bd28d42cc9",
+      "rawContentHash": "38e682ebef355d43575309d5eb48b24d9de5adb05632a7a72c8197c2fd73e76f",
+      "envelopeId": "a2346e945a851b96dc7a5560fc8322df259a91ae19e87d7fae075d2b2d17a2dd",
+      "retrievedAt": "2026-10-29T23:20:02.321Z",
+      "sourceUrl": "https://www.pajak.go.id/id/peraturan/penentuan-subjek-pajak-dalam-negeri-dan-subjek-pajak-luar-negeri"
+    },
+    {
+      "identity": "ID_FX_2025_OCT29",
+      "artifactId": "6ed999ac-4a64-4da2-ace5-0c0b6f4ea407",
+      "rawContentHash": "4fea7dd8f347cf191572d4145d2ed7d5130edda313845a6c4a2558d2b2e396af",
+      "envelopeId": "5fcccf1edc287faa410994ef788d3f5f59f49b57d72319470d538d07e23f6ae6",
+      "retrievedAt": "2026-10-29T23:22:37.946Z",
+      "sourceUrl": "https://fiskal.kemenkeu.go.id/files/kurs/file/1761638206_nilai_kurs_29_okt_-_04_nov_2025.pdf",
+      "extractionStorageRef": "research/moroccan-tax/extractions/ID_FX_2025_OCT29.json"
+    },
+    {
+      "identity": "ID_FX_2025_OCT15",
+      "artifactId": "7b89bbd1-4dff-47ad-8f60-f3519c0044a5",
+      "rawContentHash": "905efc4c49bb293572388ddc74a3aa94268ec651efd7c3a399ad79e2168f8074",
+      "envelopeId": "853c454a9b42eadd8eda8dee19335fe0056d76ac2e941af78eef1d39e9a13f37",
+      "retrievedAt": "2026-10-29T23:22:38.043Z",
+      "sourceUrl": "https://fiskal.kemenkeu.go.id/files/kurs/file/1760431613_nilai_kurs_15_-_21_okt_2025.pdf",
+      "extractionStorageRef": "research/moroccan-tax/extractions/ID_FX_2025_OCT15.json"
+    },
+    {
+      "identity": "ID_FX_2025_OCT08",
+      "artifactId": "7b2e833a-686c-4a08-8b3e-4218a064b8cb",
+      "rawContentHash": "4ead11f22ff6b8ef1fae6b56e0e7d85351cee57a929caa68f2f6a65151bed929",
+      "envelopeId": "c37fcd57d865c0ba9b61ac7aad1db504cdeb1f2ca8bb09b435bbcd69b4151567",
+      "retrievedAt": "2026-10-29T23:22:38.063Z",
+      "sourceUrl": "https://fiskal.kemenkeu.go.id/files/kurs/file/1759832174_nilai_kurs_08_-_14_okt_2025.pdf",
+      "extractionStorageRef": "research/moroccan-tax/extractions/ID_FX_2025_OCT08.json"
+    },
+    {
+      "identity": "ID_FX_2025_OCT01",
+      "artifactId": "df79ba6f-6d78-40dc-adf8-f3e5a9de4328",
+      "rawContentHash": "9daf3aad5f7f95bb1fa2a4ef00905853c2299fccce31d106c4e0c49bb3406c5b",
+      "envelopeId": "c47771d432553de30b07e08eada1bada77484f5a498cc0ca12f96e1662ac9fd7",
+      "retrievedAt": "2026-10-29T23:22:38.081Z",
+      "sourceUrl": "https://fiskal.kemenkeu.go.id/files/kurs/file/1759223725_nilai_kurs_01_-_07_oct_2025.pdf",
+      "extractionStorageRef": "research/moroccan-tax/extractions/ID_FX_2025_OCT01.json"
     }
   ]
 }

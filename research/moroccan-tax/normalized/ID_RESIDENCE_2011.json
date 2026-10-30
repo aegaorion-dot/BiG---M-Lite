@@ -1,0 +1,512 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "ID-DJP",
+  "jurisdictionCode": "ID",
+  "metadata": {
+    "title": "PENENTUAN SUBJEK PAJAK DALAM NEGERI DAN SUBJEK PAJAK LUAR NEGERI | Direktorat Jenderal Pajak",
+    "officialDocumentId": null,
+    "language": "id",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "7d598830-63bd-48b9-873d-65bd28d42cc9",
+    "rawContentHash": "38e682ebef355d43575309d5eb48b24d9de5adb05632a7a72c8197c2fd73e76f",
+    "sourceUrl": "https://www.pajak.go.id/id/peraturan/penentuan-subjek-pajak-dalam-negeri-dan-subjek-pajak-luar-negeri",
+    "finalUrl": "https://www.pajak.go.id/id/peraturan/penentuan-subjek-pajak-dalam-negeri-dan-subjek-pajak-luar-negeri",
+    "retrievedAt": "2026-10-29T23:20:02.321Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "DJP",
+    "authorityName": "Direktorat Jenderal Pajak",
+    "sourceRole": "TAX_AUTHORITY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/38e682ebef355d43575309d5eb48b24d9de5adb05632a7a72c8197c2fd73e76f.bin",
+    "rawContentHash": "38e682ebef355d43575309d5eb48b24d9de5adb05632a7a72c8197c2fd73e76f"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/38e682ebef355d43575309d5eb48b24d9de5adb05632a7a72c8197c2fd73e76f.bin",
+      "rawContentHash": "38e682ebef355d43575309d5eb48b24d9de5adb05632a7a72c8197c2fd73e76f"
+    },
+    "metaTags": [
+      "<meta charset=\"utf-8\" />",
+      "<meta name=\"robots\" content=\"index, follow\" />",
+      "<meta name=\"keywords\" content=\"pajak, djp, direktorat jenderal pajak, pph, kup, ppn, ppnbm, djponline\" />",
+      "<meta property=\"og:determiner\" content=\"An\" />",
+      "<meta property=\"og:site_name\" content=\"Direktorat Jenderal Pajak\" />",
+      "<meta property=\"og:url\" content=\"http://www.pajak.go.id/id/peraturan/penentuan-subjek-pajak-dalam-negeri-dan-subjek-pajak-luar-negeri\" />",
+      "<meta property=\"og:title\" content=\"PENENTUAN SUBJEK PAJAK DALAM NEGERI DAN SUBJEK PAJAK LUAR NEGERI\" />",
+      "<meta name=\"Generator\" content=\"Drupal 8 (https://www.drupal.org)\" />",
+      "<meta name=\"MobileOptimized\" content=\"width\" />",
+      "<meta name=\"HandheldFriendly\" content=\"true\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+      "<meta name=\"HandheldFriendly\" content=\"true\" />",
+      "<meta name=\"apple-touch-fullscreen\" content=\"YES\" />"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Peraturan Dirjen Pajak PER-43/PJ/2011 Tanggal Peraturan 28-12-2011 KEMENTERIAN KEUANGAN REPUBLIK INDONESIA DIREKTORAT JENDERAL PAJAK PERATURAN DIREKTUR JENDERAL PAJAK NOMOR PER-43/PJ/2011 TENTANG PENENTUAN SUBJEK PAJAK DALAM NEGERI DAN SUBJEK PAJAK LUAR NEGERI DENGAN RAHMAT TUHAN YANG MAHA ESA DIREKTUR JENDERAL PAJAK, Menimbang : bahwa dalam rangka memberikan kepast ian hukum dalam penentuan status subjek pajak dalam negeri dan subjek pajak luar negeri, serta untuk melaksanakan ketentuan Pasal 1, Pasal 2 dan Pasal 2A Undang-Undang Nomor 7 Tahun 1983 tentang Pajak Penghasilan sebagaimana telah beberapa kali diubah terakhir dengan Undang-Undang Nomor 36 Tahun 2008, perlu menetapkan Peraturan Direktur Jenderal Pajak tentang Penentuan Subjek Pajak Dalam Negeri dan Subjek Pajak Luar Negeri; Mengingat : 1. Undang-Undang Nomor 6 Tahun 1983 tentang Ketentuan Umum dan Tata Cara Perpajakan (Lembaran Negara Republik Indonesia Tahun 1983 Nomor 49, Tambahan Lembaran Negara Republik Indonesia Nomor 3262) sebagaimana telah diubah beberapa kali terakhir dengan Undang-Undang Nomor 16 Tahun 2009 (Lembaran Negara Republik Indonesia Tahun 2009 Nomor 62, Tambahan Lembaran Negara Republik Indonesja Nomor 4999); 2. Undang-Undang Nomor 7 Tahun 1983 tentang Pajak Penghasilan (Lembaran Negara Republik Indonesia Tahun 1983 Nomor 50, Tambahan Lembaran Negara Republik Indonesia Nomor 3263) sebagaimana telah beberapa kali diubah terakhir dengan Undang-Undang Nomor 36 Tahun 2008 (Lembaran Negara Republik Indonesia Tahun 2008 Nomor 133, Tambahan Lembaran Negara Republik Indonesia Nomor 4893); MEMUTUSKAN: Menetapkan : PERATURAN DIREKTUR JENDERAL PAJAK TENTANG PENENTUAN SUBJEK PAJAK DALAM NEGERI DAN SUBJEK PAJAK LUAR NEGERI. Pasal 1 Dalam Peraturan Direktur Jenderal Pajak ini yang dimaksud dengan: 1. Undang-Undang tentang Pajak Penghasilan yang selanjutnya disebut Undang-Undang PPh adalah Undang-Undang Nomor 7 Tahun 1983 tentang Pajak Penghasilan sebagaimana telah beberapa kali diubah terakhir dengan Undang-Undang Nomor 36 Tahun 2008. 2. Persetujuan Penghindaran Pajak Berganda yang selanjutnya disebut P3B adalah perjanjian antara Pemerintah Indonesia dengan pemerintah negara mitra atau jurisdiksi mitra untuk mencegah terjadi pengenaan pajak berganda dan pengelakan pajak. Pasal 2 1. Yang menjadi subjek pajak adalah orang pribadi, warisan yang belum terbagi sebagai satu kesatuan menggantikan yang berhak, badan, dan bentuk usaha tetap. 2. Subjek Pajak dapat dibedakan atas subjek pajak dalam negeri dan subjek pajak luar negeri sesuai dengan ketentuan dalam Pasal 2 ayat (2) Undang-Undang PPh. Pasal 3 1. Subjek pajak dalam negeri adalah: a. orang pribadi yang: 1. bertempat tinggal di Indonesia, atau 2. berada di Indonesia lebih dari 183 (seratus delapan puluh tiga) hari dalam jangka waktu 12 (dua belas) bulan, atau 3. dalam suatu Tahun Pajak berada di Indonesia dan mempunyai niat untuk bertempat tinggal di Indonesia. b. badan yang didirikan atau bertempat kedudukan di Indonesia, dan c. warisan yang belum terbagi sebagai satu kesatuan menggantikan yang berhak. 2. Orang pribadi atau badan yang tidak memenuhi kriteria sebagai subjek pajak dalam negeri sebagaimana dimaksud pada ayat (1) merupakan subjek pajak luar negeri. 3. Orang pribadi yang merupakan subjek pajak dalam negeri menjadi Wajib Pajak dalam negeri, apabila telah menerima atau memperoleh penghasilan yang berasal dari Indonesia maupun dari luar Indonesia dan besarnya penghasilan melebihi Penghasilan Tidak Kena Pajak. 4. Badan yang merupakan subjek pajak dalam negeri menjadi Wajib Pajak dalam negeri, sejak saat didirikan atau bertempat kedudukan di Indonesia dan menerima penghasilan baik yang diterima atau diperoleh dari Indonesia maupun dari luar Indonesia. Pasal 4 1. Subjek pajak luar negeri adalah orang pribadi yang tidak bertempat tinggal di Indonesia, orang pribadi yang berada di Indonesia tidak lebih dari 183 (seratus delapan puluh tiga hari dalam jangka waktu 12 (dua belas) bulan, dan badan yang tidak didirikan dan tidak bertempat kedudukan di Indonesia: a. yang menjalankan usaha atau melakukan kegiatan melalui bentuk usaha tetap di Indonesia; atau b. yang dapat menerima atau memperoleh penghasilan dari Indonesia tidak dari menjalankan usaha atau melakukan kegiatan melalui bentuk usaha tetap di Indonesia. 2. Pengertian \"yang dapat menerima atau memperoleh penghasilan dari Indonesia\" sebagaimana terdapat pada ayat (1) huruf b meliputi pula yang tidak menerima atau memperoleh penghasilan dari Indonesia. Pasal 5 1. Subjek pajak luar negeri sebagaimana dimaksud dalam Pasal 4 ayat (1) dapat menjalankan usaha atau melakukan kegiatan melalui bentuk usaha tetap di Indonesia. 2. Bentuk usaha tetap sebagaimana dimaksud pada ayat (1) merupakan tempat usaha yang bersifat permanen yang dipergunakan oleh subjek pajak luar negeri, orang pribadi atau badan, sebagaimana dimaksud dalam Pasal 4 ayat (1) untuk menjalankan kegiatan atau usaha di Indonesia. Pasal 6 1. Pemenuhan kewajiban perpajakan bentuk usaha tetap sebagaimana dimaksud dalam Pasal 5 ayat (1) dipersamakan dengan pemenuhan kewajiban perpajakan Wajib Pajak badan dalam negeri. 2. Pemenuhan kewajiban perpajakan bentuk usaha tetap sebagaimana dimaksud pada ayat (1) dimulai sejak menerima dan/atau memperoleh penghasilan yang bersumber dari Indonesia melalui bentuk usaha tetap di Indonesia. Pasal 7 1. Orang pribadi yang bertempat tinggal di Indonesia sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf a angka 1) adalah orang pribadi yang: a. mempunyai tempat tinggal (place of residence) di Indonesia yang digunakan oleh orang pribadi sebagai tempat untuk: 1. berdiam (permanent dwelling place), yang tidak bersifat sementara dan tidak sebagai tempat persinggahan, 2. melakukan kegiatan sehari-hari atau menjalankan kebiasaannya (ordinary course of life), 3. tempat menjalankan kebiasaan (place of habitual abode), atau b. mempunyai tempat domisili (place of domicile) di Indonesia, yaitu orang pribadi yang dilahirkan di Indonesia yang masih berada di Indonesia. 2. Tempat tinggal orang pribadi sebagaimana dimaksud pada ayat (1): a. dapat ditempati sendiri oleh orang pribadi atau bersama-sama dengan keluarganya, yang dapat dimiliki, disewa, atau tersedia untuk digunakannya; dan b. berdasarkan pada keadaan yang sebenarnya. 3. Orang pribadi dianggap mempunyai tempat berdiam (permanent dwelling place) di Indonesia sebagaimana dimaksud pada ayat (1) huruf a angka 1) dalam hal orang pribadi mempunyai tempat di Indonesia yang dipakai untuk kediaman, yang bersifat tidak sementara dan bukan sebagai persinggahan. 4. Orang pribadi dianggap mempunyai tempat melakukan kegiatan sehari-hari atau menjalankan kebiasaannya (ordinary course of life) di Indonesia sebagaimana dimaksud pada ayat (1) huruf a angka 2) dalam hal orang pribadi mempunyai tempat di Indonesia yang digunakan untuk melakukan kegiatan sehari-hari terkait dengan urusan ekonomi, keuangan, atau sosial pribadinya, antara lain turut serta dalam kegiatan-kegiatan di masyarakat, turut serta dalam kegiatan, keanggotaan, atau kepengurusan suatu organisasi, kelompok, atau perkumpulan di Indonesia. 5. Orang pribadi dianggap mempunyai tempat menjalankan kebiasaan (place of habitual abode) di Indonesia sebagaimana dimaksud pada ayat (1) huruf a angka 3) dalam hal orang pribadi mempunyai tempat di Indonesia yang digunakan untuk melakukan kebiasaaan atau kegiatan, baik yang bersifat rutin, sering ataupun tidak, antara lain melakukan aktivitas yang menjadi kegemaran atau hobi. Pasal 8 1. Orang pribadi yang bertempat tinggal di Indonesia sebagaimana dimaksud pada Pasal 7 ayat (1) yang kemudian pergi ke luar negeri tetap dianggap bertempat tinggal di Indonesia, apabila keberadaannya di luar negeri berpindahpindah dan berada di Indonesia lebih dari 183 (seratus delapan puluh tiga) hari dalam jangka waktu 12 (dua belas) bulan. 2. Orang pribadi Warga Negara Indonesia yang berada di luar negeri dianggap tidak bertempat tinggal di Indonesia apabila bertempat tinggal tetap di luar negeri yang dibuktikan dengan salah satu dokumen tanda pengenal resmi yang masih berlaku sebagai penduduk di luar negeri, yaitu: a. Green Card, b. identity card, c. student card , d. pengesahan alamat di luar negeri pada paspor oleh Kantor Perwakilan Republik Indonesia di luar negeri, e. surat keterangan dari Kedutaan Besar Republik Indonesia atau Kantor Perwakilan Republik Indonesia di luar negeri, atau f. tertulis resmi di paspor oleh Kantor Imigrasi Negara setempat. Pasal 9 Yang dimaksud dengan berada di Indonesia bagi Subjek Pajak orang pribadi sebagaimana dimaksud dalam Pasal 3 ayat ( 1) huruf a angka 1), angka 3), dan Pasal 4 ayat (1) adalah Subjek Pajak orang pribadi berdasarkan keadaan yang sebenarnya berada di dalam wilayah Negara Republik Indonesia pada suatu waktu. Pasal 10 Jangka waktu 183 (seratus delapan puluh tiga) hari sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf a angka 2) ditentukan dengan menghitung lamanya Subjek Pajak orang pribadi berada di Indonesia, yang keberadaannya di Indonesia dapat secara terus menerus atau terputus-putus, dan bagian dari hari dihitung penuh 1 (satu) hari. Pasal 11 Subjek Pajak orang pribadi dianggap mempunyai niat untuk bertempat tinggal di Indonesia sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf a angka 3) dalam hal: a. Subjek Pajak orang pribadi menunjukkan niatnya secara tegas untuk bertempat tinggal di Indonesia, yang dapat dibuktikan dengan dokumen berupa: 1. Visa bekerja, atau 2. Kartu Izin Tinggal Terbatas (KITAS), lebih dari 183 hari (seratus delapan puluh tiga) hari atau kontrakjperjanjian untuk melakukan pekerjaan, usaha, atau kegiatan yang dilakukan di Indonesia selama lebih 183 (seratus delapan puluh tiga) hari. b. Subjek Pajak orang pribadi melakukan tindakan yang menunjukkan bahwa dirinya akan bertempat tinggal di Indonesia atau bersiap untuk bertempat tinggal di Indonesia, seperti menyewa atau mengontrak tempat, termasuk menyewa tempat tinggal di Indonesia, memindahkan anggota keluarga atau memperoleh tempat yang disediakan oleh pihak lain. Pasal 12 1. Orang pribadi yang merupakan Warga Negara Indonesia yang bekerja di luar negeri lebih dari 183 (seratus delapan puluh tiga) hari dalam jangka waktu 12 (dua belas) bulan merupakan subjek pajak luar negeri. 2. Orang pribadi sebagaimana dimaksud pada ayat (1) tetap merupakan subjek pajak dalam negeri apabila tidak memiliki atau tidak dapat menunjukkan salah satu dokumen tanda pengenal resmi yang masih berlaku sebagai penduduk di luar negeri sebagaimana dimaksud dalam Pasal 8 ayat (2). 3. Atas penghasilan yang diterima atau diperoleh orang pribadi sebagaimana dimaksud pada ayat (1) sehubungan dengan pekerjaannya di luar Indonesia dan penghasilannya bersumber dari luar Indonesia, tidak dikenai Pajak Penghasilan di Indonesia. 4. Dalam hal orang pribadi sebagaimana dimaksud pada ayat (1) menerima atau memperoleh penghasilan yang bersumber dari Indonesia, penghasilan tersebut dikenai Pajak Penghasilan sesuai ketentuan perundang-undangan di bidang perpajakan yang berlaku. Pasal 13 1. Subjek pajak orang pribadi dalam negeri yang meninggalkan Indonesia untuk selama-lamanya dan orang pribadi Warga Negara Indonesia sebagaimana dimaksud dalam Pasal 12 ayat (1) menjadi subjek pajak luar negeri sejak meninggalkan Indonesia. 2. Orang pribadi sebagaimana dimaksud pada ayat (1) tetap diwajibkan menyampaikan Surat Pemberitahuan Tahunan Pajak Penghasilan untuk melaporkan dan mempertanggungjawabkan jumlah pajak yang sebenarnya terutang atas penghasilan yang diterima atau diperoleh dalam Tahun Pajak atau Bagian Tahun Pajak terakhir dalam statusnya sebagai subjek pajak dalam negeri sesuai dengan ketentuan perundang-undangan di bidang perpajakan yang berlaku. 3. Bagi subjek pajak orang pribadi dalam negeri meninggalkan Indonesia untuk selama-lamanya menyampaikan Surat Pemberitahuan Tahunan Penghasilan paling lambat saat meninggalkan Indonesia. Pasal 14 Subjek Pajak badan yang didirikan di Indonesia sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf b adalah badan sebagaimana dimaksud dalam Undang-Undang Nomor 6 Tahun 1983 tentang Ketentuan Umum dan Tata Cara Perpajakan sebagaimana telah diubah beberapa kali terakhir dengan UndangUndang Nomor 16 Tahun 2009, tidak termasuk bentuk usaha tetap, yang pendirian atau pembentukannya: a. berdasarkan ketentuan perundang-undangan di Indonesia, b. didaftarkan di Indonesia berdasarkan ketentuan perundangundangan di Indonesia, atau c. di dalam wilayah hukum Indonesia. Pasal 15 1. Badan yang bertempat kedudukan di Indonesia sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf b adalah Subjek Pajak badan yang: a. mempunyai tempat kedudukan berada di Indonesia sebagaimana tercantum dalam akta pendirian badan, b. mempunyai kantor pusat di Indonesia, c. mempunyai tempat kedudukan pusat administrasi dan/ atau pusat keuangan di Indonesia, d. mempunyai tempat kantor pimpinan yang berada di Indonesia yang melakukan pengendalian, e. pengurusnya melakukan pertemuan di Indonesia untuk membuat keputusan strategis, atau f. pengurusnya bertempat tinggal atau berdomisili di Indonesia. 2. Tempat kedudukan badan sebagaimana dimaksud ayat (1) ditentukan berdasarkan keadaan atau kenyataan yang sebenarnya. Pasal 16 1. Subjek pajak luar negeri dapat menjalankan kegiatan atau usaha melalui suatu bentuk usaha tetap di Indonesia dalam hal mempunyai tempat kedudukan manajemen yang berada di Indonesia. 2. Tempat kedudukan manajemen sebagaimana dimaksud pada ayat (1) adalah tempat kedudukan manajemen yang menjalankan kegiatan/operasi perusahaan sehari-hari atau secara rutin yang tidak melakukan pengendalian atas seluruh perusahaan dan tidak membuat keputusan yang bersifat strategis. 3. Dalam hal tempat kedudukan manajemen sebagaimana dimaksud pada ayat (1) melakukan pengendalian atas seluruh perusahaan atau tempat membuat keputusan yang bersifat strategis, subjek pajak luar negeri sebagaimana dimaksud pada ayat (1) tersebut diperlakukan sebagai subjek pajak dalam negeri sebagaimana dimaksud Pasal 3 ayat ( 1). 4. Tempat kedudukan manajemen efektif yang terdapat dalam Persetujuan Penghindaran Pajak Berganda dapat diartikan sebagai tempat: a. keputusan manajemen dan komersial yang signifikan dibuat, atau b. pengurus membuat keputusan untuk kepentingan badan. Pasal 17 Saat berakhir dan saat dimulainya kewajiban pajak subjektif bagi subjek pajak dalam negeri dan subjek pajak luar negeri sebagaimana diatur dalam Pasal 2A Undang-Undang PPh diterapkan kepada Subjek Pajak setelah status Subjek Pajak orang pribadi atau badan ditentukan berdasarkan ketentuan dalam Pasal 3 dan Pasal 4. Pasal 18 Dalam hal orang pribadi atau badan merupakan subjek pajak dalam negeri dari negara mitra jurisdiksi mitra P3B dan subjek pajak dalam negeri sebagaimana dimaksud dalam Pasal 3, status subjek pajak orang pribadi atau badan dimaksud ditentukan berdasarkan ketentuan dalam P3B yang terkait. Pasal 19 Peraturan Direktur Jenderal Pajak ini mulai berlaku sejak tanggal ditetapkan. Agar setiap orang mengetahuinya, memerintahkan pengumuman Peraturan Direktur Jenderal Pajak ini dengan penempatannya dalam Berita Negara Republik Indonesia. Ditetapkan di Jakarta pada tanggal 28 Desember 2011 DIREKTUR JENDERAL, ttd. A. FUAD RAHMANY NIP 195411111981121001 Status Peraturan Aktif Kategori Peraturan PPh - Pajak Penghasilan",
+    "blocks": [
+      {
+        "locator": "html:article:48520",
+        "text": "Peraturan Dirjen Pajak PER-43/PJ/2011 Tanggal Peraturan 28-12-2011 KEMENTERIAN KEUANGAN REPUBLIK INDONESIA DIREKTORAT JENDERAL PAJAK PERATURAN DIREKTUR JENDERAL PAJAK NOMOR PER-43/PJ/2011 TENTANG PENENTUAN SUBJEK PAJAK DALAM NEGERI DAN SUBJEK PAJAK LUAR NEGERI DENGAN RAHMAT TUHAN YANG MAHA ESA DIREKTUR JENDERAL PAJAK, Menimbang : bahwa dalam rangka memberikan kepast ian hukum dalam penentuan status subjek pajak dalam negeri dan subjek pajak luar negeri, serta untuk melaksanakan ketentuan Pasal 1, Pasal 2 dan Pasal 2A Undang-Undang Nomor 7 Tahun 1983 tentang Pajak Penghasilan sebagaimana telah beberapa kali diubah terakhir dengan Undang-Undang Nomor 36 Tahun 2008, perlu menetapkan Peraturan Direktur Jenderal Pajak tentang Penentuan Subjek Pajak Dalam Negeri dan Subjek Pajak Luar Negeri; Mengingat : 1. Undang-Undang Nomor 6 Tahun 1983 tentang Ketentuan Umum dan Tata Cara Perpajakan (Lembaran Negara Republik Indonesia Tahun 1983 Nomor 49, Tambahan Lembaran Negara Republik Indonesia Nomor 3262) sebagaimana telah diubah beberapa kali terakhir dengan Undang-Undang Nomor 16 Tahun 2009 (Lembaran Negara Republik Indonesia Tahun 2009 Nomor 62, Tambahan Lembaran Negara Republik Indonesja Nomor 4999); 2. Undang-Undang Nomor 7 Tahun 1983 tentang Pajak Penghasilan (Lembaran Negara Republik Indonesia Tahun 1983 Nomor 50, Tambahan Lembaran Negara Republik Indonesia Nomor 3263) sebagaimana telah beberapa kali diubah terakhir dengan Undang-Undang Nomor 36 Tahun 2008 (Lembaran Negara Republik Indonesia Tahun 2008 Nomor 133, Tambahan Lembaran Negara Republik Indonesia Nomor 4893); MEMUTUSKAN: Menetapkan : PERATURAN DIREKTUR JENDERAL PAJAK TENTANG PENENTUAN SUBJEK PAJAK DALAM NEGERI DAN SUBJEK PAJAK LUAR NEGERI. Pasal 1 Dalam Peraturan Direktur Jenderal Pajak ini yang dimaksud dengan: 1. Undang-Undang tentang Pajak Penghasilan yang selanjutnya disebut Undang-Undang PPh adalah Undang-Undang Nomor 7 Tahun 1983 tentang Pajak Penghasilan sebagaimana telah beberapa kali diubah terakhir dengan Undang-Undang Nomor 36 Tahun 2008. 2. Persetujuan Penghindaran Pajak Berganda yang selanjutnya disebut P3B adalah perjanjian antara Pemerintah Indonesia dengan pemerintah negara mitra atau jurisdiksi mitra untuk mencegah terjadi pengenaan pajak berganda dan pengelakan pajak. Pasal 2 1. Yang menjadi subjek pajak adalah orang pribadi, warisan yang belum terbagi sebagai satu kesatuan menggantikan yang berhak, badan, dan bentuk usaha tetap. 2. Subjek Pajak dapat dibedakan atas subjek pajak dalam negeri dan subjek pajak luar negeri sesuai dengan ketentuan dalam Pasal 2 ayat (2) Undang-Undang PPh. Pasal 3 1. Subjek pajak dalam negeri adalah: a. orang pribadi yang: 1. bertempat tinggal di Indonesia, atau 2. berada di Indonesia lebih dari 183 (seratus delapan puluh tiga) hari dalam jangka waktu 12 (dua belas) bulan, atau 3. dalam suatu Tahun Pajak berada di Indonesia dan mempunyai niat untuk bertempat tinggal di Indonesia. b. badan yang didirikan atau bertempat kedudukan di Indonesia, dan c. warisan yang belum terbagi sebagai satu kesatuan menggantikan yang berhak. 2. Orang pribadi atau badan yang tidak memenuhi kriteria sebagai subjek pajak dalam negeri sebagaimana dimaksud pada ayat (1) merupakan subjek pajak luar negeri. 3. Orang pribadi yang merupakan subjek pajak dalam negeri menjadi Wajib Pajak dalam negeri, apabila telah menerima atau memperoleh penghasilan yang berasal dari Indonesia maupun dari luar Indonesia dan besarnya penghasilan melebihi Penghasilan Tidak Kena Pajak. 4. Badan yang merupakan subjek pajak dalam negeri menjadi Wajib Pajak dalam negeri, sejak saat didirikan atau bertempat kedudukan di Indonesia dan menerima penghasilan baik yang diterima atau diperoleh dari Indonesia maupun dari luar Indonesia. Pasal 4 1. Subjek pajak luar negeri adalah orang pribadi yang tidak bertempat tinggal di Indonesia, orang pribadi yang berada di Indonesia tidak lebih dari 183 (seratus delapan puluh tiga hari dalam jangka waktu 12 (dua belas) bulan, dan badan yang tidak didirikan dan tidak bertempat kedudukan di Indonesia: a. yang menjalankan usaha atau melakukan kegiatan melalui bentuk usaha tetap di Indonesia; atau b. yang dapat menerima atau memperoleh penghasilan dari Indonesia tidak dari menjalankan usaha atau melakukan kegiatan melalui bentuk usaha tetap di Indonesia. 2. Pengertian \"yang dapat menerima atau memperoleh penghasilan dari Indonesia\" sebagaimana terdapat pada ayat (1) huruf b meliputi pula yang tidak menerima atau memperoleh penghasilan dari Indonesia. Pasal 5 1. Subjek pajak luar negeri sebagaimana dimaksud dalam Pasal 4 ayat (1) dapat menjalankan usaha atau melakukan kegiatan melalui bentuk usaha tetap di Indonesia. 2. Bentuk usaha tetap sebagaimana dimaksud pada ayat (1) merupakan tempat usaha yang bersifat permanen yang dipergunakan oleh subjek pajak luar negeri, orang pribadi atau badan, sebagaimana dimaksud dalam Pasal 4 ayat (1) untuk menjalankan kegiatan atau usaha di Indonesia. Pasal 6 1. Pemenuhan kewajiban perpajakan bentuk usaha tetap sebagaimana dimaksud dalam Pasal 5 ayat (1) dipersamakan dengan pemenuhan kewajiban perpajakan Wajib Pajak badan dalam negeri. 2. Pemenuhan kewajiban perpajakan bentuk usaha tetap sebagaimana dimaksud pada ayat (1) dimulai sejak menerima dan/atau memperoleh penghasilan yang bersumber dari Indonesia melalui bentuk usaha tetap di Indonesia. Pasal 7 1. Orang pribadi yang bertempat tinggal di Indonesia sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf a angka 1) adalah orang pribadi yang: a. mempunyai tempat tinggal (place of residence) di Indonesia yang digunakan oleh orang pribadi sebagai tempat untuk: 1. berdiam (permanent dwelling place), yang tidak bersifat sementara dan tidak sebagai tempat persinggahan, 2. melakukan kegiatan sehari-hari atau menjalankan kebiasaannya (ordinary course of life), 3. tempat menjalankan kebiasaan (place of habitual abode), atau b. mempunyai tempat domisili (place of domicile) di Indonesia, yaitu orang pribadi yang dilahirkan di Indonesia yang masih berada di Indonesia. 2. Tempat tinggal orang pribadi sebagaimana dimaksud pada ayat (1): a. dapat ditempati sendiri oleh orang pribadi atau bersama-sama dengan keluarganya, yang dapat dimiliki, disewa, atau tersedia untuk digunakannya; dan b. berdasarkan pada keadaan yang sebenarnya. 3. Orang pribadi dianggap mempunyai tempat berdiam (permanent dwelling place) di Indonesia sebagaimana dimaksud pada ayat (1) huruf a angka 1) dalam hal orang pribadi mempunyai tempat di Indonesia yang dipakai untuk kediaman, yang bersifat tidak sementara dan bukan sebagai persinggahan. 4. Orang pribadi dianggap mempunyai tempat melakukan kegiatan sehari-hari atau menjalankan kebiasaannya (ordinary course of life) di Indonesia sebagaimana dimaksud pada ayat (1) huruf a angka 2) dalam hal orang pribadi mempunyai tempat di Indonesia yang digunakan untuk melakukan kegiatan sehari-hari terkait dengan urusan ekonomi, keuangan, atau sosial pribadinya, antara lain turut serta dalam kegiatan-kegiatan di masyarakat, turut serta dalam kegiatan, keanggotaan, atau kepengurusan suatu organisasi, kelompok, atau perkumpulan di Indonesia. 5. Orang pribadi dianggap mempunyai tempat menjalankan kebiasaan (place of habitual abode) di Indonesia sebagaimana dimaksud pada ayat (1) huruf a angka 3) dalam hal orang pribadi mempunyai tempat di Indonesia yang digunakan untuk melakukan kebiasaaan atau kegiatan, baik yang bersifat rutin, sering ataupun tidak, antara lain melakukan aktivitas yang menjadi kegemaran atau hobi. Pasal 8 1. Orang pribadi yang bertempat tinggal di Indonesia sebagaimana dimaksud pada Pasal 7 ayat (1) yang kemudian pergi ke luar negeri tetap dianggap bertempat tinggal di Indonesia, apabila keberadaannya di luar negeri berpindahpindah dan berada di Indonesia lebih dari 183 (seratus delapan puluh tiga) hari dalam jangka waktu 12 (dua belas) bulan. 2. Orang pribadi Warga Negara Indonesia yang berada di luar negeri dianggap tidak bertempat tinggal di Indonesia apabila bertempat tinggal tetap di luar negeri yang dibuktikan dengan salah satu dokumen tanda pengenal resmi yang masih berlaku sebagai penduduk di luar negeri, yaitu: a. Green Card, b. identity card, c. student card , d. pengesahan alamat di luar negeri pada paspor oleh Kantor Perwakilan Republik Indonesia di luar negeri, e. surat keterangan dari Kedutaan Besar Republik Indonesia atau Kantor Perwakilan Republik Indonesia di luar negeri, atau f. tertulis resmi di paspor oleh Kantor Imigrasi Negara setempat. Pasal 9 Yang dimaksud dengan berada di Indonesia bagi Subjek Pajak orang pribadi sebagaimana dimaksud dalam Pasal 3 ayat ( 1) huruf a angka 1), angka 3), dan Pasal 4 ayat (1) adalah Subjek Pajak orang pribadi berdasarkan keadaan yang sebenarnya berada di dalam wilayah Negara Republik Indonesia pada suatu waktu. Pasal 10 Jangka waktu 183 (seratus delapan puluh tiga) hari sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf a angka 2) ditentukan dengan menghitung lamanya Subjek Pajak orang pribadi berada di Indonesia, yang keberadaannya di Indonesia dapat secara terus menerus atau terputus-putus, dan bagian dari hari dihitung penuh 1 (satu) hari. Pasal 11 Subjek Pajak orang pribadi dianggap mempunyai niat untuk bertempat tinggal di Indonesia sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf a angka 3) dalam hal: a. Subjek Pajak orang pribadi menunjukkan niatnya secara tegas untuk bertempat tinggal di Indonesia, yang dapat dibuktikan dengan dokumen berupa: 1. Visa bekerja, atau 2. Kartu Izin Tinggal Terbatas (KITAS), lebih dari 183 hari (seratus delapan puluh tiga) hari atau kontrakjperjanjian untuk melakukan pekerjaan, usaha, atau kegiatan yang dilakukan di Indonesia selama lebih 183 (seratus delapan puluh tiga) hari. b. Subjek Pajak orang pribadi melakukan tindakan yang menunjukkan bahwa dirinya akan bertempat tinggal di Indonesia atau bersiap untuk bertempat tinggal di Indonesia, seperti menyewa atau mengontrak tempat, termasuk menyewa tempat tinggal di Indonesia, memindahkan anggota keluarga atau memperoleh tempat yang disediakan oleh pihak lain. Pasal 12 1. Orang pribadi yang merupakan Warga Negara Indonesia yang bekerja di luar negeri lebih dari 183 (seratus delapan puluh tiga) hari dalam jangka waktu 12 (dua belas) bulan merupakan subjek pajak luar negeri. 2. Orang pribadi sebagaimana dimaksud pada ayat (1) tetap merupakan subjek pajak dalam negeri apabila tidak memiliki atau tidak dapat menunjukkan salah satu dokumen tanda pengenal resmi yang masih berlaku sebagai penduduk di luar negeri sebagaimana dimaksud dalam Pasal 8 ayat (2). 3. Atas penghasilan yang diterima atau diperoleh orang pribadi sebagaimana dimaksud pada ayat (1) sehubungan dengan pekerjaannya di luar Indonesia dan penghasilannya bersumber dari luar Indonesia, tidak dikenai Pajak Penghasilan di Indonesia. 4. Dalam hal orang pribadi sebagaimana dimaksud pada ayat (1) menerima atau memperoleh penghasilan yang bersumber dari Indonesia, penghasilan tersebut dikenai Pajak Penghasilan sesuai ketentuan perundang-undangan di bidang perpajakan yang berlaku. Pasal 13 1. Subjek pajak orang pribadi dalam negeri yang meninggalkan Indonesia untuk selama-lamanya dan orang pribadi Warga Negara Indonesia sebagaimana dimaksud dalam Pasal 12 ayat (1) menjadi subjek pajak luar negeri sejak meninggalkan Indonesia. 2. Orang pribadi sebagaimana dimaksud pada ayat (1) tetap diwajibkan menyampaikan Surat Pemberitahuan Tahunan Pajak Penghasilan untuk melaporkan dan mempertanggungjawabkan jumlah pajak yang sebenarnya terutang atas penghasilan yang diterima atau diperoleh dalam Tahun Pajak atau Bagian Tahun Pajak terakhir dalam statusnya sebagai subjek pajak dalam negeri sesuai dengan ketentuan perundang-undangan di bidang perpajakan yang berlaku. 3. Bagi subjek pajak orang pribadi dalam negeri meninggalkan Indonesia untuk selama-lamanya menyampaikan Surat Pemberitahuan Tahunan Penghasilan paling lambat saat meninggalkan Indonesia. Pasal 14 Subjek Pajak badan yang didirikan di Indonesia sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf b adalah badan sebagaimana dimaksud dalam Undang-Undang Nomor 6 Tahun 1983 tentang Ketentuan Umum dan Tata Cara Perpajakan sebagaimana telah diubah beberapa kali terakhir dengan UndangUndang Nomor 16 Tahun 2009, tidak termasuk bentuk usaha tetap, yang pendirian atau pembentukannya: a. berdasarkan ketentuan perundang-undangan di Indonesia, b. didaftarkan di Indonesia berdasarkan ketentuan perundangundangan di Indonesia, atau c. di dalam wilayah hukum Indonesia. Pasal 15 1. Badan yang bertempat kedudukan di Indonesia sebagaimana dimaksud dalam Pasal 3 ayat (1) huruf b adalah Subjek Pajak badan yang: a. mempunyai tempat kedudukan berada di Indonesia sebagaimana tercantum dalam akta pendirian badan, b. mempunyai kantor pusat di Indonesia, c. mempunyai tempat kedudukan pusat administrasi dan/ atau pusat keuangan di Indonesia, d. mempunyai tempat kantor pimpinan yang berada di Indonesia yang melakukan pengendalian, e. pengurusnya melakukan pertemuan di Indonesia untuk membuat keputusan strategis, atau f. pengurusnya bertempat tinggal atau berdomisili di Indonesia. 2. Tempat kedudukan badan sebagaimana dimaksud ayat (1) ditentukan berdasarkan keadaan atau kenyataan yang sebenarnya. Pasal 16 1. Subjek pajak luar negeri dapat menjalankan kegiatan atau usaha melalui suatu bentuk usaha tetap di Indonesia dalam hal mempunyai tempat kedudukan manajemen yang berada di Indonesia. 2. Tempat kedudukan manajemen sebagaimana dimaksud pada ayat (1) adalah tempat kedudukan manajemen yang menjalankan kegiatan/operasi perusahaan sehari-hari atau secara rutin yang tidak melakukan pengendalian atas seluruh perusahaan dan tidak membuat keputusan yang bersifat strategis. 3. Dalam hal tempat kedudukan manajemen sebagaimana dimaksud pada ayat (1) melakukan pengendalian atas seluruh perusahaan atau tempat membuat keputusan yang bersifat strategis, subjek pajak luar negeri sebagaimana dimaksud pada ayat (1) tersebut diperlakukan sebagai subjek pajak dalam negeri sebagaimana dimaksud Pasal 3 ayat ( 1). 4. Tempat kedudukan manajemen efektif yang terdapat dalam Persetujuan Penghindaran Pajak Berganda dapat diartikan sebagai tempat: a. keputusan manajemen dan komersial yang signifikan dibuat, atau b. pengurus membuat keputusan untuk kepentingan badan. Pasal 17 Saat berakhir dan saat dimulainya kewajiban pajak subjektif bagi subjek pajak dalam negeri dan subjek pajak luar negeri sebagaimana diatur dalam Pasal 2A Undang-Undang PPh diterapkan kepada Subjek Pajak setelah status Subjek Pajak orang pribadi atau badan ditentukan berdasarkan ketentuan dalam Pasal 3 dan Pasal 4. Pasal 18 Dalam hal orang pribadi atau badan merupakan subjek pajak dalam negeri dari negara mitra jurisdiksi mitra P3B dan subjek pajak dalam negeri sebagaimana dimaksud dalam Pasal 3, status subjek pajak orang pribadi atau badan dimaksud ditentukan berdasarkan ketentuan dalam P3B yang terkait. Pasal 19 Peraturan Direktur Jenderal Pajak ini mulai berlaku sejak tanggal ditetapkan. Agar setiap orang mengetahuinya, memerintahkan pengumuman Peraturan Direktur Jenderal Pajak ini dengan penempatannya dalam Berita Negara Republik Indonesia. Ditetapkan di Jakarta pada tanggal 28 Desember 2011 DIREKTUR JENDERAL, ttd. A. FUAD RAHMANY NIP 195411111981121001 Status Peraturan Aktif Kategori Peraturan PPh - Pajak Penghasilan",
+        "anchorId": "e745282634b483c9f9718f548c269ccd58ff6177f4565c7d4d10d3f227d55e2a"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "e745282634b483c9f9718f548c269ccd58ff6177f4565c7d4d10d3f227d55e2a",
+      "locator": "html:article:48520",
+      "start": 0,
+      "end": 15331,
+      "quoteHash": "49eee6bf723e5a796ae0866da540f456838b686be2dedee4439a96aa11fca4fe",
+      "rawContentHash": "38e682ebef355d43575309d5eb48b24d9de5adb05632a7a72c8197c2fd73e76f"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.pajak.go.id/id/peraturan/penentuan-subjek-pajak-dalam-negeri-dan-subjek-pajak-luar-negeri#main-content",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/selayang-pandang",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/visi-misi-tujuan-dan-maklumat-pelayanan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tugas-dan-fungsi-0",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/logo-direktorat-jenderal-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kode-etik-dan-kode-perilaku",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/daftar-pejabat-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/unit-kerja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/halaman-infografis-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/peraturan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kurs-pajak",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kmk-tarif-bunga",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/aplikasi-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/formulir-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-yang-wajib-disediakan-dan-diumumkan-secara-berkala",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-yang-wajib-diumumkan-secara-serta-merta",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-publik-tersedia-setiap-saat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-kerja-dan-anggaran-0",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/daftar-isian-pelaksanaan-anggaran",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/realisasi-belanja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/keuangan-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-strategis-direktorat-jenderal-pajak-2025-2029",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-kerja-ditjen-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kinerja-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/laporan-kinerja-unit-kerja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tahunan-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/realisasi-pendapatan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/layanan-digital/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/akses-informasi-publik-melalui-layanan-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/gambaran-singkat-pembentukan-ppid-tingkat-i",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/regulasi-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/prosedur-permohonan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/laporan-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/statistik-akses-informasi-publik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/jalur-dan-waktu-layanan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/saluran-pengaduan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/penyediaan-pembicara-pembahas-atau-moderator-pada-kegiatan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/standar-pelayanan-di-lingkungan-direktorat-jenderal-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/en/apa-map-homepage",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/aeoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/crs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/cbcr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/aeoi-wht",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/fatca",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/carf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/eoir",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/seoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/globe",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tax-treaty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/en/tax-treaty-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/taxtreaty-mli",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/uu-hpp",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/PPS",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/covid19",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/pajakdigital",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/halaman-infografis-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://ejurnal.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/lapor-tahunan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/buku-elektronik-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kerja-sama-dan-kemitraan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/klaster-kemudahan-berusaha-bidang-perpajakan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/penegakan-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/faq-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PLDDScx7l7xS1tqRfrYTuZVcHzoeIsKv7w",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://open.spotify.com/show/6jOGiW7J1T4B81LYNxttOk?si=DumG1PAmTp-RLdf9p7Fnlw",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp/coretax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://edukasi.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://pajak.go.id/index-belajar-pajak/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/en/index-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://coretaxdjp.pajak.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-konsultan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-pjap",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp/coretax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/peraturan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/taxonomy/term/13928",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/katalog-peraturan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/apbnkita",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/reformdjp/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/prasyarat-pengguna",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/hubungi-kami",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/form/contact",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.facebook.com/DitjenPajakRI/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.twitter.com/DitjenPajakRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/user/DitjenPajakRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/ditjenpajakri/?hl=id",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://pengaduan.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "a2346e945a851b96dc7a5560fc8322df259a91ae19e87d7fae075d2b2d17a2dd"
+}

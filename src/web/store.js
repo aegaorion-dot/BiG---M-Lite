@@ -45,7 +45,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  let turnQueue=Promise.resolve(),mutationQueue=Promise.resolve();
  let taxReviewContext=null,lastTaxProposal=null;
  function taxServices(){
-  if(!taxSystem){const dir=persistPath?path.join(path.dirname(persistPath),'tax'):null;taxSystem=require('../tax').createTaxSystem({governancePath:dir?path.join(dir,'fabric.json'):null,determinationPath:dir?path.join(dir,'determinations.json'):null});require('./scopedTaxCatalog').registerHistoricalCatalog(taxSystem.registry);}return taxSystem;
+  if(!taxSystem){const dir=persistPath?path.join(path.dirname(persistPath),'tax'):null;taxSystem=require('../tax').createTaxSystem({governancePath:dir?path.join(dir,'fabric.json'):null,determinationPath:dir?path.join(dir,'determinations.json'):null});require('./scopedTaxCatalog').registerHistoricalCatalog(taxSystem.registry);require('./expandedTaxCatalog').registerExpandedCatalog(taxSystem.registry);}return taxSystem;
  }
  function profileFingerprint(){return fingerprint({slots:profileState.slots,jurisdictionFacts:profileState.jurisdictionFacts});}
  function taxReadiness(){
@@ -281,7 +281,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  }
  function listTransactions(){return [...txMeta.values()].sort((a,b)=>b.date.localeCompare(a.date));}
  function baseFinancialPosition(){return require('../dashboard/financialPosition').financialPosition({workspace:workspaceProfile(),profile:profileState,candidates:Object.values(intakeState.candidates),journals:ledger.list(),chart:ctx.chart,governance:packSummary(),scopedTaxReview:taxReadiness(),profileConfirmed:activeConfig?.profileRevision===profileState.revision});}
- function financialPosition(){const p=baseFinancialPosition();if(p.scopePosition)p.scopePosition.taxCalculation=scopedTax.view(p);return p;}
+ function financialPosition(){const p=baseFinancialPosition();if(p.scopePosition){p.scopePosition.taxCalculation=scopedTax.view(p);p.scopePosition.expandedTax=expandedTax.view();}return p;}
  function monthlyReport(currency=ctx.org?.baseCurrency){
   if(!ctx.chart||!currency)return [];
   const revenue=ctx.chart.getByCode('401').id,expense=ctx.chart.getByCode('501').id,buckets=new Map();
@@ -362,6 +362,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  const intake=createIntakeService({state:intakeState,getContext:()=>({...ctx,workspace:workspaceProfile(),journalFor:id=>{const j=ctx.ledger.get(id);return j?serializeJournal(j):null;}}),persist,commitPosting:commitIntakePosting,applyProfileFacts:applyDocumentFacts,fxService,extractionProvider,semanticProvider});
  intake.recover();
  const scopedTax=require('./scopedTax').createScopedCalculation({state:scopedTaxState,system:taxServices,financial:baseFinancialPosition,workspace:workspaceProfile,profileRevision:()=>profileState.revision,persist});
+ const expandedTax=require('./expandedTax').createExpandedTax({state:scopedTaxState,system:taxServices,financial:baseFinancialPosition,workspace:workspaceProfile,profileRevision:()=>profileState.revision,candidates:()=>intake.list().candidates,company:()=>scopedTax.view(),persist});
  function recordMuse(event){museState.events.push(clone(event));if(museState.events.length>100)museState.events.shift();}
  function packSummary(){return taxServices().registry.snapshot().map(c=>{const p=c.executableContent;return {packId:p.packId??p.treatyPackId,version:p.version,kind:c.contentKind,jurisdictions:p.jurisdictionCode?[p.jurisdictionCode]:[p.jurisdictionA,p.jurisdictionB],effectiveFrom:p.effectiveFrom,effectiveTo:p.effectiveTo,governance:c.status,sourceStatus:c.reviewPackage?.sourceStatus??'REVIEW_REQUIRED',coverage:p.coverageStatus??null};});}
  const {governedCatalog,resolveSuggestion}=require('../ai/museCatalog');
@@ -377,7 +378,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  }
  async function museDiscovery(){const result=await muse.discover(),before=museState.discovery;museState.discovery={...result,profileRevision:profileState.revision};try{persist();}catch(e){museState.discovery=before;throw e;}return clone(museState.discovery);}
  function museTrace(){if(!muse.traceEnabled)throw Error('Muse trace mode is disabled');return {flow:['USER','META_MUSE_SPARK','CANDIDATE_FACTS','GOVERNED_PACK_REQUIREMENTS','MISSING_FACTS','MUSE_QUESTION','CONFIRMED_PROFILE','DETERMINISTIC_RESOLVER','TAX_ACCOUNTING_ENGINE','MUSE_EXPLANATION'],events:clone(museState.events),profileRevision:profileState.revision,requirements:taxReadiness(),confirmation:confirmation?{profileRevision:confirmation.profileRevision,proposalHash:confirmation.proposalHash,actor:confirmation.actor}:null,accounting:{journalCount:ledger.size,auditVerified:audit.verifyChain().ok}};}
- return {ctx,txMeta,contentRegistry,checkAuth,serializeMutation,createSale,createPurchase,importCsvText,reverseJournal,listTransactions,monthlyReport,summary,financialPosition,scopedTax,seedDemo,serializeJournal,pipelineDepsFor,
+ return {ctx,txMeta,contentRegistry,checkAuth,serializeMutation,createSale,createPurchase,importCsvText,reverseJournal,listTransactions,monthlyReport,summary,financialPosition,scopedTax,expandedTax,seedDemo,serializeJournal,pipelineDepsFor,
   chartFor:()=>ctx.chart,onboardingTurn,onboardingDraft,onboardingPropose,onboardingValidate,onboardingConfirm,onboardingReadiness,onboardingActivate,onboardingState,onboardingHistory:()=>clone(history),setUiLanguage,editProfile,approvePack,workspaceProfile,aiStatus,applyActiveConfiguration,beginTaxReview,answerTaxReview,proposeTaxReview,taxReadiness,
    countryPackState:()=>({resolution:resolve(),packs:contentRegistry.list(),approvals:clone(packApprovals)}),productState:()=>require('./product').productState({onboardingState,workspaceProfile,taxReadiness,summary,financialPosition},packSummary()),persist,intake,languagePack:locale=>languagePacks.ensure(locale??currentLocale()),currentLocale,currentConversationLocale,setConversationLocale,reportingStatus:()=>({functionalCurrency:ctx.org?.baseCurrency??null,reportingCurrency:workspaceProfile().reportingCurrency,status:workspaceProfile().reportingCurrency!==ctx.org?.baseCurrency?'REPORTING_CONVERSION_REQUIRED':'SAME_AS_FUNCTIONAL',converted:false}),museAssistant,museDiscovery,museTrace,museStatus:()=>muse.status(),
  };
