@@ -72,7 +72,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   const c={candidateId,documentId:null,sourceChannel,sourceId,sourceRef,candidateType,current:clone(current),evidence:clone(evidence),importRef,nativeInput,extractionId:null,interpretationId:null,confidence:null,status:'CANDIDATE',revision:1,revisions:[{revision:1,source:sourceChannel,at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};state.candidates[candidateId]=c;refreshIndex(c);event('CANDIDATE_CREATED',candidateId);return c;
  }
  function documentStatus(id){const d=state.documents[id];if(!d)return;const cs=Object.values(state.candidates).filter(c=>c.documentId===id);d.processingStatus=cs.length&&cs.every(c=>c.status==='POSTED')?'POSTED':cs.length&&cs.every(c=>c.status==='REJECTED')?'REJECTED':'REQUIRES_REVIEW';}
- function addCandidates(interpretation,documentId,sourceChannel,sourceId){
+ function addCandidates(interpretation,documentId,sourceChannel,sourceId,sourceReference=null){
   const ctx=getContext();let n=0;
   for(const proposal of interpretation.result.transactions){
    const id='candidate-'+hash(Buffer.from(sourceId+':'+n++)).slice(0,32);if(state.candidates[id])continue;
@@ -80,11 +80,11 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    current.classificationAccountId=proposal.proposedAccounts?.classificationAccountId??(proposal.proposedTransactionType?ctx.chart?.list().find(a=>a.code===(proposal.proposedTransactionType==='REVENUE'?'401':'501'))?.id:null)??null;
    current.paymentAccountId=proposal.proposedAccounts?.paymentAccountId??(proposal.paymentMethod?ctx.chart?.list().find(a=>a.code==='101')?.id:null)??null;
    if(current.eventType){const codes=financial.accountCodes(current);current.classificationAccountId=ctx.chart?.list().find(a=>a.code===codes.classification)?.id??null;current.paymentAccountId=ctx.chart?.list().find(a=>a.code===codes.payment)?.id??null;}
-   const c={candidateId:id,documentId,sourceChannel,sourceId,extractionId:interpretation.extractionId,interpretationId:interpretation.interpretationId,candidateType:proposal.candidateType,current,evidence:clone(proposal.evidence),confidence:proposal.confidence,status:'CANDIDATE',revision:1,revisions:[{revision:1,source:'SEMANTIC_PROPOSAL',at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};
-   c.documentCurrency=sourceChannel==='DOCUMENT'?proposal.currency:null;c.semanticProvenance=clone(interpretation.modelProvenance??null);c.sourceRef={reference:documentId??sourceId,fileHash:documentId?state.documents[documentId].sha256:null};state.candidates[id]=c;refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_CREATED',id);
+   const c={candidateId:id,documentId,sourceChannel,sourceId,extractionId:interpretation.extractionId,interpretationId:interpretation.interpretationId,candidateType:proposal.candidateType,current,evidence:clone(proposal.evidence),confidence:proposal.confidence,...(sourceChannel==='CHAT'?{confirmationAuthority:'USER_INPUT'}:{}),status:'CANDIDATE',revision:1,revisions:[{revision:1,source:'SEMANTIC_PROPOSAL',at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};
+   c.documentCurrency=sourceChannel==='DOCUMENT'?proposal.currency:null;c.semanticProvenance=clone(interpretation.modelProvenance??null);c.sourceRef={reference:documentId??sourceId,fileHash:documentId?state.documents[documentId].sha256:null,...(sourceReference?{userFactSource:clone(sourceReference)}:{})};state.candidates[id]=c;refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_CREATED',id);
   }
  }
- async function interpret(extraction,{documentId=null,sourceId,sourceChannel,receivedAt}){
+ async function interpret(extraction,{documentId=null,sourceId,sourceChannel,receivedAt,sourceReference=null}){
   const interpretationId='interpretation-'+sourceId;
   const raw=await semanticProvider.interpret({extraction:clone(extraction),sourceChannel,receivedAt,allowedEconomicScopes:getContext().workspace.economicScopes??[],allowedAccounts:getContext().chart?.list().map(a=>({id:a.id,code:a.code,name:a.name,type:a.type}))??[]});
   const result=validateSemantics(raw,extraction);
@@ -92,7 +92,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   // Profile mutations and intake state share the same durable web-store snapshot.
   const before=clone(state);
   try{
-   state.interpretations[interpretationId]=record;addCandidates(record,documentId,sourceChannel,sourceId);
+   state.interpretations[interpretationId]=record;addCandidates(record,documentId,sourceChannel,sourceId,sourceReference);
    if(documentId)documentStatus(documentId);
    event('INTERPRETED',sourceId,{interpretationId});
    applyProfileFacts(result.profileFacts.map(f=>({...f,source:documentId?'DOCUMENT':'USER',documentId,sourceChatId:documentId?null:sourceId,extractionId:extraction.extractionId})),persist);
@@ -121,12 +121,13 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   atomic(()=>{state.documents[id]={documentId:id,originalFilename,declaredMimeType,...inspected,uploadedAt:now(),sourceChannel:'DOCUMENT',storageRef:'intake://sha256/'+inspected.sha256,processingStatus:'UPLOADED',originalBase64:bytes.toString('base64'),lastError:null};event('UPLOADED',id);});
   return {duplicate:false,document:await processDocument(id)};
  }
- async function chat({text,requestId}){
+ async function chat({text,requestId,sourceReference=null}){
   if(typeof text!=='string'||!text.trim()||text.length>10000||typeof requestId!=='string'||!requestId.trim()||requestId.length>100||['__proto__','constructor','prototype'].includes(requestId))throw Error('Chat text and stable requestId required (max 10000 / 100 characters)');
-  if(state.chats[requestId]){if(state.chats[requestId].text!==text)throw Error('Chat idempotency replay has different text');return chatView(requestId);}
+  if(sourceReference!==null&&(!sourceReference||Object.keys(sourceReference).some(k=>!['sourceTitle','sha256'].includes(k))||typeof sourceReference.sourceTitle!=='string'||!sourceReference.sourceTitle.trim()||sourceReference.sourceTitle.length>120||!/^([a-f0-9]{64})$/.test(sourceReference.sha256??'')))throw Error('Bounded user-fact source provenance required');
+  if(state.chats[requestId]){if(state.chats[requestId].text!==text||JSON.stringify(state.chats[requestId].sourceReference??null)!==JSON.stringify(sourceReference??null))throw Error('Chat idempotency replay has different text or source provenance');return chatView(requestId);}
   const receivedAt=now(),extractionId='extraction-chat-'+hash(Buffer.from(requestId)),extraction={extractionId,documentId:null,extractor:'chat-text',extractorVersion:'1',method:'TEXT',pages:[{page:1,method:'TEXT'}],textBlocks:text.split(/\r?\n/).map((text,i)=>({blockId:'b'+i,page:1,text})),tables:[],confidence:1,warnings:[],detectedLanguage:null,createdAt:receivedAt};
-  atomic(()=>{state.chats[requestId]={requestId,text,receivedAt,status:'INTERPRETING'};state.extractions[extractionId]=extraction;event('CHAT_RECEIVED',requestId);});
-  try{await interpret(extraction,{sourceId:'chat-'+hash(Buffer.from(requestId)),sourceChannel:'CHAT',receivedAt});atomic(()=>{state.chats[requestId].status='REQUIRES_REVIEW';});}
+  atomic(()=>{state.chats[requestId]={requestId,text,receivedAt,status:'INTERPRETING',...(sourceReference?{sourceReference:clone(sourceReference)}:{})};state.extractions[extractionId]=extraction;event('CHAT_RECEIVED',requestId,{sourceReference:sourceReference?clone(sourceReference):null});});
+  try{await interpret(extraction,{sourceId:'chat-'+hash(Buffer.from(requestId)),sourceChannel:'CHAT',receivedAt,sourceReference});atomic(()=>{state.chats[requestId].status='REQUIRES_REVIEW';});}
   catch(e){atomic(()=>{state.chats[requestId].status='FAILED';state.chats[requestId].lastError=e.message;});}
   return chatView(requestId);
  }

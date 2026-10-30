@@ -66,7 +66,9 @@ class UniversalTaxEngine{
    let final=domestic;
    if(rule.treatyRelevant||TREATY_TAX_TYPES.includes(request.taxType)){
     const treaty=resolveTreaty({registry:this.registry,facts,taxType:request.taxType,incomeOrEventType:request.incomeOrEventType,period:request.period,economicDate:request.economicDate,currency:request.currency,trace});base.treatyResult=publicTreaty(treaty);
-    if(!['NOT_NEEDED','APPLICABLE'].includes(treaty.status))return finish(treaty.status==='CONFLICT'?'CONFLICT':treaty.status==='OUT_OF_PERIOD'?'OUT_OF_PERIOD':'REVIEW_REQUIRED',treaty.reason==='TREATY_ELIGIBILITY_NOT_ESTABLISHED'?treaty.reason:'TREATY_REVIEW_REQUIRED',{requiredMissingFacts:treaty.requiredMissingFacts});
+    const demoDomesticEstimate=treaty.status==='MISSING_FACT'&&this.registry.policyMode==='HACKATHON_DEMO'&&this.registry.list('TREATY_PACK').length===0;
+    if(!['NOT_NEEDED','APPLICABLE'].includes(treaty.status)&&!demoDomesticEstimate)return finish(treaty.status==='CONFLICT'?'CONFLICT':treaty.status==='OUT_OF_PERIOD'?'OUT_OF_PERIOD':'REVIEW_REQUIRED',treaty.reason==='TREATY_ELIGIBILITY_NOT_ESTABLISHED'?treaty.reason:'TREATY_REVIEW_REQUIRED',{requiredMissingFacts:treaty.requiredMissingFacts});
+    if(demoDomesticEstimate){base.treatyResult={...publicTreaty(treaty),status:'APPLICABILITY_UNRESOLVED_DEMO',reason:'Domestic-source tax estimate calculated under demo policy; residence and treaty relief are unresolved and no treaty rule is applied.'};base.demoDisclosures.push({policyMode:'HACKATHON_DEMO',status:'PROVISIONAL_TREATY_SCOPE',warning:'TREATY_APPLICABILITY_UNRESOLVED',remainingUncertainty:'Tax residence and treaty eligibility were not determined. This result calculates the domestic Japanese rule only; treaty relief or other cross-border adjustments are not applied.'});}
     if(treaty.status==='APPLICABLE'){
      const {pack:tp,article,candidate:tc}=treaty.selection,declared={...tp.requiredFacts,...article.requiredFacts},treatyInputs={...inputsFor(declared,facts,request.currency),TAX_BASE:taxableBase,DOMESTIC_TAX:fromMoney(domestic.toJSON(),request.currency)},treatyParameters=parametersFor(article);
      for(const effect of article.effects){

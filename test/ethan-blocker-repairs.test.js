@@ -4,6 +4,7 @@
 const {it,describe}=require('node:test'),assert=require('node:assert/strict');
 const {candidateTaxFacts,confirmTaxFacts,inspectFacts,profileTaxFactCandidates,planTaxReadiness,discoverResearchNeed,taxQuestion,createTaxSystem}=require('../src/tax');
 const {createWebStore}=require('../src/web/store');
+const {DeterministicSemanticProvider}=require('../src/intake/semantics');
 const SCOPE={scopeId:'repair-test-org',subjectId:'person-1',period:{periodStart:'2025-04-01',periodEnd:'2025-12-31'},economicDate:'2025-12-31',currency:'JPY'};
 function fact(name,value){return {name,type:'COUNTRY',value,evidenceReference:'TEST ONLY synthetic evidence: '+name+value};}
 function ethanProfile(){
@@ -86,5 +87,32 @@ describe('Ethan blocker repairs (synthetic)',()=>{
   assert.equal(inspectFacts(confirmed).status,'REVIEW_REQUIRED');
   const inferred=candidateTaxFacts({...SCOPE,revision:1,facts:[{name:'TAX_RESIDENCE',type:'COUNTRY',value:'JP',evidenceReference:'Muse legal conclusion',confirmationAuthority:'BIGM_DEMO_POLICY'}]});
   assert.throws(()=>confirmTaxFacts(inferred,{decisionSource:'USER_INPUT',policyMode:'HACKATHON_DEMO',reviewedSnapshotHash:inferred.snapshotHash}),/direct user-input provenance/i);
+ });
+ it('H: normal financial chat preserves fixture provenance and a partial invoice as user facts without marking it paid',async()=>{
+  const store=createWebStore({semanticProvider:new DeterministicSemanticProvider()}),quote='Invoice date: 5 October 2025';
+  const text=['Customer invoice','Invoice date: 5 October 2025','Invoice no: INV-US-102','Client: Northstar Labs','Invoice amount: USD 1,800','Payment status: partially paid','Amount received in October: USD 900',quote].join('\n'),sourceReference={sourceTitle:'Ethan October 2025 facts',sha256:'a'.repeat(64)};
+  const result=await store.intake.chat({text,requestId:'ethan-partial-invoice',sourceReference});assert.equal(result.status,'REQUIRES_REVIEW',JSON.stringify(result));const candidate=result.candidates[0];
+  assert.equal(candidate.current.invoiceDate,'2025-10-05');assert.equal(candidate.current.amount,'1800');assert.equal(candidate.current.currency,'USD');
+  assert.equal(candidate.current.settlementStatus,null);assert.equal(candidate.confirmationAuthority,'USER_INPUT');assert.equal(candidate.confirmation,null);
+  assert.deepEqual(candidate.sourceRef.userFactSource,sourceReference);assert.equal(candidate.evidence.invoiceDate.quote,quote);
+  assert.equal(store.ctx.ledger.size,0);
+ });
+ it('I: demo-derived source classification stays provisional and is never attributed to USER_INPUT',()=>{
+  const snap=candidateTaxFacts({...SCOPE,revision:1,facts:[
+   {name:'SUBJECT_TYPE',type:'STRING',value:'INDIVIDUAL',evidenceReference:'I am an individual',confirmationAuthority:'USER_INPUT'},
+   {name:'SOURCE',type:'COUNTRY',value:'JP',evidenceReference:'Muse provisional source classification; official evidence hash demo-source-hash',confirmationAuthority:'BIGM_DEMO_POLICY',provisional:true},
+   {name:'TAXABLE_INCOME',type:'MONEY',value:{amountMinor:'1000000',currency:'JPY'},evidenceReference:'Calculated from confirmed user records and retained conversion evidence',confirmationAuthority:'CALCULATION',provisional:true},
+  ]});
+  const confirmed=confirmTaxFacts(snap,{decisionSource:'BIGM_DEMO_POLICY',policyMode:'HACKATHON_DEMO',reviewedSnapshotHash:snap.snapshotHash});
+  assert.equal(confirmed.confirmation.confirmationAuthority,'BIGM_DEMO_POLICY');
+  assert.equal(confirmed.confirmation.provisional,true);
+  assert.equal(confirmed.facts.find(f=>f.name==='SOURCE').confirmationAuthority,'BIGM_DEMO_POLICY');
+  assert.equal(confirmed.confirmation.calculatedFacts[0].name,'TAXABLE_INCOME');
+  assert.equal(inspectFacts(confirmed,{policyMode:'HACKATHON_DEMO'}).status,'CONFIRMED');
+  assert.equal(inspectFacts(confirmed).status,'REVIEW_REQUIRED');
+  const invalid=candidateTaxFacts({...SCOPE,revision:1,facts:[{name:'BUSINESS_WORK_LOCATION',type:'COUNTRY',value:'JP',evidenceReference:'inferred',confirmationAuthority:'BIGM_DEMO_POLICY',provisional:true}]});
+  assert.throws(()=>confirmTaxFacts(invalid,{decisionSource:'BIGM_DEMO_POLICY',policyMode:'HACKATHON_DEMO',reviewedSnapshotHash:invalid.snapshotHash}),/provisional policy provenance/i);
+  const unprovenCalc=candidateTaxFacts({...SCOPE,revision:1,facts:[{name:'TAXABLE_INCOME',type:'STRING',value:'not a calculated money input',evidenceReference:'test source',confirmationAuthority:'CALCULATION',provisional:true}]});
+  assert.throws(()=>confirmTaxFacts(unprovenCalc,{decisionSource:'BIGM_DEMO_POLICY',policyMode:'HACKATHON_DEMO',reviewedSnapshotHash:unprovenCalc.snapshotHash}),/provisional policy provenance/i);
  });
 });
