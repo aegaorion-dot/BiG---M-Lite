@@ -62,7 +62,7 @@ class RegulatoryResearchWorker{
    await this.checkpoint({job:clone(job),continuation,sources:this.retriever.snapshot()});await this.persist(sanitizeResearchRecord(job));
   }
   if(!extracted)throw Error('Research turn budget ended before candidate extraction');
-  }catch(e){job.status='REVIEW_REQUIRED';job.failure=String(e.message).startsWith('Meta ')?e.message:'RESEARCH_VALIDATION_OR_TOOL_REVIEW_REQUIRED';job.validatorResults.push({status:'REJECTED',reason:sanitizeResearchRecord(String(e.message))});await this.persist(sanitizeResearchRecord(job));throw Object.assign(Error(job.failure),{researchId:job.researchId});}
+  }catch(e){job.status='REVIEW_REQUIRED';job.failure=String(e.message).startsWith('Meta ')?e.message:'RESEARCH_VALIDATION_OR_TOOL_REVIEW_REQUIRED';const {feedbackFromError}=require('./researchWorkflow');let feedback=null;try{feedback=feedbackFromError(e,{field:'candidate'});}catch{feedback=null;}job.validatorResults.push({status:'REJECTED',reason:sanitizeResearchRecord(String(e.message)),feedback});await this.persist(sanitizeResearchRecord(job));const err=Object.assign(Error(job.failure),{researchId:job.researchId});if(feedback)err.validationFeedback=feedback;throw err;}
   const safe=deepFreeze(sanitizeResearchRecord(job));await this.persist(safe);return safe;
  }
 }

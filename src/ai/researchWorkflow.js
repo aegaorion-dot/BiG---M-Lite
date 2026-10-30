@@ -90,4 +90,61 @@ const ORCHESTRATOR_SYSTEM_PROMPT=[
  'Stopping: stop on CANDIDATES_VALIDATED, CONFLICT, MISSING_FACT, REVIEW_REQUIRED, BUDGET_EXHAUSTED, or credential risk. Candidates remain CANDIDATE; approval is HUMAN_GOVERNANCE_ONLY; execution is DETERMINISTIC_ENGINE_ONLY.',
 ].join('\n');
 
-module.exports={WORKFLOW_STATES,STOP_REASONS,VALIDATOR_CODES,VALIDATOR_FEEDBACK_ACTIONS,ORCHESTRATOR_FORBIDDEN,ORCHESTRATOR_SYSTEM_PROMPT,createResearchNeed,createResearchPlan,museNextStep,nextOrchestratorAction,serializeWorkflowState,restoreWorkflowState};
+function createResearchQuestion({questionId,question,factId=null,jurisdiction=null,whyNeeded,kind='USER_FACT'}){
+ if(typeof questionId!=='string'||!questionId.trim()||questionId.length>120)throw Error('ResearchQuestion id required');
+ if(typeof question!=='string'||question.trim().length<8||question.length>400)throw Error('ResearchQuestion text required');
+ if(factId!=null&& (typeof factId!=='string'||!factId.trim()||factId.length>120))throw Error('Invalid factId');
+ if(jurisdiction!=null&&!/^[A-Z]{2}$/.test(jurisdiction))throw Error('Invalid jurisdiction');
+ if(!nonEmptyString(whyNeeded,1000))throw Error('ResearchQuestion whyNeeded required');
+ if(!['USER_FACT','RESEARCH_GAP'].includes(kind))throw Error('Invalid question kind');
+ return deepFreeze({kind:'ResearchQuestion',questionId:questionId.trim(),question:question.trim(),factId:factId??null,jurisdiction:jurisdiction??null,whyNeeded:whyNeeded.trim(),questionKind:kind});
+}
+function createSearchQuery({queryId,questionId=null,queryText,language=null,jurisdiction=null,officialSiteHint=null}){
+ if(typeof queryId!=='string'||!queryId.trim()||queryId.length>120)throw Error('SearchQuery id required');
+ if(questionId!=null&&(typeof questionId!=='string'||!questionId.trim()))throw Error('Invalid questionId');
+ if(typeof queryText!=='string'||queryText.trim().length<3||queryText.length>300)throw Error('SearchQuery text required');
+ if(language!=null&&(typeof language!=='string'||language.length>16))throw Error('Invalid language');
+ if(jurisdiction!=null&&!/^[A-Z]{2}$/.test(jurisdiction))throw Error('Invalid jurisdiction');
+ if(officialSiteHint!=null&&(typeof officialSiteHint!=='string'||officialSiteHint.length>500))throw Error('Invalid site hint');
+ return deepFreeze({kind:'SearchQuery',queryId:queryId.trim(),questionId:questionId??null,queryText:queryText.trim(),language:language??null,jurisdiction:jurisdiction??null,officialSiteHint:officialSiteHint??null});
+}
+function assessSearchResult({assessmentId,queryId,url,sourceId=null,classification=null,relevance='MEDIUM',decision,reason}){
+ if(typeof assessmentId!=='string'||!assessmentId.trim()||assessmentId.length>120)throw Error('Assessment id required');
+ if(typeof queryId!=='string'||!queryId.trim())throw Error('queryId required');
+ if(typeof url!=='string'||!url.startsWith('https://')||url.length>2000)throw Error('HTTPS result URL required');
+ if(sourceId!=null&&(typeof sourceId!=='string'||!sourceId.trim()))throw Error('Invalid sourceId');
+ if(!['HIGH','MEDIUM','LOW'].includes(relevance))throw Error('Invalid relevance');
+ if(!['RETRIEVE','SKIP','REJECT'].includes(decision))throw Error('Invalid assessment decision');
+ if(!nonEmptyString(reason,1000))throw Error('Assessment reason required');
+ return deepFreeze({kind:'SearchResultAssessment',assessmentId:assessmentId.trim(),queryId,url,sourceId:sourceId??null,classification:classification??null,relevance,decision,reason:reason.trim()});
+}
+function createEvidenceItem({evidenceRef=null,sourceHandle,locator,quote,rawContentHash,textHash=null}){
+ if(typeof sourceHandle!=='string'||!sourceHandle.trim()||sourceHandle.length>200)throw Error('sourceHandle required');
+ if(typeof locator!=='string'||!locator.trim()||locator.length>500)throw Error('locator required');
+ if(typeof quote!=='string'||!quote.trim()||quote.length>8000)throw Error('Exact quote required');
+ if(!/^[a-f0-9]{64}$/.test(rawContentHash??''))throw Error('rawContentHash required');
+ const ref=evidenceRef??fingerprint({sourceHandle,locator,quote});
+ if(typeof ref!=='string'||!ref.trim())throw Error('evidenceRef required');
+ return deepFreeze({kind:'EvidenceItem',evidenceRef:ref,sourceHandle,locator,quote,rawContentHash,textHash:textHash??null});
+}
+function toValidationFeedback({code,field=null,ruleId=null,evidenceRef=null,message,hint=null}){
+ if(!VALIDATOR_CODES.includes(code))throw Error('Unknown validator feedback code');
+ if(!nonEmptyString(message,2000))throw Error('Feedback message required');
+ return deepFreeze({kind:'ValidationFeedback',action:'FEEDBACK_TO_MUSE',code,field:field??null,ruleId:ruleId??null,evidenceRef:evidenceRef??null,message:String(message).slice(0,1000),hint:hint??null,museInstruction:VALIDATOR_FEEDBACK_ACTIONS[code]});
+}
+function feedbackFromError(error,context={}){
+ const message=String(error?.message??error).slice(0,1000);
+ const m=message.toLowerCase();
+ let code='RULE_SCHEMA_INVALID';
+ if(/citation|cite/.test(m))code='CITATION_INVALID';
+ else if(/mirror|fidelity/.test(m))code='MIRROR_NOT_VERIFIED';
+ else if(/conflict/.test(m))code='SOURCE_CONFLICT';
+ else if(/classification|discovery metadata|commentary/.test(m))code='UNSUPPORTED_CLASSIFICATION';
+ else if(/missing/.test(m))code='MISSING_FACT';
+ else if(/effective|commencement|out_of_period|period/.test(m))code='WRONG_EFFECTIVE_PERIOD';
+ else if(/anchored|exact.*read|snippet|evidence|provenance|quote/.test(m))code='EVIDENCE_MISMATCH';
+ else if(/http|mime|normaliz|retrie|fetch|unregistered source|not found|unknown.*source/.test(m))code=/not found|unknown.*source|unregistered/.test(m)?'SOURCE_NOT_FOUND':'SOURCE_NOT_RETRIEVED';
+ return toValidationFeedback({code,field:context.field??null,ruleId:context.ruleId??context.packId??null,evidenceRef:context.evidenceRef??null,message});
+}
+
+module.exports={WORKFLOW_STATES,STOP_REASONS,VALIDATOR_CODES,VALIDATOR_FEEDBACK_ACTIONS,ORCHESTRATOR_FORBIDDEN,ORCHESTRATOR_SYSTEM_PROMPT,createResearchNeed,createResearchPlan,createResearchQuestion,createSearchQuery,assessSearchResult,createEvidenceItem,toValidationFeedback,feedbackFromError,museNextStep,nextOrchestratorAction,serializeWorkflowState,restoreWorkflowState};
