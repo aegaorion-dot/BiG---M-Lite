@@ -22,7 +22,25 @@ function presenceDays(intervals,{start,endExclusive}){assertDate(start,'window s
 function groupedRequirement(state,locale){const scopes=state.slots['org.economicScopes']?.value;if(!scopes?.length)return null;
  const missing=[];if(!state.slots['presence.intervals']?.value?.length)missing.push('presence.intervals');if(!state.slots['currency.functional']?.value)missing.push('currency.functional');if(scopes.some(s=>!s.legalStructure||s.legalStructure==='UNKNOWN'||!s.usage||s.usage==='UNKNOWN'))missing.push('org.economicScopes');
  if(!missing.length)return null;
- const text=/^ar/.test(locale)?'باش نفرقو الخدمة على المشاريع، عطيني تواريخ الدخول والخروج بالضبط وفين كتخدم خارج إندونيسيا. واش الفيلا للكراء ولا حتى للاستعمال الشخصي، وشنو الشكل القانوني ديال القهوة والجيم؟ وبأش من عملة نبقاو نسجلو الدفتر؟':'To keep employment and ventures separate, provide exact entry/exit dates and overseas work location, villa personal/rental use, venture legal structures, and bookkeeping currency.';
+ const prompts={
+  'presence.intervals':{
+   ar:'شنو هي تواريخ الدخول والخروج ديالك فكل بلاد، وفين كنتي كتخدم فعلياً؟',
+   id:'Apa tanggal masuk dan keluar Anda di setiap negara, dan di mana Anda bekerja secara fisik?',
+   en:'What were your entry and exit dates in each country, and where did you work physically?'
+  },
+  'org.economicScopes':{
+   ar:'شنو الشكل القانوني والاستعمال اللي نسجلو لكل نشاط؟ إلا ما عارفش، قول ما عارفش.',
+   id:'Struktur hukum dan penggunaan apa yang perlu dicatat untuk tiap kegiatan? Jika tidak tahu, katakan saja.',
+   en:'What legal structure and usage should we record for each activity? If you do not know, say so.'
+  },
+  'currency.functional':{
+   ar:'بأي عملة بغيتي نسجلو الدفاتر؟',
+   id:'Mata uang apa yang ingin Anda gunakan untuk pembukuan?',
+   en:'Which currency should BiG-M use for bookkeeping?'
+  }
+ };
+ const language=/^ar(?:-|$)/i.test(locale)?'ar':/^id(?:-|$)/i.test(locale)?'id':'en';
+ const text=missing.map(key=>prompts[key][language]).join(' ');
  return {key:'context.economicScopes',text,requiredFactIds:missing,authority:'CANDIDATE_ONLY',purpose:'ECONOMIC_SCOPE_AND_GOVERNED_REVIEW',legalThresholdApplied:false};
 }
 module.exports={KINDS,validateScopes,validatePresence,presenceDays,groupedRequirement};
