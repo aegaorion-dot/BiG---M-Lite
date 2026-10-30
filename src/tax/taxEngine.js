@@ -10,6 +10,14 @@ const {resolveTreaty}=require('./treatyResolver');
 const {TaxDeterminationStore,verifyDetermination}=require('./determinationStore');
 const ENGINE_VERSION='universal-lite-tax/1';
 function publicTreaty(result){if(!result)return null;const {selection,...publicPart}=result;return publicPart;}
+function demoDisclosureForPeriod(candidate,period){
+ const d=candidate?.demoDisclosure;if(!d)return null;
+ const requestedCalculationPeriod={periodStart:period.periodStart,periodEnd:period.periodEnd};
+ const sourceWindow=d.effectiveFromFound||d.effectiveToFound?`${d.effectiveFromFound??'not stated'} through ${d.effectiveToFound??'not stated'}`:'not established in the retrieved source';
+ const packWindow=d.declaredPackEffectiveFrom||d.declaredPackEffectiveTo?`${d.declaredPackEffectiveFrom??'not stated'} through ${d.declaredPackEffectiveTo??'not stated'}`:'not stated';
+ const year=d.sourceYear?` published/revised in ${d.sourceYear}`:'';
+ return {...d,requestedCalculationPeriod,applicabilityToRequestedPeriod:'NOT_FULLY_VERIFIED',applicabilityWarning:'EFFECTIVE_PERIOD_NOT_VERIFIED_FOR_REQUESTED_YEAR',userExplanation:`BiG-M found the official ${d.officialSourceAuthority} source “${d.sourceTitle}”${year} supporting this treatment. Effective dates found in the source: ${sourceWindow}. The executable candidate declares a period of ${packWindow}; these dates may not be established by the source. The requested calculation period is ${period.periodStart} through ${period.periodEnd}; applicability to this period has not been fully verified. BiG-M is provisionally using the rule for this hackathon calculation. Revalidate the current legal version before production filing or use.`};
+}
 class UniversalTaxEngine{
  constructor({registry=new TaxContentRegistry(),determinations=new TaxDeterminationStore()}={}){this.registry=registry;this.determinations=determinations;}
  determine(request,inputFacts){
@@ -21,7 +29,7 @@ class UniversalTaxEngine{
   record.calculationHash=fingerprint(result);record.integrityHash=fingerprint(record);return this.determinations.save(deepFreeze(record));
  }
  _calculate(request,snapshot){
-  const trace=[],base={status:'REVIEW_REQUIRED',reason:null,taxReady:false,taxType:request.taxType,jurisdictionCode:request.jurisdictionCode??null,period:request.period??null,economicDate:request.economicDate??null,currency:request.currency??null,appliedRules:[],taxableBase:null,rate:null,taxAmount:null,reliefs:[],withholding:null,treatyResult:null,evidenceRefs:[],packId:null,packVersion:null,domesticCandidate:null,requiredMissingFacts:[],calculationTrace:trace,postingPerformed:false};
+  const trace=[],base={status:'REVIEW_REQUIRED',reason:null,taxReady:false,taxType:request.taxType,jurisdictionCode:request.jurisdictionCode??null,period:request.period??null,economicDate:request.economicDate??null,currency:request.currency??null,appliedRules:[],demoDisclosures:[],taxableBase:null,rate:null,taxAmount:null,reliefs:[],withholding:null,treatyResult:null,evidenceRefs:[],packId:null,packVersion:null,domesticCandidate:null,requiredMissingFacts:[],calculationTrace:trace,postingPerformed:false};
   const finish=(status,reason,extra={})=>({...base,status,reason,...extra});
   if(!TYPES.includes(request.taxType))return finish('UNSUPPORTED_TAX_TYPE','TAX_TYPE_OUTSIDE_LITE_CAPABILITIES');
   const inspected=inspectFacts(snapshot);if(inspected.status!=='CONFIRMED')return finish(inspected.status,inspected.reason);
@@ -54,7 +62,7 @@ class UniversalTaxEngine{
    if(taxableBase.n<0n||amount.n<0n)return finish('REVIEW_REQUIRED','NEGATIVE_TAX_OUTPUT_REQUIRES_REVIEW');
    const domestic=toMoney(amount,request.currency,rule.finalRounding),baseMoney=toMoney(taxableBase,request.currency,rule.finalRounding);
    const rate=rule.rateDefinition.kind==='EXPRESSION'?encoded(evaluateAst(rule.rateDefinition.expression,{inputs:{...inputs,TAX_BASE:taxableBase},parameters,trace,label:selected.key+':rate'})):{kind:'FORMULA_DERIVED',parameters:rule.parameters};
-   Object.assign(base,{packId:pack.packId,packVersion:pack.version,appliedRules:[{ruleId:rule.ruleId,packId:pack.packId,packVersion:pack.version,candidateId:candidate.candidateId,contentHash:candidate.contentHash,governanceStatus:'APPROVED'}],evidenceRefs:[...rule.evidenceRefs],domesticCandidate:{status:'DOMESTIC_CANDIDATE',taxableBase:baseMoney.toJSON(),taxAmount:domestic.toJSON(),rate}});
+   Object.assign(base,{packId:pack.packId,packVersion:pack.version,appliedRules:[{ruleId:rule.ruleId,packId:pack.packId,packVersion:pack.version,candidateId:candidate.candidateId,contentHash:candidate.contentHash,governanceStatus:candidate.status}],demoDisclosures:candidate.demoDisclosure?[demoDisclosureForPeriod(candidate,request.period)]:[],evidenceRefs:[...rule.evidenceRefs],domesticCandidate:{status:'DOMESTIC_CANDIDATE',taxableBase:baseMoney.toJSON(),taxAmount:domestic.toJSON(),rate}});
    let final=domestic;
    if(rule.treatyRelevant||TREATY_TAX_TYPES.includes(request.taxType)){
     const treaty=resolveTreaty({registry:this.registry,facts,taxType:request.taxType,incomeOrEventType:request.incomeOrEventType,period:request.period,economicDate:request.economicDate,currency:request.currency,trace});base.treatyResult=publicTreaty(treaty);
@@ -68,7 +76,7 @@ class UniversalTaxEngine{
       const adjusted=toMoney(result,request.currency,effect.finalRounding);if(adjusted.amountMinor<0n||adjusted.amountMinor>final.amountMinor)return finish('REVIEW_REQUIRED','TREATY_MUST_NOT_CREATE_OR_INCREASE_DOMESTIC_LIABILITY');
       base.reliefs.push({kind:effect.kind,before:final.toJSON(),after:adjusted.toJSON(),articleId:article.articleId});final=adjusted;
      }
-     base.appliedRules.push({ruleId:article.articleId,treatyPackId:tp.treatyPackId,packVersion:tp.version,candidateId:tc.candidateId,contentHash:tc.contentHash,governanceStatus:'APPROVED'});base.evidenceRefs.push(...article.evidenceRefs);
+      base.appliedRules.push({ruleId:article.articleId,treatyPackId:tp.treatyPackId,packVersion:tp.version,candidateId:tc.candidateId,contentHash:tc.contentHash,governanceStatus:tc.status});if(tc.demoDisclosure)base.demoDisclosures.push(demoDisclosureForPeriod(tc,request.period));base.evidenceRefs.push(...article.evidenceRefs);
     }
    }
    return finish('CALCULATED','APPROVED_GOVERNED_RULE_EXECUTED',{taxReady:true,taxableBase:baseMoney.toJSON(),rate,taxAmount:final.toJSON(),withholding:request.taxType==='WHT'?{amount:final.toJSON(),domesticAmount:domestic.toJSON()}:null});

@@ -29,10 +29,14 @@ async function fabricSource(t){
  const sourceCandidate=countryPackCandidate([envelope],[evidence],{label:'MUSE_SYNTHETIC'});
  return {envelope,evidence,sourceCandidate};
 }
-function declarativePack(evidence){
+function declarativePack(evidence,{effectiveFrom='2026-01-01',effectiveTo='2026-12-31'}={}){
  const ref={evidenceId:evidence.evidenceId,sourceUrl:evidence.provenance.sourceUrl,rawContentHash:evidence.provenance.rawContentHash,locator:evidence.provenance.locator,quote:evidence.provenance.quote,quoteHash:evidence.provenance.quoteHash,sourceKind:'OFFICIAL_GUIDANCE',documentTitle:'Muse synthetic guidance'};
- const rule={ruleId:'MUSE_SYNTHETIC_FLAT',taxType:'SIMPLIFIED_INCOME',subjectTypes:['INDIVIDUAL'],incomeOrEventType:'SYNTHETIC_TURNOVER',requiredFacts:{TAX_RESIDENCE:'COUNTRY',SOURCE:'COUNTRY',SUBJECT_TYPE:'STRING',INCOME_TYPE:'STRING',REVIEWED_TURNOVER:'MONEY'},applicabilityPredicate:{op:'AND',args:[{op:'EQ',args:[{op:'INPUT',name:'TAX_RESIDENCE'},{op:'LITERAL',valueType:'STRING',value:'GB'}]},{op:'EQ',args:[{op:'INPUT',name:'SOURCE'},{op:'LITERAL',valueType:'STRING',value:'GB'}]}]},taxBaseFormula:{op:'INPUT',name:'REVIEWED_TURNOVER'},rateDefinition:{kind:'FORMULA_DERIVED'},amountFormula:{op:'MULTIPLY',args:[{op:'INPUT',name:'TAX_BASE'},{op:'PARAMETER',code:'FLAT_RATE'}]},parameters:{FLAT_RATE:{valueType:'NUMBER',value:'0.01'}},finalRounding:{mode:'DOWN',precision:2},effectiveFrom:'2026-01-01',effectiveTo:'2026-12-31',evidenceRefs:[ref],treatyRelevant:false};
- return {packId:'MUSE_SYNTHETIC_GB_FLAT',version:1,jurisdictionCode:'GB',currency:'GBP',effectiveFrom:'2026-01-01',effectiveTo:'2026-12-31',evidenceRefs:[ref],rules:[rule],testOnly:true,label:'Synthetic Muse pipeline proof; not legal content'};
+ const rule={ruleId:'MUSE_SYNTHETIC_FLAT',taxType:'SIMPLIFIED_INCOME',subjectTypes:['INDIVIDUAL'],incomeOrEventType:'SYNTHETIC_TURNOVER',requiredFacts:{TAX_RESIDENCE:'COUNTRY',SOURCE:'COUNTRY',SUBJECT_TYPE:'STRING',INCOME_TYPE:'STRING',REVIEWED_TURNOVER:'MONEY'},applicabilityPredicate:{op:'AND',args:[{op:'EQ',args:[{op:'INPUT',name:'TAX_RESIDENCE'},{op:'LITERAL',valueType:'STRING',value:'GB'}]},{op:'EQ',args:[{op:'INPUT',name:'SOURCE'},{op:'LITERAL',valueType:'STRING',value:'GB'}]}]},taxBaseFormula:{op:'INPUT',name:'REVIEWED_TURNOVER'},rateDefinition:{kind:'FORMULA_DERIVED'},amountFormula:{op:'MULTIPLY',args:[{op:'INPUT',name:'TAX_BASE'},{op:'PARAMETER',code:'FLAT_RATE'}]},parameters:{FLAT_RATE:{valueType:'NUMBER',value:'0.01'}},finalRounding:{mode:'DOWN',precision:2},effectiveFrom,effectiveTo,evidenceRefs:[ref],treatyRelevant:false};
+ return {packId:'MUSE_SYNTHETIC_GB_FLAT',version:1,jurisdictionCode:'GB',currency:'GBP',effectiveFrom,effectiveTo,evidenceRefs:[ref],rules:[rule],testOnly:true,label:'Synthetic Muse pipeline proof; not legal content'};
+}
+function supportedDemoCandidate(sourceCandidate){
+ const proposition='A one percent flat charge applies to reviewed turnover.';
+ return {...sourceCandidate,evidenceBundle:{jurisdiction:'GB',sourceClassification:'OFFICIAL_SOURCE',sourceTitle:'Muse synthetic guidance',sourceUrl:url,issuingAuthority:'UK Government',effectiveFrom:'2000-01-01',effectiveTo:'2009-12-31',candidateRule:{legalTest:proposition,parameters:[{value:'0.01',evidenceIndex:0}]},fieldEvidence:[{field:'candidateRule.legalTest',evidenceIndex:0}],propositionSupported:proposition,evidence:[{authority:{authorityCode:'GOVUK'},provenance:{sourceUrl:url}}],validator:{issues:['OUT_OF_PERIOD','APPLICABILITY_UNRESOLVED','INDEPENDENT_CROSS_CHECK_REQUIRED']},applicabilityAssessment:{status:'APPLICABILITY_UNRESOLVED',propositionSupported:proposition,sourcePublicationDate:null,sourceRevisionDate:'2010-01-01',supersedingSearches:[],uncertainty:'The source is old and its current applicability has not been checked.'}}};
 }
 function factsFor(req){
  const facts=[{name:'SUBJECT_TYPE',type:'STRING',value:'INDIVIDUAL',evidenceReference:'TEST ONLY subject'},{name:'INCOME_TYPE',type:'STRING',value:'SYNTHETIC_TURNOVER',evidenceReference:'TEST ONLY income'},{name:'TAX_RESIDENCE',type:'COUNTRY',value:'GB',evidenceReference:'TEST ONLY residence'},{name:'SOURCE',type:'COUNTRY',value:'GB',evidenceReference:'TEST ONLY source'},{name:'REVIEWED_TURNOVER',type:'MONEY',value:{amountMinor:'1000000',currency:'GBP'},evidenceReference:'TEST ONLY turnover'}];
@@ -100,5 +104,40 @@ describe('muse synthetic end-to-end pipeline',()=>{
   const checklist=museReviewChecklist(built.candidate);
   for(const key of ['candidateId','packId','version','contentHash','rawSourceHashes','sourceUrls','evidenceRefs','scope','governance'])assert.ok(key in checklist,key);
   assert.equal(checklist.scope.jurisdictionCode,'GB');
+ });
+ it('demo policy auto-accepts supported official evidence with an auditable provisional status and calculates',async t=>{
+  const {sourceCandidate,evidence}=await fabricSource(t);
+  const built=buildExecutableMuseCandidate({sourceCandidate:supportedDemoCandidate(sourceCandidate),declarativePack:declarativePack(evidence,{effectiveFrom:'2000-01-01',effectiveTo:'2009-12-31'}),policyMode:'HACKATHON_DEMO'});
+  assert.equal(built.ok,true);
+  assert.equal(built.candidate.demoDisclosure.status,'PROVISIONALLY_ACCEPTED_DEMO');
+  assert.equal(built.candidate.demoDisclosure.supersedingSearchPerformed,false);
+  const governance=new FabricGovernanceStore({policyMode:'HACKATHON_DEMO'});
+  const registry=new TaxContentRegistry({governanceStore:governance,allowTestPacks:true,policyMode:'HACKATHON_DEMO'});
+  const accepted=registerMuseCandidate({registry,candidate:built.candidate});
+  assert.equal(accepted.status,'AUTO_APPROVED_DEMO');
+  assert.equal(accepted.demoApproval.approvalAuthority,'BIGM_DEMO_POLICY');
+  assert.ok(accepted.demoApproval.acceptedAt);
+  assert.equal(accepted.demoApproval.candidateId,accepted.candidateId);
+  assert.deepEqual(accepted.demoApproval.evidenceHashes,accepted.provenance.map(p=>p.rawContentHash).sort());
+  assert.equal(accepted.demoApproval.supersedingSearchResult,'NOT_PERFORMED');
+  assert.equal(accepted.demoApproval.supersedingSearchPerformed,false);
+  assert.equal(accepted.demoApproval.independentCrossCheckPerformed,false);
+  assert.ok(accepted.demoApproval.researchValidationIssues.includes('OUT_OF_PERIOD'));
+  assert.equal(accepted.demoApproval.effectiveFromFound,null);
+  assert.equal(accepted.demoApproval.policyMode,'HACKATHON_DEMO');
+  assert.ok(accepted.demoApproval.remainingUncertainty);
+  assert.equal(accepted.reviewHistory.length,0);
+  assert.ok(!JSON.stringify(accepted).includes('HUMAN_APPROVED'));
+  const req=request(),facts=factsFor(req),engine=new UniversalTaxEngine({registry,determinations:new TaxDeterminationStore()});
+  const result=determineWithMuseCandidate({engine,request:req,facts});
+  assert.equal(result.status,'CALCULATED');
+  assert.equal(result.taxAmount.amountMinor,'10000');
+  assert.equal(result.appliedRules[0].governanceStatus,'AUTO_APPROVED_DEMO');
+  assert.equal(result.demoDisclosures[0].status,'PROVISIONALLY_ACCEPTED_DEMO');
+  assert.equal(result.demoDisclosures[0].applicabilityWarning,'EFFECTIVE_PERIOD_NOT_VERIFIED_FOR_REQUESTED_YEAR');
+  assert.equal(result.demoDisclosures[0].requestedCalculationPeriod.periodStart,'2026-05-01');
+  assert.match(result.demoDisclosures[0].userExplanation,/Effective dates found in the source: not established in the retrieved source/);
+  assert.match(result.demoDisclosures[0].userExplanation,/candidate declares a period of 2000-01-01 through 2009-12-31/);
+  assert.match(result.demoDisclosures[0].userExplanation,/applicability to this period has not been fully verified/);
  });
 });
