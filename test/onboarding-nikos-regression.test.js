@@ -43,3 +43,19 @@ test('Greek conversation language is a supported onboarding configuration',()=>{
  const errors=validateConfiguration({functionalCurrency:'JPY',language:'el-GR',modules:['accounting'],domicile:'JP',period:{periodStart:'2026-01-01',periodEnd:'2026-12-31'}}).errors??[];
  assert.ok(!errors.includes('unsupported language'),JSON.stringify(errors));
 });
+
+test('freelancer proposals always carry the posting modules a business needs',()=>{
+ const {planConfiguration,applyFacts,blankProfileState}=require('../src/onboarding/profiler');
+ let state=blankProfileState();
+ state=applyFacts(state,[
+  {slot:'org.businessType',value:'freelancer',source:'USER',supportingQuote:'freelance',confidence:1,status:'CANDIDATE',operation:'SET'},
+  {slot:'currency.functional',value:'JPY',source:'USER',supportingQuote:'JPY',confidence:1,status:'CANDIDATE',operation:'SET'},
+  {slot:'modules.enabled',value:['accounting','import'],source:'USER',supportingQuote:'accounting import',confidence:1,status:'CANDIDATE',operation:'SET'},
+ ],'USER');
+ const plan=planConfiguration(state,{organizationId:'org-test'});
+ for(const required of ['sales','purchase','accounting'])assert.ok(plan.modules.includes(required),'proposal must include '+required);
+ const tampered={...plan,modules:['accounting','import']};
+ const errors=validateConfiguration(tampered).errors;
+ assert.ok(errors.includes('business posting requires module: sales'),JSON.stringify(errors));
+ assert.ok(errors.includes('business posting requires module: purchase'),JSON.stringify(errors));
+});

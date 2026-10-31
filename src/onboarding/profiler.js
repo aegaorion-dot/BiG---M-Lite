@@ -79,7 +79,7 @@ function validateExtractorPayload(raw,{userText=null,pendingQuestion=null,previo
   if(value==null){if(f.status!=='UNKNOWN'&&f.operation!=='REMOVE')errors.push(f.slot+': null requires UNKNOWN');}
   else if(f.status==='UNKNOWN'||!valueValid(f.slot,value))errors.push(f.slot+': unsupported value/type/status');
   const quote=f.supportingQuote??f.evidence;
-  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!isDirectCurrencyAnswer(userText,pendingQuestion,value)&&!/book|pembukuan|fungsional|functional|muhasebe|defter|دفتر|محاسب|نسجلو|λογιστ|βιβλί|νομισμ|νόμισμα|γιεν|yen/i.test(quote??'')&&!isFunctionalCorrection(userText,previousCurrencyRole))errors.push('functional currency requires bookkeeping evidence');
+  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!isDirectCurrencyAnswer(userText,pendingQuestion,value)&&!/book|pembukuan|fungsional|functional|muhasebe|defter|Ø¯ÙØªØ±|Ù…Ø­Ø§Ø³Ø¨|Ù†Ø³Ø¬Ù„Ùˆ|Î»Î¿Î³Î¹ÏƒÏ„|Î²Î¹Î²Î»Î¯|Î½Î¿Î¼Î¹ÏƒÎ¼|Î½ÏŒÎ¼Î¹ÏƒÎ¼Î±|Î³Î¹ÎµÎ½|yen/i.test(quote??'')&&!isFunctionalCorrection(userText,previousCurrencyRole))errors.push('functional currency requires bookkeeping evidence');
   if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!currencyMentionMatches(quote,value))errors.push('functional currency value must match the quoted currency');
   out.facts.push({...f,value,semanticRole:f.slot,source:f.source??'USER',supportingQuote:quote,confidence:f.confidence??null,status:f.status??'CANDIDATE',operation:f.operation??'SET'});
  }
@@ -176,15 +176,16 @@ function planConfiguration(state,{year=new Date().getUTCFullYear(),organizationI
   functionalCurrency:v('currency.functional'),transactionCurrencies:v('currency.transactions')??[],
   foreignPurchaseCurrencies:v('currency.foreignPurchases')??[],reportingCurrency:v('currency.reporting')??v('currency.functional'),
   reportingCurrencySuggested:!v('currency.reporting'),fxSource:v('currency.fxSource'),
-  modules:v('modules.enabled')??['sales','purchase','accounting','reports','import'],
+  modules:(function(){const requested=v('modules.enabled')??['sales','purchase','accounting','reports','import'],business=Boolean(v('org.businessType'));const required=business?['sales','purchase','accounting']:[];return [...new Set([...requested,...required])];})(),
   period:{periodStart:v('accounting.periodStart')??year+'-01-01',periodEnd:v('accounting.periodEnd')??year+'-12-31'},profileRevision:state.revision};
 }
-function validateConfiguration(plan){
+function validateConfiguration(plan,{legacy=false}={}){
  const errors=[];
  if(!plan.organizationName||typeof plan.organizationName!=='string')errors.push('organization name required');
  if(!isKnownCurrency(plan.functionalCurrency))errors.push('supported functional currency required');
  if(!['en','id','ar-MA','el-GR'].includes(plan.language))errors.push('unsupported language');
  if(!Array.isArray(plan.modules)||!plan.modules.length||plan.modules.some(m=>!ALLOWED_MODULES.includes(m)))errors.push('unsupported modules');
+ if(!legacy&&plan.businessType&&plan.businessType!=='UNKNOWN')for(const required of ['sales','purchase','accounting'])if(!(plan.modules??[]).includes(required))errors.push('business posting requires module: '+required);
  if(plan.domicile&&!isKnownJurisdiction(plan.domicile))errors.push('unsupported jurisdiction');
  try{assertDate(plan.period.periodStart,'period start');assertDate(plan.period.periodEnd,'period end');if(plan.period.periodStart>plan.period.periodEnd)errors.push('invalid period range');}catch(e){errors.push(e.message);}
  return errors.length?{ok:false,errors}:{ok:true,validated:JSON.parse(JSON.stringify(plan))};

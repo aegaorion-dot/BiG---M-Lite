@@ -86,8 +86,8 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   const pack=deepFreeze({manifest:{id:'bookkeeping-'+jurisdiction,version:'1.0.0',jurisdiction,currency:config.functionalCurrency,validFrom:config.period.periodStart,validTo:config.period.periodEnd},accounts:chart.list(),taxCategories:[],rules:[],bookkeepingOnly:true});
   return {chart,pack};
  }
- function applyActiveConfiguration(config,resolution=config.countryPackResolution){
-  const valid=validateConfiguration(config);if(!valid.ok)throw Error('Cannot apply configuration: '+valid.errors.join('; '));
+ function applyActiveConfiguration(config,resolution=config.countryPackResolution,{legacy=false}={}){
+  const valid=validateConfiguration(config,{legacy});if(!valid.ok)throw Error('Cannot apply configuration: '+valid.errors.join('; '));
   if(config.organizationId!==scopeOrgId)throw Error('Configuration organization scope mismatch');
   if(ledger.size&&ctx.org&&(ctx.org.baseCurrency!==config.functionalCurrency||ctx.org.jurisdiction!==(config.domicile??'ZZ')))throw Error('Changing currency/jurisdiction with posted entries requires a reviewed migration');
   const org=new Organization({id:scopeOrgId,name:config.organizationName,jurisdiction:config.domicile??'ZZ',baseCurrency:config.functionalCurrency});
@@ -187,7 +187,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  function onboardingPropose(){
   if(gapAnalysis(profileState).length)return {ok:false,errors:['Bookkeeping currency needs your answer']};
   const conflict=Object.values(profileState.slots).some(s=>s.status==='CONFLICT');if(conflict)return {ok:false,errors:['Conflicting answers need clarification']};
-  if(lastProposal&&lastProposal.profileRevision===profileState.revision)return {ok:true,proposal:clone(lastProposal)};
+  if(lastProposal&&lastProposal.profileRevision===profileState.revision&&validateConfiguration(lastProposal).ok)return {ok:true,proposal:clone(lastProposal)};
   const built=proposeConfiguration(profileState,{organizationId:scopeOrgId,version:proposalVersion+1,countryPackResolution:resolve()});if(!built.ok)return built;
   const proposal=built.proposal;
   // Hackathon workspaces expose the existing bookkeeping modules even when
@@ -326,7 +326,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
    if(p.hash!==proposalHash(p)||raw.active.confirmation?.proposalHash!==p.hash||raw.active.confirmation?.profileRevision!==p.profileRevision||p.profileFingerprint!==fingerprint({slots:raw.active.profileSnapshot?.slots,jurisdictionFacts:raw.active.profileSnapshot?.jurisdictionFacts}))throw Error('Persisted activation confirmation invalid');
    const demoActivation=demoPolicy&&raw.active.policyMode==='HACKATHON_DEMO'&&raw.active.actor==='BIGM_DEMO_POLICY'&&raw.active.confirmation?.decisionSource==='BIGM_DEMO_POLICY'&&raw.active.confirmation?.policyMode==='HACKATHON_DEMO'&&raw.active.confirmation?.provisional===true;
    if(!demoActivation)human(raw.active.actor,raw.active.confirmation.decisionSource);
-   applyActiveConfiguration(p,raw.active.countryPackResolution);activeConfig=deepFreeze(raw.active);
+   applyActiveConfiguration(p,raw.active.countryPackResolution,{legacy:true});activeConfig=deepFreeze(raw.active);
   }
  }
  restore();
