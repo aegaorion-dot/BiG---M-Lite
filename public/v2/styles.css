@@ -12,3 +12,5 @@
 .file-picker:focus-within{outline:3px solid rgba(63,117,194,.34);outline-offset:2px}
 
 .file-picker:focus-within{outline:3px solid rgba(63,117,194,.34);outline-offset:2px}
+
+.legacy-bridge{margin-top:16px;padding:14px;border:1px solid var(--line);border-radius:11px;background:#fafbfc}.legacy-bridge h3{margin:0;font-size:12px}.legacy-bridge p{margin:6px 0 12px;color:var(--muted);font-size:10px;line-height:1.5}

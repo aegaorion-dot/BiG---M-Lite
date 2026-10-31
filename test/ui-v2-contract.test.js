@@ -12,16 +12,26 @@ describe('parallel V2 workspace shell', () => {
     await new Promise((resolve) => app.server.listen(0, '127.0.0.1', resolve));
     const base = `http://127.0.0.1:${app.server.address().port}`;
     try {
-      const [classic, v2, script, styles] = await Promise.all([
-        fetch(`${base}/`), fetch(`${base}/v2/`), fetch(`${base}/v2/app.js`), fetch(`${base}/v2/styles.css`),
+      const [root, v2, legacy, directLegacyFile, script, styles] = await Promise.all([
+        fetch(`${base}/`), fetch(`${base}/v2/`), fetch(`${base}/legacy/`), fetch(`${base}/legacy/nikos-demo.html`),
+        fetch(`${base}/v2/app.js`), fetch(`${base}/v2/styles.css`),
       ]);
-      assert.equal(classic.status, 200);
+      assert.equal(root.status, 200);
       assert.equal(v2.status, 200);
+      assert.equal(legacy.status, 200);
+      assert.equal(directLegacyFile.status, 200);
       assert.equal(script.status, 200);
       assert.equal(styles.status, 200);
-      assert.match(await v2.text(), /id="appShell"/);
-      assert.match(await script.text(), /\/api\/muse\/assistant/);
-      assert.match(await styles.text(), /@media\(max-width:560px\)/);
+      const [rootHtml, v2Html, legacyHtml, legacyDemoHtml, scriptText, styleText] = await Promise.all([
+        root.text(), v2.text(), legacy.text(), directLegacyFile.text(), script.text(), styles.text(),
+      ]);
+      assert.match(rootHtml, /id="appShell"/);
+      assert.match(v2Html, /id="appShell"/);
+      assert.match(legacyHtml, /id="view"/);
+      assert.doesNotMatch(legacyHtml, /id="appShell"/);
+      assert.match(legacyDemoHtml, /nikos/i);
+      assert.match(scriptText, /\/api\/muse\/assistant/);
+      assert.match(styleText, /@media\(max-width:560px\)/);
     } finally {
       await new Promise((resolve, reject) => app.server.close((error) => error ? reject(error) : resolve()));
     }
@@ -40,6 +50,10 @@ describe('parallel V2 workspace shell', () => {
     assert.match(script, /sessionStorage\.setItem\('bigm-v2-chat:'/);
     assert.match(script, /setAttribute\('aria-expanded'/);
     assert.match(script, /\$\$\('\[data-i18n\]'\)/);
+    assert.match(script, /location\.href='\/legacy\//);
+    assert.doesNotMatch(script, /location\.href='\/'/);
+    const shell = fs.readFileSync('public/v2/index.html', 'utf8');
+    assert.doesNotMatch(shell, /href="\/"/);
   });
 
   it('renders each primary page against the actual V2 application code', async () => {
