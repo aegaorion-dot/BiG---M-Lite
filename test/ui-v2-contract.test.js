@@ -91,7 +91,7 @@ describe('parallel V2 workspace shell', () => {
       fetch: async (url) => ({ ok: true, json: async () => payloads[url] ?? {} }),
     });
     let source = fs.readFileSync('public/v2/app.js', 'utf8');
-    source = source.replace('document.addEventListener(\'DOMContentLoaded\',boot);', 'window.__test={load,render,page:function(value){S.page=value;render();},dicts:{EN,ID,AR}};document.addEventListener(\'DOMContentLoaded\',boot);');
+    source = source.replace('document.addEventListener(\'DOMContentLoaded\',boot);', 'window.__test={load,render,page:function(value){S.page=value;render();},answer:function(result){S.chat=[{role:\'assistant\',result}];S.page=\'assistant\';render();},dicts:{EN,ID,AR}};document.addEventListener(\'DOMContentLoaded\',boot);');
     vm.runInContext(source, context);
     const html = fs.readFileSync('public/v2/index.html', 'utf8');
     const staticKeys = [...new Set([...html.matchAll(/data-i18n="([^"]+)"/g)].map((match) => match[1]))];
@@ -104,5 +104,11 @@ describe('parallel V2 workspace shell', () => {
       assert.doesNotThrow(() => context.window.__test.page(page), `V2 page ${page} should render`);
       assert.ok(elements.get('#pageContent').innerHTML.length > 0, `V2 page ${page} should produce content`);
     }
+    context.window.__test.answer({ status: 'MUSE_UNDERSTOOD', sections: [
+      { kind: 'FACT', facts: [{ id: 'workspace.active', kind: 'FACT', value: false, display: 'Workspace activated: false.' }], explanation: 'Grounded explanation text.' },
+    ] });
+    const answerHtml = elements.get('#pageContent').innerHTML;
+    assert.match(answerHtml, /Workspace activated: false\./);
+    assert.match(answerHtml, /Grounded explanation text\./);
   });
 });

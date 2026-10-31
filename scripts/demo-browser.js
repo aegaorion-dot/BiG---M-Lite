@@ -5,7 +5,7 @@ const {ROOT,createDemoStore,prepareDemo}=require('../src/web/demo');
 async function main(){
  if(typeof WebSocket!=='function')throw Error('Node 20 needs --experimental-websocket for this optional browser check');
  const candidates=[process.env.BIGM_CHROME_PATH,'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe','C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe','/usr/bin/google-chrome','/usr/bin/chromium'].filter(Boolean),binary=candidates.find(p=>fs.existsSync(p));if(!binary)throw Error('Set BIGM_CHROME_PATH to an installed Chromium browser');
- const store=createDemoStore();await prepareDemo(store);store.setUiLanguage('id-ID');const {server}=require('../src/web/server').createServer({store});await new Promise(r=>server.listen(0,'127.0.0.1',r));const url='http://127.0.0.1:'+server.address().port;
+ const store=createDemoStore();await prepareDemo(store);store.setUiLanguage('id-ID');const {server}=require('../src/web/server').createServer({store});await new Promise(r=>server.listen(0,'127.0.0.1',r));const url='http://127.0.0.1:'+server.address().port+'/legacy/';
  const dir=path.join(ROOT,'research','phase9-demo'),shots=path.join(dir,'screenshots');fs.mkdirSync(shots,{recursive:true});const profile=path.join(ROOT,'data','demo-browser-'+crypto.randomUUID());fs.mkdirSync(profile,{recursive:true});
  const browser=cp.spawn(binary,['--headless=new','--no-first-run','--no-default-browser-check','--disable-background-networking','--disable-component-update','--disable-sync','--disable-extensions','--remote-debugging-port=0','--user-data-dir='+profile,'about:blank'],{windowsHide:true,stdio:['ignore','ignore','pipe']});
  let socket,deadline;const results=[],errors=[];let close;
