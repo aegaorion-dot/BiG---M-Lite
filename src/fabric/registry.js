@@ -29,6 +29,11 @@ const rows=[
  ['JP','NTA','Japan National Tax Agency','TAX_AUTHORITY','nta.go.jp','ja'],
  ['JP','MOF','Japan Ministry of Finance','FINANCE_MINISTRY','mof.go.jp','ja'],
  ['JP','EGOV','e-Gov Japanese law search','PRIMARY_LEGISLATION','elaws.e-gov.go.jp','ja'],
+ ['FR','IMPOTS','French Directorate General of Public Finances (impots.gouv.fr)','TAX_AUTHORITY','impots.gouv.fr','fr'],
+ ['FR','BOFIP','French Official Tax Bulletin (BOFiP)','OFFICIAL_TAX_GUIDANCE','bofip.impots.gouv.fr','fr'],
+ ['FR','LEGIFRANCE','French official legislation and consolidated law portal','PRIMARY_LEGISLATION','legifrance.gouv.fr','fr'],
+ ['FR','SERVICEPUBLIC','French official public-service information portal','OFFICIAL_GUIDANCE','service-public.fr','fr'],
+ ['FR','ECONOMIE','French Ministry of the Economy, Finance and Industrial and Digital Sovereignty','FINANCE_MINISTRY','economie.gouv.fr','fr'],
  ['AU','ATO','Australian Taxation Office','TAX_AUTHORITY','ato.gov.au','en'],
  ['AU','FRL','Office of Parliamentary Counsel Federal Register','PRIMARY_LEGISLATION','legislation.gov.au','en'],
  ['AU','TREASURY','Australian Treasury','FINANCE_MINISTRY','treasury.gov.au','en'],
@@ -55,7 +60,8 @@ const structured={
 const SOURCES=deepFreeze(rows.map(([jurisdictionCode,authorityCode,authorityName,sourceRole,domain,language])=>{
  const sourceId=jurisdictionCode+'-'+authorityCode;
  const hosts=[domain,'www.'+domain];if(sourceId==='JP-EGOV')hosts.push('laws.e-gov.go.jp');if(sourceId==='AU-FRL')hosts.push('api.prod.legislation.gov.au');if(sourceId==='US-CONGRESS')hosts.push('api.congress.gov');
- const baseUrl=sourceId==='JP-EGOV'?'https://laws.e-gov.go.jp/':'https://'+domain+'/';
+ if(sourceId==='FR-SERVICEPUBLIC')hosts.push('service-public.gouv.fr','www.service-public.gouv.fr','entreprendre.service-public.gouv.fr');
+ const baseUrl=sourceId==='JP-EGOV'?'https://laws.e-gov.go.jp/':sourceId==='FR-LEGIFRANCE'?'https://www.legifrance.gouv.fr/':sourceId==='FR-SERVICEPUBLIC'?'https://www.service-public.gouv.fr/':'https://'+domain+'/';
  return {sourceId,jurisdictionCode,authorityCode,authorityName,sourceRole,baseUrl,officialDomains:hosts,
   preferredAccessMethods:['API','STRUCTURED_DOWNLOAD','FEED','HTML','PDF_TEXT','PDF_OCR'],apiEndpoints:api[sourceId]??[],structuredEndpoints:structured[sourceId]??[],
   contentTypes:['application/json','application/feed+json','application/xml','text/xml','application/atom+xml','application/rss+xml','text/html','application/xhtml+xml','application/pdf','application/zip'],languages:[language],trustLevel:'OFFICIAL_SOURCE_ONLY',

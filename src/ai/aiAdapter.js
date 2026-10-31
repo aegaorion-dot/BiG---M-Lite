@@ -14,7 +14,15 @@ function responsePayload(raw){
  if(messages.some(m=>(m.content??[]).some(c=>c.type==='refusal')))throw Error('provider refusal');
  const text=messages.flatMap(m=>(m.content??[]).filter(c=>c.type==='output_text').map(c=>c.text??'')).join('');
  if(!text.trim())throw Error('provider returned no output text');
- try{return JSON.parse(text);}catch{throw Error('provider returned invalid JSON');}
+ try{return JSON.parse(text);}catch{
+  // Structured research turns occasionally include a short visible progress
+  // sentence before their single JSON object. Recover only when the complete
+  // remaining payload is one valid JSON object; normal schema validation still
+  // runs at the caller, and trailing prose is never ignored.
+  const start=text.indexOf('{'),end=text.lastIndexOf('}');
+  if(start>=0&&end>start&&text.slice(end+1).trim()==='')try{return JSON.parse(text.slice(start,end+1));}catch{/* Keep the strict failure below. */}
+  throw Error('provider returned invalid JSON');
+ }
 }
 function safeTransportDetails(error,apiKey,elapsedMs){
  const clean=value=>{if(value===undefined||value===null)return null;let text=String(value);if(apiKey)text=text.split(apiKey).join('[REDACTED]');text=text.replace(/Bearer\s+[^\s"']+/gi,'Bearer [REDACTED]').slice(0,300);return text;};

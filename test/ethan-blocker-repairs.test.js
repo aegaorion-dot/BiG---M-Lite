@@ -118,4 +118,11 @@ describe('Ethan blocker repairs (synthetic)',()=>{
   const unprovenCalc=candidateTaxFacts({...SCOPE,revision:1,facts:[{name:'TAXABLE_INCOME',type:'STRING',value:'not a calculated money input',evidenceReference:'test source',confirmationAuthority:'CALCULATION',provisional:true}]});
   assert.throws(()=>confirmTaxFacts(unprovenCalc,{decisionSource:'BIGM_DEMO_POLICY',policyMode:'HACKATHON_DEMO',reviewedSnapshotHash:unprovenCalc.snapshotHash}),/provisional policy provenance/i);
  });
+ it('J: a demo-only household-parts assumption is explicitly provisional and production cannot consume it',()=>{
+  const snap=candidateTaxFacts({...SCOPE,revision:1,facts:[{name:'HOUSEHOLD_PARTS',type:'NUMBER',value:'1',evidenceReference:'Demo assumption from the user saying they live alone; dependent status remains unverified',confirmationAuthority:'BIGM_DEMO_POLICY',provisional:true}]});
+  const confirmed=confirmTaxFacts(snap,{decisionSource:'BIGM_DEMO_POLICY',policyMode:'HACKATHON_DEMO',reviewedSnapshotHash:snap.snapshotHash});
+  assert.equal(inspectFacts(confirmed,{policyMode:'HACKATHON_DEMO'}).status,'CONFIRMED');
+  assert.equal(inspectFacts(confirmed).status,'REVIEW_REQUIRED');
+  assert.equal(confirmed.confirmation.provisionalFacts[0].name,'HOUSEHOLD_PARTS');
+ });
 });

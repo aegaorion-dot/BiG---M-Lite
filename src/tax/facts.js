@@ -4,7 +4,7 @@ const {assertJsonData,NAME,fromMoney,numberValue}=require('./dsl');
 const {FACT_TYPES}=require('./contracts');
 const {parseEffectiveDate}=require('../fabric/normalizer');
 const MULTI_VALUE_FACT_BASES=new Set(['CUSTOMER_LOCATION','ACCOUNT_LOCATION','WITHHOLDING','POSSIBLE_PE']);
-const DEMO_POLICY_FACTS=new Set(['TAX_RESIDENCE','SOURCE','SUBJECT_TYPE','INCOME_TYPE']);
+const DEMO_POLICY_FACTS=new Set(['TAX_RESIDENCE','SOURCE','SUBJECT_TYPE','INCOME_TYPE','HOUSEHOLD_PARTS']);
 function candidateTaxFacts({scopeId,subjectId,revision,period,economicDate,currency,facts}){
  const data={scopeId,subjectId,revision,period,economicDate,currency,facts};assertJsonData(data);
  if(typeof scopeId!=='string'||!scopeId||typeof subjectId!=='string'||!subjectId||!Number.isInteger(revision)||revision<0||!parseEffectiveDate(economicDate)||!parseEffectiveDate(period?.periodStart)||!parseEffectiveDate(period?.periodEnd)||period.periodStart>period.periodEnd||economicDate<period.periodStart||economicDate>period.periodEnd||!Array.isArray(facts)||facts.length>100)throw Error('Valid scoped tax fact snapshot required');

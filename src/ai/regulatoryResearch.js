@@ -55,7 +55,17 @@ class RegulatoryResearchWorker{
       const immediate=accepted.filter(s=>s.readFindText!==undefined).flatMap(s=>acquired.sources.filter(r=>r.status==='RETRIEVED'&&r.url===s.url).map(r=>({sourceHandle:r.sourceHandle,findText:s.readFindText,pages:[],maxCharacters:s.readMaxCharacters??4000})));if(immediate.length){if(job.readSelectionCount+immediate.length>24)throw Error('Passage reading budget exceeded');const read=await this.retriever.read(immediate);if([...job.readings,...read.passages].reduce((n,p)=>n+p.text.length,0)>60000)throw Error('Research text budget exceeded');result.passages=read.passages;job.readSelectionCount+=immediate.length;job.readings.push(...read.passages);}
       for(const s of acquired.sources)for(const l of s.links??[])try{observedUrls.add(canonical(l.url));}catch{/* Unsafe references remain unusable. */}
      }else if(call.name==='read_regulatory_passages'){
-      if(!Array.isArray(args.selections)||!args.selections.length||args.selections.length>24||job.readSelectionCount+args.selections.length>24)throw Error('Passage reading budget exceeded');for(const s of args.selections)if(!job.retrievals.some(r=>r.sourceHandle===s.sourceHandle&&r.status==='RETRIEVED'))throw Error('Only successfully retrieved source handles can be read');result=await this.retriever.read(args.selections,{researchId:job.researchId,responseHash});if([...job.readings,...result.passages].reduce((n,p)=>n+p.text.length,0)>60000)throw Error('Research text budget exceeded');job.readSelectionCount+=args.selections.length;job.readings.push(...result.passages);
+      if(!Array.isArray(args.selections)||!args.selections.length||args.selections.length>24||job.readSelectionCount+args.selections.length>24)throw Error('Passage reading budget exceeded');for(const s of args.selections)if(!job.retrievals.some(r=>r.sourceHandle===s.sourceHandle&&r.status==='RETRIEVED'))throw Error('Only successfully retrieved source handles can be read');
+      try{result=await this.retriever.read(args.selections,{researchId:job.researchId,responseHash});}
+      catch(error){
+       // A malformed bounded read is a recoverable tool-call error. Return the
+       // contract to Muse so it can correct the arguments within the existing
+       // turn budget; do not discard the research session before the model sees it.
+       if(error.message!=='Bounded passage selection required')throw error;
+       result={status:'INVALID_TOOL_ARGUMENTS',message:'Each selection requires a retrieved sourceHandle, findText string <=300 characters, pages array <=8 actual page numbers (or []), and maxCharacters integer from 100 to 8000. Correct the selection and retry.'};
+       job.toolTrace.push({turn,callId:call.call_id,tool:call.name,arguments:sanitizeResearchRecord(JSON.parse(call.arguments)),result});outputs.push({type:'function_call_output',call_id:call.call_id,output:JSON.stringify(result)});continue;
+      }
+      if([...job.readings,...result.passages].reduce((n,p)=>n+p.text.length,0)>60000)throw Error('Research text budget exceeded');job.readSelectionCount+=args.selections.length;job.readings.push(...result.passages);
      }else throw Error('Tool outside research contract');
      job.toolTrace.push({turn,callId:call.call_id,tool:call.name,arguments:sanitizeResearchRecord(JSON.parse(call.arguments)),result:sanitizeResearchRecord(result)});outputs.push({type:'function_call_output',call_id:call.call_id,output:JSON.stringify(sanitizeResearchRecord(result))});
     }
@@ -64,6 +74,10 @@ class RegulatoryResearchWorker{
     continuation=[...replayItems(body),...outputs];
    }else{
     const proposed=responsePayload(body);job.missingFacts=proposed.missingFacts??[];job.conflicts=proposed.conflicts??[];job.periodIssues=proposed.periodIssues??[];
+    if(proposed.status==='REVIEW_REQUIRED'&&!(proposed.countryPacks??[]).length&&!(proposed.treatyPacks??[]).length&&!job.missingFacts.length&&!job.conflicts.length&&turn<this.maxTurns){
+     const feedback={kind:'ValidationFeedback',action:'FEEDBACK_TO_MUSE',code:'RESEARCH_INCOMPLETE',field:'candidate',message:'No executable candidate was returned. Continue bounded official-source research and read the missing evidence, then emit the requested candidate schema. Preserve unresolved uncertainties; do not invent legal parameters.'};
+     job.validatorResults.push({status:'REJECTED',reason:'Muse reported research incomplete before the turn budget ended',feedback});continuation=replayItems(body);await this.checkpoint({job:clone(job),continuation,sources:this.retriever.snapshot()});await this.persist(sanitizeResearchRecord(job));continue;
+    }
     if(!job.searches.some(s=>s.calls.some(c=>c.status==='completed')&&s.results.length+s.citations.length))throw Error('Observed hosted search required');
     if(!job.readings.length)throw Error('Actual source reading must precede extraction');
     const validated=await this.validateCandidates(proposed,{job:clone(job),retriever:this.retriever,responseHash});job.candidateIds=validated.candidateIds;job.unresolved=validated.unresolved??[];job.missingFacts=validated.questionsForUser??job.missingFacts;job.researchGaps=validated.researchGaps??[];job.conflicts.push(...(validated.detectedConflicts??[]));job.periodIssues.push(...(validated.effectivePeriodIssues??[]));job.validatorResults.push(validated);job.proposal=proposed;job.lastValidatedResponseHash=responseHash;extracted=true;
