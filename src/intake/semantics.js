@@ -22,8 +22,11 @@ function decimal(raw,currency=null){
 }
 function isoDate(raw){
  if(typeof raw!=='string')return null;const s=raw.trim();if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s;
- let m=s.match(/^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})$/);if(!m)m=s.match(/^(\d{1,2})\/([0-9]{1,2})\/(\d{4})$/);
- if(!m)return null;const months={jan:1,january:1,feb:2,february:2,mar:3,march:3,apr:4,april:4,may:5,jun:6,june:6,jul:7,july:7,aug:8,august:8,sep:9,sept:9,september:9,oct:10,october:10,nov:11,november:11,dec:12,december:12};
+ const named=s.match(/^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})$/),numeric=named?null:s.match(/^(\d{1,2})\/([0-9]{1,2})\/(\d{4})$/),m=named??numeric;
+ if(!m)return null;
+ // Two valid day/month readings are ambiguous; the raw text is kept for human confirmation instead of guessing a format.
+ if(numeric&&Number(m[1])<=12&&Number(m[2])<=12)return null;
+ const months={jan:1,january:1,feb:2,february:2,mar:3,march:3,apr:4,april:4,may:5,jun:6,june:6,jul:7,july:7,aug:8,august:8,sep:9,sept:9,september:9,oct:10,october:10,nov:11,november:11,dec:12,december:12};
  const day=Number(m[1]),month=typeof m[2]==='string'&&/[A-Za-z]/.test(m[2])?months[m[2].toLowerCase()]:Number(m[2]),year=Number(m[3]);if(!month||month<1||month>12||day<1||day>31)return null;
  const d=new Date(Date.UTC(year,month-1,day));return d.getUTCFullYear()===year&&d.getUTCMonth()===month-1&&d.getUTCDate()===day?`${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`:null;
 }
@@ -38,7 +41,7 @@ class DeterministicSemanticProvider extends SemanticDocumentProvider {
    const currency=currencyIn(all);if(currency){const b=group.find(b=>currencyIn(b.text)===currency);evidence.currency={blockId:b.blockId,quote:b.text.slice(0,200)};}
    let amountRaw=find('amount',/^(?:grand\s+total|total(?:\s+(?:bayar|amount))?|amount\s+due|jumlah)\s*[:=]?\s*((?:(?:Rp|IDR|SGD|USD|AUD|GBP|EUR|JPY|AED)\s*)?\d[\d.,]*(?:\s*(?:juta|million|ribu|thousand))?)/i);
    if(!amountRaw&&sourceChannel==='CHAT')amountRaw=find('amount',/((?:Rp|IDR|SGD|USD|AUD|GBP|EUR|JPY|AED)\s*\d[\d.,]*(?:\s*(?:juta|million|ribu|thousand))?)/i);
-   const docDateRaw=find('documentDate',/^(?:date|tanggal|tgl|receipt date|invoice date)\s*:\s*(\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{4}|\d{1,2}\s+[A-Za-z]+\s+\d{4})/im),docDate=isoDate(docDateRaw);
+   const docDateRaw=find('documentDate',/^(?:date|tanggal|tgl|receipt date|invoice date)\s*:\s*(\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{4}|\d{1,2}\s+[A-Za-z]+\s+\d{4})/im),docDate=isoDate(docDateRaw)??docDateRaw;
    const paymentDateRaw=find('paymentDate',/^(?:payment date|tanggal pembayaran)\s*:\s*(\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{4}|\d{1,2}\s+[A-Za-z]+\s+\d{4})/i),paymentDate=isoDate(paymentDateRaw);
    let transactionDateRaw=find('transactionDate',/^(?:transaction date|tanggal transaksi)\s*:\s*(\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{4}|\d{1,2}\s+[A-Za-z]+\s+\d{4})/i),transactionDate=isoDate(transactionDateRaw);
    let candidateType=type??(/customer invoice/i.test(all)?'CUSTOMER_INVOICE':/supplier invoice|invoice|faktur/i.test(all)?'SUPPLIER_INVOICE':/receipt|struk|kuitansi/i.test(all)?'RECEIPT':/transfer|payment evidence/i.test(all)?'PAYMENT_EVIDENCE':'TRANSACTION');
@@ -46,7 +49,7 @@ class DeterministicSemanticProvider extends SemanticDocumentProvider {
    if(!transactionDate&&paymentDate){transactionDate=paymentDate;evidence.transactionDate=evidence.paymentDate;}
    if(sourceChannel==='CHAT'){
     transactionDate=isoDate(find('transactionDate',/\b(\d{4}-\d{2}-\d{2})\b/));
-    if(!transactionDate&&candidateType==='RECEIPT')transactionDate=docDate;
+    if(!transactionDate&&candidateType==='RECEIPT'&&/^\d{4}-\d{2}-\d{2}$/.test(docDate??''))transactionDate=docDate;
     if(!transactionDate&&/\byesterday\b|\bkemarin\b/i.test(all)){const d=new Date(receivedAt);d.setUTCDate(d.getUTCDate()-1);transactionDate=d.toISOString().slice(0,10);const b=group.find(b=>/yesterday|kemarin/i.test(b.text));evidence.transactionDate={blockId:b.blockId,quote:b.text.match(/yesterday|kemarin/i)[0]};}
    }
    const kind=candidateType==='CUSTOMER_INVOICE'?'REVENUE':['SUPPLIER_INVOICE','RECEIPT'].includes(candidateType)?'EXPENSE':/client.*paid|paid me|customer.*paid|pelanggan.*bayar/i.test(all)?'REVENUE':/\b(bought|I paid|paid electricity|beli|membeli|bayar listrik)\b/i.test(all)?'EXPENSE':null;
@@ -58,15 +61,15 @@ class DeterministicSemanticProvider extends SemanticDocumentProvider {
    const paymentMethod=find('paymentMethod',/\b(cash|bank|tunai)\b/i);
    const referenceNumber=find('referenceNumber',/^(?:reference|ref|invoice no|nomor)\s*:\s*([^\n]{1,120})/i);
    const partialPayment=/\bpartially paid\b|\bpartial payment\b/i.test(all),paid=candidateType==='RECEIPT'||(!partialPayment&&/\bpaid\b|\blunas\b|\bbought\b/i.test(all));if(paid)evidence.settlementStatus={blockId:group.find(b=>/receipt|struk|paid|lunas|bought/i.test(b.text))?.blockId??group[0].blockId,quote:(group.find(b=>/receipt|struk|paid|lunas|bought/i.test(b.text))??group[0]).text.slice(0,200)};
-   const financial={};for(const [field,label]of Object.entries({eventType:'Event type',incomeCategory:'Income category',expenseCategory:'Expense category',purpose:'Purpose',recognitionStatus:'Recognition status',engagementId:'Engagement',contractTotal:'Contract total',payerCountry:'Payer country',ipRetained:'IP retained',economicScopeId:'Economic scope',reviewReason:'Review reason'})){const value=find(field,new RegExp('^'+label+':\\s*(.{1,120})$','i'));if(value!=null)financial[field]=value;}
+   const financial={};for(const [field,label]of Object.entries({eventType:'Event type',incomeCategory:'Income category',expenseCategory:'Expense category',purpose:'Purpose',recognitionStatus:'Recognition status',engagementId:'Engagement',contractTotal:'Contract total',payerCountry:'Payer country',ipRetained:'IP retained',economicScopeId:'Economic scope',reviewReason:'Review reason'})){const value=find(field,new RegExp('^'+label+':\\s*(.{1,120})$','im'));if(value!=null)financial[field]=value;}
    return {...financial,candidateType,transactionDate,documentDate:docDate,invoiceDate:candidateType.includes('INVOICE')?docDate:null,paymentDate,counterparty,description,amount:decimal(amountRaw,currency),currency,taxAmount:decimal(taxRaw,currency),subtotal:decimal(subtotalRaw,currency),paymentMethod,referenceNumber,proposedTransactionType:kind,proposedAccounts:null,settlementStatus:paid?'PAID':null,confidence:0.7,evidence:{...evidence,...(candidateType.includes('INVOICE')&&docDate?{invoiceDate:evidence.documentDate}:{})}};
   }
   if(extraction.tables.length){
    for(const table of extraction.tables){const [headers,...rows]=table.rows;const keys=headers.map(h=>h.toLowerCase());
     for(let i=0;i<rows.length;i++){
      const row=rows[i],data=Object.fromEntries(keys.map((k,n)=>[k,row[n]])),block=blocks.find(b=>b.row===i+2);if(!block)throw Error('Statement row evidence missing');
-     const raw=data.amount||(data.debit&&data.debit!=='0'?data.debit:data.credit),currency=data.currency??null;const evidence={};for(const f of ['transactionDate','description','amount','currency','referenceNumber'])if(({transactionDate:data.date,description:data.description,amount:raw,currency,referenceNumber:data.reference})[f])evidence[f]={blockId:block.blockId,quote:block.text};
-     transactions.push({candidateType:'BANK_ROW',transactionDate:data.date??null,description:data.description??null,amount:decimal(String(raw??'').replace(/^[-+]/,''),currency),currency,referenceNumber:data.reference??null,proposedTransactionType:null,proposedAccounts:null,counterparty:data.counterparty??null,settlementStatus:null,confidence:0.8,evidence:{...evidence,...(data.counterparty?{counterparty:{blockId:block.blockId,quote:block.text}}:{})},bankDirection:data.debit&&data.debit!=='0'?'OUT':data.credit&&data.credit!=='0'?'IN':null});
+     const raw=data.amount||(data.debit&&data.debit!=='0'?data.debit:data.credit),currency=data.currency??null,direction=data.debit&&data.debit!=='0'?'OUT':data.credit&&data.credit!=='0'?'IN':null;const evidence={};for(const f of ['transactionDate','description','amount','currency','referenceNumber'])if(({transactionDate:data.date,description:data.description,amount:raw,currency,referenceNumber:data.reference})[f])evidence[f]={blockId:block.blockId,quote:block.text};if(direction)evidence.bankDirection={blockId:block.blockId,quote:block.text};
+     transactions.push({candidateType:'BANK_ROW',transactionDate:data.date??null,description:data.description??null,amount:decimal(String(raw??'').replace(/^[-+]/,''),currency),currency,referenceNumber:data.reference??null,proposedTransactionType:null,proposedAccounts:null,counterparty:data.counterparty??null,settlementStatus:null,confidence:0.8,evidence:{...evidence,...(data.counterparty?{counterparty:{blockId:block.blockId,quote:block.text}}:{})},bankDirection:direction});
     }
    }
   }else if(blocks.length){

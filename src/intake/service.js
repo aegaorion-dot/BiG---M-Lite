@@ -82,8 +82,10 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    // Normalize source-native document kinds into the existing ledger contract.
    // Muse supplies the observations; this deterministic mapping keeps review
    // and confirmation governed by the existing intake workflow.
-   if(!current.transactionDate&&current.invoiceDate){current.transactionDate=current.invoiceDate;evidence.transactionDate=evidence.invoiceDate;}
-   if(!current.transactionDate&&current.documentDate){current.transactionDate=current.documentDate;evidence.transactionDate=evidence.documentDate;}
+   const isoDay=value=>typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value),paidNow=typeof current.settlementStatus==='string'&&current.settlementStatus.trim().toUpperCase().replace(/[ -]+/g,'_')==='PAID';
+   // Invoice, document and payment dates stay distinct: an invoice date becomes the ledger date only once payment is evidenced.
+   if(!current.transactionDate&&current.invoiceDate&&(current.paymentDate||paidNow)&&isoDay(current.invoiceDate)&&evidence.invoiceDate){current.transactionDate=current.invoiceDate;evidence.transactionDate=evidence.invoiceDate;}
+   if(!current.transactionDate&&!current.invoiceDate&&isoDay(current.documentDate)&&evidence.documentDate){current.transactionDate=current.documentDate;evidence.transactionDate=evidence.documentDate;}
    if(!current.proposedTransactionType){if(current.candidateType==='CUSTOMER_INVOICE')current.proposedTransactionType='REVENUE';else if(['RECEIPT','SUPPLIER_INVOICE'].includes(current.candidateType))current.proposedTransactionType='EXPENSE';}
    if(typeof current.settlementStatus==='string'){const normalized=current.settlementStatus.trim().toUpperCase().replace(/[ -]+/g,'_');if(['PAID','UNPAID','PARTIALLY_PAID'].includes(normalized))current.settlementStatus=normalized;}
    current.classificationAccountId=proposal.proposedAccounts?.classificationAccountId??(current.proposedTransactionType?ctx.chart?.list().find(a=>a.code===(current.proposedTransactionType==='REVENUE'?'401':'501'))?.id:null)??null;
