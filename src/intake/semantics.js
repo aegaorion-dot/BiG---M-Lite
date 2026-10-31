@@ -38,7 +38,7 @@ class DeterministicSemanticProvider extends SemanticDocumentProvider {
    const currency=currencyIn(all);if(currency){const b=group.find(b=>currencyIn(b.text)===currency);evidence.currency={blockId:b.blockId,quote:b.text.slice(0,200)};}
    let amountRaw=find('amount',/^(?:grand\s+total|total(?:\s+(?:bayar|amount))?|amount\s+due|jumlah)\s*[:=]?\s*((?:(?:Rp|IDR|SGD|USD|AUD|GBP|EUR|JPY|AED)\s*)?\d[\d.,]*(?:\s*(?:juta|million|ribu|thousand))?)/i);
    if(!amountRaw&&sourceChannel==='CHAT')amountRaw=find('amount',/((?:Rp|IDR|SGD|USD|AUD|GBP|EUR|JPY|AED)\s*\d[\d.,]*(?:\s*(?:juta|million|ribu|thousand))?)/i);
-   const docDateRaw=find('documentDate',/^(?:date|tanggal|tgl|receipt date|invoice date)\s*:\s*(\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{4}|\d{1,2}\s+[A-Za-z]+\s+\d{4})/i),docDate=isoDate(docDateRaw);
+   const docDateRaw=find('documentDate',/^(?:date|tanggal|tgl|receipt date|invoice date)\s*:\s*(\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{4}|\d{1,2}\s+[A-Za-z]+\s+\d{4})/im),docDate=isoDate(docDateRaw);
    const paymentDateRaw=find('paymentDate',/^(?:payment date|tanggal pembayaran)\s*:\s*(\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{4}|\d{1,2}\s+[A-Za-z]+\s+\d{4})/i),paymentDate=isoDate(paymentDateRaw);
    let transactionDateRaw=find('transactionDate',/^(?:transaction date|tanggal transaksi)\s*:\s*(\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{4}|\d{1,2}\s+[A-Za-z]+\s+\d{4})/i),transactionDate=isoDate(transactionDateRaw);
    let candidateType=type??(/customer invoice/i.test(all)?'CUSTOMER_INVOICE':/supplier invoice|invoice|faktur/i.test(all)?'SUPPLIER_INVOICE':/receipt|struk|kuitansi/i.test(all)?'RECEIPT':/transfer|payment evidence/i.test(all)?'PAYMENT_EVIDENCE':'TRANSACTION');
