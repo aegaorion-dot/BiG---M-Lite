@@ -7,3 +7,5 @@ Muse interprets his context. BiG-M validates proposed facts and transactions. On
 Our proof is concrete: October 2025 company turnover of 150 million rupiah at the governed half-percent rate produces 750 thousand rupiah payable. The user can inspect every step. Personal residence and villa-tax questions remain visibly unresolved instead of erasing the supported result.
 
 The prototype survives document duplicates, foreign currencies, card repayment and process restart. Its value is a financial explanation that can show where every number came from.
+
+The shipped build has a single interface. In the primary demo workspace, Nikos — a Greek-speaking freelance consultant in Tokyo — was profiled by Muse from one Greek conversation, uploaded two synthetic statements, reviewed seventeen proposals, approved four dated FX quotes and posted seventeen balanced journals: 5,627,290 yen income, 780,632 yen expenses, 4,846,658 yen profit. Tax readiness reports review required with its three blockers instead of an invented estimate.
