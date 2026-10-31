@@ -1,4 +1,5 @@
 research/country-pack-fabric/fixtures/blobs/*.bin binary
+research/moroccan-tax/raw/blobs/*.bin binary
 research/country-pack-fabric/pdf-text/*.txt binary
 research/phase3-tax/original-id-sg-test.mjs binary
 research/phase3-tax/source-ports/*.bin binary
