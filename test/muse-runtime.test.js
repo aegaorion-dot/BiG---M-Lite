@@ -13,8 +13,8 @@ const {DeterministicSemanticProvider}=require('../src/intake/semantics');
 const {governedCatalog}=require('../src/ai/museCatalog');
 const envelope=value=>({id:'resp_mock',status:'completed',output:[{type:'message',role:'assistant',content:[{type:'output_text',text:JSON.stringify(value)}]}],usage:{input_tokens:30,output_tokens:20,total_tokens:50}});
 test('Muse monetary validation strips harmless zero-padding beyond a currency minor unit',()=>{
- const raw={transactions:[{candidateType:'RECEIPT',amount:'6480.00',currency:'JPY',confidence:0.9,evidence:{amount:{blockId:'b1',quote:'JPY 6,480'},currency:{blockId:'b1',quote:'JPY 6,480'}}}],profileFacts:[]},extraction={textBlocks:[{blockId:'b1',page:1,text:'Total: JPY 6,480'}]};
- const normalized=C.semantics(raw,extraction,[]);assert.equal(normalized.transactions[0].amount,'6480');
+ const raw={transactions:[{candidateType:'RECEIPT',amount:'6480.00',contractTotal:'6480.00',currency:'JPY',confidence:0.9,evidence:{amount:{blockId:'b1',quote:'JPY 6,480'},contractTotal:{blockId:'b1',quote:'JPY 6,480'},currency:{blockId:'b1',quote:'JPY 6,480'}}}],profileFacts:[]},extraction={textBlocks:[{blockId:'b1',page:1,text:'Total: JPY 6,480'}]};
+ const normalized=C.semantics(raw,extraction,[]);assert.equal(normalized.transactions[0].amount,'6480');assert.equal(normalized.transactions[0].contractTotal,'6480');
 });
 function mock(handler=null,options={}){
  const calls=[];const adapter=new MetaModelAdapter({endpoint:'https://meta.example/v1/responses',apiKey:'test-secret-never-log',model:'muse-spark-mock',fetchImpl:async(url,req)=>{const body=JSON.parse(req.body),system=body.input[0].content[0].text,input=JSON.parse(body.input[1].content[0].text);calls.push({body,input,system});let value;
