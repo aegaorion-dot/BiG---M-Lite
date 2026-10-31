@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict');
 const {handleApi}=require('../src/web/api');
-const {ruleCoverage}=require('../src/web/nikosCalculation');
+const {ruleCoverage,userInvoices,explicitPlatformFee}=require('../src/web/nikosCalculation');
 
 test('Nikos product API exposes the actual calculation and progress consumed by its served page',async()=>{
  let invoked=0;const store={ctx:{org:null},checkAuth(){},serializeMutation:work=>work(),runNikosDemoCalculation:async()=>{invoked++;return {status:'CALCULATED',engine:'UniversalTaxEngine'};},nikosDemoResult:()=>({status:'CALCULATED'}),nikosDemoProgress:()=>({status:'RUNNING',events:[{step:'REGULATORY_RESEARCH',status:'STARTED'}]})};
@@ -19,4 +19,11 @@ test('Nikos regulatory candidate gate accepts a scoped, evidence-backed tax rule
  assert.equal(ruleCoverage(candidate),null);
  const flat=structuredClone(candidate);flat.pack.rules[0].applicabilityPredicate={op:'LITERAL',value:true,valueType:'BOOLEAN'};assert.match(ruleCoverage(flat),/Reference every selected evidence-backed parameter|Guard the rule/);
  const unbound=structuredClone(candidate);unbound.candidateRule.parameters.pop();assert.match(ruleCoverage(unbound),/scoped parameters/);
+});
+
+test('Nikos income selection skips undated payment fragments and keeps evidenced platform fees linked to their invoice date',()=>{
+ const invoice={candidateId:'invoice-1',sourceChannel:'CHAT',candidateType:'CUSTOMER_INVOICE',confirmationAuthority:'USER_INPUT',current:{invoiceDate:'2025-10-12',transactionDate:'2025-10-12',contractTotal:'100',amount:'100',currency:'SGD'},evidence:{invoiceDate:{blockId:'p1',quote:'Invoice date'},contractTotal:{blockId:'p1',quote:'Invoice total'}}};
+ const partial={candidateId:'fragment-1',sourceChannel:'CHAT',candidateType:'CUSTOMER_INVOICE',confirmationAuthority:'USER_INPUT',current:{amount:'20',currency:'SGD',settlementStatus:'UNPAID'},evidence:{amount:{blockId:'p1',quote:'Partial paid balance'}}};
+ const fee={candidateId:'fee-1',sourceChannel:'CHAT',candidateType:'TRANSACTION',confirmationAuthority:'USER_INPUT',current:{amount:'5',currency:'SGD'},evidence:{amount:{blockId:'p1',quote:'Platform withheld a commission fee.'}}};
+ const invoices=userInvoices([invoice,partial]);assert.deepEqual(invoices.map(x=>x.candidateId),['invoice-1']);const matched=explicitPlatformFee([invoice,partial,fee],invoices);assert.equal(matched.candidate.candidateId,'fee-1');assert.equal(matched.invoice.candidateId,'invoice-1');assert.equal(matched.invoice.current.invoiceDate,'2025-10-12');
 });
