@@ -45,6 +45,7 @@ describe('parallel V2 workspace shell', () => {
       '/api/onboarding/state', '/api/workspace', '/api/summary', '/api/transactions', '/api/intake',
       '/api/financial-position', '/api/tax/review', '/api/reports/monthly', '/api/settings',
       '/api/muse/status', '/api/muse/assistant', '/api/intake/upload', '/api/muse/evidence',
+      '/api/intake/edit', '/api/intake/confirm', '/api/intake/fx/resolve', '/api/intake/fx/approve',
     ]) assert.ok(script.includes(endpoint), `expected existing API integration: ${endpoint}`);
     assert.match(script, /data-evidence/);
     assert.match(script, /sessionStorage\.setItem\('bigm-v2-chat:'/);
@@ -54,6 +55,9 @@ describe('parallel V2 workspace shell', () => {
     assert.doesNotMatch(script, /location\.href='\/'/);
     const shell = fs.readFileSync('public/v2/index.html', 'utf8');
     assert.doesNotMatch(shell, /href="\/"/);
+    assert.match(shell, /id="reviewDialog"/);
+    assert.match(shell, /data-fx-resolve/);
+    assert.match(script, /data-review=/);
   });
 
   it('renders each primary page against the actual V2 application code', async () => {

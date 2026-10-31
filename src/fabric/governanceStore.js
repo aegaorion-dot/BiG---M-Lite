@@ -3,7 +3,14 @@
 const fs=require('node:fs'),path=require('node:path');
 const {fingerprint,deepFreeze}=require('../onboarding/canonical');
 const {reviewCandidate,executableApproval}=require('./candidates');
-function atomicWrite(file,data){const temp=file+'.tmp';fs.mkdirSync(path.dirname(file),{recursive:true});try{fs.writeFileSync(temp,JSON.stringify(data,null,2)+'\n');fs.renameSync(temp,file);}catch(e){throw Error('Fabric/determination state could not be saved: '+e.message);}}
+function atomicWrite(file,data){const temp=file+'.tmp';fs.mkdirSync(path.dirname(file),{recursive:true});try{fs.writeFileSync(temp,JSON.stringify(data,null,2)+'\n');fs.renameSync(temp,file);}catch(e){throw Error('Fabric/determination state could not be saved: '+e.message);}}// Raw source hashes describe the exact downloaded bytes, so checkout line endings must not
+// make an identical governed pack look like different content on restart.
+function withoutRawSourceHashes(content){
+ const copy=JSON.parse(JSON.stringify(content));
+ const strip=(value,depth)=>{if(!value||typeof value!=='object'||depth>12)return;if(Array.isArray(value)){for(const item of value)strip(item,depth+1);return;}delete value.rawContentHash;for(const item of Object.values(value))strip(item,depth+1);};
+ strip(copy,0);
+ return copy;
+}
 class FabricGovernanceStore{
  constructor({persistPath=null,policyMode='STRICT'}={}){if(!['STRICT','HACKATHON_DEMO'].includes(policyMode))throw Error('Unknown governance policy mode');this.persistPath=persistPath;this.policyMode=policyMode;this.candidates=new Map();if(persistPath&&fs.existsSync(persistPath)){const data=JSON.parse(fs.readFileSync(persistPath,'utf8'));if(data.version!==1||data.integrityHash!==fingerprint(data.candidates))throw Error('Fabric persistence integrity mismatch');for(const c of data.candidates)this.candidates.set(c.candidateId,deepFreeze(c));}}
  list(kind=null){return [...this.candidates.values()].filter(c=>!kind||c.contentKind===kind);}
@@ -13,7 +20,10 @@ class FabricGovernanceStore{
   if(!candidate?.candidateId||!candidate.provenance?.length||candidate.status!=='CANDIDATE'||candidate.reviewHistory?.length)throw Error('Register a fresh Fabric candidate before human review');
   if(this.candidates.has(candidate.candidateId)){const current=this.get(candidate.candidateId);if(current.contentHash!==candidate.contentHash)throw Error('Candidate identity conflict');return current;}
   const content=candidate.executableContent;
-  if(content&&this.list(candidate.contentKind).some(c=>{const p=c.executableContent;return (p.packId??p.treatyPackId)===(content.packId??content.treatyPackId)&&p.version===content.version;}))throw Error('Immutable pack version already registered');
+  if(content){const same=this.list(candidate.contentKind).find(c=>{const p=c.executableContent;return (p.packId??p.treatyPackId)===(content.packId??content.treatyPackId)&&p.version===content.version;});
+   // Replaying the identical immutable version (restart/reload) is idempotent. Raw source hashes are excluded
+   // from the comparison because they fingerprint checkout line endings; any semantic change still fails.
+   if(same){if(same.contentHash!==candidate.contentHash&&fingerprint(withoutRawSourceHashes(same.executableContent))!==fingerprint(withoutRawSourceHashes(content)))throw Error('Immutable pack version already registered with different content: '+String(content.packId??content.treatyPackId)+'@'+String(content.version));return same;}}
   const copy=deepFreeze(JSON.parse(JSON.stringify(candidate))),next=new Map(this.candidates);next.set(copy.candidateId,copy);this._save(next);return copy;
  }
  review(id,decision){const previous=this.get(id);if(!previous)throw Error('Unknown Fabric candidate');const reviewed=reviewCandidate(previous,decision),next=new Map(this.candidates);next.set(id,reviewed);this._save(next);return reviewed;}
