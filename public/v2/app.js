@@ -56,8 +56,9 @@ function openReview(id){var c=findCandidate(id);if(!c)return;var f=c.current||{}
  $('#rvMessage').hidden=true;$('#rvFxNote').hidden=!foreign;if(foreign)$('#rvFxNote').textContent='Foreign currency: request a dated FX quote before posting.';
  d.showModal();}
 async function saveReview(ev){ev.preventDefault();var d=$('#reviewDialog'),id=d.dataset.candidate,c=findCandidate(id);if(!c)return;
- var changes={transactionDate:$('#rvDate').value,amount:$('#rvAmount').value,currency:$('#rvCurrency').value,counterparty:$('#rvCounterparty').value,description:$('#rvDescription').value,settlementStatus:$('#rvSettlement').value,classificationAccountId:$('#rvClassification').value,paymentAccountId:$('#rvPayment').value};
- try{await api('/api/intake/edit',{candidateId:id,revision:Number(d.dataset.revision),actor:'user',changes});await load();render();var now=findCandidate(id);if(now)d.dataset.revision=String(now.revision);
+ var fields={transactionDate:$('#rvDate').value,amount:$('#rvAmount').value,currency:$('#rvCurrency').value,counterparty:$('#rvCounterparty').value,description:$('#rvDescription').value,settlementStatus:$('#rvSettlement').value,classificationAccountId:$('#rvClassification').value,paymentAccountId:$('#rvPayment').value},changes={};
+ Object.keys(fields).forEach(function(k){var was=c.current&&c.current[k]!=null?String(c.current[k]):'';if(String(fields[k])!==was)changes[k]=fields[k];});
+ try{if(Object.keys(changes).length){await api('/api/intake/edit',{candidateId:id,revision:Number(d.dataset.revision),actor:'user',changes});await load();render();}var now=findCandidate(id);if(now)d.dataset.revision=String(now.revision);
   if(now&&now.status==='READY_TO_CONFIRM'){await api('/api/intake/confirm',{candidateId:id,revision:now.revision,reviewHash:now.reviewHash,idempotencyKey:'v2-'+id+'-'+now.revision,actor:'user'});d.close();toast('Posted','success');await load();render();}
   else{$('#rvMessage').hidden=false;$('#rvMessage').textContent='Saved, still requires review: '+(now?now.status:'');}
  }catch(x){$('#rvMessage').hidden=false;$('#rvMessage').textContent=x.message;}}

@@ -132,7 +132,12 @@ function wireOnboarding(){
  edit('#setCur',v=>({slot:'currency.functional',value:v}));edit('#setReportingCurrency',v=>({slot:'currency.reporting',value:v}));$('#setLang')?.addEventListener('change',e=>run(async()=>{await api('/api/onboarding/edit',{slot:'user.language',value:profileLanguageValue(e.target.value)});await prepare();await refreshOb();}));
  edit('#setStart',v=>({slot:'accounting.periodStart',value:v}));edit('#setEnd',v=>({slot:'accounting.periodEnd',value:v}));
  $('#obUse')?.addEventListener('click',()=>run(async()=>{
-  const hash=cache.ob?.proposal?.hash;if(!hash)throw Error(tr('ob.working'));
+  await api('/api/onboarding/propose',{});
+  await api('/api/onboarding/validate',{});
+  await refresh();
+  const proposal=cache.ob?.proposal,hash=proposal?.hash;if(!hash)throw Error(tr('ob.working'));
+  const activeModules=cache.ws?.modules??[],added=(proposal.modules??[]).filter(m=>activeModules.length&&!activeModules.includes(m));
+  if(added.length&&!window.confirm('This setup enables modules: '+added.join(', ')+'. Continue?'))return;
   await api('/api/onboarding/confirm',{proposalHash:hash,actor:'user',decisionSource:'HUMAN'});
   await api('/api/onboarding/activate',{activationKey:'web-'+hash,actor:'user'});
   route='dashboard';await refresh();toast(tr('ob.confirmedOk'));

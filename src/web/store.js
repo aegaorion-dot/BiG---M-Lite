@@ -208,6 +208,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  function onboardingConfirm({proposalHash:hash,actor='user',decisionSource='HUMAN',packIds=[]}={}){
   if(!demoPolicy)human(actor,decisionSource);
   if(!lastProposal||hash!==lastProposal.hash||lastProposal.profileRevision!==profileState.revision)throw Error('Confirmation must reference the latest proposal hash and profile revision');
+  const contract=validateConfiguration(lastProposal);if(!contract.ok)throw Error('Proposal no longer satisfies the configuration contract; propose again: '+contract.errors.join('; '));
   if(!lastValidation||lastValidation.hash!==hash)throw Error('Latest proposal validation required');
   if(demoPolicy&&confirmation?.proposalHash===hash&&confirmation?.decisionSource==='BIGM_DEMO_POLICY')return {ok:true,...clone(confirmation)};
   const eligible=lastProposal.countryPackResolution.candidates.filter(c=>c.status==='CANDIDATE').map(c=>c.packId);

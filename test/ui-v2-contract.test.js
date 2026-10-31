@@ -58,6 +58,9 @@ describe('parallel V2 workspace shell', () => {
     assert.match(shell, /id="reviewDialog"/);
     assert.match(shell, /data-fx-resolve/);
     assert.match(script, /data-review=/);
+    // A confirmed FX quote is invalidated by /api/intake/edit, so the review form must only submit real changes.
+    assert.match(script, /changes\[k\]=fields\[k\]/);
+    assert.match(script, /if\(Object\.keys\(changes\)\.length\)/);
   });
 
   it('renders each primary page against the actual V2 application code', async () => {
