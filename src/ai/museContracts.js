@@ -28,7 +28,7 @@ function semantics(raw,extraction,accounts){
  for(const t of raw.transactions){
   if(t.transactionDate)assertDate(t.transactionDate,'model transactionDate');
   if(t.currency&&!isKnownCurrency(t.currency))throw Error('Unsupported model currency');
-  for(const k of ['amount','taxAmount','subtotal'])if(t[k]!=null){if(!/^\d+(?:\.\d+)?$/.test(t[k]))throw Error('Malformed model money');if(t.currency){const m=Money.fromMajor(t[k],t.currency);if(m.amountMinor<0n||k==='amount'&&m.amountMinor===0n)throw Error('Invalid model money');}}
+  for(const k of ['amount','taxAmount','subtotal','feeAmount','netAmount'])if(t[k]!=null){if(!/^\d+(?:\.\d+)?$/.test(t[k]))throw Error('Malformed model money');if(t.currency){const m=Money.fromMajor(t[k],t.currency);if(m.amountMinor<0n||k==='amount'&&m.amountMinor===0n)throw Error('Invalid model money');}}
   if(t.proposedTransactionType&&!['REVENUE','EXPENSE','TRANSFER'].includes(t.proposedTransactionType))throw Error('Unknown transaction type');
   for(const id of Object.values(t.proposedAccounts??{}))if(!accounts.some(a=>a.id===id))throw Error('Unknown proposed account');
  }

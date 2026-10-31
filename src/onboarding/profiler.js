@@ -79,7 +79,7 @@ function validateExtractorPayload(raw,{userText=null,pendingQuestion=null,previo
   if(value==null){if(f.status!=='UNKNOWN'&&f.operation!=='REMOVE')errors.push(f.slot+': null requires UNKNOWN');}
   else if(f.status==='UNKNOWN'||!valueValid(f.slot,value))errors.push(f.slot+': unsupported value/type/status');
   const quote=f.supportingQuote??f.evidence;
-  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!isDirectCurrencyAnswer(userText,pendingQuestion,value)&&!/book|pembukuan|fungsional|functional|دفتر|محاسب|نسجلو/i.test(quote??'')&&!isFunctionalCorrection(userText,previousCurrencyRole))errors.push('functional currency requires bookkeeping evidence');
+  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!isDirectCurrencyAnswer(userText,pendingQuestion,value)&&!/book|pembukuan|fungsional|functional|muhasebe|defter|دفتر|محاسب|نسجلو/i.test(quote??'')&&!isFunctionalCorrection(userText,previousCurrencyRole))errors.push('functional currency requires bookkeeping evidence');
   if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!currencyMentionMatches(quote,value))errors.push('functional currency value must match the quoted currency');
   out.facts.push({...f,value,semanticRole:f.slot,source:f.source??'USER',supportingQuote:quote,confidence:f.confidence??null,status:f.status??'CANDIDATE',operation:f.operation??'SET'});
  }
@@ -152,8 +152,8 @@ function applyFacts(state,facts,source='USER',{jurisdictionFacts=[],correction=f
 function slotValue(state,key){const s=state.slots[key];return s&&s.status!=='CONFLICT'&&s.status!=='UNKNOWN'?s.value:null;}
 function jurisdictionValue(state,basis){return state.jurisdictionFacts.find(f=>f.basis===basis&&['CANDIDATE','CONFIRMED'].includes(f.status))?.countryCode??null;}
 function gapAnalysis(state){return CRITICAL_SLOTS.filter(k=>!slotValue(state,k));}
-function planQuestion(state,lang='en',{taxReadiness=null}={}){
- const grouped=require('./economicContext').groupedRequirement(state,lang);if(grouped)return grouped;
+function planQuestion(state,lang='en',{taxReadiness=null,allowUnresolvedEconomicScope=false}={}){
+ const grouped=allowUnresolvedEconomicScope?null:require('./economicContext').groupedRequirement(state,lang);if(grouped)return grouped;
  const conflict=Object.entries(state.slots).find(([,s])=>s.status==='CONFLICT');
  const jurisdictionConflict=state.jurisdictionFacts.find(f=>f.status==='CONFLICT');
  if(conflict&&lang==='ar')return {key:conflict[0],text:require('../i18n/strings').t('ar-MA','question.conflict')};

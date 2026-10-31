@@ -105,6 +105,13 @@ describe('muse synthetic end-to-end pipeline',()=>{
   for(const key of ['candidateId','packId','version','contentHash','rawSourceHashes','sourceUrls','evidenceRefs','scope','governance'])assert.ok(key in checklist,key);
   assert.equal(checklist.scope.jurisdictionCode,'GB');
  });
+ it('demo disclosure binds parameter evidence from a structured object representation',async t=>{
+  const {sourceCandidate,evidence}=await fabricSource(t),bundle=supportedDemoCandidate(sourceCandidate);
+  bundle.evidenceBundle.candidateRule.parameters={FLAT_RATE:{value:'0.01',evidenceIndex:0}};
+  const built=buildExecutableMuseCandidate({sourceCandidate:bundle,declarativePack:declarativePack(evidence),policyMode:'HACKATHON_DEMO'});
+  assert.equal(built.ok,true);
+  assert.equal(built.candidate.demoDisclosure.status,'PROVISIONALLY_ACCEPTED_DEMO');
+ });
  it('demo policy auto-accepts supported official evidence with an auditable provisional status and calculates',async t=>{
   const {sourceCandidate,evidence}=await fabricSource(t);
   const built=buildExecutableMuseCandidate({sourceCandidate:supportedDemoCandidate(sourceCandidate),declarativePack:declarativePack(evidence,{effectiveFrom:'2000-01-01',effectiveTo:'2009-12-31'}),policyMode:'HACKATHON_DEMO'});

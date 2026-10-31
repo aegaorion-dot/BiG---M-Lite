@@ -58,6 +58,7 @@ it('a second approved test CountryPack executes in the same engine with no core 
  assert.throws(()=>new TaxContentRegistry().register(referenceCandidate('COUNTRY_PACK',fixture(),fixture().evidenceRefs)),/TEST ONLY/);
  const disguised=fixture();disguised.testOnly=false;assert.throws(()=>validateCountryPack(disguised),/TEST ONLY/);
 });
+it('tax registry retrieves a complete candidate by id for evidence lineage',()=>{const {registry}=system(),candidate=registry.list('COUNTRY_PACK')[0];assert.ok(candidate);assert.equal(registry.get(candidate.candidateId),candidate);assert.equal(registry.get('missing-test-candidate'),null);});
 it('AI candidates, forged status, research-only approval and altered content cannot execute',()=>{
  const registry=new TaxContentRegistry({allowTestPacks:true}),candidate=add(registry,fixture(),'COUNTRY_PACK',{approve:false}),req=request();
  assert.equal(new UniversalTaxEngine({registry}).determine(req,facts(req)).status,'REVIEW_REQUIRED');
@@ -121,6 +122,12 @@ it('treaty missing/draft/effective-period/conflict conditions never finalize dom
  const calculated=engine.determine({...req,requestKey:'with-treaty'},full);assert.equal(calculated.status,'CALCULATED');assert.equal(calculated.taxAmount.amountMinor,'37000');assert.equal(calculated.appliedRules.length,2);
  add(registry,treatyFixture({id:'TEST_CONFLICTING_TREATY'}),'TREATY_PACK');const conflict=engine.determine({...req,requestKey:'treaty-conflict'},full);assert.equal(conflict.status,'CONFLICT');assert.equal(conflict.taxAmount,null);
 });
+it('demo domestic estimate is not blocked by an unapproved treaty research candidate',()=>{
+ const registry=new TaxContentRegistry({allowTestPacks:true,policyMode:'HACKATHON_DEMO'}),domestic=referenceCandidate('COUNTRY_PACK',fixture({treatyRelevant:false}),fixture().evidenceRefs);registry.register(domestic);approveCandidate(registry,domestic);registry.register(idSgResearchCandidate());
+ const req=request(),snapshot=facts(req,{remove:['SOURCE']}),engine=new UniversalTaxEngine({registry}),result=engine.determine(req,snapshot);
+ assert.equal(registry.list('TREATY_PACK').length,1);assert.equal(registry.list('TREATY_PACK').some(c=>registry.approved(c)),false);
+ assert.equal(result.status,'CALCULATED',JSON.stringify(result));assert.equal(result.taxAmount.amountMinor,'137000');assert.equal(result.treatyResult.status,'APPLICABILITY_UNRESOLVED_DEMO');assert.ok(result.demoDisclosures.some(d=>d.warning==='TREATY_APPLICABILITY_UNRESOLVED'));
+});
 it('out-of-period treaty and false eligibility remain unresolved',()=>{
  const req=request(),snapshot=facts(req,{values:{SOURCE:['COUNTRY','SG'],BENEFICIAL_OWNER:['BOOLEAN',true],PE_PRESENT:['BOOLEAN',true],ELIGIBILITY_REVIEWED:['BOOLEAN',true],FOREIGN_TAX_PAID:['MONEY',{amountMinor:'0',currency:'IDR'}]}}),s=system();add(s.registry,treatyFixture({from:'2024-01-01',to:'2024-12-31'}),'TREATY_PACK');
  assert.equal(s.engine.determine(req,snapshot).status,'OUT_OF_PERIOD');
@@ -153,7 +160,8 @@ it('bookkeeping remains ready while 2026 tax is out of period; accounting has a 
  await s.createSale({id:'phase3-income',orgId:s.ctx.org.id,date:'2026-08-01',jurisdiction:'ID',currency:'IDR',customer:'Client',invoiceRef:'P3',description:'Income',amountMajor:'100'});assert.equal(s.ctx.ledger.size,before+1);
 });
 it('trace and idempotency are deterministic; changed facts with the same request key conflict',()=>{
- const {engine}=system(),req=request(),snapshot=facts(req),first=engine.determine(req,snapshot),repeated=engine.determine(req,snapshot);assert.equal(first,repeated);assert.equal(engine.determinations.records.size,1);
+ const {engine}=system(),req=request(),snapshot=facts(req,{values:{ANNUAL_GENERAL_BASE_PROXY:['MONEY',{amountMinor:'432100',currency:'IDR'}]}}),first=engine.determine(req,snapshot),repeated=engine.determine(req,snapshot);assert.equal(first,repeated);assert.equal(engine.determinations.records.size,1);
+ const explorerRecord=engine.determinations.listForCandidate(first.appliedRules[0].candidateId)[0];assert.equal(explorerRecord.determinationId,first.determinationId,'Evidence Explorer can trace an executable candidate to the numeric determination.');assert.deepEqual(explorerRecord.inputEvidence,[{name:'ANNUAL_GENERAL_BASE_PROXY',type:'MONEY',value:{amountMinor:'432100',currency:'IDR'},evidenceReference:'TEST ONLY stipulated dossier: ANNUAL_GENERAL_BASE_PROXY',confirmationAuthority:undefined,provisional:undefined}]);
  const other=system().engine.determine(req,snapshot);assert.deepEqual(other.calculationTrace,first.calculationTrace);assert.equal(other.calculationHash,first.calculationHash);
  assert.throws(()=>engine.determine(req,facts(req,{revision:2})),/IDEMPOTENCY_CONFLICT/);
  assert.equal(engine.determinations.get(first.determinationId,{scopeId:'other',subjectId:req.subjectId}),null);

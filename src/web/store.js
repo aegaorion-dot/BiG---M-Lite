@@ -30,7 +30,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  const muse=museRuntime??createMuseRuntime();
  profileProvider??=muse.enabled?muse.profileProvider:null;semanticProvider??=muse.enabled?muse.semanticProvider:undefined;
  let museState={events:[],conversations:[],lastQuestion:null,discovery:null};
- const scopeOrgId=orgId??'org-contoh',requiredToken=authToken??process.env.BIGM_API_TOKEN??null;
+ const scopeOrgId=orgId??'org-contoh',requiredToken=authToken??process.env.BIGM_API_TOKEN??null,demoPolicy=process.env.BIGM_REGULATORY_POLICY==='HACKATHON_DEMO';
  const periods=new PeriodRegistry(),ledger=new Ledger(),audit=new AuditTrail(),idempotency=new IdempotencyStore();
  const posting=new PostingService({ledger,periods,audit,idempotency}),reversal=new ReversalService({posting});
  const ctx={org:null,periods,ledger,audit,idempotency,posting,reversal,chart:null,pack:null,registry:null,modules:[],countryPackResolution:null};
@@ -189,6 +189,9 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   if(lastProposal&&lastProposal.profileRevision===profileState.revision)return {ok:true,proposal:clone(lastProposal)};
   const built=proposeConfiguration(profileState,{organizationId:scopeOrgId,version:proposalVersion+1,countryPackResolution:resolve()});if(!built.ok)return built;
   const proposal=built.proposal;
+  // Hackathon workspaces expose the existing bookkeeping modules even when
+  // no jurisdiction pack is installed; tax applicability stays unresolved.
+  if(demoPolicy){proposal.modules=[...ALLOWED_MODULES];proposal.hash=proposalHash(proposal);}
   const before={lastProposal,lastValidation,confirmation,proposalVersion};lastProposal=deepFreeze(proposal);lastValidation=null;confirmation=null;proposalVersion=proposal.version;
   try{persist();}catch(e){({lastProposal,lastValidation,confirmation,proposalVersion}=before);throw e;}
   return {ok:true,proposal:clone(lastProposal)};
@@ -197,16 +200,19 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   if(!lastProposal||lastProposal.profileRevision!==profileState.revision)return {ok:false,errors:['Latest proposal required']};
   const valid=validateProposal(lastProposal);if(!valid.ok){lastValidation=null;return valid;}
   if(lastProposal.hash!==proposalHash(lastProposal))throw Error('Proposal hash mismatch');
-  const before=lastValidation;lastValidation=deepFreeze({...clone(lastProposal),validatedAt:new Date().toISOString()});try{persist();}catch(e){lastValidation=before;throw e;}return {ok:true,validated:clone(lastValidation)};
+  const before=lastValidation;lastValidation=deepFreeze({...clone(lastProposal),validatedAt:new Date().toISOString()});try{persist();}catch(e){lastValidation=before;throw e;}
+  if(demoPolicy){const confirmationResult=onboardingConfirm({proposalHash:lastProposal.hash,actor:'BIGM_DEMO_POLICY',decisionSource:'BIGM_DEMO_POLICY'});const activation=onboardingActivate({activationKey:'demo:'+lastProposal.hash,actor:'BIGM_DEMO_POLICY'});return {ok:true,validated:clone(lastValidation),demoAdvance:{status:'PROVISIONALLY_ACCEPTED_DEMO',confirmation:confirmationResult,activation:{activationKey:activation.activationKey,proposalHash:activation.proposalHash,activatedAt:activation.activatedAt},disclosure:'Workspace configuration was provisionally activated by HACKATHON_DEMO policy. Candidate legal/jurisdiction facts remain provisional; this does not authorize filing, payment, or production use.'}};}
+  return {ok:true,validated:clone(lastValidation)};
  }
  function onboardingConfirm({proposalHash:hash,actor='user',decisionSource='HUMAN',packIds=[]}={}){
-  human(actor,decisionSource);
+  if(!demoPolicy)human(actor,decisionSource);
   if(!lastProposal||hash!==lastProposal.hash||lastProposal.profileRevision!==profileState.revision)throw Error('Confirmation must reference the latest proposal hash and profile revision');
   if(!lastValidation||lastValidation.hash!==hash)throw Error('Latest proposal validation required');
+  if(demoPolicy&&confirmation?.proposalHash===hash&&confirmation?.decisionSource==='BIGM_DEMO_POLICY')return {ok:true,...clone(confirmation)};
   const eligible=lastProposal.countryPackResolution.candidates.filter(c=>c.status==='CANDIDATE').map(c=>c.packId);
-  if(!Array.isArray(packIds)||packIds.some(id=>!eligible.includes(id)))throw Error('Only applicable reviewed pack versions can be explicitly selected');
-  const record={proposalHash:hash,profileRevision:profileState.revision,effectiveDate:lastProposal.period.periodStart,selectedPackIds:[...new Set(packIds)],packVersions:lastProposal.countryPackResolution.candidates.filter(c=>c.packId).map(c=>({packId:c.packId,contentHash:c.contentHash,status:c.status})),actor,decisionSource,timestamp:new Date().toISOString()};
-  const before=confirmation,n=audit.size;confirmation=deepFreeze(record);audit.record({actor,action:'onboarding.confirm',entityType:'configuration',entityId:hash,detail:record});
+  if(demoPolicy)packIds=eligible;else if(!Array.isArray(packIds)||packIds.some(id=>!eligible.includes(id)))throw Error('Only applicable reviewed pack versions can be explicitly selected');
+  const authority=demoPolicy?'BIGM_DEMO_POLICY':'HUMAN',record={proposalHash:hash,profileRevision:profileState.revision,effectiveDate:lastProposal.period.periodStart,selectedPackIds:[...new Set(packIds)],packVersions:lastProposal.countryPackResolution.candidates.filter(c=>c.packId).map(c=>({packId:c.packId,contentHash:c.contentHash,status:c.status})),actor:demoPolicy?'BIGM_DEMO_POLICY':actor,decisionSource:authority,...(demoPolicy?{policyMode:'HACKATHON_DEMO',provisional:true,remainingUncertainty:'Jurisdiction and legal classifications derived by the system are provisional and have not been confirmed by the user.'}:{}),timestamp:new Date().toISOString()};
+  const before=confirmation,n=audit.size;confirmation=deepFreeze(record);audit.record({actor:record.actor,action:'onboarding.confirm',entityType:'configuration',entityId:hash,detail:record});
   try{persist();}catch(e){confirmation=before;audit._rollbackLast(n+1);throw e;}return {ok:true,...clone(record)};
  }
  function onboardingReadiness(){
@@ -214,21 +220,21 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   return evaluateReadiness({profileState,proposal:lastProposal,validated:lastValidation,confirmation,resolution:r});
  }
  function onboardingActivate({activationKey,actor='user'}={}){
-  human(actor);
+  if(!demoPolicy)human(actor);
   if(typeof activationKey!=='string'||!activationKey.trim())throw Error('activationKey is required');
   const previous=history.find(r=>r.activationKey===activationKey);
   if(previous){if(lastProposal&&previous.proposal.hash!==lastProposal.hash)throw Error('Activation key replay with different proposal');return clone(previous);}
   if(!onboardingReadiness().workspaceReady)throw Error('Workspace not ready: current validation and explicit confirmation required');
   const config=clone(lastValidation);delete config.validatedAt;
-  const confirmedState=clone(profileState);for(const f of confirmedState.jurisdictionFacts)if(f.status==='CANDIDATE')f.status='CONFIRMED';
+  const confirmedState=clone(profileState);if(!demoPolicy)for(const f of confirmedState.jurisdictionFacts)if(f.status==='CANDIDATE')f.status='CONFIRMED';
   const eligible=confirmation.selectedPackIds??[];
   const resolution=resolve(confirmedState,eligible);
   // Bind the evaluated confirmation without changing the approved proposal payload/hash.
-  const record=deepFreeze({activationKey,version:history.length+1,proposal:config,profileSnapshot:clone(profileState),confirmation:clone(confirmation),profileRevision:profileState.revision,proposalHash:config.hash,countryPackResolution:resolution,activatedAt:new Date().toISOString(),actor});
+  const record=deepFreeze({activationKey,version:history.length+1,proposal:config,profileSnapshot:clone(profileState),confirmation:clone(confirmation),profileRevision:profileState.revision,proposalHash:config.hash,countryPackResolution:resolution,activatedAt:new Date().toISOString(),actor:demoPolicy?'BIGM_DEMO_POLICY':actor,...(demoPolicy?{policyMode:'HACKATHON_DEMO',provisional:true}: {})});
   const runtimeBefore={...ctx},oldActive=activeConfig,auditCount=audit.size,periodCount=periods.list().length,historyCount=history.length;
   try{
    applyActiveConfiguration(config,resolution);activeConfig=record;history.push(record);
-   audit.record({actor,action:'onboarding.activate',entityType:'configuration',entityId:activationKey,detail:{version:record.version,profileRevision:record.profileRevision,proposalHash:record.proposalHash,effectiveDate:config.period.periodStart,packVersions:confirmation.packVersions}});
+   audit.record({actor:record.actor,action:'onboarding.activate',entityType:'configuration',entityId:activationKey,detail:{version:record.version,profileRevision:record.profileRevision,proposalHash:record.proposalHash,effectiveDate:config.period.periodStart,packVersions:confirmation.packVersions,policyMode:record.policyMode??'STRICT',provisional:Boolean(record.provisional)}});
    persist();
   }catch(e){Object.assign(ctx,runtimeBefore);activeConfig=oldActive;history.splice(historyCount);while(audit.size>auditCount)audit._rollbackLast(audit.size);periods._periods.splice(periodCount);throw e;}
   return clone(record);
@@ -239,15 +245,15 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  }
  function workspaceProfile(){
   const p=activeConfig?.proposal;
-  return {activated:Boolean(p),language:p?.language??slotValue(profileState,'user.language')??'en',organizationId:p?.organizationId??scopeOrgId,organizationName:p?.organizationName??null,
+  return {activated:Boolean(p),policyMode:demoPolicy?'HACKATHON_DEMO':'STRICT',language:p?.language??slotValue(profileState,'user.language')??'en',organizationId:p?.organizationId??scopeOrgId,organizationName:p?.organizationName??null,
    domicile:p?.domicile??null,jurisdiction:p?.domicile??null,jurisdictionBasis:p?.jurisdictionBasis??null,functionalCurrency:p?.functionalCurrency??null,reportingCurrency:p?.reportingCurrency??null,
    transactionCurrencies:p?.transactionCurrencies??[],foreignPurchaseCurrencies:p?.foreignPurchaseCurrencies??[],fxSource:p?.fxSource??null,period:p?.period??null,modules:p?.modules??[],
    economicScopes:clone(activeConfig?.profileSnapshot.slots['org.economicScopes']?.value??[]),countryPackResolution:activeConfig?.countryPackResolution??resolve(),taxReady:Boolean(p&&activeConfig.countryPackResolution.status==='RESOLVED'),taxNote:t(p?.language??'en','ob.taxNote'),fxNote:t(p?.language??'en','ob.fxNote')};
  }
- function deterministicQuestion(){return planQuestion(profileState,require('../../public/locale').base(currentConversationLocale()),{taxReadiness:taxReadiness()});}
+ function deterministicQuestion(){return planQuestion(profileState,require('../../public/locale').base(currentConversationLocale()),{taxReadiness:taxReadiness(),allowUnresolvedEconomicScope:demoPolicy});}
  function currentQuestion(){const q=deterministicQuestion(),saved=museState.lastQuestion;return saved?.profileRevision===profileState.revision&&saved.requirementHash===fingerprint(q)?clone(saved.question):q;}
  function aiStatus(){return {...lastTurn,configured:Boolean(process.env.BIGM_META_API_URL&&process.env.BIGM_META_API_KEY&&process.env.BIGM_META_MODEL),mode:lastTurn.providerUsed,calls:aiCalls,successes:aiSuccesses,muse:muse.status()};}
- function onboardingState(){return {draft:onboardingDraft(),profileState:clone(profileState),profileRevision:profileState.revision,slots:clone(profileState.slots),missingSlots:gapAnalysis(profileState),readyForProposal:gapAnalysis(profileState).length===0,readiness:onboardingReadiness(),jurisdictionCandidates:clone(profileState.jurisdictionFacts),countryPackResolution:resolve(),uiLanguage:require('../../public/locale').base(currentLocale()),uiLocale:currentLocale(),conversationLocale:currentConversationLocale(),languages:supportedLanguages(),jurisdictions:listJurisdictions(),currencies:listCurrencies(),proposal:lastProposal?clone(lastProposal):null,validated:lastValidation?clone(lastValidation):null,confirmation:confirmation?clone(confirmation):null,active:activeConfig?clone(activeConfig):null,history:clone(history),question:currentQuestion(),taxReadiness:taxReadiness(),taxProposal:lastTaxProposal?clone(lastTaxProposal):null,ai:aiStatus(),migrationNotice};}
+ function onboardingState(){return {policyMode:demoPolicy?'HACKATHON_DEMO':'STRICT',draft:onboardingDraft(),profileState:clone(profileState),profileRevision:profileState.revision,slots:clone(profileState.slots),missingSlots:gapAnalysis(profileState),readyForProposal:gapAnalysis(profileState).length===0,readiness:onboardingReadiness(),jurisdictionCandidates:clone(profileState.jurisdictionFacts),countryPackResolution:resolve(),uiLanguage:require('../../public/locale').base(currentLocale()),uiLocale:currentLocale(),conversationLocale:currentConversationLocale(),languages:supportedLanguages(),jurisdictions:listJurisdictions(),currencies:listCurrencies(),proposal:lastProposal?clone(lastProposal):null,validated:lastValidation?clone(lastValidation):null,confirmation:confirmation?clone(confirmation):null,active:activeConfig?clone(activeConfig):null,history:clone(history),question:currentQuestion(),taxReadiness:taxReadiness(),taxProposal:lastTaxProposal?clone(lastTaxProposal):null,ai:aiStatus(),migrationNotice};}
  function rememberMeta(kind,draft,result){
   const line=result.journal.lines.find(l=>l.accountId===ctx.chart.getByCode(kind==='SALE'?'401':'501').id);
   txMeta.set(result.transactionId,{id:result.transactionId,kind,date:draft.date,currency:draft.currency,totalMinor:line?.amountMinor??'0',counterparty:draft.customer??draft.supplier??'-',reference:draft.invoiceRef??draft.billRef??'-',postingId:result.receipt.postingId,journalId:result.journal.id,demo:String(result.transactionId).startsWith('demo-')});
@@ -317,7 +323,8 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   if(raw.active){
    const p=raw.active.proposal;
    if(p.hash!==proposalHash(p)||raw.active.confirmation?.proposalHash!==p.hash||raw.active.confirmation?.profileRevision!==p.profileRevision||p.profileFingerprint!==fingerprint({slots:raw.active.profileSnapshot?.slots,jurisdictionFacts:raw.active.profileSnapshot?.jurisdictionFacts}))throw Error('Persisted activation confirmation invalid');
-   human(raw.active.actor,raw.active.confirmation.decisionSource);
+   const demoActivation=demoPolicy&&raw.active.policyMode==='HACKATHON_DEMO'&&raw.active.actor==='BIGM_DEMO_POLICY'&&raw.active.confirmation?.decisionSource==='BIGM_DEMO_POLICY'&&raw.active.confirmation?.policyMode==='HACKATHON_DEMO'&&raw.active.confirmation?.provisional===true;
+   if(!demoActivation)human(raw.active.actor,raw.active.confirmation.decisionSource);
    applyActiveConfiguration(p,raw.active.countryPackResolution);activeConfig=deepFreeze(raw.active);
   }
  }
@@ -380,10 +387,27 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  }
  async function museDiscovery(){const result=await muse.discover(),before=museState.discovery;museState.discovery={...result,profileRevision:profileState.revision};try{persist();}catch(e){museState.discovery=before;throw e;}return clone(museState.discovery);}
  function museTrace(){if(!muse.traceEnabled)throw Error('Muse trace mode is disabled');return {flow:['USER','META_MUSE_SPARK','CANDIDATE_FACTS','GOVERNED_PACK_REQUIREMENTS','MISSING_FACTS','MUSE_QUESTION','CONFIRMED_PROFILE','DETERMINISTIC_RESOLVER','TAX_ACCOUNTING_ENGINE','MUSE_EXPLANATION'],events:clone(museState.events),profileRevision:profileState.revision,requirements:taxReadiness(),confirmation:confirmation?{profileRevision:confirmation.profileRevision,proposalHash:confirmation.proposalHash,actor:confirmation.actor}:null,accounting:{journalCount:ledger.size,auditVerified:audit.verifyChain().ok}};}
+ function museEvidence({candidateId}={}){
+  if(typeof candidateId!=='string'||!candidateId.trim()||candidateId.length>180)throw Error('Evidence candidate id required');
+  const safeEvidenceUrl=value=>{try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password?u.href:null;}catch{return null;}};
+  const intakeCandidate=intakeState.candidates[candidateId];
+  if(intakeCandidate){
+   const trace=intake.trace(candidateId),blocks=trace.extraction?.textBlocks??[],doc=trace.document?.document??trace.document;
+   const fields=[];for(const [field,ref]of Object.entries(trace.candidate.evidence??{})){if(!ref||typeof ref!=='object'||typeof ref.quote!=='string')continue;const block=blocks.find(b=>b.blockId===ref.blockId);fields.push({field,quote:ref.quote,sourceRegion:block?{blockId:block.blockId,page:block.page??1,row:block.row??null,bbox:block.bbox??null}:null,quoteVerified:Boolean(block?.text?.includes(ref.quote)),sourceKind:doc?.detectedMimeType==='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'?'SPREADSHEET_ROW':doc?'UPLOADED_DOCUMENT':'USER_CHAT'});}
+   return {candidateId,kind:'INTAKE_CANDIDATE',candidateType:trace.candidate.candidateType,status:trace.candidate.status,confidence:trace.candidate.confidence??null,validation:trace.candidate.validation??null,modelProvenance:trace.interpretation?.modelProvenance??(trace.interpretation?{provider:trace.interpretation.provider,model:trace.interpretation.result?.model??null,success:true}:null),source:{title:doc?.originalFilename??'User chat statement',authority:doc?'User-uploaded document':'User statement',url:null,sha256:doc?.sha256??null,retrievedAt:doc?.uploadedAt??trace.extraction?.createdAt??null,sourceKind:doc?(doc.detectedMimeType==='application/pdf'?'UPLOADED_PDF':doc.detectedMimeType?.startsWith('image/')?'UPLOADED_IMAGE':doc.detectedMimeType==='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'?'SPREADSHEET':'UPLOADED_TEXT'):'USER_CHAT',originalUrl:doc?'/api/intake/original?documentId='+encodeURIComponent(doc.documentId):null,savedArtifactAvailable:Boolean(doc)},fields,rawText:trace.extraction?.sourceText??(blocks.map(b=>b.text).join('\n')||null)};
+  }
+  const candidate=taxServices().registry.get(candidateId);if(!candidate)throw Error('Evidence candidate not found');
+  const pack=candidate.executableContent,disclosure=candidate.demoDisclosure??null;
+  const refs=(pack?.evidenceRefs??[]).map((ref,index)=>{const provenance=candidate.provenance?.find(p=>p.rawContentHash===ref.rawContentHash&&(!ref.locator||p.locator===ref.locator))??candidate.provenance?.find(p=>p.rawContentHash===ref.rawContentHash);const bundleEvidence=(candidate.evidenceBundle?.evidence??[]).find(e=>e.provenance?.rawContentHash===ref.rawContentHash&&(!ref.locator||e.locator===ref.locator));const rawUrl=ref.sourceUrl??provenance?.sourceUrl??bundleEvidence?.provenance?.sourceUrl??null,sourceUrl=safeEvidenceUrl(rawUrl);return {evidenceId:ref.evidenceId,hash:ref.rawContentHash,quote:ref.quote??provenance?.quote??bundleEvidence?.provenance?.quote??null,locator:ref.locator??provenance?.locator??bundleEvidence?.locator??null,sourceUrl,sourceTitle:bundleEvidence?.title??(index===0?disclosure?.sourceTitle:null),authority:bundleEvidence?.authority?.authorityName??bundleEvidence?.authority??disclosure?.officialSourceAuthority??null,retrievedAt:provenance?.retrievedAt??bundleEvidence?.provenance?.retrievedAt??null,sourceKind:/\.pdf(?:$|\?)/i.test(rawUrl??'')?'OFFICIAL_DOWNLOADED_PDF':'OFFICIAL_WEB_SOURCE',savedArtifactAvailable:false};});
+  const first=refs[0]??null;
+  const calculations=taxServices().determinations.listForCandidate(candidateId),bundle=candidate.evidenceBundle??{},sourceForField=field=>{const binding=(bundle.fieldEvidence??[]).find(x=>x.field===field);if(!binding)return null;const item=bundle.evidence?.[binding.evidenceIndex];if(!item)return null;return {authority:item.authority?.authorityName??item.authority??null,title:item.title??null,url:safeEvidenceUrl(item.provenance?.sourceUrl??null),sha256:item.provenance?.rawContentHash??null,locator:item.locator??item.provenance?.locator??null,quote:item.provenance?.quote??null};},rules=(pack?.rules??[]).map(rule=>({ruleId:rule.ruleId,incomeOrEventType:rule.incomeOrEventType,requiredFacts:rule.requiredFacts,taxBaseFormula:rule.taxBaseFormula,rateDefinition:rule.rateDefinition,amountFormula:rule.amountFormula,parameters:Object.entries(rule.parameters??{}).map(([name,value])=>({name,...clone(value),evidence:sourceForField('candidateRule.parameters.'+name)}))}));
+  const sourceCandidateIds=[...new Set(calculations.flatMap(x=>[...String(x.inputEvidence?.[0]?.evidenceReference??'').matchAll(/candidate-[a-f0-9]{32}/g)].map(m=>m[0])))],financialRecords=sourceCandidateIds.map(id=>{const record=intakeState.candidates[id];if(!record)return null;const trace=intake.trace(id),doc=trace.document?.document??trace.document;return {candidateId:id,status:record.status,disposition:record.demoDisposition?.status??null,transaction:clone(record.current),source:{title:doc?.originalFilename??'User statement',sha256:doc?.sha256??null,documentId:doc?.documentId??null,originalUrl:doc?'/api/intake/original?documentId='+encodeURIComponent(doc.documentId):null},evidence:(trace.candidate.evidence?Object.entries(trace.candidate.evidence):[]).map(([field,value])=>({field,quote:typeof value?.quote==='string'?value.quote:null,quoteVerified:Boolean(value?.quote&&((trace.extraction?.textBlocks??[]).some(b=>b.text?.includes(value.quote))||trace.extraction?.sourceText?.includes(value.quote)))}))};}).filter(Boolean);
+  return {candidateId,kind:'REGULATORY_CANDIDATE',status:candidate.status,contentHash:candidate.contentHash,packId:pack?.packId??null,ruleIds:(pack?.rules??[]).map(r=>r.ruleId),rules,disclosure,source:first?{title:first.sourceTitle,authority:first.authority,url:first.sourceUrl,sha256:first.hash,retrievedAt:first.retrievedAt,sourceKind:first.sourceKind,savedArtifactAvailable:false}:null,fields:refs.map((r,i)=>({...r,field:'evidenceRefs['+i+']'})),calculations,financialLineage:{taxInputEvidence:calculations.flatMap(x=>x.inputEvidence??[]),records:financialRecords},lineage:{candidateId,ruleIds:(pack?.rules??[]).map(r=>r.ruleId),validationStatus:candidate.validation?.status??candidate.status,registryStatus:candidate.status,engine:'UniversalTaxEngine',determinationIds:calculations.map(x=>x.determinationId),sourceCandidateIds}};
+ }
  function museActivity(){return clone(museState.events).map(e=>({purpose:e.purpose,at:e.at,sourceId:e.sourceId??null,provider:e.provenance?.provider??null,model:e.provenance?.model??null,status:e.status??e.provenance?.status??'COMPLETED',success:e.provenance?.success??null,parseSuccess:e.provenance?.parseSuccess??null,schemaValidationSuccess:e.provenance?.schemaValidationSuccess??null,schemaFailure:e.provenance?.schemaFailure??null,responseStatus:e.provenance?.responseStatus??null,failure:e.failure??e.provenance?.failure??null,sourceHash:e.sourceHash??null,candidateCount:e.candidateCount??null,profileFactCount:e.profileFactCount??null,truncated:e.truncated??false}));}
  return {ctx,txMeta,contentRegistry,checkAuth,serializeMutation,createSale,createPurchase,importCsvText,reverseJournal,listTransactions,monthlyReport,summary,financialPosition,scopedTax,expandedTax,seedDemo,serializeJournal,pipelineDepsFor,
   chartFor:()=>ctx.chart,onboardingTurn,onboardingDraft,onboardingPropose,onboardingValidate,onboardingConfirm,onboardingReadiness,onboardingActivate,onboardingState,onboardingHistory:()=>clone(history),setUiLanguage,editProfile,approvePack,workspaceProfile,aiStatus,applyActiveConfiguration,beginTaxReview,answerTaxReview,proposeTaxReview,taxReadiness,
-   countryPackState:()=>({resolution:resolve(),packs:contentRegistry.list(),approvals:clone(packApprovals)}),productState:()=>require('./product').productState({onboardingState,workspaceProfile,taxReadiness,summary,financialPosition},packSummary()),persist,intake,languagePack:locale=>languagePacks.ensure(locale??currentLocale()),currentLocale,currentConversationLocale,setConversationLocale,reportingStatus:()=>({functionalCurrency:ctx.org?.baseCurrency??null,reportingCurrency:workspaceProfile().reportingCurrency,status:workspaceProfile().reportingCurrency!==ctx.org?.baseCurrency?'REPORTING_CONVERSION_REQUIRED':'SAME_AS_FUNCTIONAL',converted:false}),museAssistant,museDiscovery,museTrace,museActivity,museStatus:()=>muse.status(),
+ countryPackState:()=>({resolution:resolve(),packs:contentRegistry.list(),approvals:clone(packApprovals)}),productState:()=>require('./product').productState({onboardingState,workspaceProfile,taxReadiness,summary,financialPosition},packSummary()),taxSystem:()=>taxServices(),persist,intake,languagePack:locale=>languagePacks.ensure(locale??currentLocale()),currentLocale,currentConversationLocale,setConversationLocale,reportingStatus:()=>({functionalCurrency:ctx.org?.baseCurrency??null,reportingCurrency:workspaceProfile().reportingCurrency,status:workspaceProfile().reportingCurrency!==ctx.org?.baseCurrency?'REPORTING_CONVERSION_REQUIRED':'SAME_AS_FUNCTIONAL',converted:false}),museAssistant,museDiscovery,museTrace,museActivity,museEvidence,museStatus:()=>muse.status(),
  };
 }
 module.exports={createWebStore,proposalHash};

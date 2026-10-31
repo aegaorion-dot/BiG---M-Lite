@@ -15,6 +15,7 @@ const EDITABLE=['transactionDate','amount','currency','counterparty','proposedTr
 function blankIntakeState(){return {version:2,documents:{},extractions:{},interpretations:{},candidates:{},chats:{},keys:{},events:[],external:blankExternalState(),duplicateVersions:{}};}
 function human(actor){if(typeof actor!=='string'||!actor.trim()||actor.length>100||/^(ai|model|muse|meta|system)(?:$|[: -])/i.test(actor))throw Error('Explicit human actor required');}
 function createIntakeService({state,getContext,persist,commitPosting,applyProfileFacts,fxService,extractionProvider=new LocalExtractionProvider(),semanticProvider=new DeterministicSemanticProvider()}){
+ const demoPolicy=process.env.BIGM_REGULATORY_POLICY==='HACKATHON_DEMO';
  state.external??=blankExternalState();state.duplicateVersions??={};state.version=2;let external;
  const economicIndex=new Map(),indexed=new Map();
  function refreshIndex(c,initial=false){
@@ -36,9 +37,10 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
  function candidate(id){const c=state.candidates[id];if(!c)throw Error('Unknown candidate');return c;}
  function validate(c,ctx=getContext()){
   const f=c.current,missingFields=[],conflicts=[],journal=c.candidateType==='EXTERNAL_JOURNAL';
-  if(ctx.workspace.economicScopes?.length){const scope=ctx.workspace.economicScopes.find(s=>s.scopeId===f.economicScopeId);if(!scope)conflicts.push('ECONOMIC_SCOPE_REVIEW_REQUIRED');if(!journal&&!f.eventType)conflicts.push('Explicit reviewed financial event required for scoped posting');if(['INSTALLMENT_OPENING','INSTALLMENT_PAYMENT'].includes(f.eventType)&&scope?.kind!=='PERSONAL')conflicts.push('Installments require the personal economic scope');if(scope?.kind==='EMPLOYMENT'&&f.eventType==='INCOME_RECEIPT'&&f.incomeCategory!=='EMPLOYMENT_WAGE')conflicts.push('Employment receipt cannot become business revenue');if(scope&&scope.kind!=='EMPLOYMENT'&&f.incomeCategory==='EMPLOYMENT_WAGE')conflicts.push('Employment salary requires its employment scope');if(scope?.kind==='PERSONAL'&&f.purpose==='BUSINESS')conflicts.push('Personal scope cannot silently receive business expenses');}
+  if(ctx.workspace.economicScopes?.length){const scope=ctx.workspace.economicScopes.find(s=>s.scopeId===f.economicScopeId);if(!demoPolicy&&!scope)conflicts.push('ECONOMIC_SCOPE_REVIEW_REQUIRED');if(!demoPolicy&&!journal&&!f.eventType)conflicts.push('Explicit reviewed financial event required for scoped posting');if(['INSTALLMENT_OPENING','INSTALLMENT_PAYMENT'].includes(f.eventType)&&scope?.kind!=='PERSONAL')conflicts.push('Installments require the personal economic scope');if(scope?.kind==='EMPLOYMENT'&&f.eventType==='INCOME_RECEIPT'&&f.incomeCategory!=='EMPLOYMENT_WAGE')conflicts.push('Employment receipt cannot become business revenue');if(scope&&scope.kind!=='EMPLOYMENT'&&f.incomeCategory==='EMPLOYMENT_WAGE')conflicts.push('Employment salary requires its employment scope');if(scope?.kind==='PERSONAL'&&f.purpose==='BUSINESS')conflicts.push('Personal scope cannot silently receive business expenses');}
   if(!journal){
-  for(const key of ['transactionDate','counterparty','description','amount','currency','proposedTransactionType','classificationAccountId','paymentAccountId'])if(!f[key])missingFields.push(key);
+  for(const key of ['transactionDate','counterparty','amount','currency','proposedTransactionType','classificationAccountId','paymentAccountId'])if(!f[key])missingFields.push(key);
+  if(!demoPolicy&&!f.description)missingFields.push('description');
   if(f.transactionDate)try{assertDate(f.transactionDate,'transactionDate');}catch{conflicts.push('Date must be an unambiguous valid YYYY-MM-DD');}
   if(/yesterday|kemarin/i.test(c.evidence?.transactionDate?.quote??'')&&!c.revisions.some(r=>r.source==='USER_EDIT'&&Object.hasOwn(r.changes??{},'transactionDate')))conflicts.push('Relative date is a UTC-based proposal; enter an explicit transaction date to resolve timezone ambiguity');
   if(!ctx.org)conflicts.push('Activate a workspace before posting');
@@ -67,11 +69,11 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   const reviewHash=canonicalReviewHash(c,ctx.workspace);
   return {missingFields,conflicts:[...new Set(conflicts)],duplicates,reviewHash,status:missingFields.length||conflicts.length?'REQUIRES_REVIEW':'READY_TO_CONFIRM'};
  }
- function view(c,ctx=getContext()){const validation=validate(c,ctx);return {...clone(c),...(['POSTED','REJECTED','CONFIRMED'].includes(c.status)?{validation,reviewHash:validation.reviewHash,duplicates:validation.duplicates}:validation)};}
+ function view(c,ctx=getContext()){const validation=validate(c,ctx);return {...clone(c),...(c.demoDisposition?{status:c.demoDisposition.status,validation:{...validation,status:c.demoDisposition.status},demoDisclosure:c.demoDisposition.disclosure}:{}),...(!c.demoDisposition&&['POSTED','REJECTED','CONFIRMED'].includes(c.status)?{validation,reviewHash:validation.reviewHash,duplicates:validation.duplicates}:!c.demoDisposition?validation:{})};}
  function registerCandidate({candidateId,sourceChannel,sourceId,candidateType,current,evidence={},sourceRef=null,importRef=null,nativeInput=null}){
   const c={candidateId,documentId:null,sourceChannel,sourceId,sourceRef,candidateType,current:clone(current),evidence:clone(evidence),importRef,nativeInput,extractionId:null,interpretationId:null,confidence:null,status:'CANDIDATE',revision:1,revisions:[{revision:1,source:sourceChannel,at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};state.candidates[candidateId]=c;refreshIndex(c);event('CANDIDATE_CREATED',candidateId);return c;
  }
- function documentStatus(id){const d=state.documents[id];if(!d)return;const cs=Object.values(state.candidates).filter(c=>c.documentId===id);d.processingStatus=cs.length&&cs.every(c=>c.status==='POSTED')?'POSTED':cs.length&&cs.every(c=>c.status==='REJECTED')?'REJECTED':'REQUIRES_REVIEW';}
+ function documentStatus(id){const d=state.documents[id];if(!d)return;const cs=Object.values(state.candidates).filter(c=>c.documentId===id);d.processingStatus=cs.length&&cs.every(c=>['POSTED','PROVISIONALLY_ACCEPTED_DEMO','AUTO_DEDUPED_DEMO','AUTO_EXCLUDED_DEMO'].includes(c.demoDisposition?.status??c.status))?'POSTED':cs.length&&cs.every(c=>c.status==='REJECTED')?'REJECTED':'REQUIRES_REVIEW';}
  function addCandidates(interpretation,documentId,sourceChannel,sourceId,sourceReference=null){
   const ctx=getContext();let n=0;
   for(const proposal of interpretation.result.transactions){
@@ -84,8 +86,9 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    if(!current.transactionDate&&current.documentDate){current.transactionDate=current.documentDate;evidence.transactionDate=evidence.documentDate;}
    if(!current.proposedTransactionType){if(current.candidateType==='CUSTOMER_INVOICE')current.proposedTransactionType='REVENUE';else if(['RECEIPT','SUPPLIER_INVOICE'].includes(current.candidateType))current.proposedTransactionType='EXPENSE';}
    if(typeof current.settlementStatus==='string'){const normalized=current.settlementStatus.trim().toUpperCase().replace(/[ -]+/g,'_');if(['PAID','UNPAID','PARTIALLY_PAID'].includes(normalized))current.settlementStatus=normalized;}
-   current.classificationAccountId=proposal.proposedAccounts?.classificationAccountId??(proposal.proposedTransactionType?ctx.chart?.list().find(a=>a.code===(proposal.proposedTransactionType==='REVENUE'?'401':'501'))?.id:null)??null;
-   current.paymentAccountId=proposal.proposedAccounts?.paymentAccountId??(proposal.paymentMethod?ctx.chart?.list().find(a=>a.code==='101')?.id:null)??null;
+   current.classificationAccountId=proposal.proposedAccounts?.classificationAccountId??(current.proposedTransactionType?ctx.chart?.list().find(a=>a.code===(current.proposedTransactionType==='REVENUE'?'401':'501'))?.id:null)??null;
+   current.paymentAccountId=proposal.proposedAccounts?.paymentAccountId??(proposal.paymentMethod||demoPolicy&&proposal.candidateType==='RECEIPT'?ctx.chart?.list().find(a=>a.code==='101')?.id:null)??null;
+   if(demoPolicy&&proposal.candidateType==='RECEIPT'&&!current.settlementStatus){current.settlementStatus='PAID';current.provisionalPaymentAssumption='Receipt-type source treated as paid for demo; verify at source before production use.';}
    if(current.eventType){const codes=financial.accountCodes(current);current.classificationAccountId=ctx.chart?.list().find(a=>a.code===codes.classification)?.id??null;current.paymentAccountId=ctx.chart?.list().find(a=>a.code===codes.payment)?.id??null;}
    const c={candidateId:id,documentId,sourceChannel,sourceId,extractionId:interpretation.extractionId,interpretationId:interpretation.interpretationId,candidateType:proposal.candidateType,current,evidence,confidence:proposal.confidence,...(sourceChannel==='CHAT'?{confirmationAuthority:'USER_INPUT'}:{}),status:'CANDIDATE',revision:1,revisions:[{revision:1,source:'SEMANTIC_PROPOSAL',at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};
    c.documentCurrency=sourceChannel==='DOCUMENT'?proposal.currency:null;c.semanticProvenance=clone(interpretation.modelProvenance??null);c.sourceRef={reference:documentId??sourceId,fileHash:documentId?state.documents[documentId].sha256:null,...(sourceReference?{userFactSource:clone(sourceReference)}:{})};state.candidates[id]=c;refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_CREATED',id);
@@ -104,6 +107,19 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    event('INTERPRETED',sourceId,{interpretationId});
    applyProfileFacts(result.profileFacts.map(f=>({...f,source:documentId?'DOCUMENT':'USER',documentId,sourceChatId:documentId?null:sourceId,extractionId:extraction.extractionId})),persist);
   }catch(e){Object.assign(state,before);rebuildIndex();external.rebind();throw e;}
+  if(demoPolicy){const ids=Object.values(state.candidates).filter(c=>c.interpretationId===interpretationId).map(c=>c.candidateId);for(const id of ids)await advanceDemoCandidate(id);if(documentId)atomic(()=>documentStatus(documentId));}
+ }
+ async function advanceDemoCandidate(id){
+  const c=candidate(id);if(c.status==='POSTED'||c.demoDisposition)return view(c);const duplicates=duplicateState(c);
+  if(duplicates.status==='POSSIBLE_DUPLICATE'){c.demoDisposition={status:'AUTO_DEDUPED_DEMO',policyMode:'HACKATHON_DEMO',decisionAuthority:'BIGM_DEMO_POLICY',at:now(),reason:'An equivalent transaction observation is retained; this source is linked as a duplicate and is not posted twice.',matches:duplicates.matches};event('AUTO_DEDUPED_DEMO',id,{matches:duplicates.matches.map(x=>x.candidateId)});persist();return view(c);}
+  const f=c.current,txt=((f.description??'')+' '+(f.counterparty??'')).toLowerCase(),personal=['PERSONAL','MIXED','UNKNOWN'].includes(f.purpose)||/personal|family support|loan received|own savings|own account|chargeback|refund|salario|nomina|payroll|recibo de salarios/.test(txt);
+  const exclude=reason=>{c.demoDisposition={status:'AUTO_EXCLUDED_DEMO',policyMode:'HACKATHON_DEMO',decisionAuthority:'BIGM_DEMO_POLICY',at:now(),reason,remainingUncertainty:'Excluded observations remain visible in evidence lineage and are not posted or used as business deductions.'};event('AUTO_EXCLUDED_DEMO',id,{reason});persist();return view(c);};
+  if(personal||c.candidateType==='BANK_ROW'||f.proposedTransactionType==='TRANSFER')return exclude(personal?'Personal, mixed-use, payroll, refund, loan or own-funds observation is retained for reconciliation but excluded from business posting.':'Bank statement or transfer observation is retained as reconciliation evidence and is not posted independently, avoiding duplicate or nontaxable recognition.');
+  if(!['REVENUE','EXPENSE'].includes(f.proposedTransactionType)||f.settlementStatus!=='PAID')return exclude('The source did not establish a completed, classifiable payment that can safely be posted.');
+  if(['transactionDate','counterparty','amount','currency','classificationAccountId','paymentAccountId'].some(k=>!f[k]))return exclude('A required posting field is absent from retrieved evidence.');
+  if(f.currency!==getContext().org?.baseCurrency){let quoted;try{quoted=await resolveFx({candidateId:id,revision:c.revision});}catch(e){return exclude('Evidence-backed FX quote unavailable: '+e.message);}if(quoted.fx?.status!=='AVAILABLE')return exclude('Evidence-backed dated FX quote was unavailable.');try{approveFx({candidateId:id,revision:quoted.revision,quoteHash:quoted.fx.quoteHash,actor:'BIGM_DEMO_POLICY',decisionSource:'BIGM_DEMO_POLICY'});}catch(e){return exclude('Evidence-backed FX quote could not be accepted: '+e.message);}}
+  const ready=view(c);if(ready.status!=='READY_TO_CONFIRM')return exclude('Bounded posting validation did not establish a safe path: '+[...(ready.missingFields??[]),...(ready.conflicts??[])].join('; '));
+  try{await confirm({candidateId:id,revision:c.revision,reviewHash:ready.reviewHash,idempotencyKey:'demo-intake:'+id+':'+c.revision,actor:'BIGM_DEMO_POLICY'});c.demoDisclosure={policyMode:'HACKATHON_DEMO',decisionAuthority:'BIGM_DEMO_POLICY',provisional:true,remainingUncertainty:'Machine-classified bookkeeping posting is provisional and is not a tax determination or production filing.'};return view(c);}catch(e){return exclude('Bounded validation or accounting posting did not complete: '+e.message);}
  }
  async function processDocument(id){
   const d=state.documents[id];if(!d)throw Error('Unknown document');
@@ -134,7 +150,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   if(state.chats[requestId]){if(state.chats[requestId].text!==text||JSON.stringify(state.chats[requestId].sourceReference??null)!==JSON.stringify(sourceReference??null))throw Error('Chat idempotency replay has different text or source provenance');return chatView(requestId);}
   const receivedAt=now(),extractionId='extraction-chat-'+hash(Buffer.from(requestId)),extraction={extractionId,documentId:null,extractor:'chat-text',extractorVersion:'1',method:'TEXT',pages:[{page:1,method:'TEXT'}],sourceText:text,textBlocks:text.split(/\r?\n\s*\r?\n/).map((text,i)=>({blockId:'b'+i,page:1,text})).filter(b=>b.text.trim()),tables:[],confidence:1,warnings:[],detectedLanguage:null,createdAt:receivedAt};
   atomic(()=>{state.chats[requestId]={requestId,text,receivedAt,status:'INTERPRETING',...(sourceReference?{sourceReference:clone(sourceReference)}:{})};state.extractions[extractionId]=extraction;event('CHAT_RECEIVED',requestId,{sourceReference:sourceReference?clone(sourceReference):null});});
-  try{await interpret(extraction,{sourceId:'chat-'+hash(Buffer.from(requestId)),sourceChannel:'CHAT',receivedAt,sourceReference});atomic(()=>{state.chats[requestId].status='REQUIRES_REVIEW';});}
+  try{await interpret(extraction,{sourceId:'chat-'+hash(Buffer.from(requestId)),sourceChannel:'CHAT',receivedAt,sourceReference});atomic(()=>{const candidates=Object.values(state.candidates).filter(c=>c.sourceId==='chat-'+hash(Buffer.from(requestId)));state.chats[requestId].status=demoPolicy&&candidates.length&&candidates.every(c=>c.status==='POSTED'||c.demoDisposition)?'PROVISIONALLY_ACCEPTED_DEMO':'REQUIRES_REVIEW';});}
   catch(e){atomic(()=>{state.chats[requestId].status='FAILED';state.chats[requestId].lastError=e.message;});}
   return chatView(requestId);
  }
@@ -157,11 +173,11 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   return atomic(()=>{c.fx={...result,binding:binding(c,ctx.workspace)};if(result.status==='AVAILABLE'){c.fx.conversion=convert(c.current.amount,c.current.currency,result.rate);c.fx.quoteHash=quoteHash(c.fx);}c.revision++;c.status=validate(c).status;event('FX_QUOTED',candidateId,{status:result.status});return view(c);});
  }
  function approveFx({candidateId,revision,quoteHash:hash,actor,decisionSource='HUMAN'}){
-  human(actor);const c=candidate(candidateId);if(decisionSource!=='HUMAN'||c.revision!==revision||['POSTED','CONFIRMED','REJECTED'].includes(c.status)||c.fx?.status!=='AVAILABLE'||c.fx.quoteHash!==hash||quoteHash(c.fx)!==hash||c.fx.binding!==binding(c,getContext().workspace))throw Error('Exact current human FX quote review required');
-  return atomic(()=>{c.fx.status='APPROVED';c.fx.approval={actor,decisionSource,at:now(),quoteHash:hash};c.revision++;c.status=validate(c).status;event('FX_APPROVED',candidateId,{quoteHash:hash,actor});return view(c);});
+  const demo=demoPolicy&&actor==='BIGM_DEMO_POLICY'&&decisionSource==='BIGM_DEMO_POLICY';if(!demo)human(actor);const c=candidate(candidateId);if(!['HUMAN','BIGM_DEMO_POLICY'].includes(decisionSource)||c.revision!==revision||['POSTED','CONFIRMED','REJECTED'].includes(c.status)||c.fx?.status!=='AVAILABLE'||c.fx.quoteHash!==hash||quoteHash(c.fx)!==hash||c.fx.binding!==binding(c,getContext().workspace))throw Error('Exact current FX quote review required');
+  return atomic(()=>{c.fx.status='APPROVED';c.fx.approval={actor,decisionSource,at:now(),quoteHash:hash,...(demo?{policyMode:'HACKATHON_DEMO',provisional:true}: {})};c.revision++;c.status=validate(c).status;event('FX_APPROVED',candidateId,{quoteHash:hash,actor,decisionSource});return view(c);});
  }
  async function confirm({candidateId,revision,reviewHash,idempotencyKey,actor}){
-  human(actor);if(typeof idempotencyKey!=='string'||!idempotencyKey.trim()||idempotencyKey.length>180||['__proto__','constructor','prototype'].includes(idempotencyKey))throw Error('Confirmation idempotencyKey required');
+  const demo=demoPolicy&&actor==='BIGM_DEMO_POLICY';if(!demo)human(actor);if(typeof idempotencyKey!=='string'||!idempotencyKey.trim()||idempotencyKey.length>180||['__proto__','constructor','prototype'].includes(idempotencyKey))throw Error('Confirmation idempotencyKey required');
   const c=candidate(candidateId),key=state.keys[idempotencyKey];
   if(key&&(key.candidateId!==candidateId||key.revision!==revision))throw Error('Confirmation key replay has different payload');
   if(c.confirmation){if(c.confirmation.idempotencyKey!==idempotencyKey||c.confirmation.revision!==revision||c.confirmation.reviewHash!==reviewHash)throw Error('Confirmation replay has different payload');if(c.status==='POSTED')return view(c);}
@@ -170,7 +186,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
    const checked=validate(c);if(checked.status!=='READY_TO_CONFIRM')throw Error('Candidate requires review: '+[...checked.missingFields,...checked.conflicts].join('; '));if(checked.reviewHash!==reviewHash)throw Error('Stale candidate review hash');
    atomic(()=>{
     const ctx=getContext(),f=c.current;
-    c.confirmation={actor,at:now(),revision,reviewHash,idempotencyKey,decisionSource:'HUMAN',duplicateDecision:clone(c.duplicateDecision??null)};
+    c.confirmation={actor,at:now(),revision,reviewHash,idempotencyKey,decisionSource:demo?'BIGM_DEMO_POLICY':'HUMAN',...(demo?{policyMode:'HACKATHON_DEMO',provisional:true,remainingUncertainty:'Posting classification and any receipt payment assumption are provisional demo decisions.'}:{}),duplicateDecision:clone(c.duplicateDecision??null)};
     c.canonicalCommand=canonicalCommand(c,{...ctx,documentHash:c.documentId?state.documents[c.documentId].sha256:null});
     c.status='CONFIRMED';state.keys[idempotencyKey]={candidateId,revision};event('CONFIRMED',candidateId,c.confirmation);
    });

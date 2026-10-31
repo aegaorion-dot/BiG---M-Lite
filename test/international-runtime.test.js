@@ -3,7 +3,7 @@ const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),{spawnSync}=require('node:child_process');
 const {createWebStore}=require('../src/web/store'),{createActiveStore}=require('./workspace-fixture'),{handleApi}=require('../src/web/api');
 const {LanguagePackService,ExternalTranslationProvider,validateTranslation,Locale,CANONICAL}=require('../src/i18n/languagePacks');
-const {FxRateProvider,DeterministicFxProvider,FxService,validateRate,convert,decimalRate}=require('../src/fx/rates');
+const {FxRateProvider,DeterministicFxProvider,FxService,validateRate,convert,decimalRate,approvedFx,binding,quoteHash}=require('../src/fx/rates');
 const {FrankfurterProvider}=require('../src/fx/frankfurter');
 const {fingerprint}=require('../src/onboarding/canonical');
 const {MetaModelAdapter}=require('../src/ai/aiAdapter'),{createMuseRuntime}=require('../src/ai/museRuntime');
@@ -63,6 +63,12 @@ test('International: missing-profile assistance keeps the actual Indonesian ques
 });
 test('International: FX abstraction and exact decimal/rational Money conversion',async()=>{
  await assert.rejects(new FxRateProvider().getRate(),/not implemented/);const record=await fx().getRate({baseCurrency:'SGD',quoteCurrency:'IDR',date:'2026-06-01'}),r=convert('2000','SGD',record);assert.deepEqual(r.original,{amountMinor:'200000',currency:'SGD'});assert.deepEqual(r.functional,{amountMinor:'24000250',currency:'IDR'});assert.equal(r.rounding,'HALF_UP_AT_FUNCTIONAL_MINOR_UNIT');const rounded=convert('0.01','SGD',{...record,rate:'12000.5'});assert.equal(rounded.functional.amountMinor,'120');
+});
+test('International: HACKATHON_DEMO accepts only exact provisional FX approval; strict mode still rejects it',()=>{
+ const workspace={organizationId:'demo-org',functionalCurrency:'EUR',policyMode:'HACKATHON_DEMO'},c={candidateId:'demo-fx',current:{amount:'10.00',currency:'USD',transactionDate:'2025-10-07'}};
+ const rate={baseCurrency:'USD',quoteCurrency:'EUR',rate:'0.9',rateDate:'2025-10-07',requestedDate:'2025-10-07',provider:'official-fixture-test',providerReference:'https://example.test/fx/2025-10-07',fetchedAt:'2025-10-08T00:00:00.000Z',status:'AVAILABLE'};
+ c.fx={status:'APPROVED',rate,conversion:convert(c.current.amount,c.current.currency,rate),binding:binding(c,workspace),approval:{decisionSource:'BIGM_DEMO_POLICY',policyMode:'HACKATHON_DEMO',provisional:true}};c.fx.quoteHash=quoteHash(c.fx);c.fx.approval.quoteHash=c.fx.quoteHash;
+ assert.equal(approvedFx(c,workspace),true);assert.equal(approvedFx(c,{...workspace,policyMode:'STRICT'}),false);c.fx.rate={...rate,rate:'0.91'};assert.equal(approvedFx(c,workspace),false);
 });
 test('International: malformed, floating-point, nonpositive, unbounded and unsupported FX inputs fail',async()=>{
  for(const rate of [0.1,'NaN','Infinity','0','-1','1e3','1.1234567890123','1000000000000'])assert.throws(()=>decimalRate(rate));await assert.rejects(new FxService({provider:fx()}).resolve({baseCurrency:'BTC',quoteCurrency:'IDR',date:'2026-06-01'}));

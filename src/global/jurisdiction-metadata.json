@@ -226,5 +226,25 @@
     ],
     "coverageStatus": "NO_APPROVED_TAX_COVERAGE",
     "source": "Platform Intl region metadata; tax rules must be independently sourced and validated"
+  },
+  {
+    "code": "ES",
+    "name": "Spain",
+    "currency": "EUR",
+    "locale": "es-ES",
+    "metadataOnly": true,
+    "officialDomains": ["sede.agenciatributaria.gob.es", "agenciatributaria.es", "boe.es", "hacienda.gob.es"],
+    "coverageStatus": "NO_APPROVED_TAX_COVERAGE",
+    "source": "Hackathon scenario jurisdiction metadata; tax rules must be independently researched and validated"
+  },
+  {
+    "code": "TR",
+    "name": "Turkey",
+    "currency": "TRY",
+    "locale": "tr-TR",
+    "metadataOnly": true,
+    "officialDomains": ["gib.gov.tr", "resmigazete.gov.tr"],
+    "coverageStatus": "NO_APPROVED_TAX_COVERAGE",
+    "source": "Hackathon scenario nationality metadata; no Turkish tax rule coverage implied"
   }
 ]

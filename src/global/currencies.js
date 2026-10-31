@@ -18,6 +18,7 @@ const CURRENCIES = Object.freeze([
   { code: 'JPY', name: 'Japanese Yen' },
   { code: 'AED', name: 'UAE Dirham' },
   { code: 'MAD', name: 'Moroccan Dirham' },
+  { code: 'TRY', name: 'Turkish Lira' },
 ]);
 
 function listCurrencies() {

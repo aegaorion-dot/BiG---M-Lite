@@ -15,6 +15,7 @@ class TaxContentRegistry{
   if(candidate.contentKind==='COUNTRY_PACK')validateCountryPack(candidate.executableContent,{allowUndatedDemo});else if(candidate.contentKind==='TREATY_PACK')validateTreatyPack(candidate.executableContent,{allowUndatedDemo});else throw Error('Executable Fabric candidate required');
   const p=candidate.executableContent;if(p.evidenceRefs.some(e=>!candidate.evidenceIds.includes(e.evidenceId)||!candidate.provenance.some(ref=>ref.rawContentHash===e.rawContentHash)))throw Error('Pack evidence not bound to Fabric source candidate');
  }
+ get(candidateId){return this.governance.get(candidateId);}
  list(kind){return this.governance.list(kind).filter(c=>this.allowTestPacks||!c.executableContent?.testOnly);}
  approved(candidate){try{this.validate(candidate);return executableApproval(candidate);}catch{return false;}}
  snapshot(){return JSON.parse(JSON.stringify([...this.list('COUNTRY_PACK'),...this.list('TREATY_PACK')]));}

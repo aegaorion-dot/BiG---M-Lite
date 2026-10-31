@@ -16,6 +16,7 @@ async function dispatch(store,method,path,query={},body={}){
    if(path==='/api/muse/status')return json({ok:true,...store.museStatus()});
    if(path==='/api/muse/activity')return json({ok:true,events:store.museActivity()});
    if(path==='/api/muse/trace')return json({ok:true,...store.museTrace()});
+   if(path==='/api/muse/evidence')return json({ok:true,evidence:store.museEvidence({candidateId:query.candidateId})});
    if(path==='/api/tax/review')return json({ok:true,readiness:store.taxReadiness()});
    if(path==='/api/tax/scoped')return json({ok:true,...store.scopedTax.view()});
    if(path==='/api/tax/expanded')return json({ok:true,...store.expandedTax.view()});

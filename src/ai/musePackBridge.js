@@ -16,7 +16,8 @@ function demoDisclosureFor(sourceCandidate,declarativePack){
  const fieldEvidence=b.fieldEvidence??[],propositionBinding=fieldEvidence.some(binding=>binding.field==='candidateRule.legalTest'&&Number.isInteger(binding.evidenceIndex)&&sources[binding.evidenceIndex]);
  if(!proposition?.trim()||!propositionBinding)return null;
  const hashes=[...new Set(sourceCandidate.provenance.map(p=>p.rawContentHash))].sort();if(!hashes.length||declarativePack.evidenceRefs.some(r=>!hashes.includes(r.rawContentHash)||!sourceCandidate.evidenceIds.includes(r.evidenceId)))return null;
- const citedNumbers=new Set((b.candidateRule?.parameters??[]).filter(p=>Number.isInteger(p.evidenceIndex)&&sources[p.evidenceIndex]).map(p=>String(p.value)));
+ const proposedParameters=b.candidateRule?.parameters??[],parameterBindings=Array.isArray(proposedParameters)?proposedParameters:Object.entries(proposedParameters).map(([name,value])=>({name,...(value&&typeof value==='object'?value:{value})}));
+ const citedNumbers=new Set(parameterBindings.filter(p=>Number.isInteger(p.evidenceIndex)&&sources[p.evidenceIndex]).map(p=>String(p.value)));
  const packNumbers=(declarativePack.rules??[]).flatMap(r=>Object.values(r.parameters??{}).filter(p=>p?.valueType==='NUMBER').map(p=>String(p.value)));
  if(packNumbers.some(v=>!citedNumbers.has(v)))return null;
  const publicationDate=a?.sourcePublicationDate??null,revisionDate=a?.sourceRevisionDate??null;
