@@ -38,7 +38,7 @@ $('#txMessage').hidden=true;d.dataset.revision=String((x.revisions||[]).length);
 async function saveTaxCorrection(ev){ev.preventDefault();var d=$('#taxCorrection');var changes={taxYear:$('#txYear').value,residence:$('#txResidence').value,incomeScope:$('#txIncomeScope').value,expenseTreatment:$('#txExpense').value};
 try{await api('/api/tax/estimate/correct',{changes:changes,actor:'user'});await load();d.close();render();toast(t('correctionSaved'),'success');}catch(x){$('#txMessage').hidden=false;$('#txMessage').textContent=x.message;}}
 async function recalculateTaxEstimate(){var box=$('#taxEstimateError');if(box)box.hidden=true;try{await api('/api/tax/estimate/recalculate',{actor:'user'});await load();render();toast(t('recalculated'),'success');}catch(x){if(box){box.hidden=false;box.textContent=x.message;}}}
-function provisionalCard(){var x=S.taxEstimate;if(!x)return '';var est=x.estimate,cur=x.currency||'JPY',amt=est?money(est.amountMinor,cur):t('notAvailable');
+function provisionalCard(){var x=S.taxEstimate;if(!x)return '';if((S.ws&&S.ws.jurisdiction)!=='JP')return '';var est=x.estimate,cur=x.currency||'JPY',amt=est?money(est.amountMinor,cur):t('notAvailable');
 var blockers=(x.blockers||[]).map(function(b){return '<li><code>'+e(b.code)+'</code> '+e(b.detail||'')+'</li>';}).join('');
 var assumptions=(x.assumptions||[]).map(function(a){return '<li>'+e(a)+'</li>';}).join('');
 var range=x.coverage?(x.coverage.bracketLow+' - '+x.coverage.bracketHigh+' @ '+x.coverage.rate):'&mdash;';
