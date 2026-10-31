@@ -608,5 +608,15 @@
   "accounting.debit": "Debit",
   "accounting.credit": "Credit",
   "external.journal": "Imported journal",
-  "external.mappedLines": "Mapped journal lines: {count}"
+  "external.mappedLines": "Mapped journal lines: {count}",
+  "assistant.fact.workspaceActive": "Workspace activated: {value}.",
+  "assistant.fact.functionalCurrency": "Bookkeeping functional currency: {value}.",
+  "assistant.fact.revenue": "Revenue: {currency} {amount}.",
+  "assistant.fact.expenses": "Expenses: {currency} {amount}.",
+  "assistant.fact.netIncome": "Net bookkeeping income: {currency} {amount}.",
+  "cognitive.statusYes": "yes",
+  "cognitive.statusNo": "no",
+  "cognitive.ready": "ready",
+  "cognitive.notReady": "not ready",
+  "cognitive.none": "none"
 }

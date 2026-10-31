@@ -608,5 +608,15 @@
   "accounting.debit": "Debit",
   "accounting.credit": "Kredit",
   "external.journal": "Jurnal impor",
-  "external.mappedLines": "Baris jurnal yang dipetakan: {count}"
+  "external.mappedLines": "Baris jurnal yang dipetakan: {count}",
+  "cognitive.statusYes": "ya",
+  "cognitive.statusNo": "belum",
+  "cognitive.ready": "siap",
+  "cognitive.notReady": "belum siap",
+  "cognitive.none": "belum ada",
+  "assistant.fact.workspaceActive": "Ruang kerja diaktifkan: {value}.",
+  "assistant.fact.functionalCurrency": "Mata uang pembukuan: {value}.",
+  "assistant.fact.revenue": "Pendapatan: {currency} {amount}.",
+  "assistant.fact.expenses": "Beban: {currency} {amount}.",
+  "assistant.fact.netIncome": "Laba bersih pembukuan: {currency} {amount}."
 }

@@ -7,7 +7,7 @@
   {tag:'en-AU',name:'English (Australia)',dictionary:'en',fallback:null,direction:'ltr'},
   {tag:'en-SG',name:'English (Singapore)',dictionary:'en',fallback:null,direction:'ltr'},
   {tag:'en-GB',name:'English (United Kingdom)',dictionary:'en',fallback:null,direction:'ltr'},
-  {tag:'el-GR',name:'Ελληνικά (English fallback)',dictionary:null,fallback:'en',direction:'ltr'}
+  {tag:'el-GR',name:'Ελληνικά',dictionary:'el',fallback:'en',direction:'ltr'}
  ]);
  const SUPPORTED=LANGUAGE_REGISTRY.map(x=>x.tag);
  function canonical(tag){if(tag==='id')return 'id-ID';if(typeof tag!=='string'||tag.length>40)throw Error('Invalid locale');try{return Intl.getCanonicalLocales(tag)[0];}catch{throw Error('Invalid locale');}}

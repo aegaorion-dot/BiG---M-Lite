@@ -7,12 +7,13 @@
   <title>BiG-M Lite</title>
   <link rel="stylesheet" href="/styles.css">
   <script src="/locale.js" defer></script>
+  <script src="/i18n/el-ui.js" defer></script>
   <script src="/app.js" defer></script>
 </head>
 <body>
   <div class="app-shell" id="appShell">
     <aside class="sidebar" id="sidebar" aria-label="Main navigation">
-      <a class="brand" href="/" aria-label="BiG-M Lite home"><span class="brand-mark">B</span><span class="brand-copy"><strong>BiG-M</strong><small>Business, made clear</small></span></a>
+      <a class="brand" href="/" aria-label="BiG-M Lite home"><span class="brand-mark">B</span><span class="brand-copy"><strong>BiG-M</strong><small data-i18n="brandTagline">Business, made clear</small></span></a>
       <div class="workspace-switcher" id="workspaceBadge" aria-live="polite"><span class="workspace-dot"></span><span><small id="workspaceLabel">Workspace</small><strong id="workspaceName">Loading…</strong></span><span class="workspace-chevron" aria-hidden="true">⌄</span></div>
       <nav class="primary-nav" id="primaryNav" aria-label="Primary"></nav>
       <div class="sidebar-bottom"><a class="sidebar-help" href="mailto:support@bigm.example" id="helpLink"><span aria-hidden="true">?</span><span data-i18n="help">Help & support</span></a></div>
@@ -33,7 +34,7 @@
         </div>
       </header>
       <section id="pageContent" class="page-content" tabindex="-1" aria-live="polite"><div class="loading-card" role="status"><span class="spinner"></span><span data-i18n="loading">Loading your workspace…</span></div></section>
-      <footer class="app-footer"><span>BiG-M Lite</span><span id="footerContext"></span><span><span class="service-dot" id="serviceDot"></span><span id="serviceStatus">Checking services</span></span></footer>
+      <footer class="app-footer"><span>BiG-M Lite</span><span id="footerContext"></span><span><span class="service-dot" id="serviceDot"></span><span id="serviceStatus" data-i18n="serviceChecking">Checking services</span></span></footer>
     </main>
   </div>
   <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="false"></div>
@@ -56,20 +57,20 @@
   <dialog class="modal evidence-modal" id="evidenceDialog" aria-labelledby="evidenceTitle"><div class="modal-heading"><div><span class="eyebrow" data-i18n="sourceLineage">Source lineage</span><h2 id="evidenceTitle" data-i18n="evidence">Evidence</h2></div><button class="icon-button" type="button" data-close-dialog aria-label="Close">×</button></div><div id="evidenceContent"></div></dialog>
   <dialog class="modal" id="reviewDialog" aria-labelledby="reviewTitle">
     <form id="reviewForm" method="dialog">
-      <div class="modal-heading"><div><span class="eyebrow" data-i18n="needsReview">Needs review</span><h2 id="reviewTitle">Review transaction</h2></div><button type="button" class="icon-button" data-close-dialog aria-label="Close">×</button></div>
+      <div class="modal-heading"><div><span class="eyebrow" data-i18n="needsReview">Needs review</span><h2 id="reviewTitle" data-i18n="reviewTitle">Review transaction</h2></div><button type="button" class="icon-button" data-close-dialog aria-label="Close">×</button></div>
       <div class="field-grid">
         <label><span data-i18n="date">Date</span><input id="rvDate" name="transactionDate" type="date" required></label>
         <label><span data-i18n="amount">Amount</span><input id="rvAmount" name="amount" type="text" inputmode="decimal" required></label>
-        <label><span>Currency</span><select id="rvCurrency" name="currency"></select></label>
+        <label><span data-i18n="currency">Currency</span><select id="rvCurrency" name="currency"></select></label>
         <label><span data-i18n="counterparty">Customer / supplier</span><input id="rvCounterparty" name="counterparty" required maxlength="120"></label>
         <label class="field-wide"><span data-i18n="description">Description</span><input id="rvDescription" name="description" required maxlength="180"></label>
-        <label><span>Settlement</span><select id="rvSettlement" name="settlementStatus"><option value="PAID">PAID</option><option value="UNPAID">UNPAID</option><option value="PARTIALLY_PAID">PARTIALLY_PAID</option></select></label>
-        <label><span>Classification account</span><select id="rvClassification" name="classificationAccountId" required></select></label>
-        <label><span>Payment account</span><select id="rvPayment" name="paymentAccountId" required></select></label>
+        <label><span data-i18n="settlement">Settlement</span><select id="rvSettlement" name="settlementStatus"><option value="PAID">PAID</option><option value="UNPAID">UNPAID</option><option value="PARTIALLY_PAID">PARTIALLY_PAID</option></select></label>
+        <label><span data-i18n="classificationAccount">Classification account</span><select id="rvClassification" name="classificationAccountId" required></select></label>
+        <label><span data-i18n="paymentAccount">Payment account</span><select id="rvPayment" name="paymentAccountId" required></select></label>
       </div>
       <p class="form-note" id="rvFxNote" hidden></p>
       <p class="form-error" id="rvMessage" role="alert" hidden></p>
-      <div class="modal-actions"><button type="button" class="button button-secondary" data-fx-resolve hidden>Get FX quote</button><button type="button" class="button button-secondary" data-fx-approve hidden>Approve FX</button><button type="button" class="button button-secondary" data-close-dialog data-i18n="cancel">Cancel</button><button type="submit" class="button button-primary" id="rvSave">Save &amp; post</button></div>
+      <div class="modal-actions"><button type="button" class="button button-secondary" data-fx-resolve data-i18n="getFxQuote" hidden>Get FX quote</button><button type="button" class="button button-secondary" data-fx-approve data-i18n="approveFx" hidden>Approve FX</button><button type="button" class="button button-secondary" data-close-dialog data-i18n="cancel">Cancel</button><button type="submit" class="button button-primary" id="rvSave" data-i18n="saveAndPost">Save &amp; post</button></div>
     </form>
   </dialog>  <template id="srOnlyTemplate"><span class="sr-only"></span></template>
 </body>
