@@ -77,9 +77,12 @@ function createServer({ port = 3100, persistPath = null, orgId = null, authToken
       }
       if (req.method !== 'GET') return send(res, 405, { 'content-type': 'text/plain' }, 'Method not allowed');
       let staticPath = url.pathname;
-      if (staticPath === '/' || staticPath === '/index.html' || staticPath === '/v2') staticPath = '/v2/';
-      else if (staticPath === '/legacy') staticPath = '/';
-      else if (staticPath.startsWith('/legacy/')) staticPath = staticPath.slice('/legacy'.length);
+      if (staticPath === '/v2' || staticPath === '/v2/') {
+        return send(res, 308, { location: '/', 'content-type': 'text/plain; charset=utf-8' }, 'Moved to /');
+      }
+      if (staticPath === '/legacy' || staticPath.startsWith('/legacy/')) {
+        return send(res, 404, { 'content-type': 'text/plain; charset=utf-8' }, 'Not found');
+      }
       return serveStatic(staticPath, res);
     } catch (e) {
       return send(res, e.status??(e instanceof SyntaxError?400:500), { 'content-type': 'application/json' }, JSON.stringify({ ok: false, error: e.message }));

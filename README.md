@@ -6,7 +6,7 @@ BiG-M Lite is a hackathon prototype for freelancers and small businesses working
 
 Small businesses should not have to translate their lives into accounting software before they can use it. BiG-M separates understanding from authority: Meta Muse Spark interprets conversations and documents; governed content and deterministic resolvers handle applicability; existing engines calculate and record; the user confirms consequential actions.
 
-![Indonesian demo home](research/phase9-demo/screenshots/dashboard-laptop.png)
+![Indonesian demo home](research/phase9-demo/screenshots/home-laptop.png)
 
 ## Final hackathon checkpoint: Youssef
 
@@ -87,6 +87,10 @@ npm start
 ```
 
 Open [localhost:3100](http://localhost:3100). The server binds to `127.0.0.1`. Runtime state defaults to `data/store.json` and is ignored by Git. No setup automatically approves a legal rule or treaty benefit.
+
+## One user interface
+
+BiG-M Lite ships exactly one experience. The server renders the single application shell at `/` (`public/index.html`, `public/app.js`, `public/styles.css`); there is no second UI, no legacy mount and no fallback screen. Business setup, document intake, transaction review, FX approval, posting, reports, tax readiness and settings all live in that one shell and reuse the same HTTP API and One Engine. `/v2/` permanently redirects to `/` so old bookmarks keep working, and `/legacy/` returns 404.
 
 ## Repeatable demo
 

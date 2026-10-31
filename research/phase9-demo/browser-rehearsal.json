@@ -2,138 +2,141 @@
   "success": true,
   "syntheticOnly": true,
   "liveMetaCalls": 0,
+  "singleUi": true,
   "engineJournals": 3,
   "checks": [
     {
       "viewport": "desktop",
-      "page": "dashboard",
+      "page": "Beranda",
       "width": 1440,
       "documentWidth": 1425,
       "visibleJson": 0,
+      "heading": "Selamat datang kembali, Bali",
       "untranslated": false,
-      "heading": "Ringkasan sederhana"
+      "rawError": false
     },
     {
       "viewport": "desktop",
-      "page": "intake",
-      "width": 1440,
-      "documentWidth": 1425,
-      "visibleJson": 0,
-      "untranslated": false,
-      "heading": "Chat & dokumen"
-    },
-    {
-      "viewport": "desktop",
-      "page": "documents",
-      "width": 1440,
-      "documentWidth": 1425,
-      "visibleJson": 0,
-      "untranslated": false,
-      "heading": "Dokumen"
-    },
-    {
-      "viewport": "desktop",
-      "page": "tax",
-      "width": 1440,
-      "documentWidth": 1425,
-      "visibleJson": 0,
-      "untranslated": false,
-      "heading": "Kesiapan pajak"
-    },
-    {
-      "viewport": "desktop",
-      "page": "reports",
+      "page": "Dokumen",
       "width": 1440,
       "documentWidth": 1440,
       "visibleJson": 0,
+      "heading": "Dokumen",
       "untranslated": false,
-      "heading": "Laporan · IDR"
+      "rawError": false
     },
     {
       "viewport": "desktop",
-      "page": "assistant",
+      "page": "Kesiapan pajak",
       "width": 1440,
-      "documentWidth": 1440,
+      "documentWidth": 1425,
       "visibleJson": 0,
+      "heading": "Kesiapan pajak",
       "untranslated": false,
-      "heading": "Asisten BiG-M"
+      "rawError": false
     },
     {
       "viewport": "desktop",
-      "page": "settings",
+      "page": "Laporan",
       "width": 1440,
       "documentWidth": 1440,
       "visibleJson": 0,
+      "heading": "Laporan",
       "untranslated": false,
-      "heading": "Pengaturan"
+      "rawError": false
+    },
+    {
+      "viewport": "desktop",
+      "page": "Asisten BiG-M",
+      "width": 1440,
+      "documentWidth": 1425,
+      "visibleJson": 0,
+      "heading": "Asisten bisnis Anda",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "desktop",
+      "page": "Pengaturan",
+      "width": 1440,
+      "documentWidth": 1440,
+      "visibleJson": 0,
+      "heading": "Pengaturan",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "desktop",
+      "assistantReply": "B\nMuse tidak tersedia. Informasi berikut berasal dari catatan ruang kerja tersimpan.\n\nRuang kerja aktif: ya.\n\nMata uang pembukuan: IDR.\n\nuser.language: \"en\" (CANDIDATE).\n\nuser.nationality: \"AU\" (CANDIDATE).\n\norg.name: \"Bali Design Demo\" (CANDIDATE).\n\norg.businessType: \"freelancer"
     },
     {
       "viewport": "laptop",
-      "page": "dashboard",
+      "page": "Beranda",
       "width": 1280,
       "documentWidth": 1265,
       "visibleJson": 0,
+      "heading": "Selamat datang kembali, Bali",
       "untranslated": false,
-      "heading": "Ringkasan sederhana"
+      "rawError": false
     },
     {
       "viewport": "laptop",
-      "page": "intake",
-      "width": 1280,
-      "documentWidth": 1265,
-      "visibleJson": 0,
-      "untranslated": false,
-      "heading": "Chat & dokumen"
-    },
-    {
-      "viewport": "laptop",
-      "page": "documents",
-      "width": 1280,
-      "documentWidth": 1265,
-      "visibleJson": 0,
-      "untranslated": false,
-      "heading": "Dokumen"
-    },
-    {
-      "viewport": "laptop",
-      "page": "tax",
-      "width": 1280,
-      "documentWidth": 1265,
-      "visibleJson": 0,
-      "untranslated": false,
-      "heading": "Kesiapan pajak"
-    },
-    {
-      "viewport": "laptop",
-      "page": "reports",
+      "page": "Dokumen",
       "width": 1280,
       "documentWidth": 1280,
       "visibleJson": 0,
+      "heading": "Dokumen",
       "untranslated": false,
-      "heading": "Laporan · IDR"
+      "rawError": false
     },
     {
       "viewport": "laptop",
-      "page": "assistant",
+      "page": "Kesiapan pajak",
       "width": 1280,
-      "documentWidth": 1280,
+      "documentWidth": 1265,
       "visibleJson": 0,
+      "heading": "Kesiapan pajak",
       "untranslated": false,
-      "heading": "Asisten BiG-M"
+      "rawError": false
     },
     {
       "viewport": "laptop",
-      "page": "settings",
+      "page": "Laporan",
       "width": 1280,
       "documentWidth": 1280,
       "visibleJson": 0,
+      "heading": "Laporan",
       "untranslated": false,
-      "heading": "Pengaturan"
+      "rawError": false
+    },
+    {
+      "viewport": "laptop",
+      "page": "Asisten BiG-M",
+      "width": 1280,
+      "documentWidth": 1265,
+      "visibleJson": 0,
+      "heading": "Asisten bisnis Anda",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "laptop",
+      "page": "Pengaturan",
+      "width": 1280,
+      "documentWidth": 1280,
+      "visibleJson": 0,
+      "heading": "Pengaturan",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "laptop",
+      "assistantReply": "B\nMuse tidak tersedia. Informasi berikut berasal dari catatan ruang kerja tersimpan.\n\nRuang kerja aktif: ya.\n\nMata uang pembukuan: IDR.\n\nuser.language: \"en\" (CANDIDATE).\n\nuser.nationality: \"AU\" (CANDIDATE).\n\norg.name: \"Bali Design Demo\" (CANDIDATE).\n\norg.businessType: \"freelancer"
     }
   ],
   "consoleErrors": [],
   "languageSwitchPreservedRoute": true,
-  "fallbackExplanationMatchesEngine": true,
+  "assistantRoundTrip": true,
   "viewports": [
     {
       "width": 1440,
@@ -148,6 +151,8 @@
     "dashboard-desktop.png",
     "dashboard-laptop.png",
     "documents-laptop.png",
+    "home-desktop.png",
+    "home-laptop.png",
     "reports-laptop.png",
     "tax-laptop.png"
   ]

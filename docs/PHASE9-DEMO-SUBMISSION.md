@@ -55,7 +55,7 @@ Byte-comparison checks against Phase 8 confirm no changes to `src/domain`, `src/
 
 ## Browser and live rehearsal
 
-[Browser evidence](../research/phase9-demo/browser-rehearsal.json) records fourteen view/viewport combinations: all seven primary areas at 1440x900 and 1280x800. No page overflow, console exceptions, visible raw JSON by default or untranslated product keys were found. Reports remained on the same route through English/Indonesian switching. The fallback report explanation matched the engine and journal count stayed three. Five screenshots are committed under `research/phase9-demo/screenshots/`; home, document and tax screens were visually inspected and a home-card contrast defect was fixed.
+[Browser evidence](../research/phase9-demo/browser-rehearsal.json) records fourteen view/viewport combinations: the six primary areas plus the assistant round-trip, each at 1440x900 and 1280x800. No page overflow, console exceptions, visible raw JSON by default or untranslated product keys were found. Reports remained on the same route through English/Indonesian switching. The assistant answered through the product API and journal count stayed three. Five screenshots are committed under `research/phase9-demo/screenshots/`; home, document and tax screens were visually inspected. The rehearsal runs against the single product UI served at `/`.
 
 The native computer-use helper was unavailable (missing pipe; alternate runtime initialization also failed). Installed headless Chrome supplied real rendering/navigation evidence. The sandboxed renderer initially timed out; the authorized unsandboxed verification succeeded. This is disclosed rather than described as an interactive native browser rehearsal.
 
