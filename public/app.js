@@ -136,6 +136,8 @@ function wireOnboarding(){
   await api('/api/onboarding/confirm',{proposalHash:hash,actor:'user',decisionSource:'HUMAN'});
   await api('/api/onboarding/activate',{activationKey:'web-'+hash,actor:'user'});
   route='dashboard';await refresh();toast(tr('ob.confirmedOk'));
+  const back=new URLSearchParams(location.search).get('return');
+  if(back&&/^\/[A-Za-z0-9/_?=&-]*$/.test(back)){location.href=back;return;}
  }));
  const chatEl=$('#obChat');if(chatEl)chatEl.scrollTop=chatEl.scrollHeight;
 }

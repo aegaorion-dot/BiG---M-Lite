@@ -150,7 +150,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
     if(!checked.ok)throw Error('AI_SCHEMA_VALIDATION_FAILED');
     if(raw.taxFacts?.length){if(!taxReviewContext)throw Error('Tax review context required');taxSnapshotCandidate=require('../tax/readiness').acceptTaxFactCandidates({registry:taxServices().registry,...taxReviewContext,answers:raw.taxFacts,userText:text,profileRevision:profileState.revision});}
     extracted=checked.extracted;diagnostic.providerUsed='meta';diagnostic.fallbackReason=null;aiSuccesses++;
-   }catch(e){diagnostic.fallbackReason=e.message==='AI_SCHEMA_VALIDATION_FAILED'?'AI_SCHEMA_VALIDATION_FAILED':'PROVIDER_UNAVAILABLE_OR_INVALID_RESPONSE';recordMuse({purpose:'business-profiling',status:'MUSE_UNAVAILABLE',fallbackUsed:true,at:new Date().toISOString()});}
+   }catch(e){diagnostic.fallbackReason=e.message==='AI_SCHEMA_VALIDATION_FAILED'?'AI_SCHEMA_VALIDATION_FAILED':'PROVIDER_UNAVAILABLE_OR_INVALID_RESPONSE';if(process.env.BIGM_MUSE_DEBUG==='1')console.warn('[onboarding] provider fallback:',String(e.message??'').slice(0,300));recordMuse({purpose:'business-profiling',status:'MUSE_UNAVAILABLE',fallbackUsed:true,at:new Date().toISOString()});}
   }
   if(!extracted){
    const fallback=detectSignals(text,{pendingQuestion:profileState.pendingQuestion,previousCurrencyRole:profileState.lastCurrencyRole});

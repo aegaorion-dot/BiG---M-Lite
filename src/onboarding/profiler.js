@@ -35,7 +35,7 @@ function valueValid(key,value){
  if(type==='string')return typeof value==='string'&&value.trim().length>0&&value.length<=120;
  if(type==='language')return ['en','id','ar-MA','el-GR'].includes(value);
  if(type==='scopes'||type==='presence'){try{require('./economicContext')[type==='scopes'?'validateScopes':'validatePresence'](value);return true;}catch{return false;}}
- if(type==='country')return typeof value==='string'&&isKnownJurisdiction(value);
+ if(type==='country')return typeof value==='string'&&(isKnownJurisdiction(value)||(['user.nationality','user.homeCountry'].includes(key)&&/^[A-Z]{2}$/.test(value)));
  if(type==='currency')return typeof value==='string'&&isKnownCurrency(value);
  if(type==='currencies')return Array.isArray(value)&&value.every(c=>typeof c==='string'&&isKnownCurrency(c));
  if(type==='activities')return Array.isArray(value)&&value.length<=10&&value.every(v=>ACTIVITIES.includes(v));
@@ -79,7 +79,7 @@ function validateExtractorPayload(raw,{userText=null,pendingQuestion=null,previo
   if(value==null){if(f.status!=='UNKNOWN'&&f.operation!=='REMOVE')errors.push(f.slot+': null requires UNKNOWN');}
   else if(f.status==='UNKNOWN'||!valueValid(f.slot,value))errors.push(f.slot+': unsupported value/type/status');
   const quote=f.supportingQuote??f.evidence;
-  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!isDirectCurrencyAnswer(userText,pendingQuestion,value)&&!/book|pembukuan|fungsional|functional|muhasebe|defter|دفتر|محاسب|نسجلو/i.test(quote??'')&&!isFunctionalCorrection(userText,previousCurrencyRole))errors.push('functional currency requires bookkeeping evidence');
+  if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!isDirectCurrencyAnswer(userText,pendingQuestion,value)&&!/book|pembukuan|fungsional|functional|muhasebe|defter|دفتر|محاسب|نسجلو|λογιστ|βιβλί|νομισμ|νόμισμα|γιεν|yen/i.test(quote??'')&&!isFunctionalCorrection(userText,previousCurrencyRole))errors.push('functional currency requires bookkeeping evidence');
   if(f.slot==='currency.functional'&&f.value!=null&&userText!==null&&!currencyMentionMatches(quote,value))errors.push('functional currency value must match the quoted currency');
   out.facts.push({...f,value,semanticRole:f.slot,source:f.source??'USER',supportingQuote:quote,confidence:f.confidence??null,status:f.status??'CANDIDATE',operation:f.operation??'SET'});
  }
@@ -183,7 +183,7 @@ function validateConfiguration(plan){
  const errors=[];
  if(!plan.organizationName||typeof plan.organizationName!=='string')errors.push('organization name required');
  if(!isKnownCurrency(plan.functionalCurrency))errors.push('supported functional currency required');
- if(!['en','id','ar-MA'].includes(plan.language))errors.push('unsupported language');
+ if(!['en','id','ar-MA','el-GR'].includes(plan.language))errors.push('unsupported language');
  if(!Array.isArray(plan.modules)||!plan.modules.length||plan.modules.some(m=>!ALLOWED_MODULES.includes(m)))errors.push('unsupported modules');
  if(plan.domicile&&!isKnownJurisdiction(plan.domicile))errors.push('unsupported jurisdiction');
  try{assertDate(plan.period.periodStart,'period start');assertDate(plan.period.periodEnd,'period end');if(plan.period.periodStart>plan.period.periodEnd)errors.push('invalid period range');}catch(e){errors.push(e.message);}
