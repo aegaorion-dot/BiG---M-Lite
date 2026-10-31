@@ -72,6 +72,19 @@
       <p class="form-error" id="rvMessage" role="alert" hidden></p>
       <div class="modal-actions"><button type="button" class="button button-secondary" data-fx-resolve data-i18n="getFxQuote" hidden>Get FX quote</button><button type="button" class="button button-secondary" data-fx-approve data-i18n="approveFx" hidden>Approve FX</button><button type="button" class="button button-secondary" data-close-dialog data-i18n="cancel">Cancel</button><button type="submit" class="button button-primary" id="rvSave" data-i18n="saveAndPost">Save &amp; post</button></div>
     </form>
+  </dialog>  <dialog class="modal" id="taxCorrection" aria-labelledby="taxCorrectionTitle">
+    <form id="taxForm" method="dialog">
+      <div class="modal-heading"><div><span class="eyebrow" data-i18n="provisional">PROVISIONAL</span><h2 id="taxCorrectionTitle" data-i18n="correctInformation">Correct information</h2></div><button type="button" class="icon-button" data-close-dialog aria-label="Close">&times;</button></div>
+      <div class="field-grid">
+        <label><span data-i18n="taxYear">Tax year</span><input id="txYear" name="taxYear" type="number" min="2000" max="2100" required></label>
+        <label><span data-i18n="taxResidence">Tax residence</span><select id="txResidence" name="residence"><option value="JP">JP</option><option value="OTHER">OTHER</option></select></label>
+        <label><span data-i18n="incomeScope">Income included</span><select id="txIncomeScope" name="incomeScope"><option value="BUSINESS_ONLY">BUSINESS_ONLY</option><option value="ALL_RECORDED">ALL_RECORDED</option></select></label>
+        <label><span data-i18n="expenseTreatment">Expense treatment</span><select id="txExpense" name="expenseTreatment"><option value="DEDUCTIBLE_BUSINESS">DEDUCTIBLE_BUSINESS</option><option value="NONE">NONE</option></select></label>
+      </div>
+      <p class="form-note" data-i18n="provisionalNote">Provisional only: this estimate uses a candidate rule that is not approved law. Correcting facts never changes posted journals.</p>
+      <p class="form-error" id="txMessage" role="alert" hidden></p>
+      <div class="modal-actions"><button type="button" class="button button-secondary" data-close-dialog data-i18n="cancel">Cancel</button><button type="submit" class="button button-primary" id="txSave" data-i18n="saveCorrection">Save correction</button></div>
+    </form>
   </dialog>  <template id="srOnlyTemplate"><span class="sr-only"></span></template>
 </body>
 </html>
