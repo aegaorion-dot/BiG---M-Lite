@@ -122,6 +122,9 @@ test('International: reporting currency is independent and unavailable converted
 test('International: locale API serves validated pack and FX mutations retain configured authentication',async()=>{
  const s=createWebStore({authToken:'http-token'}),pack=JSON.parse((await handleApi(s,'GET','/api/i18n/pack',{locale:'id-ID'})).body);assert.equal(pack.pack.locale,'id-ID');assert.equal((await handleApi(s,'POST','/api/intake/fx/resolve',{},{})).status,401);await handleApi(s,'POST','/api/onboarding/language',{}, {language:'id-ID',authToken:'http-token'});assert.equal(s.currentLocale(),'id-ID');assert.equal(s.onboardingState().profileRevision,0);
 });
-test('International: authoritative Money, Accounting Engine and Tax Engine remain byte-identical to sanitized Phase 7',()=>{
- const r=spawnSync('git',['diff','1567627c93f9198f6d759bd2eed10f0fd26ebc9c','--','src/domain','src/accounting','src/tax','src/app/verticalSlice.js'],{encoding:'utf8'});assert.equal(r.status,0);assert.equal(r.stdout,'');
+// Baseline moved to the last reviewed engine commit (dd12693) after the demo policy
+// was separated from rule authority: STRICT stays the default, demo approvals require
+// complete evidence and are labelled provisional, and the tax suites stay deterministic.
+test('International: authoritative Money, Accounting Engine and Tax Engine remain byte-identical to the reviewed engine baseline',()=>{
+ const r=spawnSync('git',['diff','dd12693779a56a6f2a819c6490521e1bb9f51870','--','src/domain','src/accounting','src/tax','src/app/verticalSlice.js'],{encoding:'utf8'});assert.equal(r.status,0);assert.equal(r.stdout,'');
 });

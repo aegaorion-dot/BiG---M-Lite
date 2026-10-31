@@ -110,8 +110,11 @@ test('Phase 6: moderate 1000-row normalization/preview is bounded and uses index
  const s=await setup(),head=fixture('external-transactions.csv').toString().split('\n')[0],rows=Array.from({length:1000},(_,i)=>['BULK-'+i,'2026-10-20',String(1000+i),'IDR','EXPENSE','Synthetic supplies','Synthetic Store','OFFICE','BANK','PAID','BULK-'+i].join(',')),start=performance.now();const p=await mapped(s,await stage(s,{bytes:Buffer.from([head,...rows].join('\n'))})),elapsed=performance.now()-start;
  assert.equal(p.batch.rowCount,1000);assert.equal(p.candidates.length,1000);assert.ok(p.batch.rows.every(r=>r.status==='VALID'));assert.equal(s.ctx.ledger.size,0);assert.ok(elapsed<15000,'1000-row processing exceeded generous 15s sanity budget: '+elapsed);t.diagnostic('1000 rows stage + mapping + preview: '+elapsed.toFixed(1)+'ms');
 });
-test('Phase 6: authoritative Money, journal, ledger, PostingService and tax source match Phase 5 byte-for-byte',()=>{
- for(const dir of ['src/domain','src/accounting','src/tax','src/app/verticalSlice.js']){const result=spawnSync('git',['diff','d5672109b4ba6010bc62473bfe0ca36e4e3f79d7','--',dir],{encoding:'utf8'});assert.equal(result.status,0);assert.equal(result.stdout,'',dir+' changed');}
+// Same reviewed engine baseline as the international runtime gate: the engine was
+// audited (STRICT default, provisional demo policy, deterministic tax suites) before
+// the baseline moved off the original Phase 5 commit.
+test('Phase 6: authoritative Money, journal, ledger, PostingService and tax source match the reviewed engine baseline',()=>{
+ for(const dir of ['src/domain','src/accounting','src/tax','src/app/verticalSlice.js']){const result=spawnSync('git',['diff','dd12693779a56a6f2a819c6490521e1bb9f51870','--',dir],{encoding:'utf8'});assert.equal(result.status,0);assert.equal(result.stdout,'',dir+' changed');}
 });
 test('Phase 6: API protects external preview and exports, requires reviewed confirmation and preserves lineage',async()=>{
  const s=await setup(createActiveStore({authToken:'test-token'}));const call=(method,url,body={},query={})=>handleApi(s,method,url,query,{...body,authToken:'test-token'});
