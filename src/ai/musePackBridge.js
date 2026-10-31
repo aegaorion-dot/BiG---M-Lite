@@ -7,6 +7,7 @@ const {validateCountryPack}=require('../tax/contracts');
 const {assertJsonData}=require('../tax/dsl');
 const {feedbackFromError,toValidationFeedback}=require('./researchWorkflow');
 const {lookupSource}=require('../fabric/registry');
+function sourceDate(value){if(typeof value!=='string')return null;if(/^\d{4}-\d{2}-\d{2}$/.test(value))return value;const time=Date.parse(value);return Number.isFinite(time)?new Date(time).toISOString().slice(0,10):null;}
 
 function demoDisclosureFor(sourceCandidate,declarativePack){
  const b=sourceCandidate?.evidenceBundle,a=b?.applicabilityAssessment;
@@ -20,7 +21,7 @@ function demoDisclosureFor(sourceCandidate,declarativePack){
  const citedNumbers=new Set(parameterBindings.filter(p=>Number.isInteger(p.evidenceIndex)&&sources[p.evidenceIndex]).map(p=>String(p.value)));
  const packNumbers=(declarativePack.rules??[]).flatMap(r=>Object.values(r.parameters??{}).filter(p=>p?.valueType==='NUMBER').map(p=>String(p.value)));
  if(packNumbers.some(v=>!citedNumbers.has(v)))return null;
- const publicationDate=a?.sourcePublicationDate??null,revisionDate=a?.sourceRevisionDate??null;
+ const publicationDate=sourceDate(a?.sourcePublicationDate),revisionDate=sourceDate(a?.sourceRevisionDate);
  const propositionSupported=a?.propositionSupported??b.propositionSupported??b.candidateRule.legalTest;
  const sourceYear=(publicationDate??revisionDate)?.slice(0,4)??null;
  const uncertainty=a?.uncertainty||'Applicability to the requested calculation period has not been fully verified.';

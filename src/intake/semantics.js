@@ -90,17 +90,17 @@ class MetaSemanticDocumentProvider extends SemanticDocumentProvider {
  }
 }
 function validateSemantics(raw,extraction){
- const bad=()=>{throw Error('Invalid semantic provider contract or unsupported authority/evidence');};
+ const bad=detail=>{throw Error('Invalid semantic provider contract or unsupported authority/evidence'+(detail?': '+detail:''));};
  if(!raw||Object.keys(raw).some(k=>!['transactions','profileFacts'].includes(k))||!Array.isArray(raw.transactions)||raw.transactions.length>LIMITS.rows||!Array.isArray(raw.profileFacts)||raw.profileFacts.length>40)bad();
  const blocks=new Map(extraction.textBlocks.map(b=>[b.blockId,b]));
- function evidence(e){const b=blocks.get(e?.blockId);if(!b||typeof e.quote!=='string'||!e.quote.trim()||e.quote.length>2000||!b.text.includes(e.quote))bad();return {...e,page:b.page,row:b.row??null,bbox:b.bbox??null};}
- function confidence(c){if(!Number.isFinite(c)||c<0||c>1)bad();}
+ function evidence(e,field){const b=blocks.get(e?.blockId);if(!b||typeof e.quote!=='string'||!e.quote.trim()||e.quote.length>2000||!b.text.includes(e.quote))bad('evidence.'+field);return {...e,page:b.page,row:b.row??null,bbox:b.bbox??null};}
+ function confidence(c){if(!Number.isFinite(c)||c<0||c>1)bad('confidence');}
  const transactions=raw.transactions.map(t=>{
-  if(!t||Object.keys(t).some(k=>!TRANSACTION_FIELDS.includes(k))||!['RECEIPT','SUPPLIER_INVOICE','CUSTOMER_INVOICE','BANK_ROW','PAYMENT_EVIDENCE','TRANSACTION'].includes(t.candidateType)||!t.evidence||typeof t.evidence!=='object'||Array.isArray(t.evidence))bad();
-  confidence(t.confidence);const e={};for(const [k,v]of Object.entries(t.evidence)){if(!TRANSACTION_FIELDS.includes(k))bad();e[k]=evidence(v);}
-  for(const f of STRING_FIELDS)if(t[f]!=null){if(typeof t[f]!=='string'||t[f].length>500||!e[f])bad();}
-  for(const f of ['amount','taxAmount','subtotal','feeAmount','netAmount'])if(t[f]!=null&&!/^\d+(?:\.\d+)?$/.test(t[f]))bad();
-  if(t.bankDirection!=null&&!['IN','OUT'].includes(t.bankDirection))bad();
+  if(!t||Object.keys(t).some(k=>!TRANSACTION_FIELDS.includes(k)))bad('unknown transaction field');if(!['RECEIPT','SUPPLIER_INVOICE','CUSTOMER_INVOICE','BANK_ROW','PAYMENT_EVIDENCE','TRANSACTION'].includes(t.candidateType))bad('candidateType');if(!t.evidence||typeof t.evidence!=='object'||Array.isArray(t.evidence))bad('evidence object');
+  confidence(t.confidence);const e={};for(const [k,v]of Object.entries(t.evidence)){if(!TRANSACTION_FIELDS.includes(k))bad('unknown evidence field '+k);e[k]=evidence(v,k);}
+  for(const f of STRING_FIELDS)if(t[f]!=null){if(typeof t[f]!=='string'||t[f].length>500||!e[f])bad('field '+f+' must be a string with evidence');}
+  for(const f of ['amount','taxAmount','subtotal','feeAmount','netAmount'])if(t[f]!=null&&!/^\d+(?:\.\d+)?$/.test(t[f]))bad('money field '+f);
+  if(t.bankDirection!=null&&!['IN','OUT'].includes(t.bankDirection))bad('bankDirection');
   if(t.proposedAccounts!=null&&(typeof t.proposedAccounts!=='object'||Array.isArray(t.proposedAccounts)||Object.keys(t.proposedAccounts).some(k=>!['classificationAccountId','paymentAccountId'].includes(k))||Object.values(t.proposedAccounts).some(v=>typeof v!=='string'||v.length>100)))bad();
   return {...structuredClone(t),evidence:e};
  });

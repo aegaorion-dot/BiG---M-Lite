@@ -22,11 +22,17 @@ async function reviewCandidate(store,c,changes={}){
  return store.intake.edit({candidateId:c.candidateId,revision:c.revision,actor:'Demo operator',changes:{transactionDate:'2026-06-01',description:c.current.description??'Synthetic design service',counterparty:c.current.counterparty??'Demo client',proposedTransactionType:c.current.proposedTransactionType??'REVENUE',classificationAccountId:c.current.proposedTransactionType==='EXPENSE'?'id-expense':'id-revenue',paymentAccountId:'id-cash',settlementStatus:'PAID',...changes}});
 }
 async function confirmCandidate(store,c){return store.intake.confirm({candidateId:c.candidateId,revision:c.revision,reviewHash:c.reviewHash,idempotencyKey:'demo:'+c.candidateId,actor:'Demo operator'});}
+async function advanceDemoCandidate(store,c,changes={}){
+ // In demo mode intake already made the bounded machine decision. Do not try
+ // to edit or human-confirm a candidate after it has a terminal demo disposition.
+ if(process.env.BIGM_REGULATORY_POLICY==='HACKATHON_DEMO'&&(c?.demoDisposition||c?.status==='POSTED'))return c;
+ const edited=await reviewCandidate(store,c,changes);return confirmCandidate(store,edited);
+}
 async function prepareDemo(store){
  reviewProfile(store);
- let r=await store.intake.chat({text:journey.localPayment,requestId:'demo-local'}),c=await reviewCandidate(store,r.candidates[0]);await confirmCandidate(store,c);
- r=await store.demoDocument('receipt');if(r.document.processingStatus==='FAILED')throw Error('Demo receipt failed');c=await reviewCandidate(store,r.document.candidates[0],{proposedTransactionType:'EXPENSE',classificationAccountId:'id-expense'});await confirmCandidate(store,c);
- r=await store.demoDocument('invoice');if(r.document.processingStatus==='FAILED')throw Error('Demo invoice failed');c=await reviewCandidate(store,r.document.candidates[0]);c=await store.intake.resolveFx({candidateId:c.candidateId,revision:c.revision});c=await store.intake.approveFx({candidateId:c.candidateId,revision:c.revision,quoteHash:c.fx.quoteHash,actor:'Demo operator'});await confirmCandidate(store,c);store.beginTaxReview(taxReviewRequest());return store;
+ let r=await store.intake.chat({text:journey.localPayment,requestId:'demo-local'});await advanceDemoCandidate(store,r.candidates[0]);
+ r=await store.demoDocument('receipt');if(r.document.processingStatus==='FAILED')throw Error('Demo receipt failed');await advanceDemoCandidate(store,r.document.candidates[0],{proposedTransactionType:'EXPENSE',classificationAccountId:'id-expense'});
+ r=await store.demoDocument('invoice');if(r.document.processingStatus==='FAILED')throw Error('Demo invoice failed');let c=r.document.candidates[0];if(!(process.env.BIGM_REGULATORY_POLICY==='HACKATHON_DEMO'&&(c?.demoDisposition||c?.status==='POSTED'))){c=await reviewCandidate(store,c);c=await store.intake.resolveFx({candidateId:c.candidateId,revision:c.revision});c=await store.intake.approveFx({candidateId:c.candidateId,revision:c.revision,quoteHash:c.fx.quoteHash,actor:'Demo operator'});await confirmCandidate(store,c);}store.beginTaxReview(taxReviewRequest());return store;
 }
 function demoDirectory(projectRoot=ROOT){
  const project=fs.realpathSync.native(projectRoot),dir=path.join(project,'data','demo'),data=path.dirname(dir);if(fs.existsSync(data)&&fs.realpathSync.native(data).toLowerCase()!==path.resolve(data).toLowerCase())throw Error('Demo data directory must not redirect');fs.mkdirSync(dir,{recursive:true});
