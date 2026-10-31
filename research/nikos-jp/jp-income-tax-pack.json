@@ -266,6 +266,207 @@
       },
       "taxType": "INCOME_TAX",
       "treatyRelevant": false
+    },
+    {
+      "amountFormula": {
+        "op": "ADD",
+        "args": [
+          {
+            "op": "SUBTRACT",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "INPUT",
+                    "name": "TAX_BASE"
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "RATE"
+                  }
+                ]
+              },
+              {
+                "op": "PARAMETER",
+                "code": "FIXED_DEDUCTION"
+              }
+            ]
+          },
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "MULTIPLY",
+                        "args": [
+                          {
+                            "op": "INPUT",
+                            "name": "TAX_BASE"
+                          },
+                          {
+                            "op": "PARAMETER",
+                            "code": "RATE"
+                          }
+                        ]
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "FIXED_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "SURTAX_RATE"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          }
+        ]
+      },
+      "applicabilityPredicate": {
+        "op": "AND",
+        "args": [
+          {
+            "op": "GTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_LOW"
+              }
+            ]
+          },
+          {
+            "op": "LTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_HIGH"
+              }
+            ]
+          }
+        ]
+      },
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "evidenceRefs": [
+        {
+          "evidenceIndex": 0,
+          "note": "NTA No.2260 quick reference table: 20% with 427,500 JPY deduction; surtax 2.1% per note 2"
+        }
+      ],
+      "finalRounding": {
+        "mode": "DOWN",
+        "precision": 0
+      },
+      "incomeOrEventType": "BUSINESS_INCOME",
+      "parameters": {
+        "BASIC_DEDUCTION": {
+          "value": "580000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_HIGH": {
+          "value": "6949000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_LOW": {
+          "value": "3300000",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_HIGH": {
+          "value": "23500000",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_LOW": {
+          "value": "6550000",
+          "valueType": "NUMBER"
+        },
+        "FIXED_DEDUCTION": {
+          "value": "427500",
+          "valueType": "NUMBER"
+        },
+        "RATE": {
+          "value": "0.2",
+          "valueType": "NUMBER"
+        },
+        "SURTAX_RATE": {
+          "value": "0.021",
+          "valueType": "NUMBER"
+        }
+      },
+      "rateDefinition": {
+        "kind": "FORMULA_DERIVED"
+      },
+      "requiredFacts": {
+        "ANNUAL_NET_BUSINESS_INCOME": "MONEY"
+      },
+      "ruleId": "JP_IT_BUS_3300K_6949K_20PCT",
+      "subjectTypes": [
+        "INDIVIDUAL"
+      ],
+      "taxBaseFormula": {
+        "op": "MULTIPLY",
+        "args": [
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "DIVIDE",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "INPUT",
+                        "name": "ANNUAL_NET_BUSINESS_INCOME"
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "BASIC_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "LITERAL",
+                    "valueType": "NUMBER",
+                    "value": "1000"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          },
+          {
+            "op": "LITERAL",
+            "valueType": "NUMBER",
+            "value": "1000"
+          }
+        ]
+      },
+      "taxType": "INCOME_TAX",
+      "treatyRelevant": false
     }
   ],
   "applicability": {
@@ -298,5 +499,21 @@
       "rawContentHash": "d80b820f0dc3a8a699af7e8c5ba9850a39373fcfc126f6df69d604229d2b6d07",
       "retrievedAt": "2026-10-31T00:33:02.797Z"
     }
-  ]
+  ],
+  "sources": {
+    "rateTable": {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm",
+      "retrievedAs": "2026-11-01",
+      "authority": "National Tax Agency Japan",
+      "note": "Page current as of Reiwa 8 (2026) April 1."
+    },
+    "basicDeduction": {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm",
+      "note": "Basic deduction amount depends on total income; the candidate value 580,000 was not re-verified for 2026."
+    },
+    "reform2026": {
+      "url": "https://www.mof.go.jp/tax_policy/tax_reform/outline/fy2026/08taikou_01.html",
+      "note": "FY2026 reform outline not machine-verified in this run; basic deduction for 2026 remains user-confirmable."
+    }
+  }
 }
