@@ -30,7 +30,8 @@ function send(res, status, headers, body) {
 }
 
 function serveStatic(reqPath, res) {
-  const rel = reqPath === '/' ? '/index.html' : reqPath.split('?')[0];
+  const pathname = reqPath.split('?')[0];
+  const rel = pathname === '/' ? '/index.html' : pathname.endsWith('/') ? `${pathname}index.html` : pathname;
   const safe = path.normalize(rel).replace(/^([/\\])+/, '');
   const file = path.join(PUBLIC_DIR, safe);
   if (!file.startsWith(PUBLIC_DIR) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
@@ -56,8 +57,9 @@ function readBody(req, limit = 512 * 1024) {
   });
 }
 
-function createServer({ port = 3100, persistPath = null, orgId = null, authToken = null, profileProvider = null, extractionProvider, semanticProvider, museRuntime, fxProvider, languagePackService, store:providedStore=null } = {}) {
+function createServer({ port = 3100, persistPath = null, orgId = null, authToken = null, profileProvider = null, extractionProvider, semanticProvider, museRuntime, fxProvider, languagePackService, store:providedStore=null, nikosStore:providedNikosStore=null } = {}) {
   const store = providedStore??createWebStore({ persistPath, orgId, authToken, profileProvider, extractionProvider, semanticProvider, museRuntime, fxProvider, languagePackService });
+  const nikosStore=providedNikosStore??createWebStore({persistPath:persistPath?path.join(path.dirname(persistPath),'nikos-demo','store.json'):null,orgId:'org-nikos-demo',authToken,profileProvider,extractionProvider,semanticProvider,fxProvider});
   const server = http.createServer(async (req, res) => {
     try {
       const url = new URL(req.url, 'http://localhost');
@@ -69,7 +71,8 @@ function createServer({ port = 3100, persistPath = null, orgId = null, authToken
         }
         const query=Object.fromEntries(url.searchParams),bearer=req.headers.authorization?.match(/^Bearer (.+)$/)?.[1];
         if(bearer){if(body)body.authToken=bearer;else query.token=bearer;}
-        const out = await handleApi(store, req.method, url.pathname, query, body);
+        const requestStore=req.headers['x-bigm-scenario']==='nikos'?nikosStore:store;
+        const out = await handleApi(requestStore, req.method, url.pathname, query, body);
         return send(res, out.status, out.headers, out.body);
       }
       if (req.method !== 'GET') return send(res, 405, { 'content-type': 'text/plain' }, 'Method not allowed');
@@ -78,7 +81,7 @@ function createServer({ port = 3100, persistPath = null, orgId = null, authToken
       return send(res, e.status??(e instanceof SyntaxError?400:500), { 'content-type': 'application/json' }, JSON.stringify({ ok: false, error: e.message }));
     }
   });
-  return { server, store, port };
+  return { server, store, nikosStore, port };
 }
 
 if (require.main === module) {

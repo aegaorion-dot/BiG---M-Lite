@@ -42,7 +42,7 @@ async function dispatch(store,method,path,query={},body={}){
    if(path==='/api/onboarding/readiness')return json({ok:true,readiness:store.onboardingReadiness()});
    if(path==='/api/onboarding/history')return json({ok:true,history:store.onboardingHistory(),ai:store.aiStatus()});
    if(path==='/api/workspace')return json({ok:true,workspace:store.workspaceProfile()});
-   if(path==='/api/i18n')return json({ok:true,state:{uiLanguage:store.onboardingState().uiLanguage,uiLocale:store.currentLocale(),conversationLocale:store.currentConversationLocale()}});
+   if(path==='/api/i18n')return json({ok:true,state:{uiLanguage:store.onboardingState().uiLanguage,uiLocale:store.currentLocale(),uiLocaleSource:store.onboardingState().uiLocaleSource,conversationLocale:store.currentConversationLocale()}});
    if(path==='/api/settings')return json({ok:true,org:ctx.org,periods:ctx.periods.list(),chart:ctx.chart?.list()??[],pack:ctx.pack?{id:ctx.pack.manifest.id,version:ctx.pack.manifest.version,kind:'BOOKKEEPING_TEMPLATE'}:null,countryPackResolution:store.workspaceProfile().countryPackResolution});
   }
   if(method==='POST'){

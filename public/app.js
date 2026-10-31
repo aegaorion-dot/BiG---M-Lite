@@ -2,13 +2,13 @@
 const $=s=>document.querySelector(s);
 const view=$('#view'),tabsEl=$('#tabs'),topLang=$('#topLang');
 let route='onboarding',cache={ws:null,ob:null,summary:null,txs:[],journals:[],settings:null,monthly:[],audit:null,product:null,demo:null};
-let STR={},UILANG='en',loadedLanguage=null,pending=false,userInput='',chat=[],lastError='',csvText='',csvReport=null;
+let STR={},UILANG='en',loadedLanguage=null,localeFallbackKeys=[],pending=false,userInput='',chat=[],lastError='',csvText='',csvReport=null;
 const TABS=[['onboarding','nav.onboarding'],['dashboard','nav.dashboard'],['intake','nav.intake'],['sales','nav.sales'],['purchase','nav.purchase'],['accounting','nav.accounting'],['reports','nav.reports'],['import','nav.import'],['settings','nav.settings']];
  let pendingLabel='working',externalOpen=false;
 let intakeData={documents:[],chats:[],candidates:[]},intakeText='',intakeRequestId=null,intakeNotice='';
 let externalPreview=null,externalPage=0;
 let taxReviewer='';
-let assistantText='',assistantResult=null,assistantDiscovery=null,assistantTrace=null,assistantActivity=null;
+let assistantText='',assistantResult=null,assistantDiscovery=null,assistantTrace=null,assistantActivity=null,assistantMessages=[];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const tr=k=>STR[k]??k;
 const rtl=()=>UILANG==='ar-MA';
@@ -22,12 +22,14 @@ async function api(path,body){
 function toast(text,error=false){const el=document.createElement('div');el.className='toast'+(error?' error':'');el.textContent=text;$('#toasts').appendChild(el);setTimeout(()=>el.remove(),5000);}
 function money(minor,currency=cache.ws?.functionalCurrency){if(!currency||minor==null)return '\u2014';const decimals=cache.ob?.currencies?.find(c=>c.code===currency)?.minorUnits??2;return BigmLocale.money(minor,currency,UILANG,decimals);}
 async function loadLanguage(lang){
- lang=BigmLocale.canonical(lang);UILANG=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==='ar-MA'?'rtl':'ltr';
- if(loadedLanguage!==lang){const r=await api('/api/i18n/pack?locale='+encodeURIComponent(lang));STR=r.pack.strings;loadedLanguage=lang;}
+ lang=BigmLocale.canonical(lang);UILANG=lang;document.documentElement.lang=lang;document.documentElement.dir=BigmLocale.languageInfo(lang)?.direction??'ltr';
+ if(loadedLanguage!==lang){const r=await api('/api/i18n/pack?locale='+encodeURIComponent(lang));STR=r.pack.strings;localeFallbackKeys=r.pack.fallbackKeys??[];loadedLanguage=lang;}
  topLang.value=lang;
+ const note=$('#localeFallback');if(note){note.hidden=!localeFallbackKeys.length;note.textContent=localeFallbackKeys.length?tr('locale.fallback'):'';note.title=localeFallbackKeys.length?`${localeFallbackKeys.length} strings use the fallback language`:'';}
 }
 async function refreshOb(){
  const [ob,ws,product,demo]=await Promise.all([api('/api/onboarding/state'),api('/api/workspace'),api('/api/product'),api('/api/demo/status')]);cache.ob=ob;cache.ws=ws.workspace;cache.product=product;cache.demo=demo;
+ topLang.innerHTML=ob.languages.map(l=>'<option value="'+esc(l.tag)+'">'+esc(l.name)+'</option>').join('');
  await loadLanguage(ob.uiLocale??ob.uiLanguage);
  if(!chat.length){chat.push({who:'ai',text:ob.profileState.turnCount?tr('ob.resumed'):tr('ob.greeting')});if(ob.profileState.turnCount&&ob.question?.key!=='done')chat.push({who:'ai',text:ob.question.text});}
 }
@@ -59,6 +61,8 @@ function fact(key){return cache.ob?.slots?.[key]?.value??null;}
 function basisValues(basis){return (cache.ob?.jurisdictionCandidates??[]).filter(f=>f.basis===basis&&f.status!=='REJECTED').map(f=>country(f.countryCode)).join(', ');}
 function currentBasis(basis){return (cache.ob?.jurisdictionCandidates??[]).find(f=>f.basis===basis&&f.status==='CANDIDATE')?.countryCode??'';}
 function selectOptions(items,value,blank=false){return (blank?'<option value="">'+esc(tr('ob.unknown'))+'</option>':'')+items.map(([id,label])=>'<option value="'+esc(id)+'"'+(id===value?' selected':'')+'>'+esc(label)+'</option>').join('');}
+function profileUiTag(tag){if(tag==='id')return 'id-ID';if(tag==='ar')return 'ar-MA';if(tag==='el')return 'el-GR';return BigmLocale.supported(tag)?BigmLocale.canonical(tag):'en';}
+function profileLanguageValue(tag){if(tag==='id-ID'||tag==='id')return 'id';if(tag==='ar')return 'ar-MA';if(tag==='el')return 'el-GR';return String(tag).startsWith('en')?'en':tag;}
 function vOnboarding(){
  const ob=cache.ob;if(!ob)return '<div class="panel">'+esc(tr('loading'))+'</div>';
  const p=ob.proposal,confirmed=ob.active?.profileRevision===ob.profileRevision;
@@ -90,7 +94,7 @@ function vOnboarding(){
    field(tr('ob.registration'),'<select id="setRegistration">'+selectOptions(countries,currentBasis('REGISTRATION'),true)+'</select>')+
    field(tr('ob.sBookCurrency'),'<select id="setCur">'+selectOptions(currencies,p.functionalCurrency)+'</select>')+
    field(tr('fx.reportingCurrency'),'<select id="setReportingCurrency">'+selectOptions(currencies,p.reportingCurrency)+'</select>')+
-   field(tr('ob.sLanguage'),'<select id="setLang">'+selectOptions(ob.languages.map(l=>[l.tag,l.name]),ob.uiLocale??ob.uiLanguage)+'</select>')+
+   field(tr('ob.sLanguage'),'<select id="setLang">'+selectOptions(ob.languages.map(l=>[l.tag,l.name]),profileUiTag(p.language))+'</select>')+
    '<div class="grid2">'+field(tr('period.start'),'<input id="setStart" type="date" value="'+esc(p.period.periodStart)+'" />')+
    field(tr('period.end'),'<input id="setEnd" type="date" value="'+esc(p.period.periodEnd)+'" />')+'</div>'+
    '<p>'+esc(tr('ob.sFeatures'))+': '+p.modules.map(m=>esc(tr('nav.'+m))).join(', ')+'</p>'+
@@ -125,7 +129,7 @@ function wireOnboarding(){
  const edit=(selector,payload)=>$(selector)?.addEventListener('change',e=>run(async()=>{await api('/api/onboarding/edit',payload(e.target.value));await prepare();}));
  edit('#setName',v=>({slot:'org.name',value:v}));edit('#setBiz',v=>({slot:'org.businessType',value:v}));
  edit('#setWork',v=>({basis:'BUSINESS_WORK_LOCATION',countryCode:v||null}));edit('#setRegistration',v=>({basis:'REGISTRATION',countryCode:v||null}));
- edit('#setCur',v=>({slot:'currency.functional',value:v}));edit('#setReportingCurrency',v=>({slot:'currency.reporting',value:v}));$('#setLang')?.addEventListener('change',e=>run(async()=>{await api('/api/onboarding/language',{language:e.target.value});await refreshOb();}));
+ edit('#setCur',v=>({slot:'currency.functional',value:v}));edit('#setReportingCurrency',v=>({slot:'currency.reporting',value:v}));$('#setLang')?.addEventListener('change',e=>run(async()=>{await api('/api/onboarding/edit',{slot:'user.language',value:profileLanguageValue(e.target.value)});await prepare();await refreshOb();}));
  edit('#setStart',v=>({slot:'accounting.periodStart',value:v}));edit('#setEnd',v=>({slot:'accounting.periodEnd',value:v}));
  $('#obUse')?.addEventListener('click',()=>run(async()=>{
   const hash=cache.ob?.proposal?.hash;if(!hash)throw Error(tr('ob.working'));
@@ -205,8 +209,8 @@ function vReports(){if(cache.position?.scopePosition)return '<div class="panel">
   (cache.monthly.map(m=>'<tr><td>'+esc(m.month)+'</td><td>'+esc(money(m.revenueMinor))+'</td><td>'+esc(money(m.expenseMinor))+'</td><td>'+esc(money(m.netMinor))+'</td></tr>').join('')||'<tr><td colspan="4">'+esc(tr('product.noReport'))+'</td></tr>')+'</tbody></table></div><button class="btn gold" id="explainReport">'+esc(tr('product.askReport'))+'</button></div>';
 }
 function vAccounting(){
- return '<div class="panel"><h3>'+esc(tr('nav.accounting'))+'</h3><p>'+esc(tr('accounting.corrections'))+'</p><div class="table-scroll"><table><tbody>'+
- cache.journals.map(j=>'<tr><td>'+esc(j.id)+'</td><td>'+esc(BigmLocale.date(j.date,UILANG))+'</td><td>'+j.lines.map(l=>esc((rtl()?tr(l.side==='DEBIT'?'scope.purchases':'scope.revenue'):l.side)+' '+l.accountId+' '+money(l.amountMinor,l.currency))).join('<br>')+'</td><td><button type="button" class="btn small navy" data-reverse="'+esc(j.id)+'">'+esc(tr('reversal'))+'</button></td></tr>').join('')+'</tbody></table></div></div>';
+ const accounts=cache.settings?.chart??[];
+ return '<div class="panel"><h1>'+esc(tr('nav.accounting'))+'</h1><p>'+esc(tr('accounting.corrections'))+'</p><div class="table-scroll"><table><thead><tr><th>'+esc(tr('date'))+'</th><th>'+esc(tr('accounting.entry'))+'</th><th>'+esc(tr('accounting.actions'))+'</th></tr></thead><tbody>'+cache.journals.map(j=>'<tr><td>'+esc(BigmLocale.date(j.date,UILANG))+'</td><td>'+j.lines.map(l=>'<div class="accounting-line"><span>'+esc((rtl()?tr(l.side==='DEBIT'?'scope.purchases':'scope.revenue'):tr(l.side==='DEBIT'?'accounting.debit':'accounting.credit')))+' · '+esc(accountLabel(accounts.find(a=>a.id===l.accountId)??{name:tr('accounting.account')}))+'</span><strong>'+esc(money(l.amountMinor,l.currency))+'</strong></div>').join('')+'<details><summary>'+esc(tr('accounting.details'))+'</summary><code>'+esc(j.id)+'</code></details></td><td><button type="button" class="btn small navy" data-reverse="'+esc(j.id)+'">'+esc(tr('reversal'))+'</button></td></tr>').join('')+'</tbody></table></div></div>';
 }
 function vSettings(){
  const s=cache.settings;
@@ -244,7 +248,7 @@ function vIntake(documentOnly=false){
  const candidates=intakeData.candidates.filter(c=>(!documentOnly||c.documentId)&&(!c.sourceChannel.startsWith('EXTERNAL_')||externalIds.has(c.candidateId))).map(c=>{
   const f=c.current,locked=['CONFIRMED','POSTED','REJECTED'].includes(c.status),editable=!locked;
   const validation=c.validation??c;
-  if(c.candidateType==='EXTERNAL_JOURNAL')return '<article class="panel intake-candidate"><h3>'+esc(c.sourceChannel)+' · '+esc(c.status)+'</h3><p>'+esc((validation.conflicts??[]).join('; '))+'</p>'+duplicateControls(c)+'<pre>'+esc(JSON.stringify({lines:f.journalLines,mappings:c.mappingRefs,confirmation:c.confirmation,posting:c.posting},null,2))+'</pre><form data-intake-form="'+esc(c.candidateId)+'">'+(c.status==='READY_TO_CONFIRM'||c.status==='CONFIRMED'?'<button type="button" class="btn gold" data-intake-action="confirm" data-candidate="'+esc(c.candidateId)+'">'+esc(tr('intake.confirm'))+'</button>':'')+(!locked?'<button type="button" class="btn ghost" data-intake-action="reject" data-candidate="'+esc(c.candidateId)+'">'+esc(tr('intake.reject'))+'</button>':'')+'</form></article>';
+  if(c.candidateType==='EXTERNAL_JOURNAL')return '<article class="panel intake-candidate"><div class="candidate-heading"><h3>'+esc(tr('external.journal'))+'</h3><span class="status-tag">'+esc(statusLabel(c.status))+'</span></div><p>'+esc(tr('external.mappedLines').replace('{count}',String(f.journalLines?.length??0)))+'</p><p>'+esc((validation.conflicts??[]).join('; '))+'</p>'+duplicateControls(c)+'<details><summary>'+esc(tr('assistant.technicalDetails'))+'</summary><pre>'+esc(JSON.stringify({lines:f.journalLines,mappings:c.mappingRefs,confirmation:c.confirmation,posting:c.posting},null,2))+'</pre></details><form data-intake-form="'+esc(c.candidateId)+'">'+(c.status==='READY_TO_CONFIRM'||c.status==='CONFIRMED'?'<button type="button" class="btn gold" data-intake-action="confirm" data-candidate="'+esc(c.candidateId)+'">'+esc(tr('intake.confirm'))+'</button>':'')+(!locked?'<button type="button" class="btn ghost" data-intake-action="reject" data-candidate="'+esc(c.candidateId)+'">'+esc(tr('intake.reject'))+'</button>':'')+'</form></article>';
   return '<article class="panel intake-candidate"><div class="candidate-heading"><h3>'+esc(f.description??tr('product.reviewTransaction'))+'</h3><span class="status-tag" data-state="'+esc(c.status)+'">'+esc(statusLabel(c.status))+'</span></div><p class="muted">'+esc(tr('product.source.'+c.sourceChannel))+' · '+esc(tr('fx.functional'))+': '+esc(cache.ws.functionalCurrency??tr('ob.unknown'))+'</p>'+(c.semanticProvenance?.success?'<small class="provenance">'+esc(tr('muse.understood'))+'</small>':'<small class="muted">'+esc(tr('product.localInterpretation'))+'</small>')+(locked?'<details><summary>'+esc(tr('product.viewTransaction'))+'</summary>':'')+'<form data-intake-form="'+esc(c.candidateId)+'"><div class="grid2">'+
    field('transactionDate',tr('date'),f.transactionDate,'date')+field('amount',tr('amount'),f.amount)+field('currency',tr('currency'),f.currency)+field('counterparty',tr('counterparty'),f.counterparty)+field('description',tr('description'),f.description)+field('referenceNumber',tr('reference'),f.referenceNumber)+
    select('proposedTransactionType',tr('intake.classification'),f.proposedTransactionType,[['EXPENSE',tr('nav.purchase')],['REVENUE',tr('nav.sales')],['TRANSFER',tr('financial.settlement')]])+
@@ -308,21 +312,33 @@ function wireIntake(){
  }));
  view.querySelectorAll('[data-retry-document]').forEach(button=>button.addEventListener('click',()=>run(async()=>{await api('/api/intake/retry',{documentId:button.dataset.retryDocument});await refresh();})));
 }
+function assistantBubble(message){
+ if(message.role==='user')return '<article class="assistant-message user"><span class="assistant-speaker">'+esc(tr('assistant.you'))+'</span><div class="assistant-bubble">'+esc(message.text)+'</div></article>';
+ if(message.text)return '<article class="assistant-message"><span class="assistant-speaker">'+esc(tr('muse.assistant'))+'</span><div class="assistant-bubble">'+esc(message.text)+'</div></article>';
+ const result=message.result;if(!result)return '';
+ return '<article class="assistant-message"><span class="assistant-speaker">'+esc(tr('muse.assistant'))+(result.provider==='meta'?' · '+esc(tr('assistant.ready')):'')+'</span><div class="assistant-bubble assistant-answer">'+result.sections.map(s=>'<section class="answer-section"><h3>'+esc(tr('product.section.'+s.kind))+'</h3>'+s.facts.map(f=>'<p>'+esc(f.display)+'</p>').join('')+(s.explanation?'<p>'+esc(s.explanation)+'</p>':'')+'</section>').join('')+(result.status==='MUSE_UNAVAILABLE'?'<p class="muted">'+esc(tr('assistant.offline'))+'</p>':'')+'</div></article>';
+}
 function vAssistant(){
  const status=cache.ob?.ai?.muse;
- return '<div class="panel"><h2>'+esc(tr('muse.assistant'))+'</h2><p class="provenance" role="status">'+esc(status?.enabled?tr('muse.available'):tr('product.errorMuse'))+'</p><p>'+esc(tr('product.assistantBoundary'))+'</p><div class="toolbar"><button class="btn ghost" id="quickTax">'+esc(tr('product.askTax'))+'</button><button class="btn ghost" id="quickReport">'+esc(tr('product.askReport'))+'</button></div><label>'+esc(tr('muse.question'))+'<textarea id="assistantText" maxlength="2000" rows="3">'+esc(assistantText)+'</textarea></label><button type="button" class="btn gold" id="assistantSend">'+esc(tr('ob.send'))+'</button><button type="button" class="btn ghost" id="assistantRules">'+esc(tr('muse.rules'))+'</button><button type="button" class="btn ghost" id="reviewSetup">'+esc(tr('nav.onboarding'))+'</button>'+
- (assistantResult?'<p class="provenance" role="status">'+esc(assistantResult.provider==='meta'?tr('muse.understood'):tr('product.errorMuse'))+'</p>'+assistantResult.sections.map(s=>'<section class="answer-section"><h3>'+esc(tr('product.section.'+s.kind))+'</h3>'+s.facts.map(f=>'<p>'+esc(f.display)+'</p>').join('')+(s.explanation?'<p>'+esc(s.explanation)+'</p>':'')+'</section>').join(''):'<p class="empty">'+esc(tr('product.assistantEmpty'))+'</p>')+
- (assistantDiscovery?'<h3>'+esc(tr('muse.rules'))+'</h3><p>'+esc(assistantDiscovery.status)+'</p>'+assistantDiscovery.candidates.map(c=>'<p><strong>'+esc(c.ruleId)+'</strong> · CANDIDATE · '+esc(c.resolver.status)+'</p><p>'+esc(c.reason)+'</p><p>'+esc(tr('muse.missing'))+': '+esc(c.missingFacts.join(', '))+'</p>').join(''):'')+
- (status?.traceEnabled?'<button type="button" class="btn ghost" id="assistantTrace">'+esc(tr('muse.trace'))+'</button>':'')+(assistantTrace?'<details><summary>'+esc(tr('muse.trace'))+'</summary><pre>'+esc(JSON.stringify(assistantTrace,null,2))+'</pre></details>':'')+(!status?.enabled||assistantResult?.status==='MUSE_UNAVAILABLE'?'<details><summary>'+esc(tr('product.technicalStatus'))+'</summary><code>MUSE_UNAVAILABLE</code></details>':'')+'</div>';
+ const thread=assistantMessages.length?assistantMessages.map(assistantBubble).join(''):'<div class="assistant-welcome"><span class="assistant-avatar">B</span><h2>'+esc(tr('assistant.welcomeTitle'))+'</h2><p>'+esc(tr('assistant.welcomeBody'))+'</p></div>';
+ return '<section class="assistant-page"><header class="assistant-heading"><div class="assistant-avatar">B</div><div><p class="eyebrow">BiG-M Lite</p><h1>'+esc(tr('muse.assistant'))+'</h1><p>'+esc(tr('assistant.subtitle'))+'</p></div><span class="assistant-availability '+(status?.enabled?'ready':'offline')+'" role="status">'+esc(status?.enabled?tr('assistant.ready'):tr('assistant.offline'))+'</span></header>'+
+ '<div class="assistant-panel"><div class="assistant-thread" id="assistantThread" role="log" aria-live="polite">'+thread+'</div>'+
+ '<div class="assistant-prompts"><span>'+esc(tr('assistant.tryAsking'))+'</span><button type="button" class="btn ghost" id="quickTax">'+esc(tr('product.askTax'))+'</button><button type="button" class="btn ghost" id="quickReport">'+esc(tr('product.askReport'))+'</button></div>'+
+ '<div class="assistant-composer"><label class="sr-only" for="assistantText">'+esc(tr('muse.question'))+'</label><textarea id="assistantText" maxlength="2000" rows="2" placeholder="'+esc(tr('assistant.placeholder'))+'">'+esc(assistantText)+'</textarea><div class="assistant-composer-actions"><div class="assistant-attachments"><input id="assistantFile" type="file" accept=".pdf,.png,.jpg,.jpeg,.webp,.csv,.xlsx,.xls" hidden><button type="button" class="btn ghost" id="assistantAttach">'+esc(tr('assistant.attach'))+'</button><button type="button" class="btn ghost" id="reviewSetup">'+esc(tr('assistant.profileSettings'))+'</button></div><button type="button" class="btn gold" id="assistantSend"'+(pending?' disabled':'')+'>'+esc(pending?tr('working'):tr('ob.send'))+'</button></div><p class="assistant-disclosure">'+esc(tr('product.assistantBoundary'))+'</p></div></div>'+
+ '<details class="assistant-more"><summary>'+esc(tr('assistant.moreDetails'))+'</summary><div class="toolbar"><button type="button" class="btn ghost" id="assistantRules">'+esc(tr('assistant.checkCoverage'))+'</button>'+(status?.traceEnabled?'<button type="button" class="btn ghost" id="assistantTrace">'+esc(tr('assistant.activity'))+'</button>':'')+'</div>'+(assistantDiscovery?'<p>'+esc(assistantDiscovery.candidates.length?tr('assistant.coverageFound'):tr('assistant.coverageNone'))+'</p><details><summary>'+esc(tr('assistant.technicalDetails'))+'</summary><pre>'+esc(JSON.stringify(assistantDiscovery,null,2))+'</pre></details>':'')+(assistantTrace?'<details><summary>'+esc(tr('assistant.technicalDetails'))+'</summary><pre>'+esc(JSON.stringify(assistantTrace,null,2))+'</pre></details>':'')+'<p><button type="button" class="btn ghost" id="loadMuseActivity">'+esc(tr('assistant.activity'))+'</button></p>'+(assistantActivity?.length?assistantActivity.map(e=>'<article class="evidence-passage"><strong>'+esc(e.purpose??'')+'</strong><p>'+esc(e.status??'')+' · '+esc(e.model??'')+'</p>'+((intakeData.candidates.find(c=>c.candidateId===e.sourceId||c.documentId===e.sourceId))?'<p>'+esc(tr('intake.evidence'))+'</p>':'')+'</article>').join(''):'')+'</details></section>';
 }
 function wireAssistant(){
  $('#assistantText')?.addEventListener('input',e=>{assistantText=e.target.value;});
- $('#assistantSend')?.addEventListener('click',()=>run(async()=>{assistantResult=await api('/api/muse/assistant',{question:assistantText});await refreshOb();}));
+ const send=()=>{const question=assistantText.trim();if(!question||pending)return;return run(async()=>{assistantMessages.push({role:'user',text:question});assistantText='';assistantResult=await api('/api/muse/assistant',{question});assistantMessages.push({role:'assistant',result:assistantResult});await refreshOb();});};
+ $('#assistantSend')?.addEventListener('click',send);
+ $('#assistantText')?.addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();send();}});
+ $('#assistantAttach')?.addEventListener('click',()=>$('#assistantFile')?.click());
+ $('#assistantFile')?.addEventListener('change',e=>{const file=e.target.files?.[0];if(!file)return;return run(async()=>{if(file.size>8*1024*1024)throw Error('8 MiB file limit');const base64=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onerror=()=>reject(Error('Could not read document'));reader.onload=()=>resolve(reader.result.split(',')[1]);reader.readAsDataURL(file);});const result=await api('/api/intake/upload',{base64,originalFilename:file.name,declaredMimeType:file.type||'application/octet-stream'});assistantMessages.push({role:'user',text:'📎 '+file.name});assistantMessages.push({role:'assistant',text:tr(result.duplicate?'intake.duplicate':'assistant.documentReceived')});intakeData=await api('/api/intake');e.target.value='';render();},'product.loadingDocument');});
  $('#assistantRules')?.addEventListener('click',()=>run(async()=>{assistantDiscovery=await api('/api/muse/discovery',{});await refreshOb();}));
  $('#assistantTrace')?.addEventListener('click',()=>run(async()=>{assistantTrace=await api('/api/muse/trace');}));
  $('#quickTax')?.addEventListener('click',()=>explain('TAX'));$('#quickReport')?.addEventListener('click',()=>explain('REPORT'));
 }
-function explain(topic){assistantText=tr(topic==='TAX'?'product.taxQuestion':'product.reportQuestion');route='assistant';return run(async()=>{assistantResult=await api('/api/muse/assistant',{question:assistantText,topic});await refreshOb();},'product.loadingExplain');}
+function explain(topic){assistantText=tr(topic==='TAX'?'product.taxQuestion':'product.reportQuestion');const question=assistantText;route='assistant';return run(async()=>{assistantMessages.push({role:'user',text:question});assistantResult=await api('/api/muse/assistant',{question,topic});assistantMessages.push({role:'assistant',result:assistantResult});assistantText='';await refreshOb();},'product.loadingExplain');}
 function render(){
  view.dataset.page=route;
  renderTabs();view.innerHTML=route==='onboarding'?vOnboarding()+'<button type="button" class="btn ghost" id="openIntake">'+esc(tr('nav.intake'))+'</button>':route==='assistant'?vAssistant():route==='intake'?vIntake():route==='documents'?vIntake(true):route==='tax'?vTax():route==='dashboard'?vDashboard():route==='sales'?vTransactions('SALE'):route==='purchase'?vTransactions('PURCHASE'):route==='reports'?vReports():route==='accounting'?vAccounting():route==='import'?vImport():vSettings();
@@ -346,6 +362,7 @@ function render(){
  topLang.disabled=pending;if(pending)view.querySelectorAll('input,select,textarea,button').forEach(el=>{el.disabled=true;});
  $('#openAssistant')?.addEventListener('click',()=>{route='assistant';render();});
  if(route==='assistant')wireAssistant();
+ const assistantThread=$('#assistantThread');if(assistantThread)assistantThread.scrollTop=assistantThread.scrollHeight;
  $('#openIntake')?.addEventListener('click',()=>{route='intake';render();});
  if(route==='onboarding'){wireOnboarding();return;}
  if(['intake','documents'].includes(route))wireIntake();

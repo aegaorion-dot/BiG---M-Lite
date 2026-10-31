@@ -1,6 +1,15 @@
 (function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.BigmLocale=factory();})(typeof globalThis==='object'?globalThis:this,function(){
  'use strict';
- const SUPPORTED=['en','id-ID','en-AU','en-SG','en-GB','ar-MA','el-GR'];
+ const LANGUAGE_REGISTRY=Object.freeze([
+  {tag:'en',name:'English',dictionary:'en',fallback:null,direction:'ltr'},
+  {tag:'id-ID',name:'Bahasa Indonesia',dictionary:'id',fallback:null,direction:'ltr'},
+  {tag:'ar-MA',name:'Darija',dictionary:'ar-MA',fallback:null,direction:'rtl'},
+  {tag:'en-AU',name:'English (Australia)',dictionary:'en',fallback:null,direction:'ltr'},
+  {tag:'en-SG',name:'English (Singapore)',dictionary:'en',fallback:null,direction:'ltr'},
+  {tag:'en-GB',name:'English (United Kingdom)',dictionary:'en',fallback:null,direction:'ltr'},
+  {tag:'el-GR',name:'Ελληνικά (English fallback)',dictionary:null,fallback:'en',direction:'ltr'}
+ ]);
+ const SUPPORTED=LANGUAGE_REGISTRY.map(x=>x.tag);
  function canonical(tag){if(tag==='id')return 'id-ID';if(typeof tag!=='string'||tag.length>40)throw Error('Invalid locale');try{return Intl.getCanonicalLocales(tag)[0];}catch{throw Error('Invalid locale');}}
  function supported(tag){try{return SUPPORTED.includes(canonical(tag));}catch{return false;}}
  function base(tag){return canonical(tag).split('-')[0];}
@@ -16,5 +25,6 @@
  function region(code,locale='en'){return new Intl.DisplayNames([canonical(locale)],{type:'region'}).of(code);}
  function language(tag,locale='en'){return new Intl.DisplayNames([canonical(locale)],{type:'language'}).of(canonical(tag));}
  function plural(count,locale='en'){return new Intl.PluralRules(canonical(locale)).select(count);}
- return {SUPPORTED,canonical,supported,base,money,date,region,language,plural};
+ function languageInfo(tag){const normalized=canonical(tag);return LANGUAGE_REGISTRY.find(x=>x.tag===normalized)||null;}
+ return {SUPPORTED,LANGUAGE_REGISTRY,languageInfo,canonical,supported,base,money,date,region,language,plural};
 });

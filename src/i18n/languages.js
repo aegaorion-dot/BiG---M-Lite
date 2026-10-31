@@ -5,10 +5,7 @@
  * English, Indonesian and Moroccan Arabic have validated local dictionaries.
  */
 
-const LANGUAGES = Object.freeze([
-  { tag: 'en', name: 'English', supported: true },
-  { tag: 'id', name: 'Bahasa Indonesia', supported: true },
-]);
+const LANGUAGES = Object.freeze(require('../../public/locale').LANGUAGE_REGISTRY.map(x=>Object.freeze({...x,supported:true})));
 
 function normalizeLanguageTag(tag) {
   const t = String(tag ?? '').trim().toLowerCase().replace('_', '-');
@@ -20,7 +17,7 @@ function normalizeLanguageTag(tag) {
 }
 
 function supportedLanguages() {
-  const Locale=require('../../public/locale');return Locale.SUPPORTED.map(tag=>({tag,name:Locale.language(tag,tag),supported:true}));
+  return LANGUAGES.map(x=>({...x}));
 }
 
 function isSupported(tag) {
