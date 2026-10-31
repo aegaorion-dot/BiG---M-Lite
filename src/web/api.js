@@ -14,6 +14,7 @@ async function dispatch(store,method,path,query={},body={}){
    if(path==='/api/i18n/pack')return json({ok:true,pack:await store.languagePack(query.locale)});
    if(path==='/api/reports/reporting-status')return json({ok:true,...store.reportingStatus()});
    if(path==='/api/muse/status')return json({ok:true,...store.museStatus()});
+   if(path==='/api/muse/activity')return json({ok:true,events:store.museActivity()});
    if(path==='/api/muse/trace')return json({ok:true,...store.museTrace()});
    if(path==='/api/tax/review')return json({ok:true,readiness:store.taxReadiness()});
    if(path==='/api/tax/scoped')return json({ok:true,...store.scopedTax.view()});
@@ -21,6 +22,7 @@ async function dispatch(store,method,path,query={},body={}){
    if(path==='/api/tax/scoped/law')return json({ok:true,candidates:store.scopedTax.law()});
    if(path==='/api/intake')return json({ok:true,...store.intake.list()});
    if(path==='/api/intake/trace')return json({ok:true,...store.intake.trace(query.candidateId)});
+   if(path==='/api/intake/document-trace')return json({ok:true,...store.intake.documentTrace(query.documentId)});
    if(path==='/api/intake/external/preview')return json({ok:true,...store.intake.external.preview(query.batchId)});
    if(path==='/api/intake/external/export')return {status:200,headers:{'content-type':'text/csv; charset=utf-8','content-disposition':'attachment; filename="reviewed-import-preview.csv"','cache-control':'no-store'},body:store.intake.external.exportCsv(query.batchId)};
    if(path==='/api/intake/external/original'){const original=store.intake.external.original(query.batchId);return {status:200,headers:{'content-type':'application/octet-stream','content-disposition':"attachment; filename*=UTF-8''"+encodeURIComponent(original.filename),'cache-control':'no-store'},body:original.bytes};}

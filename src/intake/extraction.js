@@ -6,6 +6,10 @@ const {LIMITS,textOf,csvRows}=require('./files');
 class ExtractionProvider {async extract(){throw Error('ExtractionProvider.extract not implemented');}}
 class LocalExtractionProvider extends ExtractionProvider {
  async extract({bytes,mime}){
+  if(mime==='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
+   const {headers,records}=require('./xlsx').parseXlsxTransactions(bytes),textBlocks=records.map((record,index)=>({blockId:'row'+record.sourceRow,page:1,row:record.sourceRow,text:headers.map(h=>h+': '+record[h]).join('\n')}));
+   return {extractor:'bigm-xlsx',extractorVersion:'1',method:'TEXT',pages:[{page:1,method:'TEXT'}],textBlocks,tables:[],detectedLanguage:null,confidence:1,warnings:['Spreadsheet cells were read structurally; semantic classification is performed by the configured document-understanding provider.']};
+  }
   if(mime==='text/plain'||mime==='text/csv'){
    const text=textOf(bytes);return {extractor:'bigm-text',extractorVersion:'1',method:'TEXT',pages:[{page:1,method:'TEXT'}],textBlocks:text.split(/\r?\n/).map((text,i)=>({blockId:'b'+i,page:1,row:i+1,text})).filter(b=>b.text.trim()),tables:mime==='text/csv'?[{page:1,rows:csvRows(text)}]:[],detectedLanguage:null,confidence:1,warnings:[]};
   }

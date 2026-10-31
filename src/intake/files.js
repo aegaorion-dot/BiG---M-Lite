@@ -26,6 +26,8 @@ function inspectFile({bytes,originalFilename,declaredMimeType}){
  else if(bytes[0]===255&&bytes[1]===216&&bytes[2]===255){
   let i=2,dimensions=false;while(i+8<bytes.length){if(bytes[i++]!==255)throw Error('Malformed JPEG');let marker=bytes[i++];while(marker===255)marker=bytes[i++];if(marker===217||marker===218)break;const len=bytes.readUInt16BE(i);if(len<2||i+len>bytes.length)throw Error('Malformed JPEG');if([192,193,194].includes(marker)){const h=bytes.readUInt16BE(i+3),w=bytes.readUInt16BE(i+5);if(!w||!h||w*h>LIMITS.pixels)throw Error('Image pixel limit exceeded');dimensions=true;}i+=len;}
   if(!dimensions||bytes[bytes.length-2]!==255||bytes[bytes.length-1]!==217)throw Error('Malformed JPEG');mime='image/jpeg';
+ } else if(bytes.length>=4&&bytes.readUInt32LE(0)===0x04034b50&&/\.xlsx$/i.test(originalFilename)){
+  require('./xlsx').parseXlsxTransactions(bytes);mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
  } else {
   const text=textOf(bytes);if(/[\x00-\x08\x0b\x0e-\x1f]/.test(text)||/^\s*(?:<|MZ|#!|PK\x03)/.test(text))throw Error('Unsupported file type');
   if(!text.trim()||text.length>LIMITS.textChars)throw Error('Empty or oversized text');

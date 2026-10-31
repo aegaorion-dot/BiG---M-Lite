@@ -16,6 +16,13 @@ function responsePayload(raw){
  if(!text.trim())throw Error('provider returned no output text');
  try{return JSON.parse(text);}catch{throw Error('provider returned invalid JSON');}
 }
+function safeTransportDetails(error,apiKey,elapsedMs){
+ const clean=value=>{if(value===undefined||value===null)return null;let text=String(value);if(apiKey)text=text.split(apiKey).join('[REDACTED]');text=text.replace(/Bearer\s+[^\s"']+/gi,'Bearer [REDACTED]').slice(0,300);return text;};
+ const cause=error?.cause,details={name:clean(error?.name??'Error'),message:clean(error?.message??error),elapsedMs};
+ for(const key of ['code','errno','syscall','hostname']){const value=cause?.[key]??error?.[key];if(value!==undefined&&value!==null)details[key]=clean(value);}
+ if(cause&&cause!==error){details.causeName=clean(cause.name);details.causeMessage=clean(cause.message);}
+ return details;
+}
 class MetaModelAdapter extends AIProvider {
  constructor({endpoint=null,apiKey=null,model=null,fetchImpl=null,timeoutMs=20000,allowLive=false,maxRetries=0,maxRequests=100,cacheTtlMs=300000,onMetric=null}={}){
   super();this.endpoint=endpoint??process.env.BIGM_META_API_URL??null;this.apiKey=apiKey??process.env.BIGM_META_API_KEY??null;
@@ -37,9 +44,11 @@ class MetaModelAdapter extends AIProvider {
  _metric(record){this.lastRequest=Object.freeze(record);this.records.push(record);if(this.records.length>100)this.records.shift();try{this.onMetric?.(structuredClone(record));}catch{/* Telemetry never changes semantic authority. */}}
  async _post(task,input,options={}){
   this._requireConfig();
-  const maxTokens=Math.min(options.researchTools?8192:4096,Math.max(128,options.maxOutputTokens??2048)),user=input.user??JSON.stringify(input),system=input.system??'Return JSON only.';
+  const maxTokens=Math.min(options.researchTools||options.maxOutputTokens>4096?8192:4096,Math.max(128,options.maxOutputTokens??2048)),user=input.user??JSON.stringify(input),system=input.system??'Return JSON only.';
   if(user.length+system.length>50000)throw Error('Meta context limit exceeded');
-  const key=createHash('sha256').update(JSON.stringify([task,this.model,system,user,maxTokens,options.researchTools??null,options.envelope===true,options.researchContinuation??null])).digest('hex'),cached=this.cache.get(key);
+  const responseSchema=options.responseSchema??null;
+  if(responseSchema&&(!/^[a-z][a-z0-9_]{0,63}$/.test(responseSchema.name??'')||!responseSchema.schema||typeof responseSchema.schema!=='object'))throw Error('Bounded named response schema required');
+  const key=createHash('sha256').update(JSON.stringify([task,this.model,system,user,maxTokens,options.researchTools??null,options.envelope===true,options.researchContinuation??null,responseSchema])).digest('hex'),cached=this.cache.get(key);
   if(options.cache!==false&&cached&&cached.expires>Date.now()){this._metric({...cached.provenance,cacheHit:true,latencyMs:0,at:new Date().toISOString()});return structuredClone(cached.value);}
   if(this.inflight.has(key))return structuredClone(await this.inflight.get(key));
   const work=this._request(task,{system,user,maxTokens},options,key);this.inflight.set(key,work);
@@ -53,10 +62,12 @@ class MetaModelAdapter extends AIProvider {
     if(this.requestCount>=this.maxRequests)throw Error('Meta request budget exhausted');this.requestCount++;record.attempts++;
     const controller=new AbortController();let timer;
     try{
-     raw=await Promise.race([(async()=>{let res;try{res=await this._fetch(this.endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+this.apiKey},body:JSON.stringify({model:this.model,store:false,input:[{role:'system',content:[{type:'input_text',text:system}]},...(options.researchTools?(options.researchContinuation??[]):[]),{role:'user',content:[{type:'input_text',text:user}]}],max_output_tokens:maxTokens,reasoning:{effort:'minimal'},...(options.researchTools?{tools:options.researchTools,include:['web_search_call.results','reasoning.encrypted_content']}:{text:{format:{type:'json_object'}}})}),signal:controller.signal});}catch{throw Error('Meta request unavailable or timed out');}
+     const textFormat=options.researchTools?{}:options.responseSchema?{text:{format:{type:'json_schema',name:options.responseSchema.name,strict:true,schema:options.responseSchema.schema}}}:{text:{format:{type:'json_object'}}};
+     raw=await Promise.race([(async()=>{let res;try{res=await this._fetch(this.endpoint,{method:'POST',headers:{'content-type':'application/json',authorization:'Bearer '+this.apiKey},body:JSON.stringify({model:this.model,store:false,input:[{role:'system',content:[{type:'input_text',text:system}]},...(options.researchTools?(options.researchContinuation??[]):[]),{role:'user',content:[{type:'input_text',text:user}]}],max_output_tokens:maxTokens,reasoning:{effort:'minimal'},...(options.researchTools?{tools:options.researchTools,include:['web_search_call.results','reasoning.encrypted_content']}:textFormat)}),signal:controller.signal});}catch(error){if(!record.transportError)record.transportError=safeTransportDetails(error,this.apiKey,Date.now()-start);throw Error('Meta request unavailable or timed out');}
+      if(res)record.httpStatus=Number.isInteger(res.status)?res.status:null;
       if(res?.status===429&&!options.researchTools&&attempt<this.maxRetries)return {retry:true};
       if(!res||res.ok!==true)throw Error('Meta API request failed (status '+(Number.isInteger(res?.status)?res.status:'?')+')');
-      try{return {body:await res.json()};}catch{throw Error('Meta response JSON invalid');}})(),new Promise((_resolve,reject)=>{timer=setTimeout(()=>{controller.abort();reject(Error('Meta request unavailable or timed out'));},this.timeoutMs);})]);
+      try{return {body:await res.json()};}catch{throw Error('Meta response JSON invalid');}})(),new Promise((_resolve,reject)=>{timer=setTimeout(()=>{const error=Object.assign(new Error('Meta request exceeded configured timeout'),{name:'TimeoutError'});if(!record.transportError)record.transportError=safeTransportDetails(error,this.apiKey,Date.now()-start);controller.abort();reject(Error('Meta request unavailable or timed out'));},this.timeoutMs);})]);
     }finally{clearTimeout(timer);}
     if(!raw.retry)break;
    }
@@ -65,7 +76,7 @@ class MetaModelAdapter extends AIProvider {
    record.responseId=typeof body.id==='string'&&/^[\w-]{1,160}$/.test(body.id)?body.id:null;
    if(body.usage){const usage={};for(const k of ['input_tokens','output_tokens','total_tokens'])if(Number.isSafeInteger(body.usage[k])&&body.usage[k]>=0)usage[k]=body.usage[k];const reasoning=body.usage.output_tokens_details?.reasoning_tokens;if(Number.isSafeInteger(reasoning)&&reasoning>=0)usage.reasoning_tokens=reasoning;record.usage=usage;}
    const value=options.envelope===true?body:responsePayload(body);record.parseSuccess=true;
-   let validated=value;if(options.validate){try{validated=options.validate(value);record.schemaValidationSuccess=true;}catch{record.schemaValidationSuccess=false;throw Error('Meta schema validation failed');}}
+   let validated=value;if(options.validate){try{validated=options.validate(value);record.schemaValidationSuccess=true;}catch(e){record.schemaValidationSuccess=false;record.schemaFailure=typeof e?.message==='string'?e.message.slice(0,160):'Schema rejected';throw Error('Meta schema validation failed');}}
    record.success=true;record.latencyMs=Date.now()-start;this._metric(record);
    if(options.cache!==false){if(this.cache.size>=50)this.cache.delete(this.cache.keys().next().value);this.cache.set(key,{value:structuredClone(validated),expires:Date.now()+this.cacheTtlMs,provenance:record});}
    return validated;

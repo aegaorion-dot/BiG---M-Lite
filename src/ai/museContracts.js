@@ -10,7 +10,7 @@ function confidence(v){if(!Number.isFinite(v)||v<0||v>1)throw Error('Invalid con
 function profile(raw,context){
  keys(raw,['facts','jurisdictionFacts','taxFacts','detectedLanguage'],['facts','jurisdictionFacts']);
  if(!Array.isArray(raw.facts)||!Array.isArray(raw.jurisdictionFacts))throw Error('Invalid fact arrays');
- if(raw.detectedLanguage!=null&&!['en','id','ar','ar-MA'].includes(raw.detectedLanguage))throw Error('Unknown detected language');
+ if(raw.detectedLanguage!=null&&!['en','id','ar','ar-MA','el','el-GR'].includes(raw.detectedLanguage))throw Error('Unknown detected language');
  if(raw.taxFacts!=null){
   if(!Array.isArray(raw.taxFacts)||raw.taxFacts.length>40)throw Error('Invalid tax candidate array');
   for(const f of raw.taxFacts){keys(f,['name','type','value','supportingQuote','status','operation'],['name','type','value','supportingQuote','status']);if(context.taxDeclarations?.[f.name]!==f.type||f.status!=='CANDIDATE'||!require('../onboarding/evidence').verifyQuote(f.supportingQuote,context.message)||f.operation&&!['SET','REPLACE','REMOVE'].includes(f.operation))throw Error('Unknown or unevidenced tax candidate');}

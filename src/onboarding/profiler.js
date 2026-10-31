@@ -33,7 +33,7 @@ function blankProfileState(){
 function valueValid(key,value){
  const type=blankSlots()[key]?.type;
  if(type==='string')return typeof value==='string'&&value.trim().length>0&&value.length<=120;
- if(type==='language')return ['en','id','ar-MA'].includes(value);
+ if(type==='language')return ['en','id','ar-MA','el-GR'].includes(value);
  if(type==='scopes'||type==='presence'){try{require('./economicContext')[type==='scopes'?'validateScopes':'validatePresence'](value);return true;}catch{return false;}}
  if(type==='country')return typeof value==='string'&&isKnownJurisdiction(value);
  if(type==='currency')return typeof value==='string'&&isKnownCurrency(value);
@@ -49,7 +49,7 @@ function normalizeValue(key,value){
  const type=blankSlots()[key]?.type;
  if(typeof value==='string'){
   if(['currency','country','subjectType'].includes(type))return value.trim().toUpperCase();
-  if(type==='language')return /^ar(?:-ma)?$/i.test(value.trim())?'ar-MA':value.trim().toLowerCase();
+  if(type==='language')return /^ar(?:-ma)?$/i.test(value.trim())?'ar-MA':/^el(?:-gr)?$/i.test(value.trim())?'el-GR':value.trim().toLowerCase();
   if(type==='businessType')return value.trim().toLowerCase();
   return value.trim();
  }

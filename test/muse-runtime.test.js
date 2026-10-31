@@ -30,6 +30,17 @@ const taxRequest=()=>({scopeId:'org-contoh',subjectId:'owner-1',requestKey:'revi
 test('Muse profiling uses shared Responses client and stores evidenced candidate roles',async()=>{
  const m=mock(),s=createWebStore({museRuntime:m.runtime});const r=await s.onboardingTurn('My books are in IDR.');assert.equal(r.providerUsed,'meta');const f=s.onboardingState().slots['currency.functional'];assert.equal(f.value,'IDR');assert.equal(f.status,'CANDIDATE');assert.equal(f.supportingQuote,'My books are in IDR.');assert.equal(s.workspaceProfile().activated,false);assert.equal(m.calls[0].body.store,false);assert.match(m.calls[0].system,/UNTRUSTED DATA/);assert.equal(m.adapter.metrics()[0].schemaValidationSuccess,true);
 });
+test('Meta runtime uses a bounded demo-safe default timeout and supports overrides',()=>{
+ const before=process.env.BIGM_MUSE_TIMEOUT_MS;delete process.env.BIGM_MUSE_TIMEOUT_MS;
+ try{assert.equal(createMuseRuntime().adapter.timeoutMs,60000);assert.equal(createMuseRuntime({timeoutMs:45000}).adapter.timeoutMs,45000);}
+ finally{if(before===undefined)delete process.env.BIGM_MUSE_TIMEOUT_MS;else process.env.BIGM_MUSE_TIMEOUT_MS=before;}
+});
+test('Meta transport diagnostics preserve safe network causes without credentials',async()=>{
+ const secret='synthetic-secret-never-print',cause=Object.assign(Error('connection refused'),{code:'ECONNREFUSED',errno:-111,syscall:'connect',hostname:'api.meta.ai'}),failure=Object.assign(TypeError('fetch failed '+secret),{cause});
+ const a=new MetaModelAdapter({endpoint:'https://api.meta.ai/v1/responses',apiKey:secret,model:'muse-spark-1.3',fetchImpl:async()=>{throw failure;},maxRequests:1});
+ await assert.rejects(a._post('transport-diagnostic',{user:'{}'}),/Meta request unavailable or timed out/);
+ const metric=a.metrics()[0];assert.equal(metric.transportError.name,'TypeError');assert.equal(metric.transportError.code,'ECONNREFUSED');assert.equal(metric.transportError.errno,'-111');assert.equal(metric.transportError.syscall,'connect');assert.equal(metric.transportError.hostname,'api.meta.ai');assert.ok(metric.transportError.elapsedMs>=0);assert.equal(JSON.stringify(metric).includes(secret),false);
+});
 test('Muse rejects fabricated profile evidence and confirmed authority',async()=>{
  for(const override of [{supportingQuote:'not in current message'},{status:'CONFIRMED'},{semanticRole:'tax.approval'}]){const m=mock(()=>({facts:[{slot:'currency.functional',value:'IDR',source:'USER',supportingQuote:'My books are in IDR.',confidence:1,status:'CANDIDATE',...override}],jurisdictionFacts:[]})),s=createWebStore({museRuntime:m.runtime});await s.onboardingTurn('My books are in IDR.');assert.equal(s.aiStatus().providerUsed,'fallback');assert.equal(s.workspaceProfile().activated,false);assert.equal(m.adapter.metrics()[0].schemaValidationSuccess,false);}
 });
@@ -64,6 +75,11 @@ test('Muse discovery goes through existing deterministic resolver for an explici
 });
 test('Muse transaction semantics joins the canonical candidate path without posting',async()=>{
  const m=mock(),s=createActiveStore({museRuntime:m.runtime});const r=await s.intake.chat({text:'I paid Rp750,000 for internet at the shop on 2026-10-20.',requestId:'internet'});assert.equal(r.candidates[0].current.amount,'750000');assert.equal(r.candidates[0].current.proposedTransactionType,'EXPENSE');assert.equal(r.candidates[0].semanticProvenance.model,'muse-spark-mock');assert.equal(s.ctx.ledger.size,0);assert.equal(m.adapter.metrics()[0].purpose,'transaction-understanding');
+});
+test('Greek chat is passed intact to Muse and its evidenced income observation enters canonical intake',async()=>{
+ const text='Οκτώβριος 2025.\n\nΣτις 2 Οκτωβρίου εξέδωσα τιμολόγιο 1.200 δολαρίων ΗΠΑ και πληρώθηκα ολόκληρο.';
+ const m=mock((input,system)=>{assert.match(system,/possibly in Greek/);assert.equal(input.sourceText,text);assert.equal(input.untrustedData.length,2);assert.equal(input.untrustedData[1].text,'Στις 2 Οκτωβρίου εξέδωσα τιμολόγιο 1.200 δολαρίων ΗΠΑ και πληρώθηκα ολόκληρο.');const b=input.untrustedData[1],evidence={transactionDate:{blockId:b.blockId,quote:'Στις 2 Οκτωβρίου'},invoiceDate:{blockId:b.blockId,quote:'Στις 2 Οκτωβρίου'},amount:{blockId:b.blockId,quote:'1.200 δολαρίων ΗΠΑ'},currency:{blockId:b.blockId,quote:'δολαρίων ΗΠΑ'},description:{blockId:b.blockId,quote:b.text},proposedTransactionType:{blockId:b.blockId,quote:b.text},settlementStatus:{blockId:b.blockId,quote:'πληρώθηκα ολόκληρο'}};return {transactions:[{candidateType:'CUSTOMER_INVOICE',transactionDate:'2025-10-02',invoiceDate:'2025-10-02',description:b.text,amount:'1200',currency:'USD',proposedTransactionType:'REVENUE',settlementStatus:'PAID',confidence:0.9,evidence}],profileFacts:[]};});
+ const s=createActiveStore({museRuntime:m.runtime});s.setConversationLocale('el-GR');const r=await s.intake.chat({text,requestId:'greek-revenue'});assert.equal(s.currentConversationLocale(),'el-GR');assert.equal(r.candidates.length,1);assert.equal(r.candidates[0].current.amount,'1200');assert.equal(r.candidates[0].current.currency,'USD');assert.equal(r.candidates[0].confirmationAuthority,'USER_INPUT');assert.equal(r.candidates[0].semanticProvenance.model,'muse-spark-mock');assert.equal(s.ctx.ledger.size,0);
 });
 test('Muse document extraction keeps evidence, original hash and safe model provenance',async()=>{
  const m=mock(),s=createActiveStore({museRuntime:m.runtime}),r=await upload(s);assert.notEqual(r.document.processingStatus,'FAILED',r.document.lastError);const c=r.document.candidates[0];assert.equal(c.current.amount,'850000');assert.ok(c.evidence.amount.quote);assert.equal(c.semanticProvenance.success,true);assert.equal(s.intake.trace(c.candidateId).interpretation.provider,'meta-muse-spark');assert.equal(s.ctx.ledger.size,0);await upload(s);assert.equal(m.adapter.requestCount,1);
@@ -110,7 +126,7 @@ test('Muse provider failure leaves native entry, accounting and confirmation ope
  const m=mock(()=>{throw Error('Network unavailable test-secret-never-log');}),s=createActiveStore({museRuntime:m.runtime});assert.equal((await s.museAssistant({question:'How much revenue?'})).status,'MUSE_UNAVAILABLE');await s.createSale({id:'offline',orgId:'org-contoh',date:'2026-10-20',jurisdiction:'ID',currency:'IDR',description:'Offline sale',amountMajor:'1000',customer:'Human',invoiceRef:'N1'});assert.equal(s.ctx.ledger.size,1);assert.equal(s.ctx.audit.verifyChain().ok,true);assert.doesNotMatch(JSON.stringify(m.adapter.metrics()),/test-secret-never-log/);
 });
 test('Meta bounded timeout covers a hung response JSON body and never retries it',async()=>{
- let n=0;const a=new MetaModelAdapter({endpoint:'mock',apiKey:'secret',model:'muse',timeoutMs:10,maxRetries:1,fetchImpl:async()=>{n++;return {ok:true,json:()=>new Promise(()=>{})};}});await assert.rejects(a._post('timeout',{user:'{}'}),/timed out/);assert.equal(n,1);assert.equal(a.metrics()[0].success,false);
+ let n=0;const a=new MetaModelAdapter({endpoint:'mock',apiKey:'secret',model:'muse',timeoutMs:10,maxRetries:1,fetchImpl:async()=>{n++;return {ok:true,json:()=>new Promise(()=>{})};}});await assert.rejects(a._post('timeout',{user:'{}'}),/timed out/);assert.equal(n,1);assert.equal(a.metrics()[0].success,false);assert.equal(a.metrics()[0].transportError.name,'TimeoutError');assert.equal(a.metrics()[0].transportError.elapsedMs>=0,true);
 });
 test('Meta retry is bounded to one 429; auth, parse, schema and 500 errors are never retried',async()=>{
  let n=0;const a=new MetaModelAdapter({endpoint:'mock',apiKey:'secret',model:'muse',maxRetries:8,fetchImpl:async()=>++n===1?{ok:false,status:429}:{ok:true,json:async()=>envelope({ok:true})}});await a._post('retry',{user:'{}'});assert.equal(n,2);assert.equal(a.metrics()[0].attempts,2);
@@ -127,6 +143,11 @@ test('Meta request ceiling and context bounds stop additional spending',async()=
 });
 test('Meta uses minimal reasoning, bounded output, and records reasoning usage without content',async()=>{
  const m=mock();await createWebStore({museRuntime:m.runtime}).onboardingTurn('Hello');assert.deepEqual(m.calls[0].body.reasoning,{effort:'minimal'});assert.equal(m.calls[0].body.max_output_tokens,3072);assert.equal(m.calls[1].body.max_output_tokens,768);assert.ok(!Object.hasOwn(m.calls[0].body,'tools'));
+});
+test('Meta adapter supports strict JSON Schema responses for structured regulatory content',async()=>{
+ const m=mock(()=>({ok:true})),schema={type:'object',additionalProperties:false,properties:{ok:{type:'boolean'}},required:['ok']};
+ const result=await m.adapter._post('structured-rule',{system:'Return structured content.',user:'{}'},{responseSchema:{name:'rule_candidate',schema},maxOutputTokens:1024});
+ assert.deepEqual(result,{ok:true});assert.deepEqual(m.calls[0].body.text.format,{type:'json_schema',name:'rule_candidate',strict:true,schema});
 });
 test('Muse undeclared tax candidates and discovered numeric legal claims fail schema validation',()=>{
  assert.throws(()=>C.profile({facts:[],jurisdictionFacts:[],taxFacts:[{name:'EXEMPT',type:'BOOLEAN',value:true,supportingQuote:'exempt',status:'CANDIDATE'}]},{message:'exempt'}));

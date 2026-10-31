@@ -99,7 +99,8 @@ describe('Ethan blocker repairs (synthetic)',()=>{
  });
  it('I: demo-derived source classification stays provisional and is never attributed to USER_INPUT',()=>{
   const snap=candidateTaxFacts({...SCOPE,revision:1,facts:[
-   {name:'SUBJECT_TYPE',type:'STRING',value:'INDIVIDUAL',evidenceReference:'I am an individual',confirmationAuthority:'USER_INPUT'},
+   {name:'SUBJECT_TYPE',type:'STRING',value:'INDIVIDUAL',evidenceReference:'Provisional demo scope: individual taxpayer assumption from the stated personal invoice activity',confirmationAuthority:'BIGM_DEMO_POLICY',provisional:true},
+   {name:'INCOME_TYPE',type:'STRING',value:'BUSINESS_INCOME',evidenceReference:'Provisional demo scope: service invoices treated as business income',confirmationAuthority:'BIGM_DEMO_POLICY',provisional:true},
    {name:'SOURCE',type:'COUNTRY',value:'JP',evidenceReference:'Muse provisional source classification; official evidence hash demo-source-hash',confirmationAuthority:'BIGM_DEMO_POLICY',provisional:true},
    {name:'TAXABLE_INCOME',type:'MONEY',value:{amountMinor:'1000000',currency:'JPY'},evidenceReference:'Calculated from confirmed user records and retained conversion evidence',confirmationAuthority:'CALCULATION',provisional:true},
   ]});
@@ -107,6 +108,8 @@ describe('Ethan blocker repairs (synthetic)',()=>{
   assert.equal(confirmed.confirmation.confirmationAuthority,'BIGM_DEMO_POLICY');
   assert.equal(confirmed.confirmation.provisional,true);
   assert.equal(confirmed.facts.find(f=>f.name==='SOURCE').confirmationAuthority,'BIGM_DEMO_POLICY');
+  assert.equal(confirmed.facts.find(f=>f.name==='SUBJECT_TYPE').confirmationAuthority,'BIGM_DEMO_POLICY');
+  assert.equal(confirmed.facts.find(f=>f.name==='INCOME_TYPE').confirmationAuthority,'BIGM_DEMO_POLICY');
   assert.equal(confirmed.confirmation.calculatedFacts[0].name,'TAXABLE_INCOME');
   assert.equal(inspectFacts(confirmed,{policyMode:'HACKATHON_DEMO'}).status,'CONFIRMED');
   assert.equal(inspectFacts(confirmed).status,'REVIEW_REQUIRED');

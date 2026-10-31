@@ -76,17 +76,24 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   const ctx=getContext();let n=0;
   for(const proposal of interpretation.result.transactions){
    const id='candidate-'+hash(Buffer.from(sourceId+':'+n++)).slice(0,32);if(state.candidates[id])continue;
-   const current=clone(proposal);delete current.evidence;delete current.confidence;delete current.proposedAccounts;
+   const current=clone(proposal),evidence=clone(proposal.evidence);delete current.evidence;delete current.confidence;delete current.proposedAccounts;
+   // Normalize source-native document kinds into the existing ledger contract.
+   // Muse supplies the observations; this deterministic mapping keeps review
+   // and confirmation governed by the existing intake workflow.
+   if(!current.transactionDate&&current.invoiceDate){current.transactionDate=current.invoiceDate;evidence.transactionDate=evidence.invoiceDate;}
+   if(!current.transactionDate&&current.documentDate){current.transactionDate=current.documentDate;evidence.transactionDate=evidence.documentDate;}
+   if(!current.proposedTransactionType){if(current.candidateType==='CUSTOMER_INVOICE')current.proposedTransactionType='REVENUE';else if(['RECEIPT','SUPPLIER_INVOICE'].includes(current.candidateType))current.proposedTransactionType='EXPENSE';}
+   if(typeof current.settlementStatus==='string'){const normalized=current.settlementStatus.trim().toUpperCase().replace(/[ -]+/g,'_');if(['PAID','UNPAID','PARTIALLY_PAID'].includes(normalized))current.settlementStatus=normalized;}
    current.classificationAccountId=proposal.proposedAccounts?.classificationAccountId??(proposal.proposedTransactionType?ctx.chart?.list().find(a=>a.code===(proposal.proposedTransactionType==='REVENUE'?'401':'501'))?.id:null)??null;
    current.paymentAccountId=proposal.proposedAccounts?.paymentAccountId??(proposal.paymentMethod?ctx.chart?.list().find(a=>a.code==='101')?.id:null)??null;
    if(current.eventType){const codes=financial.accountCodes(current);current.classificationAccountId=ctx.chart?.list().find(a=>a.code===codes.classification)?.id??null;current.paymentAccountId=ctx.chart?.list().find(a=>a.code===codes.payment)?.id??null;}
-   const c={candidateId:id,documentId,sourceChannel,sourceId,extractionId:interpretation.extractionId,interpretationId:interpretation.interpretationId,candidateType:proposal.candidateType,current,evidence:clone(proposal.evidence),confidence:proposal.confidence,...(sourceChannel==='CHAT'?{confirmationAuthority:'USER_INPUT'}:{}),status:'CANDIDATE',revision:1,revisions:[{revision:1,source:'SEMANTIC_PROPOSAL',at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};
+   const c={candidateId:id,documentId,sourceChannel,sourceId,extractionId:interpretation.extractionId,interpretationId:interpretation.interpretationId,candidateType:proposal.candidateType,current,evidence,confidence:proposal.confidence,...(sourceChannel==='CHAT'?{confirmationAuthority:'USER_INPUT'}:{}),status:'CANDIDATE',revision:1,revisions:[{revision:1,source:'SEMANTIC_PROPOSAL',at:now(),fields:clone(current)}],confirmation:null,canonicalCommand:null,posting:null,lastError:null};
    c.documentCurrency=sourceChannel==='DOCUMENT'?proposal.currency:null;c.semanticProvenance=clone(interpretation.modelProvenance??null);c.sourceRef={reference:documentId??sourceId,fileHash:documentId?state.documents[documentId].sha256:null,...(sourceReference?{userFactSource:clone(sourceReference)}:{})};state.candidates[id]=c;refreshIndex(c);c.status=validate(c).status;event('CANDIDATE_CREATED',id);
   }
  }
  async function interpret(extraction,{documentId=null,sourceId,sourceChannel,receivedAt,sourceReference=null}){
   const interpretationId='interpretation-'+sourceId;
-  const raw=await semanticProvider.interpret({extraction:clone(extraction),sourceChannel,receivedAt,allowedEconomicScopes:getContext().workspace.economicScopes??[],allowedAccounts:getContext().chart?.list().map(a=>({id:a.id,code:a.code,name:a.name,type:a.type}))??[]});
+  const raw=await semanticProvider.interpret({extraction:clone(extraction),sourceChannel,sourceId,receivedAt,allowedEconomicScopes:getContext().workspace.economicScopes??[],allowedAccounts:getContext().chart?.list().map(a=>({id:a.id,code:a.code,name:a.name,type:a.type}))??[]});
   const result=validateSemantics(raw,extraction);
   const record={interpretationId,extractionId:extraction.extractionId,documentId,provider:semanticProvider.name??semanticProvider.constructor.name,modelProvenance:semanticProvider.provenance?.()??null,createdAt:now(),raw:clone(raw),result};
   // Profile mutations and intake state share the same durable web-store snapshot.
@@ -125,7 +132,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
   if(typeof text!=='string'||!text.trim()||text.length>10000||typeof requestId!=='string'||!requestId.trim()||requestId.length>100||['__proto__','constructor','prototype'].includes(requestId))throw Error('Chat text and stable requestId required (max 10000 / 100 characters)');
   if(sourceReference!==null&&(!sourceReference||Object.keys(sourceReference).some(k=>!['sourceTitle','sha256'].includes(k))||typeof sourceReference.sourceTitle!=='string'||!sourceReference.sourceTitle.trim()||sourceReference.sourceTitle.length>120||!/^([a-f0-9]{64})$/.test(sourceReference.sha256??'')))throw Error('Bounded user-fact source provenance required');
   if(state.chats[requestId]){if(state.chats[requestId].text!==text||JSON.stringify(state.chats[requestId].sourceReference??null)!==JSON.stringify(sourceReference??null))throw Error('Chat idempotency replay has different text or source provenance');return chatView(requestId);}
-  const receivedAt=now(),extractionId='extraction-chat-'+hash(Buffer.from(requestId)),extraction={extractionId,documentId:null,extractor:'chat-text',extractorVersion:'1',method:'TEXT',pages:[{page:1,method:'TEXT'}],textBlocks:text.split(/\r?\n/).map((text,i)=>({blockId:'b'+i,page:1,text})),tables:[],confidence:1,warnings:[],detectedLanguage:null,createdAt:receivedAt};
+  const receivedAt=now(),extractionId='extraction-chat-'+hash(Buffer.from(requestId)),extraction={extractionId,documentId:null,extractor:'chat-text',extractorVersion:'1',method:'TEXT',pages:[{page:1,method:'TEXT'}],sourceText:text,textBlocks:text.split(/\r?\n\s*\r?\n/).map((text,i)=>({blockId:'b'+i,page:1,text})).filter(b=>b.text.trim()),tables:[],confidence:1,warnings:[],detectedLanguage:null,createdAt:receivedAt};
   atomic(()=>{state.chats[requestId]={requestId,text,receivedAt,status:'INTERPRETING',...(sourceReference?{sourceReference:clone(sourceReference)}:{})};state.extractions[extractionId]=extraction;event('CHAT_RECEIVED',requestId,{sourceReference:sourceReference?clone(sourceReference):null});});
   try{await interpret(extraction,{sourceId:'chat-'+hash(Buffer.from(requestId)),sourceChannel:'CHAT',receivedAt,sourceReference});atomic(()=>{state.chats[requestId].status='REQUIRES_REVIEW';});}
   catch(e){atomic(()=>{state.chats[requestId].status='FAILED';state.chats[requestId].lastError=e.message;});}
@@ -180,6 +187,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
  function retry({documentId}){const d=state.documents[documentId];if(!d||d.processingStatus!=='FAILED')throw Error('Only failed documents can be retried');return processDocument(documentId);}
  function list(){const ctx=getContext();return {documents:Object.keys(state.documents).map(documentView),chats:Object.keys(state.chats).map(chatView),candidates:Object.values(state.candidates).map(c=>view(c,ctx)),externalSources:external.sources(),externalBatches:external.batches()};}
  function trace(id){const c=candidate(id);return {candidate:view(c),document:c.documentId?documentView(c.documentId):null,extraction:clone(state.extractions[c.extractionId]),interpretation:clone(state.interpretations[c.interpretationId]),external:external.trace(c),events:clone(state.events.filter(e=>[c.candidateId,c.documentId,c.sourceId].includes(e.id))),posting:c.posting?getContext().journalFor(c.posting.receipt.postingId):null};}
+ function documentTrace(id){const d=state.documents[id];if(!d)throw Error('Unknown document');const extraction=state.extractions['extraction-'+id],interpretation=state.interpretations['interpretation-'+id];return {document:documentView(id),extraction:clone(extraction??null),interpretation:clone(interpretation??null),events:clone(state.events.filter(e=>e.id===id))};}
  function original(id){const d=state.documents[id];if(!d)throw Error('Unknown document');const bytes=Buffer.from(d.originalBase64,'base64');if(hash(bytes)!==d.sha256)throw Error('Original document hash mismatch');return {bytes,mime:d.detectedMimeType,filename:d.originalFilename};}
  function recover(){let changed=false;for(const d of Object.values(state.documents))if(['UPLOADED','EXTRACTING','EXTRACTED','INTERPRETING'].includes(d.processingStatus)){d.processingStatus='FAILED';d.lastError='Processing interrupted by restart; retry explicitly';changed=true;}for(const c of Object.values(state.chats))if(c.status==='INTERPRETING'){c.status='FAILED';c.lastError='Interpretation interrupted by restart';changed=true;}if(changed)persist();}
  function native({input,actor='user'}){
@@ -196,7 +204,7 @@ function createIntakeService({state,getContext,persist,commitPosting,applyProfil
  }
  for(const b of Object.values(state.external.batches))if(hash(Buffer.from(b.originalBase64,'base64'))!==b.fileHash)throw Error('Persisted external original hash mismatch');
  external=createExternalIntake({state,getContext,atomic,registerCandidate,refreshIndex,view,confirm});rebuildIndex();
- return {upload:serial(upload),chat:serial(chat),native:serial(native),edit:serial(edit),reject:serial(reject),resolveFx:serial(resolveFx),approveFx:serial(approveFx),resolveDuplicate:serial(resolveDuplicate),confirm:serial(confirm),retry:serial(retry),list,trace,original,recover,
+ return {upload:serial(upload),chat:serial(chat),native:serial(native),edit:serial(edit),reject:serial(reject),resolveFx:serial(resolveFx),approveFx:serial(approveFx),resolveDuplicate:serial(resolveDuplicate),confirm:serial(confirm),retry:serial(retry),list,trace,documentTrace,original,recover,
   external:{...external,registerSource:serial(external.registerSource),approveMapping:serial(external.approveMapping),stage:serial(external.stage),confirmBatch:serial(external.confirmBatch)}};
 }
 module.exports={blankIntakeState,createIntakeService};

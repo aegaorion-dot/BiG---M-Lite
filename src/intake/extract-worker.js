@@ -47,7 +47,7 @@ process.once('message',async({base64,mime,workDir})=>{
    await pdf.destroy();
   }else{
    const image=await canvas.loadImage(bytes);if(!image.width||!image.height||image.width*image.height>LIMITS.pixels)throw Error('Image pixel limit exceeded');
-   ocr=true;pages.push({page:1,method:'OCR'});confidence=await recognize(bytes,1,textBlocks);
+   ocr=true;pages.push({page:1,method:'OCR',width:image.width,height:image.height,coordinateSystem:'IMAGE_PIXELS'});confidence=await recognize(bytes,1,textBlocks);
   }
   if(worker)await worker.terminate();
   if(!textBlocks.length)warnings.push('No readable text; supply a clearer document');

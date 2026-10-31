@@ -4,7 +4,7 @@ const {detectType,mimeMatches}=require('./artifacts');
 const {assertPublicResearchUrl,sanitizeResearchRecord}=require('./researchSanitizer');
 class SourceConnector{
  constructor({store,fetchImpl=globalThis.fetch,maxBytes=2*1024*1024,timeoutMs=20000,maxRedirects=4}={}){
-  if(!store||!Number.isInteger(maxBytes)||maxBytes<1||maxBytes>10*1024*1024||!Number.isInteger(timeoutMs)||timeoutMs<1||timeoutMs>60000||!Number.isInteger(maxRedirects)||maxRedirects<0||maxRedirects>10)throw Error('Bounded artifact store and network limits required');
+  if(!store||!Number.isInteger(maxBytes)||maxBytes<1||maxBytes>16*1024*1024||!Number.isInteger(timeoutMs)||timeoutMs<1||timeoutMs>60000||!Number.isInteger(maxRedirects)||maxRedirects<0||maxRedirects>10)throw Error('Bounded artifact store and network limits required');
   Object.assign(this,{store,fetchImpl,maxBytes,timeoutMs,maxRedirects});
  }
  async retrievePreferred({sourceId,resources}){

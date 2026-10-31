@@ -50,9 +50,9 @@ function readBody(req, limit = 512 * 1024) {
       if (size > limit) { chunks.length=0;reject(Object.assign(new Error('Request body too large'),{status:413}));return; }
       chunks.push(c);
     });
-    req.on('end', () => {if(size<=limit)resolve(Buffer.concat(chunks).toString('utf8'));});
-    req.on('error', reject);
-    req.setTimeout(30000,()=>{reject(Object.assign(Error('Upload timed out'),{status:408}));req.destroy();});
+    req.on('end', () => {req.setTimeout(0);if(size<=limit)resolve(Buffer.concat(chunks).toString('utf8'));});
+    req.on('error', (error) => {req.setTimeout(0);reject(error);});
+    req.setTimeout(30000,()=>{req.setTimeout(0);reject(Object.assign(Error('Upload timed out'),{status:408}));req.destroy();});
   });
 }
 

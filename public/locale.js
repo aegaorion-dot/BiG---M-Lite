@@ -1,6 +1,6 @@
 (function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.BigmLocale=factory();})(typeof globalThis==='object'?globalThis:this,function(){
  'use strict';
- const SUPPORTED=['en','id-ID','en-AU','en-SG','en-GB','ar-MA'];
+ const SUPPORTED=['en','id-ID','en-AU','en-SG','en-GB','ar-MA','el-GR'];
  function canonical(tag){if(tag==='id')return 'id-ID';if(typeof tag!=='string'||tag.length>40)throw Error('Invalid locale');try{return Intl.getCanonicalLocales(tag)[0];}catch{throw Error('Invalid locale');}}
  function supported(tag){try{return SUPPORTED.includes(canonical(tag));}catch{return false;}}
  function base(tag){return canonical(tag).split('-')[0];}
