@@ -57,8 +57,8 @@ function readBody(req, limit = 512 * 1024) {
   });
 }
 
-function createServer({ port = 3100, persistPath = null, orgId = null, authToken = null, profileProvider = null, extractionProvider, semanticProvider, museRuntime, fxProvider, languagePackService, store:providedStore=null, nikosStore:providedNikosStore=null } = {}) {
-  const store = providedStore??createWebStore({ persistPath, orgId, authToken, profileProvider, extractionProvider, semanticProvider, museRuntime, fxProvider, languagePackService });
+function createServer({ port = 3100, persistPath = null, orgId = null, authToken = null, profileProvider = null, extractionProvider, semanticProvider, museRuntime, fxProvider, languagePackService, demoTaxCatalogs = true, store:providedStore=null, nikosStore:providedNikosStore=null } = {}) {
+  const store = providedStore??createWebStore({ persistPath, orgId, authToken, profileProvider, extractionProvider, semanticProvider, museRuntime, fxProvider, languagePackService, demoTaxCatalogs });
   const nikosStore=providedNikosStore??createWebStore({persistPath:persistPath?path.join(path.dirname(persistPath),'nikos-demo','store.json'):null,orgId:'org-nikos-demo',authToken,profileProvider,extractionProvider,semanticProvider,fxProvider});
   const server = http.createServer(async (req, res) => {
     try {
@@ -96,7 +96,9 @@ if (require.main === module) {
   const port = Number(process.env.BIGM_PORT ?? process.env.PORT ?? 3100);
   const persistPath = process.env.BIGM_DATA_PATH || path.join(__dirname, '..', '..', 'data', 'store.json');
   const authToken = process.env.BIGM_API_TOKEN ?? null;
-  const { server } = createServer({ port, persistPath, authToken });
+  const orgId = process.env.BIGM_ORG_ID ?? null;
+  const demoTaxCatalogs = process.env.BIGM_DEMO_TAX_CATALOGS !== '0';
+  const { server } = createServer({ port, persistPath, authToken, orgId, demoTaxCatalogs });
   server.listen(port, '127.0.0.1', () => {
     console.log(`BiG-M Lite web berjalan di http://localhost:${port}`);
   });

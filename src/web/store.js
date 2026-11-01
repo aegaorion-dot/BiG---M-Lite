@@ -26,7 +26,7 @@ const clone=x=>JSON.parse(JSON.stringify(x));
 function human(actor,decisionSource='HUMAN'){
  if(decisionSource!=='HUMAN'||typeof actor!=='string'||!actor.trim()||/^(ai|model|muse|meta|system)(?:$|[: -])/i.test(actor))throw Error('Explicit human confirmation required');
 }
-function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvider=null,taxSystem=null,extractionProvider,semanticProvider,museRuntime=null,fxProvider=null,languagePackService=null}={}){
+function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvider=null,taxSystem=null,extractionProvider,semanticProvider,museRuntime=null,fxProvider=null,languagePackService=null,demoTaxCatalogs=true}={}){
  const muse=museRuntime??createMuseRuntime();
  profileProvider??=muse.enabled?muse.profileProvider:null;semanticProvider??=muse.enabled?muse.semanticProvider:undefined;
  let museState={events:[],conversations:[],lastQuestion:null,discovery:null};
@@ -43,9 +43,9 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  let profileState=blankProfileState(),lastProposal=null,lastValidation=null,confirmation=null,activeConfig=null,history=[],packApprovals=[],proposalVersion=0;
  let lastTurn={providerConfigured:false,providerUsed:'fallback',model:null,fallbackReason:'PROVIDER_NOT_CONFIGURED'},aiCalls=0,aiSuccesses=0,migrationNotice=null;
  let turnQueue=Promise.resolve(),mutationQueue=Promise.resolve();
- let taxReviewContext=null,lastTaxProposal=null,nikosDemoResult=null,nikosDemoProgress={status:'IDLE',events:[]};
+ let taxReviewContext=null,lastTaxProposal=null,nikosDemoResult=null,nikosDemoProgress={status:'IDLE',events:[]},configurationState=null,configurationService=null;
  function taxServices(){
-  if(!taxSystem){const dir=persistPath?path.join(path.dirname(persistPath),'tax'):null;taxSystem=require('../tax').createTaxSystem({governancePath:dir?path.join(dir,'fabric.json'):null,determinationPath:dir?path.join(dir,'determinations.json'):null});require('./scopedTaxCatalog').registerHistoricalCatalog(taxSystem.registry);require('./expandedTaxCatalog').registerExpandedCatalog(taxSystem.registry);}return taxSystem;
+  if(!taxSystem){const dir=persistPath?path.join(path.dirname(persistPath),'tax'):null;taxSystem=require('../tax').createTaxSystem({governancePath:dir?path.join(dir,'fabric.json'):null,determinationPath:dir?path.join(dir,'determinations.json'):null});if(demoTaxCatalogs){require('./scopedTaxCatalog').registerHistoricalCatalog(taxSystem.registry);require('./expandedTaxCatalog').registerExpandedCatalog(taxSystem.registry);}}return taxSystem;
  }
  function profileFingerprint(){return fingerprint({slots:profileState.slots,jurisdictionFacts:profileState.jurisdictionFacts});}
  function taxReadiness(){
@@ -114,12 +114,19 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   const entry=new JournalEntry({...o,lines:o.lines.map(l=>new JournalLine({accountId:l.accountId,side:l.side,money:Money.fromMinor(l.amountMinor,l.currency??o.currency)}))});
   entry.finalize(()=>o.finalizedAt??new Date().toISOString());return entry;
  }
- function snapshot(){return {version:2,scopeOrgId,org:ctx.org,periods:periods.list(),journals:ledger.list().map(serializeJournal),audit:audit.list(),idempotency:idempotency.toJSON(),txMeta:[...txMeta.values()],profileState,lastProposal,lastValidation,confirmation,active:activeConfig,history,packApprovals,proposalVersion,lastTurn,aiCalls,aiSuccesses,taxReviewContext,lastTaxProposal,scopedTax:scopedTaxState,provisionalJp:provisionalTaxState.provisionalJp,intake:intakeState,muse:museState,fx:fxState,preferences:{uiLocale,uiLocaleSource,conversationLocale,conversationLocaleSource},savedAt:new Date().toISOString()};}
+ function snapshot(){return {version:2,scopeOrgId,org:ctx.org,periods:periods.list(),journals:ledger.list().map(serializeJournal),audit:audit.list(),idempotency:idempotency.toJSON(),txMeta:[...txMeta.values()],profileState,lastProposal,lastValidation,confirmation,active:activeConfig,history,packApprovals,proposalVersion,lastTurn,aiCalls,aiSuccesses,taxReviewContext,lastTaxProposal,scopedTax:scopedTaxState,provisionalJp:provisionalTaxState.provisionalJp,intake:intakeState,muse:museState,fx:fxState,configuration:configurationService?configurationService.state():configurationState,preferences:{uiLocale,uiLocaleSource,conversationLocale,conversationLocaleSource},savedAt:new Date().toISOString()};}
  function persist(){
   if(!persistPath)return;
-  const data=JSON.stringify(snapshot(),null,2),tmp=persistPath+'.tmp';
+  const data=JSON.stringify(snapshot(),null,2),tmp=persistPath+'.'+process.pid+'.'+Date.now()+'.tmp';
   fs.mkdirSync(path.dirname(persistPath),{recursive:true});
-  try{fs.writeFileSync(tmp,data,'utf8');fs.renameSync(tmp,persistPath);}catch{throw Error('State could not be saved; retry before continuing');}
+  try{fs.writeFileSync(tmp,data,'utf8');}catch(e){throw Error('State could not be saved; retry before continuing ('+(e.code??'WRITE')+')');}
+  let lastError=null;
+  for(let attempt=0;attempt<5;attempt++){
+   try{fs.renameSync(tmp,persistPath);return;}
+   catch(e){lastError=e;if(!['EPERM','EBUSY','EACCES'].includes(e.code))break;Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,25);}
+  }
+  try{fs.unlinkSync(tmp);}catch{/* The retry reports the original failure. */}
+  throw Error('State could not be saved; retry before continuing ('+(lastError?.code??'RENAME')+')');
  }
  function invalidate(){lastProposal=null;lastValidation=null;confirmation=null;lastTaxProposal=null;}
  function resolve(state=profileState,confirmedPackIds=[]){
@@ -239,6 +246,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
    audit.record({actor:record.actor,action:'onboarding.activate',entityType:'configuration',entityId:activationKey,detail:{version:record.version,profileRevision:record.profileRevision,proposalHash:record.proposalHash,effectiveDate:config.period.periodStart,packVersions:confirmation.packVersions,policyMode:record.policyMode??'STRICT',provisional:Boolean(record.provisional)}});
    persist();
   }catch(e){Object.assign(ctx,runtimeBefore);activeConfig=oldActive;history.splice(historyCount);while(audit.size>auditCount)audit._rollbackLast(audit.size);periods._periods.splice(periodCount);throw e;}
+  scheduleConfigurationResearch();
   return clone(record);
  }
  function approvePack(input){human(input.actor,input.decisionSource);const approval=approveContent(contentRegistry,input);const before={packApprovals,lastProposal,lastValidation,confirmation,lastTaxProposal};packApprovals=[...packApprovals.filter(a=>a.packId!==approval.packId),approval];invalidate();
@@ -259,6 +267,31 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  function rememberMeta(kind,draft,result){
   const line=result.journal.lines.find(l=>l.accountId===ctx.chart.getByCode(kind==='SALE'?'401':'501').id);
   txMeta.set(result.transactionId,{id:result.transactionId,kind,date:draft.date,currency:draft.currency,totalMinor:line?.amountMinor??'0',counterparty:draft.customer??draft.supplier??'-',reference:draft.invoiceRef??draft.billRef??'-',postingId:result.receipt.postingId,journalId:result.journal.id,demo:String(result.transactionId).startsWith('demo-')});
+ }
+ function refreshConfigurationEstimates(){try{configurationService?.refreshEstimates({save:false});}catch{/* A tax estimate must never block or roll back an accepted posting. */}}
+ // Confirmed tax-review facts are reused by estimates only when the reviewed
+ // scope, currency and period still match the active workspace.
+ function reviewedTaxFacts(){
+  try{
+   const snapshot=taxReviewContext?.snapshot;if(!snapshot||snapshot.status!=='CONFIRMED')return [];
+   const ws=workspaceProfile();if(!ws.activated||snapshot.scopeId!==scopeOrgId||snapshot.currency!==ws.functionalCurrency)return [];
+   if(!ws.period||snapshot.period?.periodStart!==ws.period.periodStart||snapshot.period?.periodEnd!==ws.period.periodEnd)return [];
+   return snapshot.facts;
+  }catch{return [];}
+ }
+ // Proactive Muse research: after an activated workspace has open configuration
+ // requirements, the scheduler asks Muse to research them. It is skipped in test
+ // runs and can be disabled with BIGM_CONFIGURATION_AUTO_RESEARCH=0.
+ function scheduleConfigurationResearch(){
+  if(process.env.BIGM_CONFIGURATION_AUTO_RESEARCH==='0')return;
+  if(process.env.NODE_TEST_CONTEXT||process.env.NODE_ENV==='test')return;
+  if(!configurationService)return;
+  setImmediate(()=>{
+   try{
+    if(!configurationService.configuration().researchRequirements.length)return;
+    configurationService.runResearch({actor:'scheduler:muse'}).catch(()=>{});
+   }catch{/* Research scheduling never affects activation. */}
+  });
  }
  function transactionCheckpoint(){return {ledgerSize:ledger.size,auditSize:audit.size,idempotency:idempotency.toJSON(),metadata:clone([...txMeta.entries()])};}
  function rollbackTransaction(s){while(ledger.size>s.ledgerSize)ledger._rollbackLast(ledger.list().at(-1).id);while(audit.size>s.auditSize)audit._rollbackLast(audit.size);idempotency._restoreAll(s.idempotency);txMeta.clear();for(const [k,v]of s.metadata)txMeta.set(k,v);}
@@ -318,7 +351,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
   for(const j of raw.journals??[]){if(j.orgId!==scopeOrgId)throw Error('Persisted journal scope mismatch');ledger.append(deserializeJournal(j));}
   audit._restoreAll(raw.audit??[]);idempotency._restoreAll(raw.idempotency??{});for(const m of raw.txMeta??[])txMeta.set(m.id,m);
   if(raw.version!==2){migrationNotice='Previous setup needs review before activation. Journals and period states are preserved.';return;}
-  if(raw.fx)Object.assign(fxState,raw.fx);if(raw.provisionalJp)provisionalTaxState.provisionalJp=raw.provisionalJp;if(raw.scopedTax){const p=raw.scopedTax.proposal;if(p){const {proposalHash,...data}=p;if(fingerprint(data)!==proposalHash)throw Error('Persisted scoped tax proposal integrity mismatch');}Object.assign(scopedTaxState,raw.scopedTax);}uiLocale=raw.preferences?.uiLocale??null;uiLocaleSource=raw.preferences?.uiLocaleSource??null;if(uiLocaleSource!=='USER_OVERRIDE')uiLocale=null;conversationLocale=raw.preferences?.conversationLocale??null;conversationLocaleSource=raw.preferences?.conversationLocaleSource??null;if(conversationLocaleSource!=='WORKSPACE')conversationLocale=null;
+  if(raw.fx)Object.assign(fxState,raw.fx);if(raw.provisionalJp)provisionalTaxState.provisionalJp=raw.provisionalJp;if(raw.configuration)configurationState=raw.configuration;if(raw.scopedTax){const p=raw.scopedTax.proposal;if(p){const {proposalHash,...data}=p;if(fingerprint(data)!==proposalHash)throw Error('Persisted scoped tax proposal integrity mismatch');}Object.assign(scopedTaxState,raw.scopedTax);}uiLocale=raw.preferences?.uiLocale??null;uiLocaleSource=raw.preferences?.uiLocaleSource??null;if(uiLocaleSource!=='USER_OVERRIDE')uiLocale=null;conversationLocale=raw.preferences?.conversationLocale??null;conversationLocaleSource=raw.preferences?.conversationLocaleSource??null;if(conversationLocaleSource!=='WORKSPACE')conversationLocale=null;
   if(raw.muse)museState={...museState,...raw.muse,events:(raw.muse.events??[]).slice(-100),conversations:(raw.muse.conversations??[]).slice(-10)};
   profileState=raw.profileState;profileState.slots={...blankProfileState().slots,...profileState.slots};lastProposal=raw.lastProposal;lastValidation=raw.lastValidation;confirmation=raw.confirmation;packApprovals=raw.packApprovals??[];history=(raw.history??[]).map(deepFreeze);proposalVersion=raw.proposalVersion??0;lastTurn=raw.lastTurn??lastTurn;aiCalls=raw.aiCalls??0;aiSuccesses=raw.aiSuccesses??0;taxReviewContext=raw.taxReviewContext??null;lastTaxProposal=raw.lastTaxProposal??null;
   if(taxReviewContext){checkOrg(taxReviewContext.request.scopeId);taxReadiness();}
@@ -367,7 +400,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
    if(command.kind==='JOURNAL')txMeta.set(result.transactionId,{id:result.transactionId,kind:'JOURNAL_IMPORT',date:command.date,currency:command.currency,totalMinor:'0',counterparty:c.current.counterparty??'-',reference:c.current.referenceNumber??command.sourceRef.externalId,postingId:result.receipt.postingId,journalId:result.journal.id,demo:false});
    else rememberMeta(command.kind==='REVENUE'?'SALE':'PURCHASE',{date:command.date,currency:command.currency,customer:c.current.counterparty,invoiceRef:c.current.referenceNumber??command.evidence.reference},result);
    const meta=txMeta.get(result.transactionId);meta.description=c.current.description;meta.totalMinor=Money.fromMajor(c.current.amount,c.current.currency).amountMinor.toString();if(command.financialReview)Object.assign(meta,{kind:command.financialReview.eventType,financialReview:command.financialReview});if(command.fx)Object.assign(meta,{functionalCurrency:command.functionalCurrency,functionalAmount:command.functionalAmount,originalAmount:command.originalAmount,fx:command.fx});
-   finalize(result);persist();return result;
+   finalize(result);refreshConfigurationEstimates();persist();return result;
   }catch(e){rollbackTransaction(before);throw e;}
  }
  const intake=createIntakeService({state:intakeState,getContext:()=>({...ctx,workspace:workspaceProfile(),journalFor:id=>{const j=ctx.ledger.get(id);return j?serializeJournal(j):null;}}),persist,commitPosting:commitIntakePosting,applyProfileFacts:applyDocumentFacts,fxService,extractionProvider,semanticProvider});
@@ -375,6 +408,7 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  const scopedTax=require('./scopedTax').createScopedCalculation({state:scopedTaxState,system:taxServices,financial:baseFinancialPosition,workspace:workspaceProfile,profileRevision:()=>profileState.revision,persist});
  const provisionalTax=require('./provisionalJp').createProvisionalJp({state:provisionalTaxState,financial:baseFinancialPosition,persist});
  const expandedTax=require('./expandedTax').createExpandedTax({state:scopedTaxState,system:taxServices,financial:baseFinancialPosition,workspace:workspaceProfile,profileRevision:()=>profileState.revision,candidates:()=>intake.list().candidates,company:()=>scopedTax.view(),persist});
+ configurationService=require('../configuration/service').createConfigurationService({system:()=>taxServices(),profile:()=>profileState,workspace:()=>workspaceProfile(),financial:()=>baseFinancialPosition(),taxFacts:reviewedTaxFacts,persist:()=>persist(),state:configurationState,researchRoot:persistPath?path.join(path.dirname(persistPath),'configuration-research'):null});
  function recordMuse(event){museState.events.push(clone(event));if(museState.events.length>100)museState.events.shift();}
  function packSummary(){return taxServices().registry.snapshot().map(c=>{const p=c.executableContent;return {packId:p.packId??p.treatyPackId,version:p.version,kind:c.contentKind,jurisdictions:p.jurisdictionCode?[p.jurisdictionCode]:[p.jurisdictionA,p.jurisdictionB],effectiveFrom:p.effectiveFrom,effectiveTo:p.effectiveTo,governance:c.status,sourceStatus:c.reviewPackage?.sourceStatus??'REVIEW_REQUIRED',coverage:p.coverageStatus??null};});}
  const {governedCatalog,resolveSuggestion}=require('../ai/museCatalog');
@@ -415,8 +449,8 @@ function createWebStore({persistPath=null,orgId=null,authToken=null,profileProvi
  }
  function museActivity(){return clone(museState.events).map(e=>({purpose:e.purpose,at:e.at,sourceId:e.sourceId??null,provider:e.provenance?.provider??null,model:e.provenance?.model??null,status:e.status??e.provenance?.status??'COMPLETED',success:e.provenance?.success??null,parseSuccess:e.provenance?.parseSuccess??null,schemaValidationSuccess:e.provenance?.schemaValidationSuccess??null,schemaFailure:e.provenance?.schemaFailure??null,responseStatus:e.provenance?.responseStatus??null,failure:e.failure??e.provenance?.failure??null,sourceHash:e.sourceHash??null,candidateCount:e.candidateCount??null,profileFactCount:e.profileFactCount??null,truncated:e.truncated??false}));}
  const store={ctx,txMeta,contentRegistry,checkAuth,serializeMutation,createSale,createPurchase,importCsvText,reverseJournal,listTransactions,monthlyReport,summary,financialPosition,scopedTax,provisionalTax,expandedTax,seedDemo,serializeJournal,pipelineDepsFor,
-  chartFor:()=>ctx.chart,onboardingTurn,onboardingDraft,onboardingPropose,onboardingValidate,onboardingConfirm,onboardingReadiness,onboardingActivate,onboardingState,onboardingHistory:()=>clone(history),setUiLanguage,editProfile,approvePack,workspaceProfile,aiStatus,applyActiveConfiguration,beginTaxReview,answerTaxReview,proposeTaxReview,taxReadiness,
- countryPackState:()=>({resolution:resolve(),packs:contentRegistry.list(),approvals:clone(packApprovals)}),productState:()=>require('./product').productState({onboardingState,workspaceProfile,taxReadiness,summary,financialPosition},packSummary()),taxSystem:()=>taxServices(),persist,intake,languagePack:locale=>languagePacks.ensure(locale??currentLocale()),currentLocale,currentConversationLocale,setConversationLocale,reportingStatus:()=>({functionalCurrency:ctx.org?.baseCurrency??null,reportingCurrency:workspaceProfile().reportingCurrency,status:workspaceProfile().reportingCurrency!==ctx.org?.baseCurrency?'REPORTING_CONVERSION_REQUIRED':'SAME_AS_FUNCTIONAL',converted:false}),museAssistant,museDiscovery,museTrace,museActivity,museEvidence,museStatus:()=>muse.status(),runNikosDemoCalculation,nikosDemoResult:()=>clone(nikosDemoResult),nikosDemoProgress:()=>clone(nikosDemoProgress)};
+  chartFor:()=>ctx.chart,onboardingTurn,onboardingDraft,onboardingPropose,onboardingValidate,onboardingConfirm,onboardingReadiness,onboardingActivate,onboardingState,onboardingHistory:()=>clone(history),setUiLanguage,editProfile,approvePack,workspaceProfile,aiStatus,applyActiveConfiguration,beginTaxReview,answerTaxReview,proposeTaxReview,taxReadiness,configuration:configurationService,
+ countryPackState:()=>({resolution:resolve(),packs:contentRegistry.list(),approvals:clone(packApprovals)}),productState:()=>({...require('./product').productState({onboardingState,workspaceProfile,taxReadiness,summary,financialPosition},packSummary()),configuration:configurationService?configurationService.requirementsSummary():null}),taxSystem:()=>taxServices(),persist,intake,languagePack:locale=>languagePacks.ensure(locale??currentLocale()),currentLocale,currentConversationLocale,setConversationLocale,reportingStatus:()=>({functionalCurrency:ctx.org?.baseCurrency??null,reportingCurrency:workspaceProfile().reportingCurrency,status:workspaceProfile().reportingCurrency!==ctx.org?.baseCurrency?'REPORTING_CONVERSION_REQUIRED':'SAME_AS_FUNCTIONAL',converted:false}),museAssistant,museDiscovery,museTrace,museActivity,museEvidence,museStatus:()=>muse.status(),runNikosDemoCalculation,nikosDemoResult:()=>clone(nikosDemoResult),nikosDemoProgress:()=>clone(nikosDemoProgress)};
  store.runNikosDemoCalculation=()=>runNikosDemoCalculation.call(store);
  return store;
 }

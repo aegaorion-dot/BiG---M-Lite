@@ -92,7 +92,7 @@ class MetaModelAdapter extends AIProvider {
  }
  async extractProfile({system,user}){return this._post('profile-extract',{system,user});}
  async researchTurn(input,{tools,validate,continuation=[],maxOutputTokens=4096}={}){
-  if(!Array.isArray(tools)||!tools.length||tools.length>3||tools.some(t=>t.type!=='web_search'&&(t.type!=='function'||!['retrieve_regulatory_sources','read_regulatory_passages'].includes(t.name))))throw Error('Bounded research tools required');
+  if(!Array.isArray(tools)||tools.length>3||tools.some(t=>t.type!=='web_search'&&(t.type!=='function'||!['retrieve_regulatory_sources','read_regulatory_passages'].includes(t.name))))throw Error('Bounded research tools required');
   if(!Array.isArray(continuation)||continuation.length>100||JSON.stringify(continuation).length>160000||continuation.some(i=>!['reasoning','function_call','function_call_output','message'].includes(i.type)))throw Error('Bounded stateless research replay required');
   return this._post('regulatory-research',input,{researchTools:tools,researchContinuation:continuation,envelope:true,cache:false,maxOutputTokens,validate});
  }

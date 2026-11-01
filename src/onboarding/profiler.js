@@ -33,7 +33,7 @@ function blankProfileState(){
 function valueValid(key,value){
  const type=blankSlots()[key]?.type;
  if(type==='string')return typeof value==='string'&&value.trim().length>0&&value.length<=120;
- if(type==='language')return ['en','id','ar-MA','el-GR'].includes(value);
+ if(type==='language')return ['en','id','ar-MA','el-GR','ja'].includes(value);
  if(type==='scopes'||type==='presence'){try{require('./economicContext')[type==='scopes'?'validateScopes':'validatePresence'](value);return true;}catch{return false;}}
  if(type==='country')return typeof value==='string'&&(isKnownJurisdiction(value)||(['user.nationality','user.homeCountry'].includes(key)&&/^[A-Z]{2}$/.test(value)));
  if(type==='currency')return typeof value==='string'&&isKnownCurrency(value);
@@ -183,7 +183,7 @@ function validateConfiguration(plan,{legacy=false}={}){
  const errors=[];
  if(!plan.organizationName||typeof plan.organizationName!=='string')errors.push('organization name required');
  if(!isKnownCurrency(plan.functionalCurrency))errors.push('supported functional currency required');
- if(!['en','id','ar-MA','el-GR'].includes(plan.language))errors.push('unsupported language');
+ if(!['en','id','ar-MA','el-GR','ja'].includes(plan.language))errors.push('unsupported language');
  if(!Array.isArray(plan.modules)||!plan.modules.length||plan.modules.some(m=>!ALLOWED_MODULES.includes(m)))errors.push('unsupported modules');
  if(!legacy&&plan.businessType&&plan.businessType!=='UNKNOWN')for(const required of ['sales','purchase','accounting'])if(!(plan.modules??[]).includes(required))errors.push('business posting requires module: '+required);
  if(plan.domicile&&!isKnownJurisdiction(plan.domicile))errors.push('unsupported jurisdiction');

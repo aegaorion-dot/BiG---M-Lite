@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#132238">
   <title>BiG-M Lite</title>
+  <script>try{var stored=localStorage.getItem('bigm-theme');var dark=stored?stored==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(dark)document.documentElement.dataset.theme='dark';}catch(error){}</script>
   <link rel="stylesheet" href="/styles.css">
   <script src="/locale.js" defer></script>
   <script src="/i18n/el-ui.js" defer></script>
+<script src="/i18n/ja-ui.js" defer></script>
   <script src="/app.js" defer></script>
 </head>
 <body>
@@ -27,6 +29,7 @@
           <form class="search" id="globalSearch" role="search"><label class="sr-only" for="searchInput" data-i18n="search">Search</label><span aria-hidden="true">⌕</span><input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Search transactions, documents…"><kbd>⌘ K</kbd></form>
           <span class="workspace-context" id="workspaceContext" aria-live="polite"></span>
           <label class="sr-only" for="languageSelect" data-i18n="language">Language</label><select class="language-select" id="languageSelect" aria-label="Language"></select>
+          <button class="icon-button" id="themeToggle" type="button" aria-label="Night mode" aria-pressed="false" title="Night mode"><span aria-hidden="true">☾</span></button>
           <button class="icon-button" id="notificationsButton" type="button" aria-label="Notifications" aria-expanded="false"><span aria-hidden="true">♧</span><span class="notification-count" id="notificationCount" hidden>0</span></button>
           <button class="profile-button" id="profileButton" type="button" aria-haspopup="true" aria-expanded="false"><span class="profile-avatar" id="profileAvatar">B</span><span class="profile-copy"><strong id="profileName">Business owner</strong><small id="profileRole">Workspace profile</small></span><span aria-hidden="true">⌄</span></button>
           <div class="popover notifications-popover" id="notificationsPopover" hidden></div>

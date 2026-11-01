@@ -9,18 +9,32 @@ const {feedbackFromError,toValidationFeedback}=require('./researchWorkflow');
 const {lookupSource}=require('../fabric/registry');
 function sourceDate(value){if(typeof value!=='string')return null;if(/^\d{4}-\d{2}-\d{2}$/.test(value))return value;const time=Date.parse(value);return Number.isFinite(time)?new Date(time).toISOString().slice(0,10):null;}
 
-function demoDisclosureFor(sourceCandidate,declarativePack){
- const b=sourceCandidate?.evidenceBundle,a=b?.applicabilityAssessment;
- if(!b||b.sourceClassification!=='OFFICIAL_SOURCE'||b.jurisdiction!==declarativePack.jurisdictionCode||a?.status==='UNSUPPORTED'||b.validator?.issues?.includes('UNSUPPORTED'))return null;
- const sources=b.evidence??[];if(!sources.length||sources.some(e=>!e.authority?.authorityCode||!lookupSource(b.jurisdiction,e.provenance?.sourceUrl)))return null;
- const proposition=b.applicabilityAssessment?.propositionSupported??b.propositionSupported??b.candidateRule?.legalTest;
- const fieldEvidence=b.fieldEvidence??[],propositionBinding=fieldEvidence.some(binding=>binding.field==='candidateRule.legalTest'&&Number.isInteger(binding.evidenceIndex)&&sources[binding.evidenceIndex]);
- if(!proposition?.trim()||!propositionBinding)return null;
- const hashes=[...new Set(sourceCandidate.provenance.map(p=>p.rawContentHash))].sort();if(!hashes.length||declarativePack.evidenceRefs.some(r=>!hashes.includes(r.rawContentHash)||!sourceCandidate.evidenceIds.includes(r.evidenceId)))return null;
+function demoDisclosureBlockers(sourceCandidate,declarativePack){
+ const gaps=[],b=sourceCandidate?.evidenceBundle,a=b?.applicabilityAssessment;
+ if(!b)return {gaps:['EVIDENCE_BUNDLE_MISSING'],sources:[],hashes:[]};
+ if(b.sourceClassification!=='OFFICIAL_SOURCE')gaps.push('SOURCE_NOT_CLASSIFIED_OFFICIAL');
+ if(b.jurisdiction!==declarativePack.jurisdictionCode)gaps.push('PACK_JURISDICTION_MISMATCH');
+ if(a?.status==='UNSUPPORTED')gaps.push('APPLICABILITY_UNSUPPORTED');
+ if(b.validator?.issues?.includes('UNSUPPORTED'))gaps.push('EVIDENCE_VALIDATOR_UNSUPPORTED');
+ const sources=b.evidence??[];
+ if(!sources.length)gaps.push('SOURCE_EVIDENCE_MISSING');
+ else if(sources.some(e=>!e.authority?.authorityCode||!lookupSource(b.jurisdiction,e.provenance?.sourceUrl)))gaps.push('SOURCE_NOT_IN_OFFICIAL_REGISTRY');
+ const proposition=b.applicabilityAssessment?.propositionSupported??b.propositionSupported??b.candidateRule?.legalTest,fieldEvidence=b.fieldEvidence??[];
+ if(!proposition?.trim())gaps.push('PROPOSITION_MISSING');
+ if(!fieldEvidence.some(binding=>binding.field==='candidateRule.legalTest'&&Number.isInteger(binding.evidenceIndex)&&sources[binding.evidenceIndex]))gaps.push('PROPOSITION_EVIDENCE_UNBOUND');
+ const hashes=[...new Set((sourceCandidate.provenance??[]).map(p=>p.rawContentHash))].sort();
+ if(!hashes.length||(declarativePack.evidenceRefs??[]).some(r=>!hashes.includes(r.rawContentHash)||!sourceCandidate.evidenceIds?.includes(r.evidenceId)))gaps.push('PACK_EVIDENCE_UNBOUND');
  const proposedParameters=b.candidateRule?.parameters??[],parameterBindings=Array.isArray(proposedParameters)?proposedParameters:Object.entries(proposedParameters).map(([name,value])=>({name,...(value&&typeof value==='object'?value:{value})}));
  const citedNumbers=new Set(parameterBindings.filter(p=>Number.isInteger(p.evidenceIndex)&&sources[p.evidenceIndex]).map(p=>String(p.value)));
- const packNumbers=(declarativePack.rules??[]).flatMap(r=>Object.values(r.parameters??{}).filter(p=>p?.valueType==='NUMBER').map(p=>String(p.value)));
- if(packNumbers.some(v=>!citedNumbers.has(v)))return null;
+ const uncited=(declarativePack.rules??[]).flatMap(r=>Object.values(r.parameters??{}).filter(p=>p?.valueType==='NUMBER').map(p=>String(p.value))).filter(v=>!citedNumbers.has(v));
+ if(uncited.length)gaps.push('PACK_PARAMETERS_NOT_CITED:'+[...new Set(uncited)].join(','));
+ return {gaps,sources,hashes,proposedParameters,parameterBindings,citedNumbers,proposition};
+}
+
+function demoDisclosureFor(sourceCandidate,declarativePack){
+ const check=demoDisclosureBlockers(sourceCandidate,declarativePack);
+ if(check.gaps.length)return null;
+ const {sources,hashes}=check,b=sourceCandidate?.evidenceBundle,a=b?.applicabilityAssessment,fieldEvidence=b.fieldEvidence??[];
  const publicationDate=sourceDate(a?.sourcePublicationDate),revisionDate=sourceDate(a?.sourceRevisionDate);
  const propositionSupported=a?.propositionSupported??b.propositionSupported??b.candidateRule.legalTest;
  const sourceYear=(publicationDate??revisionDate)?.slice(0,4)??null;
@@ -64,4 +78,4 @@ function validateMusePackOnly(declarativePack){
  }
 }
 
-module.exports={buildExecutableMuseCandidate,validateMusePackOnly,demoDisclosureFor};
+module.exports={buildExecutableMuseCandidate,validateMusePackOnly,demoDisclosureFor,demoDisclosureBlockers};

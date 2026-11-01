@@ -53,6 +53,11 @@ flowchart LR
 
 There is one Accounting Engine and one Universal Tax Engine. CountryPack Fabric supplies governed candidate content, not a new engine for each country. Tax calculation is a separately scoped governed review; bookkeeping can continue while tax is unresolved. The complete maintainable [diagram source](docs/architecture/phase9.mmd) and [technical summary](docs/HACKATHON-TECHNICAL-SUMMARY.md) describe the existing boundaries accurately.
 
+The permanent Muse-driven configuration pipeline - profile requirements, bounded
+research work orders, evidence-bound CountryPack candidates, human content review
+and engine-calculated estimates from posted records - is documented in
+[Configuration architecture](docs/CONFIGURATION-ARCHITECTURE.md).
+
 ## Setup
 
 Use Node **20.19 or newer** and npm.

@@ -4,6 +4,7 @@
   {tag:'en',name:'English',dictionary:'en',fallback:null,direction:'ltr'},
   {tag:'id-ID',name:'Bahasa Indonesia',dictionary:'id',fallback:null,direction:'ltr'},
   {tag:'ar-MA',name:'Darija',dictionary:'ar-MA',fallback:null,direction:'rtl'},
+  {tag:'ja',name:'日本語',dictionary:'ja',fallback:null,direction:'ltr'},
   {tag:'en-AU',name:'English (Australia)',dictionary:'en',fallback:null,direction:'ltr'},
   {tag:'en-SG',name:'English (Singapore)',dictionary:'en',fallback:null,direction:'ltr'},
   {tag:'en-GB',name:'English (United Kingdom)',dictionary:'en',fallback:null,direction:'ltr'},

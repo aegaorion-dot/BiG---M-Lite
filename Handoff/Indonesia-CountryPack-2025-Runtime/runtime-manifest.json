@@ -1,0 +1,38 @@
+{
+  "artifact": "BiG-M Lite Indonesia CountryPack 2025 runtime adapter",
+  "targetRepo": "aegaorion-dot/BiG---M-Lite",
+  "targetBranchInspected": "hackathon/moroccan-expat-e2e",
+  "runtimeEngine": "universal-lite-tax/1",
+  "usesExistingEvidence": true,
+  "newLegalContentIntroduced": false,
+  "supportedExecutableSubsets": [
+    {
+      "packId": "ID_INDIVIDUAL_ORDINARY_2025",
+      "taxType": "INCOME_TAX",
+      "subject": "INDIVIDUAL",
+      "scope": "Annual ordinary Article 17 tax on independently reviewed PKP"
+    },
+    {
+      "packId": "ID_UMKM_INDIVIDUAL_2025",
+      "taxType": "SIMPLIFIED_INCOME",
+      "subject": "INDIVIDUAL",
+      "scope": "Monthly eligible domestic non-professional UMKM final income tax"
+    },
+    {
+      "packId": "ID_CIT_DETERMINATION_2025",
+      "taxType": "CIT",
+      "subject": "COMPANY",
+      "scope": "Existing ported company CIT determination candidate; separate review required",
+      "note": "Registered by createTaxSystem through originalCompanyCandidate(); not newly authored here."
+    }
+  ],
+  "failClosedNotCovered": [
+    "Deriving PKP from raw freelancer turnover/expenses",
+    "Full NPPN KLU x region matrix",
+    "PPh 21/23/26 general runtime coverage for 2025",
+    "VAT 2025 runtime rules",
+    "PPh 24 foreign-tax-credit runtime rule",
+    "Treaty-specific rates/eligibility",
+    "Local taxes, payroll/social-security, customs/excise"
+  ]
+}

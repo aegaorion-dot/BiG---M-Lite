@@ -6,7 +6,7 @@ async function dispatch(store,method,path,query={},body={}){
  const {ctx}=store;
  try{
   const currency=query.currency||ctx.org?.baseCurrency;
-  if(path.startsWith('/api/intake')||path.startsWith('/api/muse')||path.startsWith('/api/tax/review')||path.startsWith('/api/tax/scoped')||path.startsWith('/api/tax/expanded')||path.startsWith('/api/tax/estimate')||path.startsWith('/api/nikos')||path==='/api/financial-position')store.checkAuth(body?.authToken??query.token??null);
+  if(path.startsWith('/api/intake')||path.startsWith('/api/muse')||path.startsWith('/api/tax/')||path.startsWith('/api/configuration')||path.startsWith('/api/nikos')||path==='/api/financial-position')store.checkAuth(body?.authToken??query.token??null);
   if(method==='GET'){
    if(path==='/api/financial-position')return json({ok:true,position:store.financialPosition()});
    if(path==='/api/product')return json({ok:true,...store.productState()});
@@ -23,6 +23,10 @@ async function dispatch(store,method,path,query={},body={}){
    if(path==='/api/tax/scoped')return json({ok:true,...store.scopedTax.view()});
    if(path==='/api/tax/expanded')return json({ok:true,...store.expandedTax.view()});
     if(path==='/api/tax/estimate')return json({ok:true,estimate:store.provisionalTax.view()});
+   if(path==='/api/tax/estimates')return json({ok:true,estimates:store.configuration.estimates()});
+   if(path==='/api/configuration')return json({ok:true,...store.configuration.view()});
+   if(path==='/api/configuration/progress')return json({ok:true,progress:store.configuration.researchProgress()});
+   if(path==='/api/configuration/research/evidence')return json({ok:true,evidence:store.configuration.researchEvidence()});
    if(path==='/api/tax/scoped/law')return json({ok:true,candidates:store.scopedTax.law()});
    if(path==='/api/intake')return json({ok:true,...store.intake.list()});
    if(path==='/api/intake/trace')return json({ok:true,...store.intake.trace(query.candidateId)});
@@ -63,6 +67,12 @@ async function dispatch(store,method,path,query={},body={}){
    if(path==='/api/tax/scoped/confirm')return json({ok:true,...store.scopedTax.confirm(body)});
     if(path==='/api/tax/estimate/correct')return json({ok:true,estimate:store.provisionalTax.correct({changes:body?.changes,actor:body?.actor??'user'})});
     if(path==='/api/tax/estimate/recalculate')return json({ok:true,estimate:store.provisionalTax.recalculate({actor:body?.actor??'user'})});
+   if(path==='/api/tax/estimates/refresh')return json({ok:true,estimates:store.configuration.refreshEstimates()});
+   if(path==='/api/tax/estimates/confirm')return json({ok:true,estimates:store.configuration.confirmEstimate({snapshotHash:body?.snapshotHash,actor:body?.actor??'user'})});
+   if(path==='/api/configuration/research')return json({ok:true,...await store.configuration.runResearch({actor:body?.actor??'user'})});
+   if(path==='/api/configuration/propose')return json({ok:true,proposal:store.configuration.proposal()});
+   if(path==='/api/configuration/confirm')return json({ok:true,confirmation:store.configuration.confirmProposal({proposalHash:body?.proposalHash,actor:body?.actor??'user',decisionSource:body?.decisionSource??'HUMAN'})});
+   if(path==='/api/configuration/candidate/review')return json({ok:true,candidate:store.configuration.reviewCandidate({candidateId:body?.candidateId,actor:body?.actor??'user',decision:body?.decision,reason:body?.reason})});
    if(path==='/api/tax/review/answer')return json({ok:true,readiness:store.answerTaxReview(body)});
    if(path==='/api/tax/review/propose')return json({ok:true,proposal:store.proposeTaxReview()});
    if(path==='/api/intake/duplicates/review')return json({ok:true,candidate:await store.intake.resolveDuplicate(body)});

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "demo-video/1",
+  "persona": "nikos",
+  "startedFromEmpty": true,
+  "reusedMuseRun": "nikos-2026-2026-11-01T08-37-35-216Z",
+  "liveMuseCallsWhileRecording": 0,
+  "language": "en",
+  "theme": "night",
+  "estimate": {
+    "taxType": "INCOME_TAX",
+    "taxAmount": {
+      "amountMinor": "698800",
+      "currency": "USD"
+    },
+    "taxableBase": {
+      "amountMinor": "5580000",
+      "currency": "USD"
+    },
+    "rules": [
+      "US_INDIVIDUAL_FEDERAL_2026:AUTO_APPROVED_DEMO"
+    ],
+    "sources": 2
+  },
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "seconds": 67.93,
+  "capture": "desktop-gdigrab-30fps",
+  "fps": 30,
+  "pages": [
+    "home",
+    "setup",
+    "transactions",
+    "reports",
+    "tax",
+    "settings"
+  ],
+  "video": "research/demo-videos/nikos/nikos-demo.mp4",
+  "videoBytes": 876633,
+  "recordedAt": "2026-11-01T13:29:10.901Z"
+}
