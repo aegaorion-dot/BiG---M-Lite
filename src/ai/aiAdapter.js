@@ -84,7 +84,7 @@ class MetaModelAdapter extends AIProvider {
    record.responseId=typeof body.id==='string'&&/^[\w-]{1,160}$/.test(body.id)?body.id:null;
    if(body.usage){const usage={};for(const k of ['input_tokens','output_tokens','total_tokens'])if(Number.isSafeInteger(body.usage[k])&&body.usage[k]>=0)usage[k]=body.usage[k];const reasoning=body.usage.output_tokens_details?.reasoning_tokens;if(Number.isSafeInteger(reasoning)&&reasoning>=0)usage.reasoning_tokens=reasoning;record.usage=usage;}
    const value=options.envelope===true?body:responsePayload(body);record.parseSuccess=true;
-   let validated=value;if(options.validate){try{validated=options.validate(value);record.schemaValidationSuccess=true;}catch(e){record.schemaValidationSuccess=false;record.schemaFailure=typeof e?.message==='string'?e.message.slice(0,160):'Schema rejected';throw Error('Meta schema validation failed');}}
+   let validated=value;if(options.validate){try{validated=options.validate(value);record.schemaValidationSuccess=true;}catch(e){record.schemaValidationSuccess=false;record.schemaFailure=typeof e?.message==='string'?e.message.slice(0,160):'Schema rejected';throw Error('Meta schema validation failed: '+record.schemaFailure);}}
    record.success=true;record.latencyMs=Date.now()-start;this._metric(record);
    if(options.cache!==false){if(this.cache.size>=50)this.cache.delete(this.cache.keys().next().value);this.cache.set(key,{value:structuredClone(validated),expires:Date.now()+this.cacheTtlMs,provenance:record});}
    return validated;

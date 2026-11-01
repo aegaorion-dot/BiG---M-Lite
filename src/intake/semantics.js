@@ -94,7 +94,7 @@ class MetaSemanticDocumentProvider extends SemanticDocumentProvider {
 }
 function validateSemantics(raw,extraction){
  const bad=detail=>{throw Error('Invalid semantic provider contract or unsupported authority/evidence'+(detail?': '+detail:''));};
- if(!raw||Object.keys(raw).some(k=>!['transactions','profileFacts'].includes(k))||!Array.isArray(raw.transactions)||raw.transactions.length>LIMITS.rows||!Array.isArray(raw.profileFacts)||raw.profileFacts.length>40)bad();
+ if(!raw||typeof raw!=='object')bad('response must be an object');const extraKeys=Object.keys(raw).filter(k=>!['transactions','profileFacts'].includes(k));if(extraKeys.length)bad('unknown top-level key '+extraKeys[0]);if(!Array.isArray(raw.transactions))bad('transactions must be an array');if(raw.transactions.length>LIMITS.rows)bad('too many transactions');if(!Array.isArray(raw.profileFacts))bad('profileFacts must be an array');if(raw.profileFacts.length>40)bad('too many profileFacts');
  const blocks=new Map(extraction.textBlocks.map(b=>[b.blockId,b]));
  function evidence(e,field){const b=blocks.get(e?.blockId);if(!b||typeof e.quote!=='string'||!e.quote.trim()||e.quote.length>2000||!b.text.includes(e.quote))bad('evidence.'+field);return {...e,page:b.page,row:b.row??null,bbox:b.bbox??null};}
  function confidence(c){if(!Number.isFinite(c)||c<0||c>1)bad('confidence');}
@@ -104,11 +104,11 @@ function validateSemantics(raw,extraction){
   for(const f of STRING_FIELDS)if(t[f]!=null){if(typeof t[f]!=='string'||t[f].length>500||!e[f])bad('field '+f+' must be a string with evidence');}
   for(const f of ['amount','taxAmount','subtotal','feeAmount','netAmount'])if(t[f]!=null&&!/^\d+(?:\.\d+)?$/.test(t[f]))bad('money field '+f);
   if(t.bankDirection!=null&&!['IN','OUT'].includes(t.bankDirection))bad('bankDirection');
-  if(t.proposedAccounts!=null&&(typeof t.proposedAccounts!=='object'||Array.isArray(t.proposedAccounts)||Object.keys(t.proposedAccounts).some(k=>!['classificationAccountId','paymentAccountId'].includes(k))||Object.values(t.proposedAccounts).some(v=>typeof v!=='string'||v.length>100)))bad();
+  if(t.proposedAccounts!=null&&(typeof t.proposedAccounts!=='object'||Array.isArray(t.proposedAccounts)||Object.keys(t.proposedAccounts).some(k=>!['classificationAccountId','paymentAccountId'].includes(k))||Object.values(t.proposedAccounts).some(v=>typeof v!=='string'||v.length>100)))bad('proposedAccounts shape');
   return {...structuredClone(t),evidence:e};
  });
  const profileFacts=raw.profileFacts.map(f=>{
-  if(!f||Object.keys(f).some(k=>!['slot','value','basis','countryCode','confidence','evidence'].includes(k))||(!PROFILE_SLOTS.includes(f.slot)&&f.basis!=='REGISTRATION'))bad();confidence(f.confidence);const e=evidence(f.evidence);
+  if(!f||Object.keys(f).some(k=>!['slot','value','basis','countryCode','confidence','evidence'].includes(k))||(!PROFILE_SLOTS.includes(f.slot)&&f.basis!=='REGISTRATION'))bad('profileFacts entry shape');confidence(f.confidence);const e=evidence(f.evidence);
   const p={...f,supportingQuote:f.evidence.quote.slice(0,200),source:'USER',status:'CANDIDATE',operation:'SET'};delete p.evidence;
   const valid=validateExtractorPayload({facts:f.slot?[p]:[],jurisdictionFacts:f.basis?[p]:[]},{userText:extraction.textBlocks.map(b=>b.text).join('\n')});if(!valid.ok)bad();
   return {...(f.slot?valid.extracted.facts[0]:valid.extracted.jurisdictionFacts[0]),source:'DOCUMENT',evidence:e};
