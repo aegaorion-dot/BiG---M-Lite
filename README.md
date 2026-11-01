@@ -1,14 +1,66 @@
 # BiG-M Lite
 
-**Understand the business. Review the rules. Keep reliable books.**
+**Muse-driven configuration and tax intelligence for small businesses — every jurisdiction, every language.**
 
-BiG-M Lite is a hackathon prototype for freelancers and small businesses working across languages, documents and borders. A business owner can describe what happened, review the proposed facts and transactions, and obtain accounting results from one deterministic financial backbone.
+BiG-M Lite takes a business profile, has **Meta Muse** discover the applicable tax law from official sources, converts the verified findings into a governed Country Pack, and lets the deterministic **One Engine** calculate the tax from the books that were actually posted. Nothing is hand-coded per country, and the model never authors a rate or an amount.
 
-Small businesses should not have to translate their lives into accounting software before they can use it. BiG-M separates understanding from authority: Meta Muse Spark interprets conversations and documents; governed content and deterministic resolvers handle applicability; existing engines calculate and record; the user confirms consequential actions.
+## Submission demo — three personas, three jurisdictions
+
+| Persona | Jurisdiction | UI language | Currency | Deterministic demo estimate |
+|---|---|---|---|---|
+| **Nikos** | USA | English | USD | **$6,988.00** (IRS Rev. Proc. 2025-32) |
+| **Maya** | Indonesia | Bahasa Indonesia | IDR | **Rp 2,525,000** (PP 55/2022) |
+| **Haruto** | Japan | Japanese | JPY | **¥1,942,452** (NTA) |
+
+Each demo starts from an **empty workspace**: profile → Muse regulatory discovery → One Engine → numeric result with the official source, rule id and calculation breakdown on screen.
+
+## The pipeline
+
+```
+Profile (onboarding interview)
+  → Muse regulatory discovery (official sources, cited, hashed, effective-dated)
+  → Country Pack candidate (validated, provenance preserved)
+  → One Engine (deterministic calculation from posted records)
+  → Demo estimate in the UI, labelled provisional with its legal source
+```
+
+## Inputs that reach the same boundary
+
+- **Native entry** — conversation and direct transaction entry.
+- **Excel import** — `.xlsx` ledger sheets (template: `docs/samples/jurnal-template.xlsx`).
+- **OCR receipts and invoices** — local OCR, then Muse document understanding, then human review.
+
+Imported rows become reviewed candidates; nothing is posted without a governed review step.
+
+## Quick start
+
+```bash
+npm ci
+npm run demo
+npm run demo
+```
+
+Open **http://localhost:3109/**.
+
+> The first `npm run demo` prepares the synthetic workspace and starts the server; if the port is already in use the demo is running — skip the second command.
+
+Videos: [Muse live discovery](docs/submission/demo-videos/0-muse-live-research.mp4) · [Nikos](docs/submission/demo-videos/1-nikos-english-usa-usd.mp4) · [Maya](docs/submission/demo-videos/2-maya-indonesian-indonesia-idr.mp4) · [Haruto](docs/submission/demo-videos/3-haruto-japanese-japan-jpy.mp4) · [all personas combined](docs/submission/demo-videos/bigm-lite-all-personas.mp4)
+
+Verification of the document pipeline:
+
+```bash
+node scripts/intake-review-proof.js
+```
+
+---
+
+## Earlier milestones (historical context)
+
+The sections below document previous checkpoints of the project. They are kept for context and do not describe the current submission demo.
 
 ![Indonesian demo home](research/phase9-demo/screenshots/home-laptop.png)
 
-## Final hackathon checkpoint: Youssef
+### Previous checkpoint: Moroccan expat in Darija
 
 The final demonstration follows a Moroccan expat in **Darija (ar-MA)** with employment, household spending, two installments, a mixed-use villa, a cafe and a gym investment. Its consistently dated **October 2025** company example reaches **CALCULATED: IDR 750,000 payable**, from IDR 150,000,000 gross turnover at the governed PP 55/2022 rate of 0.5%. The UI exposes facts, approval, rule, period, official evidence and the deterministic trace. Personal salary/residence/villa/treaty gaps remain separately REVIEW_REQUIRED.
 
