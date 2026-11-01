@@ -94,7 +94,7 @@ class MetaSemanticDocumentProvider extends SemanticDocumentProvider {
 }
 function validateSemantics(raw,extraction){
  const bad=detail=>{throw Error('Invalid semantic provider contract or unsupported authority/evidence'+(detail?': '+detail:''));};
- if(!raw||typeof raw!=='object')bad('response must be an object');const extraKeys=Object.keys(raw).filter(k=>!['transactions','profileFacts'].includes(k));if(extraKeys.length)bad('unknown top-level key '+extraKeys[0]);if(!Array.isArray(raw.transactions))bad('transactions must be an array');if(raw.transactions.length>LIMITS.rows)bad('too many transactions');if(!Array.isArray(raw.profileFacts))bad('profileFacts must be an array');if(raw.profileFacts.length>40)bad('too many profileFacts');
+ if(!raw||typeof raw!=='object')bad('response must be an object');const extraKeys=Object.keys(raw).filter(k=>!['transactions','profileFacts'].includes(k));if(extraKeys.length)bad('unknown top-level key '+extraKeys[0]);if(!Array.isArray(raw.transactions))bad('transactions must be an array');if(raw.transactions.length>LIMITS.rows)bad('too many transactions');if(raw.profileFacts==null)raw.profileFacts=[];else if(!Array.isArray(raw.profileFacts))bad('profileFacts must be an array');if(raw.profileFacts.length>40)bad('too many profileFacts');
  const blocks=new Map(extraction.textBlocks.map(b=>[b.blockId,b]));
  function evidence(e,field){const b=blocks.get(e?.blockId);if(!b||typeof e.quote!=='string'||!e.quote.trim()||e.quote.length>2000||!b.text.includes(e.quote))bad('evidence.'+field);return {...e,page:b.page,row:b.row??null,bbox:b.bbox??null};}
  function confidence(c){if(!Number.isFinite(c)||c<0||c>1)bad('confidence');}
