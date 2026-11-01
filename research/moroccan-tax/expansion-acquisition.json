@@ -1,0 +1,51 @@
+[
+  {
+    "identity": "ID_RESIDENCE_2011",
+    "status": "NORMALIZED"
+  },
+  {
+    "identity": "ID_FX_2025_OCT28",
+    "status": "PRESERVED_REQUIRES_EXTRACTION"
+  },
+  {
+    "identity": "MA_CGI_2025_PRIMARY",
+    "status": "HTTP_ERROR",
+    "httpStatus": 405
+  },
+  {
+    "identity": "MA_CGI_2024_PRIMARY",
+    "status": "RETRIEVAL_FAILED"
+  },
+  {
+    "identity": "MA_CGI_2026_PRIMARY",
+    "status": "RETRIEVAL_FAILED"
+  },
+  {
+    "identity": "ID_MA_TREATY",
+    "status": "CACHED"
+  },
+  {
+    "identity": "AE_NATURAL_2023",
+    "status": "CACHED"
+  },
+  {
+    "identity": "ID_FX_2025_OCT01",
+    "status": "PRESERVED_REQUIRES_EXTRACTION"
+  },
+  {
+    "identity": "ID_FX_2025_OCT08",
+    "status": "PRESERVED_REQUIRES_EXTRACTION"
+  },
+  {
+    "identity": "ID_FX_2025_OCT15",
+    "status": "PRESERVED_REQUIRES_EXTRACTION"
+  },
+  {
+    "identity": "ID_FX_2025_OCT29",
+    "status": "PRESERVED_REQUIRES_EXTRACTION"
+  },
+  {
+    "identity": "ID_FX_2025_OCT28",
+    "status": "CACHED"
+  }
+]

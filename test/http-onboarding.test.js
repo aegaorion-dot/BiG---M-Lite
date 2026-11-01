@@ -26,7 +26,7 @@ describe('HTTP user journeys through real Node server',()=>{
   {name:'Singapore company operated in Bali',messages:['My company is registered in Singapore. I operate in Bali. My customers are in the United States. My bank account is in Australia.','My business is called Island Coffee. I keep my books in SGD.'],country:'SG',currency:'SGD',tax:'MISSING_COUNTRY_PACK'},
  ]){
   it(scenario.name+': describe -> review -> confirm -> activate -> post -> report',async t=>{
-   const {base}=await listen(t);const page=await fetch(base+'/');assert.equal(page.status,200);assert.ok((await page.text()).includes('id="view"'));
+   const {base}=await listen(t);const page=await fetch(base+'/');assert.equal(page.status,200);assert.ok((await page.text()).includes('id="appShell"'));
    const initial=await call(base,'/api/workspace');assert.equal(initial.workspace.activated,false);assert.equal(initial.workspace.functionalCurrency,null);
    assert.equal((await call(base,'/api/sales',{id:'premature',orgId:initial.workspace.organizationId})).status,400);
    for(const text of scenario.messages){const r=await call(base,'/api/onboarding/turn',{text});assert.equal(r.status,200,JSON.stringify(r));assert.equal(r.providerUsed,'fallback');}

@@ -1,0 +1,256 @@
+{
+  "scopeId": "phase4-test-org",
+  "subjectId": "individual-1",
+  "revision": 1,
+  "period": {
+    "periodStart": "2026-05-01",
+    "periodEnd": "2026-05-31"
+  },
+  "economicDate": "2026-05-31",
+  "currency": "IDR",
+  "facts": [
+    {
+      "name": "SUBJECT_TYPE",
+      "type": "STRING",
+      "value": "INDIVIDUAL",
+      "evidenceReference": "TEST ONLY stipulated evidence: SUBJECT_TYPE"
+    },
+    {
+      "name": "INCOME_TYPE",
+      "type": "STRING",
+      "value": "MONTHLY_ELIGIBLE_DOMESTIC_BUSINESS",
+      "evidenceReference": "TEST ONLY stipulated evidence: INCOME_TYPE"
+    },
+    {
+      "name": "TAX_RESIDENCE",
+      "type": "COUNTRY",
+      "value": "ID",
+      "evidenceReference": "TEST ONLY stipulated evidence: TAX_RESIDENCE"
+    },
+    {
+      "name": "SOURCE",
+      "type": "COUNTRY",
+      "value": "ID",
+      "evidenceReference": "TEST ONLY stipulated evidence: SOURCE"
+    },
+    {
+      "name": "REGISTRATION",
+      "type": "COUNTRY",
+      "value": "ID",
+      "evidenceReference": "TEST ONLY stipulated evidence: REGISTRATION"
+    },
+    {
+      "name": "WITHHOLDING",
+      "type": "COUNTRY",
+      "value": "ID",
+      "evidenceReference": "TEST ONLY stipulated evidence: WITHHOLDING"
+    },
+    {
+      "name": "LEGAL_FORM",
+      "type": "STRING",
+      "value": "INDIVIDUAL",
+      "evidenceReference": "TEST ONLY stipulated evidence: LEGAL_FORM"
+    },
+    {
+      "name": "INCOME_CATEGORY",
+      "type": "STRING",
+      "value": "ELIGIBLE_NON_PROFESSIONAL_DOMESTIC_BUSINESS",
+      "evidenceReference": "TEST ONLY stipulated evidence: INCOME_CATEGORY"
+    },
+    {
+      "name": "ELECTED_ORDINARY_REGIME",
+      "type": "BOOLEAN",
+      "value": false,
+      "evidenceReference": "TEST ONLY stipulated evidence: ELECTED_ORDINARY_REGIME"
+    },
+    {
+      "name": "PREVIOUSLY_DISQUALIFIED_FROM_FINAL",
+      "type": "BOOLEAN",
+      "value": false,
+      "evidenceReference": "TEST ONLY stipulated evidence: PREVIOUSLY_DISQUALIFIED_FROM_FINAL"
+    },
+    {
+      "name": "PRIOR_YEAR_AGGREGATE_TURNOVER",
+      "type": "MONEY",
+      "value": {
+        "amountMinor": "1000000000",
+        "currency": "IDR"
+      },
+      "evidenceReference": "TEST ONLY stipulated evidence: PRIOR_YEAR_AGGREGATE_TURNOVER"
+    },
+    {
+      "name": "MONTH_GROSS_BUSINESS_TURNOVER",
+      "type": "MONEY",
+      "value": {
+        "amountMinor": "100000000",
+        "currency": "IDR"
+      },
+      "evidenceReference": "TEST ONLY stipulated evidence: MONTH_GROSS_BUSINESS_TURNOVER"
+    },
+    {
+      "name": "YTD_GROSS_BEFORE_MONTH",
+      "type": "MONEY",
+      "value": {
+        "amountMinor": "450000000",
+        "currency": "IDR"
+      },
+      "evidenceReference": "TEST ONLY stipulated evidence: YTD_GROSS_BEFORE_MONTH"
+    },
+    {
+      "name": "AGGREGATION_BASIS_REVIEWED",
+      "type": "BOOLEAN",
+      "value": true,
+      "evidenceReference": "TEST ONLY stipulated evidence: AGGREGATION_BASIS_REVIEWED"
+    },
+    {
+      "name": "MONTH_PERIOD_REVIEWED",
+      "type": "BOOLEAN",
+      "value": true,
+      "evidenceReference": "TEST ONLY stipulated evidence: MONTH_PERIOD_REVIEWED"
+    },
+    {
+      "name": "REGIME_FIRST_TAX_YEAR",
+      "type": "NUMBER",
+      "value": "2020",
+      "evidenceReference": "TEST ONLY stipulated evidence: REGIME_FIRST_TAX_YEAR"
+    },
+    {
+      "name": "BUSINESS_CAPACITY",
+      "type": "STRING",
+      "value": "INDIVIDUAL_FREELANCER",
+      "evidenceReference": "TEST ONLY stipulated evidence: BUSINESS_CAPACITY"
+    },
+    {
+      "name": "INCOME_REGIME",
+      "type": "STRING",
+      "value": "ORDINARY_ART17",
+      "evidenceReference": "TEST ONLY stipulated evidence: INCOME_REGIME"
+    },
+    {
+      "name": "REVIEWED_TAXABLE_INCOME",
+      "type": "MONEY",
+      "value": {
+        "amountMinor": "300000123",
+        "currency": "IDR"
+      },
+      "evidenceReference": "TEST ONLY stipulated evidence: REVIEWED_TAXABLE_INCOME"
+    },
+    {
+      "name": "TAXABLE_INCOME_RECONCILIATION_APPROVED",
+      "type": "BOOLEAN",
+      "value": true,
+      "evidenceReference": "TEST ONLY stipulated evidence: TAXABLE_INCOME_RECONCILIATION_APPROVED"
+    },
+    {
+      "name": "ANNUAL_TAX_PERIOD_REVIEWED",
+      "type": "BOOLEAN",
+      "value": true,
+      "evidenceReference": "TEST ONLY stipulated evidence: ANNUAL_TAX_PERIOD_REVIEWED"
+    },
+    {
+      "name": "PAYER_IS_WITHHOLDING_AGENT",
+      "type": "BOOLEAN",
+      "value": true,
+      "evidenceReference": "TEST ONLY stipulated evidence: PAYER_IS_WITHHOLDING_AGENT"
+    },
+    {
+      "name": "PAYEE_TAX_RESIDENCE",
+      "type": "COUNTRY",
+      "value": "ID",
+      "evidenceReference": "TEST ONLY stipulated evidence: PAYEE_TAX_RESIDENCE"
+    },
+    {
+      "name": "PAYEE_IS_PERMANENT_ESTABLISHMENT",
+      "type": "BOOLEAN",
+      "value": false,
+      "evidenceReference": "TEST ONLY stipulated evidence: PAYEE_IS_PERMANENT_ESTABLISHMENT"
+    },
+    {
+      "name": "PAYMENT_CATEGORY",
+      "type": "STRING",
+      "value": "NON_FINAL_MANAGEMENT_SERVICE",
+      "evidenceReference": "TEST ONLY stipulated evidence: PAYMENT_CATEGORY"
+    },
+    {
+      "name": "GROSS_FEE_EXCLUDING_VAT",
+      "type": "MONEY",
+      "value": {
+        "amountMinor": "10000000",
+        "currency": "IDR"
+      },
+      "evidenceReference": "TEST ONLY stipulated evidence: GROSS_FEE_EXCLUDING_VAT"
+    },
+    {
+      "name": "NPWP_VALID",
+      "type": "BOOLEAN",
+      "value": true,
+      "evidenceReference": "TEST ONLY stipulated evidence: NPWP_VALID"
+    },
+    {
+      "name": "SUBJECT_TO_PPH21",
+      "type": "BOOLEAN",
+      "value": false,
+      "evidenceReference": "TEST ONLY stipulated evidence: SUBJECT_TO_PPH21"
+    },
+    {
+      "name": "FINAL_REGIME_CERTIFICATE_APPLIES",
+      "type": "BOOLEAN",
+      "value": false,
+      "evidenceReference": "TEST ONLY stipulated evidence: FINAL_REGIME_CERTIFICATE_APPLIES"
+    },
+    {
+      "name": "ASSESSMENT_YEAR",
+      "type": "NUMBER",
+      "value": "2026",
+      "evidenceReference": "TEST ONLY stipulated evidence: ASSESSMENT_YEAR"
+    },
+    {
+      "name": "NORMAL_CHARGEABLE_INCOME",
+      "type": "MONEY",
+      "value": {
+        "amountMinor": "20000000",
+        "currency": "IDR"
+      },
+      "evidenceReference": "TEST ONLY stipulated evidence: NORMAL_CHARGEABLE_INCOME"
+    },
+    {
+      "name": "FISCAL_RECONCILIATION_APPROVED",
+      "type": "BOOLEAN",
+      "value": true,
+      "evidenceReference": "TEST ONLY stipulated evidence: FISCAL_RECONCILIATION_APPROVED"
+    },
+    {
+      "name": "CLAIMS_STARTUP_EXEMPTION",
+      "type": "BOOLEAN",
+      "value": false,
+      "evidenceReference": "TEST ONLY stipulated evidence: CLAIMS_STARTUP_EXEMPTION"
+    },
+    {
+      "name": "CASH_GRANT_ELIGIBLE",
+      "type": "BOOLEAN",
+      "value": false,
+      "evidenceReference": "TEST ONLY stipulated evidence: CASH_GRANT_ELIGIBLE"
+    },
+    {
+      "name": "HAS_TAX_CREDITS_OR_SPECIAL_RATE_INCOME",
+      "type": "BOOLEAN",
+      "value": false,
+      "evidenceReference": "TEST ONLY stipulated evidence: HAS_TAX_CREDITS_OR_SPECIAL_RATE_INCOME"
+    },
+    {
+      "name": "CALENDAR_BASIS_PERIOD_REVIEWED",
+      "type": "BOOLEAN",
+      "value": true,
+      "evidenceReference": "TEST ONLY stipulated evidence: CALENDAR_BASIS_PERIOD_REVIEWED"
+    }
+  ],
+  "status": "CONFIRMED",
+  "aiAuthority": "CANDIDATE_ONLY",
+  "snapshotHash": "3abf58241cc9cf885c5c5f0b9c219b734abeba8491470f6949b9b9525354bef5",
+  "confirmation": {
+    "decisionSource": "HUMAN",
+    "actor": "Test fixture fact reviewer",
+    "snapshotHash": "3abf58241cc9cf885c5c5f0b9c219b734abeba8491470f6949b9b9525354bef5",
+    "at": "2026-10-28T23:06:51.555Z"
+  }
+}

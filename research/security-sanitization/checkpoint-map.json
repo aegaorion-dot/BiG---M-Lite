@@ -1,0 +1,66 @@
+{
+  "operation": "Security sanitization of inherited third-party credential-shaped URL",
+  "checkpoints": [
+    {
+      "phase": 2,
+      "branch": "hackathon/country-pack-fabric",
+      "originalCheckpoint": "920b2c0e40e545960b8ea1b9f279e420efc9b1ca",
+      "sanitizedEquivalent": "729e6317c627d0c152573fec5131733fc34506f2"
+    },
+    {
+      "phase": 3,
+      "branch": "hackathon/universal-tax-engine",
+      "originalCheckpoint": "0bf99a61a0f86aad80822fea532a9cb1ef5743ad",
+      "sanitizedEquivalent": "9b6ef031f231de3c8cdfcf62f79bfc8848dbf0de"
+    },
+    {
+      "phase": 4,
+      "branch": "hackathon/freelancer-umkm-packs",
+      "originalCheckpoint": "91669534a1c1e94bfeea1ab57e5063ca31493fc0",
+      "sanitizedEquivalent": "4bd0096d2395f0dc81b0dbbfca578bf38967fd69"
+    },
+    {
+      "phase": 5,
+      "branch": "hackathon/document-intake-ocr",
+      "originalCheckpoint": "98d229ecab34cd0e87d16615178a31dac681cdff",
+      "sanitizedEquivalent": "d5672109b4ba6010bc62473bfe0ca36e4e3f79d7"
+    },
+    {
+      "phase": 6,
+      "branch": "hackathon/universal-intake",
+      "originalCheckpoint": "ecae4066783f78489c6fb1e3cebab2d0b56d8396",
+      "sanitizedEquivalent": "a850eb107cd41ecf17dab865a3bfe4725fc351c8"
+    },
+    {
+      "phase": 7,
+      "branch": "hackathon/live-muse-runtime",
+      "originalCheckpoint": "0cd37232ed88ec00e7519ad934c20d9ca5697dde",
+      "sanitizedEquivalent": "110bbc8b253fc126410e7698ca65dd03c0ba8447"
+    }
+  ],
+  "phase7Followup": "The published Phase 7 head additionally contains the research sanitizer, security scanner, twelve tests, and this report. Final published SHA is reported after the follow-up commit.",
+  "sanitizedUrl": "https://maps.googleapis.com/maps/api/js?libraries=places",
+  "originalUrlSha256": "396bd686b771b483a87a7d5fb6e5bad9c32d6e3fb2b11e217a7562df59ecad04",
+  "representation": {
+    "credentialQueryParameterRedacted": true,
+    "redactionReason": "THIRD_PARTY_CREDENTIAL_SHAPED_QUERY_PARAMETER"
+  },
+  "preserved": [
+    "commit messages",
+    "author and committer dates",
+    "commit order/topology",
+    "all unrelated checkpoint file contents"
+  ],
+  "identity": "BiG-M Lite Hackathon <285112987+aegaorion-dot@users.noreply.github.com>",
+  "localRefsSanitized": 14,
+  "baselineAfterRewrite": {
+    "passed": 347,
+    "failed": 0
+  },
+  "withSanitizerTests": {
+    "passed": 359,
+    "failed": 0,
+    "added": 12
+  },
+  "paidMetaCalls": 0
+}

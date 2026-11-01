@@ -1,0 +1,502 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "ID-DJP",
+  "jurisdictionCode": "ID",
+  "metadata": {
+    "title": "Mekanisme Penghitungan Pajak Penghasilan Orang Pribadi | Direktorat Jenderal Pajak",
+    "officialDocumentId": null,
+    "language": "id",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "33342cbc-e38b-4c49-8bca-506ab11aa32b",
+    "rawContentHash": "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842",
+    "sourceUrl": "https://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi",
+    "finalUrl": "https://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi",
+    "retrievedAt": "2026-10-28T22:40:10.081Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "DJP",
+    "authorityName": "Direktorat Jenderal Pajak",
+    "sourceRole": "TAX_AUTHORITY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842.bin",
+    "rawContentHash": "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842.bin",
+      "rawContentHash": "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842"
+    },
+    "metaTags": [
+      "<meta charset=\"utf-8\" />",
+      "<meta name=\"robots\" content=\"index, follow\" />",
+      "<meta name=\"description\" content=\"Wajib pajak orang pribadi, baik yang berstatus karyawan ataupun melakukan pekerjaan bebas, wajib melakukan penghitungan pajak terutang yang sebenarnya di akhir tahun untuk mengetahui posisi saldo pajak yang masih harus dibayar.\" />",
+      "<meta name=\"keywords\" content=\"pajak, djp, direktorat jenderal pajak, pph, kup, ppn, ppnbm, djponline\" />",
+      "<meta property=\"og:determiner\" content=\"An\" />",
+      "<meta property=\"og:site_name\" content=\"Direktorat Jenderal Pajak\" />",
+      "<meta property=\"og:url\" content=\"http://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi\" />",
+      "<meta property=\"og:title\" content=\"Mekanisme Penghitungan Pajak Penghasilan Orang Pribadi\" />",
+      "<meta property=\"og:description\" content=\"Wajib pajak orang pribadi, baik yang berstatus karyawan ataupun melakukan pekerjaan bebas, wajib melakukan penghitungan pajak terutang yang sebenarnya di akhir tahun untuk mengetahui posisi saldo pajak yang masih harus dibayar.\" />",
+      "<meta name=\"Generator\" content=\"Drupal 8 (https://www.drupal.org)\" />",
+      "<meta name=\"MobileOptimized\" content=\"width\" />",
+      "<meta name=\"HandheldFriendly\" content=\"true\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+      "<meta name=\"HandheldFriendly\" content=\"true\" />",
+      "<meta name=\"apple-touch-fullscreen\" content=\"YES\" />"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Body Wajib pajak orang pribadi, baik yang berstatus karyawan ataupun melakukan pekerjaan bebas, wajib melakukan penghitungan pajak terutang yang sebenarnya di akhir tahun untuk mengetahui posisi saldo pajak yang masih harus dibayar. Objek Pajak Penghasilan Objek Pajak Penghasilan adalah penghasilan, yaitu setiap tambahan kemampuan ekonomis yang diterima atau diperoleh Wajib Pajak, baik yang berasal dari Indonesia maupun dari luar Indonesia, yang dapat dipakai untuk konsumsi atau untuk menambah kekayaan Wajib Pajak yang bersangkutan, dengan nama dan dalam bentuk apa pun. Namun demikian, terdapat beberapa jenis penghasilan yang bukan merupakan Objek Pajak Penghasilan, di antaranya adalah: a. Bantuan atau sumbangan, termasuk zakat dan sumbangan keagamaan lainnya yang ketentuannya diatur dengan atau berdasarkan Peraturan Pemerintah; dan b. harta hibahan yang ketentuannya diatur dengan atau berdasarkan Peraturan Menteri Keuangan; sepanjang tidak ada hubungan dengan usaha, pekerjaan, kepemilikan, atau penguasaan di antara pihak-pihak yang bersangkutan; warisan; penggantian atau imbalan sehubungan dengan pekerjaan atau jasa dalam bentuk natura dan/atau kenikmatan dari Wajib Pajak atau Pemerintah, apabila diberikan oleh bukan Wajib Pajak atau Wajib Pajak tertentu akan menjadi Penghasilan); dan Penghasilan lain sebagaimana tertera dalam Undang-undang Pajak Penghasilan. Penghasilan Kena Pajak Langkah-langkah untuk mendapatkan besaran Penghasilan Kena Pajak adalah sebagai berikut: Pertama, hitung seluruh penghasilan yang diterima atau diperoleh dalam satu tahun pajak, kecuali penghasilan yang bukan merupakan objek pajak dan penghasilan yang telah dikenakan Pajak Penghasilan yang bersifat Final. Besaran nilai penghasilan neto yang diperoleh dalam satu tahun dapat diketahui dari hasil pembukuan/pencatatan yang dilakukan oleh wajib pajak orang pribadi yang melakukan pekerjaan bebas, dan/atau bukti potong pajak (form 1721) yang diberikan oleh pemberi kerja kepada karyawannya. Kedua, kurangkan penghasilan tidak kena pajak (PTKP) dari penghasilan neto tersebut. Besaran penghasilan tidak kena pajak untuk wajib pajak orang pribadi adalah sebagaimana berikut: Rp54.000.000,00 (lima puluh empat juta rupiah) untuk diri Wajib Pajak orang pribadi; Rp4.500.000,00 (empat juta lima ratus ribu rupiah) tambahan untuk Wajib Pajak yang kawin; Rp54.000.000,00 (lima puluh empat juta rupiah) tambahan untuk seorang isteri yang penghasilannya digabung dengan penghasilan suami sebagaimana dimaksud dalam Pasal 8 ayat (1); dan Rp4.500.000,00 (empat juta lima ratus ribu rupiah) tambahan untuk setiap anggota keluarga sedarah dan keluarga semenda dalam garis keturunan lurus serta anak angkat, yang menjadi tanggungan sepenuhnya, paling banyak 3 (tiga) orang untuk setiap keluarga. Besaran penghasilan tidak kena pajak ditentukan dari kondisi pada awal tahun pajak atau awal bagian tahun pajak. Dari hasil penghitungan tersebut kita mendapatkan besaran penghasilan kena pajak. Tarif Pajak Penghasilan Tarif pajak penghasilan wajib pajak orang pribadi dalam negeri adalah sebagai berikut: Lapisan Penghasilan Kena Pajak sampai dengan Rp60.000.000,00 (enam puluh juta rupiah) dikenai tarif 5% (lima persen) Lapisan Penghasilan Kena Paja k di atas Rp60.000.000,00 (enam puluh juta rupiah) sampai dengan Rp250.000.000,00 (dua ratus lima puluh juta rupiah ) dikenai tarif 15% (lima belas persen ) Lapisan Penghasilan Kena Pajak di atas Rp250.000.000,00 (dua ratus lima puluh juta rupiah) sampai dengan Rp500.000.000,00 (lima r atus juta rupiah) dikenai tarif 25% (dua puluh lima persen) Lapisan Penghasilan Kena Pajak di atas Rp500.000.000,00 (lima ratus juta rupiah) sampai dengan Rp5.000.000.000,00 (lima miliar rupiah) dikenai tarif 30% (tiga puluh persen) Lapisan Penghasilan Kena Pajak di atas Rp5.000.000.000,00 (lima miliar rupiah) dikenai tarif 35% (tiga puluh lima persen). Pelunasan Pajak di Tahun Berjalan Setelah diperoleh angka Penghasilan Kena Pajak dan pajak terutang, langkah berikutnya adalah mengurangkan pajak penghasilan hasil perhitungan dengan kredit pajak. Kredit pajak adalah pajak yang sebelumnya sudah dibayar, baik melalui mekanisme pemotongan oleh pihak lain, ataupun penyetoran sendiri. Hasil dari pengurangan tersebut adalah pajak penghasilan yang masih harus dibayar sendiri. Ilustrasi Penghitungan Pajak Terutang Setelah mengetahui konsep di atas, mari kita lihat ilustrasi berikut. Bapak Leopold, seorang pekerja kantoran dengan usaha sambilan reparasi alat elektronik memiliki satu orang istri dan satu orang anak yang sudah berusia dua tahun. Ia memiliki total penghasilan netto sebesar Rp300.000.000,00 pada tahun ini, di mana Rp200.000.000,00 berasal dari pekerjaannya di Hydra Corp. dan Rp100.000.000,00 sisanya berasal dari usaha reparasi alat elektroniknya. Atas penghasilannya di Hydra Corp., bapak Leopold telah dipotong pajak penghasilan sebesar Rp15.550.000,00 yang tercantum pada bukti potong pajak (form 1721). Ibu Jemma, istri bapak Leopold merupakan seorang ibu rumah tangga yang tidak memiliki penghasilan. Dari data tersebut, dapat dilakukan penghitungan seperti ini: Penghasilan Netto Rp300.000.000,00 Penghasilan tidak kena pajak (kawin, 1 orang anak) (Rp63.000.000,00) Penghasilan kena pajak Rp237.000.000,00 Pajak terutang 5% x Rp50.000.000,00 Rp2.500.000,00 15% x (Rp237.000.000,00-Rp50.000.000,00) Rp28.050.000,00 Total pajak terutang Rp30.550.000,00 Dengan demikian, maka pajak yang masih harus dibayar adalah sebesar: Total pajak terutang Rp30.550.000,00 Kredit pajak (bukti potong dari Hydra Corp.) (Rp15.550.000,00) Pajak yang masih harus dibayar Rp15.000.000,00 Pajak yang masih harus dibayar tidak selamanya memiliki saldo selayaknya pada kasus bapak Leopold. Saldo dapat bernilai nol, atau bernilai lebih bayar. Dalam hal pajak yang masih harus dibayar memiliki saldo, maka wajib pajak wajib menyetorkan kekurangannya ke kas negara. Namun, bilamana saldo bernilai lebih bayar, maka wajib pajak pun dapat mengkompensasikannya ke periode pajak berikutnya, atau mengajukan pengembalian kelebihan pembayaran pajak (restitusi) ke Kantor Pelayanan Pajak tempat wajib pajak terdaftar. Pembukuan dan pencatatan Pembukuan adalah suatu proses pencatatan yang dilakukan secara teratur untuk mengumpulkan data dan informasi keuangan yang meliputi harta, kewajiban, modal, penghasilan dan biaya, serta jumlah harga perolehan dan penyerahan barang atau jasa, yang ditutup dengan menyusun laporan keuangan berupa neraca, dan laporan laba rugi untuk periode Tahun Pajak tersebut. Pembukuan harus diselenggarakan di Indonesia dengan menggunakan huruf Latin, angka Arab, satuan mata uang Rupiah, dan disusun dalam Bahasa Indonesia menggunakan tata cara lainnya yang diizinkan oleh Menteri Keuangan. Pembukuan harus diselenggarakan dengan cara sistem yang lazim dipakai di Indonesia, misalnya berdasarkan Standar Akuntansi Keuangan, kecuali peraturan perundang-undang perpajakan menentukan lain. Sedangkan pencatatan adalah proses pengumpulan data secara teratur tentang peredaran atau penerimaan bruto dan/atau penghasilan bruto sebagai dasar untuk menghitung jumlah pajak yang terutang, termasuk penghasilan yang bukan objek pajak dan/atau yang dikenai pajak yang bersifat final. Wajib pajak yang diwajibkan untuk melakukan pembukuan adalah wajib pajak badan dan wajib pajak orang pribadi yang melakukan kegiatan usaha atau pekerjaan bebas. Dikecualikan dari kewajiban tersebut adalah wajib pajak orang pribadi berkegiatan usaha atau pekerjaan bebas yang memiliki omzet kurang dari Rp4.800.000.000,00 dalam satu tahun, atau menurut peraturan perpajakan yang berlaku diperbolehkan untuk melakukan pencatatan. Buku, catatan, dan dokumen, data elektronik yang menjadi dasar pembukuan harus disimpan selama 10 (sepuluh) tahun di Indonesia (sesuai dengan batas daluwarsa penyidikan tindak pidana di bidang perpajakan).",
+    "blocks": [
+      {
+        "locator": "html:article:48697",
+        "text": "Body Wajib pajak orang pribadi, baik yang berstatus karyawan ataupun melakukan pekerjaan bebas, wajib melakukan penghitungan pajak terutang yang sebenarnya di akhir tahun untuk mengetahui posisi saldo pajak yang masih harus dibayar. Objek Pajak Penghasilan Objek Pajak Penghasilan adalah penghasilan, yaitu setiap tambahan kemampuan ekonomis yang diterima atau diperoleh Wajib Pajak, baik yang berasal dari Indonesia maupun dari luar Indonesia, yang dapat dipakai untuk konsumsi atau untuk menambah kekayaan Wajib Pajak yang bersangkutan, dengan nama dan dalam bentuk apa pun. Namun demikian, terdapat beberapa jenis penghasilan yang bukan merupakan Objek Pajak Penghasilan, di antaranya adalah: a. Bantuan atau sumbangan, termasuk zakat dan sumbangan keagamaan lainnya yang ketentuannya diatur dengan atau berdasarkan Peraturan Pemerintah; dan b. harta hibahan yang ketentuannya diatur dengan atau berdasarkan Peraturan Menteri Keuangan; sepanjang tidak ada hubungan dengan usaha, pekerjaan, kepemilikan, atau penguasaan di antara pihak-pihak yang bersangkutan; warisan; penggantian atau imbalan sehubungan dengan pekerjaan atau jasa dalam bentuk natura dan/atau kenikmatan dari Wajib Pajak atau Pemerintah, apabila diberikan oleh bukan Wajib Pajak atau Wajib Pajak tertentu akan menjadi Penghasilan); dan Penghasilan lain sebagaimana tertera dalam Undang-undang Pajak Penghasilan. Penghasilan Kena Pajak Langkah-langkah untuk mendapatkan besaran Penghasilan Kena Pajak adalah sebagai berikut: Pertama, hitung seluruh penghasilan yang diterima atau diperoleh dalam satu tahun pajak, kecuali penghasilan yang bukan merupakan objek pajak dan penghasilan yang telah dikenakan Pajak Penghasilan yang bersifat Final. Besaran nilai penghasilan neto yang diperoleh dalam satu tahun dapat diketahui dari hasil pembukuan/pencatatan yang dilakukan oleh wajib pajak orang pribadi yang melakukan pekerjaan bebas, dan/atau bukti potong pajak (form 1721) yang diberikan oleh pemberi kerja kepada karyawannya. Kedua, kurangkan penghasilan tidak kena pajak (PTKP) dari penghasilan neto tersebut. Besaran penghasilan tidak kena pajak untuk wajib pajak orang pribadi adalah sebagaimana berikut: Rp54.000.000,00 (lima puluh empat juta rupiah) untuk diri Wajib Pajak orang pribadi; Rp4.500.000,00 (empat juta lima ratus ribu rupiah) tambahan untuk Wajib Pajak yang kawin; Rp54.000.000,00 (lima puluh empat juta rupiah) tambahan untuk seorang isteri yang penghasilannya digabung dengan penghasilan suami sebagaimana dimaksud dalam Pasal 8 ayat (1); dan Rp4.500.000,00 (empat juta lima ratus ribu rupiah) tambahan untuk setiap anggota keluarga sedarah dan keluarga semenda dalam garis keturunan lurus serta anak angkat, yang menjadi tanggungan sepenuhnya, paling banyak 3 (tiga) orang untuk setiap keluarga. Besaran penghasilan tidak kena pajak ditentukan dari kondisi pada awal tahun pajak atau awal bagian tahun pajak. Dari hasil penghitungan tersebut kita mendapatkan besaran penghasilan kena pajak. Tarif Pajak Penghasilan Tarif pajak penghasilan wajib pajak orang pribadi dalam negeri adalah sebagai berikut: Lapisan Penghasilan Kena Pajak sampai dengan Rp60.000.000,00 (enam puluh juta rupiah) dikenai tarif 5% (lima persen) Lapisan Penghasilan Kena Paja k di atas Rp60.000.000,00 (enam puluh juta rupiah) sampai dengan Rp250.000.000,00 (dua ratus lima puluh juta rupiah ) dikenai tarif 15% (lima belas persen ) Lapisan Penghasilan Kena Pajak di atas Rp250.000.000,00 (dua ratus lima puluh juta rupiah) sampai dengan Rp500.000.000,00 (lima r atus juta rupiah) dikenai tarif 25% (dua puluh lima persen) Lapisan Penghasilan Kena Pajak di atas Rp500.000.000,00 (lima ratus juta rupiah) sampai dengan Rp5.000.000.000,00 (lima miliar rupiah) dikenai tarif 30% (tiga puluh persen) Lapisan Penghasilan Kena Pajak di atas Rp5.000.000.000,00 (lima miliar rupiah) dikenai tarif 35% (tiga puluh lima persen). Pelunasan Pajak di Tahun Berjalan Setelah diperoleh angka Penghasilan Kena Pajak dan pajak terutang, langkah berikutnya adalah mengurangkan pajak penghasilan hasil perhitungan dengan kredit pajak. Kredit pajak adalah pajak yang sebelumnya sudah dibayar, baik melalui mekanisme pemotongan oleh pihak lain, ataupun penyetoran sendiri. Hasil dari pengurangan tersebut adalah pajak penghasilan yang masih harus dibayar sendiri. Ilustrasi Penghitungan Pajak Terutang Setelah mengetahui konsep di atas, mari kita lihat ilustrasi berikut. Bapak Leopold, seorang pekerja kantoran dengan usaha sambilan reparasi alat elektronik memiliki satu orang istri dan satu orang anak yang sudah berusia dua tahun. Ia memiliki total penghasilan netto sebesar Rp300.000.000,00 pada tahun ini, di mana Rp200.000.000,00 berasal dari pekerjaannya di Hydra Corp. dan Rp100.000.000,00 sisanya berasal dari usaha reparasi alat elektroniknya. Atas penghasilannya di Hydra Corp., bapak Leopold telah dipotong pajak penghasilan sebesar Rp15.550.000,00 yang tercantum pada bukti potong pajak (form 1721). Ibu Jemma, istri bapak Leopold merupakan seorang ibu rumah tangga yang tidak memiliki penghasilan. Dari data tersebut, dapat dilakukan penghitungan seperti ini: Penghasilan Netto Rp300.000.000,00 Penghasilan tidak kena pajak (kawin, 1 orang anak) (Rp63.000.000,00) Penghasilan kena pajak Rp237.000.000,00 Pajak terutang 5% x Rp50.000.000,00 Rp2.500.000,00 15% x (Rp237.000.000,00-Rp50.000.000,00) Rp28.050.000,00 Total pajak terutang Rp30.550.000,00 Dengan demikian, maka pajak yang masih harus dibayar adalah sebesar: Total pajak terutang Rp30.550.000,00 Kredit pajak (bukti potong dari Hydra Corp.) (Rp15.550.000,00) Pajak yang masih harus dibayar Rp15.000.000,00 Pajak yang masih harus dibayar tidak selamanya memiliki saldo selayaknya pada kasus bapak Leopold. Saldo dapat bernilai nol, atau bernilai lebih bayar. Dalam hal pajak yang masih harus dibayar memiliki saldo, maka wajib pajak wajib menyetorkan kekurangannya ke kas negara. Namun, bilamana saldo bernilai lebih bayar, maka wajib pajak pun dapat mengkompensasikannya ke periode pajak berikutnya, atau mengajukan pengembalian kelebihan pembayaran pajak (restitusi) ke Kantor Pelayanan Pajak tempat wajib pajak terdaftar. Pembukuan dan pencatatan Pembukuan adalah suatu proses pencatatan yang dilakukan secara teratur untuk mengumpulkan data dan informasi keuangan yang meliputi harta, kewajiban, modal, penghasilan dan biaya, serta jumlah harga perolehan dan penyerahan barang atau jasa, yang ditutup dengan menyusun laporan keuangan berupa neraca, dan laporan laba rugi untuk periode Tahun Pajak tersebut. Pembukuan harus diselenggarakan di Indonesia dengan menggunakan huruf Latin, angka Arab, satuan mata uang Rupiah, dan disusun dalam Bahasa Indonesia menggunakan tata cara lainnya yang diizinkan oleh Menteri Keuangan. Pembukuan harus diselenggarakan dengan cara sistem yang lazim dipakai di Indonesia, misalnya berdasarkan Standar Akuntansi Keuangan, kecuali peraturan perundang-undang perpajakan menentukan lain. Sedangkan pencatatan adalah proses pengumpulan data secara teratur tentang peredaran atau penerimaan bruto dan/atau penghasilan bruto sebagai dasar untuk menghitung jumlah pajak yang terutang, termasuk penghasilan yang bukan objek pajak dan/atau yang dikenai pajak yang bersifat final. Wajib pajak yang diwajibkan untuk melakukan pembukuan adalah wajib pajak badan dan wajib pajak orang pribadi yang melakukan kegiatan usaha atau pekerjaan bebas. Dikecualikan dari kewajiban tersebut adalah wajib pajak orang pribadi berkegiatan usaha atau pekerjaan bebas yang memiliki omzet kurang dari Rp4.800.000.000,00 dalam satu tahun, atau menurut peraturan perpajakan yang berlaku diperbolehkan untuk melakukan pencatatan. Buku, catatan, dan dokumen, data elektronik yang menjadi dasar pembukuan harus disimpan selama 10 (sepuluh) tahun di Indonesia (sesuai dengan batas daluwarsa penyidikan tindak pidana di bidang perpajakan).",
+        "anchorId": "c75ebd8636ef2e593de6d1f16d3aefac68fd71b5c91af5bff8c1fbd578ef089e"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "c75ebd8636ef2e593de6d1f16d3aefac68fd71b5c91af5bff8c1fbd578ef089e",
+      "locator": "html:article:48697",
+      "start": 0,
+      "end": 7859,
+      "quoteHash": "9774ec9516e07e7a0657ecd1489dd7264f51d5d4f589d157f318a2a519355c03",
+      "rawContentHash": "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.pajak.go.id/id/mekanisme-penghitungan-pajak-penghasilan-orang-pribadi#main-content",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/selayang-pandang",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/visi-misi-tujuan-dan-maklumat-pelayanan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tugas-dan-fungsi-0",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/logo-direktorat-jenderal-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kode-etik-dan-kode-perilaku",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/daftar-pejabat-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/unit-kerja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/halaman-infografis-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/peraturan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kurs-pajak",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kmk-tarif-bunga",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/aplikasi-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/formulir-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-yang-wajib-disediakan-dan-diumumkan-secara-berkala",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-yang-wajib-diumumkan-secara-serta-merta",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-publik-tersedia-setiap-saat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-kerja-dan-anggaran-0",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/daftar-isian-pelaksanaan-anggaran",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/realisasi-belanja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/keuangan-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-strategis-direktorat-jenderal-pajak-2025-2029",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-kerja-ditjen-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kinerja-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/laporan-kinerja-unit-kerja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tahunan-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/realisasi-pendapatan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/layanan-digital/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/akses-informasi-publik-melalui-layanan-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/gambaran-singkat-pembentukan-ppid-tingkat-i",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/regulasi-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/prosedur-permohonan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/laporan-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/statistik-akses-informasi-publik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/jalur-dan-waktu-layanan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/saluran-pengaduan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/penyediaan-pembicara-pembahas-atau-moderator-pada-kegiatan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/standar-pelayanan-di-lingkungan-direktorat-jenderal-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/en/apa-map-homepage",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/aeoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/crs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/cbcr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/aeoi-wht",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/fatca",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/carf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/eoir",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/seoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/globe",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tax-treaty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/en/tax-treaty-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/taxtreaty-mli",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/uu-hpp",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/PPS",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/covid19",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/pajakdigital",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/halaman-infografis-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://ejurnal.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/lapor-tahunan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/buku-elektronik-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kerja-sama-dan-kemitraan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/klaster-kemudahan-berusaha-bidang-perpajakan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/penegakan-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/faq-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PLDDScx7l7xS1tqRfrYTuZVcHzoeIsKv7w",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://open.spotify.com/show/6jOGiW7J1T4B81LYNxttOk?si=DumG1PAmTp-RLdf9p7Fnlw",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp/coretax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://edukasi.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://pajak.go.id/index-belajar-pajak/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/en/index-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://coretaxdjp.pajak.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-konsultan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-pjap",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp/coretax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/index.php/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/apbnkita",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/reformdjp/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/prasyarat-pengguna",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/hubungi-kami",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/form/contact",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.facebook.com/DitjenPajakRI/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.twitter.com/DitjenPajakRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/user/DitjenPajakRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/ditjenpajakri/?hl=id",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://pengaduan.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "a645a7c167a40fdc6cb91ba9bad6012326cef0f6f6d85cc2c96d857f5fbdd1ca"
+}

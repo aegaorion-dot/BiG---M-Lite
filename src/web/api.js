@@ -6,24 +6,97 @@ async function dispatch(store,method,path,query={},body={}){
  const {ctx}=store;
  try{
   const currency=query.currency||ctx.org?.baseCurrency;
+  if(path.startsWith('/api/intake')||path.startsWith('/api/muse')||path.startsWith('/api/tax/')||path.startsWith('/api/configuration')||path.startsWith('/api/nikos')||path==='/api/financial-position')store.checkAuth(body?.authToken??query.token??null);
   if(method==='GET'){
+   if(path==='/api/financial-position')return json({ok:true,position:store.financialPosition()});
+   if(path==='/api/product')return json({ok:true,...store.productState()});
+   if(path==='/api/demo/status')return json({ok:true,...(store.demo??{enabled:false})});
+   if(path==='/api/i18n/pack')return json({ok:true,pack:await store.languagePack(query.locale)});
+   if(path==='/api/reports/reporting-status')return json({ok:true,...store.reportingStatus()});
+   if(path==='/api/muse/status')return json({ok:true,...store.museStatus()});
+   if(path==='/api/muse/activity')return json({ok:true,events:store.museActivity()});
+   if(path==='/api/muse/trace')return json({ok:true,...store.museTrace()});
+   if(path==='/api/muse/evidence')return json({ok:true,evidence:store.museEvidence({candidateId:query.candidateId})});
+   if(path==='/api/nikos/result')return json({ok:true,result:store.nikosDemoResult()});
+   if(path==='/api/nikos/progress')return json({ok:true,...store.nikosDemoProgress()});
+   if(path==='/api/tax/review')return json({ok:true,readiness:store.taxReadiness()});
+   if(path==='/api/tax/scoped')return json({ok:true,...store.scopedTax.view()});
+   if(path==='/api/tax/expanded')return json({ok:true,...store.expandedTax.view()});
+    if(path==='/api/tax/estimate')return json({ok:true,estimate:store.provisionalTax.view()});
+   if(path==='/api/tax/estimates')return json({ok:true,estimates:store.configuration.estimates()});
+   if(path==='/api/configuration')return json({ok:true,...store.configuration.view()});
+   if(path==='/api/configuration/progress')return json({ok:true,progress:store.configuration.researchProgress()});
+   if(path==='/api/configuration/research/evidence')return json({ok:true,evidence:store.configuration.researchEvidence()});
+   if(path==='/api/tax/scoped/law')return json({ok:true,candidates:store.scopedTax.law()});
+   if(path==='/api/intake')return json({ok:true,...store.intake.list()});
+   if(path==='/api/intake/trace')return json({ok:true,...store.intake.trace(query.candidateId)});
+   if(path==='/api/intake/document-trace')return json({ok:true,...store.intake.documentTrace(query.documentId)});
+   if(path==='/api/intake/external/preview')return json({ok:true,...store.intake.external.preview(query.batchId)});
+   if(path==='/api/intake/external/export')return {status:200,headers:{'content-type':'text/csv; charset=utf-8','content-disposition':'attachment; filename="reviewed-import-preview.csv"','cache-control':'no-store'},body:store.intake.external.exportCsv(query.batchId)};
+   if(path==='/api/intake/external/original'){const original=store.intake.external.original(query.batchId);return {status:200,headers:{'content-type':'application/octet-stream','content-disposition':"attachment; filename*=UTF-8''"+encodeURIComponent(original.filename),'cache-control':'no-store'},body:original.bytes};}
+   if(path==='/api/intake/original'){const original=store.intake.original(query.documentId);return {status:200,headers:{'content-type':'application/octet-stream','content-disposition':"attachment; filename*=UTF-8''"+encodeURIComponent(original.filename),'cache-control':'no-store'},body:original.bytes};}
    if(path==='/api/health')return json({ok:true,service:'bigm-lite-web',framework:'0.1.0'});
    if(path==='/api/summary')return json({ok:true,summary:store.summary(currency)});
    if(path==='/api/transactions')return json({ok:true,transactions:store.listTransactions()});
    if(path==='/api/journals')return json({ok:true,journals:ctx.ledger.list().map(store.serializeJournal)});
    if(path==='/api/ledger')return json({ok:true,currency:currency??null,balances:currency?[...ctx.ledger.balances(currency)].map(([accountId,money])=>({accountId,netMinor:String(money.amountMinor),netMajor:money.toMajorString()})):[]});
    if(path==='/api/audit')return json({ok:true,verify:ctx.audit.verifyChain(),entries:ctx.audit.list()});
-   if(path==='/api/reports/monthly')return json({ok:true,currency:currency??null,months:store.monthlyReport(currency),fxConversionApplied:false});
+   if(path==='/api/reports/monthly'){if(ctx.org&&currency!==ctx.org.baseCurrency)return json({ok:true,currency,functionalCurrency:ctx.org.baseCurrency,status:'REPORTING_CONVERSION_REQUIRED',months:null,fxConversionApplied:false});return json({ok:true,currency:currency??null,months:store.monthlyReport(currency),fxConversionApplied:false});}
    if(path==='/api/tax'||path==='/api/country-packs')return json({ok:true,...store.countryPackState(),note:'Tax settings need review. Reference content does not authorize tax execution.'});
    if(path==='/api/onboarding/state')return json({ok:true,...store.onboardingState()});
    if(path==='/api/onboarding/readiness')return json({ok:true,readiness:store.onboardingReadiness()});
    if(path==='/api/onboarding/history')return json({ok:true,history:store.onboardingHistory(),ai:store.aiStatus()});
    if(path==='/api/workspace')return json({ok:true,workspace:store.workspaceProfile()});
-   if(path==='/api/i18n')return json({ok:true,state:{uiLanguage:store.workspaceProfile().activated?store.workspaceProfile().language:store.onboardingState().uiLanguage}});
+   if(path==='/api/i18n')return json({ok:true,state:{uiLanguage:store.onboardingState().uiLanguage,uiLocale:store.currentLocale(),uiLocaleSource:store.onboardingState().uiLocaleSource,conversationLocale:store.currentConversationLocale()}});
    if(path==='/api/settings')return json({ok:true,org:ctx.org,periods:ctx.periods.list(),chart:ctx.chart?.list()??[],pack:ctx.pack?{id:ctx.pack.manifest.id,version:ctx.pack.manifest.version,kind:'BOOKKEEPING_TEMPLATE'}:null,countryPackResolution:store.workspaceProfile().countryPackResolution});
   }
   if(method==='POST'){
    const token=body?.authToken??query.token??null;store.checkAuth(token);
+   if(path==='/api/nikos/calculate')return json({ok:true,result:await store.runNikosDemoCalculation()},201);
+   if(path==='/api/demo/document'){if(!store.demo?.enabled||!store.demoDocument)return err('Demo workspace required',403);return json({ok:true,...await store.demoDocument(body.sample)},201);}
+   if(path==='/api/intake/fx/resolve')return json({ok:true,candidate:await store.intake.resolveFx(body)});
+   if(path==='/api/intake/fx/approve')return json({ok:true,candidate:await store.intake.approveFx(body)});
+   if(path==='/api/i18n/conversation')return json({ok:true,locale:store.setConversationLocale(body.locale)});
+   if(path==='/api/muse/assistant')return json({ok:true,...await store.museAssistant(body)});
+   if(path==='/api/muse/discovery')return json({ok:true,...await store.museDiscovery()});
+   if(path==='/api/tax/review/start')return json({ok:true,readiness:store.beginTaxReview(body.request)});
+   if(path==='/api/tax/scoped/propose')return json({ok:true,...store.scopedTax.propose(body)});
+   if(path==='/api/tax/expanded/propose')return json({ok:true,...store.expandedTax.propose(body)});
+   if(path==='/api/tax/expanded/confirm')return json({ok:true,...store.expandedTax.confirm(body)});
+   if(path==='/api/tax/scoped/law/review')return json({ok:true,candidates:store.scopedTax.reviewLaw(body)});
+   if(path==='/api/tax/scoped/confirm')return json({ok:true,...store.scopedTax.confirm(body)});
+    if(path==='/api/tax/estimate/correct')return json({ok:true,estimate:store.provisionalTax.correct({changes:body?.changes,actor:body?.actor??'user'})});
+    if(path==='/api/tax/estimate/recalculate')return json({ok:true,estimate:store.provisionalTax.recalculate({actor:body?.actor??'user'})});
+   if(path==='/api/tax/estimates/refresh')return json({ok:true,estimates:store.configuration.refreshEstimates()});
+   if(path==='/api/tax/estimates/confirm')return json({ok:true,estimates:store.configuration.confirmEstimate({snapshotHash:body?.snapshotHash,actor:body?.actor??'user'})});
+   if(path==='/api/configuration/research')return json({ok:true,...await store.configuration.runResearch({actor:body?.actor??'user'})});
+   if(path==='/api/configuration/propose')return json({ok:true,proposal:store.configuration.proposal()});
+   if(path==='/api/configuration/confirm')return json({ok:true,confirmation:store.configuration.confirmProposal({proposalHash:body?.proposalHash,actor:body?.actor??'user',decisionSource:body?.decisionSource??'HUMAN'})});
+   if(path==='/api/configuration/candidate/review')return json({ok:true,candidate:store.configuration.reviewCandidate({candidateId:body?.candidateId,actor:body?.actor??'user',decision:body?.decision,reason:body?.reason})});
+   if(path==='/api/tax/review/answer')return json({ok:true,readiness:store.answerTaxReview(body)});
+   if(path==='/api/tax/review/propose')return json({ok:true,proposal:store.proposeTaxReview()});
+   if(path==='/api/intake/duplicates/review')return json({ok:true,candidate:await store.intake.resolveDuplicate(body)});
+   if(path==='/api/intake/external/source')return json({ok:true,source:await store.intake.external.registerSource(body)},201);
+   if(path==='/api/intake/external/mapping')return json({ok:true,mapping:await store.intake.external.approveMapping(body)});
+   if(path==='/api/intake/external/upload'){
+    const encoded=body?.base64;if(typeof encoded!=='string'||encoded.length>Math.ceil(8*1024*1024/3)*4||!encoded.length||!/^[A-Za-z0-9+/]*={0,2}$/.test(encoded))return err('Invalid external upload');
+    const bytes=Buffer.from(encoded,'base64');if(bytes.toString('base64')!==encoded)return err('Malformed base64');return json({ok:true,...await store.intake.external.stage({...body,bytes})},201);
+   }
+   if(path==='/api/intake/external/confirm')return json({ok:true,...await store.intake.external.confirmBatch(body)});
+   if(path==='/api/intake/upload'){
+    const encoded=body?.base64;
+    if(typeof encoded!=='string'||!encoded.length||encoded.length>Math.ceil(8*1024*1024/3)*4||encoded.length%4!==0||!/^[A-Za-z0-9+/]*={0,2}$/.test(encoded))return err('Invalid or oversized base64 upload');
+    const bytes=Buffer.from(encoded,'base64');if(bytes.toString('base64')!==encoded)return err('Malformed base64 upload');
+    return json({ok:true,...await store.intake.upload({bytes,originalFilename:body.originalFilename,declaredMimeType:body.declaredMimeType})},201);
+   }
+   if(path==='/api/intake/chat')return json({ok:true,...await store.intake.chat(body)},201);
+   if(path==='/api/intake/edit')return json({ok:true,candidate:await store.intake.edit(body)});
+   if(path==='/api/intake/reject')return json({ok:true,candidate:await store.intake.reject(body)});
+   if(path==='/api/intake/confirm')return json({ok:true,candidate:await store.intake.confirm(body)});
+   if(path==='/api/intake/schema/approve')return json({ok:true,...await store.intake.approveSchema(body)});
+  if(path==='/api/intake/schema/repropose')return json({ok:true,document:await store.intake.proposeSchema(body)});
+  if(path==='/api/intake/confirm-batch')return json({ok:true,...await store.intake.confirmBatch(body)});
+  if(path==='/api/intake/retry')return json({ok:true,document:await store.intake.retry(body)});
    if(path==='/api/onboarding/turn')return json({ok:true,...await store.onboardingTurn(body?.text)});
    if(path==='/api/onboarding/edit')return json({ok:true,...store.editProfile(body)});
    if(path==='/api/onboarding/language')return json({ok:true,language:store.setUiLanguage(body?.language??body?.tag)});

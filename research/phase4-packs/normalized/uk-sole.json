@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "GB-GOVUK",
+  "jurisdictionCode": "GB",
+  "metadata": {
+    "title": null,
+    "officialDocumentId": null,
+    "language": null,
+    "documentKind": "STRUCTURED_DATA"
+  },
+  "provenance": {
+    "artifactId": "5bd38438-25b9-4a4f-9732-95928fdcb41e",
+    "rawContentHash": "96d12dd72cad2022260ed974f3b00d9727721e0606eb2f6a6ce984cbe92caac2",
+    "sourceUrl": "https://www.gov.uk/api/content/set-up-sole-trader",
+    "finalUrl": "https://www.gov.uk/api/content/set-up-sole-trader",
+    "retrievedAt": "2026-10-28T22:40:14.110Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "GOVUK",
+    "authorityName": "GOV.UK departments (document publisher must be checked)",
+    "sourceRole": "OFFICIAL_GUIDANCE",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/96d12dd72cad2022260ed974f3b00d9727721e0606eb2f6a6ce984cbe92caac2.bin",
+    "rawContentHash": "96d12dd72cad2022260ed974f3b00d9727721e0606eb2f6a6ce984cbe92caac2"
+  },
+  "sourceSpecificMetadata": {
+    "format": "JSON",
+    "topLevelKeys": [
+      "analytics_identifier",
+      "base_path",
+      "content_id",
+      "description",
+      "details",
+      "document_type",
+      "first_published_at",
+      "links",
+      "locale",
+      "phase",
+      "public_updated_at",
+      "publishing_app",
+      "publishing_request_id",
+      "publishing_scheduled_at",
+      "redirects",
+      "rendering_app",
+      "scheduled_publishing_delay_seconds",
+      "schema_name",
+      "title",
+      "updated_at",
+      "withdrawn_notice"
+    ],
+    "payloadRef": {
+      "rawStorageRef": "blobs/96d12dd72cad2022260ed974f3b00d9727721e0606eb2f6a6ce984cbe92caac2.bin",
+      "rawContentHash": "96d12dd72cad2022260ed974f3b00d9727721e0606eb2f6a6ce984cbe92caac2"
+    }
+  },
+  "normalizedContent": {
+    "text": "{\"analytics_identifier\":null,\"base_path\":\"/set-up-sole-trader\",\"content_id\":null,\"description\":null,\"details\":{},\"document_type\":\"redirect\",\"first_published_at\":\"2024-05-23T13:07:24+01:00\",\"links\":{},\"locale\":\"en\",\"phase\":\"live\",\"public_updated_at\":\"2024-05-23T13:07:24+01:00\",\"publishing_app\":\"publisher\",\"publishing_request_id\":null,\"publishing_scheduled_at\":null,\"redirects\":[{\"destination\":\"/become-sole-trader\",\"path\":\"/set-up-sole-trader\",\"type\":\"prefix\"}],\"rendering_app\":null,\"scheduled_publishing_delay_seconds\":null,\"schema_name\":\"redirect\",\"title\":null,\"updated_at\":\"2024-05-23T13:07:25+01:00\",\"withdrawn_notice\":{}}",
+    "blocks": [
+      {
+        "locator": "#",
+        "text": "{\"analytics_identifier\":null,\"base_path\":\"/set-up-sole-trader\",\"content_id\":null,\"description\":null,\"details\":{},\"document_type\":\"redirect\",\"first_published_at\":\"2024-05-23T13:07:24+01:00\",\"links\":{},\"locale\":\"en\",\"phase\":\"live\",\"public_updated_at\":\"2024-05-23T13:07:24+01:00\",\"publishing_app\":\"publisher\",\"publishing_request_id\":null,\"publishing_scheduled_at\":null,\"redirects\":[{\"destination\":\"/become-sole-trader\",\"path\":\"/set-up-sole-trader\",\"type\":\"prefix\"}],\"rendering_app\":null,\"scheduled_publishing_delay_seconds\":null,\"schema_name\":\"redirect\",\"title\":null,\"updated_at\":\"2024-05-23T13:07:25+01:00\",\"withdrawn_notice\":{}}",
+        "anchorId": "68a69bf103238b22461aa04626577b2e320f7b5c4320d591ad5abf5ff079d024"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "68a69bf103238b22461aa04626577b2e320f7b5c4320d591ad5abf5ff079d024",
+      "locator": "#",
+      "start": 0,
+      "end": 627,
+      "quoteHash": "96d12dd72cad2022260ed974f3b00d9727721e0606eb2f6a6ce984cbe92caac2",
+      "rawContentHash": "96d12dd72cad2022260ed974f3b00d9727721e0606eb2f6a6ce984cbe92caac2"
+    }
+  ],
+  "discoveredLinks": [],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred."
+  ],
+  "envelopeId": "cbee5180d30978d16bc1f14cde4a85aa77f664472433e05d3a03edf397e08a1f"
+}

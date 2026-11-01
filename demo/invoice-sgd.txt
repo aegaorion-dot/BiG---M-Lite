@@ -1,0 +1,9 @@
+CUSTOMER INVOICE - SYNTHETIC DEMO
+Invoice date: 2026-06-01
+Payment date: 2026-06-01
+Customer: Singapore Demo Client
+Description: Design service
+Total SGD 2000.00
+Payment: bank
+Status: paid
+Reference: DEMO-SGD-001

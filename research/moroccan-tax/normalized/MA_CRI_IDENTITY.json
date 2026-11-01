@@ -1,0 +1,540 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "MA-CRI",
+  "jurisdictionCode": "MA",
+  "metadata": {
+    "title": "Mentions légales | Centre Régional d'Investissement de Casablanca-Settat",
+    "officialDocumentId": null,
+    "language": "fr",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "1fe828f0-eeb0-4e3c-b867-33d4bf7b0b9d",
+    "rawContentHash": "323909e21fd24a8aca48956ca7e35dd27fc7163092c2323fea18e1d56bbb5c36",
+    "sourceUrl": "https://www.casainvest.ma/fr/mentions-l%C3%A9galesCRICS",
+    "finalUrl": "https://www.casainvest.ma/fr/mentions-l%C3%A9galesCRICS",
+    "retrievedAt": "2026-10-29T14:44:52.947Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "CRI",
+    "authorityName": "Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror",
+    "sourceRole": "OFFICIAL_GUIDANCE",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/323909e21fd24a8aca48956ca7e35dd27fc7163092c2323fea18e1d56bbb5c36.bin",
+    "rawContentHash": "323909e21fd24a8aca48956ca7e35dd27fc7163092c2323fea18e1d56bbb5c36"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/323909e21fd24a8aca48956ca7e35dd27fc7163092c2323fea18e1d56bbb5c36.bin",
+      "rawContentHash": "323909e21fd24a8aca48956ca7e35dd27fc7163092c2323fea18e1d56bbb5c36"
+    },
+    "metaTags": [
+      "<meta charset=\"utf-8\" />",
+      "<meta name=\"description\" content=\"La présente page vise à fixer les conditions générales d’utilisation du portail web du Centre Régional d&#039;Investissement (CRI) Casablanca-Settat ainsi que ses plateformes digitales du domaine casainvest.ma.  \" />",
+      "<meta name=\"Generator\" content=\"Drupal 10 (https://www.drupal.org)\" />",
+      "<meta name=\"MobileOptimized\" content=\"width\" />",
+      "<meta name=\"HandheldFriendly\" content=\"true\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />"
+    ]
+  },
+  "normalizedContent": {
+    "text": "La présente page vise à fixer les conditions générales d’utilisation du portail web du Centre Régional d'Investissement (CRI) Casablanca-Settat ainsi que ses plateformes digitales du domaine casainvest.ma. Identification Le Portail web « www.casainvest.ma » est la propriété du CRI Casablanca-Settat, établissement public dont la mission principale est la contribution à la mise en œuvre de la politique de l'Etat en matière d’investissement et d'accompagnement global des entreprises à l'échelon régional. Coordonnées du CRI Le siège du CRI Casablanca-Settat est situé à Angle Bd Ghandi et rue Larbi Doghmi- Casablanca 20000 Tél. : 05 22 49 42 42 Fax. : 05 22 48 21 15 Email : info@casainvest.ma ARTICLE 1 : Objet et définitions Les présentes « conditions générales d'utilisation » ont pour objet l'encadrement des modalités de mise à disposition des services des plateformes digitales du CRI Casablanca-Settat et leur exploitation par l'utilisateur. Les conditions générales d'utilisation doivent être acceptées par tout Utilisateur souhaitant accéder aux services digitaux du CRI de Casablanca-Settat. Elles constituent le contrat entre le site et l'Utilisateur. L'accès au site par l'Utilisateur signifie son acceptation des présentes conditions générales d'utilisation. En cas de refus des conditions générales d’utilisations mentionnées dans le présent contrat, l’utilisateur doit se renoncer à l’accès aux plateformes. CGU : Conditions générales d’utilisation auxquelles l'Utilisateur souhaitant accéder eux services digitaux du CRI Casablanca-Settat. Les conditions générales d'utilisation doivent être acceptées par tout Utilisateur, et son accès à l’application vaut acceptation de ces conditions. Utilisateur : toute personne physique désirant consulter le portail web du CRI Casablanca-Settat, ou autorisé à se connecter aux plateformes digitales du CRI Casablanca-Settat par la création d’un compte d’accès et d’un mot de passe, dans les conditions décrites ci-après. Identifiant : Mot de passe : Renseigné par l’utilisateurs et modifiable à travers son espace personnel au niveau de CRI-accout (module de gestion des accès, SINGLE SIGN ON). Plateformes digitales du CRI Casablanca-Settat : Tous les e-services misent à disposition des utilisateur liés au nom de domaine casainvest.ma. ARTICLE 2 : Objectifs du site Le présent portail web a pour objectifs de : • Présenter les missions et l’offre de services du CRI Casablanca-Settat • Promouvoir la Région Casablanca-Settat et son offre territorial • Présenter les secteurs clés de la région et ses potentialités d’investissement • Présenter les procédures d’investissement et de création d’entreprise • Offrir des e-services variés permettant l’échange d’informations et le traitement des requêtes des usagers • Présenter un espace de partage des publications récentes à caractère économique • Orienter vers les partenaires de l’écosystème entrepreneurial et vers les autres sources d’information • Orientation vers les plateformes digitales du CRI Casablanca-Settat ARTICLE 3 : Accès aux services L’Utilisateur du portail du CRI Casablanca-Settat a accès aux services suivants : • Prise de rendez-vous pour l’accompagnement • Prise de rendez-vous pour la création d’entreprise • Accès au service e-réclamation • Accès au service e-event • Accès au module CRI-ACCOUNT pour la gestion de son compte et du service single sign-on. Tout Utilisateur ayant accès à internet peut accéder gratuitement et depuis n’importe où à l’application. Les frais supportés par l’Utilisateur pour y accéder (connexion internet, matériel informatique, etc.) ne sont pas à la charge de l’Éditeur. Les services des plateformes digitales ne sont pas accessibles pour l’utilisateur que s’il est membre inscrit (c’est-à-dire qu’il est identifié à l’aide de ses identifiants de connexion). Le portail et ses différents services peuvent être interrompus ou suspendus par l’Éditeur, notamment à l’occasion d’une maintenance, sans obligation de préavis ou de justification. L'Utilisateur s'oblige à ne réclamer aucune indemnisation à la suite de l'interruption, à la suspension ou à la modification du présent contrat. Tout événement dû à un cas de force majeure ayant pour conséquence un dysfonctionnement du réseau ou du serveur n'engage pas la responsabilité de l'éditeur du site. ARTICLE 4 : Responsabilité du CRI Casablanca-Settat A travers la création du portail « www.casainvest.ma », le CRI Casablanca-Settat vise à fournir un contenu à jour, riche et accessible à toutes les catégories des utilisateurs 24h/24 et 7j/7. Tout dysfonctionnement du serveur ou du réseau ne peut engager la responsabilité de l’Éditeur. De même, la responsabilité de l’application ne peut être engagée en cas de force majeure ou du fait imprévisible et insurmontable d'un tiers. Le CRI Casablanca-Settat s'engage à mettre en œuvre tous les moyens nécessaires pour garantir la sécurité et la confidentialité des données. Toutefois, des risques peuvent surgir auxquels le CRI déploiera tous les moyens humains et matériels pour y remédier. L’Éditeur se réserve la faculté d’une non-garantie de la fiabilité des sources, bien que les informations diffusées sur l’application soient réputées fiables. ARTICLE 5 : Responsabilité de l’Utilisateur L’utilisateur du site est tenu de vérifier qu’il dispose des outils et des compétences nécessaires lui permettant un accès normal au portail web du CRI et la consultation de son contenu. L’utilisation de ce site est soumise aux présentes conditions et au respect de la réglementation marocaine en vigueur. L'Utilisateur est responsable des risques liés à l’utilisation de son identifiant de connexion et de son mot de passe. Le mot de passe de l’Utilisateur doit rester secret La divulgation du mot de passe n'engage pas la responsabilité de l'éditeur des plateformes. L’utilisateur assume l’entière responsabilité de l’utilisation qu’il fait des informations et contenus présents sur les plateformes digitales du CRI de Casablanca-Settat. L’utilisateur atteste avoir pris connaissance des dispositions de la loi 07-03, et s’engage à prendre les mesures nécessaires pour s’assurer d’un usage légal de la plateforme. Tout usage du service par l'Utilisateur ayant directement ou indirectement pour conséquence des dommages doivent faire l'objet d'une indemnisation au profit de l’Editeur. La plateforme CRI-account permet aux membres de Renseigner leurs informations (Téléphone, adresse mail, adresse postale…), leurs informations sur leurs entreprises et leurs projets. ARTICLE 6 : Confidentialité Sauf accord contraire préalable, l’utilisateur gardera strictement confidentiel les informations, les données et tout autre contenu des plateformes web du Centre régional d’investissement de Casablanca-Settat. L'obligation de confidentialité ne saurait s'appliquer si la divulgation de ces informations est ordonnée par un tribunal ou par une autre autorité, ou si ladite divulgation est nécessaire afin de faire appliquer les droits de l'une partie à l'encontre de l'autre partie contractante. ARTICLE 7 : Données personnelles (protection de la vie privée) Dans le but de préserver le caractère privé des informations relatives aux utilisateurs du site, le CRI Casablanca-Settat s’engage à traiter ces informations conformément aux dispositions de la loi 09-08, relative à la protection des personnes physiques à l’égard du traitement des données à caractère personnel. Les données recueillies serviront à traiter les différentes requêtes des usagers, à réaliser des rapports de navigation, à envoyer de courriers électroniques ou newsletters, et également à d’autres usages ne portant pas atteinte au respect des informations privées propres aux internautes. L’utilisateur doit obligatoirement fournir des informations personnelles pour procéder à son inscription sur les plateformes digitales du CRI Casablanca-Settat. Par le biais du formulaire de contact du site web www.casainvest.ma ou de ses différentes plateformes web, le Centre Régional d'Investissement de Casablanca-Settat (CRI-CS) collecte vos données personnelles afin de faciliter le contact avec ses équipes et de vous permettre de profiter de ses différents services digitaux. Ce traitement a fait l'objet d'une déclaration auprès de la Commission Nationale de la Protection des Données Personnelles (CNDP) sous le numéro [D-W-589/2024]. Les données personnelles collectées peuvent être transmises aux entités suivantes : MAGNETOMEDIA SARL AU au Maroc et CONTABO GMBH, sis à Aschauer Strasse 32a Munich, Allemagne. Ces transferts ont fait l'objet d'une demande de transfert auprès de la CNDP. Vous pouvez vous adresser à madame Naima ATIF (mail : cndp@casainvest.ma) pour exercer vos droits d’accès, de rectification et d’opposition conformément aux dispositions de la loi 09-08. ARTICLE 8 : Propriété intellectuelle - Le portail web « www.casainvest.ma » est la propriété du CRI Casablanca-Settat dont le siège social est sis à Angle Boulevard GHANDI et rue Laarbi DOGHMI, Casablanca, Ainsi, le contenu de ce portail sous ses différents formats est une production propre du CRI, dont certains ont fait l’objet d’une autorisation d’exploitation en sa faveur. Conformément aux droits de propriété, les usagers désirant utiliser ces informations pour leurs propres besoins, sont tenus de mentionner le CRI Casablanca-Settat comme source de ces données. - L’utilisateur reconnait qu’il a seulement le droit d’utiliser les services du site CRICS , sans que ceci soit constitutif d’un droit de propriété ou l’un de ses droits démembrés. - En application de la loi n° 17- 97 relative à la protection de la propriété industrielle et la loi n° 2-00 relative aux droits d’auteur et droits voisins, l ’utilisateur n'acquiert qu'un droit d'usage des plateformes digitales du CRI Casablansa-Settat. Tous les éléments de toute nature composant du domaine casainvest.ma (textes, mises en page, schémas, photos, vidéos, dessins, bases de données, marques, logos, documents téléchargeables, etc.) sont protégés en tant que droit d'auteur et la propriété intellectuelle. Ils sont la propriété exclusive du CRI Casablanca-Settat. A ce titre, sauf autorisation préalable et expresse du CRI Casablanca-Settat, toute reproduction, représentation, diffusion, adaptation, stockage, modification partielle ou intégrale de tout élément composant le portail casainvest.ma et ses plateformes digitales, par quelque moyen que ce soit, est interdite sous peine de poursuites judiciaires. De manière générale, l’utilisateur s'engage notamment à : • Respecter les droits de propriété intellectuelle, • Ne pas recopier tout ou partie de ses plateformes digitales (e-services) sur un autre site ou un réseau interne d'entreprise ou sur tout autre support, • Prendre les mesures nécessaires sur le plan technique pour éviter tout piratage des Contenus ou utilisation illicite ou contraire aux présentes CUG sous quelque forme que ce soit, par son personnel, • Informer Le CRI Casablanca-Settat dès la connaissance d'un piratage et en particulier de toute utilisation illicite ou non-contractuelle des Contenus à l'aide de ses codes d'accès ou de ses outils de travail. ARTICLE 9 : Liens hypertextes Les domaines vers lesquels mènent les liens hypertextes présents sur l’application n’engagent pas la responsabilité de l’Éditeur de l’application, qui n’a pas de contrôle sur ces liens. Il est possible pour un tiers de créer un lien vers une page de l’application sans autorisation expresse de l’éditeur. ARTICLE 10 : Évolution des conditions générales d’utilisation Le CRI Casablanca-Settat se réserve le droit de modifier les clauses de ces conditions générales d’utilisation à tout moment et sans justification. ARTICLE 11 : Liens vers d’autres sites Le portail web www.casainvest.ma contient de liens vers d’autres sites web relevant d’autres organismes, et ce à des fins d’information et de complémentarité de données. Le CRI de Casablanca-Settat décline sa responsabilité par rapport à ces contenus. La connexion à un autre site - à travers un lien hypertexte- relève du choix personnel de l’utilisateur et est opéré sous sa responsabilité exclusive. ARTICLE 12 : Google Analytics et vie privée Ce site utilise Google Analytics, un service d'analyse de sites web fourni par Google Inc. Cet outil utilise des cookies, qui sont des fichiers texte placés sur l’ordinateur de l’internaute, pour analyser l'utilisation du site par ses utilisateurs. Les données générées par les cookies seront transmises et stockées par Google. Google n’utilise ces données que dans le but d'évaluer l’expérience de l’utilisation du site. Les données collectées et traitées sont : la provenance géographique du visiteur, son adresse IP, la date de sa visite, la durée de sa visite, les pages consultées ainsi que l’enchaînement des pages. Google Analytics saisit les informations anonymement. Les statistiques du site ne contiennent pas d'indications personnelles relatives aux visiteurs. ARTICLE 13 : Sécurité informatique Afin de garantir la sécurité des informations du site web, le CRI Casablanca-Settat a mis en place un dispositif de sécurité permettant de protéger dans la mesure du possible, les données qu’il contient contre toute perte ou intrusion abusive visant à l’endommager. Les présentes conditions générales d’utilisation sont régies par le Droit Marocain. ARTICLE 14 : Dispositions diverses Si l'une des dispositions des présentes CU était déclarée nulle ou inapplicable en application d'une loi, d'un règlement ou à la suite d'une décision de justice devenue définitive, elle serait réputée non écrite et les autres dispositions resteraient en vigueur. Les relations contractuelles entre Le CRICS et l’utilisateur sont régis par les seules dispositions des présentes CU. ARTICLE 15 : Attribution de compétence Le Contrat est soumis au droit marocain. Toutes contestations pouvant naître à l’occasion de l’application ou l’interprétation des présentes, attribution de compétence est donnée au tribunal administratif de Casablanca.",
+    "blocks": [
+      {
+        "locator": "html:article:47111",
+        "text": "La présente page vise à fixer les conditions générales d’utilisation du portail web du Centre Régional d'Investissement (CRI) Casablanca-Settat ainsi que ses plateformes digitales du domaine casainvest.ma. Identification Le Portail web « www.casainvest.ma » est la propriété du CRI Casablanca-Settat, établissement public dont la mission principale est la contribution à la mise en œuvre de la politique de l'Etat en matière d’investissement et d'accompagnement global des entreprises à l'échelon régional. Coordonnées du CRI Le siège du CRI Casablanca-Settat est situé à Angle Bd Ghandi et rue Larbi Doghmi- Casablanca 20000 Tél. : 05 22 49 42 42 Fax. : 05 22 48 21 15 Email : info@casainvest.ma ARTICLE 1 : Objet et définitions Les présentes « conditions générales d'utilisation » ont pour objet l'encadrement des modalités de mise à disposition des services des plateformes digitales du CRI Casablanca-Settat et leur exploitation par l'utilisateur. Les conditions générales d'utilisation doivent être acceptées par tout Utilisateur souhaitant accéder aux services digitaux du CRI de Casablanca-Settat. Elles constituent le contrat entre le site et l'Utilisateur. L'accès au site par l'Utilisateur signifie son acceptation des présentes conditions générales d'utilisation. En cas de refus des conditions générales d’utilisations mentionnées dans le présent contrat, l’utilisateur doit se renoncer à l’accès aux plateformes. CGU : Conditions générales d’utilisation auxquelles l'Utilisateur souhaitant accéder eux services digitaux du CRI Casablanca-Settat. Les conditions générales d'utilisation doivent être acceptées par tout Utilisateur, et son accès à l’application vaut acceptation de ces conditions. Utilisateur : toute personne physique désirant consulter le portail web du CRI Casablanca-Settat, ou autorisé à se connecter aux plateformes digitales du CRI Casablanca-Settat par la création d’un compte d’accès et d’un mot de passe, dans les conditions décrites ci-après. Identifiant : Mot de passe : Renseigné par l’utilisateurs et modifiable à travers son espace personnel au niveau de CRI-accout (module de gestion des accès, SINGLE SIGN ON). Plateformes digitales du CRI Casablanca-Settat : Tous les e-services misent à disposition des utilisateur liés au nom de domaine casainvest.ma. ARTICLE 2 : Objectifs du site Le présent portail web a pour objectifs de : • Présenter les missions et l’offre de services du CRI Casablanca-Settat • Promouvoir la Région Casablanca-Settat et son offre territorial • Présenter les secteurs clés de la région et ses potentialités d’investissement • Présenter les procédures d’investissement et de création d’entreprise • Offrir des e-services variés permettant l’échange d’informations et le traitement des requêtes des usagers • Présenter un espace de partage des publications récentes à caractère économique • Orienter vers les partenaires de l’écosystème entrepreneurial et vers les autres sources d’information • Orientation vers les plateformes digitales du CRI Casablanca-Settat ARTICLE 3 : Accès aux services L’Utilisateur du portail du CRI Casablanca-Settat a accès aux services suivants : • Prise de rendez-vous pour l’accompagnement • Prise de rendez-vous pour la création d’entreprise • Accès au service e-réclamation • Accès au service e-event • Accès au module CRI-ACCOUNT pour la gestion de son compte et du service single sign-on. Tout Utilisateur ayant accès à internet peut accéder gratuitement et depuis n’importe où à l’application. Les frais supportés par l’Utilisateur pour y accéder (connexion internet, matériel informatique, etc.) ne sont pas à la charge de l’Éditeur. Les services des plateformes digitales ne sont pas accessibles pour l’utilisateur que s’il est membre inscrit (c’est-à-dire qu’il est identifié à l’aide de ses identifiants de connexion). Le portail et ses différents services peuvent être interrompus ou suspendus par l’Éditeur, notamment à l’occasion d’une maintenance, sans obligation de préavis ou de justification. L'Utilisateur s'oblige à ne réclamer aucune indemnisation à la suite de l'interruption, à la suspension ou à la modification du présent contrat. Tout événement dû à un cas de force majeure ayant pour conséquence un dysfonctionnement du réseau ou du serveur n'engage pas la responsabilité de l'éditeur du site. ARTICLE 4 : Responsabilité du CRI Casablanca-Settat A travers la création du portail « www.casainvest.ma », le CRI Casablanca-Settat vise à fournir un contenu à jour, riche et accessible à toutes les catégories des utilisateurs 24h/24 et 7j/7. Tout dysfonctionnement du serveur ou du réseau ne peut engager la responsabilité de l’Éditeur. De même, la responsabilité de l’application ne peut être engagée en cas de force majeure ou du fait imprévisible et insurmontable d'un tiers. Le CRI Casablanca-Settat s'engage à mettre en œuvre tous les moyens nécessaires pour garantir la sécurité et la confidentialité des données. Toutefois, des risques peuvent surgir auxquels le CRI déploiera tous les moyens humains et matériels pour y remédier. L’Éditeur se réserve la faculté d’une non-garantie de la fiabilité des sources, bien que les informations diffusées sur l’application soient réputées fiables. ARTICLE 5 : Responsabilité de l’Utilisateur L’utilisateur du site est tenu de vérifier qu’il dispose des outils et des compétences nécessaires lui permettant un accès normal au portail web du CRI et la consultation de son contenu. L’utilisation de ce site est soumise aux présentes conditions et au respect de la réglementation marocaine en vigueur. L'Utilisateur est responsable des risques liés à l’utilisation de son identifiant de connexion et de son mot de passe. Le mot de passe de l’Utilisateur doit rester secret La divulgation du mot de passe n'engage pas la responsabilité de l'éditeur des plateformes. L’utilisateur assume l’entière responsabilité de l’utilisation qu’il fait des informations et contenus présents sur les plateformes digitales du CRI de Casablanca-Settat. L’utilisateur atteste avoir pris connaissance des dispositions de la loi 07-03, et s’engage à prendre les mesures nécessaires pour s’assurer d’un usage légal de la plateforme. Tout usage du service par l'Utilisateur ayant directement ou indirectement pour conséquence des dommages doivent faire l'objet d'une indemnisation au profit de l’Editeur. La plateforme CRI-account permet aux membres de Renseigner leurs informations (Téléphone, adresse mail, adresse postale…), leurs informations sur leurs entreprises et leurs projets. ARTICLE 6 : Confidentialité Sauf accord contraire préalable, l’utilisateur gardera strictement confidentiel les informations, les données et tout autre contenu des plateformes web du Centre régional d’investissement de Casablanca-Settat. L'obligation de confidentialité ne saurait s'appliquer si la divulgation de ces informations est ordonnée par un tribunal ou par une autre autorité, ou si ladite divulgation est nécessaire afin de faire appliquer les droits de l'une partie à l'encontre de l'autre partie contractante. ARTICLE 7 : Données personnelles (protection de la vie privée) Dans le but de préserver le caractère privé des informations relatives aux utilisateurs du site, le CRI Casablanca-Settat s’engage à traiter ces informations conformément aux dispositions de la loi 09-08, relative à la protection des personnes physiques à l’égard du traitement des données à caractère personnel. Les données recueillies serviront à traiter les différentes requêtes des usagers, à réaliser des rapports de navigation, à envoyer de courriers électroniques ou newsletters, et également à d’autres usages ne portant pas atteinte au respect des informations privées propres aux internautes. L’utilisateur doit obligatoirement fournir des informations personnelles pour procéder à son inscription sur les plateformes digitales du CRI Casablanca-Settat. Par le biais du formulaire de contact du site web www.casainvest.ma ou de ses différentes plateformes web, le Centre Régional d'Investissement de Casablanca-Settat (CRI-CS) collecte vos données personnelles afin de faciliter le contact avec ses équipes et de vous permettre de profiter de ses différents services digitaux. Ce traitement a fait l'objet d'une déclaration auprès de la Commission Nationale de la Protection des Données Personnelles (CNDP) sous le numéro [D-W-589/2024]. Les données personnelles collectées peuvent être transmises aux entités suivantes : MAGNETOMEDIA SARL AU au Maroc et CONTABO GMBH, sis à Aschauer Strasse 32a Munich, Allemagne. Ces transferts ont fait l'objet d'une demande de transfert auprès de la CNDP. Vous pouvez vous adresser à madame Naima ATIF (mail : cndp@casainvest.ma) pour exercer vos droits d’accès, de rectification et d’opposition conformément aux dispositions de la loi 09-08. ARTICLE 8 : Propriété intellectuelle - Le portail web « www.casainvest.ma » est la propriété du CRI Casablanca-Settat dont le siège social est sis à Angle Boulevard GHANDI et rue Laarbi DOGHMI, Casablanca, Ainsi, le contenu de ce portail sous ses différents formats est une production propre du CRI, dont certains ont fait l’objet d’une autorisation d’exploitation en sa faveur. Conformément aux droits de propriété, les usagers désirant utiliser ces informations pour leurs propres besoins, sont tenus de mentionner le CRI Casablanca-Settat comme source de ces données. - L’utilisateur reconnait qu’il a seulement le droit d’utiliser les services du site CRICS , sans que ceci soit constitutif d’un droit de propriété ou l’un de ses droits démembrés. - En application de la loi n° 17- 97 relative à la protection de la propriété industrielle et la loi n° 2-00 relative aux droits d’auteur et droits voisins, l ’utilisateur n'acquiert qu'un droit d'usage des plateformes digitales du CRI Casablansa-Settat. Tous les éléments de toute nature composant du domaine casainvest.ma (textes, mises en page, schémas, photos, vidéos, dessins, bases de données, marques, logos, documents téléchargeables, etc.) sont protégés en tant que droit d'auteur et la propriété intellectuelle. Ils sont la propriété exclusive du CRI Casablanca-Settat. A ce titre, sauf autorisation préalable et expresse du CRI Casablanca-Settat, toute reproduction, représentation, diffusion, adaptation, stockage, modification partielle ou intégrale de tout élément composant le portail casainvest.ma et ses plateformes digitales, par quelque moyen que ce soit, est interdite sous peine de poursuites judiciaires. De manière générale, l’utilisateur s'engage notamment à : • Respecter les droits de propriété intellectuelle, • Ne pas recopier tout ou partie de ses plateformes digitales (e-services) sur un autre site ou un réseau interne d'entreprise ou sur tout autre support, • Prendre les mesures nécessaires sur le plan technique pour éviter tout piratage des Contenus ou utilisation illicite ou contraire aux présentes CUG sous quelque forme que ce soit, par son personnel, • Informer Le CRI Casablanca-Settat dès la connaissance d'un piratage et en particulier de toute utilisation illicite ou non-contractuelle des Contenus à l'aide de ses codes d'accès ou de ses outils de travail. ARTICLE 9 : Liens hypertextes Les domaines vers lesquels mènent les liens hypertextes présents sur l’application n’engagent pas la responsabilité de l’Éditeur de l’application, qui n’a pas de contrôle sur ces liens. Il est possible pour un tiers de créer un lien vers une page de l’application sans autorisation expresse de l’éditeur. ARTICLE 10 : Évolution des conditions générales d’utilisation Le CRI Casablanca-Settat se réserve le droit de modifier les clauses de ces conditions générales d’utilisation à tout moment et sans justification. ARTICLE 11 : Liens vers d’autres sites Le portail web www.casainvest.ma contient de liens vers d’autres sites web relevant d’autres organismes, et ce à des fins d’information et de complémentarité de données. Le CRI de Casablanca-Settat décline sa responsabilité par rapport à ces contenus. La connexion à un autre site - à travers un lien hypertexte- relève du choix personnel de l’utilisateur et est opéré sous sa responsabilité exclusive. ARTICLE 12 : Google Analytics et vie privée Ce site utilise Google Analytics, un service d'analyse de sites web fourni par Google Inc. Cet outil utilise des cookies, qui sont des fichiers texte placés sur l’ordinateur de l’internaute, pour analyser l'utilisation du site par ses utilisateurs. Les données générées par les cookies seront transmises et stockées par Google. Google n’utilise ces données que dans le but d'évaluer l’expérience de l’utilisation du site. Les données collectées et traitées sont : la provenance géographique du visiteur, son adresse IP, la date de sa visite, la durée de sa visite, les pages consultées ainsi que l’enchaînement des pages. Google Analytics saisit les informations anonymement. Les statistiques du site ne contiennent pas d'indications personnelles relatives aux visiteurs. ARTICLE 13 : Sécurité informatique Afin de garantir la sécurité des informations du site web, le CRI Casablanca-Settat a mis en place un dispositif de sécurité permettant de protéger dans la mesure du possible, les données qu’il contient contre toute perte ou intrusion abusive visant à l’endommager. Les présentes conditions générales d’utilisation sont régies par le Droit Marocain. ARTICLE 14 : Dispositions diverses Si l'une des dispositions des présentes CU était déclarée nulle ou inapplicable en application d'une loi, d'un règlement ou à la suite d'une décision de justice devenue définitive, elle serait réputée non écrite et les autres dispositions resteraient en vigueur. Les relations contractuelles entre Le CRICS et l’utilisateur sont régis par les seules dispositions des présentes CU. ARTICLE 15 : Attribution de compétence Le Contrat est soumis au droit marocain. Toutes contestations pouvant naître à l’occasion de l’application ou l’interprétation des présentes, attribution de compétence est donnée au tribunal administratif de Casablanca.",
+        "anchorId": "884cdb6d71e75ea12515e0a3d0baf4b11d6cc139d77a6def01b7c0512854c899"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "884cdb6d71e75ea12515e0a3d0baf4b11d6cc139d77a6def01b7c0512854c899",
+      "locator": "html:article:47111",
+      "start": 0,
+      "end": 14024,
+      "quoteHash": "8505d541352ee1de0c8d4aa5711821a4a8e06c228fb4e8fabab68a1cf6a40fc1",
+      "rawContentHash": "323909e21fd24a8aca48956ca7e35dd27fc7163092c2323fea18e1d56bbb5c36"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.casainvest.ma/fr/mentions-l%C3%A9galesCRICS#main-content",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/cri-casablanca-settat/lettre-royale",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/qui-sommes-nous/mot-du-directeur-g%C3%A9n%C3%A9ral",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/cri-casablanca-settat/vision-valeurs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/qui-sommes-nous/nos-missions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/qui-sommes-nous/gouvernance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/qui-sommes-nous/gouvernance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/organigramme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/partenaires",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/cri-casablanca-settat/lettre-royale",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/qui-sommes-nous/mot-du-directeur-g%C3%A9n%C3%A9ral",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/cri-casablanca-settat/vision-valeurs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/qui-sommes-nous/nos-missions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/qui-sommes-nous/gouvernance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/qui-sommes-nous/gouvernance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/organigramme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/qui-sommes-nous/gouvernance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/organigramme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/partenaires",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/r%C3%A9gion-de-casablanca-settat/les-10-raisons-dinvestir-%C3%A0-casablanca-settat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/secteurs-d-activites",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/r%C3%A9gion-de-casablanca-settat/plan-de-d%C3%A9veloppement-r%C3%A9gional",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-provinces",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-et-provinces/mohammedia",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/nouaceur",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/mediouna",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/settat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/berrechid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/benslimane",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/el-jadida",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/sidi-bennour",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/casablanca",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/projets",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/r%C3%A9gion-de-casablanca-settat/les-10-raisons-dinvestir-%C3%A0-casablanca-settat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/secteurs-d-activites",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/r%C3%A9gion-de-casablanca-settat/plan-de-d%C3%A9veloppement-r%C3%A9gional",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-provinces",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-et-provinces/mohammedia",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/nouaceur",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/mediouna",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/settat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/berrechid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/benslimane",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/el-jadida",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/sidi-bennour",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/casablanca",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-et-provinces/mohammedia",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/nouaceur",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/mediouna",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/settat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/berrechid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/benslimane",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/el-jadida",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/sidi-bennour",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-region/prefectures-provinces/casablanca",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/projets",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/foncier",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/financement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/fiscalit%C3%A9",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/ressources-humaines",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/formalit%C3%A9s-incitations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/d%C3%A9marches-de-cr%C3%A9ation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/cr%C3%A9er-son-entreprise/parcours-de-l%E2%80%99entrepreneur",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/d%C3%A9marches-de-cr%C3%A9ation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/cr%C3%A9er-son-entreprise/bo%C3%AEte-%C3%A0-outils",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/node/346",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/foncier",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/financement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/fiscalit%C3%A9",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/ressources-humaines",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/formalit%C3%A9s-incitations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/d%C3%A9marches-de-cr%C3%A9ation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/cr%C3%A9er-son-entreprise/parcours-de-l%E2%80%99entrepreneur",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/d%C3%A9marches-de-cr%C3%A9ation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/cr%C3%A9er-son-entreprise/bo%C3%AEte-%C3%A0-outils",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/node/346",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/investir-dans-la-r%C3%A9gion/cr%C3%A9er-son-entreprise/parcours-de-l%E2%80%99entrepreneur",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/d%C3%A9marches-de-cr%C3%A9ation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/cr%C3%A9er-son-entreprise/bo%C3%AEte-%C3%A0-outils",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/node/346",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/charte-de-l%E2%80%99investissement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/e-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/marocains-du-monde",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/qimam",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/temoignages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/faq",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/rapports",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/actualites",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/evenements",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/appels",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/bureau-dordre-electronique",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/espace-presse",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/contact",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://e-reclamation.casainvest.ma/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/mentions-l%C3%A9galesCRICS",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/en/mentions-l%C3%A9galesCRICS",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/ar/%D8%A7%D9%84%D8%A5%D8%B4%D8%B9%D8%A7%D8%B1%D8%A7%D8%AA_%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A%D8%A9",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/tf/node/484",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/CRICASABLANCASETTAT/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCE_Zqcct06zmn1ablqJcrOQ",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.linkedin.com/company/centre-r-gional-d%27investissement-du-grand-casablanca-cri-/?originalSubdomain=fr",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/qui-sommes-nous/nos-missions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.qimam.ma/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-provinces",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/secteurs-d-activites",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://cri-accompagnement.casainvest.ma/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/espace-presse",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/appels",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/faq",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.casainvest.ma/fr/mentions-l%C3%A9galesCRICS",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "b4c4f6a976a8704bfa5bfe20f1d5ec89e1ee02c26b0adbed966b556157bd63b5"
+}

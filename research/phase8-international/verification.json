@@ -1,0 +1,179 @@
+{
+  "phase": 8,
+  "branch": "hackathon/international-runtime",
+  "preservedPhase7": "1567627c93f9198f6d759bd2eed10f0fd26ebc9c",
+  "checkpointPolicy": "LOCAL_COMMIT_ONLY_NO_PUSH",
+  "baseline": {
+    "initialPassed": 358,
+    "initialFailed": 1,
+    "reason": "Obsolete pre-sanitization Phase 5 Git SHA in test only",
+    "replacementSanitizedPhase5": "d5672109b4ba6010bc62473bfe0ca36e4e3f79d7",
+    "repairedPassed": 359,
+    "priorCheckpointsRewritten": false
+  },
+  "regression": {
+    "command": "npm test",
+    "tests": 396,
+    "passed": 396,
+    "failed": 0,
+    "suites": 28,
+    "newChecks": 37,
+    "routineNetwork": "FIXTURES_ONLY_LOOPBACK_ALLOWED",
+    "liveCalls": 0
+  },
+  "locales": [
+    "en",
+    "id-ID",
+    "en-AU",
+    "en-SG",
+    "en-GB"
+  ],
+  "language": {
+    "canonical": "en",
+    "defaultProvider": "local-dictionary",
+    "externalProvider": "Explicit injected extension only; no mandatory live translation",
+    "cacheKey": "locale/provider/version/stringKey/sourceHash",
+    "versionedPacks": true,
+    "invalidCacheFallback": "VALIDATED_LOCAL_ASSETS",
+    "missingTranslationFallback": "CANONICAL_ENGLISH",
+    "preferencesIndependentOfFinancialProfile": true
+  },
+  "currencies": {
+    "roles": [
+      "FUNCTIONAL",
+      "TRANSACTION",
+      "DOCUMENT",
+      "REPORTING"
+    ],
+    "originalRetained": true,
+    "reportingConversion": "REPORTING_CONVERSION_REQUIRED"
+  },
+  "fx": {
+    "provider": "frankfurter-v2",
+    "testProvider": "DeterministicFxProvider",
+    "cacheKey": "provider/base/quote/date",
+    "datePolicy": "EXACT_ECONOMIC_DATE_NO_CARRY_OR_LATEST_FALLBACK",
+    "precision": "Decimal string, BigInt rational, Money minor units",
+    "rounding": "HALF_UP_AT_FUNCTIONAL_MINOR_UNIT",
+    "humanQuoteApprovalThenTransactionConfirmation": true,
+    "approvalBoundToCandidateAndWorkspace": true,
+    "persistedRateAndApprovalReplayedWithoutNetwork": true,
+    "failureStatus": "FX_REQUIRED",
+    "nativeSameCurrencyUnaffected": true
+  },
+  "live": {
+    "fx": {
+      "evidence": "live-fx.json",
+      "passed": true,
+      "requests": 1,
+      "base": "SGD",
+      "quote": "IDR",
+      "date": "2026-06-01",
+      "rate": "13973",
+      "latencyMs": 785
+    },
+    "multilingual": {
+      "evidence": "live-multilingual.json",
+      "passed": true,
+      "requests": 2,
+      "locale": "id-ID",
+      "nationality": "AU",
+      "businessWorkLocation": "ID",
+      "functionalCurrency": null,
+      "latencyMs": 4409,
+      "inputTokens": 1280,
+      "outputTokens": 775,
+      "totalTokens": 2055,
+      "reasoningTokensWithinOutput": 500
+    }
+  },
+  "coreIntegrity": {
+    "comparedAgainst": "1567627c93f9198f6d759bd2eed10f0fd26ebc9c",
+    "unchanged": [
+      "src/domain",
+      "src/accounting",
+      "src/tax",
+      "src/app/verticalSlice.js"
+    ],
+    "newTaxRules": false,
+    "newDependencies": false
+  },
+  "security": {
+    "privateConfiguredCredentialComparison": true,
+    "workingFilesScannedBeforeManifest": 412,
+    "knownCredentialMatches": 0,
+    "unresolvedCredentials": 0,
+    "workingSyntheticFixtureMatches": 15,
+    "environmentTracked": false,
+    "envIgnored": true,
+    "committedLogs": [],
+    "reachableHistoryBeforeCommit": {
+      "blobs": 535,
+      "commits": 74,
+      "unresolvedCredentials": 0
+    },
+    "postCommitHistoryScanRequired": true,
+    "credentialsRecorded": false
+  },
+  "preservedRefs": {
+    "refs/heads/hackathon/country-pack-fabric": "729e6317c627d0c152573fec5131733fc34506f2",
+    "refs/heads/hackathon/document-intake-ocr": "d5672109b4ba6010bc62473bfe0ca36e4e3f79d7",
+    "refs/heads/hackathon/freelancer-umkm-packs": "4bd0096d2395f0dc81b0dbbfca578bf38967fd69",
+    "refs/heads/hackathon/live-muse-runtime": "1567627c93f9198f6d759bd2eed10f0fd26ebc9c",
+    "refs/heads/hackathon/universal-intake": "a850eb107cd41ecf17dab865a3bfe4725fc351c8",
+    "refs/heads/hackathon/universal-profiling-country-packs": "46c159df79f2c160e59e42fc00e4626c3480043c",
+    "refs/heads/hackathon/universal-tax-engine": "9b6ef031f231de3c8cdfcf62f79bfc8848dbf0de",
+    "refs/heads/main": "d6ce3b0c586761cd9221c613c569fdc2644c504a",
+    "refs/remotes/origin/HEAD": "729e6317c627d0c152573fec5131733fc34506f2",
+    "refs/remotes/origin/hackathon/country-pack-fabric": "729e6317c627d0c152573fec5131733fc34506f2",
+    "refs/remotes/origin/hackathon/document-intake-ocr": "d5672109b4ba6010bc62473bfe0ca36e4e3f79d7",
+    "refs/remotes/origin/hackathon/freelancer-umkm-packs": "4bd0096d2395f0dc81b0dbbfca578bf38967fd69",
+    "refs/remotes/origin/hackathon/live-muse-runtime": "1567627c93f9198f6d759bd2eed10f0fd26ebc9c",
+    "refs/remotes/origin/hackathon/universal-intake": "a850eb107cd41ecf17dab865a3bfe4725fc351c8",
+    "refs/remotes/origin/hackathon/universal-tax-engine": "9b6ef031f231de3c8cdfcf62f79bfc8848dbf0de"
+  },
+  "remainingGaps": [
+    "Reporting currency conversion is explicit pending status",
+    "Foreign multi-line journals preserve evidence but cannot post through FX",
+    "Exact date requirement rejects provider carry-back dates on holidays/weekends",
+    "Currencies restricted to existing registry; no crypto",
+    "English regional variants share English dictionary",
+    "Optional external translation service is not configured",
+    "Canonical technical status and validation identifiers remain untranslated",
+    "No revaluation, consolidation, hedging or enterprise FX accounting"
+  ],
+  "filesChanged": [
+    ".env.example",
+    "README.md",
+    "docs/PHASE8-INTERNATIONAL-RUNTIME.md",
+    "package.json",
+    "public/app.js",
+    "public/i18n/en.json",
+    "public/i18n/id.json",
+    "public/index.html",
+    "public/locale.js",
+    "research/phase8-international/live-fx.json",
+    "research/phase8-international/live-multilingual.json",
+    "research/phase8-international/verification.json",
+    "scripts/international-smoke.js",
+    "scripts/test.js",
+    "src/ai/museContext.js",
+    "src/ai/museContracts.js",
+    "src/ai/museLanguage.js",
+    "src/ai/museRuntime.js",
+    "src/fx/frankfurter.js",
+    "src/fx/rates.js",
+    "src/i18n/languagePacks.js",
+    "src/i18n/languages.js",
+    "src/i18n/strings.js",
+    "src/intake/accountingBoundary.js",
+    "src/intake/canonical.js",
+    "src/intake/service.js",
+    "src/web/api.js",
+    "src/web/server.js",
+    "src/web/store.js",
+    "test/international-runtime.test.js",
+    "test/universal-intake.test.js",
+    "test/web-ui-contract.test.js"
+  ]
+}

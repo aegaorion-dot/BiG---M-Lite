@@ -1,0 +1,254 @@
+{
+  "success": true,
+  "syntheticOnly": true,
+  "locale": "ar-MA",
+  "question": "شحال خاصني نخلص فالضريبة؟",
+  "answer": {
+    "status": "MUSE_UNDERSTOOD",
+    "provider": "meta",
+    "model": "muse-spark-1.3",
+    "contextHash": "4304a0b09e2c38654922314a3c21dd7c15b58478428f6042b70610dd69d96561",
+    "sections": [
+      {
+        "kind": "CALCULATED_RESULT",
+        "facts": [
+          {
+            "id": "scope.tax",
+            "kind": "CALCULATED_RESULT",
+            "value": {
+              "status": "CALCULATED",
+              "taxPeriod": {
+                "periodStart": "2025-10-01",
+                "periodEnd": "2025-10-31"
+              },
+              "entityName": "شركة لومبوك التجريبية",
+              "grossIncome": {
+                "amountMinor": "150000000",
+                "currency": "IDR"
+              },
+              "supportedDeductions": {
+                "amountMinor": "0",
+                "currency": "IDR"
+              },
+              "taxableBase": {
+                "amountMinor": "150000000",
+                "currency": "IDR"
+              },
+              "rate": {
+                "numerator": "1",
+                "denominator": "200"
+              },
+              "grossTax": {
+                "amountMinor": "750000",
+                "currency": "IDR"
+              },
+              "withholdingOrCredits": {
+                "amountMinor": "0",
+                "currency": "IDR"
+              },
+              "netTaxPayable": {
+                "amountMinor": "750000",
+                "currency": "IDR"
+              },
+              "ruleIds": [
+                "ID_PP55_PT_MONTHLY_2025"
+              ],
+              "evidenceIds": [
+                "3ba9897eab82c494d0099d22d06e415236f5d8ac3c830b01dacb9c39332ec0e7",
+                "8ff72e204874c3fd53625aa378d5ef9988a03e496651ca3af8ffcf9359c00746",
+                "c59d03b7b9f0827927d5418143841d609361cc464b3f1e810a1f41912a29cd7c"
+              ],
+              "effectivePeriod": {
+                "effectiveFrom": "2025-01-01",
+                "effectiveTo": "2025-12-31"
+              },
+              "calculationVersion": "universal-lite-tax/1;ID_PP55_PT_2025/1",
+              "otherScopes": "REVIEW_REQUIRED"
+            },
+            "display": "ضريبة الشركة على 2025-10-01 / 2025-10-31: الأساس ‏150.000.000 IDR فالنسبة 1/200 كيعطي ‏750.000 IDR؛ الاقتطاع والرصيد ‏0 IDR؛ الباقي للخلاص ‏750.000 IDR. القاعدة ID_PP55_PT_MONTHLY_2025؛ الدليل الرسمي https://www.pajak.go.id/id/peraturan/penyesuaian-pengaturan-di-bidang-pajak-penghasilan, https://www.pajak.go.id/id/peraturan/harmonisasi-peraturan-perpajakan. الضرائب الشخصية الأخرى باقية للمراجعة."
+          }
+        ],
+        "explanation": null
+      },
+      {
+        "kind": "MISSING_INFORMATION",
+        "facts": [
+          {
+            "id": "scope.residence",
+            "kind": "MISSING_INFORMATION",
+            "value": {
+              "start": "2025-01-01",
+              "endExclusive": "2025-11-01",
+              "convention": "ENTRY_INCLUSIVE_EXIT_EXCLUSIVE_CALENDAR_DAYS_NOT_LEGAL_RESIDENCE_TEST",
+              "byCountry": {
+                "ID": 183,
+                "AE": 121
+              },
+              "taxResidence": null,
+              "status": "REVIEW_REQUIRED"
+            },
+            "display": "ما نقدرش نحكم أنك مقيم ضريبي فإندونيسيا. من 2025-01-01 حتى قبل 2025-11-01 سجلنا 183 يوم فإندونيسيا. الفترات المصرح بها: إندونيسيا: 2025-01-01 / 2025-04-01; الإمارات العربية المتحدة: 2025-04-01 / 2025-07-31; إندونيسيا: 2025-07-31 / 2025-11-01. الحساب شامل يوم الدخول وما شاملش يوم الخروج؛ هادي طريقة عرض تقويمية ماشي قاعدة قانونية. الإقامة الضريبية خاصها وقائع وقواعد معتمدة ومراجعة."
+          },
+          {
+            "id": "scope.blockers",
+            "kind": "MISSING_INFORMATION",
+            "value": {
+              "missingCoverage": [
+                "AE",
+                "GB",
+                "ID",
+                "MA"
+              ],
+              "reviewItems": [
+                {
+                  "candidateId": "candidate-fd9554a133deb614e82e4d74213a12492a2958f7c831f028ea885ea6fdab2bf2",
+                  "kind": "MIXED_USE_REVIEW_REQUIRED",
+                  "reason": "راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة.",
+                  "description": "الماء والضو ديال الفيلا فالاستعمال الشخصي والكراء",
+                  "allocationPercent": null
+                },
+                {
+                  "candidateId": "candidate-d24570df63b13f3485857ad08cd65093c87a097cf8fb7342147482c4e47c5b80",
+                  "kind": "MIXED_USE_REVIEW_REQUIRED",
+                  "reason": "راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة.",
+                  "description": "أجرة حارس الدار والتدبير اليومي للفيلا، كاين استعمال للكراء واستعمال شخصي",
+                  "allocationPercent": null
+                },
+                {
+                  "candidateId": "candidate-d24570df63b13f3485857ad08cd65093c87a097cf8fb7342147482c4e47c5b80",
+                  "kind": "PAYROLL_TAX_REVIEW_REQUIRED",
+                  "reason": "راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة."
+                },
+                {
+                  "candidateId": "candidate-a6763340c3f4bde1861eb250bfc456d1e69954186efbd611895f7214b08cd3e3",
+                  "kind": "MIXED_USE_REVIEW_REQUIRED",
+                  "reason": "راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة.",
+                  "description": "أجرة الجنان والحراسة ديال العقار كامل، بلا نسبة توزيع معتمدة",
+                  "allocationPercent": null
+                },
+                {
+                  "candidateId": "candidate-96e63a70f8cda015c89967c67adfbb5fdd4d45bbf5d8f060762e1ae69c03f5a2",
+                  "kind": "MIXED_USE_REVIEW_REQUIRED",
+                  "reason": "راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة.",
+                  "description": "إصلاحات العقار المستعمل شخصيا وللكراء، التوزيع باقي للمراجعة",
+                  "allocationPercent": null
+                },
+                {
+                  "candidateId": "candidate-1fd8fe505bbf85ebc2602258e72518819fb8024d3e9950aa1839e25215677995",
+                  "kind": "MIXED_USE_REVIEW_REQUIRED",
+                  "reason": "راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة.",
+                  "description": "صيانة الفيلا المستعملة شخصيا وللكراء",
+                  "allocationPercent": null
+                },
+                {
+                  "kind": "MIXED_USE_REVIEW_REQUIRED",
+                  "reason": "MIXED",
+                  "allocationPercent": null
+                },
+                {
+                  "candidateId": "candidate-176ce39cdf6a3ba3ffc031658d7746c12d0975e5858e201841ee6b8b43629790",
+                  "kind": "PAYROLL_TAX_REVIEW_REQUIRED",
+                  "reason": "راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة."
+                },
+                {
+                  "candidateId": "candidate-cd0cf8c396a5f5886d56a19d761cd1fc666bbb56d68deefe1ffe74c757b93082",
+                  "kind": "ASSET_POLICY_REVIEW_REQUIRED",
+                  "reason": "راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة.",
+                  "description": "تهيئة محل الجيم",
+                  "allocationPercent": null
+                },
+                {
+                  "candidateId": "candidate-901d3254ef5c82a2783be88b69c441ea0af5eabdc1fe4af58f64c4f78518ec00",
+                  "kind": "ASSET_POLICY_REVIEW_REQUIRED",
+                  "reason": "راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة.",
+                  "description": "معدات الجيم",
+                  "allocationPercent": null
+                },
+                {
+                  "candidateId": "candidate-3aaa8a71549fceca2dd080caef8fa6912a2420b274b5ea8722ce78a59fba544b",
+                  "kind": "ASSET_POLICY_REVIEW_REQUIRED",
+                  "reason": "راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة.",
+                  "description": "أداء مقاول البناء",
+                  "allocationPercent": null
+                },
+                {
+                  "candidateId": "candidate-59e3c239f5e5edbe39c9a94d2cbfed4b67b92cf4747c586a0a1117928fba7227",
+                  "kind": "ASSET_POLICY_REVIEW_REQUIRED",
+                  "reason": "راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة.",
+                  "description": "رخصة قبل الافتتاح، المعالجة باقية للمراجعة",
+                  "allocationPercent": null
+                },
+                {
+                  "candidateId": "candidate-7f97275a239a11b469d6c81d7f16c1c4",
+                  "kind": "MIXED_USE_REVIEW_REQUIRED",
+                  "reason": "شي معدات كتستعمل حتى فالدار، ما كايناش نسبة توزيع معتمدة.",
+                  "description": "معدات متنقلة للجيم باستعمال مختلط مع الدار",
+                  "allocationPercent": null
+                }
+              ]
+            },
+            "display": "ما نقدرش نعطي مبلغ نهائي حيث تغطية القواعد المعتمدة ناقصة للبلدان الإمارات العربية المتحدة, المملكة المتحدة, إندونيسيا, المغرب، والإقامة والمصدر ووثائق الاقتطاع باقيين للمراجعة. خاص حتى توزيع الاستعمال الشخصي والكراء فالفيلا، وسياسة أصول الجيم، ومعالجة الأجور والاتفاقيات. سياقات الاتفاقيات غير بحث، ماشي حق مؤكد أو دليل أن اتفاقية نافذة."
+          }
+        ],
+        "explanation": null
+      }
+    ],
+    "provenance": {
+      "requestId": "366d1f03-9798-41f6-9f71-1596713fd260",
+      "purpose": "contextual-assistant",
+      "provider": "meta",
+      "model": "muse-spark-1.3",
+      "success": true,
+      "parseSuccess": true,
+      "schemaValidationSuccess": true,
+      "fallbackUsed": false,
+      "cacheHit": false,
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 2307,
+        "output_tokens": 277,
+        "total_tokens": 2584,
+        "reasoning_tokens": 212
+      },
+      "estimatedCost": null,
+      "costStatus": "NOT_REPORTED",
+      "at": "2026-10-29T22:39:31.435Z",
+      "responseStatus": "completed",
+      "responseId": "resp_6ae3cb250291f00dc2c840bc",
+      "latencyMs": 2351
+    }
+  },
+  "paidRequests": 1,
+  "requestCeiling": 1,
+  "retries": 0,
+  "regulatoryResearchCalls": 0,
+  "stateUnchanged": true,
+  "metrics": [
+    {
+      "requestId": "366d1f03-9798-41f6-9f71-1596713fd260",
+      "purpose": "contextual-assistant",
+      "provider": "meta",
+      "model": "muse-spark-1.3",
+      "success": true,
+      "parseSuccess": true,
+      "schemaValidationSuccess": true,
+      "fallbackUsed": false,
+      "cacheHit": false,
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 2307,
+        "output_tokens": 277,
+        "total_tokens": 2584,
+        "reasoning_tokens": 212
+      },
+      "estimatedCost": null,
+      "costStatus": "NOT_REPORTED",
+      "at": "2026-10-29T22:39:31.435Z",
+      "responseStatus": "completed",
+      "responseId": "resp_6ae3cb250291f00dc2c840bc",
+      "latencyMs": 2351
+    }
+  ],
+  "credentialsRecorded": false,
+  "at": "2026-10-29T22:39:34.215Z"
+}

@@ -1,0 +1,14 @@
+{
+  "durationSeconds": 180.05,
+  "dimensions": [
+    1600,
+    900
+  ],
+  "framesPerSecond": 10.0,
+  "chapters": 6,
+  "chapterDurationSeconds": 30,
+  "actualProductScreenshots": 3,
+  "continuousScreenRecording": false,
+  "narration": "Stock Windows speech synthesis; no voice imitation",
+  "videoBytes": 3130009
+}

@@ -1,0 +1,129 @@
+[
+  {
+    "run": 1,
+    "at": "2026-10-29T10:22:38.005Z",
+    "success": false,
+    "stage": "onboarding",
+    "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'fallback'\n- 'meta'"
+  },
+  {
+    "run": 2,
+    "at": "2026-10-29T10:23:21.158Z",
+    "success": true,
+    "stage": "onboarding",
+    "timings": {
+      "onboardingMs": 141
+    },
+    "totalMs": 169,
+    "complete": false,
+    "probeOnly": true,
+    "note": "Onboarding-only plumbing probe; excluded from full-journey attempts."
+  },
+  {
+    "run": 3,
+    "at": "2026-10-29T10:53:33.803Z",
+    "success": false,
+    "stage": "financial-state-and-questions",
+    "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ '1800.00'\n- '1800'\n       ^"
+  },
+  {
+    "run": 4,
+    "at": "2026-10-29T10:54:11.449Z",
+    "success": true,
+    "complete": true,
+    "stage": "restart-replay-and-language",
+    "elapsedMs": 6927,
+    "timings": {
+      "onboardingMs": 154,
+      "incomeNormalizationMs": 1599,
+      "statementImportMs": 2108
+    },
+    "error": null
+  },
+  {
+    "run": 5,
+    "at": "2026-10-29T11:04:03.901Z",
+    "success": false,
+    "browser": true,
+    "complete": false,
+    "stage": "onboarding",
+    "elapsedMs": null,
+    "timings": null,
+    "error": "Product onboarding omits home/current/travel roles"
+  },
+  {
+    "run": 6,
+    "at": "2026-10-29T11:07:01.362Z",
+    "success": true,
+    "browser": true,
+    "complete": true,
+    "stage": "restart-replay-and-language",
+    "elapsedMs": 42912,
+    "timings": {
+      "onboardingMs": 5412,
+      "incomeNormalizationMs": 3827,
+      "statementImportMs": 22726
+    },
+    "error": null
+  },
+  {
+    "run": 7,
+    "at": "2026-10-29T11:21:08.279Z",
+    "success": true,
+    "browser": false,
+    "complete": true,
+    "stage": "restart-replay-and-language",
+    "elapsedMs": 7571,
+    "timings": {
+      "onboardingMs": 176,
+      "incomeNormalizationMs": 1597,
+      "statementImportMs": 2111
+    },
+    "error": null
+  },
+  {
+    "run": 8,
+    "at": "2026-10-29T11:25:59.714Z",
+    "success": true,
+    "browser": true,
+    "complete": true,
+    "stage": "restart-replay-and-language",
+    "elapsedMs": 64842,
+    "timings": {
+      "onboardingMs": 7237,
+      "incomeNormalizationMs": 3402,
+      "statementImportMs": 25109
+    },
+    "error": null
+  },
+  {
+    "run": 9,
+    "at": "2026-10-29T11:34:57.521Z",
+    "success": true,
+    "browser": true,
+    "complete": true,
+    "stage": "restart-replay-and-language",
+    "elapsedMs": 57971,
+    "timings": {
+      "onboardingMs": 5425,
+      "incomeNormalizationMs": 3596,
+      "statementImportMs": 18571
+    },
+    "error": null
+  },
+  {
+    "run": 10,
+    "at": "2026-10-29T11:46:52.292Z",
+    "success": true,
+    "browser": true,
+    "complete": true,
+    "stage": "restart-replay-and-language",
+    "elapsedMs": 56961,
+    "timings": {
+      "onboardingMs": 6062,
+      "incomeNormalizationMs": 3496,
+      "statementImportMs": 19091
+    },
+    "error": null
+  }
+]

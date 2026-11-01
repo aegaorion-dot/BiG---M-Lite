@@ -1,94 +1,179 @@
 # BiG-M Lite
 
-Universal business profiling → semantic jurisdiction facts → CountryPack resolution → proposed setup → human confirmation → a personal bookkeeping workspace.
+**Understand the business. Review the rules. Keep reliable books.**
 
-Lite uses Node >=20 and built-in modules. The Money/BigInt, double-entry journal, PostingService, ledger, reversal and audit foundations remain in place.
+BiG-M Lite is a hackathon prototype for freelancers and small businesses working across languages, documents and borders. A business owner can describe what happened, review the proposed facts and transactions, and obtain accounting results from one deterministic financial backbone.
 
-## Run
+Small businesses should not have to translate their lives into accounting software before they can use it. BiG-M separates understanding from authority: Meta Muse Spark interprets conversations and documents; governed content and deterministic resolvers handle applicability; existing engines calculate and record; the user confirms consequential actions.
 
-    npm start
+![Indonesian demo home](research/phase9-demo/screenshots/home-laptop.png)
 
-Open http://localhost:3100. The server binds to loopback. Optional port: BIGM_PORT.
+## Final hackathon checkpoint: Youssef
 
-The CLI loads a local .env without overwriting existing environment variables. State defaults to data/store.json; override with BIGM_DATA_PATH. Runtime data and .env are ignored by Git. Library/test factories use persistPath:null unless a path is explicitly provided.
+The final demonstration follows a Moroccan expat in **Darija (ar-MA)** with employment, household spending, two installments, a mixed-use villa, a cafe and a gym investment. Its consistently dated **October 2025** company example reaches **CALCULATED: IDR 750,000 payable**, from IDR 150,000,000 gross turnover at the governed PP 55/2022 rate of 0.5%. The UI exposes facts, approval, rule, period, official evidence and the deterministic trace. Personal salary/residence/villa/treaty gaps remain separately REVIEW_REQUIRED.
 
-## Meta Muse Spark
+Run npm run test:moroccan:browser for the complete automated product journey, or npm run test:moroccan for its HTTP-contract version. These use synthetic fixtures and mocked model turns. A separate one-request live Muse tax explanation passed in Darija with no retry or state change. No additional regulatory calls are required for rehearsal.
 
-Set these server-side values in .env or the process environment:
+[Three-minute video](docs/submission/BiG-M-Lite-3-minute-demo.mp4), [architecture deck](docs/submission/BiG-M-Lite-Architecture.pptx), [final report](docs/MOROCCAN-EXPAT-E2E.md), [demo instructions](docs/submission/DEMO.md), [submission copy](docs/submission/SUBMISSION.md) and [work disclosure](docs/submission/WORK-DISCLOSURE.md) distinguish completed features, prior work, synthetic data and remaining legal gaps. Adaptive Intelligence/post-training is stopped and inactive. The original Phase 9 fast demo below remains available.
 
-    BIGM_META_API_URL=https://api.meta.ai/v1/responses
-    BIGM_META_API_KEY=your-local-key
-    BIGM_META_MODEL=an-enabled-model-id
+## What works in the demo
 
-Use a model available to your Meta account. The adapter consumes the Responses output envelope, reads assistant output_text, parses JSON and passes candidate facts through deterministic validation. The request supplies the response schema and available capabilities as context.
+The primary persona is an Australian freelancer operating in Bali with Singapore clients. Nationality, work location, registration, tax residence, customer location, UI language and currency remain independent.
 
-Each turn reports providerConfigured, providerUsed, model and fallbackReason. Missing configuration, invalid output or provider failure uses a clearly labeled, limited deterministic fallback. A configured provider does not imply that its answer was used.
+- Indonesian and English UI, with regional English locale support and exact-money Intl formatting.
+- Muse onboarding, profiling, corrections and grounded follow-up questions through the Meta Model API.
+- Local OCR/text extraction for PDF, PNG/JPEG, text and simple statement CSV, followed by candidate interpretation and human review.
+- Conversation, documents, direct entry and generic external imports converge on one existing intake/posting boundary.
+- Original SGD values remain visible alongside explicitly reviewed historical IDR conversion.
+- Business facts, actual missing tax information, candidate CountryPack/TreatyPack governance and recorded reports are visible in the product.
+- Muse explanations select grounded facts and engine results. The model does not author accounting amounts or approve tax law.
 
-No key is sent to the browser. AI cannot approve source content, confirm a configuration, activate a workspace or post entries.
+The prepared synthetic demo posts three real journals: IDR 1,500,000 local revenue, IDR 125,000 receipt expense, and SGD 2,000 revenue converted at the recorded rate of 13,973 IDR/SGD for 2026-06-01. Engine totals are **IDR 29,446,000 revenue**, **IDR 125,000 expenses**, **IDR 29,321,000 net before tax**. Tax remains unresolved rather than displaying zero.
 
-## Tests and one-request live smoke
+## Why Meta Muse Spark
 
-    npm test
+Muse supplies the semantic layer shared by business profiling, document/transaction understanding and contextual explanations. Its structured outputs are validated against stable schemas with quoted evidence. The UI shows **Understood with Meta Muse Spark** only when a successful Meta interpretation actually supplied that result. Offline interpretations and unavailable responses have separate labels.
 
-The routine runner removes inherited API credentials, sets test mode and blocks external fetch requests. Local HTTP tests are allowed. The adapter and automatic provider selection also guard Node test contexts. No paid request belongs in the regression suite.
+Live acceptance evidence is in [research/phase9-demo/live-acceptance.json](research/phase9-demo/live-acceptance.json). Routine tests never call the paid API.
 
-The live smoke is a separate command. It is skipped without explicit opt-in:
+## Architecture
 
-    npm run smoke:meta
+```mermaid
+flowchart LR
+  U[User and business context] --> M[Meta Muse Spark]
+  M --> C[Validated candidate facts]
+  C --> R[Governed packs and resolvers]
+  R --> T[Universal Tax Engine]
+  C --> I[Universal Intake and human confirmation]
+  I --> A[Accounting Engine]
+  A --> P[Recorded reports]
+  T --> E[Grounded Muse explanation]
+  P --> E
+```
 
-To authorize exactly one request in PowerShell, after configuring credentials:
+There is one Accounting Engine and one Universal Tax Engine. CountryPack Fabric supplies governed candidate content, not a new engine for each country. Tax calculation is a separately scoped governed review; bookkeeping can continue while tax is unresolved. The complete maintainable [diagram source](docs/architecture/phase9.mmd) and [technical summary](docs/HACKATHON-TECHNICAL-SUMMARY.md) describe the existing boundaries accurately.
 
-    $env:BIGM_LIVE_SMOKE = '1'
-    npm run smoke:meta
-    Remove-Item Env:BIGM_LIVE_SMOKE
+The permanent Muse-driven configuration pipeline - profile requirements, bounded
+research work orders, evidence-bound CountryPack candidates, human content review
+and engine-calculated estimates from posted records - is documented in
+[Configuration architecture](docs/CONFIGURATION-ARCHITECTURE.md).
 
-There is no automatic retry. The smoke validates candidate extraction; it never activates or posts. Live integration remains unverified until this opt-in check succeeds for the configured account/model.
+## Setup
 
-## Profile and approval contract
+Use Node **20.19 or newer** and npm.
 
-profileState is the single candidate source of truth. Slots retain value, semanticRole, source, supportingQuote, confidence and status. Jurisdiction facts live inside that same state under nine separate bases:
+```powershell
+npm ci
+Copy-Item .env.example .env
+```
 
-ACCOUNT_LOCATION, INCORPORATION, TAX_RESIDENCE, SOURCE, REGISTRATION, BUSINESS_WORK_LOCATION, CUSTOMER_LOCATION, WITHHOLDING and POSSIBLE_PE.
+Keep credentials only in the ignored `.env` or your server environment. Never put a real key in `.env.example`, browser code, fixtures, evidence or a commit. The local environment loader preserves already-configured process variables.
 
-Nationality is a user fact, not a tax jurisdiction. Functional, transaction, reporting and foreign purchase currencies are distinct. FX source remains unknown until supplied. Unknown data is not substituted with a legal or business fact.
+| Variable | Purpose |
+| --- | --- |
+| `BIGM_META_API_URL` | Complete Meta Responses API endpoint, configured server-side |
+| `BIGM_META_API_KEY` | Private server credential; never sent to the browser |
+| `BIGM_META_MODEL` | An enabled Muse Spark model available to your account |
+| `BIGM_MUSE_ENABLED` | Set `0` for deterministic offline behavior |
+| `BIGM_MUSE_MAX_REQUESTS` | Normal server process request ceiling; default 100 |
+| `BIGM_MUSE_TRACE` | Optional developer trace; default off |
+| `BIGM_PORT` | Normal application port; default 3100 |
+| `BIGM_DATA_PATH` | Normal application snapshot; default `data/store.json` |
+| `BIGM_API_TOKEN` | Optional API authorization; API clients send a Bearer token |
+| `BIGM_DEMO_LIVE` | Explicit live Muse opt-in for the isolated demo; default 0 |
+| `BIGM_DEMO_PORT` | Isolated demo port; default 3109 |
 
-Explicit corrections replace candidates; contradictions require clarification. A material change increments profileRevision and invalidates the proposal, validation and confirmation. The active workspace stays unchanged until another confirmation succeeds.
+The demo launcher uses its own snapshot path and ignores `BIGM_DATA_PATH`. It serves synthetic data on loopback without inheriting the normal application API token. Use the normal authenticated API for private user data; the demo is for synthetic fixtures only.
 
-The proposal binds its profile fingerprint, revision, period and CountryPack evaluation to a recursive canonical SHA-256 hash. Activation requires validation and explicit human confirmation of that exact proposal. Optional material pack selection additionally requires explicit packIds; ordinary bookkeeping confirmation does not approve tax content.
+## Run the normal application
 
-One applyActiveConfiguration path builds new immutable runtime objects at activation and restore. Identity, scope, jurisdiction basis, currency, period and modules agree with the active configuration. Changes to currency/jurisdiction after posting require a reviewed migration; Lite does not silently rewrite historical entries.
+```powershell
+npm start
+```
 
-## CountryPack scope
+Open [localhost:3100](http://localhost:3100). The server binds to `127.0.0.1`. Runtime state defaults to `data/store.json` and is ignored by Git. No setup automatically approves a legal rule or treaty benefit.
 
-Jurisdiction metadata for ID, SG, US, AU and GB comes from Original. Metadata support does not mean that executable tax content exists.
+## One user interface
 
-Two substantive Original artifacts are retained as structured reference content:
+BiG-M Lite ships exactly one experience. The server renders the single application shell at `/` (`public/index.html`, `public/app.js`, `public/styles.css`); there is no second UI, no legacy mount and no fallback screen. Business setup, document intake, transaction review, FX approval, posting, reports, tax readiness and settings all live in that one shell and reuse the same HTTP API and One Engine. `/v2/` permanently redirects to `/` so old bookmarks keep working, and `/legacy/` returns 404.
 
-| Pack | Version | Window | Subject | Tax | Rules |
-|---|---:|---|---|---|---:|
-| ID_CIT_REFERENCE | 2 | 2025-01-01 through 2025-12-31 | COMPANY | CIT | 18 |
-| ID_CIT_DETERMINATION_2025 | 2 | 2025-01-01 through 2025-12-31 | COMPANY | CIT | 3 |
+## Repeatable demo
 
-Rule identities, formulas, parameters, review conditions, legal references, version and dates are preserved. Original labels its source material verified; this port does not independently re-certify current law.
+For the shortest reliable product tour:
 
-These artifacts require M3/M5 consumers that Lite intentionally does not implement. They are not executable in Lite, including after source-content review. No 2026 rules or executable SG/US/AU/GB packs are invented.
+```powershell
+npm run demo:prepare
+npm run demo
+```
 
-The resolver checks semantic basis, subject, tax type, complete accounting period, evaluation date, content review, explicit confirmation and consumer capability. Missing content, expired windows, incompatible subjects, retired versions, ambiguous overlaps and composition conflicts stay unresolved. Customer, bank and work location alone never select a tax pack.
+Open [localhost:3109](http://localhost:3109). This starts the prepared offline demo, clearly labelled as synthetic, with three engine-posted transactions and a candidate tax review containing actual missing requirements. The recorded historical FX fixture is labelled; it does not pretend to be a new live rate lookup.
 
-workspaceReady and taxReady are independent. An IDR bookkeeping workspace for a Bali coffee shop may activate while registration or tax settings need review. A 2026 period never runs the imported 2025 rules.
+To start the complete onboarding journey instead:
 
-Legacy JSON packs under src/countrypack/packs remain foundation test/examples. They are not presented as substantive law by the new resolver. The web posting path uses an explicitly neutral bookkeeping template and records no final tax liability.
+```powershell
+# Stop the demo server first.
+npm run demo:reset
+npm run demo
+```
 
-## Persistence and recovery
+Reset replaces only the owned `data/demo/store.json`; it does not delete normal user data. It refuses an unmarked workspace, redirected paths or a running demo server. Sample receipt and Singapore invoice buttons are available only in demo mode. Synthetic scenario inputs are in [demo/journey.json](demo/journey.json).
 
-Snapshots include candidate facts/revision, CountryPack review state, proposal, validation, human confirmation, active profile snapshot, activation history/idempotency, journals, audit, transaction idempotency and period state.
+To make Muse live during the tour, configure the ignored `.env` and explicitly opt in before starting:
 
-Writes use a temporary snapshot followed by rename. Save errors are surfaced; activation/posting roll back their in-memory changes on failure. Restore validates the audit and active confirmation and uses the same runtime application path. Closed periods remain closed.
+```powershell
+$env:BIGM_DEMO_LIVE='1'
+npm run demo
+# After stopping the server:
+Remove-Item Env:BIGM_DEMO_LIVE
+```
 
-Version-1 snapshots retain journals and periods but require setup review and reconfirmation; old auto-confirmed configuration is not silently promoted.
-
-The UI resumes the saved pending question after refresh. It does not claim to recover an unsaved full chat transcript. Reports keep other currencies separate without invented FX conversions.
+The live demo has a **12-request process ceiling and zero automatic retries**. Unchanged model requests use the existing bounded cache. Use the prepared tour for repeated navigation; use a fresh tour only when demonstrating onboarding. See the [rehearsal guide](docs/DEMO-REHEARSAL.md) for the exact story, review steps, expected totals and failure plan.
 
 ## Verification
 
-See docs/IMPLEMENTATION-REPORT.md for completed checks and limitations, and docs/ORIGINAL-PORT.md for source provenance and deliberately excluded enterprise scope.
+```powershell
+npm test
+npm run test:demo
+npm run security:scan
+npm run test:demo:browser
+```
+
+Phase 9 regression: **402 tests passed**, including all 396 Phase 8 tests. Six new tests cover the primary HTTP journey, reset isolation, demo sample security, Meta outage behavior and product interaction contracts. The optional installed-Chromium rehearsal checks all seven primary views at desktop 1440x900 and laptop 1280x800, language switching and a grounded fallback explanation. It needs an installed Chrome/Edge/Chromium; set `BIGM_CHROME_PATH` when auto-detection does not find it. Browser rendering is additional to, and separate from, the standard deterministic test suite.
+
+Controlled live acceptance skips unless explicitly enabled:
+
+```powershell
+$env:BIGM_META_LIVE_TEST='1'
+npm run test:demo:live
+Remove-Item Env:BIGM_META_LIVE_TEST
+```
+
+This command uses synthetic data and at most five Meta requests with zero retries. It is not part of `npm test`. The [Phase 8 FX command](docs/PHASE8-INTERNATIONAL-RUNTIME.md) remains the separate explicit public-provider verification; the demo itself uses the captured rate fixture.
+
+## Governance, security and limits
+
+Muse cannot approve rules, activate a workspace, bypass confirmation or directly post journals. Model/document/provider content is untrusted input. Exact-money calculation, validation, closed periods, mappings, duplicates, review hashes, historical rate persistence and idempotency remain deterministic. Optional trace contains allowed facts and provenance, never credentials or system prompts. Research acquisition continues to use the existing sanitizer.
+
+The architecture supports governed CountryPacks for multiple jurisdictions; this prototype does **not** claim all-country support or automatic tax compliance. Existing real-source candidates have specific scopes and periods and are not automatically approved. Treaty research candidates do not establish relief. The UI reports tax readiness, not a fabricated liability; deeper governed calculation/review workflows remain documented in the Phase 3/4 reports.
+
+Reporting-currency conversion, foreign multi-line journal conversion, unpaid invoice/accrual workflows, revaluation, consolidation, payroll and inventory remain outside the completed demo scope. Exact-date FX policy rejects unavailable/carry-back dates. OCR quality and live Meta availability can vary; original evidence, review and clearly labelled fallback remain available. The web UI is a local prototype, not a deployed multi-user service.
+
+## Reports and submission material
+
+- [Phase 9 completion and verification](docs/PHASE9-DEMO-SUBMISSION.md)
+- [Demo rehearsal and fragile steps](docs/DEMO-REHEARSAL.md)
+- [Technical summary](docs/HACKATHON-TECHNICAL-SUMMARY.md)
+- [Architecture source](docs/architecture/phase9.mmd)
+- [Browser rehearsal evidence](research/phase9-demo/browser-rehearsal.json)
+- [Phase 8 international runtime](docs/PHASE8-INTERNATIONAL-RUNTIME.md)
+- Earlier details: [Phase 5 intake/OCR](docs/PHASE5-DOCUMENT-INTAKE.md), [Phase 6 convergence](docs/PHASE6-UNIVERSAL-INTAKE.md), [Phase 7 Muse](docs/PHASE7-MUSE-RUNTIME.md), [Phase 3 tax contracts](docs/PHASE3-TAX-CONTRACTS.md), [Phase 4 governed packs](docs/PHASE4-PACKS-REPORT.md).
+
+Submission materials follow the supplied Stage One requirements: demonstrate the product and make Meta API use observable. The official hackathon theme, full criteria and submission form were not supplied, so eligibility, scoring claims and final submission remain pending. This checkpoint is committed locally only; no automatic push or submission occurs.
+
+## Global freelancer acceptance journey
+
+The October 2026 synthetic journey exercises the final product with 15 international engagements, mixed-use card spending, advances, contractual client balances, reviewed historical FX and grounded Q&A. Dashboard/reports distinguish wages, business income, advances, personal/mixed purchases, card debt and provisional business results. Mixed allocation, asset policy, tax residence, withholding and unsupported CountryPack/TreatyPack applicability remain explicit review items.
+
+Run `npm run test:global:freelancer` for the public HTTP journey, or `npm run test:global:browser` for installed-Chromium interaction and fresh-process restart/replay. Routine tests use mocked Muse transport and dated synthetic FX; no paid calls. See [the complete acceptance report](docs/GLOBAL-FREELANCER-E2E.md) for results, reruns, live evidence, security and remaining governance work. The original demo quick start remains available.
+
+The Moroccan expat work includes a bounded live regulatory-research pilot with structured briefs, exact evidence, candidate-only governance and offline replay. The [research report](docs/MUSE-REGULATORY-RESEARCH.md) records the final four-request result and unresolved residence checks; it does not claim a completed Moroccan tax result.

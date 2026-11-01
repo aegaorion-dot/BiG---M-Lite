@@ -1,0 +1,1524 @@
+{
+  "schemaVersion": "bigm-provisional-pack/1",
+  "note": "Evidence-bound candidate produced by Meta Muse from official National Tax Agency Japan sources. Not approved law. Evaluated only inside the provisional estimate path. | Bracket table extended for provisional estimation on 2026-11-01; rules remain CANDIDATE and unapproved.",
+  "candidateId": "bb280995c512f734d730d3ef5ed5c11ecdd8822abd45914cfdafab58822fe3ce",
+  "contentHash": "fdfa006d7120fa1f992b0f5c1b6dc5881d108e86b61759da20de3146dea11c13",
+  "jurisdictionCode": "JP",
+  "currency": "JPY",
+  "packId": "JP_INCOME_TAX_INDIVIDUAL_BUSINESS_40PCT",
+  "version": 1,
+  "rules": [
+    {
+      "amountFormula": {
+        "op": "ADD",
+        "args": [
+          {
+            "op": "SUBTRACT",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "INPUT",
+                    "name": "TAX_BASE"
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "RATE"
+                  }
+                ]
+              },
+              {
+                "op": "PARAMETER",
+                "code": "FIXED_DEDUCTION"
+              }
+            ]
+          },
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "MULTIPLY",
+                        "args": [
+                          {
+                            "op": "INPUT",
+                            "name": "TAX_BASE"
+                          },
+                          {
+                            "op": "PARAMETER",
+                            "code": "RATE"
+                          }
+                        ]
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "FIXED_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "SURTAX_RATE"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          }
+        ]
+      },
+      "applicabilityPredicate": {
+        "op": "AND",
+        "args": [
+          {
+            "op": "GTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_LOW"
+              }
+            ]
+          },
+          {
+            "op": "LTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_HIGH"
+              }
+            ]
+          }
+        ]
+      },
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "evidenceRefs": [
+        {
+          "evidenceIndex": 0,
+          "note": "NTA No.2260 rate table: 5% bracket, no deduction; surtax 2.1% per note 2"
+        }
+      ],
+      "finalRounding": {
+        "mode": "DOWN",
+        "precision": 0
+      },
+      "incomeOrEventType": "BUSINESS_INCOME",
+      "parameters": {
+        "BASIC_DEDUCTION": {
+          "value": "580000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_HIGH": {
+          "value": "1950000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_LOW": {
+          "value": "0",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_HIGH": {
+          "value": "23500000",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_LOW": {
+          "value": "6550000",
+          "valueType": "NUMBER"
+        },
+        "FIXED_DEDUCTION": {
+          "value": "0",
+          "valueType": "NUMBER"
+        },
+        "RATE": {
+          "value": "0.05",
+          "valueType": "NUMBER"
+        },
+        "SURTAX_RATE": {
+          "value": "0.021",
+          "valueType": "NUMBER"
+        }
+      },
+      "rateDefinition": {
+        "kind": "FORMULA_DERIVED"
+      },
+      "requiredFacts": {
+        "ANNUAL_NET_BUSINESS_INCOME": "MONEY"
+      },
+      "ruleId": "JP_IT_BUS_0_1950K_5PCT",
+      "subjectTypes": [
+        "INDIVIDUAL"
+      ],
+      "taxBaseFormula": {
+        "op": "MULTIPLY",
+        "args": [
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "DIVIDE",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "INPUT",
+                        "name": "ANNUAL_NET_BUSINESS_INCOME"
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "BASIC_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "LITERAL",
+                    "valueType": "NUMBER",
+                    "value": "1000"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          },
+          {
+            "op": "LITERAL",
+            "valueType": "NUMBER",
+            "value": "1000"
+          }
+        ]
+      },
+      "taxType": "INCOME_TAX",
+      "treatyRelevant": false
+    },
+    {
+      "amountFormula": {
+        "op": "ADD",
+        "args": [
+          {
+            "op": "SUBTRACT",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "INPUT",
+                    "name": "TAX_BASE"
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "RATE"
+                  }
+                ]
+              },
+              {
+                "op": "PARAMETER",
+                "code": "FIXED_DEDUCTION"
+              }
+            ]
+          },
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "MULTIPLY",
+                        "args": [
+                          {
+                            "op": "INPUT",
+                            "name": "TAX_BASE"
+                          },
+                          {
+                            "op": "PARAMETER",
+                            "code": "RATE"
+                          }
+                        ]
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "FIXED_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "SURTAX_RATE"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          }
+        ]
+      },
+      "applicabilityPredicate": {
+        "op": "AND",
+        "args": [
+          {
+            "op": "GTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_LOW"
+              }
+            ]
+          },
+          {
+            "op": "LTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_HIGH"
+              }
+            ]
+          }
+        ]
+      },
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "evidenceRefs": [
+        {
+          "evidenceIndex": 0,
+          "note": "NTA No.2260 rate table: 10% with 97,500 JPY deduction; surtax 2.1% per note 2"
+        }
+      ],
+      "finalRounding": {
+        "mode": "DOWN",
+        "precision": 0
+      },
+      "incomeOrEventType": "BUSINESS_INCOME",
+      "parameters": {
+        "BASIC_DEDUCTION": {
+          "value": "580000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_HIGH": {
+          "value": "3299999",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_LOW": {
+          "value": "1950001",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_HIGH": {
+          "value": "23500000",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_LOW": {
+          "value": "6550000",
+          "valueType": "NUMBER"
+        },
+        "FIXED_DEDUCTION": {
+          "value": "97500",
+          "valueType": "NUMBER"
+        },
+        "RATE": {
+          "value": "0.1",
+          "valueType": "NUMBER"
+        },
+        "SURTAX_RATE": {
+          "value": "0.021",
+          "valueType": "NUMBER"
+        }
+      },
+      "rateDefinition": {
+        "kind": "FORMULA_DERIVED"
+      },
+      "requiredFacts": {
+        "ANNUAL_NET_BUSINESS_INCOME": "MONEY"
+      },
+      "ruleId": "JP_IT_BUS_1950K_3299K_10PCT",
+      "subjectTypes": [
+        "INDIVIDUAL"
+      ],
+      "taxBaseFormula": {
+        "op": "MULTIPLY",
+        "args": [
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "DIVIDE",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "INPUT",
+                        "name": "ANNUAL_NET_BUSINESS_INCOME"
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "BASIC_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "LITERAL",
+                    "valueType": "NUMBER",
+                    "value": "1000"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          },
+          {
+            "op": "LITERAL",
+            "valueType": "NUMBER",
+            "value": "1000"
+          }
+        ]
+      },
+      "taxType": "INCOME_TAX",
+      "treatyRelevant": false
+    },
+    {
+      "amountFormula": {
+        "op": "ADD",
+        "args": [
+          {
+            "op": "SUBTRACT",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "INPUT",
+                    "name": "TAX_BASE"
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "RATE"
+                  }
+                ]
+              },
+              {
+                "op": "PARAMETER",
+                "code": "FIXED_DEDUCTION"
+              }
+            ]
+          },
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "MULTIPLY",
+                        "args": [
+                          {
+                            "op": "INPUT",
+                            "name": "TAX_BASE"
+                          },
+                          {
+                            "op": "PARAMETER",
+                            "code": "RATE"
+                          }
+                        ]
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "FIXED_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "SURTAX_RATE"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          }
+        ]
+      },
+      "applicabilityPredicate": {
+        "op": "AND",
+        "args": [
+          {
+            "op": "GTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_LOW"
+              }
+            ]
+          },
+          {
+            "op": "LTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_HIGH"
+              }
+            ]
+          }
+        ]
+      },
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "evidenceRefs": [
+        {
+          "evidenceIndex": 0,
+          "note": "NTA No.2260 quick reference table: 20% with 427,500 JPY deduction; surtax 2.1% per note 2"
+        }
+      ],
+      "finalRounding": {
+        "mode": "DOWN",
+        "precision": 0
+      },
+      "incomeOrEventType": "BUSINESS_INCOME",
+      "parameters": {
+        "BASIC_DEDUCTION": {
+          "value": "580000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_HIGH": {
+          "value": "6949000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_LOW": {
+          "value": "3300000",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_HIGH": {
+          "value": "23500000",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_LOW": {
+          "value": "6550000",
+          "valueType": "NUMBER"
+        },
+        "FIXED_DEDUCTION": {
+          "value": "427500",
+          "valueType": "NUMBER"
+        },
+        "RATE": {
+          "value": "0.2",
+          "valueType": "NUMBER"
+        },
+        "SURTAX_RATE": {
+          "value": "0.021",
+          "valueType": "NUMBER"
+        }
+      },
+      "rateDefinition": {
+        "kind": "FORMULA_DERIVED"
+      },
+      "requiredFacts": {
+        "ANNUAL_NET_BUSINESS_INCOME": "MONEY"
+      },
+      "ruleId": "JP_IT_BUS_3300K_6949K_20PCT",
+      "subjectTypes": [
+        "INDIVIDUAL"
+      ],
+      "taxBaseFormula": {
+        "op": "MULTIPLY",
+        "args": [
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "DIVIDE",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "INPUT",
+                        "name": "ANNUAL_NET_BUSINESS_INCOME"
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "BASIC_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "LITERAL",
+                    "valueType": "NUMBER",
+                    "value": "1000"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          },
+          {
+            "op": "LITERAL",
+            "valueType": "NUMBER",
+            "value": "1000"
+          }
+        ]
+      },
+      "taxType": "INCOME_TAX",
+      "treatyRelevant": false
+    },
+    {
+      "amountFormula": {
+        "op": "ADD",
+        "args": [
+          {
+            "op": "SUBTRACT",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "INPUT",
+                    "name": "TAX_BASE"
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "RATE"
+                  }
+                ]
+              },
+              {
+                "op": "PARAMETER",
+                "code": "FIXED_DEDUCTION"
+              }
+            ]
+          },
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "MULTIPLY",
+                        "args": [
+                          {
+                            "op": "INPUT",
+                            "name": "TAX_BASE"
+                          },
+                          {
+                            "op": "PARAMETER",
+                            "code": "RATE"
+                          }
+                        ]
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "FIXED_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "SURTAX_RATE"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          }
+        ]
+      },
+      "applicabilityPredicate": {
+        "op": "AND",
+        "args": [
+          {
+            "op": "GTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_LOW"
+              }
+            ]
+          },
+          {
+            "op": "LTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_HIGH"
+              }
+            ]
+          }
+        ]
+      },
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "evidenceRefs": [
+        {
+          "evidenceIndex": 0,
+          "note": "NTA No.2260 rate table: 23% with 636,000 JPY deduction; surtax 2.1% per note 2"
+        }
+      ],
+      "finalRounding": {
+        "mode": "DOWN",
+        "precision": 0
+      },
+      "incomeOrEventType": "BUSINESS_INCOME",
+      "parameters": {
+        "BASIC_DEDUCTION": {
+          "value": "580000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_HIGH": {
+          "value": "9000000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_LOW": {
+          "value": "6949001",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_HIGH": {
+          "value": "23500000",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_LOW": {
+          "value": "6550000",
+          "valueType": "NUMBER"
+        },
+        "FIXED_DEDUCTION": {
+          "value": "636000",
+          "valueType": "NUMBER"
+        },
+        "RATE": {
+          "value": "0.23",
+          "valueType": "NUMBER"
+        },
+        "SURTAX_RATE": {
+          "value": "0.021",
+          "valueType": "NUMBER"
+        }
+      },
+      "rateDefinition": {
+        "kind": "FORMULA_DERIVED"
+      },
+      "requiredFacts": {
+        "ANNUAL_NET_BUSINESS_INCOME": "MONEY"
+      },
+      "ruleId": "JP_IT_BUS_6949K_9000K_23PCT",
+      "subjectTypes": [
+        "INDIVIDUAL"
+      ],
+      "taxBaseFormula": {
+        "op": "MULTIPLY",
+        "args": [
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "DIVIDE",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "INPUT",
+                        "name": "ANNUAL_NET_BUSINESS_INCOME"
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "BASIC_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "LITERAL",
+                    "valueType": "NUMBER",
+                    "value": "1000"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          },
+          {
+            "op": "LITERAL",
+            "valueType": "NUMBER",
+            "value": "1000"
+          }
+        ]
+      },
+      "taxType": "INCOME_TAX",
+      "treatyRelevant": false
+    },
+    {
+      "amountFormula": {
+        "op": "ADD",
+        "args": [
+          {
+            "op": "SUBTRACT",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "INPUT",
+                    "name": "TAX_BASE"
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "RATE"
+                  }
+                ]
+              },
+              {
+                "op": "PARAMETER",
+                "code": "FIXED_DEDUCTION"
+              }
+            ]
+          },
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "MULTIPLY",
+                        "args": [
+                          {
+                            "op": "INPUT",
+                            "name": "TAX_BASE"
+                          },
+                          {
+                            "op": "PARAMETER",
+                            "code": "RATE"
+                          }
+                        ]
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "FIXED_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "SURTAX_RATE"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          }
+        ]
+      },
+      "applicabilityPredicate": {
+        "op": "AND",
+        "args": [
+          {
+            "op": "GTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_LOW"
+              }
+            ]
+          },
+          {
+            "op": "LTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_HIGH"
+              }
+            ]
+          }
+        ]
+      },
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "evidenceRefs": [
+        {
+          "evidenceIndex": 0,
+          "note": "NTA No.2260 rate table: 33% with 1,536,000 JPY deduction; surtax 2.1% per note 2"
+        }
+      ],
+      "finalRounding": {
+        "mode": "DOWN",
+        "precision": 0
+      },
+      "incomeOrEventType": "BUSINESS_INCOME",
+      "parameters": {
+        "BASIC_DEDUCTION": {
+          "value": "580000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_HIGH": {
+          "value": "17999999",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_LOW": {
+          "value": "9000001",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_HIGH": {
+          "value": "23500000",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_LOW": {
+          "value": "6550000",
+          "valueType": "NUMBER"
+        },
+        "FIXED_DEDUCTION": {
+          "value": "1536000",
+          "valueType": "NUMBER"
+        },
+        "RATE": {
+          "value": "0.33",
+          "valueType": "NUMBER"
+        },
+        "SURTAX_RATE": {
+          "value": "0.021",
+          "valueType": "NUMBER"
+        }
+      },
+      "rateDefinition": {
+        "kind": "FORMULA_DERIVED"
+      },
+      "requiredFacts": {
+        "ANNUAL_NET_BUSINESS_INCOME": "MONEY"
+      },
+      "ruleId": "JP_IT_BUS_9000K_17999K_33PCT",
+      "subjectTypes": [
+        "INDIVIDUAL"
+      ],
+      "taxBaseFormula": {
+        "op": "MULTIPLY",
+        "args": [
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "DIVIDE",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "INPUT",
+                        "name": "ANNUAL_NET_BUSINESS_INCOME"
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "BASIC_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "LITERAL",
+                    "valueType": "NUMBER",
+                    "value": "1000"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          },
+          {
+            "op": "LITERAL",
+            "valueType": "NUMBER",
+            "value": "1000"
+          }
+        ]
+      },
+      "taxType": "INCOME_TAX",
+      "treatyRelevant": false
+    },
+    {
+      "amountFormula": {
+        "op": "ADD",
+        "args": [
+          {
+            "op": "SUBTRACT",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "INPUT",
+                    "name": "TAX_BASE"
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "RATE"
+                  }
+                ]
+              },
+              {
+                "op": "PARAMETER",
+                "code": "FIXED_DEDUCTION"
+              }
+            ]
+          },
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "MULTIPLY",
+                        "args": [
+                          {
+                            "op": "INPUT",
+                            "name": "TAX_BASE"
+                          },
+                          {
+                            "op": "PARAMETER",
+                            "code": "RATE"
+                          }
+                        ]
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "FIXED_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "SURTAX_RATE"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          }
+        ]
+      },
+      "applicabilityPredicate": {
+        "op": "AND",
+        "args": [
+          {
+            "op": "GT",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "ANNUAL_NET_BUSINESS_INCOME"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "DEDUCTION_INCOME_LOW"
+              }
+            ]
+          },
+          {
+            "op": "LTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "ANNUAL_NET_BUSINESS_INCOME"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "DEDUCTION_INCOME_HIGH"
+              }
+            ]
+          },
+          {
+            "op": "GTE",
+            "args": [
+              {
+                "op": "SUBTRACT",
+                "args": [
+                  {
+                    "op": "INPUT",
+                    "name": "ANNUAL_NET_BUSINESS_INCOME"
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "BASIC_DEDUCTION"
+                  }
+                ]
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_LOW"
+              }
+            ]
+          },
+          {
+            "op": "LTE",
+            "args": [
+              {
+                "op": "SUBTRACT",
+                "args": [
+                  {
+                    "op": "INPUT",
+                    "name": "ANNUAL_NET_BUSINESS_INCOME"
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "BASIC_DEDUCTION"
+                  }
+                ]
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_HIGH"
+              }
+            ]
+          }
+        ]
+      },
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "evidenceRefs": [
+        {
+          "evidenceId": "63d56dc6009221b68f9280477fdd8692640977d783951e0f3a2cf12b378cca2c",
+          "rawContentHash": "638f0d78c9624168d94f6dc9b5280070d85374648736d556689d4146c4fff171",
+          "sourceUrl": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm",
+          "locator": "html:document"
+        },
+        {
+          "evidenceId": "2cdbb703311c505a3eafb9c57f52b63d50152a80d32ba614f101b8cf90f2f773",
+          "rawContentHash": "21507083e62c8014201736c5122cdf184515695aaaeb9c3fbb414b105a8ab5ac",
+          "sourceUrl": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm",
+          "locator": "html:document"
+        },
+        {
+          "evidenceId": "04cd3692f5d2b2707260dcf4bae92d518745da20e0f4a6b2a9616f13b991534e",
+          "rawContentHash": "d80b820f0dc3a8a699af7e8c5ba9850a39373fcfc126f6df69d604229d2b6d07",
+          "sourceUrl": "https://www.nta.go.jp/english/taxes/individual/pdf/incometax_2025/13.pdf",
+          "locator": "pdf:page:5"
+        }
+      ],
+      "finalRounding": {
+        "mode": "DOWN",
+        "precision": 0
+      },
+      "incomeOrEventType": "BUSINESS_INCOME",
+      "parameters": {
+        "BASIC_DEDUCTION": {
+          "value": "580000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_HIGH": {
+          "value": "39999000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_LOW": {
+          "value": "18000000",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_HIGH": {
+          "value": "23500000",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_LOW": {
+          "value": "6550000",
+          "valueType": "NUMBER"
+        },
+        "FIXED_DEDUCTION": {
+          "value": "2796000",
+          "valueType": "NUMBER"
+        },
+        "RATE": {
+          "value": "0.4",
+          "valueType": "NUMBER"
+        },
+        "SURTAX_RATE": {
+          "value": "0.021",
+          "valueType": "NUMBER"
+        }
+      },
+      "rateDefinition": {
+        "kind": "FORMULA_DERIVED"
+      },
+      "requiredFacts": {
+        "ANNUAL_NET_BUSINESS_INCOME": "MONEY"
+      },
+      "ruleId": "JP_IT_BUS_18000K_39999K_40PCT",
+      "subjectTypes": [
+        "INDIVIDUAL"
+      ],
+      "taxBaseFormula": {
+        "op": "MULTIPLY",
+        "args": [
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "DIVIDE",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "INPUT",
+                        "name": "ANNUAL_NET_BUSINESS_INCOME"
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "BASIC_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "LITERAL",
+                    "valueType": "NUMBER",
+                    "value": "1000"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          },
+          {
+            "op": "LITERAL",
+            "valueType": "NUMBER",
+            "value": "1000"
+          }
+        ]
+      },
+      "taxType": "INCOME_TAX",
+      "treatyRelevant": false
+    },
+    {
+      "amountFormula": {
+        "op": "ADD",
+        "args": [
+          {
+            "op": "SUBTRACT",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "INPUT",
+                    "name": "TAX_BASE"
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "RATE"
+                  }
+                ]
+              },
+              {
+                "op": "PARAMETER",
+                "code": "FIXED_DEDUCTION"
+              }
+            ]
+          },
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "MULTIPLY",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "MULTIPLY",
+                        "args": [
+                          {
+                            "op": "INPUT",
+                            "name": "TAX_BASE"
+                          },
+                          {
+                            "op": "PARAMETER",
+                            "code": "RATE"
+                          }
+                        ]
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "FIXED_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "PARAMETER",
+                    "code": "SURTAX_RATE"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          }
+        ]
+      },
+      "applicabilityPredicate": {
+        "op": "AND",
+        "args": [
+          {
+            "op": "GTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_LOW"
+              }
+            ]
+          },
+          {
+            "op": "LTE",
+            "args": [
+              {
+                "op": "INPUT",
+                "name": "TAX_BASE"
+              },
+              {
+                "op": "PARAMETER",
+                "code": "BRACKET_HIGH"
+              }
+            ]
+          }
+        ]
+      },
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "evidenceRefs": [
+        {
+          "evidenceIndex": 0,
+          "note": "NTA No.2260 rate table: 45% with 4,796,000 JPY deduction; surtax 2.1% per note 2"
+        }
+      ],
+      "finalRounding": {
+        "mode": "DOWN",
+        "precision": 0
+      },
+      "incomeOrEventType": "BUSINESS_INCOME",
+      "parameters": {
+        "BASIC_DEDUCTION": {
+          "value": "580000",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_HIGH": {
+          "value": "999999999999",
+          "valueType": "NUMBER"
+        },
+        "BRACKET_LOW": {
+          "value": "39999001",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_HIGH": {
+          "value": "23500000",
+          "valueType": "NUMBER"
+        },
+        "DEDUCTION_INCOME_LOW": {
+          "value": "6550000",
+          "valueType": "NUMBER"
+        },
+        "FIXED_DEDUCTION": {
+          "value": "4796000",
+          "valueType": "NUMBER"
+        },
+        "RATE": {
+          "value": "0.45",
+          "valueType": "NUMBER"
+        },
+        "SURTAX_RATE": {
+          "value": "0.021",
+          "valueType": "NUMBER"
+        }
+      },
+      "rateDefinition": {
+        "kind": "FORMULA_DERIVED"
+      },
+      "requiredFacts": {
+        "ANNUAL_NET_BUSINESS_INCOME": "MONEY"
+      },
+      "ruleId": "JP_IT_BUS_39999K_UP_45PCT",
+      "subjectTypes": [
+        "INDIVIDUAL"
+      ],
+      "taxBaseFormula": {
+        "op": "MULTIPLY",
+        "args": [
+          {
+            "op": "ROUND",
+            "args": [
+              {
+                "op": "DIVIDE",
+                "args": [
+                  {
+                    "op": "SUBTRACT",
+                    "args": [
+                      {
+                        "op": "INPUT",
+                        "name": "ANNUAL_NET_BUSINESS_INCOME"
+                      },
+                      {
+                        "op": "PARAMETER",
+                        "code": "BASIC_DEDUCTION"
+                      }
+                    ]
+                  },
+                  {
+                    "op": "LITERAL",
+                    "valueType": "NUMBER",
+                    "value": "1000"
+                  }
+                ]
+              }
+            ],
+            "rule": {
+              "mode": "DOWN",
+              "precision": 0
+            }
+          },
+          {
+            "op": "LITERAL",
+            "valueType": "NUMBER",
+            "value": "1000"
+          }
+        ]
+      },
+      "taxType": "INCOME_TAX",
+      "treatyRelevant": false
+    }
+  ],
+  "applicability": {
+    "status": "APPLICABILITY_UNRESOLVED",
+    "warning": "EFFECTIVE_PERIOD_NOT_VERIFIED_FOR_REQUESTED_YEAR",
+    "uncertainty": "2025 estimate using October net annualized x12. Residence/treaty, other income and credits unresolved. Exact effective dates unavailable; null.",
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceYear": "2026"
+  },
+  "evidence": [
+    {
+      "evidenceIndex": 0,
+      "sourceUrl": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm",
+      "sourceTitle": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm",
+      "rawContentHash": "638f0d78c9624168d94f6dc9b5280070d85374648736d556689d4146c4fff171",
+      "retrievedAt": "2026-10-31T00:46:08.442Z"
+    },
+    {
+      "evidenceIndex": 1,
+      "sourceUrl": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm",
+      "sourceTitle": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm",
+      "rawContentHash": "21507083e62c8014201736c5122cdf184515695aaaeb9c3fbb414b105a8ab5ac",
+      "retrievedAt": "2026-10-31T00:46:24.628Z"
+    },
+    {
+      "evidenceIndex": 2,
+      "sourceUrl": "https://www.nta.go.jp/english/taxes/individual/pdf/incometax_2025/13.pdf",
+      "sourceTitle": "https://www.nta.go.jp/english/taxes/individual/pdf/incometax_2025/13.pdf",
+      "rawContentHash": "d80b820f0dc3a8a699af7e8c5ba9850a39373fcfc126f6df69d604229d2b6d07",
+      "retrievedAt": "2026-10-31T00:33:02.797Z"
+    }
+  ],
+  "sources": {
+    "rateTable": {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm",
+      "retrievedAs": "2026-11-01",
+      "authority": "National Tax Agency Japan",
+      "note": "Page current as of Reiwa 8 (2026) April 1."
+    },
+    "basicDeduction": {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm",
+      "note": "Basic deduction amount depends on total income; the candidate value 580,000 was not re-verified for 2026."
+    },
+    "reform2026": {
+      "url": "https://www.mof.go.jp/tax_policy/tax_reform/outline/fy2026/08taikou_01.html",
+      "note": "FY2026 reform outline not machine-verified in this run; basic deduction for 2026 remains user-confirmable."
+    }
+  }
+}

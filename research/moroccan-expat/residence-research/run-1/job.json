@@ -1,0 +1,1298 @@
+{
+  "researchId": "91254111-3cb6-4571-9864-7d252ffc21d8",
+  "producer": "META_MUSE_REGULATORY_RESEARCH",
+  "mode": "LIVE",
+  "createdAt": "2026-10-29T15:36:09.829Z",
+  "status": "REVIEW_REQUIRED",
+  "brief": {
+    "schemaVersion": "research-brief/1",
+    "objective": "Research the domestic tax-residence tests relevant to this synthetic Moroccan expatriate in Morocco and Indonesia during October 2026. Propose evidence-bound residence rule candidates; distinguish facts still needed before applying them. Do not research salary, rental, company rates, credits or treaty allocation yet.",
+    "confirmedFacts": [
+      {
+        "factId": "PERSISTED_PROFILE",
+        "value": {
+          "user.language": {
+            "value": "ar-MA",
+            "source": "USER",
+            "supportingQuote": "بغيت كلشي بالدارجة المغربية"
+          },
+          "user.nationality": {
+            "value": "MA",
+            "source": "USER",
+            "supportingQuote": "شخص تجريبي مغربي"
+          },
+          "user.displayName": {
+            "value": "يوسف العمراني",
+            "source": "USER",
+            "supportingQuote": "يوسف العمراني"
+          },
+          "user.homeCountry": {
+            "value": "MA",
+            "source": "USER",
+            "supportingQuote": "الدار والعائلة فالمغرب"
+          },
+          "user.physicalLocation": {
+            "value": "ID",
+            "source": "USER",
+            "supportingQuote": "دابا أنا فلومبوك فإندونيسيا"
+          },
+          "user.taxResidenceDeclaration": {
+            "value": "ما تأكداتش",
+            "source": "USER",
+            "supportingQuote": "الإقامة الضريبية ما تأكداتش"
+          },
+          "user.withholdingDocumentation": {
+            "value": "MISSING",
+            "source": "USER",
+            "supportingQuote": "ما عنديش وثائق الاقتطاع"
+          },
+          "org.activities": {
+            "value": [
+              "EMPLOYEE",
+              "RENTAL_OPERATOR",
+              "CAFE_OPERATOR",
+              "INVESTOR"
+            ],
+            "source": "USER",
+            "supportingQuote": "حياتي الشخصية وخدمتي بالأجرة مفروقين، وعندي فيلا وقهوة فلومبوك وزدت استثمرت فبناء جيم"
+          },
+          "user.englishAbility": {
+            "value": "ما كنهضرش بالإنجليزية",
+            "source": "USER",
+            "supportingQuote": "ما كنهضرش بالإنجليزية"
+          },
+          "presence.intervals": {
+            "value": [
+              {
+                "countryCode": "ID",
+                "entryDate": "2026-01-01",
+                "exitDate": "2026-04-01"
+              },
+              {
+                "countryCode": "AE",
+                "entryDate": "2026-04-01",
+                "exitDate": "2026-07-31"
+              },
+              {
+                "countryCode": "ID",
+                "entryDate": "2026-07-31",
+                "exitDate": "2026-11-01"
+              }
+            ],
+            "source": "USER",
+            "supportingQuote": "دخولي لإندونيسيا 2026-01-01 وخروجي 2026-04-01، خدمتي فالإمارات من 2026-04-01 حتى 2026-07-31، ودخولي لإندونيسيا 2026-07-31 وخروجي 2026-11-01"
+          },
+          "org.economicScopes": {
+            "value": [
+              {
+                "scopeId": "PERSONAL",
+                "kind": "PERSONAL",
+                "name": "الحياة الشخصية",
+                "countryCode": "MA",
+                "legalStructure": "شخص فردي",
+                "usage": "PERSONAL"
+              },
+              {
+                "scopeId": "EMPLOYMENT",
+                "kind": "EMPLOYMENT",
+                "name": "الخدمة بالأجرة",
+                "countryCode": "AE",
+                "legalStructure": "عقد عمل شخصي",
+                "usage": "BUSINESS",
+                "reportingCurrency": "GBP"
+              },
+              {
+                "scopeId": "VILLA",
+                "kind": "RENTAL",
+                "name": "الفيلا فْلومبوك",
+                "countryCode": "ID",
+                "legalStructure": "ملكية اقتصادية مصرح بها، السند القانوني للمراجعة",
+                "usage": "MIXED",
+                "bookkeepingCurrency": "IDR"
+              },
+              {
+                "scopeId": "CAFE",
+                "kind": "OPERATING_BUSINESS",
+                "name": "القهوة فْلومبوك",
+                "countryCode": "ID",
+                "legalStructure": "شركة إندونيسية مصرح بها، التسجيل للمراجعة",
+                "entityName": "شركة لومبوك التجريبية",
+                "usage": "BUSINESS",
+                "bookkeepingCurrency": "IDR"
+              },
+              {
+                "scopeId": "GYM",
+                "kind": "INVESTMENT_PROJECT",
+                "name": "مشروع الجيم",
+                "countryCode": "ID",
+                "legalStructure": "مشروع تحت شركة لومبوك التجريبية",
+                "entityName": "شركة لومبوك التجريبية",
+                "usage": "INVESTMENT",
+                "bookkeepingCurrency": "IDR"
+              }
+            ],
+            "source": "USER",
+            "supportingQuote": "الجيم مشروع تحت نفس شركة لومبوك التجريبية وباقي فالتجهيز، وأنا كنمول البناء والمعدات"
+          },
+          "employment.relationship": {
+            "value": "EMPLOYEE",
+            "source": "USER",
+            "supportingQuote": "خدام أجير"
+          },
+          "employment.employerName": {
+            "value": "شركة الطاقة البريطانية التجريبية",
+            "source": "USER",
+            "supportingQuote": "شركة الطاقة البريطانية التجريبية"
+          },
+          "employment.employerCountry": {
+            "value": "GB",
+            "source": "USER",
+            "supportingQuote": "شركة طاقة بريطانية تجريبية"
+          },
+          "employment.workCountry": {
+            "value": "AE",
+            "source": "USER",
+            "supportingQuote": "الخدمة الجسدية ديالي فالإمارات"
+          },
+          "employment.salaryCurrency": {
+            "value": "GBP",
+            "source": "USER",
+            "supportingQuote": "الأجرة بالجنيه GBP"
+          },
+          "org.name": {
+            "value": "يوسف والأنشطة التجريبية",
+            "source": "USER",
+            "supportingQuote": "سمي هاد التنظيم يوسف والأنشطة التجريبية"
+          },
+          "org.businessType": {
+            "value": "small-business",
+            "source": "USER",
+            "supportingQuote": "عندي فيلا وقهوة فلومبوك"
+          },
+          "org.subjectType": {
+            "value": "INDIVIDUAL",
+            "source": "USER",
+            "supportingQuote": "أنا يوسف العمراني، شخص تجريبي مغربي"
+          },
+          "currency.functional": {
+            "value": "IDR",
+            "source": "USER",
+            "supportingQuote": "دفتر تنظيم هاد الحركات كامل بعملة IDR"
+          },
+          "currency.transactions": {
+            "value": [],
+            "source": null,
+            "supportingQuote": null
+          },
+          "currency.foreignPurchases": {
+            "value": [],
+            "source": null,
+            "supportingQuote": null
+          },
+          "accounting.periodStart": {
+            "value": "2026-10-01",
+            "source": "USER",
+            "supportingQuote": "User selected accounting.periodStart: \"2026-10-01\""
+          },
+          "accounting.periodEnd": {
+            "value": "2026-10-31",
+            "source": "USER",
+            "supportingQuote": "User selected accounting.periodEnd: \"2026-10-31\""
+          },
+          "modules.enabled": {
+            "value": [],
+            "source": null,
+            "supportingQuote": null
+          }
+        },
+        "source": "USER_CONFIRMED_PRODUCT_PROFILE",
+        "sourceFile": "data/moroccan/run-8/store.json"
+      }
+    ],
+    "unknownFacts": [
+      "Legal residence in each jurisdiction",
+      "Exact rolling-period presence and legal counting convention",
+      "Nature and availability of homes and ties required by the discovered tests",
+      "Any other fact required by the discovered provisions"
+    ],
+    "taxPeriod": {
+      "periodStart": "2026-10-01",
+      "periodEnd": "2026-10-31"
+    },
+    "jurisdictions": [
+      "MA",
+      "ID"
+    ],
+    "questionsToResolve": [
+      "What domestic residence tests, alternatives and exceptions apply in each jurisdiction for the chosen period?",
+      "Which facts in the persisted profile are sufficient, which are missing, and which require an approved rule before any conclusion?",
+      "Which current official provisions and commencement/amendment evidence support each candidate?"
+    ],
+    "preferredAllowedSources": [
+      {
+        "jurisdiction": "MA",
+        "sources": [
+          {
+            "sourceId": "MA-FINANCE",
+            "authority": "Morocco Ministry of Economy and Finance / DGI publications",
+            "domains": [
+              "finances.gov.ma",
+              "www.finances.gov.ma"
+            ],
+            "role": "PRIMARY_LEGISLATION"
+          },
+          {
+            "sourceId": "MA-CRI",
+            "authority": "Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror",
+            "domains": [
+              "casainvest.ma",
+              "www.casainvest.ma"
+            ],
+            "role": "OFFICIAL_GUIDANCE"
+          }
+        ],
+        "localSearch": {
+          "languages": [
+            "fr",
+            "ar"
+          ],
+          "terms": [
+            "domicile fiscal",
+            "résidence fiscale",
+            "Code général des impôts",
+            "المدونة العامة للضرائب",
+            "الموطن الضريبي"
+          ],
+          "strategy": "Locate the competent authority and current consolidated code, then the residence provision, definitions, exceptions and commencement/amendments. Cross-check French/Arabic editions where available."
+        }
+      },
+      {
+        "jurisdiction": "ID",
+        "sources": [
+          {
+            "sourceId": "ID-DJP",
+            "authority": "Direktorat Jenderal Pajak",
+            "domains": [
+              "pajak.go.id",
+              "www.pajak.go.id"
+            ],
+            "role": "TAX_AUTHORITY"
+          },
+          {
+            "sourceId": "ID-BPK",
+            "authority": "Badan Pemeriksa Keuangan legislation database",
+            "domains": [
+              "peraturan.bpk.go.id",
+              "www.peraturan.bpk.go.id"
+            ],
+            "role": "PRIMARY_LEGISLATION"
+          },
+          {
+            "sourceId": "ID-JDIH",
+            "authority": "Ministry of Finance legal documentation",
+            "domains": [
+              "jdih.kemenkeu.go.id",
+              "www.jdih.kemenkeu.go.id"
+            ],
+            "role": "SECONDARY_LEGISLATION"
+          },
+          {
+            "sourceId": "ID-DJPP",
+            "authority": "Directorate General of Legislation",
+            "domains": [
+              "peraturan.go.id",
+              "www.peraturan.go.id"
+            ],
+            "role": "OFFICIAL_GAZETTE"
+          },
+          {
+            "sourceId": "ID-CORETAX",
+            "authority": "DJP Coretax service",
+            "domains": [
+              "coretaxdjp.pajak.go.id",
+              "www.coretaxdjp.pajak.go.id"
+            ],
+            "role": "TAX_AUTHORITY"
+          },
+          {
+            "sourceId": "ID-MA",
+            "authority": "Supreme Court Indonesia",
+            "domains": [
+              "mahkamahagung.go.id",
+              "www.mahkamahagung.go.id"
+            ],
+            "role": "COURT"
+          },
+          {
+            "sourceId": "ID-SETPP",
+            "authority": "Tax Court secretariat",
+            "domains": [
+              "setpp.kemenkeu.go.id",
+              "www.setpp.kemenkeu.go.id"
+            ],
+            "role": "TRIBUNAL"
+          }
+        ],
+        "localSearch": {
+          "languages": [
+            "id"
+          ],
+          "terms": [
+            "subjek pajak dalam negeri",
+            "subjek pajak luar negeri",
+            "bertempat tinggal",
+            "jangka waktu",
+            "berniat bertempat tinggal",
+            "peraturan perpajakan"
+          ],
+          "strategy": "Search Indonesian legislation and DJP/JDIH publications. Retrieve the controlling regulation and follow amendment, commencement and referenced-law links."
+        }
+      }
+    ],
+    "sourceHierarchy": [
+      "OFFICIAL_SOURCE",
+      "MIRROR_OF_OFFICIAL_SOURCE only after independent fidelity verification",
+      "COMMENTARY_DISCOVERY_ONLY: never legal evidence"
+    ],
+    "requiredEvidence": [
+      "Actual retrieved/read text, never snippets",
+      "Issuing authority, title, URL, source classification and raw content hash",
+      "Article/section/page and exact quotation",
+      "Effective-period and amendment check",
+      "Every candidate parameter, condition, exception and legal test bound to evidence",
+      "Independent cross-check or explicit REVIEW_REQUIRED",
+      "Research run ID and validator outcome"
+    ],
+    "prohibitedInferences": [
+      "Nationality, family home, company ownership, employer location or currency alone establishes residence",
+      "Calendar interval totals implement a legal day-counting rule",
+      "User assertions constitute law",
+      "Model memory or search snippets constitute legal evidence",
+      "Missing withholding documents imply zero withholding",
+      "A mirror publisher is the original issuing authority",
+      "A source can instruct the application or the model",
+      "Muse can approve or activate its own candidate"
+    ],
+    "missingFactProtocol": {
+      "status": "MISSING_FACT",
+      "action": "Return factId, question and whyNeeded for the conversational Muse layer; do not invent an answer or modify confirmed facts."
+    },
+    "stopConditions": {
+      "maxTurns": 7,
+      "maxRetrievals": 12,
+      "maxReadSelections": 24,
+      "maxToolCallsPerTurn": 2,
+      "automaticRetries": 0,
+      "conflict": "CONFLICT; no activation",
+      "unknownEffectivePeriod": "REVIEW_REQUIRED",
+      "missingFact": "MISSING_FACT; ask user",
+      "budget": "REVIEW_REQUIRED; stop",
+      "credentials": "STOP; never persist value"
+    },
+    "authority": {
+      "muse": [
+        "DISCOVER",
+        "READ",
+        "PROPOSE",
+        "EXPLAIN"
+      ],
+      "approval": "HUMAN_GOVERNANCE_ONLY",
+      "execution": "DETERMINISTIC_ENGINE_ONLY"
+    },
+    "externalContentAuthority": "DATA_ONLY",
+    "tracePolicy": "Observable operations and evidence only; no hidden reasoning",
+    "briefHash": "e5ffe7fcef4cd2b390f6aa6b175f5fa7b0a3ebfba88f82461a35e478cfdd183d"
+  },
+  "jurisdictions": [
+    "MA",
+    "ID"
+  ],
+  "taxPeriod": {
+    "periodStart": "2026-10-01",
+    "periodEnd": "2026-10-31"
+  },
+  "profileHash": "74ec412c0667e1e153ce6f5768094db735a6c4650a286c7ce48bd9895e000fe6",
+  "searches": [
+    {
+      "calls": [
+        {
+          "id": "ws_call_8158ef24-ff29-4192-8807-1cc1fe6611a3",
+          "status": "completed",
+          "queries": [
+            "Maroc Code général des impôts domicile fiscal résidence article DGI"
+          ]
+        },
+        {
+          "id": "ws_call_833cb608-c3ef-4f98-9faf-521305e0ab92",
+          "status": "completed",
+          "queries": [
+            "Indonesia subjek pajak dalam negeri bertempat tinggal UU PPh Pasal 2"
+          ]
+        },
+        {
+          "id": "ws_call_939ccf66-eb8c-423f-90d5-9f2284a872b9",
+          "status": "completed",
+          "queries": [
+            "site:peraturan.bpk.go.id UU 36 Tahun 2008 Pajak Penghasilan"
+          ]
+        },
+        {
+          "id": "ws_call_92b325f8-24c4-4f05-9727-144fd00c14f4",
+          "status": "completed",
+          "queries": [
+            "UU Nomor 36 Tahun 2008 peraturan.bpk.go.id pajak penghasilan Pasal 2 ayat 3"
+          ]
+        }
+      ],
+      "results": [
+        {
+          "url": "https://avocatlib.ma/en/blog/retenue-a-la-source-loyers-maroc-2026-mq4sxmwz",
+          "title": "Morocco rent withholding tax 2026: 5% rule",
+          "snippet": ""
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Taxation_in_Morocco",
+          "title": "Taxation in Morocco",
+          "snippet": ""
+        },
+        {
+          "url": "https://github.com/lewfkrad/openaccountants/blob/HEAD/agent-skills/ma-einvoice/SKILL.md",
+          "title": "openaccountants/agent-skills/ma-einvoice/SKILL.md at 0370542b5a357db6092af9b7a2eef169110f2b2e · lEWFkRAD/openaccountants · GitHub",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.scribd.com/document/676057846/JURISPRUDENCE-FISCALE-ANALYSE-DES-DISPOISTION-FISCALES-Me-moire-CEC-Omar-ESSAYEGH",
+          "title": "Jurisprudence Fiscale par Omar Essayegh | PDF",
+          "snippet": ""
+        },
+        {
+          "url": "https://github.com/lewfkrad/openaccountants/blob/HEAD/agent-skills/ma-income-tax/SKILL.md",
+          "title": "openaccountants/agent-skills/ma-income-tax/SKILL.md at 0370542b5a357db6092af9b7a2eef169110f2b2e · lEWFkRAD/openaccountants",
+          "snippet": ""
+        },
+        {
+          "url": "https://github.com/lewfkrad/openaccountants/blob/HEAD/agent-skills/ma-auto-entrepreneur/SKILL.md",
+          "title": "openaccountants/agent-skills/ma-auto-entrepreneur/SKILL.md at 0370542b5a357db6092af9b7a2eef169110f2b2e · lEWFkRAD/openaccountants",
+          "snippet": ""
+        },
+        {
+          "url": "https://github.com/lewfkrad/openaccountants/blob/HEAD/agent-skills/ma-bookkeeping/SKILL.md",
+          "title": "openaccountants/agent-skills/ma-bookkeeping/SKILL.md at 0370542b5a357db6092af9b7a2eef169110f2b2e · lEWFkRAD/openaccountants",
+          "snippet": ""
+        },
+        {
+          "url": "https://en.walaw.press/articles/morocco_publishes_2026_edition_of_general_tax_code/GQMMMXRXMSPW",
+          "title": "Morocco publishes 2026 edition of general tax code",
+          "snippet": ""
+        },
+        {
+          "url": "https://github.com/lewfkrad/openaccountants/blob/HEAD/agent-skills/ma-cpu/SKILL.md",
+          "title": "lewfkrad/openaccountants - ./agent-skills/ma-cpu/SKILL.md",
+          "snippet": ""
+        },
+        {
+          "url": "https://taxdo.com/resources/countries/am/morocco",
+          "title": "Morocco TVA Guide 2026",
+          "snippet": ""
+        },
+        {
+          "url": "https://github.com/lewfkrad/openaccountants/blob/HEAD/agent-skills/ma-tax-optimization/SKILL.md",
+          "title": "openaccountants/agent-skills/ma-tax-optimization/SKILL.md at 0370542b5a357db6092af9b7a2eef169110f2b2e · lEWFkRAD/openaccountants",
+          "snippet": ""
+        },
+        {
+          "url": "https://youtube.com/watch?v=SzHqQ_QuEqI&si=qK9lYHgyGe_F04it",
+          "title": "Officially, the 2026 tax law: Who is exempt? And the truth about the tax audit of hidden funds. - YouTube",
+          "snippet": ""
+        },
+        {
+          "url": "https://journal.uii.ac.id/psha/article/download/35513/16995",
+          "title": "Pemungutan Pajak Penghasilan terhadap Jasa Endorsement Konten Kreator Digital",
+          "snippet": ""
+        },
+        {
+          "url": "https://jurnalmahasiswa.stiesia.ac.id/index.php/jira/article/download/224/226",
+          "title": "FAKTOR-FAKTOR YANG MEMPENGARUHI EFEKTIVITAS PENERAPAN E-FILING WAJIB PAJAK ORANG PRIBADI",
+          "snippet": ""
+        },
+        {
+          "url": "https://core.ac.uk/download/pdf/236429821.pdf",
+          "title": "View metadata, citation and similar papers at core.ac.uk  brought to you by CORE",
+          "snippet": ""
+        },
+        {
+          "url": "https://karya.brin.go.id/36996/1/2620-611_6_2_2023-8.pdf",
+          "title": "Jurnal Ilmiah Akuntansi Rahmaniyah (JIAR) Vol. 6 No. 2, Juni 2023, 255 – 274",
+          "snippet": ""
+        },
+        {
+          "url": "https://journal.umg.ac.id/index.php/justiciabelen/article/download/2200/1357/",
+          "title": "PENYELESAIAN PERMASALAHAN PAJAK BERGANDA INTERNASIONAL",
+          "snippet": ""
+        },
+        {
+          "url": "https://core.ac.uk/download/pdf/230767546.pdf",
+          "title": "View metadata, citation and similar papers at core.ac.uk  brought to you by CORE",
+          "snippet": ""
+        },
+        {
+          "url": "https://jurnalmahasiswa.stiesia.ac.id/index.php/jira/article/download/5179/5198",
+          "title": "ANALISIS DAMPAK IMPLEMENTASI CORPORATE SOCIAL RESPONSIBILITY TERHADAP DEDUCTIBLE EXPENSE PADA PG ABC MALANG",
+          "snippet": ""
+        },
+        {
+          "url": "https://core.ac.uk/download/pdf/267945914.pdf",
+          "title": "View metadata, citation and similar papers at core.ac.uk  brought to you by CORE",
+          "snippet": ""
+        },
+        {
+          "url": "https://repository.unibos.ac.id/xmlui/bitstream/handle/123456789/5535/2019%20Siti%20Rahmah%20Amir%204517013132%20OL45.pdf?sequence=1&isAllowed=y",
+          "title": "ANALISIS PENERAPAN WITHHOLDING TAX SYSTEM TERHADAP PAJAK PENGHASILAN (PPH) PASAL 4 AYAT (2) PADA PT SEMEN",
+          "snippet": ""
+        },
+        {
+          "url": "https://media.neliti.com/media/publications/276463-penerapan-tax-planning-dalam-upaya-menin-ee417dbe.pdf",
+          "title": "Muhammadinah",
+          "snippet": ""
+        },
+        {
+          "url": "https://peraturan.bpk.go.id/Download/279561/Peraturan%20Daerah_No.%208%20Tahun%202005%20ocr.pdf",
+          "title": "P E M E R I N T A H KA B U P A T E N M E LA W I",
+          "snippet": ""
+        },
+        {
+          "url": "https://publikasi.dinus.ac.id/index.php/media/article/download/904/674",
+          "title": "DAMPAK Psl. 7 atas UU NO. 36 TAHUN 2008 TERHADAP PELAKSANAAN ",
+          "snippet": ""
+        },
+        {
+          "url": "https://asianpublisher.id/abdimas/index.php/publica/article/download/96/72",
+          "title": "publica-96-(v4i2)_125-130",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.bi.go.id/id/iru/highlight-news/Pages/ABNR%20nov%202008.aspx",
+          "title": "Indonesian Parliament Passes The New Income Tax Law",
+          "snippet": ""
+        },
+        {
+          "url": "https://openjournal.unpam.ac.id/index.php/JIA/article/view/907/0",
+          "title": "TINJAUAN TEORITIS PENGHASILAN TIDAK KENA PAJAK (PTKP) BERDASARKAN UNDANG-UNDANG NO. 36 TAHUN 2008 MENGENAI PAJAK PENGHASILAN DIBANDINGKAN DENGAN UPAH MINIMUM PROVINSI DKI JAKARTA SESUAI DENGAN PERATURAN GUBERNUR DKI JAKARTA NO. 176 TAHUN 2014 TENTANG UPAH MINIMUM PROVINSI DKI JAKARTA.  (Studi Kasus Di Wilayah Jakarta)",
+          "snippet": ""
+        },
+        {
+          "url": "https://peraturan.go.id/files/kp6-1998.pdf",
+          "title": "Keppres 6-1998.doc",
+          "snippet": ""
+        },
+        {
+          "url": "https://jurnal.stpi-pajak.ac.id/index.php/JPB/article/download/36/32",
+          "title": "DI BURSA",
+          "snippet": ""
+        },
+        {
+          "url": "https://jurnal.stpi-pajak.ac.id/index.php/JPB/article/download/30/26",
+          "title": "IDENTIFIKASI POTENSI PAJAK PENGHASILAN ATAS TRANSAKSI",
+          "snippet": ""
+        },
+        {
+          "url": "https://ejournal.aibpmjournals.com/index.php/IJABIM/article/view/3673",
+          "title": "The Arm's Length Principle in Mitigating Tax Avoidance: A Systematic Literature Review | Ardika | International Journal of Applied Business and International Management",
+          "snippet": ""
+        },
+        {
+          "url": "https://e-journal.unair.ac.id/NTR/article/download/22836/pdf",
+          "title": "Notaire",
+          "snippet": ""
+        },
+        {
+          "url": "https://e-journal.unair.ac.id/JD/article/download/9732/5440",
+          "title": "Jurist Diction",
+          "snippet": ""
+        }
+      ],
+      "citations": [],
+      "rejected": [
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        },
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        },
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        }
+      ],
+      "turn": 1,
+      "kind": "INITIAL_SEARCH"
+    },
+    {
+      "calls": [
+        {
+          "id": "ws_call_f07c5f6a-c0e2-4aaa-84cf-4d8dffc6c25b",
+          "status": "completed",
+          "queries": [
+            "UU 36 tahun 2008 pajak penghasilan Pasal 2 subjek pajak dalam negeri site:peraturan.bpk.go.id"
+          ]
+        },
+        {
+          "id": "ws_call_14fa39e1-b6c4-4c2d-9abf-10c56408876e",
+          "status": "completed",
+          "queries": [
+            "Maroc Code général des impôts domicile fiscal résidence article 5 site:finances.gov.ma"
+          ]
+        },
+        {
+          "id": "ws_call_56397061-048a-48fa-8b87-0e3579854524",
+          "status": "completed",
+          "queries": [
+            "Indonesia UU PPh subjek pajak dalam negeri bertempat tinggal 183 hari"
+          ]
+        },
+        {
+          "id": "ws_call_ed4976fc-2a8e-4c3e-b963-ac088dc5b3fb",
+          "status": "completed",
+          "queries": [
+            "Maroc CGI article 5 domicile fiscal foyers séjour 183 jours"
+          ]
+        },
+        {
+          "id": "ws_call_6e19cf71-0ff1-4e04-bcca-e799b2e7855d",
+          "status": "completed",
+          "queries": [
+            "\"domicile fiscal\" Maroc \"Code général des impôts\" article 23 DGI tax.gov.ma"
+          ]
+        },
+        {
+          "id": "ws_call_a78f4fd8-6534-421b-8f44-0c064e5bc43c",
+          "status": "completed",
+          "queries": [
+            "peraturan.go.id UU 36 2008 pajak penghasilan"
+          ]
+        },
+        {
+          "id": "ws_call_d2af24e1-de0d-4619-915a-ea4439f73bee",
+          "status": "completed",
+          "queries": [
+            "site:tax.gov.ma Code Général des Impôts 2026 PDF"
+          ]
+        },
+        {
+          "id": "ws_call_72503720-9335-4835-b486-7378ef58a35e",
+          "status": "completed",
+          "queries": [
+            "casainvest.ma Code général des impôts Maroc domicile fiscal"
+          ]
+        },
+        {
+          "id": "ws_call_c711403d-6f26-4ef4-a691-9f5349061370",
+          "status": "failed",
+          "queries": []
+        },
+        {
+          "id": "ws_call_1766cbd2-b11d-42bb-a5e7-3ab89fb483e1",
+          "status": "completed",
+          "queries": [
+            "pajak.go.id PER-43 PJ 2011 subjek pajak dalam negeri luar negeri"
+          ]
+        }
+      ],
+      "results": [
+        {
+          "url": "https://www.finances.gov.ma/Publication/fos/2018/com_01_18.pdf",
+          "title": "ROYAUME DU MAROC -.ffffn-H\\*o-\\*",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.finances.gov.ma/Lists/Appels%20a%20Candidature/Attachments/81/CI5669_C.pdf",
+          "title": "• • '4>p....JI~1",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.finances.gov.ma/Publication/fos/2018/Circulaire_Estivage.pdf",
+          "title": "q+'ô;l adJ\"Jl",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.finances.gov.ma/CommuniquesEtAnnonces/dtfe/2011/8460_resultat_28062011.pdf",
+          "title": "Microsoft Word - Auction 28 th June 2011.doc",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.finances.gov.ma/CommuniquesEtAnnonces/dtfe/2012/7958_auction10thapril2012.pdf",
+          "title": "Microsoft Word - Auction 10 th APRIL 2012.doc",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.finances.gov.ma/CommuniquesEtAnnonces/dtfe/2011/8665_resultssept14th2011.pdf",
+          "title": "Microsoft Word - Auction 13 th September 2011.doc",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.finances.gov.ma/CommuniquesEtAnnonces/dtfe/2011/9823_auction09thnovember2011.pdf",
+          "title": "Microsoft Word - Auction 09 th November 2011.doc",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.finances.gov.ma/CommuniquesEtAnnonces/dtfe/2011/1386_auction03thmay2011.pdf",
+          "title": "Microsoft Word - Auction 03 rd May 2011.doc",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.finances.gov.ma/CommuniquesEtAnnonces/dtfe/2011/6415_auction10thmay2011.pdf",
+          "title": "Microsoft Word - Auction 10th May 2011.doc",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.finances.gov.ma/CommuniquesEtAnnonces/dtfe/2012/7235_auction11thdecember2012.pdf",
+          "title": "Microsoft Word - Auction 11thdecember 2012.doc",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.finances.gov.ma/CommuniquesEtAnnonces/dtfe/2011/5955_auction19thapril2011.pdf",
+          "title": "Microsoft Word - Auction 19th April 2011.doc",
+          "snippet": ""
+        },
+        {
+          "url": "https://journal-ikadi.com/ojs/index.php/assyirkah/article/download/538/530",
+          "title": "As-Syirkah: Islamic Economics & Financial Journal",
+          "snippet": ""
+        },
+        {
+          "url": "https://core.ac.uk/download/pdf/236429821.pdf",
+          "title": "View metadata, citation and similar papers at core.ac.uk  brought to you by CORE",
+          "snippet": ""
+        },
+        {
+          "url": "https://repository.unej.ac.id/jspui/bitstream/123456789/88537/1/TRI%20HARDIYANTI%20RISQI-150803104053%20%23.pdf",
+          "title": "Digital Repository Universitas Jember",
+          "snippet": ""
+        },
+        {
+          "url": "https://repository.unej.ac.id/jspui/bitstream/123456789/80537/1/Ainun%20Fiqri%20Khafifah%20-%20140903101026_.pdf",
+          "title": "Digital Repository Universitas Jember",
+          "snippet": ""
+        },
+        {
+          "url": "https://jurnalmahasiswa.stiesia.ac.id/index.php/jira/article/download/224/226",
+          "title": "FAKTOR-FAKTOR YANG MEMPENGARUHI EFEKTIVITAS PENERAPAN E-FILING WAJIB PAJAK ORANG PRIBADI",
+          "snippet": ""
+        },
+        {
+          "url": "https://repositori.unibos.ac.id/server/api/core/bitstreams/38aca990-938d-4aa9-85c9-8f212f4a7987/content",
+          "title": "PENGARUH KUALITAS PELAYANAN PAJAK TERHADAP KESADARAN WAJIB PAJAK ORANG PRIBADI (WPOP) PADA KANTOR PELAYANAN PAJAK (KPP)",
+          "snippet": ""
+        },
+        {
+          "url": "https://journal.uii.ac.id/psha/article/download/35513/16995",
+          "title": "Pemungutan Pajak Penghasilan terhadap Jasa Endorsement Konten Kreator Digital",
+          "snippet": ""
+        },
+        {
+          "url": "https://ejournal.fisip.unjani.ac.id/index.php/jurnal-dialektika-hukum/article/download/941/500",
+          "title": "Microsoft Word - 4 aurelia untar jun 24",
+          "snippet": ""
+        },
+        {
+          "url": "https://jiae.ub.ac.id/index.php/jiae/article/download/128/97",
+          "title": "ANALISA FAKTOR-FAKTOR YANG MEMPENGARUHI JUMLAH",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.lec.ma/en/impot-sur-le-revenu-maroc-expert-comptable",
+          "title": "Impôt sue le revenu (IR) au Maroc : Besoin d'un Expert-comptable ?  | LEC.ma",
+          "snippet": ""
+        },
+        {
+          "url": "https://doastretch.com/tax-days/",
+          "title": "Tax residency day thresholds by country (2026): how many days before you're resident",
+          "snippet": ""
+        },
+        {
+          "url": "https://university.heavnn.io/practical-guide-to-obtaining-your-tax-residency-in-morocco/",
+          "title": "Morocco Tax Residency 2026: 183-Day Rule & Certificate",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.sebsauerborn.com/countries/morocco",
+          "title": "Morocco Tax Guide 2026 — 80% Pension Abatement, Total Exemption from 2026",
+          "snippet": ""
+        },
+        {
+          "url": "https://balmontconseil.com/en/convention-fiscale-france-maroc/",
+          "title": "The 1970 France-Morocco tax treaty, read article by article",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.studiocerbone.com/allegati/maroc-en.pdf",
+          "title": "Microsoft Word - maroc-en.rtf",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.scribd.com/document/539874879/FORMULAIRE-ADP010",
+          "title": "Formulaire Adp010 | PDF",
+          "snippet": ""
+        },
+        {
+          "url": "https://mai.co.ma/documents/20181/20895/CGinjad-monde.pdf/0b5eaf6e-1c3c-4407-bf1f-04646fb8bbea",
+          "title": "CONTRAT D’ASSISTANCE « INJAD MONDE » CONDITIONS GENERALES ASSISTANCE MEDICALE ASSISTANCE TECHNIQUE",
+          "snippet": ""
+        },
+        {
+          "url": "https://rssimonlaw.substack.com/p/viva-la-revolution-us-french-dual",
+          "title": "Viva La Revolution! U.S. – French Dual Citizen ‘Living” In France And Receives Income From A U.S. Irrevocable Trust – Take The Money As A “Gift” Up To the Two Million And Pay The French Income Taxes",
+          "snippet": ""
+        },
+        {
+          "url": "https://github.com/lewfkrad/openaccountants/blob/HEAD/agent-skills/ma-cpu/SKILL.md",
+          "title": "lewfkrad/openaccountants - ./agent-skills/ma-cpu/SKILL.md",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.alphard.law/en/perspectives/french-real-estate-non-residents-ifi-inheritance-tax-sci-structuring/",
+          "title": "French Real Estate for Non-Residents: IFI, Inheritance Tax and SCI Structuring",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.leconomiste.com/sites/default/files/eco7/public/weekly_highlights_6580_.pdf",
+          "title": "version 2015",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.scribd.com/document/539874879/FORMULAIRE-ADP010",
+          "title": "Formulaire Adp010 | PDF",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.brainscape.com/flashcards/international-taxation-of-individuals-6483257/packs/10162003",
+          "title": "International taxation of individuals Flashcards by I. F.",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.pappers.fr/entreprise/sci-atger-martel-nant-811089655/documents/SCI%20ATGER-MARTEL%20NANT%20-%20Statuts%20mis%20%C3%A0%20jour%2022-03-2023.pdf",
+          "title": "| Certificat de réalisation |  |  |",
+          "snippet": ""
+        },
+        {
+          "url": "https://caafbenin.com/wp-content/uploads/2024/07/benin-code-gnral-des-impots-2024.pdf",
+          "title": "2024",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.proz.com/powwow/2633?_click_=Y29tbWVudGluZ2ZlYXR1cmU6OTIw",
+          "title": "ProZ.com powwow for translators in Fès, Morocco",
+          "snippet": ""
+        },
+        {
+          "url": "https://conseilsrapides.com/des-astuces/comment-on-ecrit-residence/",
+          "title": "Comment on ecrit residence? – Conseils Rapides",
+          "snippet": ""
+        },
+        {
+          "url": "https://ara.proz.com/powwow/2633",
+          "title": "ProZ.com powwow for translators in Fès, المغرب",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.agn-avocats.com/blog/tax/expatriates-are-you-a-mixed-couple/",
+          "title": "Expatriates - Are you a \"mixed\" couple? - AGN Avocats",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.pollux-fid.de/search?t=egality",
+          "title": "egality | Pollux - Fachinformationsdienst Politikwissenschaft",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.pulse-fo.com/wp-content/uploads/2025/04/21-08-pulse-junot-fine-properties-contribution-a-investing-in-french-prime-real-estate-as-a-non-resident.pdf",
+          "title": "Untitled",
+          "snippet": ""
+        },
+        {
+          "url": "https://publikasi.dinus.ac.id/index.php/media/article/download/904/674",
+          "title": "DAMPAK Psl. 7 atas UU NO. 36 TAHUN 2008 TERHADAP PELAKSANAAN ",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.bi.go.id/id/iru/highlight-news/Pages/ABNR%20nov%202008.aspx",
+          "title": "Indonesian Parliament Passes The New Income Tax Law",
+          "snippet": ""
+        },
+        {
+          "url": "https://core.ac.uk/outputs/230807708/",
+          "title": "MANAJEMEN LABA DAN PENERAPAN UU No.36/2008 TENTANG PERUBAHAN PENGHITUNGAN PAJAK PENGHASILAN - CORE",
+          "snippet": ""
+        },
+        {
+          "url": "https://legalcentric.com/content/view/65503",
+          "title": "36 TAHUN 2008 (36/2008) - Tax - Translated",
+          "snippet": ""
+        },
+        {
+          "url": "https://e-journal.unair.ac.id/NTR/article/download/22836/pdf",
+          "title": "Notaire",
+          "snippet": ""
+        },
+        {
+          "url": "https://openjournal.unpam.ac.id/index.php/JIA/article/view/907/0",
+          "title": "TINJAUAN TEORITIS PENGHASILAN TIDAK KENA PAJAK (PTKP) BERDASARKAN UNDANG-UNDANG NO. 36 TAHUN 2008 MENGENAI PAJAK PENGHASILAN DIBANDINGKAN DENGAN UPAH MINIMUM PROVINSI DKI JAKARTA SESUAI DENGAN PERATURAN GUBERNUR DKI JAKARTA NO. 176 TAHUN 2014 TENTANG UPAH MINIMUM PROVINSI DKI JAKARTA.  (Studi Kasus Di Wilayah Jakarta)",
+          "snippet": ""
+        },
+        {
+          "url": "https://yptb.org/index.php/sur/article/download/846/720/1089",
+          "title": "SURPLUS : JURNAL EKONOMI DAN BISNIS",
+          "snippet": ""
+        },
+        {
+          "url": "https://digilib.esaunggul.ac.id/UEU-Journal-11_1415/20275/taxpayer-morality-and-taxpayer-compliance",
+          "title": "KEWENANGAN DIRJEN PAJAK DALAM MENERBITKAN SURAT TAGIHAN PAJAK PERUSAHAAN DALAM PROSES LIKUIDASI BERDASARKAN PASAL 36 AYAT (1) C UU NO. 28 TAHUN 2007 SEBAGAIMANA TELAH DIUBAH TERAKHIR DENGAN UU NO. 16 TAHUN 2009 | Lenawati Haryanto | Journal - UEU Digital Repository",
+          "snippet": ""
+        },
+        {
+          "url": "https://ejournal.um-sorong.ac.id/index.php/js/article/download/3192/1766/14038",
+          "title": "Vol. 10 , Issue . 2 , The Legal Aspects Fulfillment of Tax May 2024",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.indonesianow.co/business-and-investment/8725867/indonesias-tax-authority-waives-tax-penalties-up-to-100?utm_campaign=detikcomsocmed&amp;amp;amp;amp;utm_medium=oa&amp;amp;amp;amp;utm_source=facebook&amp;amp;amp;amp;utm_content=indonesianow",
+          "title": "Indonesia's Tax Authority Waives Tax Penalties Up to 100%",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.casainvest.ma/en/search?page=1",
+          "title": "| Centre Régional d'Investissement de Casablanca-Settat",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.casainvest.ma/en/rapports?year=All&categorie=All&page=0",
+          "title": "Annual reports | Centre Régional d'Investissement de Casablanca",
+          "snippet": ""
+        },
+        {
+          "url": "https://casainvest.ma/en/search?page=3",
+          "title": "| Centre Régional d'Investissement de Casablanca-Settat",
+          "snippet": ""
+        },
+        {
+          "url": "https://youtube.com/watch?v=SzHqQ_QuEqI&si=qK9lYHgyGe_F04it",
+          "title": "Officially, the 2026 tax law: Who is exempt? And the truth about the tax audit of hidden funds. - YouTube",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.upsilon-consulting.com/en/minimum-contribution-dgi-rulings-morocco/",
+          "title": "Minimum contribution in Morocco: cases settled by the DGI",
+          "snippet": ""
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Directorate_General_of_Taxes_(Morocco)",
+          "title": "Directorate General of Taxes (Morocco)",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=V6K7rwMBlWw",
+          "title": "قانون المالية 2027 بالمغرب 🇲🇦 شحال غايتزاد فالصالير ديالك من بعد الإعفاء الضريبي؟",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=0-BzB2-UhfY&list=PLVjXaT62YTVs",
+          "title": "تفسير تصريح لقجع هل الأجر الشهري المعفي من الضريبة على الدخل  هو 5000 أم 10000 درهما ؟؟",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.sitelike.org/similar/ces.ma/",
+          "title": "Top 66 Similar Sites Like ces.ma | Best ces Alternatives & Reviews",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=z1HPEBilYFE",
+          "title": "20% d'impôts au Maroc ? Tout ce que tu dois savoir sur les impôts au Maroc",
+          "snippet": ""
+        },
+        {
+          "url": "https://sitesdb.com/alternatives/directentreprise.ma",
+          "title": "Top 10 directentreprise.ma alternatives & competitors & similar sites",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=o0IWNkogBEE",
+          "title": "الاقتطاع المزدوج من CNSS و CIMR - كيف تسترجع أموالك من إدارة الضرائب بالقانون",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.studocu.com/id/document/politeknik-keuangan-negara-stan/pajak-internasional/indonesia-residency-entitlement-under-tax-law/24402649",
+          "title": "Indonesia-Residency Entitlement Under Tax Law",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.yumpu.com/en/document/view/36710436/global-transfer-pricing-guide-january-2015/59",
+          "title": "INDIA DEADLINE TO PREPARE",
+          "snippet": ""
+        },
+        {
+          "url": "https://www.internationaltaxreview.com/article/2a68rfy5bw2ycq13xdpyc/indonesia-clearer-tax-residency-criteria",
+          "title": "Indonesia: Clearer tax residency criteria",
+          "snippet": ""
+        },
+        {
+          "url": "https://journal.das-institute.com/index.php/citizen-journal/article/view/216",
+          "title": "PENGARUH KEPATUHAN WAJIB PAJAK, KEGIATAN SOSIALISASI PERPAJAKAN, DAN PEMERIKSAAN PAJAK TERHADAP PENERIMAAN PAJAK PENGHASILAN DI KPP PRATAMA KARANGANYAR",
+          "snippet": ""
+        },
+        {
+          "url": "https://ejurnal.pajak.go.id/st/article/download/80/70",
+          "title": "A QUALITATIVE ANALYSIS OF TRANSFER PRICING AUDITS IN LIGHT OF COVID-19 DISRUPTIONS: INDONESIAN CONTEXT",
+          "snippet": ""
+        },
+        {
+          "url": "https://yptb.org/index.php/sur/article/download/846/720/1089",
+          "title": "SURPLUS : JURNAL EKONOMI DAN BISNIS",
+          "snippet": ""
+        },
+        {
+          "url": "https://ejournal.uas.ac.id/index.php/Al-tsaman/article/download/1147/557/",
+          "title": "INTI PERSOALAN PAJAK",
+          "snippet": ""
+        },
+        {
+          "url": "https://jurnal.pnj.ac.id/index.php/ekbis/article/download/6611/3189",
+          "title": "JURNAL EKONOMI BISNIS VOL 23 NO 1 : 44 - 56",
+          "snippet": ""
+        }
+      ],
+      "citations": [],
+      "rejected": [
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        },
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        },
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        },
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        },
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        },
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        },
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        },
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        },
+        {
+          "reason": "UNSAFE_SEARCH_URL_REJECTED"
+        }
+      ],
+      "turn": 2,
+      "kind": "FOLLOW_UP_SEARCH"
+    }
+  ],
+  "retrievals": [
+    {
+      "url": "https://peraturan.bpk.go.id/Details/39704/uu-no-36-tahun-2008",
+      "status": "REJECTED",
+      "reason": "NOT_OBSERVED_IN_SEARCH_OR_RETRIEVED_REFERENCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/peraturan",
+      "status": "REJECTED",
+      "reason": "NOT_OBSERVED_IN_SEARCH_OR_RETRIEVED_REFERENCE"
+    },
+    {
+      "url": "https://www.finances.gov.ma/fr/Pages/index.aspx",
+      "status": "REJECTED",
+      "reason": "NOT_OBSERVED_IN_SEARCH_OR_RETRIEVED_REFERENCE"
+    },
+    {
+      "url": "https://casainvest.ma",
+      "status": "REJECTED",
+      "reason": "NOT_OBSERVED_IN_SEARCH_OR_RETRIEVED_REFERENCE"
+    },
+    {
+      "url": "https://www.bi.go.id",
+      "status": "REJECTED",
+      "reason": "NOT_OBSERVED_IN_SEARCH_OR_RETRIEVED_REFERENCE"
+    }
+  ],
+  "readings": [],
+  "turns": [
+    {
+      "turn": 1,
+      "stage": "DISCOVER",
+      "promptHash": "5850dcf86f0d333242154c63b7b86c95b47a7ea7c655fe26c0db5913d396fe1f",
+      "responseHash": "853fcc17a495af8c082dc2da5e496fb2df5ce5d20acaa61927f65aeffa091a71",
+      "responseId": "resp_6ae367eaa9ee89723fac4987",
+      "searchCallCount": 4,
+      "model": "muse-spark-1.3"
+    },
+    {
+      "turn": 2,
+      "stage": "ITERATE",
+      "promptHash": "6e6ff75178b0d3a59b8ff3491cab1b2b9c0a16a2cf535d575cd6658785253456",
+      "responseHash": "481f6d520d7face74a5bcd0542f7eee078fb50b3847936d68637db1b9a7416fd",
+      "responseId": "resp_6ae367f03b444125e26f4601",
+      "searchCallCount": 10,
+      "model": "muse-spark-1.3"
+    },
+    {
+      "turn": 3,
+      "stage": "ITERATE",
+      "promptHash": "613f1ec37e1af2da7eb3f814d4cc6ff1f446278d46498c66d07d355f32df3ad4",
+      "responseHash": "1bbc952a67afaf28a770b71cbfb691a7ced88250debb420c6a7e0ee52505dd7d",
+      "responseId": "resp_6ae367fca7bb8accb4b84343",
+      "searchCallCount": 0,
+      "model": "muse-spark-1.3"
+    }
+  ],
+  "toolTrace": [
+    {
+      "turn": 1,
+      "tool": "retrieve_regulatory_sources",
+      "arguments": {
+        "sources": [
+          {
+            "documentIdentity": "UU No. 36 Tahun 2008 tentang Perubahan Keempat atas UU No. 7 Tahun 1983 tentang Pajak Penghasilan",
+            "issuingAuthority": "Pemerintah Republik Indonesia / DPR",
+            "jurisdictionCode": "ID",
+            "originalSourceUrl": "https://peraturan.bpk.go.id/Details/39704/uu-no-36-tahun-2008",
+            "publicationMetadata": "Lembaran Negara RI Tahun 2008 No. 133; effective 2009 fiscal year per Bank Indonesia summary",
+            "reason": "Controlling income-tax residence provision Pasal 2 ayat 3-4",
+            "sourceRole": "PRIMARY_LEGISLATION",
+            "title": "UU No. 36 Tahun 2008 - Pajak Penghasilan (BPK database)",
+            "url": "https://peraturan.bpk.go.id/Details/39704/uu-no-36-tahun-2008"
+          },
+          {
+            "documentIdentity": "PER-43/PJ/2011 tentang Penentuan Subjek Pajak Dalam Negeri dan Subjek Pajak Luar Negeri",
+            "issuingAuthority": "Direktorat Jenderal Pajak",
+            "jurisdictionCode": "ID",
+            "originalSourceUrl": "https://www.pajak.go.id",
+            "publicationMetadata": "DJP regulation cited in academic sources; verify text and dates on retrieval",
+            "reason": "DJP implementing guidance on domestic vs foreign tax subjects",
+            "sourceRole": "TAX_AUTHORITY",
+            "title": "PER-43/PJ/2011 - DJP guidance on tax subjects",
+            "url": "https://www.pajak.go.id/id/peraturan"
+          },
+          {
+            "documentIdentity": "Code Général des Impôts 2026 (Loi de finances 50-25)",
+            "issuingAuthority": "Direction Générale des Impôts, Ministère de l'Économie et des Finances",
+            "jurisdictionCode": "MA",
+            "originalSourceUrl": "https://www.finances.gov.ma",
+            "publicationMetadata": "CGI 2026 edition incorporating Loi de finances 50-25 enacted 2025-12-10",
+            "reason": "Moroccan domestic residence/domicile fiscal test",
+            "sourceRole": "PRIMARY_LEGISLATION",
+            "title": "CGI 2026 - Code Général des Impôts",
+            "url": "https://www.finances.gov.ma/fr/Pages/index.aspx"
+          }
+        ]
+      },
+      "result": {
+        "sources": [
+          {
+            "url": "https://peraturan.bpk.go.id/Details/39704/uu-no-36-tahun-2008",
+            "status": "REJECTED",
+            "reason": "NOT_OBSERVED_IN_SEARCH_OR_RETRIEVED_REFERENCE"
+          },
+          {
+            "url": "https://www.pajak.go.id/id/peraturan",
+            "status": "REJECTED",
+            "reason": "NOT_OBSERVED_IN_SEARCH_OR_RETRIEVED_REFERENCE"
+          },
+          {
+            "url": "https://www.finances.gov.ma/fr/Pages/index.aspx",
+            "status": "REJECTED",
+            "reason": "NOT_OBSERVED_IN_SEARCH_OR_RETRIEVED_REFERENCE"
+          }
+        ]
+      }
+    },
+    {
+      "turn": 2,
+      "tool": "retrieve_regulatory_sources",
+      "arguments": {
+        "sources": [
+          {
+            "documentIdentity": "CGI 2026 hosted publication listing",
+            "issuingAuthority": "Centre Régional d'Investissement Casablanca-Settat (public institution)",
+            "jurisdictionCode": "MA",
+            "originalSourceUrl": "https://casainvest.ma",
+            "publicationMetadata": "CRI Casablanca-Settat publications listing referencing Code général des impôts 2026",
+            "reason": "Official-guidance mirror of DGI code; residence provision to be read after retrieval",
+            "sourceRole": "OFFICIAL_GUIDANCE",
+            "title": "CRI Casablanca-Settat - Code général des impôts 2026 listing",
+            "url": "https://casainvest.ma"
+          },
+          {
+            "documentIdentity": "UU No. 36 Tahun 2008 summary - entry into force 2009 fiscal year",
+            "issuingAuthority": "Bank Indonesia",
+            "jurisdictionCode": "ID",
+            "originalSourceUrl": "https://www.bi.go.id",
+            "publicationMetadata": "BI summary: Law Number 36 of 2008, Fourth Amendment to Law 7/1983 on Income Tax",
+            "reason": "Effective-period evidence for UU PPh residence provision",
+            "sourceRole": "SECONDARY_LEGISLATION",
+            "title": "BI - Indonesian Parliament Passes The New Income Tax Law",
+            "url": "https://www.bi.go.id"
+          }
+        ]
+      },
+      "result": {
+        "sources": [
+          {
+            "url": "https://casainvest.ma",
+            "status": "REJECTED",
+            "reason": "NOT_OBSERVED_IN_SEARCH_OR_RETRIEVED_REFERENCE"
+          },
+          {
+            "url": "https://www.bi.go.id",
+            "status": "REJECTED",
+            "reason": "NOT_OBSERVED_IN_SEARCH_OR_RETRIEVED_REFERENCE"
+          }
+        ]
+      }
+    }
+  ],
+  "candidateIds": [],
+  "unresolved": [],
+  "missingFacts": [
+    {
+      "status": "MISSING_FACT",
+      "factId": "MA_RESIDENCE_HOME_TIES",
+      "question": "فين هي الدار الرئيسية ديالك فالمغرب، وفين ساكنة العائلة، وفين كاين المركز ديال المصالح الاقتصادية ديالك فأكتوبر 2026؟",
+      "whyNeeded": "Moroccan domicile-fiscal tests turn on permanent home and centre of interests; nationality and family home alone cannot decide residence."
+    },
+    {
+      "status": "MISSING_FACT",
+      "factId": "ID_RESIDENCE_INTENT_AND_STAY",
+      "question": "شنو هي نية الإقامة ديالك فإندونيسيا، وواش عندك سكن دائم تما، وشحال من يوم بقيتي فإندونيسيا فأي 12 شهر؟",
+      "whyNeeded": "Indonesian domestic-subject test turns on domicile/intent to reside and 183-day presence; calendar intervals alone do not implement the legal day count."
+    },
+    {
+      "status": "MISSING_FACT",
+      "factId": "DAY_COUNT_CONVENTION",
+      "question": "باش نحسبو أيام الحضور، خاصنا تواريخ الدخول والخروج بالضبط وقاعدة الحساب القانونية المعتمدة؟",
+      "whyNeeded": "No legal counting convention has been evidenced yet; totals cannot be inferred from intervals."
+    }
+  ],
+  "conflicts": [],
+  "periodIssues": [
+    {
+      "description": "No retrieved official text for MA CGI domicile-fiscal provision or ID UU PPh Pasal 2; effective periods and amendments unverified. Source retrievals rejected (NOT_OBSERVED_IN_SEARCH_OR_RETRIEVED_REFERENCE); budget exhausted.",
+      "sourceHandles": []
+    }
+  ],
+  "validatorResults": [
+    {
+      "status": "REJECTED",
+      "reason": "Actual source reading must precede extraction"
+    }
+  ],
+  "governance": "CANDIDATE_ONLY",
+  "postingPerformed": false,
+  "userFactsChanged": false,
+  "failure": "RESEARCH_VALIDATION_OR_TOOL_REVIEW_REQUIRED"
+}

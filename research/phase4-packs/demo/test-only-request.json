@@ -1,0 +1,15 @@
+{
+  "scopeId": "phase4-test-org",
+  "subjectId": "individual-1",
+  "requestKey": "controlled-real-umkm",
+  "taxType": "SIMPLIFIED_INCOME",
+  "jurisdictionCode": "ID",
+  "jurisdictionBasis": "TAX_RESIDENCE",
+  "incomeOrEventType": "MONTHLY_ELIGIBLE_DOMESTIC_BUSINESS",
+  "currency": "IDR",
+  "period": {
+    "periodStart": "2026-05-01",
+    "periodEnd": "2026-05-31"
+  },
+  "economicDate": "2026-05-31"
+}

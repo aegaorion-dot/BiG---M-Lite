@@ -1,0 +1,51 @@
+{
+  "taxYear": 2025,
+  "taxPeriod": {
+    "periodStart": "2025-10-01",
+    "periodEnd": "2025-10-31"
+  },
+  "taxStatus": "CALCULATED",
+  "netTaxPayable": {
+    "amountMinor": "750000",
+    "currency": "IDR"
+  },
+  "regression": {
+    "tests": 453,
+    "passed": 453,
+    "failed": 0,
+    "skipped": 0,
+    "suites": 29,
+    "durationMs": 258534.5268
+  },
+  "browserRun": {
+    "run": 14,
+    "at": "2026-10-29T22:43:46.942Z",
+    "success": true,
+    "complete": true,
+    "taxYear": "2025",
+    "browser": true,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 200687,
+    "timings": {
+      "firstProfileAndQuestionMs": 6366,
+      "profileResolutionMs": 197,
+      "activityBatchMs": 77962,
+      "cardAndDocumentMs": 25840
+    },
+    "error": null
+  },
+  "journeyRuntimeMs": 195839,
+  "liveExplanation": {
+    "requests": 1,
+    "retries": 0,
+    "success": true
+  },
+  "residencePilot": {
+    "requests": 20,
+    "frozen": true,
+    "gates": "UNRESOLVED"
+  },
+  "productEngineering": "FROZEN",
+  "mainChanged": false,
+  "credentialsRecorded": false
+}

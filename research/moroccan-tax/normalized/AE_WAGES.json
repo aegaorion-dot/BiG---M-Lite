@@ -1,0 +1,1154 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "AE-FTA",
+  "jurisdictionCode": "AE",
+  "metadata": {
+    "title": "Federal Tax Authority - Corporate Tax",
+    "officialDocumentId": null,
+    "language": "en",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "9fe9a859-09ef-47d0-b035-09e3a50ef21b",
+    "rawContentHash": "d0b624901333d87aebace225b3fc1b1880e7f75df65a50be67551c4c1f3ac37d",
+    "sourceUrl": "https://www.tax.gov.ae/en/taxes/corporate.tax/faqs.aspx",
+    "finalUrl": "https://www.tax.gov.ae/en/taxes/corporate.tax/faqs.aspx",
+    "retrievedAt": "2026-10-29T14:39:35.058Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "FTA",
+    "authorityName": "United Arab Emirates Federal Tax Authority",
+    "sourceRole": "TAX_AUTHORITY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/d0b624901333d87aebace225b3fc1b1880e7f75df65a50be67551c4c1f3ac37d.bin",
+    "rawContentHash": "d0b624901333d87aebace225b3fc1b1880e7f75df65a50be67551c4c1f3ac37d"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/d0b624901333d87aebace225b3fc1b1880e7f75df65a50be67551c4c1f3ac37d.bin",
+      "rawContentHash": "d0b624901333d87aebace225b3fc1b1880e7f75df65a50be67551c4c1f3ac37d"
+    },
+    "metaTags": [
+      "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\" />",
+      "<meta charset=\"utf-8\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=1,maximum-scale=5.0\" />",
+      "<meta name=\"author\" content=\"Federal Tax Authority\" />",
+      "<meta name=\"robots\" content=\"index,follow\" />",
+      "<meta name=\"revisit-after\" content=\"7 days\" />",
+      "<meta name=\"robots\" content=\"index,follow\" />",
+      "<meta name=\"revisit-after\" content=\"7 days\" />",
+      "<meta property=\"og:site_name\" content=\"Federal Tax Authority -  Corporate Tax\" />",
+      "<meta property=\"og:title\" content=\"FAQs\" />",
+      "<meta itemprop=\"name\" content=\"Federal Tax Authority -  Corporate Tax\" />",
+      "<meta name=\"twitter:card\" content=\"summary_large_image\" />",
+      "<meta name=\"twitter:title\" content=\"Federal Tax Authority -  Corporate Tax\" />",
+      "<meta name=\"twitter:url\" content=\"https://tax.gov.ae//en/taxes/corporate.tax/faqs.aspx\" />",
+      "<meta property=\"og:type\" content=\"website\" />",
+      "<meta property=\"og:url\" content=\"https://tax.gov.ae//en/taxes/corporate.tax/faqs.aspx\" />",
+      "<meta property=\"fb:app_id\" content=\"144123127676\" />",
+      "<meta name=\"description\" content=\". - Federal Tax Authority -  Corporate Tax\" />",
+      "<meta property=\"og:description\" content=\". - Federal Tax Authority -  Corporate Tax\" />",
+      "<meta itemprop=\"description\" content=\". - Federal Tax Authority -  Corporate Tax\" />",
+      "<meta name=\"twitter:description\" content=\". - Federal Tax Authority -  Corporate Tax\" />",
+      "<meta property=\"og:image\" content=\"https://tax.gov.ae/datafolder/Images/LandingPages/Services/servicecards.png\" />",
+      "<meta itemprop=\"image\" content=\"https://tax.gov.ae/datafolder/Images/LandingPages/Services/servicecards.png\" />",
+      "<meta name=\"twitter:image\" content=\"https://tax.gov.ae/datafolder/Images/LandingPages/Services/servicecards.png\" />"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Corporate Tax Corporate Tax Topics Small Business Relief Exempt Person: Failure to meet conditions Exempt Person Basis of Taxation Non-Residents Basis of Taxation - Natural Person Permanent Establishment Effectively managed and controlled in UAE Resident Juridical Person Corporate Tax Webinars Corporate Tax Workshops FAQs Guides, References & Public Clarifications E-learning FAQs Filter by Search keyword Here we search in FAQ information, results are shown from this section only. Here we search in FAQ information, results are shown from this section only. Category Corporate TAX FAQs Corporate Tax - Overview Corporate Tax - Scope and rate Corporate Tax - Natural Persons Corporate Tax - Juridical persons Corporate Tax - Partnerships Corporate Tax - Investment Funds and Investment Managers Corporate Tax - Branches Corporate Tax - Foreign persons Corporate Tax - Taxable Income Corporate Tax - Deductions Corporate Tax - Transfer pricing Corporate Tax - Tax Credits Corporate Tax - Sectors Corporate Tax - Trusts and Family Foundations Corporate Tax - Income exempt from CT Corporate Tax - Losses Corporate Tax - Free Zones Corporate Tax - Tax Groups Corporate Tax - Group Relief Corporate Tax - Financial Records Corporate Tax - Administration Corporate Tax - Pillar 2 158 Items found Add a question Corporate TAX FAQs 1. What is a “Business” or “Business Activity”? The terms &ldquo;Business&rdquo; and &ldquo;Business Activity&rdquo; as defined in the Corporate Tax Law identify when the activities of certain persons give rise to a UAE CT liability by considering the person to be a taxable person. &ldquo;Business&rdquo; means any economic activity, whether continuous or short term, conducted by any person. It is implied that a business is conducted with a profit motive, and that there is the existence of some system and organisation to the activity conducted. However, a business or business activity for UAE CT purposes does not lose its identity simply because it does not make a profit. For the application of the Corporate Tax Law to companies and other juridical persons, all activities conducted and assets used or held will generally be considered activities conducted, and assets used or held, for the purposes of a &ldquo;Business&rdquo;. Individuals can earn income from wages and salaries, investments or from practising a commercial, industrial or professional activity, either directly or as sole proprietor of a business. For natural persons, a Cabinet Decision will be issued in due course specifying further information on what would bring a natural person within the scope of UAE CT. 2. Will the income of UAE branches of a UAE business be subject to UAE CT? Yes. The income of UAE branches will be included in the taxable income and UAE CT return of their UAE &ldquo;parent&rdquo; or &ldquo;head office&rdquo;. 3. Will transfer pricing rules apply to both domestic and cross border transactions? Yes. Transfer pricing rules apply to UAE businesses that have transactions with Related Parties and Connected Persons, irrespective of whether the Related Parties or Connected Persons are located in the UAE mainland, a Free Zone or in a foreign jurisdiction. 4. I am already registered for VAT purposes. Do I have to register for UAE CT? Yes. Taxpayers will be required to register for UAE CT (and update their details, if required), even if they are already registered for VAT. 5. What is CT? CT is a form of direct tax levied on the net income or profit of corporations and other businesses. CT is sometimes also referred to as &ldquo;Corporate Income Tax&rdquo; or &ldquo;Business Profits Tax&rdquo; in other jurisdictions. 6. Will UAE branches of foreign businesses be subject to UAE CT? Where no election is made or the income of the foreign branch or permanent establishment is not eligible for an exemption from CT, the UAE CT payable on the income of the foreign branch or permanent establishment can be reduced by the corporate tax (or similar) paid on the relevant income in the foreign jurisdiction. 7. Why is the UAE introducing CT? A competitive CT regime based on international best practices is expected to cement the UAE&rsquo;s position as a leading global hub for business and investment and accelerate the UAE&rsquo;s development and transformation to achieve its strategic objectives. Introducing a CT regime also reaffirms the UAE&rsquo;s commitment to meeting international standards for tax transparency and preventing harmful tax practices. 8. Who is a Natural Person? The term &ldquo;Natural Person&rdquo; in the Corporate Tax Law means an individual. 9. Is the UAE the first country to introduce CT? Most countries in the world have a comprehensive CT regime, including most of the countries in the Middle East. 10. When will the UAE CT regime become effective? The UAE CT regime will become effective for financial years starting on or after 1 June 2023. Examples: ● A business that has a financial year starting on 1 July 2023 and ending on 30 June 2024 will become subject to UAE CT from 1 July 2023 (which is the beginning of the first financial year that starts on or after 1 June 2023) ● A business that has a financial year starting on 1 January 2023 and ending on 31 December 2023 will become subject to UAE CT from 1 January 2024 (which is the beginning of the first financial year that starts on or after 1 June 2023) 11. Are UAE branches separate juridical persons? No. UAE branches of a domestic or a foreign juridical person are an extension of their &ldquo;parent&rdquo; or &ldquo;head office&rdquo; and, therefore, are not considered separate juridical persons. 12. Who will be subject to UAE CT? UAE CT applies to juridical persons incorporated in the UAE and juridical persons effectively managed and controlled in the UAE, as well as to foreign juridical persons that have a permanent establishment (see section Foreign persons) in the UAE (see question &lsquo;Who is considered resident for UAE CT purposes?&rsquo; under section Scope and rate). Individuals will be subject to CT only if they are engaged in a business or business activity in the UAE, either directly or through an unincorporated partnership or sole proprietorship. A Cabinet Decision will be issued in due course specifying further information on what would bring a natural person within the scope of UAE CT. 13. Will UAE entities owned by UAE or GCC nationals be subject to UAE CT? Yes &ndash; the UAE CT does not differentiate between nationality or residence. Juridical persons that are incorporated or resident in the UAE, or that have a permanent establishment in the UAE, will be subject to UAE CT. This applies irrespective of the residence and nationality of the individual founders or (ultimate) owners of the entity. 14. Will foreign companies and other juridical persons be subject to UAE CT? Foreign entities that operate in the UAE through a permanent establishment or that are considered resident in the UAE for CT purposes will be subject to UAE CT. Merely earning UAE sourced income would not trigger CT payable or require the foreign entity to register and file for UAE CT. 15. Will UAE CT be applicable to businesses in each Emirate? Yes. The UAE CT is a Federal tax and will therefore apply across all the Emirates. 16. Will I have to pay UAE CT alongside Emirate level taxes? Businesses engaged in the extraction of the UAE&rsquo;s natural resources and in certain non-extractive activities that are subject to Emirate level taxation will be outside the scope of UAE CT, subject to meeting certain conditions. Other businesses may be subject to both Federal CT and Emirate level taxation. Emirate level taxes paid will not be able to be credited against or otherwise reduce the amount of Federal CT payable. 17. What is taxable income? The taxable income for a Tax Period is the accounting net profit (or loss) of the business, after making adjustments for certain items as defined in the Corporate Tax Law. 18. Will UAE CT replace VAT in the UAE? No, CT and VAT are two different types of taxes. Both will continue to apply in the UAE. 19. What expenditure will be deductible for the purposes of calculating taxable income? In principle, all legitimate business expenses incurred to derive taxable income will be deductible, although the timing of the deduction may vary for different types of expenses and the accounting method applied. For capital assets, expenditure would generally be recognised by way of depreciation or amortisation deductions over the economic life of the asset or benefit. Expenditure that has a dual purpose, such as expenses incurred for both personal and business purposes, will need to be apportioned with the relevant portion of the expenditure treated as incurred wholly and exclusively for the purpose of the taxable person&rsquo;s business. 20. Will I have to pay UAE CT alongside VAT in the UAE? If you are a registered business for VAT, you will have to pay VAT and CT separately. If your business is not VAT registered you may still have to pay CT. Entries : 20 out of 158 Previous 1 2 3 4 5 ... Next",
+    "blocks": [
+      {
+        "locator": "html:main:332656",
+        "text": "Corporate Tax Corporate Tax Topics Small Business Relief Exempt Person: Failure to meet conditions Exempt Person Basis of Taxation Non-Residents Basis of Taxation - Natural Person Permanent Establishment Effectively managed and controlled in UAE Resident Juridical Person Corporate Tax Webinars Corporate Tax Workshops FAQs Guides, References & Public Clarifications E-learning FAQs Filter by Search keyword Here we search in FAQ information, results are shown from this section only. Here we search in FAQ information, results are shown from this section only. Category Corporate TAX FAQs Corporate Tax - Overview Corporate Tax - Scope and rate Corporate Tax - Natural Persons Corporate Tax - Juridical persons Corporate Tax - Partnerships Corporate Tax - Investment Funds and Investment Managers Corporate Tax - Branches Corporate Tax - Foreign persons Corporate Tax - Taxable Income Corporate Tax - Deductions Corporate Tax - Transfer pricing Corporate Tax - Tax Credits Corporate Tax - Sectors Corporate Tax - Trusts and Family Foundations Corporate Tax - Income exempt from CT Corporate Tax - Losses Corporate Tax - Free Zones Corporate Tax - Tax Groups Corporate Tax - Group Relief Corporate Tax - Financial Records Corporate Tax - Administration Corporate Tax - Pillar 2 158 Items found Add a question Corporate TAX FAQs 1. What is a “Business” or “Business Activity”? The terms &ldquo;Business&rdquo; and &ldquo;Business Activity&rdquo; as defined in the Corporate Tax Law identify when the activities of certain persons give rise to a UAE CT liability by considering the person to be a taxable person. &ldquo;Business&rdquo; means any economic activity, whether continuous or short term, conducted by any person. It is implied that a business is conducted with a profit motive, and that there is the existence of some system and organisation to the activity conducted. However, a business or business activity for UAE CT purposes does not lose its identity simply because it does not make a profit. For the application of the Corporate Tax Law to companies and other juridical persons, all activities conducted and assets used or held will generally be considered activities conducted, and assets used or held, for the purposes of a &ldquo;Business&rdquo;. Individuals can earn income from wages and salaries, investments or from practising a commercial, industrial or professional activity, either directly or as sole proprietor of a business. For natural persons, a Cabinet Decision will be issued in due course specifying further information on what would bring a natural person within the scope of UAE CT. 2. Will the income of UAE branches of a UAE business be subject to UAE CT? Yes. The income of UAE branches will be included in the taxable income and UAE CT return of their UAE &ldquo;parent&rdquo; or &ldquo;head office&rdquo;. 3. Will transfer pricing rules apply to both domestic and cross border transactions? Yes. Transfer pricing rules apply to UAE businesses that have transactions with Related Parties and Connected Persons, irrespective of whether the Related Parties or Connected Persons are located in the UAE mainland, a Free Zone or in a foreign jurisdiction. 4. I am already registered for VAT purposes. Do I have to register for UAE CT? Yes. Taxpayers will be required to register for UAE CT (and update their details, if required), even if they are already registered for VAT. 5. What is CT? CT is a form of direct tax levied on the net income or profit of corporations and other businesses. CT is sometimes also referred to as &ldquo;Corporate Income Tax&rdquo; or &ldquo;Business Profits Tax&rdquo; in other jurisdictions. 6. Will UAE branches of foreign businesses be subject to UAE CT? Where no election is made or the income of the foreign branch or permanent establishment is not eligible for an exemption from CT, the UAE CT payable on the income of the foreign branch or permanent establishment can be reduced by the corporate tax (or similar) paid on the relevant income in the foreign jurisdiction. 7. Why is the UAE introducing CT? A competitive CT regime based on international best practices is expected to cement the UAE&rsquo;s position as a leading global hub for business and investment and accelerate the UAE&rsquo;s development and transformation to achieve its strategic objectives. Introducing a CT regime also reaffirms the UAE&rsquo;s commitment to meeting international standards for tax transparency and preventing harmful tax practices. 8. Who is a Natural Person? The term &ldquo;Natural Person&rdquo; in the Corporate Tax Law means an individual. 9. Is the UAE the first country to introduce CT? Most countries in the world have a comprehensive CT regime, including most of the countries in the Middle East. 10. When will the UAE CT regime become effective? The UAE CT regime will become effective for financial years starting on or after 1 June 2023. Examples: ● A business that has a financial year starting on 1 July 2023 and ending on 30 June 2024 will become subject to UAE CT from 1 July 2023 (which is the beginning of the first financial year that starts on or after 1 June 2023) ● A business that has a financial year starting on 1 January 2023 and ending on 31 December 2023 will become subject to UAE CT from 1 January 2024 (which is the beginning of the first financial year that starts on or after 1 June 2023) 11. Are UAE branches separate juridical persons? No. UAE branches of a domestic or a foreign juridical person are an extension of their &ldquo;parent&rdquo; or &ldquo;head office&rdquo; and, therefore, are not considered separate juridical persons. 12. Who will be subject to UAE CT? UAE CT applies to juridical persons incorporated in the UAE and juridical persons effectively managed and controlled in the UAE, as well as to foreign juridical persons that have a permanent establishment (see section Foreign persons) in the UAE (see question &lsquo;Who is considered resident for UAE CT purposes?&rsquo; under section Scope and rate). Individuals will be subject to CT only if they are engaged in a business or business activity in the UAE, either directly or through an unincorporated partnership or sole proprietorship. A Cabinet Decision will be issued in due course specifying further information on what would bring a natural person within the scope of UAE CT. 13. Will UAE entities owned by UAE or GCC nationals be subject to UAE CT? Yes &ndash; the UAE CT does not differentiate between nationality or residence. Juridical persons that are incorporated or resident in the UAE, or that have a permanent establishment in the UAE, will be subject to UAE CT. This applies irrespective of the residence and nationality of the individual founders or (ultimate) owners of the entity. 14. Will foreign companies and other juridical persons be subject to UAE CT? Foreign entities that operate in the UAE through a permanent establishment or that are considered resident in the UAE for CT purposes will be subject to UAE CT. Merely earning UAE sourced income would not trigger CT payable or require the foreign entity to register and file for UAE CT. 15. Will UAE CT be applicable to businesses in each Emirate? Yes. The UAE CT is a Federal tax and will therefore apply across all the Emirates. 16. Will I have to pay UAE CT alongside Emirate level taxes? Businesses engaged in the extraction of the UAE&rsquo;s natural resources and in certain non-extractive activities that are subject to Emirate level taxation will be outside the scope of UAE CT, subject to meeting certain conditions. Other businesses may be subject to both Federal CT and Emirate level taxation. Emirate level taxes paid will not be able to be credited against or otherwise reduce the amount of Federal CT payable. 17. What is taxable income? The taxable income for a Tax Period is the accounting net profit (or loss) of the business, after making adjustments for certain items as defined in the Corporate Tax Law. 18. Will UAE CT replace VAT in the UAE? No, CT and VAT are two different types of taxes. Both will continue to apply in the UAE. 19. What expenditure will be deductible for the purposes of calculating taxable income? In principle, all legitimate business expenses incurred to derive taxable income will be deductible, although the timing of the deduction may vary for different types of expenses and the accounting method applied. For capital assets, expenditure would generally be recognised by way of depreciation or amortisation deductions over the economic life of the asset or benefit. Expenditure that has a dual purpose, such as expenses incurred for both personal and business purposes, will need to be apportioned with the relevant portion of the expenditure treated as incurred wholly and exclusively for the purpose of the taxable person&rsquo;s business. 20. Will I have to pay UAE CT alongside VAT in the UAE? If you are a registered business for VAT, you will have to pay VAT and CT separately. If your business is not VAT registered you may still have to pay CT. Entries : 20 out of 158 Previous 1 2 3 4 5 ... Next",
+        "anchorId": "fd792b9b3ad2fd8e74f25fe44908d2e6d6f800673ddf871dcf3399c803f8a337"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "fd792b9b3ad2fd8e74f25fe44908d2e6d6f800673ddf871dcf3399c803f8a337",
+      "locator": "html:main:332656",
+      "start": 0,
+      "end": 9102,
+      "quoteHash": "9cb8bc12acb7b452645da0320882817b29332cf2867fa2c672553e7e75811575",
+      "rawContentHash": "d0b624901333d87aebace225b3fc1b1880e7f75df65a50be67551c4c1f3ac37d"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://selfcare.uaepass.ae/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/who.we.are.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/message.from.the.director.general.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/why.have.taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.strategy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.awards.and.certificates.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/zgb.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/taxpayer.charter.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/excellence.initiatives.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/faq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/vat.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/refunds.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.tax.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excisetax.scenarios.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.tax.refunds.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/guides.listing.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/events.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/Workshops.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/faqs.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.guide.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tasheel.centers.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/uae.tax.agent.programme.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://beta-ask.u.ae/en/uask",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/business.advisory.group.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/clearing.companies.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/how.to.become.a.tax.agent.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/registered.tax.agents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/tax.agent.renewal.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.accounting.software.vendors.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=3&typename=customr.service",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=4&typename=registration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=5&typename=refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/content/dts.app.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/emaratax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services/services.with.partners.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/visual.open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://mof.gov.ae/federal-budgets-2015-2023/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.publication.plan.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.3d.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://bayanat.ae/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.archive.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/user/login.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/who.we.are.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/message.from.the.director.general.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/why.have.taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.strategy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.awards.and.certificates.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/zgb.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/taxpayer.charter.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/excellence.initiatives.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/faq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.guide.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tasheel.centers.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/uae.tax.agent.programme.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://beta-ask.u.ae/en/uask",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/business.advisory.group.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.accounting.software.vendors.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/clearing.companies.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=3&typename=customr.service",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=4&typename=registration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=5&typename=refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/content/dts.app.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/emaratax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services/services.with.partners.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/visual.open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://mof.gov.ae/federal-budgets-2015-2023/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.publication.plan.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.3d.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://bayanat.ae/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.archive.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://eservices.tax.gov.ae/en-us",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/who.we.are.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/message.from.the.director.general.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/why.have.taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.strategy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/fta.awards.and.certificates.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/zgb.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/taxpayer.charter.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/about.fta/excellence.initiatives.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/faq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/vat.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/refunds.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.tax.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excisetax.scenarios.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.tax.refunds.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/guides.listing.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax/excise.elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/events.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/Workshops.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/faqs.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/esr/economic.substance.regulations.guide.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tasheel.centers.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/uae.tax.agent.programme.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://beta-ask.u.ae/en/uask",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/business.advisory.group.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/clearing.companies.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/how.to.become.a.tax.agent.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/registered.tax.agents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.agents/tax.agent.renewal.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/tax.support/tax.accounting.software.vendors.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=3&typename=customr.service",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=4&typename=registration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services.aspx?type=5&typename=refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/content/dts.app.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/emaratax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services/services.with.partners.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/visual.open.data.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://mof.gov.ae/federal-budgets-2015-2023/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/open.data.publication.plan.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.3d.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/open.data/opendata.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://bayanat.ae/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/Legislation.archive.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/user/login.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://app-as.readspeaker.com/cgi-bin/rsent?customerid=12549&lang=en_uk&readclass=mainContent,footer-1,footer-2&url=https://tax.gov.ae/en/taxes/corporate.tax/faqs.aspx?",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/taxes/corporate.tax/faqs.aspx#emergencyModal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/contact.us.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/whistleblowing.form.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/emaratax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/ects/process.key.message/submit.and.pay.tax.return.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/taxes/corporate.tax/faqs.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/vat/guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services/vat.registration.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/legislation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/services.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae//en/services/corporate.tax.registration.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/faq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/whistleblowing.form.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/statuscheck.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/Vat/refunds/uae.nationals.building.new.residences.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/eligibility.questionnaire.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/announcements.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/emergency.notifications.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/taxes/corporate.tax/faqs.aspx#trnVerifyResultsModal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/taxes/corporate.tax/faqs.aspx#rateTRNResultsModal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/taxes/corporate.tax/faqs.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/ar/taxes/corporate.tax/faqs.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://gsr.ae/en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.highlights.experience.in.expanding.smart.tax.systems.at.belt.and.road.initiative.tax.administration.cooperation.forum.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.calls.on.persons.subject.to.einvoicing.to.comply.wit.the.prescribed.legal.deadlines.and.avoid.administrative.penalties.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/building.on.the.authoritys.efforts.to.foster.a.culture.of.constructive.community.dialogue.and.enhance.tax.awareness.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.launches.worlds.firstofitskind.aipowered.digital.platform.for.tourist.tax.refunds.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.issues.new.guide.on.scope.and.registration.for.topup.tax.on.multinational.enterprises.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.participates.in.brics.tax.experts.and.tax.heads.meeting.2026in.new.delhi.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/media.centre/news/federal.tax.authority.organises.joint.awareness.meeting.for.accredited.service.providers.and.persons.subject.to.the.einvoicing.system.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/default.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/small.business.relief.23.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/exempt.person.failure.to.meet.conditions.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/exempt.person.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.nonresidents.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/basis.of.taxation.natural.person.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/permanent.establishment.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/effectively.managed.and.controlled.in.uae.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics/resident.juridical.person.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/events.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/Workshops.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/faqs.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.guides.references.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.elearning.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/uae.einvoicing.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://uaelegislation.gov.ae/en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/eparticipation.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/media.centre/news.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/media.centre.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/whistleblowing.form.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/muwafaq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/accredited.collection.agencies.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/about.fta.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/careers.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/about.fta/smart.applications.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/about.fta/labaih.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/about.fta/taxpayer.charter.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/complaints.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/contact.us.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/accessibility.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/faq.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/about.fta/knowledge.Center.Page.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/glossary.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/tax.dispute.resolution.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/ftasitemap.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/terms.conditions.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/privacy.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/disclaimer.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.gov.ae/en/content/accessibility.policy.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://171.ae/en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/Theuaetaxes/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/uaetax/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.linkedin.com/company/federal-tax-authority",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://twitter.com/uaetax",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCgBXwwAIAHrHjK-XwWJU1VA/videos",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://ask.u.ae/en/",
+      "classification": "REJECTED_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "46b24663c96997fd3faa6c28cef1f5e8a974177b0dd2bc71b1504030d3f83032"
+}

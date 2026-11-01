@@ -77,6 +77,7 @@ describe('MetaModelAdapter — konfigurasi & protokol', () => {
 const { responsePayload } = require('../src/ai/aiAdapter');
 describe('Meta Responses envelope',()=>{
  it('parses content across output text blocks',()=>{assert.deepEqual(responsePayload({status:'completed',output:[{type:'reasoning'},{type:'message',role:'assistant',content:[{type:'output_text',text:'{"facts":'},{type:'output_text',text:'[]}'}]}]}),{facts:[]});});
+ it('recovers one complete JSON object after visible research progress text without discarding trailing content',()=>{assert.deepEqual(responsePayload({status:'completed',output:[{type:'message',role:'assistant',content:[{type:'output_text',text:'Research complete. {"status":"REVIEW_REQUIRED","countryPacks":[]}'}]}]}),{status:'REVIEW_REQUIRED',countryPacks:[]});assert.throws(()=>responsePayload({status:'completed',output:[{type:'message',role:'assistant',content:[{type:'output_text',text:'{"facts":[]} trailing'}]}]}),/invalid JSON/);});
  it('rejects incomplete, refusal, missing output and invalid JSON',()=>{
   for(const response of [{status:'incomplete',output:[]},{status:'completed',output:[{type:'message',role:'assistant',content:[{type:'refusal'}]}]},{facts:[]},{output:[{type:'message',role:'assistant',content:[{type:'output_text',text:'not JSON'}]}]}])assert.throws(()=>responsePayload(response));
  });

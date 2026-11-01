@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "muse-live-clip/1",
+  "persona": "nikos",
+  "liveMuseResearch": true,
+  "researchSeconds": 474.1,
+  "finished": false,
+  "discoveredPacks": "ID_CIT_DETERMINATION_2025,ID_INDIVIDUAL_ORDINARY_2025,ID_INDIVIDUAL_ORDINARY_2026,ID_UMKM_INDIVIDUAL_2025,ID_UMKM_INDIVIDUAL_2026,ID_UMKM_PT_PERORANGAN_2026,ID_WHT23_MANAGEMENT_2026,ID_WHT26_SERVICE_2026,SG_CIT_YA2026_PTE_NO_CASH_GRANT,US_SE_2026",
+  "video": "research/demo-videos/muse-live/muse-live.mp4",
+  "duration": 74.5,
+  "videoBytes": 636232,
+  "recordedAt": "2026-11-01T15:15:24.289Z"
+}

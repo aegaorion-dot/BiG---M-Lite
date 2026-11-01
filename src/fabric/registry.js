@@ -1,7 +1,14 @@
 'use strict';
 const {deepFreeze}=require('../onboarding/canonical');
 const rows=[
+ ['MA','FINANCE','Morocco Ministry of Economy and Finance / DGI publications','PRIMARY_LEGISLATION','finances.gov.ma','fr'],
+ ['MA','DGI','Morocco Direction Generale des Impots','TAX_AUTHORITY','tax.gov.ma','fr'],
+ ['MA','CRI','Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror','OFFICIAL_GUIDANCE','casainvest.ma','fr'],
+ ['AE','FTA','United Arab Emirates Federal Tax Authority','TAX_AUTHORITY','tax.gov.ae','en'],
+ ['AE','GOV','United Arab Emirates official government portal','OFFICIAL_GUIDANCE','u.ae','en'],
+ ['AE','ADRO','Abu Dhabi Residents Office, government guidance','OFFICIAL_GUIDANCE','adro.gov.ae','en'],
  ['ID','DJP','Direktorat Jenderal Pajak','TAX_AUTHORITY','pajak.go.id','id'],
+ ['ID','FISCAL','Indonesia Ministry of Finance fiscal tax exchange-rate decisions','FINANCE_MINISTRY','fiskal.kemenkeu.go.id','id'],
  ['ID','BPK','Badan Pemeriksa Keuangan legislation database','PRIMARY_LEGISLATION','peraturan.bpk.go.id','id'],
  ['ID','JDIH','Ministry of Finance legal documentation','SECONDARY_LEGISLATION','jdih.kemenkeu.go.id','id'],
  ['ID','DJPP','Directorate General of Legislation','OFFICIAL_GAZETTE','peraturan.go.id','id'],
@@ -18,6 +25,20 @@ const rows=[
  ['US','CONGRESS','Library of Congress Congress.gov','PRIMARY_LEGISLATION','congress.gov','en'],
  ['US','TAXCOURT','United States Tax Court','COURT','ustaxcourt.gov','en'],
  ['US','COURTS','Administrative Office of the US Courts','COURT','uscourts.gov','en'],
+ ['US','TREASURY','United States Department of the Treasury','FINANCE_MINISTRY','treasury.gov','en'],
+ ['JP','NTA','Japan National Tax Agency','TAX_AUTHORITY','nta.go.jp','ja'],
+ ['JP','MOF','Japan Ministry of Finance','FINANCE_MINISTRY','mof.go.jp','ja'],
+ ['JP','EGOV','e-Gov Japanese law search','PRIMARY_LEGISLATION','elaws.e-gov.go.jp','ja'],
+ ['FR','IMPOTS','French Directorate General of Public Finances (impots.gouv.fr)','TAX_AUTHORITY','impots.gouv.fr','fr'],
+ ['FR','BOFIP','French Official Tax Bulletin (BOFiP)','OFFICIAL_TAX_GUIDANCE','bofip.impots.gouv.fr','fr'],
+ ['FR','LEGIFRANCE','French official legislation and consolidated law portal','PRIMARY_LEGISLATION','legifrance.gouv.fr','fr'],
+ ['FR','SERVICEPUBLIC','French official public-service information portal','OFFICIAL_GUIDANCE','service-public.fr','fr'],
+ ['FR','ECONOMIE','French Ministry of the Economy, Finance and Industrial and Digital Sovereignty','FINANCE_MINISTRY','economie.gouv.fr','fr'],
+ ['ES','AEAT','Agencia Estatal de Administracion Tributaria','TAX_AUTHORITY','sede.agenciatributaria.gob.es','es'],
+ ['ES','BOE','Boletin Oficial del Estado','OFFICIAL_GAZETTE','boe.es','es'],
+ ['ES','HACIENDA','Spanish Ministry of Finance','FINANCE_MINISTRY','hacienda.gob.es','es'],
+ ['TR','GIB','Turkish Revenue Administration','TAX_AUTHORITY','gib.gov.tr','tr'],
+ ['TR','RESMIGAZETE','Republic of Turkiye Official Gazette','OFFICIAL_GAZETTE','resmigazete.gov.tr','tr'],
  ['AU','ATO','Australian Taxation Office','TAX_AUTHORITY','ato.gov.au','en'],
  ['AU','FRL','Office of Parliamentary Counsel Federal Register','PRIMARY_LEGISLATION','legislation.gov.au','en'],
  ['AU','TREASURY','Australian Treasury','FINANCE_MINISTRY','treasury.gov.au','en'],
@@ -43,8 +64,10 @@ const structured={
 };
 const SOURCES=deepFreeze(rows.map(([jurisdictionCode,authorityCode,authorityName,sourceRole,domain,language])=>{
  const sourceId=jurisdictionCode+'-'+authorityCode;
- const hosts=[domain,'www.'+domain];if(sourceId==='AU-FRL')hosts.push('api.prod.legislation.gov.au');if(sourceId==='US-CONGRESS')hosts.push('api.congress.gov');
- return {sourceId,jurisdictionCode,authorityCode,authorityName,sourceRole,baseUrl:'https://'+domain+'/',officialDomains:hosts,
+ const hosts=[domain,'www.'+domain];if(sourceId==='JP-EGOV')hosts.push('laws.e-gov.go.jp');if(sourceId==='AU-FRL')hosts.push('api.prod.legislation.gov.au');if(sourceId==='US-CONGRESS')hosts.push('api.congress.gov');
+ if(sourceId==='FR-SERVICEPUBLIC')hosts.push('service-public.gouv.fr','www.service-public.gouv.fr','entreprendre.service-public.gouv.fr');
+ const baseUrl=sourceId==='JP-EGOV'?'https://laws.e-gov.go.jp/':sourceId==='FR-LEGIFRANCE'?'https://www.legifrance.gouv.fr/':sourceId==='FR-SERVICEPUBLIC'?'https://www.service-public.gouv.fr/':'https://'+domain+'/';
+ return {sourceId,jurisdictionCode,authorityCode,authorityName,sourceRole,baseUrl,officialDomains:hosts,
   preferredAccessMethods:['API','STRUCTURED_DOWNLOAD','FEED','HTML','PDF_TEXT','PDF_OCR'],apiEndpoints:api[sourceId]??[],structuredEndpoints:structured[sourceId]??[],
   contentTypes:['application/json','application/feed+json','application/xml','text/xml','application/atom+xml','application/rss+xml','text/html','application/xhtml+xml','application/pdf','application/zip'],languages:[language],trustLevel:'OFFICIAL_SOURCE_ONLY',
   seed:sourceId==='AU-TREASURY'?'USER_PHASE2_ADDITION':'ORIGINAL_JURISDICTION_TS',
@@ -57,11 +80,15 @@ function lookupSource(jurisdiction,input){
  if(u.protocol!=='https:'||u.username||u.password||u.port&&u.port!=='443')return null;
  return listSources(jurisdiction).find(s=>s.officialDomains.includes(u.hostname))??null;
 }
-function classifyLink(jurisdiction,input){
- if(lookupSource(jurisdiction,input))return 'REGISTERED_OFFICIAL_SOURCE';
+function classifyLink(jurisdiction,input,{registryVersion=null}={}){
+ const registered=lookupSource(jurisdiction,input);
+ // Normalizer v1 discovery labels are historical data. Adding an authority must
+ // not mutate old normalized envelopes or silently upgrade previously seen links.
+ if(registered&&!(registryVersion===1&&['MA-DGI','ID-FISCAL','US-TREASURY','JP-NTA','JP-MOF','JP-EGOV'].includes(registered.sourceId)))return 'REGISTERED_OFFICIAL_SOURCE';
  let u;try{u=new URL(input);}catch{return 'REJECTED_SOURCE';}
  if(u.protocol!=='https:'||u.username||u.password||u.port&&u.port!=='443')return 'REJECTED_SOURCE';
- return /(?:\.go\.id|\.gov\.sg|\.gov\.au|\.gov\.uk|\.gov)$/.test(u.hostname)?'UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE':'REJECTED_SOURCE';
+ if(registryVersion===1)return /(?:\.go\.id|\.gov\.sg|\.gov\.au|\.gov\.uk|\.gov)$/.test(u.hostname)?'UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE':'REJECTED_SOURCE';
+ return /(?:\.go\.id|\.go\.jp|\.gov\.sg|\.gov\.au|\.gov\.uk|\.gov)$/.test(u.hostname)?'UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE':'REJECTED_SOURCE';
 }
 function preferAccess(options){const order=SOURCES[0].preferredAccessMethods;return [...options].filter(o=>o.verified===true&&order.includes(o.method)).sort((a,b)=>order.indexOf(a.method)-order.indexOf(b.method))[0]??null;}
 module.exports={SOURCES,getSource,listSources,lookupSource,classifyLink,preferAccess};

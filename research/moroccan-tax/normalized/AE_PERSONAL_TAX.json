@@ -1,0 +1,343 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "AE-GOV",
+  "jurisdictionCode": "AE",
+  "metadata": {
+    "title": "Taxation | The Official Portal of the UAE Government",
+    "officialDocumentId": null,
+    "language": "en",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "ea4d3d71-0b30-424b-9194-909ac6fa6582",
+    "rawContentHash": "49cdcdfc7eff9cf81ae523cb7eb698aa37f3ca484b864b9da26424ee8fd778bb",
+    "sourceUrl": "https://u.ae/en/information-and-services/finance-and-investment/taxation",
+    "finalUrl": "https://u.ae/en/information-and-services/finance-and-investment/taxation",
+    "retrievedAt": "2026-10-29T15:00:59.651Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "GOV",
+    "authorityName": "United Arab Emirates official government portal",
+    "sourceRole": "OFFICIAL_GUIDANCE",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/49cdcdfc7eff9cf81ae523cb7eb698aa37f3ca484b864b9da26424ee8fd778bb.bin",
+    "rawContentHash": "49cdcdfc7eff9cf81ae523cb7eb698aa37f3ca484b864b9da26424ee8fd778bb"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/49cdcdfc7eff9cf81ae523cb7eb698aa37f3ca484b864b9da26424ee8fd778bb.bin",
+      "rawContentHash": "49cdcdfc7eff9cf81ae523cb7eb698aa37f3ca484b864b9da26424ee8fd778bb"
+    },
+    "metaTags": [
+      "<meta property=\"og:title\" content=\"Taxation | The Official Portal of the UAE Government\" />",
+      "<meta property=\"og:type\" content=\"information-and-services\" />",
+      "<meta property=\"og:url\" content=\"https://u.ae/en/information-and-services/finance-and-investment/taxation\" />",
+      "<meta property=\"og:image\" />",
+      "<meta property=\"og:description\" content=\"The UAE does not levy income tax on individuals. However, it levies 5 per cent value added tax on the purchase of goods and services, levied at each stage of the supply chain and ultimately borne by the end consumer. The UAE also levies excise tax on specific goods that are harmful to health, and corporate tax on the net income or profit of corporations and other entities from their business.\" />",
+      "<meta charset=\"UTF-8\">",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "<meta name=\"VIcurrentDateTime\" content=\"639288828575008978>",
+      "<meta name=\"VirtualFolder\" content=\"\\\"/>"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Corporate tax (CT) Excise tax Value added tax (VAT) Other taxes EmaraTax Resolving tax disputes Tax incentives for innovation-driven businesses The Economic Substance Regulations Raqeeb - a whistleblower programme for tax violations and evasion Customs duty and tariff",
+    "blocks": [
+      {
+        "locator": "html:main:41089",
+        "text": "Corporate tax (CT) Excise tax Value added tax (VAT) Other taxes EmaraTax Resolving tax disputes Tax incentives for innovation-driven businesses The Economic Substance Regulations Raqeeb - a whistleblower programme for tax violations and evasion Customs duty and tariff",
+        "anchorId": "890e2ff5951f5eed3dca6f851c62926ba0079ccec715f26aa7b0a33e87d97ca1"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "890e2ff5951f5eed3dca6f851c62926ba0079ccec715f26aa7b0a33e87d97ca1",
+      "locator": "html:main:41089",
+      "start": 0,
+      "end": 268,
+      "quoteHash": "e4897da1648bcd85361df45a82f3e069b2fceb763cad4280e4e458caedf925b0",
+      "rawContentHash": "49cdcdfc7eff9cf81ae523cb7eb698aa37f3ca484b864b9da26424ee8fd778bb"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://u.ae/en/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/ar/information-and-services/finance-and-investment/taxation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Help",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://id.uaepass.ae/idshub/authorize?redirect_uri=https://u.ae/Authentication/uae-pass-authentication&client_id=tra_gov_web_prod&response_type=code&state=/en/information-and-services/finance-and-investment/taxation&scope=urn:uae:digitalid:profile:general&acr_values=urn:safelayer:tws:policies:authentication:level:low&ui_locales=en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://ask.u.ae/en/uask",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/search-result",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://id.uaepass.ae/idshub/authorize?redirect_uri=https://u.ae/Authentication/uae-pass-authentication&client_id=tra_gov_web_prod&response_type=code&state=/en/information-and-services/finance-and-investment/taxation&scope=urn:uae:digitalid:profile:general&acr_values=urn:safelayer:tws:policies:authentication:level:low&ui_locales=en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Services-Directory",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/about-the-uae",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Media",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Year-of-family",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://id.uaepass.ae/idshub/authorize?redirect_uri=https://u.ae/Authentication/uae-pass-authentication&client_id=tra_gov_web_prod&response_type=code&state=/en/information-and-services/finance-and-investment/taxation&scope=urn:uae:digitalid:profile:general&acr_values=urn:safelayer:tws:policies:authentication:level:low&ui_locales=en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://u.ae/ar/information-and-services/finance-and-investment/taxation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Help",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Services-Directory",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/about-the-uae",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Media",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Year-of-family",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/finance-and-investment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/vat.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/excise.tax.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tax.gov.ae/en/taxes/corporate.tax/corporate.tax.topics.aspx",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://ask.u.ae/en/uask",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/corporate-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/excise-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/vat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/other-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/emaratax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/resolving-tax-disputes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/Tax-incentives-for-innovation-driven-businesses",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/the-economic-substance-regulations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/a-whistleblower-programme-for-tax-violations-and-evasion-raqeeb",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/clearing-the-customs-and-paying-customs-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Footer/About-this-portal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Website-Statistics",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Footer/Digital-participation-policy",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Footer/Citizen-Charter",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Resources",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Footer/Map",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Footer/Disclaimer",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://dgov.tdra.gov.ae/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://bayanat.ae/en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://sharik.ae/en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Footer/Accessibility",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Footer/Site-Map",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Help/The-Government",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Help/Government-Officials",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://171.ae/en/?lang=en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Help/FAQs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Help/Contact-Us",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/uaedgov/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/uaemgov/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://x.com/uaedgov",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/emiratesegovernment",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.tdra.gov.ae/en/home.aspx",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Footer/Privacy-Policy",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Footer/Copyright",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Footer/Terms-and-conditions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://u.ae/en/Footer/Accessibility",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "b6ceaba51c20a3587ca890ff4e9a33ce138fbd3e2c6298de3d5898a33bffdc73"
+}

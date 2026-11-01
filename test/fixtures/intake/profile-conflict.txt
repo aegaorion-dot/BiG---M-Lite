@@ -1,0 +1,6 @@
+BUSINESS REGISTRATION DOCUMENT
+Business name: Different Synthetic Business
+Registration jurisdiction: SG
+Tax registration number: SYNTHETIC-NOT-A-REAL-TAX-ID
+Address: Synthetic example address
+Registration status: registered

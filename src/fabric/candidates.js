@@ -2,7 +2,8 @@
 const {hash}=require('./artifacts');
 const {deepFreeze}=require('../onboarding/canonical');
 const {parseEffectiveDate,assertVerifiedEnvelope}=require('./normalizer');
-const STATES=Object.freeze(['DISCOVERED','CANDIDATE','REVIEW_REQUIRED','APPROVED','SUPERSEDED','RETIRED','OUT_OF_PERIOD','MISSING_COUNTRY_PACK','CONFLICT']);
+const {fingerprint}=require('../onboarding/canonical');
+const STATES=Object.freeze(['DISCOVERED','CANDIDATE','REVIEW_REQUIRED','APPROVED','AUTO_APPROVED_DEMO','PROVISIONALLY_ACCEPTED_DEMO','SUPERSEDED','RETIRED','OUT_OF_PERIOD','MISSING_COUNTRY_PACK','CONFLICT']);
 function evidenceCandidate(envelope,{anchorId,start,end,quote,proposedBy='DETERMINISTIC'}={}){
  assertVerifiedEnvelope(envelope);
  if(envelope.processingState!=='NORMALIZED')throw Error('Source has no normalized evidence');
@@ -33,8 +34,22 @@ function reviewCandidate(candidate,{decisionSource,actor,decision,reason,reviewe
  if(['RETIRED','SUPERSEDED'].includes(candidate.status))throw Error('Terminal candidate version; create a new version');
  const hashes=[...new Set(candidate.provenance.map(p=>p.rawContentHash))].sort();
  if(decision==='APPROVED'&&JSON.stringify([...(reviewedHashes??[])].sort())!==JSON.stringify(hashes))throw Error('Human must review every source hash');
- // APPROVED here means a reviewed research candidate, not an executable tax pack.
- return deepFreeze({...candidate,status:decision,runtimeExecutable:false,executorSupported:false,reviewHistory:[...candidate.reviewHistory,{actor,decisionSource,decision,reason,reviewedHashes:hashes,at:new Date().toISOString()}]});
+ // Research approval alone has no executor. Typed consumers must validate content first.
+ const executorSupported=candidate.executorSupported===true&&Boolean(candidate.executableContent);
+ return deepFreeze({...candidate,status:decision,runtimeExecutable:executorSupported&&decision==='APPROVED',executorSupported,reviewHistory:[...candidate.reviewHistory,{actor,decisionSource,decision,reason,reviewedHashes:hashes,...(candidate.executableContent?{reviewedContentHash:fingerprint(candidate.executableContent)}:{}),at:new Date().toISOString()}]});
+}
+function attachExecutableContent(candidate,kind,content){
+ if(!['COUNTRY_PACK','TREATY_PACK'].includes(kind)||!candidate?.candidateId||!candidate.provenance?.length)throw Error('Governed source candidate required');
+ const copy=JSON.parse(JSON.stringify(content)),contentHash=fingerprint(copy);
+ return deepFreeze({...candidate,sourceCandidateId:candidate.candidateId,candidateId:fingerprint({sourceCandidateId:candidate.candidateId,kind,contentHash}),contentKind:kind,executableContent:copy,contentHash,status:'CANDIDATE',runtimeExecutable:false,executorSupported:false,reviewHistory:[]});
+}
+function executableApproval(candidate){
+ if(['AUTO_APPROVED_DEMO','PROVISIONALLY_ACCEPTED'].includes(candidate?.status)){
+  const d=candidate.demoDisclosure,a=candidate.demoApproval,hashes=[...new Set(candidate.provenance?.map(p=>p.rawContentHash)??[])].sort();
+  return candidate.executorSupported===true&&candidate.runtimeExecutable===true&&candidate.executableContent&&candidate.contentHash===fingerprint(candidate.executableContent)&&d?.policyMode==='HACKATHON_DEMO'&&d.status==='PROVISIONALLY_ACCEPTED_DEMO'&&a?.approvalAuthority==='BIGM_DEMO_POLICY'&&a.policyMode==='HACKATHON_DEMO'&&a.candidateId===candidate.candidateId&&a.acceptedAt&&JSON.stringify(hashes)===JSON.stringify([...(a.evidenceHashes??[])].sort())&&d.applicabilityWarning&&d.recommendation;
+ }
+ const review=candidate?.reviewHistory?.at(-1);
+ return candidate?.status==='APPROVED'&&candidate.executorSupported===true&&candidate.runtimeExecutable===true&&candidate.executableContent&&candidate.contentHash===fingerprint(candidate.executableContent)&&review?.decisionSource==='HUMAN'&&review.decision==='APPROVED'&&review.reviewedContentHash===candidate.contentHash&&review.actor&&!/^(ai|model|muse|meta|system)(?:$|[: -])/i.test(review.actor)&&JSON.stringify([...new Set(candidate.provenance.map(p=>p.rawContentHash))].sort())===JSON.stringify([...(review.reviewedHashes??[])].sort());
 }
 function resolveCandidate(candidate,{periodStart,periodEnd}={}){
  if(!candidate)return {status:'MISSING_COUNTRY_PACK',runtimeExecutable:false};
@@ -46,4 +61,4 @@ function resolveCandidate(candidate,{periodStart,periodEnd}={}){
  if(periodStart<effectiveFrom||periodEnd>effectiveTo)return {status:'OUT_OF_PERIOD',runtimeExecutable:false};
  return {status:'REVIEW_REQUIRED',runtimeExecutable:false,reason:'Foundation has no reviewed deterministic tax executor'};
 }
-module.exports={STATES,evidenceCandidate,countryPackCandidate,reviewCandidate,resolveCandidate};
+module.exports={STATES,evidenceCandidate,countryPackCandidate,reviewCandidate,resolveCandidate,attachExecutableContent,executableApproval};

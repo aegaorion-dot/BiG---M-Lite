@@ -1,0 +1,609 @@
+{
+  "verification": "Phase 7 controlled live Meta verification",
+  "role": "acceptance",
+  "at": "2026-10-29T04:03:38.141Z",
+  "model": "muse-spark-1.3",
+  "success": true,
+  "failure": null,
+  "journeys": [
+    {
+      "journey": "business-profiling",
+      "integrationPath": "onboardingTurn -> shared Meta client -> evidenced candidate validator -> profileState -> question planner -> Muse",
+      "result": {
+        "facts": [
+          {
+            "semanticRole": "user.language",
+            "value": "en",
+            "quote": null,
+            "confidence": null,
+            "status": "CANDIDATE"
+          },
+          {
+            "semanticRole": "user.nationality",
+            "value": "AU",
+            "quote": "I'm an Australian",
+            "confidence": 0.9,
+            "status": "CANDIDATE"
+          },
+          {
+            "semanticRole": "org.businessType",
+            "value": "kuliner",
+            "quote": "small coffee shop",
+            "confidence": 0.9,
+            "status": "CANDIDATE"
+          }
+        ],
+        "jurisdictionFacts": [
+          {
+            "basis": "BUSINESS_WORK_LOCATION",
+            "countryCode": "ID",
+            "source": "AI_INFERENCE",
+            "supportingQuote": "I run a small coffee shop here",
+            "confidence": 0.75,
+            "status": "CANDIDATE",
+            "operation": "SET",
+            "semanticRole": "BUSINESS_WORK_LOCATION"
+          },
+          {
+            "basis": "CUSTOMER_LOCATION",
+            "countryCode": "SG",
+            "source": "USER",
+            "supportingQuote": "have clients in Singapore.",
+            "confidence": 0.9,
+            "status": "CANDIDATE",
+            "operation": "SET",
+            "semanticRole": "CUSTOMER_LOCATION"
+          }
+        ],
+        "question": {
+          "key": "currency.functional",
+          "text": "Which currency do you want to keep your books in?",
+          "provider": "meta",
+          "provenance": {
+            "requestId": "9a1b0c2c-d593-4d8c-8100-2ab7f6e8d2f7",
+            "purpose": "pack-driven-question",
+            "provider": "meta",
+            "model": "muse-spark-1.3",
+            "success": true,
+            "parseSuccess": true,
+            "schemaValidationSuccess": true,
+            "fallbackUsed": false,
+            "cacheHit": false,
+            "attempts": 1,
+            "usage": {
+              "input_tokens": 179,
+              "output_tokens": 184,
+              "total_tokens": 363,
+              "reasoning_tokens": 148
+            },
+            "estimatedCost": null,
+            "costStatus": "NOT_REPORTED",
+            "at": "2026-10-29T04:03:25.498Z",
+            "responseStatus": "completed",
+            "responseId": "resp_6ae2c58ea829bf05d5f74f7c",
+            "latencyMs": 1411
+          }
+        }
+      }
+    },
+    {
+      "journey": "profile-correction",
+      "integrationPath": "onboardingTurn -> Muse correction -> applyFacts -> stale proposal invalidation",
+      "result": {
+        "jurisdictionFacts": [
+          {
+            "basis": "BUSINESS_WORK_LOCATION",
+            "countryCode": "ID",
+            "source": "AI_INFERENCE",
+            "supportingQuote": "I run a small coffee shop here",
+            "confidence": 0.75,
+            "status": "CANDIDATE",
+            "operation": "SET",
+            "semanticRole": "BUSINESS_WORK_LOCATION"
+          },
+          {
+            "basis": "CUSTOMER_LOCATION",
+            "countryCode": "SG",
+            "source": "USER",
+            "supportingQuote": "have clients in Singapore.",
+            "confidence": 0.9,
+            "status": "CANDIDATE",
+            "operation": "SET",
+            "semanticRole": "CUSTOMER_LOCATION"
+          },
+          {
+            "basis": "REGISTRATION",
+            "countryCode": "ID",
+            "source": "USER",
+            "supportingQuote": "registered under an Indonesian company",
+            "confidence": 0.9,
+            "status": "CANDIDATE",
+            "operation": "SET",
+            "semanticRole": "REGISTRATION"
+          }
+        ],
+        "proposalInvalidated": true,
+        "question": {
+          "key": "done",
+          "text": "Please review your setup. Tax settings can be reviewed later.",
+          "provider": "deterministic",
+          "fallbackReason": null
+        }
+      }
+    },
+    {
+      "journey": "document-understanding",
+      "integrationPath": "upload PNG -> local bundled OCR -> Muse semantics -> evidence validator -> review candidate",
+      "result": {
+        "documentId": "document-b12b1c7f6f4589d14fb38f70f41266d473b36880f8a4270e2332d7904e977bc1",
+        "extraction": {
+          "extractionId": "extraction-document-b12b1c7f6f4589d14fb38f70f41266d473b36880f8a4270e2332d7904e977bc1",
+          "method": "OCR",
+          "pages": [
+            {
+              "page": 1,
+              "method": "OCR"
+            }
+          ],
+          "confidence": 0.95
+        },
+        "status": "REQUIRES_REVIEW",
+        "candidates": [
+          {
+            "candidateId": "candidate-5a5e02b7bfb0fc9b1843fe7f5b386b39",
+            "current": {
+              "candidateType": "RECEIPT",
+              "transactionDate": "2026-10-20",
+              "documentDate": "2026-10-20",
+              "invoiceDate": null,
+              "paymentDate": null,
+              "counterparty": "Synthetic Coffee",
+              "description": "Coffee beans",
+              "amount": "850000",
+              "currency": "IDR",
+              "taxAmount": null,
+              "subtotal": null,
+              "paymentMethod": "bank",
+              "referenceNumber": null,
+              "proposedTransactionType": null,
+              "settlementStatus": null,
+              "classificationAccountId": null,
+              "paymentAccountId": null
+            },
+            "evidence": {
+              "transactionDate": {
+                "blockId": "b1",
+                "quote": "Date: 2026-10-20",
+                "page": 1,
+                "row": null,
+                "bbox": [
+                  43,
+                  123,
+                  291,
+                  27
+                ]
+              },
+              "documentDate": {
+                "blockId": "b1",
+                "quote": "Date: 2026-10-20",
+                "page": 1,
+                "row": null,
+                "bbox": [
+                  43,
+                  123,
+                  291,
+                  27
+                ]
+              },
+              "counterparty": {
+                "blockId": "b2",
+                "quote": "Vendor: Synthetic Coffee",
+                "page": 1,
+                "row": null,
+                "bbox": [
+                  40,
+                  203,
+                  418,
+                  34
+                ]
+              },
+              "description": {
+                "blockId": "b3",
+                "quote": "Description: Coffee beans",
+                "page": 1,
+                "row": null,
+                "bbox": [
+                  43,
+                  283,
+                  432,
+                  34
+                ]
+              },
+              "amount": {
+                "blockId": "b4",
+                "quote": "Total IDR 850000",
+                "page": 1,
+                "row": null,
+                "bbox": [
+                  41,
+                  363,
+                  291,
+                  27
+                ]
+              },
+              "currency": {
+                "blockId": "b4",
+                "quote": "Total IDR 850000",
+                "page": 1,
+                "row": null,
+                "bbox": [
+                  41,
+                  363,
+                  291,
+                  27
+                ]
+              },
+              "paymentMethod": {
+                "blockId": "b5",
+                "quote": "Payment: bank",
+                "page": 1,
+                "row": null,
+                "bbox": [
+                  43,
+                  443,
+                  250,
+                  34
+                ]
+              }
+            },
+            "status": "REQUIRES_REVIEW",
+            "confirmation": null,
+            "provenance": {
+              "requestId": "2622c3fa-10f3-4c25-b80b-97cf22955a88",
+              "purpose": "document-understanding",
+              "provider": "meta",
+              "model": "muse-spark-1.3",
+              "success": true,
+              "parseSuccess": true,
+              "schemaValidationSuccess": true,
+              "fallbackUsed": false,
+              "cacheHit": false,
+              "attempts": 1,
+              "usage": {
+                "input_tokens": 696,
+                "output_tokens": 526,
+                "total_tokens": 1222,
+                "reasoning_tokens": 283
+              },
+              "estimatedCost": null,
+              "costStatus": "NOT_REPORTED",
+              "at": "2026-10-29T04:03:31.437Z",
+              "responseStatus": "completed",
+              "responseId": "resp_6ae2c595625df1deb6184beb",
+              "latencyMs": 2746
+            }
+          }
+        ],
+        "postingPerformed": false
+      }
+    },
+    {
+      "journey": "tax-readiness-explanation",
+      "integrationPath": "user Q -> deterministic minimized context -> Muse structured selection -> authoritative fact renderer",
+      "question": "Why is my tax not ready?",
+      "result": {
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-1.3",
+        "contextHash": "138b28e2fd33353fd82726482fa611e3f1fcdada9786f27e0dabdc96c7e0664f",
+        "sections": [
+          {
+            "kind": "FACT",
+            "facts": [
+              {
+                "id": "tax.workspaceReady",
+                "kind": "FACT",
+                "value": false,
+                "display": "Workspace tax readiness: false."
+              },
+              {
+                "id": "tax.packStatus",
+                "kind": "FACT",
+                "value": "OUT_OF_PERIOD",
+                "display": "CountryPack resolution: OUT_OF_PERIOD."
+              }
+            ],
+            "explanation": null
+          },
+          {
+            "kind": "GOVERNED_RULE",
+            "facts": [
+              {
+                "id": "tax.selectedPacks",
+                "kind": "GOVERNED_RULE",
+                "value": [],
+                "display": "Selected CountryPacks: none."
+              }
+            ],
+            "explanation": null
+          },
+          {
+            "kind": "MISSING_INFORMATION",
+            "facts": [
+              {
+                "id": "tax.reviewMissing",
+                "kind": "MISSING_INFORMATION",
+                "value": null,
+                "display": "No active scoped tax-fact review is available; tax jurisdiction and event scope need explicit review."
+              }
+            ],
+            "explanation": "Candidate facts and rule suggestions require separate confirmation and governed applicability review."
+          }
+        ],
+        "provenance": {
+          "requestId": "a7d51cb4-7dbc-4cbb-9c61-cc474fe920c2",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-1.3",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": {
+            "input_tokens": 464,
+            "output_tokens": 513,
+            "total_tokens": 977,
+            "reasoning_tokens": 414
+          },
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T04:03:34.273Z",
+          "responseStatus": "completed",
+          "responseId": "resp_6ae2c598bd80cebd29654871",
+          "latencyMs": 2138
+        }
+      }
+    },
+    {
+      "journey": "accounting-explanation",
+      "integrationPath": "user Q -> deterministic minimized context -> Muse structured selection -> authoritative fact renderer",
+      "question": "Explain my business results in simple language.",
+      "result": {
+        "status": "MUSE_UNDERSTOOD",
+        "provider": "meta",
+        "model": "muse-spark-1.3",
+        "contextHash": "aafbeb8506a00e00d2057179dd554e56c2feeeb4051b06e099f0b15bb0ab2e10",
+        "sections": [
+          {
+            "kind": "FACT",
+            "facts": [
+              {
+                "id": "workspace.active",
+                "kind": "FACT",
+                "value": true,
+                "display": "Workspace activated: true."
+              },
+              {
+                "id": "workspace.functionalCurrency",
+                "kind": "FACT",
+                "value": "IDR",
+                "display": "Bookkeeping functional currency: IDR."
+              }
+            ],
+            "explanation": null
+          },
+          {
+            "kind": "CALCULATED_RESULT",
+            "facts": [
+              {
+                "id": "report.revenueMinor",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "amount": "80000000",
+                  "currency": "IDR"
+                },
+                "display": "Revenue: IDR 80000000."
+              },
+              {
+                "id": "report.expenseMinor",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "amount": "30000000",
+                  "currency": "IDR"
+                },
+                "display": "Expenses: IDR 30000000."
+              },
+              {
+                "id": "report.netMinor",
+                "kind": "CALCULATED_RESULT",
+                "value": {
+                  "amount": "50000000",
+                  "currency": "IDR"
+                },
+                "display": "Net bookkeeping income: IDR 50000000."
+              }
+            ],
+            "explanation": "These recorded amounts describe bookkeeping results; final tax treatment requires the governed tax review."
+          }
+        ],
+        "provenance": {
+          "requestId": "3db8801b-c1f8-4cae-aa42-cba619ed087e",
+          "purpose": "contextual-assistant",
+          "provider": "meta",
+          "model": "muse-spark-1.3",
+          "success": true,
+          "parseSuccess": true,
+          "schemaValidationSuccess": true,
+          "fallbackUsed": false,
+          "cacheHit": false,
+          "attempts": 1,
+          "usage": {
+            "input_tokens": 460,
+            "output_tokens": 343,
+            "total_tokens": 803,
+            "reasoning_tokens": 276
+          },
+          "estimatedCost": null,
+          "costStatus": "NOT_REPORTED",
+          "at": "2026-10-29T04:03:36.419Z",
+          "responseStatus": "completed",
+          "responseId": "resp_6ae2c5996d570170669844d1",
+          "latencyMs": 1720
+        }
+      }
+    }
+  ],
+  "metrics": [
+    {
+      "requestId": "1255b91b-03e3-40bc-9f62-6546a90b6770",
+      "purpose": "business-profiling",
+      "provider": "meta",
+      "model": "muse-spark-1.3",
+      "success": true,
+      "parseSuccess": true,
+      "schemaValidationSuccess": true,
+      "fallbackUsed": false,
+      "cacheHit": false,
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 1055,
+        "output_tokens": 832,
+        "total_tokens": 1887,
+        "reasoning_tokens": 589
+      },
+      "estimatedCost": null,
+      "costStatus": "NOT_REPORTED",
+      "at": "2026-10-29T04:03:20.809Z",
+      "responseStatus": "completed",
+      "responseId": "resp_6ae2c58df84462c9d6bd43f9",
+      "latencyMs": 4685
+    },
+    {
+      "requestId": "9a1b0c2c-d593-4d8c-8100-2ab7f6e8d2f7",
+      "purpose": "pack-driven-question",
+      "provider": "meta",
+      "model": "muse-spark-1.3",
+      "success": true,
+      "parseSuccess": true,
+      "schemaValidationSuccess": true,
+      "fallbackUsed": false,
+      "cacheHit": false,
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 179,
+        "output_tokens": 184,
+        "total_tokens": 363,
+        "reasoning_tokens": 148
+      },
+      "estimatedCost": null,
+      "costStatus": "NOT_REPORTED",
+      "at": "2026-10-29T04:03:25.498Z",
+      "responseStatus": "completed",
+      "responseId": "resp_6ae2c58ea829bf05d5f74f7c",
+      "latencyMs": 1411
+    },
+    {
+      "requestId": "53e26f85-f061-4b8b-89ab-1769fe16dc5a",
+      "purpose": "business-profiling",
+      "provider": "meta",
+      "model": "muse-spark-1.3",
+      "success": true,
+      "parseSuccess": true,
+      "schemaValidationSuccess": true,
+      "fallbackUsed": false,
+      "cacheHit": false,
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 1219,
+        "output_tokens": 475,
+        "total_tokens": 1694,
+        "reasoning_tokens": 293
+      },
+      "estimatedCost": null,
+      "costStatus": "NOT_REPORTED",
+      "at": "2026-10-29T04:03:26.932Z",
+      "responseStatus": "completed",
+      "responseId": "resp_6ae2c590a51e4bb8cdd447a9",
+      "latencyMs": 2302
+    },
+    {
+      "requestId": "2622c3fa-10f3-4c25-b80b-97cf22955a88",
+      "purpose": "document-understanding",
+      "provider": "meta",
+      "model": "muse-spark-1.3",
+      "success": true,
+      "parseSuccess": true,
+      "schemaValidationSuccess": true,
+      "fallbackUsed": false,
+      "cacheHit": false,
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 696,
+        "output_tokens": 526,
+        "total_tokens": 1222,
+        "reasoning_tokens": 283
+      },
+      "estimatedCost": null,
+      "costStatus": "NOT_REPORTED",
+      "at": "2026-10-29T04:03:31.437Z",
+      "responseStatus": "completed",
+      "responseId": "resp_6ae2c595625df1deb6184beb",
+      "latencyMs": 2746
+    },
+    {
+      "requestId": "a7d51cb4-7dbc-4cbb-9c61-cc474fe920c2",
+      "purpose": "contextual-assistant",
+      "provider": "meta",
+      "model": "muse-spark-1.3",
+      "success": true,
+      "parseSuccess": true,
+      "schemaValidationSuccess": true,
+      "fallbackUsed": false,
+      "cacheHit": false,
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 464,
+        "output_tokens": 513,
+        "total_tokens": 977,
+        "reasoning_tokens": 414
+      },
+      "estimatedCost": null,
+      "costStatus": "NOT_REPORTED",
+      "at": "2026-10-29T04:03:34.273Z",
+      "responseStatus": "completed",
+      "responseId": "resp_6ae2c598bd80cebd29654871",
+      "latencyMs": 2138
+    },
+    {
+      "requestId": "3db8801b-c1f8-4cae-aa42-cba619ed087e",
+      "purpose": "contextual-assistant",
+      "provider": "meta",
+      "model": "muse-spark-1.3",
+      "success": true,
+      "parseSuccess": true,
+      "schemaValidationSuccess": true,
+      "fallbackUsed": false,
+      "cacheHit": false,
+      "attempts": 1,
+      "usage": {
+        "input_tokens": 460,
+        "output_tokens": 343,
+        "total_tokens": 803,
+        "reasoning_tokens": 276
+      },
+      "estimatedCost": null,
+      "costStatus": "NOT_REPORTED",
+      "at": "2026-10-29T04:03:36.419Z",
+      "responseStatus": "completed",
+      "responseId": "resp_6ae2c5996d570170669844d1",
+      "latencyMs": 1720
+    }
+  ],
+  "requests": 6,
+  "requestCeiling": 8,
+  "syntheticOnly": true,
+  "liveEndpoint": "https://api.meta.ai/v1/responses",
+  "credentialsRecorded": false
+}

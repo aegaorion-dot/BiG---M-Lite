@@ -1,0 +1,435 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "AE-ADRO",
+  "jurisdictionCode": "AE",
+  "metadata": {
+    "title": "Money And Taxation",
+    "officialDocumentId": null,
+    "language": "en",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "c0242632-e740-48ee-9399-50d133741cd5",
+    "rawContentHash": "829dd22753dc9f603c48d81f60fb215109eed187c4ae82a9583091945d7f787b",
+    "sourceUrl": "https://adro.gov.ae/en/Living-in-Abu-Dhabi/Money-And-Taxation",
+    "finalUrl": "https://adro.gov.ae/en/Living-in-Abu-Dhabi/Money-And-Taxation",
+    "retrievedAt": "2026-10-29T15:03:24.221Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "ADRO",
+    "authorityName": "Abu Dhabi Residents Office, government guidance",
+    "sourceRole": "OFFICIAL_GUIDANCE",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/829dd22753dc9f603c48d81f60fb215109eed187c4ae82a9583091945d7f787b.bin",
+    "rawContentHash": "829dd22753dc9f603c48d81f60fb215109eed187c4ae82a9583091945d7f787b"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/829dd22753dc9f603c48d81f60fb215109eed187c4ae82a9583091945d7f787b.bin",
+      "rawContentHash": "829dd22753dc9f603c48d81f60fb215109eed187c4ae82a9583091945d7f787b"
+    },
+    "metaTags": [
+      "<meta content=\"Money-And-Taxation\"  property=\"og:title\" />",
+      "<meta content=\"https://www.abudhabiresidentsoffice.gov.ae/Living-in-Abu-Dhabi/Money-And-Taxation\"  property=\"og:url\" />",
+      "<meta content=\"Money-And-Taxation\"  property=\"twitter:title\" />",
+      "<meta content=\"summary_large_image\"  property=\"twitter:card\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Visas Student Portal Living In Abu Dhabi Back Home > Living in Abu Dhabi > Money-And-Taxation > Money And Taxation Financial security is a consideration for every move and banking in the UAE is simple and sophisticated. There&rsquo;s a wide variety of local and international banking institutions in Abu Dhabi offering an extensive network of full service centres and ATMs. Locally established banks are public shareholding companies and branches of foreign banks are licensed by the Central Bank of the UAE . The UAE does not levy income tax on individuals however there is a Value Added Tax (VAT) on most goods at point of sale. Currency Exchange The Arab Emirati Dirham is the official currency of the UAE. The official abbreviation for the dirham is AED however, it is commonly referenced as Dh and Dhs. The dirham is divided into 100 fils and coins are available in the following denomination: AED 1, 50 fils and 25 fils. Notes are available in the following denominations: AED 5, 10, 20, 500, 100, 200, 500 and 1,000. The Arab Emirati Dirham (AED) is pegged to the US dollar (USD): 1 USD = AED 3.6725 Exchanging foreign currency and remitting money is a common practice in the UAE. Consequently, there is an abundance of money exchange businesses in Abu Dhabi. You can send money to your home country, receive money via Western Union, pay local bills and exchange currency at these establishments. Popular currency exchange establishments include Lari Exchange , Al Ansari Exchange and Lulu Exchange Personal Banking Opening a Bank Account Once you have your residence visa and Emirates ID, you can open a personal bank account or a business bank account. A personal bank account is also called a current account. Setting up a UAE bank account is quick and easy. You should have access to the account within a few hours. Requirements vary from bank to bank, but there are standard required documents to open a bank account. Standard List of required documents: Passport Emirates ID card (original and copy) Proof of residency. This can be a rental agreement, utility bill, or letter of employment. ATMs ATMs are widely available in Abu Dhabi. You may incur charges for withdrawing cash from a different bank&rsquo;s machine. Some banks allow cheque and cash deposits into ATM machines making those transactions available 24 hours a day, seven days a week. Cheques Cheques are still widely used and accepted in Abu Dhabi. Post-dated cheques are a popular method for buying a car and paying annual rent. Top Banks in Abu Dhabi: Abu Dhabi Commercial Bank Abu Dhabi Islamic Bank First Abu Dhabi Bank Taxation The UAE does not levy income tax on individuals however, there is a Value Added Tax (VAT) on most goods at point of sale. Excise tax is levied on specific goods, which are typically unhealthy or harmful to the environment. Valued Added Tax Value Added Tax (VAT) was introduced in the UAE on 1 January 2018 at a rate of 5 per cent. VAT provides the UAE with a new source of income, which will be continued to be used to provide high-quality public services. It also helps the government move towards the goal of reducing its dependence on oil and other hydrocarbons as a source of revenue. VAT, as a general consumption tax, applies to the majority of goods and service transactions. There are a limited number of exemptions. As a result of VAT implementation, the cost of living increased slightly, but Abu Dhabi still remains a competitive city when it comes to affordability. Excise Tax Excise Tax is a form of indirect tax levied on specific goods, which are typically unhealthy or harmful to the environment. The tax can range from 50 to 100 per cent. The government is levies excise tax to deter consumption of unhealthy and harmful substances. These goods are referred to as &ldquo;excise goods&rdquo;. The following product categories are subject to excise tax: Carbonated drinks including any aerated beverage except for unflavoured aerated water. In addition, any concentrations, powder, gel, or extracts intended to be made into an aerated beverage are considered to be a carbonated drink. Energy drinks including any beverages which, are marketed, or sold as an energy drink, and containing stimulant substances that provide mental and physical stimulation, which includes without limitation, caffeine, taurine, ginseng and guarana. This also includes any substance that has an identical or similar effect as the aforementioned substances. In addition, any concentrations, powder, gel or extracts intended to be made into an energy enhancing drink are considered to be an energy drink. Tobacco and tobacco products include all items listed within Schedule 24 of the GCC Common Customs Tariff. Electronic smoking devices, tools and liquids are also subject to excise tax. More About Living In Abu Dhabi Where To Live The Abu Dhabi Lifestyle Transportation Telecommunications Domestic Help Living With Pets Travel",
+    "blocks": [
+      {
+        "locator": "html:main:23897",
+        "text": "Visas Student Portal Living In Abu Dhabi Back Home > Living in Abu Dhabi > Money-And-Taxation > Money And Taxation Financial security is a consideration for every move and banking in the UAE is simple and sophisticated. There&rsquo;s a wide variety of local and international banking institutions in Abu Dhabi offering an extensive network of full service centres and ATMs. Locally established banks are public shareholding companies and branches of foreign banks are licensed by the Central Bank of the UAE . The UAE does not levy income tax on individuals however there is a Value Added Tax (VAT) on most goods at point of sale. Currency Exchange The Arab Emirati Dirham is the official currency of the UAE. The official abbreviation for the dirham is AED however, it is commonly referenced as Dh and Dhs. The dirham is divided into 100 fils and coins are available in the following denomination: AED 1, 50 fils and 25 fils. Notes are available in the following denominations: AED 5, 10, 20, 500, 100, 200, 500 and 1,000. The Arab Emirati Dirham (AED) is pegged to the US dollar (USD): 1 USD = AED 3.6725 Exchanging foreign currency and remitting money is a common practice in the UAE. Consequently, there is an abundance of money exchange businesses in Abu Dhabi. You can send money to your home country, receive money via Western Union, pay local bills and exchange currency at these establishments. Popular currency exchange establishments include Lari Exchange , Al Ansari Exchange and Lulu Exchange Personal Banking Opening a Bank Account Once you have your residence visa and Emirates ID, you can open a personal bank account or a business bank account. A personal bank account is also called a current account. Setting up a UAE bank account is quick and easy. You should have access to the account within a few hours. Requirements vary from bank to bank, but there are standard required documents to open a bank account. Standard List of required documents: Passport Emirates ID card (original and copy) Proof of residency. This can be a rental agreement, utility bill, or letter of employment. ATMs ATMs are widely available in Abu Dhabi. You may incur charges for withdrawing cash from a different bank&rsquo;s machine. Some banks allow cheque and cash deposits into ATM machines making those transactions available 24 hours a day, seven days a week. Cheques Cheques are still widely used and accepted in Abu Dhabi. Post-dated cheques are a popular method for buying a car and paying annual rent. Top Banks in Abu Dhabi: Abu Dhabi Commercial Bank Abu Dhabi Islamic Bank First Abu Dhabi Bank Taxation The UAE does not levy income tax on individuals however, there is a Value Added Tax (VAT) on most goods at point of sale. Excise tax is levied on specific goods, which are typically unhealthy or harmful to the environment. Valued Added Tax Value Added Tax (VAT) was introduced in the UAE on 1 January 2018 at a rate of 5 per cent. VAT provides the UAE with a new source of income, which will be continued to be used to provide high-quality public services. It also helps the government move towards the goal of reducing its dependence on oil and other hydrocarbons as a source of revenue. VAT, as a general consumption tax, applies to the majority of goods and service transactions. There are a limited number of exemptions. As a result of VAT implementation, the cost of living increased slightly, but Abu Dhabi still remains a competitive city when it comes to affordability. Excise Tax Excise Tax is a form of indirect tax levied on specific goods, which are typically unhealthy or harmful to the environment. The tax can range from 50 to 100 per cent. The government is levies excise tax to deter consumption of unhealthy and harmful substances. These goods are referred to as &ldquo;excise goods&rdquo;. The following product categories are subject to excise tax: Carbonated drinks including any aerated beverage except for unflavoured aerated water. In addition, any concentrations, powder, gel, or extracts intended to be made into an aerated beverage are considered to be a carbonated drink. Energy drinks including any beverages which, are marketed, or sold as an energy drink, and containing stimulant substances that provide mental and physical stimulation, which includes without limitation, caffeine, taurine, ginseng and guarana. This also includes any substance that has an identical or similar effect as the aforementioned substances. In addition, any concentrations, powder, gel or extracts intended to be made into an energy enhancing drink are considered to be an energy drink. Tobacco and tobacco products include all items listed within Schedule 24 of the GCC Common Customs Tariff. Electronic smoking devices, tools and liquids are also subject to excise tax. More About Living In Abu Dhabi Where To Live The Abu Dhabi Lifestyle Transportation Telecommunications Domestic Help Living With Pets Travel",
+        "anchorId": "080192addd167b6bf95250a59a914218a8ec82c7529743ed546479ea2588684d"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "080192addd167b6bf95250a59a914218a8ec82c7529743ed546479ea2588684d",
+      "locator": "html:main:23897",
+      "start": 0,
+      "end": 4933,
+      "quoteHash": "8454a8390b6b55a3406c15e0f15eb6a8adf7ead64fde1a4f3589b3528915afe7",
+      "rawContentHash": "829dd22753dc9f603c48d81f60fb215109eed187c4ae82a9583091945d7f787b"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://adro.gov.ae/en",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Living-in-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Work-in-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Why-AbuDhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Visas/Types-of-Visas",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Contact-Us",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/ar-AE/Living-in-Abu-Dhabi/Money-And-Taxation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/ar-AE/Living-in-Abu-Dhabi/Money-And-Taxation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/About-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/About-Abu-Dhabi/Where-Is-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/About-Abu-Dhabi/Introduction-To-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/About-Abu-Dhabi/Overview-On-People",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/About-Abu-Dhabi/History-Of-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/About-Abu-Dhabi/Government-of-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Why-AbuDhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Why-AbuDhabi/A-happy-and-inclusive-society",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Why-AbuDhabi/Career-progression",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Why-AbuDhabi/Central-location",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Why-AbuDhabi/A-vibrant-multicultural-community",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Why-AbuDhabi/World-class-healthcare",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Why-AbuDhabi/Year-round-sunshine",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Why-AbuDhabi/The-best-in-international-education",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Why-AbuDhabi/Choice-in-housing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Living-With-Pets",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Money-And-Taxation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Recruiting-Domestic-Help",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Telecommunications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/The-Abu-Dhabi-Lifestyle",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Transportation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Travel",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Where-To-Live",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Work-in-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Work-in-Abu-Dhabi/Work-in-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Work-in-Abu-Dhabi/Employment-In-AbuDhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Work-in-Abu-Dhabi/Focus-on-Key-Industry-Sectors",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Move-to-abudhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Move-to-abudhabi/Integrating-into-AD",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Move-to-abudhabi/Life-in-AD",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Move-to-abudhabi/Settling-into-AD",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Student-Portal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Visas",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Visas/Types-of-Visas",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Partnerships",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Media-Centre",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Media-Centre/Press-Releases",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Media-Centre/Gallery",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Media-Centre/In-The-Media",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Media-Centre/Newsletters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Media-Centre/Videos",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/About-Abu-Dhabi-Residents-Office",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Product-And-Service",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Contact-Us",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Resident-Form",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Living-in-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Work-in-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Why-AbuDhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Visas/Types-of-Visas",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Contact-Us",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Visas",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Student-Portal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Money-And-Taxation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://centralbank.ae/en/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.adib.ae/en/Pages/Home.aspx",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Where-To-Live",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/The-Abu-Dhabi-Lifestyle",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Transportation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Telecommunications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Recruiting-Domestic-Help",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Living-With-Pets",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/Living-in-Abu-Dhabi/Travel",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://councils.youth.gov.ae/en/entities/abu-dhabi",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.tamm.abudhabi/en",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/ADResidentsoffice/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://twitter.com/ADResidents",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/adresidentsoffice/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.linkedin.com/company/adresidentsoffice/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UC8v6cAdcPVBo2HTI3DJBlpw",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/About-Abu-Dhabi-Residents-Office",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Work-in-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Living-in-Abu-Dhabi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Visas",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Contact-Us",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tamm.abudhabi/en/privacy-statement",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.tamm.abudhabi/en/copyright",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.tamm.abudhabi/en/terms-and-conditions",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://adro.gov.ae/en/Living-in-Abu-Dhabi/Money-And-Taxation#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "dd04cdaef0b40b9468f06b00db44d2d33e7b81d6a5e24acbf134060411ef6d77"
+}

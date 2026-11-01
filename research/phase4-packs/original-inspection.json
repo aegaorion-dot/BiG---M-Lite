@@ -1,0 +1,34 @@
+[
+  {
+    "repository": "aegaorion-dot/big-m-",
+    "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+    "path": "content/tax/cross-border/id-sg-interest-2025/id-treaty.manifest.v1.json",
+    "blobSha": "f0b08555c7585515624c8073798c6e8b93a3c84f",
+    "localPath": "original/id-treaty.manifest.v1.json",
+    "scope": "Only stipulated private-company arm-length ordinary loan interest paid 30 June 2025; no government, bond, PE, fixed-base, dual-residence, excess-related-interest or domestic concession case. All eligibility and administration require separate reviewed facts.",
+    "sourceTextSha256": "3081c1a7658f8e7cf4aceb95f1febdb68a4695c99ee0ad4355cf64bf95a7cb42",
+    "reportedOriginalPdfSha256": "fc2b1a37139119c58615effce333c7f4b09817e662eab99485c170264c961ef6",
+    "sourceUrl": "https://www.iras.gov.sg/media/docs/default-source/dtas/singapore-indonesia-dta-(ratified)(23-july-2021).pdf",
+    "entryCount": 5,
+    "subjects": [
+      "COMPANY"
+    ],
+    "finding": "COMPANY ordinary interest only; 2025 constrained subset. Residence citation claims Article4 but captured PDF page5 is Article3 continuation; actual Article4 begins page6. Not imported as freelancer service authority."
+  },
+  {
+    "repository": "aegaorion-dot/big-m-",
+    "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+    "path": "content/tax/cross-border/id-sg-interest-2025/sg-treaty.manifest.v1.json",
+    "blobSha": "6fb580154d9167659a9ff500c8f824387b178480",
+    "localPath": "original/sg-treaty.manifest.v1.json",
+    "scope": "Only stipulated private-company arm-length ordinary loan interest paid 30 June 2025; no government, bond, PE, fixed-base, dual-residence, excess-related-interest or domestic concession case. All eligibility and administration require separate reviewed facts.",
+    "sourceTextSha256": "3081c1a7658f8e7cf4aceb95f1febdb68a4695c99ee0ad4355cf64bf95a7cb42",
+    "reportedOriginalPdfSha256": "fc2b1a37139119c58615effce333c7f4b09817e662eab99485c170264c961ef6",
+    "sourceUrl": "https://www.iras.gov.sg/media/docs/default-source/dtas/singapore-indonesia-dta-(ratified)(23-july-2021).pdf",
+    "entryCount": 5,
+    "subjects": [
+      "COMPANY"
+    ],
+    "finding": "COMPANY ordinary interest only; 2025 constrained subset. Residence citation claims Article4 but captured PDF page5 is Article3 continuation; actual Article4 begins page6. Not imported as freelancer service authority."
+  }
+]

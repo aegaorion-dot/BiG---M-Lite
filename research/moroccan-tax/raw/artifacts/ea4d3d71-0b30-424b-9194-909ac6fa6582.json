@@ -1,0 +1,33 @@
+{
+  "sourceId": "AE-GOV",
+  "jurisdictionCode": "AE",
+  "authorityCode": "GOV",
+  "sourceUrl": "https://u.ae/en/information-and-services/finance-and-investment/taxation",
+  "finalUrl": "https://u.ae/en/information-and-services/finance-and-investment/taxation",
+  "redirects": [],
+  "sourceType": "HTML",
+  "retrievalMethod": "HTML",
+  "retrievedAt": "2026-10-29T15:00:59.651Z",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "language": null,
+  "officialDocumentId": null,
+  "title": null,
+  "publishedAt": null,
+  "effectiveFrom": null,
+  "effectiveTo": null,
+  "status": "DISCOVERED",
+  "etag": null,
+  "lastModified": null,
+  "unstableUrl": false,
+  "securityRedaction": {
+    "originalContentSha256": "95beba439f861f124ae3fa1b9a63777fffa33da7a8bb3aad80b15e22b23e0cfc",
+    "redactionReason": "THIRD_PARTY_CREDENTIAL_SHAPED_QUERY_PARAMETER"
+  },
+  "artifactId": "ea4d3d71-0b30-424b-9194-909ac6fa6582",
+  "rawContentHash": "49cdcdfc7eff9cf81ae523cb7eb698aa37f3ca484b864b9da26424ee8fd778bb",
+  "rawStorageRef": "blobs/49cdcdfc7eff9cf81ae523cb7eb698aa37f3ca484b864b9da26424ee8fd778bb.bin",
+  "byteLength": 58073,
+  "parserVersion": "fabric-raw/1",
+  "duplicateContent": false
+}

@@ -19,9 +19,10 @@ function renderTextReport(result) {
     const amount = f.amountMinor === null ? '-' : f.amountMinor;
     lines.push(`[${f.status}] ${f.ruleId} ${f.category} amountMinor=${amount}${f.source ? ` source=${f.source}` : ''}${f.note ? ` — ${f.note}` : ''}`);
   }
-  lines.push(`Total final: ${result.tax.finalTotalMinor}`);
+  lines.push(`Status pajak: ${result.tax.status ?? 'REVIEW_REQUIRED'}`);
+  lines.push(result.tax.testOnly ? `TEST ONLY: hasil fixture ${result.tax.finalTotalMinor}; bukan hukum pajak.` : 'Kewajiban pajak final: belum ditentukan.');
   if (result.tax.hasPlaceholder) {
-    lines.push('PERHATIAN: ada aturan placeholder — total final di atas BUKAN kewajiban pajak final.');
+    lines.push('Aturan placeholder BUKAN kewajiban pajak final; penentuan pajak memerlukan tinjauan.');
   }
   lines.push('--- Jurnal ---');
   lines.push(`ID: ${result.journal.id} balanced=${result.journal.balanced} finalized=${result.journal.finalized}`);

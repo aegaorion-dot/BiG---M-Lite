@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "syntheticOnly": true,
+  "paidCalls": 0,
+  "routes": [
+    "dashboard",
+    "assistant",
+    "intake",
+    "documents",
+    "tax",
+    "reports",
+    "settings"
+  ],
+  "phase9PreparedJournals": 3,
+  "netMinor": "29321000",
+  "fallbackExplanationMatchesEngine": true,
+  "consoleErrors": []
+}

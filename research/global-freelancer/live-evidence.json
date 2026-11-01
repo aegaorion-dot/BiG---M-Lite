@@ -1,0 +1,130 @@
+{
+  "at": "2026-10-29T11:36:10.286Z",
+  "syntheticOnly": true,
+  "success": false,
+  "failure": "INITIAL_PROFILE_CHECK_FAILED",
+  "requestCeiling": 2,
+  "retries": 0,
+  "requests": 2,
+  "model": "muse-spark-1.3",
+  "steps": [
+    {
+      "check": "initial-complex-profile",
+      "success": false,
+      "elapsedMs": 10133
+    },
+    {
+      "check": "final-grounded-explanation",
+      "success": true,
+      "elapsedMs": 2820,
+      "provider": "meta",
+      "contextHash": "05cbef16a4c1c7b87910322a4a61f50af4e5cff8ccdd25931bb6996c2a7a68fe",
+      "sections": [
+        {
+          "kind": "CALCULATED_RESULT",
+          "facts": [
+            {
+              "id": "position.cashReceived",
+              "display": "Cash actually received: USD 32,051.10. Outstanding contract balances and opening funds are excluded."
+            },
+            {
+              "id": "position.receivables",
+              "display": "Clients contractually still owe: JPY 300,000; USD 1,800.00. These are original-currency contract balances, not cash or automatically recognized accounts receivable; no new FX valuation was invented."
+            },
+            {
+              "id": "position.card",
+              "display": "Card liability: USD 501.47. Card repayments of USD 8,000.00 debit the card liability and credit bank; the purchase was recorded separately, so repayment is not another expense."
+            },
+            {
+              "id": "position.spending",
+              "display": "Purchases total USD 6,001.47: business-classified spending USD 1,345.14, personal USD 1,579.34, mixed USD 3,076.99. Recognized business expenses are USD 355.00; another USD 990.14 of business purchases needs expense-versus-asset review. Card repayments are excluded. Business classification does not establish tax deductibility."
+            },
+            {
+              "id": "position.incomeTypes",
+              "display": "Received by category: Advances received: USD 3,210.00; Affiliate commissions: USD 3,980.00; Employment wages: USD 3,900.00; Projects and services: USD 16,301.10; Software licences: USD 4,660.00. Advances of USD 3,210.00 remain a liability; employment wages of USD 3,900.00 are separate from business income. Licence receipts retain their licence/IP facts and require tax classification review."
+            },
+            {
+              "id": "position.bank",
+              "display": "Recorded bank balance: USD 44,051.10. This includes opening funds and is different from cash received during the recorded period."
+            }
+          ],
+          "explanation": null
+        },
+        {
+          "kind": "FACT",
+          "facts": [
+            {
+              "id": "position.countries",
+              "display": "Citizenship US; home US; current physical location AE; work AE. Temporary travel: 30 days. Entity declaration: No UAE company. Tax residence: Not confirmed; registration: Not confirmed. Payer countries: AE, AU, EG, GB, JP, KE. Payer country is not automatically an income source or proof of taxation."
+            },
+            {
+              "id": "position.confirmed",
+              "display": "The recorded data contains 15 income engagements and balanced journals: true. Human-confirmed records are distinct from unapproved law, unknown withholding and unallocated costs."
+            }
+          ],
+          "explanation": null
+        },
+        {
+          "kind": "MISSING_INFORMATION",
+          "facts": [
+            {
+              "id": "position.tax",
+              "display": "Final tax cannot yet be reliably determined. Blockers: approved CountryPack coverage is missing or unestablished; tax residence is not confirmed; income source is not established from payer country; TreatyPack applicability requires review; withholding certificates are missing; amounts remain unknown; advance earning recognition needs review; software licence/IP tax classification is unresolved; mixed costs have no approved allocation; expense-versus-asset policy needs review. No zero tax, withholding rate or treaty benefit is assumed."
+            },
+            {
+              "id": "position.profit",
+              "display": "Recorded business income USD 24,941.10, recognized business expenses USD 355.00, provisional recorded net USD 24,586.10. Final business profit is not reliable while mixed purchases of USD 3,076.99 and business asset/expense review of USD 990.14 remain unresolved. Advances and personal wages are separate."
+            },
+            {
+              "id": "position.hotel",
+              "display": "Hotel remains mixed-purpose pending allocation review. Your recorded reason: Mixed. I was on vacation for 30 days but worked and had meetings during part of the stay.. No business percentage, full business expense or tax deduction was invented."
+            },
+            {
+              "id": "position.policy",
+              "display": "There are 10 accounting/tax review items: mixed-use allocation, licence/IP treatment, advances and expense-versus-asset policy. Confirmed purchases and payments remain recorded; uncertain treatment is not silently approved."
+            },
+            {
+              "id": "position.treaties",
+              "display": "Potential research contexts: US / AE; US / AU; US / EG; US / GB; US / JP; US / KE. Treaty applicability is not established by citizenship, home or payer alone. Missing approved coverage remains review-required."
+            }
+          ],
+          "explanation": null
+        }
+      ],
+      "authoritativeStateUnchanged": true
+    }
+  ],
+  "metrics": [
+    {
+      "purpose": "business-profiling",
+      "success": false,
+      "schemaValidationSuccess": false,
+      "fallbackUsed": true,
+      "cacheHit": false,
+      "latencyMs": 10057,
+      "usage": {
+        "input_tokens": 1378,
+        "output_tokens": 2671,
+        "total_tokens": 4049,
+        "reasoning_tokens": 1256
+      },
+      "failure": "Meta schema validation failed"
+    },
+    {
+      "purpose": "contextual-assistant",
+      "success": true,
+      "schemaValidationSuccess": true,
+      "fallbackUsed": false,
+      "cacheHit": false,
+      "latencyMs": 2751,
+      "usage": {
+        "input_tokens": 3057,
+        "output_tokens": 348,
+        "total_tokens": 3405,
+        "reasoning_tokens": 216
+      },
+      "failure": null
+    }
+  ],
+  "credentialsRecorded": false
+}

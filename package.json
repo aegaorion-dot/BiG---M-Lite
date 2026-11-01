@@ -5,14 +5,49 @@
   "type": "commonjs",
   "private": true,
   "engines": {
-    "node": ">=20"
+    "node": ">=20.19"
   },
   "scripts": {
     "test": "node scripts/test.js",
+    "security:scan": "node scripts/scan-research-secrets.js",
+    "demo": "node scripts/demo.js start",
+    "demo:reset": "node scripts/demo.js reset",
+    "demo:prepare": "node scripts/demo.js prepare",
+    "test:demo": "node --require ./scripts/test-network-guard.cjs --test test/demo-submission.test.js",
+    "test:demo:live": "node scripts/demo-live.js",
+    "test:demo:browser": "node --experimental-websocket scripts/demo-browser.js",
+    "test:fx:live": "node scripts/international-smoke.js fx",
+    "test:meta:multilingual": "node scripts/international-smoke.js multilingual",
     "start": "node src/web/server.js",
     "smoke:meta": "node scripts/meta-smoke.js",
+    "smoke:document-meta": "node scripts/meta-document-smoke.js",
+    "test:meta:profiling": "node scripts/meta-live.js profiling",
+    "test:meta:document": "node scripts/meta-live.js document",
+    "test:meta:assistant": "node scripts/meta-live.js assistant",
+    "test:meta:acceptance": "node scripts/meta-live.js acceptance",
+    "fixtures:intake": "node scripts/intake-fixtures.js",
     "fabric:probe": "node scripts/fabric-probe.js",
-    "fabric:report": "node scripts/fabric-report.js"
+    "fabric:report": "node scripts/fabric-report.js",
+    "tax": "node scripts/tax-engine.js",
+    "tax:demo": "node scripts/tax-demo.js",
+    "packs:probe": "node scripts/phase4-probe.js",
+    "packs:normalize": "node scripts/phase4-normalize.js",
+    "packs:build": "node scripts/phase4-build-catalog.js",
+    "packs:demo": "node scripts/phase4-demo.js",
+    "test:global:freelancer": "node scripts/global-freelancer.js",
+    "test:global:browser": "node --experimental-websocket scripts/global-freelancer.js --browser",
+    "test:global:live": "node scripts/global-live.js",
+    "fixtures:moroccan": "node scripts/moroccan-fixtures.js",
+    "test:moroccan": "node scripts/moroccan-expat.js",
+    "test:moroccan:browser": "node --experimental-websocket scripts/moroccan-expat.js --browser",
+    "test:moroccan:live": "node --experimental-websocket scripts/moroccan-live.js"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100",
+    "@tesseract.js-data/eng": "1.0.0",
+    "@tesseract.js-data/ind": "1.0.0",
+    "pdfjs-dist": "5.5.207",
+    "tesseract.js": "7.0.0"
+  }
 }

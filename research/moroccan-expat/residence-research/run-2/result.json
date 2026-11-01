@@ -1,0 +1,66 @@
+{
+  "researchId": "46e25c95-e2ca-45c5-bd53-7e7d665f7d9f",
+  "status": "MISSING_FACT",
+  "requestsThisRun": 1,
+  "totalResearchRequests": 16,
+  "hostedSearchCalls": 6,
+  "retrieved": 8,
+  "readings": 9,
+  "candidates": 1,
+  "missingFacts": [
+    {
+      "status": "MISSING_FACT",
+      "factId": "MA-foyer-permanent",
+      "question": "أين يوجد السكن الدائم الرئيسي (foyer d'habitation permanent) للشخص، وهل له سكن دائم في المغرب خلال أكتوبر 2026؟",
+      "whyNeeded": "Alternative 1 of MA Art 23 domicile test; cannot conclude residence without it"
+    },
+    {
+      "status": "MISSING_FACT",
+      "factId": "MA-centre-interets",
+      "question": "أين يوجد مركز المصالح الاقتصادية (العقار للإيجار، المقهى، الاستثمارات) المعتمد للاختبار؟",
+      "whyNeeded": "Alternative 2 of MA Art 23; rental/cafe in ID vs ties in MA must be separated"
+    },
+    {
+      "status": "MISSING_FACT",
+      "factId": "MA-day-count-convention",
+      "question": "ما هي قاعدة احتساب أيام الإقامة (الدخول/الخروج، الاستمرارية) المعتمدة لـ 365 يوم؟",
+      "whyNeeded": "183-day alternative requires legal counting; calendar intervals alone insufficient"
+    },
+    {
+      "status": "MISSING_FACT",
+      "factId": "ID-residence-provision",
+      "question": "ما هي أحكام الإقامة الضريبية الإندونيسية (subjek pajak dalam negeri: bertempat tinggal / 183 hari / niat) المنطبقة على أكتوبر 2026؟",
+      "whyNeeded": "No controlling ID article text yet retrieved/read; cannot propose ID candidate"
+    }
+  ],
+  "unresolved": [
+    "ID residence candidate pending retrieval/read of UU PPh controlling articles and effective-period check",
+    "MA 2026 currency confirmation and independent primary-source cross-check pending",
+    {
+      "code": "UNKNOWN_COMMENCEMENT",
+      "jurisdiction": "MA",
+      "candidateId": "bc6f7f3a527d00a68842deedde90dd00b407fbc05fa440c89854f72ab80a6f86"
+    },
+    {
+      "code": "MIRROR_FIDELITY_REVIEW_REQUIRED",
+      "jurisdiction": "MA",
+      "candidateId": "bc6f7f3a527d00a68842deedde90dd00b407fbc05fa440c89854f72ab80a6f86"
+    },
+    {
+      "code": "INDEPENDENT_CROSS_CHECK_REQUIRED",
+      "jurisdiction": "MA",
+      "candidateId": "bc6f7f3a527d00a68842deedde90dd00b407fbc05fa440c89854f72ab80a6f86"
+    },
+    {
+      "code": "MISSING_JURISDICTION_CANDIDATE",
+      "jurisdiction": "ID"
+    }
+  ],
+  "offlineReplay": {
+    "paidCalls": 0,
+    "networkRequests": 0,
+    "candidateIdsIdentical": true
+  },
+  "activatedRules": 0,
+  "elapsedMs": 8443
+}

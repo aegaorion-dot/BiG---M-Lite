@@ -1,0 +1,1190 @@
+{
+  "label": "OFFLINE DEMO: fictitious facts, production law approvals=0",
+  "productionApprovedCount": 0,
+  "cases": [
+    {
+      "name": "1 Indonesian freelancer, ID source/residence, SG/US customers",
+      "scenarioFacts": "TEST ONLY fictitious confirmed dossier; no actual user facts or legal approval",
+      "request": {
+        "scopeId": "phase4-test-org",
+        "subjectId": "individual-1",
+        "requestKey": "freelancer-2026",
+        "taxType": "INCOME_TAX",
+        "jurisdictionCode": "ID",
+        "jurisdictionBasis": "TAX_RESIDENCE",
+        "incomeOrEventType": "ANNUAL_ORDINARY_INDIVIDUAL_INCOME",
+        "currency": "IDR",
+        "period": {
+          "periodStart": "2026-01-01",
+          "periodEnd": "2026-12-31"
+        },
+        "economicDate": "2026-12-31"
+      },
+      "determination": {
+        "status": "REVIEW_REQUIRED",
+        "reason": "REVIEW_REQUIRED",
+        "taxReady": false,
+        "testOnly": false,
+        "taxAmount": null,
+        "domesticCandidate": null,
+        "withholding": null,
+        "treatyResult": {
+          "status": "NOT_NEEDED",
+          "treatyApplicable": false,
+          "selectedTreatyPack": null,
+          "candidateTreaties": [],
+          "requiredMissingFacts": [],
+          "reason": "CONFIRMED_SOURCE_AND_RESIDENCE_MATCH",
+          "evaluatedAsOf": "2026-12-31"
+        },
+        "requiredMissingFacts": [],
+        "appliedRules": [],
+        "sourceHashes": [],
+        "traceSteps": 0,
+        "determinationId": "88de27a3a14772bf9e657e182b921ef448ad098756bf583854b97d8e7ccc7098",
+        "integrityHash": "a778235a5622c5720b2c282793d5de93254ed60c7769078e5e8819f7eadab5df",
+        "postingPerformed": false
+      },
+      "readiness": {
+        "status": "GOVERNANCE_REVIEW_REQUIRED",
+        "taxReady": false,
+        "authoritativeDetermination": false,
+        "profileRevision": 1,
+        "snapshotHash": "8f269aa9afe6d9fc4323bfc530f50890494f1a4067ab80bb3c4c538777db0337",
+        "requestHash": "e13e6c701340fca9b1e58f2827cd306731eaf900a141b20336c032eeffe786e2",
+        "requirements": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "BUSINESS_CAPACITY": "STRING",
+          "INCOME_REGIME": "STRING",
+          "REVIEWED_TAXABLE_INCOME": "MONEY",
+          "TAXABLE_INCOME_RECONCILIATION_APPROVED": "BOOLEAN",
+          "ANNUAL_TAX_PERIOD_REVIEWED": "BOOLEAN"
+        },
+        "declarations": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "BUSINESS_CAPACITY": "STRING",
+          "INCOME_REGIME": "STRING",
+          "REVIEWED_TAXABLE_INCOME": "MONEY",
+          "TAXABLE_INCOME_RECONCILIATION_APPROVED": "BOOLEAN",
+          "ANNUAL_TAX_PERIOD_REVIEWED": "BOOLEAN"
+        },
+        "requiredMissingFacts": [],
+        "questions": [],
+        "contributors": [
+          {
+            "candidateId": "a0a8fb61f53c91b4f7bbc447bf6583f15a6bbc8f73d57dae41abd0a89d296196",
+            "contentHash": "e0632f7eccc0380e67525b894f0e137c65622a19f35ea83ab341a0a9d5782c4f",
+            "ruleId": "ID_ART17_REVIEWED_PKP_2026",
+            "stage": "READY_FOR_REVIEW"
+          }
+        ],
+        "candidatePredicatePreviewOnly": true,
+        "predicateUnknown": false,
+        "possibleRuleCount": 1,
+        "postingPerformed": false,
+        "requirementsHash": "d2590c3d60e6b347d1bfe944631040fee00abae67a4359ad132608166bcef409"
+      }
+    },
+    {
+      "name": "2 Bandung coffee-shop individual UMKM, May2026",
+      "scenarioFacts": "TEST ONLY fictitious confirmed dossier; no actual user facts or legal approval",
+      "request": {
+        "scopeId": "phase4-test-org",
+        "subjectId": "individual-1",
+        "requestKey": "coffee-shop",
+        "taxType": "SIMPLIFIED_INCOME",
+        "jurisdictionCode": "ID",
+        "jurisdictionBasis": "TAX_RESIDENCE",
+        "incomeOrEventType": "MONTHLY_ELIGIBLE_DOMESTIC_BUSINESS",
+        "currency": "IDR",
+        "period": {
+          "periodStart": "2026-05-01",
+          "periodEnd": "2026-05-31"
+        },
+        "economicDate": "2026-05-31"
+      },
+      "determination": {
+        "status": "REVIEW_REQUIRED",
+        "reason": "REVIEW_REQUIRED",
+        "taxReady": false,
+        "testOnly": false,
+        "taxAmount": null,
+        "domesticCandidate": null,
+        "withholding": null,
+        "treatyResult": {
+          "status": "NOT_NEEDED",
+          "treatyApplicable": false,
+          "selectedTreatyPack": null,
+          "candidateTreaties": [],
+          "requiredMissingFacts": [],
+          "reason": "CONFIRMED_SOURCE_AND_RESIDENCE_MATCH",
+          "evaluatedAsOf": "2026-05-31"
+        },
+        "requiredMissingFacts": [],
+        "appliedRules": [],
+        "sourceHashes": [],
+        "traceSteps": 0,
+        "determinationId": "6bdf2a00ccf023456a39c5f905fcfd8aaf3a7345b4dbf931636f453c83f4e975",
+        "integrityHash": "fb50a871e4d4afc528a7e2936951a8bc85b072410495208d6adb0d3aba8c940a",
+        "postingPerformed": false
+      },
+      "readiness": {
+        "status": "GOVERNANCE_REVIEW_REQUIRED",
+        "taxReady": false,
+        "authoritativeDetermination": false,
+        "profileRevision": 1,
+        "snapshotHash": "3abf58241cc9cf885c5c5f0b9c219b734abeba8491470f6949b9b9525354bef5",
+        "requestHash": "dcecc26acd635e44c0a2b26b54d0fa65f525433c5e734a37856439492abdf63c",
+        "requirements": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "LEGAL_FORM": "STRING",
+          "INCOME_CATEGORY": "STRING",
+          "ELECTED_ORDINARY_REGIME": "BOOLEAN",
+          "PREVIOUSLY_DISQUALIFIED_FROM_FINAL": "BOOLEAN",
+          "PRIOR_YEAR_AGGREGATE_TURNOVER": "MONEY",
+          "MONTH_GROSS_BUSINESS_TURNOVER": "MONEY",
+          "YTD_GROSS_BEFORE_MONTH": "MONEY",
+          "AGGREGATION_BASIS_REVIEWED": "BOOLEAN",
+          "MONTH_PERIOD_REVIEWED": "BOOLEAN"
+        },
+        "declarations": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "LEGAL_FORM": "STRING",
+          "INCOME_CATEGORY": "STRING",
+          "ELECTED_ORDINARY_REGIME": "BOOLEAN",
+          "PREVIOUSLY_DISQUALIFIED_FROM_FINAL": "BOOLEAN",
+          "PRIOR_YEAR_AGGREGATE_TURNOVER": "MONEY",
+          "MONTH_GROSS_BUSINESS_TURNOVER": "MONEY",
+          "YTD_GROSS_BEFORE_MONTH": "MONEY",
+          "AGGREGATION_BASIS_REVIEWED": "BOOLEAN",
+          "MONTH_PERIOD_REVIEWED": "BOOLEAN"
+        },
+        "requiredMissingFacts": [],
+        "questions": [],
+        "contributors": [
+          {
+            "candidateId": "8823f5b288054add4154261e49fa2ffa8ee008515bfc7352654c13574d82e95d",
+            "contentHash": "0ce281282d446f3d227cb117dc11802e23a2aabd4a3ea34c37358a83b81580ae",
+            "ruleId": "ID_UMKM_MONTHLY_INDIVIDUAL_2026",
+            "stage": "READY_FOR_REVIEW"
+          }
+        ],
+        "candidatePredicatePreviewOnly": true,
+        "predicateUnknown": false,
+        "possibleRuleCount": 1,
+        "postingPerformed": false,
+        "requirementsHash": "c7fa9610af8a1802edfb4b805613d6632fbf76389d20e53fd521fe2e0ed0f3a7"
+      }
+    },
+    {
+      "name": "2a Missing aggregate turnover asks only the pack-required missing fact",
+      "scenarioFacts": "TEST ONLY fictitious confirmed dossier; no actual user facts or legal approval",
+      "request": {
+        "scopeId": "phase4-test-org",
+        "subjectId": "individual-1",
+        "requestKey": "coffee-turnover-missing",
+        "taxType": "SIMPLIFIED_INCOME",
+        "jurisdictionCode": "ID",
+        "jurisdictionBasis": "TAX_RESIDENCE",
+        "incomeOrEventType": "MONTHLY_ELIGIBLE_DOMESTIC_BUSINESS",
+        "currency": "IDR",
+        "period": {
+          "periodStart": "2026-05-01",
+          "periodEnd": "2026-05-31"
+        },
+        "economicDate": "2026-05-31"
+      },
+      "determination": {
+        "status": "REVIEW_REQUIRED",
+        "reason": "REVIEW_REQUIRED",
+        "taxReady": false,
+        "testOnly": false,
+        "taxAmount": null,
+        "domesticCandidate": null,
+        "withholding": null,
+        "treatyResult": {
+          "status": "NOT_NEEDED",
+          "treatyApplicable": false,
+          "selectedTreatyPack": null,
+          "candidateTreaties": [],
+          "requiredMissingFacts": [],
+          "reason": "CONFIRMED_SOURCE_AND_RESIDENCE_MATCH",
+          "evaluatedAsOf": "2026-05-31"
+        },
+        "requiredMissingFacts": [],
+        "appliedRules": [],
+        "sourceHashes": [],
+        "traceSteps": 0,
+        "determinationId": "cf7ce5e9632634e9a1cddddd7a0c06e68fc328e2fb3db3aa1a04d8e93189934a",
+        "integrityHash": "1516580a381e3976a78ef9e5f0b55d381971ae779e488a25d972c5ae1ad828cb",
+        "postingPerformed": false
+      },
+      "readiness": {
+        "status": "MISSING_REQUIRED_FACT",
+        "taxReady": false,
+        "authoritativeDetermination": false,
+        "profileRevision": 1,
+        "snapshotHash": "8c4a253e4d03b47602f81249ec4fc80dbb7cd4798953b5f8d2034f8797397cb9",
+        "requestHash": "eb19354e83768db04954c55e7ca71dd901a18445f073a19d59f48d00fc754f3c",
+        "requirements": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "LEGAL_FORM": "STRING",
+          "INCOME_CATEGORY": "STRING",
+          "ELECTED_ORDINARY_REGIME": "BOOLEAN",
+          "PREVIOUSLY_DISQUALIFIED_FROM_FINAL": "BOOLEAN",
+          "PRIOR_YEAR_AGGREGATE_TURNOVER": "MONEY",
+          "MONTH_GROSS_BUSINESS_TURNOVER": "MONEY",
+          "YTD_GROSS_BEFORE_MONTH": "MONEY",
+          "AGGREGATION_BASIS_REVIEWED": "BOOLEAN",
+          "MONTH_PERIOD_REVIEWED": "BOOLEAN"
+        },
+        "declarations": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "LEGAL_FORM": "STRING",
+          "INCOME_CATEGORY": "STRING",
+          "ELECTED_ORDINARY_REGIME": "BOOLEAN",
+          "PREVIOUSLY_DISQUALIFIED_FROM_FINAL": "BOOLEAN",
+          "PRIOR_YEAR_AGGREGATE_TURNOVER": "MONEY",
+          "MONTH_GROSS_BUSINESS_TURNOVER": "MONEY",
+          "YTD_GROSS_BEFORE_MONTH": "MONEY",
+          "AGGREGATION_BASIS_REVIEWED": "BOOLEAN",
+          "MONTH_PERIOD_REVIEWED": "BOOLEAN"
+        },
+        "requiredMissingFacts": [
+          "PRIOR_YEAR_AGGREGATE_TURNOVER"
+        ],
+        "questions": [
+          {
+            "key": "tax.PRIOR_YEAR_AGGREGATE_TURNOVER",
+            "name": "PRIOR_YEAR_AGGREGATE_TURNOVER",
+            "factType": "MONEY",
+            "semanticRole": "PRIOR_YEAR_AGGREGATE_TURNOVER",
+            "text": "What is the prior-year turnover aggregated under this rule, including the relevant spouse, branches and business group?",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "8823f5b288054add4154261e49fa2ffa8ee008515bfc7352654c13574d82e95d"
+            ]
+          }
+        ],
+        "contributors": [
+          {
+            "candidateId": "8823f5b288054add4154261e49fa2ffa8ee008515bfc7352654c13574d82e95d",
+            "contentHash": "0ce281282d446f3d227cb117dc11802e23a2aabd4a3ea34c37358a83b81580ae",
+            "ruleId": "ID_UMKM_MONTHLY_INDIVIDUAL_2026",
+            "stage": "READY_FOR_REVIEW"
+          }
+        ],
+        "candidatePredicatePreviewOnly": true,
+        "predicateUnknown": true,
+        "possibleRuleCount": 1,
+        "postingPerformed": false,
+        "requirementsHash": "0fe0a9c2056c996a0bf05a40a4d4c2947ab2cd9fec87d6305fd0771101a471c9"
+      }
+    },
+    {
+      "name": "2b PPN question requires PKP status and transaction facts; no VAT amount rule",
+      "scenarioFacts": "TEST ONLY fictitious confirmed dossier; no actual user facts or legal approval",
+      "request": {
+        "scopeId": "phase4-test-org",
+        "subjectId": "individual-1",
+        "requestKey": "coffee-vat",
+        "taxType": "VAT",
+        "jurisdictionCode": "ID",
+        "jurisdictionBasis": "REGISTRATION",
+        "incomeOrEventType": "DOMESTIC_RETAIL_SUPPLY",
+        "currency": "IDR",
+        "period": {
+          "periodStart": "2026-05-01",
+          "periodEnd": "2026-05-31"
+        },
+        "economicDate": "2026-05-31"
+      },
+      "determination": {
+        "status": "MISSING_APPROVED_RULE",
+        "reason": "MISSING_APPROVED_RULE",
+        "taxReady": false,
+        "testOnly": false,
+        "taxAmount": null,
+        "domesticCandidate": null,
+        "withholding": null,
+        "treatyResult": null,
+        "requiredMissingFacts": [],
+        "appliedRules": [],
+        "sourceHashes": [],
+        "traceSteps": 0,
+        "determinationId": "c208f6606fbf919029e2fd3a135723b11589fd8753b9c7dfdc13f430265545c1",
+        "integrityHash": "a4e78022f4c0157d726b61038577b8cca251b7629d32b37d4ceae30e03c125f4",
+        "postingPerformed": false
+      },
+      "readiness": {
+        "status": "MISSING_REQUIRED_FACT",
+        "taxReady": false,
+        "authoritativeDetermination": false,
+        "profileRevision": 1,
+        "snapshotHash": "cf45a7bab79410d7274e8244adf0346109003b8d4247cea029d0e5c054630784",
+        "requestHash": "87831312a47c32db023a8f5045e852b9fc2a45b5735ad630fd142b93f92ed3c7",
+        "requirements": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "REGISTRATION": "COUNTRY",
+          "PKP_STATUS": "STRING",
+          "ANNUAL_TURNOVER": "MONEY",
+          "TRANSACTION_CATEGORY": "STRING",
+          "REGISTRATION_EFFECTIVE_DATE": "STRING"
+        },
+        "declarations": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "REGISTRATION": "COUNTRY",
+          "PKP_STATUS": "STRING",
+          "ANNUAL_TURNOVER": "MONEY",
+          "TRANSACTION_CATEGORY": "STRING",
+          "REGISTRATION_EFFECTIVE_DATE": "STRING"
+        },
+        "requiredMissingFacts": [
+          "PKP_STATUS",
+          "ANNUAL_TURNOVER",
+          "TRANSACTION_CATEGORY",
+          "REGISTRATION_EFFECTIVE_DATE"
+        ],
+        "questions": [
+          {
+            "key": "tax.PKP_STATUS",
+            "name": "PKP_STATUS",
+            "factType": "STRING",
+            "semanticRole": "PKP_STATUS",
+            "text": "Please provide the reviewed value for pkp status.",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "ff4fb5d6d3576d84b1030b42134adeb1316dd2ba24d2f40c2fbbbea6f3b5c164"
+            ]
+          },
+          {
+            "key": "tax.ANNUAL_TURNOVER",
+            "name": "ANNUAL_TURNOVER",
+            "factType": "MONEY",
+            "semanticRole": "ANNUAL_TURNOVER",
+            "text": "Please provide the reviewed value for annual turnover.",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "ff4fb5d6d3576d84b1030b42134adeb1316dd2ba24d2f40c2fbbbea6f3b5c164"
+            ]
+          },
+          {
+            "key": "tax.TRANSACTION_CATEGORY",
+            "name": "TRANSACTION_CATEGORY",
+            "factType": "STRING",
+            "semanticRole": "TRANSACTION_CATEGORY",
+            "text": "Please provide the reviewed value for transaction category.",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "ff4fb5d6d3576d84b1030b42134adeb1316dd2ba24d2f40c2fbbbea6f3b5c164"
+            ]
+          },
+          {
+            "key": "tax.REGISTRATION_EFFECTIVE_DATE",
+            "name": "REGISTRATION_EFFECTIVE_DATE",
+            "factType": "STRING",
+            "semanticRole": "REGISTRATION_EFFECTIVE_DATE",
+            "text": "Please provide the reviewed value for registration effective date.",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "ff4fb5d6d3576d84b1030b42134adeb1316dd2ba24d2f40c2fbbbea6f3b5c164"
+            ]
+          }
+        ],
+        "contributors": [
+          {
+            "candidateId": "ff4fb5d6d3576d84b1030b42134adeb1316dd2ba24d2f40c2fbbbea6f3b5c164",
+            "contentHash": "be93d6b02881618424bcf4da0ede5a9c19ab2bfd545d7efe37e1b4cafe02b063",
+            "stage": "REVIEW_REQUIRED"
+          }
+        ],
+        "candidatePredicatePreviewOnly": true,
+        "predicateUnknown": false,
+        "possibleRuleCount": 0,
+        "postingPerformed": false,
+        "requirementsHash": "59bb0d14f5c51f3c7a66a75aae8d2d951fd3604ee34f5ec4687d42e6f9c0c7f3"
+      }
+    },
+    {
+      "name": "3 Australian owner in Bali, tax residence not established",
+      "scenarioFacts": "TEST ONLY fictitious confirmed dossier; no actual user facts or legal approval",
+      "request": {
+        "scopeId": "phase4-test-org",
+        "subjectId": "individual-1",
+        "requestKey": "bali-unknown",
+        "taxType": "SIMPLIFIED_INCOME",
+        "jurisdictionCode": "ID",
+        "jurisdictionBasis": "REGISTRATION",
+        "incomeOrEventType": "MONTHLY_ELIGIBLE_DOMESTIC_BUSINESS",
+        "currency": "IDR",
+        "period": {
+          "periodStart": "2026-05-01",
+          "periodEnd": "2026-05-31"
+        },
+        "economicDate": "2026-05-31"
+      },
+      "determination": {
+        "status": "REVIEW_REQUIRED",
+        "reason": "REVIEW_REQUIRED",
+        "taxReady": false,
+        "testOnly": false,
+        "taxAmount": null,
+        "domesticCandidate": null,
+        "withholding": null,
+        "treatyResult": {
+          "status": "MISSING_FACT",
+          "treatyApplicable": null,
+          "selectedTreatyPack": null,
+          "candidateTreaties": [],
+          "requiredMissingFacts": [
+            "TAX_RESIDENCE"
+          ],
+          "reason": "SOURCE_AND_RESIDENCE_REQUIRED_CUSTOMER_LOCATION_IS_NOT_SOURCE",
+          "evaluatedAsOf": "2026-05-31"
+        },
+        "requiredMissingFacts": [],
+        "appliedRules": [],
+        "sourceHashes": [],
+        "traceSteps": 0,
+        "determinationId": "154f42cc51658721ce341f4d933c218bb0f8c15fddf87eedd98b778b02d02864",
+        "integrityHash": "7378c7bda3170fd269e5bd8ec44b1f4b91864f2c9affa07a8ee84955fef3fd67",
+        "postingPerformed": false
+      },
+      "readiness": {
+        "status": "MISSING_REQUIRED_FACT",
+        "taxReady": false,
+        "authoritativeDetermination": false,
+        "profileRevision": 1,
+        "snapshotHash": "9a00d4986eddc545e50dddb1e97d2a24f35662ad1cd09b6c4adba50024c36617",
+        "requestHash": "1737c745fcf3dd33b62c3c16e89adf74ae075e6410a84a472188f15efb9b2033",
+        "requirements": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "REGISTRATION": "COUNTRY",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "LEGAL_FORM": "STRING",
+          "INCOME_CATEGORY": "STRING",
+          "ELECTED_ORDINARY_REGIME": "BOOLEAN",
+          "PREVIOUSLY_DISQUALIFIED_FROM_FINAL": "BOOLEAN",
+          "PRIOR_YEAR_AGGREGATE_TURNOVER": "MONEY",
+          "MONTH_GROSS_BUSINESS_TURNOVER": "MONEY",
+          "YTD_GROSS_BEFORE_MONTH": "MONEY",
+          "AGGREGATION_BASIS_REVIEWED": "BOOLEAN",
+          "MONTH_PERIOD_REVIEWED": "BOOLEAN"
+        },
+        "declarations": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "REGISTRATION": "COUNTRY",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "LEGAL_FORM": "STRING",
+          "INCOME_CATEGORY": "STRING",
+          "ELECTED_ORDINARY_REGIME": "BOOLEAN",
+          "PREVIOUSLY_DISQUALIFIED_FROM_FINAL": "BOOLEAN",
+          "PRIOR_YEAR_AGGREGATE_TURNOVER": "MONEY",
+          "MONTH_GROSS_BUSINESS_TURNOVER": "MONEY",
+          "YTD_GROSS_BEFORE_MONTH": "MONEY",
+          "AGGREGATION_BASIS_REVIEWED": "BOOLEAN",
+          "MONTH_PERIOD_REVIEWED": "BOOLEAN"
+        },
+        "requiredMissingFacts": [
+          "TAX_RESIDENCE"
+        ],
+        "questions": [
+          {
+            "key": "tax.TAX_RESIDENCE",
+            "name": "TAX_RESIDENCE",
+            "factType": "COUNTRY",
+            "semanticRole": "TAX_RESIDENCE",
+            "text": "Please provide the reviewed value for tax residence.",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "8823f5b288054add4154261e49fa2ffa8ee008515bfc7352654c13574d82e95d"
+            ]
+          }
+        ],
+        "contributors": [
+          {
+            "candidateId": "8823f5b288054add4154261e49fa2ffa8ee008515bfc7352654c13574d82e95d",
+            "contentHash": "0ce281282d446f3d227cb117dc11802e23a2aabd4a3ea34c37358a83b81580ae",
+            "ruleId": "ID_UMKM_MONTHLY_INDIVIDUAL_2026",
+            "stage": "READY_FOR_REVIEW"
+          }
+        ],
+        "candidatePredicatePreviewOnly": true,
+        "predicateUnknown": true,
+        "possibleRuleCount": 1,
+        "postingPerformed": false,
+        "requirementsHash": "5bfca08aff0e13adf27034eb9c28c1649ac8b19341600f5d17ed437c1f8cdedf"
+      }
+    },
+    {
+      "name": "3a Confirmed ID residence with AU-source ordinary income selects ID-AU dossier",
+      "scenarioFacts": "TEST ONLY fictitious confirmed dossier; no actual user facts or legal approval",
+      "request": {
+        "scopeId": "phase4-test-org",
+        "subjectId": "individual-1",
+        "requestKey": "bali-au-source",
+        "taxType": "INCOME_TAX",
+        "jurisdictionCode": "ID",
+        "jurisdictionBasis": "TAX_RESIDENCE",
+        "incomeOrEventType": "ANNUAL_ORDINARY_INDIVIDUAL_INCOME",
+        "currency": "IDR",
+        "period": {
+          "periodStart": "2026-01-01",
+          "periodEnd": "2026-12-31"
+        },
+        "economicDate": "2026-12-31"
+      },
+      "determination": {
+        "status": "REVIEW_REQUIRED",
+        "reason": "REVIEW_REQUIRED",
+        "taxReady": false,
+        "testOnly": false,
+        "taxAmount": null,
+        "domesticCandidate": null,
+        "withholding": null,
+        "treatyResult": {
+          "status": "REVIEW_REQUIRED",
+          "treatyApplicable": null,
+          "selectedTreatyPack": null,
+          "candidateTreaties": [
+            {
+              "candidateId": "8a5601bead020a9c0a929a7a881b8083b40f5b41577d1a9c4090ae9738f170db",
+              "packId": "ID_AU_SMALL_BUSINESS_RESEARCH_2026@1",
+              "status": "REVIEW_REQUIRED"
+            }
+          ],
+          "requiredMissingFacts": [],
+          "reason": "TREATY_REVIEW_REQUIRED",
+          "evaluatedAsOf": "2026-12-31"
+        },
+        "requiredMissingFacts": [],
+        "appliedRules": [],
+        "sourceHashes": [],
+        "traceSteps": 0,
+        "determinationId": "2f68d6e229f7d19f865cc3f25e7874c1fe7cc0bda7e953c4714ad6d3784f742d",
+        "integrityHash": "22e15a3022ebc1b3d2b4ed613f4d7711a28d3244de88bc1f9a105c1bda02cff5",
+        "postingPerformed": false
+      },
+      "readiness": {
+        "status": "MISSING_REQUIRED_FACT",
+        "taxReady": false,
+        "authoritativeDetermination": false,
+        "profileRevision": 1,
+        "snapshotHash": "89cd5a01764e7b9b3b3a8d9f0c7bf0deeb4f4bdc9d772aee70f3ec2b1454c5c2",
+        "requestHash": "184773356e6d53ff62ce9bb624ba4c28721d36cb8188df6d52572152694bd886",
+        "requirements": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "BUSINESS_CAPACITY": "STRING",
+          "INCOME_REGIME": "STRING",
+          "REVIEWED_TAXABLE_INCOME": "MONEY",
+          "TAXABLE_INCOME_RECONCILIATION_APPROVED": "BOOLEAN",
+          "ANNUAL_TAX_PERIOD_REVIEWED": "BOOLEAN",
+          "TREATY_RESIDENCE_DOCUMENT_VALID": "BOOLEAN",
+          "INCOME_ARTICLE_CLASSIFICATION": "STRING",
+          "FIXED_BASE_AVAILABLE": "BOOLEAN",
+          "SOURCE_STATE_PRESENCE_DAYS": "NUMBER",
+          "PRINCIPAL_PURPOSE_TEST_PASSED": "BOOLEAN"
+        },
+        "declarations": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "BUSINESS_CAPACITY": "STRING",
+          "INCOME_REGIME": "STRING",
+          "REVIEWED_TAXABLE_INCOME": "MONEY",
+          "TAXABLE_INCOME_RECONCILIATION_APPROVED": "BOOLEAN",
+          "ANNUAL_TAX_PERIOD_REVIEWED": "BOOLEAN",
+          "TREATY_RESIDENCE_DOCUMENT_VALID": "BOOLEAN",
+          "INCOME_ARTICLE_CLASSIFICATION": "STRING",
+          "FIXED_BASE_AVAILABLE": "BOOLEAN",
+          "SOURCE_STATE_PRESENCE_DAYS": "NUMBER",
+          "PRINCIPAL_PURPOSE_TEST_PASSED": "BOOLEAN"
+        },
+        "requiredMissingFacts": [
+          "TREATY_RESIDENCE_DOCUMENT_VALID",
+          "INCOME_ARTICLE_CLASSIFICATION",
+          "FIXED_BASE_AVAILABLE",
+          "SOURCE_STATE_PRESENCE_DAYS",
+          "PRINCIPAL_PURPOSE_TEST_PASSED"
+        ],
+        "questions": [
+          {
+            "key": "tax.TREATY_RESIDENCE_DOCUMENT_VALID",
+            "name": "TREATY_RESIDENCE_DOCUMENT_VALID",
+            "factType": "BOOLEAN",
+            "semanticRole": "TREATY_RESIDENCE_DOCUMENT_VALID",
+            "text": "Is a valid tax residence document available for this period under the 2026 procedure?",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "a0a8fb61f53c91b4f7bbc447bf6583f15a6bbc8f73d57dae41abd0a89d296196",
+              "8a5601bead020a9c0a929a7a881b8083b40f5b41577d1a9c4090ae9738f170db"
+            ]
+          },
+          {
+            "key": "tax.INCOME_ARTICLE_CLASSIFICATION",
+            "name": "INCOME_ARTICLE_CLASSIFICATION",
+            "factType": "STRING",
+            "semanticRole": "INCOME_ARTICLE_CLASSIFICATION",
+            "text": "Which treaty income article has been established for this income?",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "a0a8fb61f53c91b4f7bbc447bf6583f15a6bbc8f73d57dae41abd0a89d296196",
+              "8a5601bead020a9c0a929a7a881b8083b40f5b41577d1a9c4090ae9738f170db"
+            ]
+          },
+          {
+            "key": "tax.FIXED_BASE_AVAILABLE",
+            "name": "FIXED_BASE_AVAILABLE",
+            "factType": "BOOLEAN",
+            "semanticRole": "FIXED_BASE_AVAILABLE",
+            "text": "Was a fixed base regularly available in the source state?",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "a0a8fb61f53c91b4f7bbc447bf6583f15a6bbc8f73d57dae41abd0a89d296196",
+              "8a5601bead020a9c0a929a7a881b8083b40f5b41577d1a9c4090ae9738f170db"
+            ]
+          },
+          {
+            "key": "tax.SOURCE_STATE_PRESENCE_DAYS",
+            "name": "SOURCE_STATE_PRESENCE_DAYS",
+            "factType": "NUMBER",
+            "semanticRole": "SOURCE_STATE_PRESENCE_DAYS",
+            "text": "What is presence in the source state over the treaty article’s required period?",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "a0a8fb61f53c91b4f7bbc447bf6583f15a6bbc8f73d57dae41abd0a89d296196",
+              "8a5601bead020a9c0a929a7a881b8083b40f5b41577d1a9c4090ae9738f170db"
+            ]
+          },
+          {
+            "key": "tax.PRINCIPAL_PURPOSE_TEST_PASSED",
+            "name": "PRINCIPAL_PURPOSE_TEST_PASSED",
+            "factType": "BOOLEAN",
+            "semanticRole": "PRINCIPAL_PURPOSE_TEST_PASSED",
+            "text": "Has a human reviewed eligibility under the principal-purpose test?",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "a0a8fb61f53c91b4f7bbc447bf6583f15a6bbc8f73d57dae41abd0a89d296196",
+              "8a5601bead020a9c0a929a7a881b8083b40f5b41577d1a9c4090ae9738f170db"
+            ]
+          }
+        ],
+        "contributors": [
+          {
+            "candidateId": "a0a8fb61f53c91b4f7bbc447bf6583f15a6bbc8f73d57dae41abd0a89d296196",
+            "contentHash": "e0632f7eccc0380e67525b894f0e137c65622a19f35ea83ab341a0a9d5782c4f",
+            "ruleId": "ID_ART17_REVIEWED_PKP_2026",
+            "stage": "READY_FOR_REVIEW"
+          },
+          {
+            "candidateId": "8a5601bead020a9c0a929a7a881b8083b40f5b41577d1a9c4090ae9738f170db",
+            "contentHash": "3510c54fd300eba9b0a10a29cdd768279536e64f8f79f3f84cebf6e6dd3ebff2",
+            "stage": "REVIEW_REQUIRED"
+          }
+        ],
+        "candidatePredicatePreviewOnly": true,
+        "predicateUnknown": false,
+        "possibleRuleCount": 1,
+        "postingPerformed": false,
+        "requirementsHash": "25138d4d865c47bcc1b4606cd009dd33bc1a2abbe23804ccd515f93d4ff4470f"
+      }
+    },
+    {
+      "name": "ID-SG service WHT route remains unapproved",
+      "scenarioFacts": "TEST ONLY fictitious confirmed dossier; no actual user facts or legal approval",
+      "request": {
+        "scopeId": "phase4-test-org",
+        "subjectId": "individual-1",
+        "requestKey": "sg-service",
+        "taxType": "WHT",
+        "jurisdictionCode": "ID",
+        "jurisdictionBasis": "WITHHOLDING",
+        "incomeOrEventType": "NONRESIDENT_INDEPENDENT_SERVICE_FEE",
+        "currency": "IDR",
+        "period": {
+          "periodStart": "2026-05-01",
+          "periodEnd": "2026-05-31"
+        },
+        "economicDate": "2026-05-31"
+      },
+      "determination": {
+        "status": "REVIEW_REQUIRED",
+        "reason": "REVIEW_REQUIRED",
+        "taxReady": false,
+        "testOnly": false,
+        "taxAmount": null,
+        "domesticCandidate": null,
+        "withholding": null,
+        "treatyResult": {
+          "status": "REVIEW_REQUIRED",
+          "treatyApplicable": null,
+          "selectedTreatyPack": null,
+          "candidateTreaties": [
+            {
+              "candidateId": "f04d43c97cb27784aa6d9d252cc459d07349b5eba485339c144b53af8118969a",
+              "packId": "ID_SG_RESEARCH@1",
+              "status": "REVIEW_REQUIRED"
+            },
+            {
+              "candidateId": "711f070d9b8f7250553540d6e2ef2213c57afa8323364fedf9a85c9154eb27b0",
+              "packId": "ID_SG_SMALL_BUSINESS_RESEARCH_2026@1",
+              "status": "REVIEW_REQUIRED"
+            }
+          ],
+          "requiredMissingFacts": [],
+          "reason": "TREATY_REVIEW_REQUIRED",
+          "evaluatedAsOf": "2026-05-31"
+        },
+        "requiredMissingFacts": [],
+        "appliedRules": [],
+        "sourceHashes": [],
+        "traceSteps": 0,
+        "determinationId": "8e5edecdde5c7c4e505281f2cadcea58160f30f8c1694c39220473b2c737b4a5",
+        "integrityHash": "674ecf5950fb3870e6ed84d3932428de7e860125fa5a04cc5deffd0033aa0ebc",
+        "postingPerformed": false
+      },
+      "readiness": {
+        "status": "MISSING_REQUIRED_FACT",
+        "taxReady": false,
+        "authoritativeDetermination": false,
+        "profileRevision": 1,
+        "snapshotHash": "4037eb79441202bbf3f2cf1b6a635157d2b612f505270f611629be77e5a19a6e",
+        "requestHash": "e6a7806cf768a1bb3b8763c179992d2e912c37fc7a1784624f32d46120d61b25",
+        "requirements": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "WITHHOLDING": "COUNTRY",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "PAYER_IS_WITHHOLDING_AGENT": "BOOLEAN",
+          "PAYEE_TAX_RESIDENCE": "COUNTRY",
+          "PAYEE_IS_PERMANENT_ESTABLISHMENT": "BOOLEAN",
+          "PAYMENT_CATEGORY": "STRING",
+          "GROSS_FEE_EXCLUDING_VAT": "MONEY",
+          "TREATY_RESIDENCE_DOCUMENT_VALID": "BOOLEAN",
+          "INCOME_ARTICLE_CLASSIFICATION": "STRING",
+          "FIXED_BASE_AVAILABLE": "BOOLEAN",
+          "SOURCE_STATE_PRESENCE_DAYS": "NUMBER",
+          "PRINCIPAL_PURPOSE_TEST_PASSED": "BOOLEAN"
+        },
+        "declarations": {
+          "SUBJECT_TYPE": "STRING",
+          "INCOME_TYPE": "STRING",
+          "WITHHOLDING": "COUNTRY",
+          "TAX_RESIDENCE": "COUNTRY",
+          "SOURCE": "COUNTRY",
+          "PAYER_IS_WITHHOLDING_AGENT": "BOOLEAN",
+          "PAYEE_TAX_RESIDENCE": "COUNTRY",
+          "PAYEE_IS_PERMANENT_ESTABLISHMENT": "BOOLEAN",
+          "PAYMENT_CATEGORY": "STRING",
+          "GROSS_FEE_EXCLUDING_VAT": "MONEY",
+          "TREATY_RESIDENCE_DOCUMENT_VALID": "BOOLEAN",
+          "INCOME_ARTICLE_CLASSIFICATION": "STRING",
+          "FIXED_BASE_AVAILABLE": "BOOLEAN",
+          "SOURCE_STATE_PRESENCE_DAYS": "NUMBER",
+          "PRINCIPAL_PURPOSE_TEST_PASSED": "BOOLEAN"
+        },
+        "requiredMissingFacts": [
+          "TREATY_RESIDENCE_DOCUMENT_VALID",
+          "INCOME_ARTICLE_CLASSIFICATION",
+          "FIXED_BASE_AVAILABLE",
+          "SOURCE_STATE_PRESENCE_DAYS",
+          "PRINCIPAL_PURPOSE_TEST_PASSED"
+        ],
+        "questions": [
+          {
+            "key": "tax.TREATY_RESIDENCE_DOCUMENT_VALID",
+            "name": "TREATY_RESIDENCE_DOCUMENT_VALID",
+            "factType": "BOOLEAN",
+            "semanticRole": "TREATY_RESIDENCE_DOCUMENT_VALID",
+            "text": "Is a valid tax residence document available for this period under the 2026 procedure?",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "d44b1ebef5e5b70e1c3baf80afe7b9d4a46bb9a1af2644d979719336acb68fa0",
+              "f04d43c97cb27784aa6d9d252cc459d07349b5eba485339c144b53af8118969a",
+              "711f070d9b8f7250553540d6e2ef2213c57afa8323364fedf9a85c9154eb27b0"
+            ]
+          },
+          {
+            "key": "tax.INCOME_ARTICLE_CLASSIFICATION",
+            "name": "INCOME_ARTICLE_CLASSIFICATION",
+            "factType": "STRING",
+            "semanticRole": "INCOME_ARTICLE_CLASSIFICATION",
+            "text": "Which treaty income article has been established for this income?",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "d44b1ebef5e5b70e1c3baf80afe7b9d4a46bb9a1af2644d979719336acb68fa0",
+              "f04d43c97cb27784aa6d9d252cc459d07349b5eba485339c144b53af8118969a",
+              "711f070d9b8f7250553540d6e2ef2213c57afa8323364fedf9a85c9154eb27b0"
+            ]
+          },
+          {
+            "key": "tax.FIXED_BASE_AVAILABLE",
+            "name": "FIXED_BASE_AVAILABLE",
+            "factType": "BOOLEAN",
+            "semanticRole": "FIXED_BASE_AVAILABLE",
+            "text": "Was a fixed base regularly available in the source state?",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "d44b1ebef5e5b70e1c3baf80afe7b9d4a46bb9a1af2644d979719336acb68fa0",
+              "f04d43c97cb27784aa6d9d252cc459d07349b5eba485339c144b53af8118969a",
+              "711f070d9b8f7250553540d6e2ef2213c57afa8323364fedf9a85c9154eb27b0"
+            ]
+          },
+          {
+            "key": "tax.SOURCE_STATE_PRESENCE_DAYS",
+            "name": "SOURCE_STATE_PRESENCE_DAYS",
+            "factType": "NUMBER",
+            "semanticRole": "SOURCE_STATE_PRESENCE_DAYS",
+            "text": "What is presence in the source state over the treaty article’s required period?",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "d44b1ebef5e5b70e1c3baf80afe7b9d4a46bb9a1af2644d979719336acb68fa0",
+              "f04d43c97cb27784aa6d9d252cc459d07349b5eba485339c144b53af8118969a",
+              "711f070d9b8f7250553540d6e2ef2213c57afa8323364fedf9a85c9154eb27b0"
+            ]
+          },
+          {
+            "key": "tax.PRINCIPAL_PURPOSE_TEST_PASSED",
+            "name": "PRINCIPAL_PURPOSE_TEST_PASSED",
+            "factType": "BOOLEAN",
+            "semanticRole": "PRINCIPAL_PURPOSE_TEST_PASSED",
+            "text": "Has a human reviewed eligibility under the principal-purpose test?",
+            "authority": "CANDIDATE_ONLY",
+            "purpose": "TAX_READINESS_REVIEW",
+            "candidateIds": [
+              "d44b1ebef5e5b70e1c3baf80afe7b9d4a46bb9a1af2644d979719336acb68fa0",
+              "f04d43c97cb27784aa6d9d252cc459d07349b5eba485339c144b53af8118969a",
+              "711f070d9b8f7250553540d6e2ef2213c57afa8323364fedf9a85c9154eb27b0"
+            ]
+          }
+        ],
+        "contributors": [
+          {
+            "candidateId": "d44b1ebef5e5b70e1c3baf80afe7b9d4a46bb9a1af2644d979719336acb68fa0",
+            "contentHash": "c3ac798ee3cd6652ee789403ebdf4a1a4b6f61c7ccc745aa7c48ada28c03b260",
+            "ruleId": "ID_ART26_NONRESIDENT_SERVICE_2026",
+            "stage": "READY_FOR_REVIEW"
+          },
+          {
+            "candidateId": "f04d43c97cb27784aa6d9d252cc459d07349b5eba485339c144b53af8118969a",
+            "contentHash": "674357fd6495219fd00f2bbe359da441bdc634a137050388490831dc2b08d1fd",
+            "stage": "REVIEW_REQUIRED"
+          },
+          {
+            "candidateId": "711f070d9b8f7250553540d6e2ef2213c57afa8323364fedf9a85c9154eb27b0",
+            "contentHash": "efd78f8e4e24182566d51bfb6be0da5385270daa0a286465387dbda22b4a0f42",
+            "stage": "REVIEW_REQUIRED"
+          }
+        ],
+        "candidatePredicatePreviewOnly": true,
+        "predicateUnknown": false,
+        "possibleRuleCount": 1,
+        "postingPerformed": false,
+        "requirementsHash": "c36119c42d674f2c2016c966cfcc4432ccae3d40e4f014b7958bb0345ee5e24d"
+      }
+    },
+    {
+      "name": "4 Explicit 2025-only catalog rejected for 2026",
+      "determination": {
+        "status": "OUT_OF_PERIOD",
+        "reason": "OUT_OF_PERIOD",
+        "taxReady": false,
+        "testOnly": false,
+        "taxAmount": null,
+        "domesticCandidate": null,
+        "withholding": null,
+        "treatyResult": {
+          "status": "NOT_NEEDED",
+          "treatyApplicable": false,
+          "selectedTreatyPack": null,
+          "candidateTreaties": [],
+          "requiredMissingFacts": [],
+          "reason": "CONFIRMED_SOURCE_AND_RESIDENCE_MATCH",
+          "evaluatedAsOf": "2026-05-31"
+        },
+        "requiredMissingFacts": [],
+        "appliedRules": [],
+        "sourceHashes": [],
+        "traceSteps": 0,
+        "determinationId": "3abc255e83bd0438344e65adacc27dc6588d0238a94c59b4aa9bbb33d27d88e3",
+        "integrityHash": "bfc3b98fce5c055fbce663d6236e14299c062171876b254dff211fa7b2c1b000",
+        "postingPerformed": false
+      }
+    }
+  ],
+  "controlled": {
+    "label": "TEST ONLY isolated approval simulation on real legal content; not actual legal approval",
+    "umkm": {
+      "status": "CALCULATED",
+      "reason": "APPROVED_GOVERNED_RULE_EXECUTED",
+      "taxReady": true,
+      "testOnly": true,
+      "taxAmount": {
+        "amountMinor": "250000",
+        "currency": "IDR"
+      },
+      "domesticCandidate": {
+        "status": "DOMESTIC_CANDIDATE",
+        "taxableBase": {
+          "amountMinor": "50000000",
+          "currency": "IDR"
+        },
+        "taxAmount": {
+          "amountMinor": "250000",
+          "currency": "IDR"
+        },
+        "rate": {
+          "kind": "FORMULA_DERIVED",
+          "parameters": {}
+        }
+      },
+      "withholding": null,
+      "treatyResult": {
+        "status": "NOT_NEEDED",
+        "treatyApplicable": false,
+        "selectedTreatyPack": null,
+        "candidateTreaties": [],
+        "requiredMissingFacts": [],
+        "reason": "CONFIRMED_SOURCE_AND_RESIDENCE_MATCH",
+        "evaluatedAsOf": "2026-05-31"
+      },
+      "requiredMissingFacts": [],
+      "appliedRules": [
+        {
+          "ruleId": "ID_UMKM_MONTHLY_INDIVIDUAL_2026",
+          "packId": "ID_UMKM_INDIVIDUAL_2026",
+          "packVersion": 1,
+          "candidateId": "5fc1dc0f00cd9e8495dc00a06ba32ab2cda16ce2d17967ad20a05696e862a373",
+          "contentHash": "b8ea500d0dfeabfe4f3649755fe94c182f926ad5eaebbb80a87de52f881c13ce",
+          "governanceStatus": "APPROVED"
+        }
+      ],
+      "sourceHashes": [
+        "3aadd85768e7dc3dd5f8431178ee0dd1d03d631835a493288563692de7cf8520",
+        "be292f637e5aa5e5acc43ca0885348dd067f02e0d78b9272a810b7521c609090",
+        "369c1a3cb98aedc3157846290b62fd37c9e7d8e103f410591bc4b14d1c2e62d2"
+      ],
+      "traceSteps": 79,
+      "determinationId": "4cb796d39fb5deccb6eb35f13412e46b55c39770f85af2e242ebc179fb8a376b",
+      "integrityHash": "b416939e9469ab9685d62976d21b07fd2ddb63bdb788bab381f4653d0a21e8be",
+      "postingPerformed": false
+    },
+    "replay": true,
+    "ordinary2026": {
+      "status": "CALCULATED",
+      "reason": "APPROVED_GOVERNED_RULE_EXECUTED",
+      "taxReady": true,
+      "testOnly": true,
+      "taxAmount": {
+        "amountMinor": "44000000",
+        "currency": "IDR"
+      },
+      "domesticCandidate": {
+        "status": "DOMESTIC_CANDIDATE",
+        "taxableBase": {
+          "amountMinor": "300000000",
+          "currency": "IDR"
+        },
+        "taxAmount": {
+          "amountMinor": "44000000",
+          "currency": "IDR"
+        },
+        "rate": {
+          "kind": "FORMULA_DERIVED",
+          "parameters": {}
+        }
+      },
+      "withholding": null,
+      "treatyResult": {
+        "status": "NOT_NEEDED",
+        "treatyApplicable": false,
+        "selectedTreatyPack": null,
+        "candidateTreaties": [],
+        "requiredMissingFacts": [],
+        "reason": "CONFIRMED_SOURCE_AND_RESIDENCE_MATCH",
+        "evaluatedAsOf": "2026-12-31"
+      },
+      "requiredMissingFacts": [],
+      "appliedRules": [
+        {
+          "ruleId": "ID_ART17_REVIEWED_PKP_2026",
+          "packId": "ID_INDIVIDUAL_ORDINARY_2026",
+          "packVersion": 1,
+          "candidateId": "ef6907f4f666fc6c2cc9374743f77108781bc627e354663b7290451f27432c22",
+          "contentHash": "bd9b93ef64421f3b744ea2d51dad0595a9f2f5750947bce7c8a2f616cdeaed8e",
+          "governanceStatus": "APPROVED"
+        }
+      ],
+      "sourceHashes": [
+        "296b5bf34c4ec496b1e72ea6c9f878aee26ec68bb05afce2a21e4f469c7f3147",
+        "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842"
+      ],
+      "traceSteps": 64,
+      "determinationId": "2e1c03bbc86704a8efd7c9e07f9658d468a7f75d341a248d1c3b63a6fca2ae24",
+      "integrityHash": "46e8ed28492a6b4518f763568c5893e7f3f7eab48935b0fa6db8a523cb23b26e",
+      "postingPerformed": false
+    },
+    "idAuDomesticThenReview": {
+      "status": "REVIEW_REQUIRED",
+      "reason": "TREATY_REVIEW_REQUIRED",
+      "taxReady": false,
+      "testOnly": true,
+      "taxAmount": null,
+      "domesticCandidate": {
+        "status": "DOMESTIC_CANDIDATE",
+        "taxableBase": {
+          "amountMinor": "300000000",
+          "currency": "IDR"
+        },
+        "taxAmount": {
+          "amountMinor": "44000000",
+          "currency": "IDR"
+        },
+        "rate": {
+          "kind": "FORMULA_DERIVED",
+          "parameters": {}
+        }
+      },
+      "withholding": null,
+      "treatyResult": {
+        "status": "REVIEW_REQUIRED",
+        "treatyApplicable": null,
+        "selectedTreatyPack": null,
+        "candidateTreaties": [
+          {
+            "candidateId": "5c621aeea1045dacec039a2d474b7bca17eaa74012f8fc0d5699156292668fd6",
+            "packId": "ID_AU_SMALL_BUSINESS_RESEARCH_2026@1",
+            "status": "REVIEW_REQUIRED"
+          }
+        ],
+        "requiredMissingFacts": [],
+        "reason": "TREATY_REVIEW_REQUIRED",
+        "evaluatedAsOf": "2026-12-31"
+      },
+      "requiredMissingFacts": [],
+      "appliedRules": [
+        {
+          "ruleId": "ID_ART17_REVIEWED_PKP_2026",
+          "packId": "ID_INDIVIDUAL_ORDINARY_2026",
+          "packVersion": 1,
+          "candidateId": "ef6907f4f666fc6c2cc9374743f77108781bc627e354663b7290451f27432c22",
+          "contentHash": "bd9b93ef64421f3b744ea2d51dad0595a9f2f5750947bce7c8a2f616cdeaed8e",
+          "governanceStatus": "APPROVED"
+        }
+      ],
+      "sourceHashes": [
+        "296b5bf34c4ec496b1e72ea6c9f878aee26ec68bb05afce2a21e4f469c7f3147",
+        "1b34aae90f12476d335507763bda82859b8d5144ff97f35dd377b77bc6514842"
+      ],
+      "traceSteps": 64,
+      "determinationId": "797eaf3717c7e956db6237e2f59cbbc5911afad72821e642440bd398fd52fb89",
+      "integrityHash": "dfe6347ec3e212f6cf934be5bef0a012f88ed344aeff80ea5a3ce9c73f770a3a",
+      "postingPerformed": false
+    },
+    "idSgDomesticThenReview": {
+      "status": "REVIEW_REQUIRED",
+      "reason": "TREATY_REVIEW_REQUIRED",
+      "taxReady": false,
+      "testOnly": true,
+      "taxAmount": null,
+      "domesticCandidate": {
+        "status": "DOMESTIC_CANDIDATE",
+        "taxableBase": {
+          "amountMinor": "10000000",
+          "currency": "IDR"
+        },
+        "taxAmount": {
+          "amountMinor": "2000000",
+          "currency": "IDR"
+        },
+        "rate": {
+          "kind": "FORMULA_DERIVED",
+          "parameters": {}
+        }
+      },
+      "withholding": null,
+      "treatyResult": {
+        "status": "REVIEW_REQUIRED",
+        "treatyApplicable": null,
+        "selectedTreatyPack": null,
+        "candidateTreaties": [
+          {
+            "candidateId": "71be02bbbc6e112fd6473fbe8a5fa18edb907cadf6330d9453db6ff7b474c749",
+            "packId": "ID_SG_SMALL_BUSINESS_RESEARCH_2026@1",
+            "status": "REVIEW_REQUIRED"
+          }
+        ],
+        "requiredMissingFacts": [],
+        "reason": "TREATY_REVIEW_REQUIRED",
+        "evaluatedAsOf": "2026-05-31"
+      },
+      "requiredMissingFacts": [],
+      "appliedRules": [
+        {
+          "ruleId": "ID_ART26_NONRESIDENT_SERVICE_2026",
+          "packId": "ID_WHT26_SERVICE_2026",
+          "packVersion": 1,
+          "candidateId": "2dcb4c008e7ebe899d9dc9516a805d031a6fa2c652fd87a739091ebde0b5c134",
+          "contentHash": "9162d5f292e2580eab552c80387757d20509be3a6e369763243bc8430702e14e",
+          "governanceStatus": "APPROVED"
+        }
+      ],
+      "sourceHashes": [
+        "e61b0c801dca72a62d2230c651d59f22a1e9e6cca254cdb568f2ea009c997eb8"
+      ],
+      "traceSteps": 35,
+      "determinationId": "102fbda7ca35be140f4094761fd5472aee6323dfd53f7b0b292083d966dbabe7",
+      "integrityHash": "3ca30113013cd76bc04aa23370e806e788b048de1440fdcd48df9cd47bf304b7",
+      "postingPerformed": false
+    }
+  },
+  "bookkeeping": {
+    "ledgerEntries": 1,
+    "onePostingPipeline": true,
+    "taxUnresolved": true
+  }
+}

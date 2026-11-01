@@ -1,0 +1,120 @@
+{
+  "noProductionLawApprovalGranted": true,
+  "defaultApprovedCountryPacks": 0,
+  "cases": [
+    {
+      "case": "A: freelancer with only ported COMPANY rules (real coverage gap)",
+      "testOnly": false,
+      "status": "MISSING_APPROVED_RULE",
+      "reason": "MISSING_APPROVED_RULE",
+      "taxReady": false,
+      "taxAmount": null,
+      "packId": null,
+      "packVersion": null,
+      "treatyResult": {
+        "status": "NOT_NEEDED",
+        "treatyApplicable": false,
+        "selectedTreatyPack": null,
+        "candidateTreaties": [],
+        "requiredMissingFacts": [],
+        "reason": "CONFIRMED_SOURCE_AND_RESIDENCE_MATCH",
+        "evaluatedAsOf": "2025-06-01"
+      },
+      "calculationTraceSteps": 0,
+      "postingPerformed": false
+    },
+    {
+      "case": "B: COMPANY 2026 versus 2025-only rules",
+      "testOnly": false,
+      "status": "OUT_OF_PERIOD",
+      "reason": "OUT_OF_PERIOD",
+      "taxReady": false,
+      "taxAmount": null,
+      "packId": null,
+      "packVersion": null,
+      "treatyResult": {
+        "status": "NOT_NEEDED",
+        "treatyApplicable": false,
+        "selectedTreatyPack": null,
+        "candidateTreaties": [],
+        "requiredMissingFacts": [],
+        "reason": "CONFIRMED_SOURCE_AND_RESIDENCE_MATCH",
+        "evaluatedAsOf": "2026-06-01"
+      },
+      "calculationTraceSteps": 0,
+      "postingPerformed": false
+    },
+    {
+      "case": "C: freelancer with explicit SG source; ID-SG legal subset incomplete",
+      "testOnly": false,
+      "status": "MISSING_APPROVED_RULE",
+      "reason": "MISSING_APPROVED_RULE",
+      "taxReady": false,
+      "taxAmount": null,
+      "packId": null,
+      "packVersion": null,
+      "treatyResult": {
+        "status": "REVIEW_REQUIRED",
+        "treatyApplicable": null,
+        "selectedTreatyPack": null,
+        "candidateTreaties": [
+          {
+            "candidateId": "f04d43c97cb27784aa6d9d252cc459d07349b5eba485339c144b53af8118969a",
+            "packId": "ID_SG_RESEARCH@1",
+            "status": "REVIEW_REQUIRED"
+          }
+        ],
+        "requiredMissingFacts": [],
+        "reason": "TREATY_REVIEW_REQUIRED",
+        "evaluatedAsOf": "2025-06-01"
+      },
+      "calculationTraceSteps": 0,
+      "postingPerformed": false
+    },
+    {
+      "case": "D: Australian national, business registered/operated in ID; no AU engine selected",
+      "testOnly": false,
+      "status": "REVIEW_REQUIRED",
+      "reason": "REVIEW_REQUIRED",
+      "taxReady": false,
+      "taxAmount": null,
+      "packId": null,
+      "packVersion": null,
+      "treatyResult": {
+        "status": "NOT_NEEDED",
+        "treatyApplicable": false,
+        "selectedTreatyPack": null,
+        "candidateTreaties": [],
+        "requiredMissingFacts": [],
+        "reason": "CONFIRMED_SOURCE_AND_RESIDENCE_MATCH",
+        "evaluatedAsOf": "2025-06-01"
+      },
+      "calculationTraceSteps": 0,
+      "postingPerformed": false
+    },
+    {
+      "case": "TEST ONLY: Original COMPANY 2025 arithmetic through the neutral engine",
+      "testOnly": true,
+      "status": "CALCULATED",
+      "reason": "APPROVED_GOVERNED_RULE_EXECUTED",
+      "taxReady": true,
+      "taxAmount": {
+        "amountMinor": "13200000",
+        "currency": "IDR"
+      },
+      "packId": "ID_CIT_DETERMINATION_2025",
+      "packVersion": 2,
+      "treatyResult": {
+        "status": "NOT_NEEDED",
+        "treatyApplicable": false,
+        "selectedTreatyPack": null,
+        "candidateTreaties": [],
+        "requiredMissingFacts": [],
+        "reason": "CONFIRMED_SOURCE_AND_RESIDENCE_MATCH",
+        "evaluatedAsOf": "2025-06-01"
+      },
+      "calculationTraceSteps": 65,
+      "postingPerformed": false
+    }
+  ]
+}

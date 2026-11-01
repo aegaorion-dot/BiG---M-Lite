@@ -1,0 +1,78 @@
+{
+  "repository": "aegaorion-dot/big-m-",
+  "commit": "4d0da9a6acafc24f7db3778f66b4df6d7cf4764c",
+  "method": "Direct pinned GitHub connector reads before Phase 6 implementation; no Original runtime executed.",
+  "modules": [
+    {
+      "path": "src/externalGLContract.ts",
+      "blobSha": "34d030bde9b5004f0ab04742ac7c27d015e23619",
+      "scope": "complete"
+    },
+    {
+      "path": "src/externalJournalParser.ts",
+      "blobSha": "0d9dc117cf62f20684bb54784de00293fb99d015",
+      "scope": "lines 1-220"
+    },
+    {
+      "path": "src/externalJournalIntakeServer.ts",
+      "blobSha": "d925a6cadf00fd9e78f3f95910c78820db5703cd",
+      "scope": "lines 1-160"
+    },
+    {
+      "path": "src/nativeIntakeContract.ts",
+      "blobSha": "be4a6dfe975f8b232b7497b109172ca8b8fbe40c",
+      "scope": "lines 1-220"
+    },
+    {
+      "path": "src/nativeIntakeServer.ts",
+      "blobSha": "81fa4d7425d793cde423548bab49232855fb8813",
+      "scope": "lines 1-160"
+    },
+    {
+      "path": "src/intakeObservation.ts",
+      "blobSha": "83145efbfaf848229a050016c8115bb93c65c95a",
+      "scope": "complete"
+    },
+    {
+      "path": "src/accountingCanonicalSnapshot.ts",
+      "blobSha": "927f310f17ca4a5f1d7df09defadeebe776f0ea2",
+      "scope": "complete"
+    },
+    {
+      "path": "src/externalGLObservation.ts",
+      "blobSha": "7fe7e0ceffaa498093de9cbcc574f275d458eef3",
+      "scope": "complete"
+    },
+    {
+      "path": "src/externalGLAdaptationServer.ts",
+      "blobSha": "40d45112f08498c1e4ed5728ebcd02037dc56e2f",
+      "scope": "complete; lines 151-167 reviewed separately"
+    },
+    {
+      "path": "src/accountingEventServer.ts",
+      "blobSha": "7067cca44a3a00a20767341b6104517843e703ac",
+      "scope": "fetched in full; canonical identity/replay sections inspected"
+    },
+    {
+      "path": "src/accountingPostingServer.ts",
+      "blobSha": "15c28cc268c54875cec36ddde3be5fc55d36eb9e",
+      "scope": "fetched in full; lines 266-309 posting boundary reviewed separately"
+    }
+  ],
+  "finding": "Original external GL adaptation explicitly marks externally booked observations accountingPostingAuthorized=false and reports zero native GL postings. We reuse its observation/mapping governance and the separate authoritative posting-kernel concept; we do not claim that inspected lane already performs Lite-style native journal imports.",
+  "adapted": [
+    "source/schema/row identities and exact raw retention",
+    "exact Money debit/credit validation and complete-journal grouping",
+    "human-reviewed account mapping with versioned history",
+    "source provenance and conflicting-identity review",
+    "one authoritative canonical posting boundary",
+    "bounded input, indexing, replay and atomic per-journal outcome"
+  ],
+  "notPorted": [
+    "PostgreSQL/schema migrations/jobs/tenant delegation",
+    "SAP FI/Universal Journal vendor formats",
+    "enterprise dimensions/settlement object graph",
+    "R13 database memo/performance machinery",
+    "external tax execution or a new accounting engine"
+  ]
+}

@@ -1,0 +1,393 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "AU-ATO",
+  "jurisdictionCode": "AU",
+  "metadata": {
+    "title": "Business structures - key tax obligations | Australian Taxation Office",
+    "officialDocumentId": null,
+    "language": "en",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "76b7ccc4-b202-4481-a0c7-f9daf99f22ab",
+    "rawContentHash": "5a3e0b566483492b2bd8e33dbbbef456a6c87043b8193d367e07a34ce0bbdb72",
+    "sourceUrl": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/business-structures-key-tax-obligations",
+    "finalUrl": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/business-structures-key-tax-obligations",
+    "retrievedAt": "2026-10-28T22:50:40.833Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "ATO",
+    "authorityName": "Australian Taxation Office",
+    "sourceRole": "TAX_AUTHORITY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/5a3e0b566483492b2bd8e33dbbbef456a6c87043b8193d367e07a34ce0bbdb72.bin",
+    "rawContentHash": "5a3e0b566483492b2bd8e33dbbbef456a6c87043b8193d367e07a34ce0bbdb72"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/5a3e0b566483492b2bd8e33dbbbef456a6c87043b8193d367e07a34ce0bbdb72.bin",
+      "rawContentHash": "5a3e0b566483492b2bd8e33dbbbef456a6c87043b8193d367e07a34ce0bbdb72"
+    },
+    "metaTags": [
+      "<meta charSet=\"utf-8\" data-next-head=\"\"/>",
+      "<meta name=\"viewport\" content=\"width=device-width\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.title\" content=\"Business structures - key tax obligations\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.identifier\" content=\"https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/business-structures-key-tax-obligations\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.description\" content=\"See your key tax obligations for a sole trader, partnership, company or trust business structure.\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.creator\" content=\"scheme=AGLSTERMS.AglsAgent; corporateName=Australian Taxation Office; address=GPO Box 9990 Canberra ACT 2600; contact=13 28 65\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.publisher\" content=\"scheme=AGLSTERMS.AglsAgent; corporateName=Australian Taxation Office; address=GPO Box 9990 Canberra ACT 2600; contact=13 28 65\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.modified\" content=\"scheme=dcterms.ISO8601; 2026-06-08T14:00:00.000+00:00\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.language\" content=\"dcterms.RFC4646; en\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.subject\" content=\"tax basics, new to business, changing structure, business structures, sole trader, company, partnership, trust\" data-next-head=\"\"/>",
+      "<meta name=\"dcterms.type\" content=\"Content\" data-next-head=\"\"/>",
+      "<meta name=\"description\" content=\"See your key tax obligations for a sole trader, partnership, company or trust business structure.\" data-next-head=\"\"/>",
+      "<meta name=\"keywords\" content=\"tax basics, new to business, changing structure, business structures, sole trader, company, partnership, trust\" data-next-head=\"\"/>",
+      "<meta name=\"robots\" content=\"index,follow\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:card\" content=\"summary\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:title\" content=\"Business structures - key tax obligations\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:description\" content=\"See your key tax obligations for a sole trader, partnership, company or trust business structure.\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:image\" content=\"https://www.ato.gov.au/-/media/ato/home-banner.jpg\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:image:alt\" content=\"home banner\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:image:width\" content=\"2550\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:image:height\" content=\"1913\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:url\" content=\"https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/business-structures-key-tax-obligations\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:site\" content=\"@ato_gov_au\" data-next-head=\"\"/>",
+      "<meta name=\"og:type\" content=\"website\" data-next-head=\"\"/>",
+      "<meta name=\"og:title\" content=\"Business structures - key tax obligations\" data-next-head=\"\"/>",
+      "<meta name=\"og:description\" content=\"See your key tax obligations for a sole trader, partnership, company or trust business structure.\" data-next-head=\"\"/>",
+      "<meta name=\"og:image\" content=\"https://www.ato.gov.au/-/media/ato/home-banner.jpg\" data-next-head=\"\"/>",
+      "<meta name=\"og:image:width\" content=\"2550\" data-next-head=\"\"/>",
+      "<meta name=\"og:image:height\" content=\"1913\" data-next-head=\"\"/>",
+      "<meta name=\"og:url\" content=\"https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/starting-your-own-business/business-structures-key-tax-obligations\" data-next-head=\"\"/>",
+      "<meta name=\"fb:app_id\" content=\"123456789\" data-next-head=\"\"/>"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Business structures - key tax obligations | Australian Taxation Office ATO Community Legal Database What's New Log in to online services Log in Log in to ATO online services Access secure services, view your details and lodge online. Search Log in to online services Log in Log in to ATO online services Access secure services, view your details and lodge online. Menu Search Business structures - key tax obligations See your key tax obligations for a sole trader, partnership, company or trust business structure. Last updated 9 June 2026 Print or Download Media: Choosing your business structure: Small Business Tax Basics https://tv.ato.gov.au/ato-tv/media?v=bd1bdiubfurqic External Link ( Duration: 1:52) Types of business structures A business structure: defines who owns and operates a business affects your tax and registration requirements affects your legal liabilities and obligations. There are 4 commonly used business structures in Australia: sole trader partnership company trust. Information about other business structures is available on business.gov.au External Link . If you're unsure which business structure to choose, talk to your registered tax agent, or trusted business or legal adviser. If you change your business structure , there may be costs, tax implications and other obligations you need to meet. Sole trader A sole trader is an individual running a business. It is the simplest and cheapest way to run a business. If you run your business as a sole trader, you are: the sole owner and controller of it legally responsible for all aspects of the business, including debts and losses you incur in running it. You can employ workers in your business, but you can't employ yourself. As a sole trader, you are responsible for paying your worker&rsquo;s superannuation , known as super guarantee. You don't have to pay super guarantee for yourself but you can choose to make personal super contributions to save for your retirement. Key tax obligations As a sole trader, you: use your individual tax file number (TFN) when lodging your tax return report all your income in your individual tax return, using the section for business items to show your business income and expenses (there is no separate business tax return for sole traders) are entitled to an Australian business number (ABN) External Link and use that ABN for all business activities must register for goods and services tax (GST) if your annual GST turnover is $75,000 or more you provide taxi, limousine or ride-sourcing services (regardless of your GST turnover) you want to claim fuel tax credits may be required to lodge business activity statements , for example if you're registered for GST, have employer obligations such as PAYG withholding, or have PAYG instalments pay tax on all your income, including income from your business, based on your individual tax rate may voluntarily use, or be required to make, PAYG instalments to prepay your income tax can claim a deduction for any personal super contributions you make after notifying your fund can hire workers , and need to meet all employer and super obligations for them. As a sole trader, you can claim a deduction for salary, wages and allowances you pay your workers on your tax return. You can't claim a deduction for money or assets you take from the business for personal use. Partnership A partnership is a group or association of people who run a business together and share the income or losses from the business between themselves. A written partnership agreement is not required for a partnership to exist but can help: prevent misunderstandings and disputes about what each partner brings to the partnership set out how business income and losses are to be shared between the partners (equally between partners or not) set out how the business is to be managed. If there is no written agreement, income and losses are equally distributed between partners. The partners in a partnership are not employees of the partnership, but they are able to employ other workers. Partners are responsible for their own superannuation. However, the partnership is required to pay super for its employees. Key tax obligations A partnership: has its own TFN must lodge an annual partnership return showing all business income and deductions and how its income or losses are distributed to the partners must apply for an ABN External Link and use it for all business activities must register for GST if it has annual GST turnover of $75,000 ($150,000 for not-for-profit organisations) or more provides taxi, limousine or ride-sourcing services (regardless of GST turnover) wants to claim fuel tax credits may be required to lodge business activity statements , for example if it is registered for GST, has employer obligations such as pay as you go withholding, or have pay as you go instalments does not pay tax each partner reports their share of the net partnership income or loss in their own tax return and is personally liable for any tax that may be due on that income. A partnership and its partners can't claim a deduction for money they withdraw from the business. Amounts you take from a partnership: are not wages for tax purposes may affect what your share of the partnership income is that you have to pay tax on. You will need to be aware of the steps to take if you change the makeup of your partnership . Company A company is a separate legal entity with its own tax and superannuation obligations, run by its directors and owned by its shareholders. A company's income and assets belong to it, not its shareholders. There may be tax consequences if you are using your company's money and assets for private purposes . A company can distribute profits to its shareholders through dividends and may be able to attach franking credits to those dividends. This allows its shareholders to receive a credit for the tax already paid by the company on its profits. While a company provides some asset protection, its directors can be liable for their actions and, in some cases, certain tax and superannuation debts of the company under the director penalties rules. All company directors are legally required to verify their identity and apply for a director identification number External Link (director ID) prior to being appointed as a director of a company. Companies are regulated by the Australian Securities and Investments Commission (ASIC). Companies have higher set-up and administration costs than other types of business structures and have additional reporting requirements. Key tax obligations A company: is responsible for its own tax and superannuation obligations must apply for its own TFN is entitled to an ABN External Link if it is registered under the Corporations Act 2001 if the company is not registered under the Corporations Act 2001 it may still register for an ABN if it is running a business in Australia must register for GST if it has annual GST turnover of $75,000 ($150,000 for not-for-profit organisations) or more provides taxi, limousine or ride-sourcing services (regardless of GST turnover) wants to claim fuel tax credits may be required to lodge business activity statements , for example if it is registered for GST, has employer obligations such as PAYG withholding, or has PAYG instalments owns the money that the business earns (you may have to pay tax on any money taken out for personal use) must lodge an annual company tax return usually pays its income tax by instalments through the pay as you go instalments system pays tax at its applicable company tax rate must pay super guarantee for any eligible workers (this includes any company directors) must issue distribution statements to any shareholders it pays a dividend to. There is information you need to know if your company will be deregistered . Trust A trust is an obligation imposed on a person or other entity to hold and manage property for the benefit of beneficiaries. If a trust is set up to run a business, it will normally have a trust deed that, among other things, sets out the powers of the trustees and the interests of the beneficiaries in the trust. The trustee manages a trust's tax affairs. The trustee can be an individual or a company. The net income of the trust is usually distributed to beneficiaries. Key tax obligations A trust: must have its own TFN must lodge an annual trust tax return, which includes a statement of how its income was distributed must apply for an ABN External Link and use it for all business activities must register for GST if it has annual GST turnover of $75,000 ($150,000 for not-for-profit organisations) or more provides taxi, limousine or ride-sourcing services (regardless of GST turnover) want to claim fuel tax credits may be required to lodge business activity statements , for example if it is registered for GST, has employer obligations such as pay as you go withholding, or has pay as you go instalments must pay super for eligible employees (this may include the trustee if employed by the trust). Who pays income tax? The trustee must lodge an annual trust tax return. Who pays tax on the trust&rsquo;s income is determined by how the trust income is distributed and who it is distributed to. Generally, the beneficiaries will be responsible for paying tax on the trust net income distributed to them. The trustee is liable to pay tax on any undistributed income and may be liable to pay tax on behalf of certain beneficiaries, like non-residents or minors. There may be other circumstances where the trustee is responsible for paying tax. If the trust makes a loss, it cannot be distributed to the beneficiaries and they can't claim it as a loss against their income. However, the trust may be able to carry forward losses and offset them against future income it earns. QC 31723 Print or Download Tools Media centre Forms and instructions Tax rates and codes Calculators and tools Tools Media centre Forms and instructions Tax rates and codes Calculators and tools Tax information for People with disability Aboriginal and Torres Strait Islander peoples Norfolk Island Other languages Tax information for People with disability Aboriginal and Torres Strait Islander peoples Norfolk Island Other languages Help and support Top call centre questions Contact us Identity security and scams Financial difficulties and disasters Help and support Top call centre questions Contact us Identity security and scams Financial difficulties and disasters About ATO Careers Privacy policy ATOtv Other languages facebook Opens in a new window Linkedin Opens in a new window Instagram Opens in a new window We acknowledge the Traditional Owners and Custodians of Country throughout Australia and their continuing connection to land, waters and community. We pay our respects to them, their cultures, and Elders past and present. © Commonwealth of Australia | View related websites Our commitment to you We are committed to providing you with accurate, consistent and clear information to help you understand your rights and entitlements and meet your obligations. If you follow our information and it turns out to be incorrect, or it is misleading and you make a mistake as a result, we will take that into account when determining what action, if any, we should take. Some of the information on this website applies to a specific financial year. This is clearly marked. Make sure you have the information for the right year before making decisions based on that information. If you feel that our information does not fully cover your circumstances, or you are unsure how it applies to you, contact us or seek professional advice. Copyright notice &copy; Australian Taxation Office for the Commonwealth of Australia You are free to copy, adapt, modify, transmit and distribute this material as you wish (but not in any way that suggests the ATO or the Commonwealth endorses you or any of your services or products).",
+    "blocks": [
+      {
+        "locator": "html:document",
+        "text": "Business structures - key tax obligations | Australian Taxation Office ATO Community Legal Database What's New Log in to online services Log in Log in to ATO online services Access secure services, view your details and lodge online. Search Log in to online services Log in Log in to ATO online services Access secure services, view your details and lodge online. Menu Search Business structures - key tax obligations See your key tax obligations for a sole trader, partnership, company or trust business structure. Last updated 9 June 2026 Print or Download Media: Choosing your business structure: Small Business Tax Basics https://tv.ato.gov.au/ato-tv/media?v=bd1bdiubfurqic External Link ( Duration: 1:52) Types of business structures A business structure: defines who owns and operates a business affects your tax and registration requirements affects your legal liabilities and obligations. There are 4 commonly used business structures in Australia: sole trader partnership company trust. Information about other business structures is available on business.gov.au External Link . If you're unsure which business structure to choose, talk to your registered tax agent, or trusted business or legal adviser. If you change your business structure , there may be costs, tax implications and other obligations you need to meet. Sole trader A sole trader is an individual running a business. It is the simplest and cheapest way to run a business. If you run your business as a sole trader, you are: the sole owner and controller of it legally responsible for all aspects of the business, including debts and losses you incur in running it. You can employ workers in your business, but you can't employ yourself. As a sole trader, you are responsible for paying your worker&rsquo;s superannuation , known as super guarantee. You don't have to pay super guarantee for yourself but you can choose to make personal super contributions to save for your retirement. Key tax obligations As a sole trader, you: use your individual tax file number (TFN) when lodging your tax return report all your income in your individual tax return, using the section for business items to show your business income and expenses (there is no separate business tax return for sole traders) are entitled to an Australian business number (ABN) External Link and use that ABN for all business activities must register for goods and services tax (GST) if your annual GST turnover is $75,000 or more you provide taxi, limousine or ride-sourcing services (regardless of your GST turnover) you want to claim fuel tax credits may be required to lodge business activity statements , for example if you're registered for GST, have employer obligations such as PAYG withholding, or have PAYG instalments pay tax on all your income, including income from your business, based on your individual tax rate may voluntarily use, or be required to make, PAYG instalments to prepay your income tax can claim a deduction for any personal super contributions you make after notifying your fund can hire workers , and need to meet all employer and super obligations for them. As a sole trader, you can claim a deduction for salary, wages and allowances you pay your workers on your tax return. You can't claim a deduction for money or assets you take from the business for personal use. Partnership A partnership is a group or association of people who run a business together and share the income or losses from the business between themselves. A written partnership agreement is not required for a partnership to exist but can help: prevent misunderstandings and disputes about what each partner brings to the partnership set out how business income and losses are to be shared between the partners (equally between partners or not) set out how the business is to be managed. If there is no written agreement, income and losses are equally distributed between partners. The partners in a partnership are not employees of the partnership, but they are able to employ other workers. Partners are responsible for their own superannuation. However, the partnership is required to pay super for its employees. Key tax obligations A partnership: has its own TFN must lodge an annual partnership return showing all business income and deductions and how its income or losses are distributed to the partners must apply for an ABN External Link and use it for all business activities must register for GST if it has annual GST turnover of $75,000 ($150,000 for not-for-profit organisations) or more provides taxi, limousine or ride-sourcing services (regardless of GST turnover) wants to claim fuel tax credits may be required to lodge business activity statements , for example if it is registered for GST, has employer obligations such as pay as you go withholding, or have pay as you go instalments does not pay tax each partner reports their share of the net partnership income or loss in their own tax return and is personally liable for any tax that may be due on that income. A partnership and its partners can't claim a deduction for money they withdraw from the business. Amounts you take from a partnership: are not wages for tax purposes may affect what your share of the partnership income is that you have to pay tax on. You will need to be aware of the steps to take if you change the makeup of your partnership . Company A company is a separate legal entity with its own tax and superannuation obligations, run by its directors and owned by its shareholders. A company's income and assets belong to it, not its shareholders. There may be tax consequences if you are using your company's money and assets for private purposes . A company can distribute profits to its shareholders through dividends and may be able to attach franking credits to those dividends. This allows its shareholders to receive a credit for the tax already paid by the company on its profits. While a company provides some asset protection, its directors can be liable for their actions and, in some cases, certain tax and superannuation debts of the company under the director penalties rules. All company directors are legally required to verify their identity and apply for a director identification number External Link (director ID) prior to being appointed as a director of a company. Companies are regulated by the Australian Securities and Investments Commission (ASIC). Companies have higher set-up and administration costs than other types of business structures and have additional reporting requirements. Key tax obligations A company: is responsible for its own tax and superannuation obligations must apply for its own TFN is entitled to an ABN External Link if it is registered under the Corporations Act 2001 if the company is not registered under the Corporations Act 2001 it may still register for an ABN if it is running a business in Australia must register for GST if it has annual GST turnover of $75,000 ($150,000 for not-for-profit organisations) or more provides taxi, limousine or ride-sourcing services (regardless of GST turnover) wants to claim fuel tax credits may be required to lodge business activity statements , for example if it is registered for GST, has employer obligations such as PAYG withholding, or has PAYG instalments owns the money that the business earns (you may have to pay tax on any money taken out for personal use) must lodge an annual company tax return usually pays its income tax by instalments through the pay as you go instalments system pays tax at its applicable company tax rate must pay super guarantee for any eligible workers (this includes any company directors) must issue distribution statements to any shareholders it pays a dividend to. There is information you need to know if your company will be deregistered . Trust A trust is an obligation imposed on a person or other entity to hold and manage property for the benefit of beneficiaries. If a trust is set up to run a business, it will normally have a trust deed that, among other things, sets out the powers of the trustees and the interests of the beneficiaries in the trust. The trustee manages a trust's tax affairs. The trustee can be an individual or a company. The net income of the trust is usually distributed to beneficiaries. Key tax obligations A trust: must have its own TFN must lodge an annual trust tax return, which includes a statement of how its income was distributed must apply for an ABN External Link and use it for all business activities must register for GST if it has annual GST turnover of $75,000 ($150,000 for not-for-profit organisations) or more provides taxi, limousine or ride-sourcing services (regardless of GST turnover) want to claim fuel tax credits may be required to lodge business activity statements , for example if it is registered for GST, has employer obligations such as pay as you go withholding, or has pay as you go instalments must pay super for eligible employees (this may include the trustee if employed by the trust). Who pays income tax? The trustee must lodge an annual trust tax return. Who pays tax on the trust&rsquo;s income is determined by how the trust income is distributed and who it is distributed to. Generally, the beneficiaries will be responsible for paying tax on the trust net income distributed to them. The trustee is liable to pay tax on any undistributed income and may be liable to pay tax on behalf of certain beneficiaries, like non-residents or minors. There may be other circumstances where the trustee is responsible for paying tax. If the trust makes a loss, it cannot be distributed to the beneficiaries and they can't claim it as a loss against their income. However, the trust may be able to carry forward losses and offset them against future income it earns. QC 31723 Print or Download Tools Media centre Forms and instructions Tax rates and codes Calculators and tools Tools Media centre Forms and instructions Tax rates and codes Calculators and tools Tax information for People with disability Aboriginal and Torres Strait Islander peoples Norfolk Island Other languages Tax information for People with disability Aboriginal and Torres Strait Islander peoples Norfolk Island Other languages Help and support Top call centre questions Contact us Identity security and scams Financial difficulties and disasters Help and support Top call centre questions Contact us Identity security and scams Financial difficulties and disasters About ATO Careers Privacy policy ATOtv Other languages facebook Opens in a new window Linkedin Opens in a new window Instagram Opens in a new window We acknowledge the Traditional Owners and Custodians of Country throughout Australia and their continuing connection to land, waters and community. We pay our respects to them, their cultures, and Elders past and present. © Commonwealth of Australia | View related websites Our commitment to you We are committed to providing you with accurate, consistent and clear information to help you understand your rights and entitlements and meet your obligations. If you follow our information and it turns out to be incorrect, or it is misleading and you make a mistake as a result, we will take that into account when determining what action, if any, we should take. Some of the information on this website applies to a specific financial year. This is clearly marked. Make sure you have the information for the right year before making decisions based on that information. If you feel that our information does not fully cover your circumstances, or you are unsure how it applies to you, contact us or seek professional advice. Copyright notice &copy; Australian Taxation Office for the Commonwealth of Australia You are free to copy, adapt, modify, transmit and distribute this material as you wish (but not in any way that suggests the ATO or the Commonwealth endorses you or any of your services or products).",
+        "anchorId": "f506b6cd9fccd2453486ae87955879f6cbc62b17d997da8dd43bd6bb1734db60"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "f506b6cd9fccd2453486ae87955879f6cbc62b17d997da8dd43bd6bb1734db60",
+      "locator": "html:document",
+      "start": 0,
+      "end": 11942,
+      "quoteHash": "e70769091454b2d0b6b71d9ab9ebbfbbfb200a19bd961cfc1ab0c15c14aa3003",
+      "rawContentHash": "5a3e0b566483492b2bd8e33dbbbef456a6c87043b8193d367e07a34ce0bbdb72"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://community.ato.gov.au/s/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.ato.gov.au/single-page-applications/legaldatabase",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/whats-new",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://tv.ato.gov.au/ato-tv/media?v=bd1bdiubfurqic",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://business.gov.au/planning/business-structures-and-types/business-structures",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/changing-selling-or-closing-your-business/changing-your-business-structure",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/super-for-employers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/super-for-employers/work-out-if-you-have-to-pay-super/super-for-sole-traders-and-partnerships",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst#WorkingoutyourGSTturnover",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/how-to-save-more-in-your-super/personal-super-contributions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/engaging-a-worker",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst#WorkingoutyourGSTturnover",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/changing-selling-or-closing-your-business/changing-the-makeup-of-a-partnership",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/running-your-own-business/using-your-business-money-and-assets-for-private-purposes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/imputation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/paying-the-ato/if-you-don-t-pay/firmer-action-we-may-take/director-penalty-regime",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.abrs.gov.au/director-identification-number/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst#WorkingoutyourGSTturnover",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/tax-rates-and-codes/company-tax-rate-changes#Baserateentitycompanytaxrate",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/corporate-tax-measures-and-assurance/imputation/paying-dividends-and-other-distributions/issuing-distribution-statements",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/starting-registering-or-closing-a-business/changing-selling-or-closing-your-business/deregistering-a-company",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/trusts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst#WorkingoutyourGSTturnover",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/media-centre",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/forms-and-instructions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/tax-rates-and-codes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/calculators-and-tools",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/media-centre",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/forms-and-instructions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/tax-rates-and-codes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/calculators-and-tools",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/people-with-disability",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/aboriginal-and-torres-strait-islander-peoples",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/norfolk-island",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/other-languages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/people-with-disability",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/aboriginal-and-torres-strait-islander-peoples",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/norfolk-island",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/other-languages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/contact-us/top-call-centre-questions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/contact-us",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/online-services/scams-cyber-safety-and-identity-protection",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/financial-difficulties-and-disasters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/contact-us/top-call-centre-questions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/contact-us",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/online-services/scams-cyber-safety-and-identity-protection",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/individuals-and-families/financial-difficulties-and-disasters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/careers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/commitments-and-reporting/information-and-privacy/your-privacy/privacy-policy",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/atotv",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/other-languages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/atogovau",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://au.linkedin.com/company/australian-taxation-office",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/austaxoffice/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/using-our-website/copyright-notice",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.ato.gov.au/about-ato/using-our-website/view-related-websites",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "5e33a7641d9796c120b06186662c1a6b53b32335235e78e1fb5a9d2268720c51"
+}

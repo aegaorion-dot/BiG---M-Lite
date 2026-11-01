@@ -1,0 +1,502 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "ID-DJP",
+  "jurisdictionCode": "ID",
+  "metadata": {
+    "title": "Pemotongan Pajak Penghasilan - Pasal 26 | Direktorat Jenderal Pajak",
+    "officialDocumentId": null,
+    "language": "id",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "ce29de98-8bb8-4e86-b691-4512747c5938",
+    "rawContentHash": "e61b0c801dca72a62d2230c651d59f22a1e9e6cca254cdb568f2ea009c997eb8",
+    "sourceUrl": "https://www.pajak.go.id/id/pph-pasal-26",
+    "finalUrl": "https://www.pajak.go.id/id/pph-pasal-26",
+    "retrievedAt": "2026-10-28T22:44:20.219Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "DJP",
+    "authorityName": "Direktorat Jenderal Pajak",
+    "sourceRole": "TAX_AUTHORITY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/e61b0c801dca72a62d2230c651d59f22a1e9e6cca254cdb568f2ea009c997eb8.bin",
+    "rawContentHash": "e61b0c801dca72a62d2230c651d59f22a1e9e6cca254cdb568f2ea009c997eb8"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/e61b0c801dca72a62d2230c651d59f22a1e9e6cca254cdb568f2ea009c997eb8.bin",
+      "rawContentHash": "e61b0c801dca72a62d2230c651d59f22a1e9e6cca254cdb568f2ea009c997eb8"
+    },
+    "metaTags": [
+      "<meta charset=\"utf-8\" />",
+      "<meta name=\"robots\" content=\"index, follow\" />",
+      "<meta name=\"description\" content=\"Dalam Hal Anda memberikan penghasilan kepada Subjek Pajak Luar Negeri (SPLN), yang harus Anda lakukan adalah:\" />",
+      "<meta name=\"keywords\" content=\"pajak, djp, direktorat jenderal pajak, pph, kup, ppn, ppnbm, djponline\" />",
+      "<meta property=\"og:determiner\" content=\"An\" />",
+      "<meta property=\"og:site_name\" content=\"Direktorat Jenderal Pajak\" />",
+      "<meta property=\"og:url\" content=\"http://www.pajak.go.id/id/pemotongan-pajak-penghasilan-pasal-26\" />",
+      "<meta property=\"og:title\" content=\"Pemotongan Pajak Penghasilan -  Pasal 26\" />",
+      "<meta property=\"og:description\" content=\"Dalam Hal Anda memberikan penghasilan kepada Subjek Pajak Luar Negeri (SPLN), yang harus Anda lakukan adalah:\" />",
+      "<meta name=\"Generator\" content=\"Drupal 8 (https://www.drupal.org)\" />",
+      "<meta name=\"MobileOptimized\" content=\"width\" />",
+      "<meta name=\"HandheldFriendly\" content=\"true\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+      "<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+      "<meta name=\"HandheldFriendly\" content=\"true\" />",
+      "<meta name=\"apple-touch-fullscreen\" content=\"YES\" />"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Body Dalam Hal Anda memberikan penghasilan kepada Subjek Pajak Luar Negeri (SPLN) , yang harus Anda lakukan adalah: Tentukan dahulu apakah benar lawan transaksi Anda adalah SPLN . Jika merupakan SPLN , tentukan dahulu apakah SPLN tersebut berhak dipotong PPh Pasal 26 dengan menggunakan tarif berdasarkan tax treaty . Tax Treaty bisa digunakan dalam hal SPLN mempunyai form DGT ( Certificate Of Domicile Of Non Resident For Indonesia Withholding Tax ) atau Surat Keterangan Domisili ( SKD ) sesuai PER-25/PJ/2018 Input informasi yang ada di form DGT dengan login ke laman pajak.go.id menu e- SKD untuk mendapatkan tanda terima SKD WPLN (Wajib Pajak Luar Negeri) . Berikan tanda terima SKD WPLN kepada SPLN . Melakukan pemotongan PPh Pasal 26 dengan menggunakan tarif tax treaty jika memenuhi PER-25/PJ/2018 dan membuat bukti potong PPh Pasal 26 melalui aplikasi e-bupot PPh pasal 23/26 Jika tidak memenuhi syarat untuk menggunakan ketentuan pada tax treaty , maka tarif PPh 26 nya adalah 20%. melakukan penyetoran PPh dengan terlebih dahulu membuat kode billing . Penyetoran dilakukan paling lambat tanggal 10 bulan berikutnya di kantor pos/bank persepsi . M elakukan pelaporan PPh Pasal 26 secara elektronik melalui laman pajak.go.id menu e-bupot atau melalui application service provider ( ASP ) paling lama tanggal 20 bulan berikutnya dengan melampirkan tanda terima SKD WPLN walaupun tidak terdapat pemotongan PPh berdasarkan ketentuan tax treaty . Mulai 1 Agustus 2020, yang melakukan transaksi terkait PPh Pasal 23/26 dan terdaftar di Kantor Pelayanan Pajak (KPP) Pratama seluruh Indonesia wajib membuat bukti pemotongan dan penyampaian SPT Masa PPh 23/26 secara elektronik melalui e-Bupot. Tabel Tarif PPh Pasal 26 No Uraian Tarif x DPP Dasar Hukum 1 Penghasilan yang dibayarkan kepada WPLN berupa: Deviden; Bunga termasuk Premium,Diskonto dan Imbalan jaminan pengembalian hutang; Royalty; Sewa; Penghasilan penggunaan harta Imbalan sehubungan dengan jasa pekerjaan dan kegiatan; Hadiah & penghargaan; Pensiun & pembayaran berkala lainnya; premi swap dan transaksi lindung nilai lainnya; dan/ atau keuntungan karena pembebasan utang. 20% x penghasilan bruto atau Tax Treaty (P3B) Penyetoran menggunakan SSP dengan: KAP: 411127 KJS: Deviden: 101 Bunga: 102 Royalti: 103 Jasa: 104 Selain Deviden, Bunga, Royalti, Jasa: 100 UU PPh Pasal 26 ayat (1) 2 Penjualan atas penghasilan dari penjualan atau pengalihan harta di Indonesia, yang diperoleh WP Luar Negeri. Harta yang dimaksud berupa: perhiasan mewah, berlian, emas, intan, jam tangan mewah, barang antik, lukisan, mobil, motor, kapal pesiar, dan/atau pesawat terbang ringan. Dikecualikan dari pemotongan PPh Pasal 26 adalah: WP OP Luar Negeri yang memperoleh penghasilan tidak melebihi Rp 10Juta untuk setiap jenis transaksi. (Pasal 3 ayat (2) PMK 82/PMK.03/2009) 20% x Perkiraan Neto. Perkiraan neto=25% x harga jual Sehingga tarif efektif: 20% x 25% x harga jual = 5% x harga jual FINAL Pemotong Pajak wajib: memberikan bukti potong PPh Pasal 26; menyetorkan PPh Pasal 26 yang terutang dengan menggunakan nama WPLN yang menjual harta paling lama tgl 10 bulan berikutnya setelah bulan transaksi; melaporkan PPh Pasal 26 yang dipotong paling lama tgl 20 bulan berikutnya. Penyetoran menggunakan SSP dengan: KAP: 411127 KJS: 100 UU PPh Pasal 26 ayat (2) PMK 82/PMK.03/2009 berlaku sejak 22 April 2009 3 Penjualan saham oleh WPLN. Saham yang diperjualbelikan adalah saham dari PT di Dalam Negeri dan tidak berstatus sebagai emiten atau perusahaan publik. (Pasal 1 KMK 434/KMK.04/1999) Didalam PMK 258/PMK.03/2008 disebutkan bahwa penjualan/pengalihan saham perusahaan antara ( special purpose compan y atau conduit company ), yang didirikan di Tax Haven Country dan mempunyai hubungan istimewa dengan WPDN Indonesia atau BUT di Indonesia, dapat ditetapkan sebagai penjualan/ pengalihan saham WP Badan Dalam Negeri. 20% x perkiraan neto Perkiraan neto=25% x harga jual Sehingga tarif efektif: 20% x 25% x harga jual = 5% x harga jual FINAL Jika pembeli adalah: WPLN, maka pemotong pajaknya adalah Perseroan (PT Dalam Negeri) yang sahamnya diperjualbelikan. WPDN yang ditunjuk sebagai pemotong, maka pemotong pajaknya adalah WPDN sebagai pembeli. Dan Perseroan hanya mencatat akta pemindahan hak atas saham yang dijual apabila dibuktikan oleh WPLN bahwa PPh Pasal 26 yang terutang telah dibayar lunas dengan bukti pemotongan PPh Pasal 26 dengan menunjukkan aslinya. Penyetoran menggunakan SSP dengan: KAP: 411127 KJS: 100 UU PPh Pasal 26 ayat (2a) KMK 434/KMK.04/1999 PMK 258/PMK.03/2008 4 Premi Asuransi dan Premi Reasuransi yang dibayar kepada perusahaan asuransi di LN 20% x perkiraan neto. Perkiraan neto: 50% dari Premi yang dibayarkan oleh pihak yang tertanggung kepada perusahaan asuransi LN. Sehingga tarif efektif: 20% x 50%= 10%. Pemotong pajak adalah tertanggung. 10% dari Premi yang dibayar oleh perusahaan asuransi di Indonesia kepada perusahaan asuransi LN. Sehingga tarif efektif: 20% x 10%= 2%. Pemotong Pajak adalah perusahaan asuransi di Indonesia. 5% dari Premi yang dibayar oleh perusahaan reasuransi di Indonesia kepada perusahaan asuransi di LN. Sehingga tarif efektif: 20% x 5%= 1%. Pemotong pajak adalah perusahaan reasuransi di Indonesia. Penyetoran menggunakan SSP dengan: KAP: 411127 KJS: 100 UU PPh Pasal 26 ayat (2) KMK 624/KMK.04/1994 5 BUT (Bentuk Usaha Tetap)/ Permanent Establishment Dikecualikan dari pengenaan PPh Pasal 26 ayat (4) jika penghasilan BUT ditanamkan kembali di Indonesia dengan syarat: penanaman kembali dilakukan atas seluruh penghasilan kena pajak setelah dikurangi PPh dalam bentuk penyertaan modal pada perusahaan yang baru didirikan dan berkedudukan di Indonesia sebagai pendiri atau peserta pendiri; Perusahaan yang baru didirikan dan berkedudukan di Indonesia tsb harus aktif melakukan kegiatan usaha sesuai dengan akte pendiriannya, paling lama 1 tahun sejak didirikan; penanaman kembali dilakukan dalam tahun ajak berjalan atau paling lama tahun pajak berikutnya dari tahun pajak diterima/ diperolehnya penghasilan tsb; dan tidak melakukan pengalihan atas penanaman kembali tsb paling singkat dalam jangka waktu 2 tahun sesudah perusahaan baru tsb telah berproduksi komersial. Atas Laba BUT sebelum pajak: → dikenakan tarif Pasal 17 Penyetoran seperti WP Badan DN. Atas Laba BUT setelah pajak yang tidak ditanamkan kembali di Indonesia: → dikenakan 20% x laba setelah pajak Penyetoran PPh Pasal 26 atas Laba BUT setelah pajak, menggunakan SSP dengan: KAP: 411127 KJS: 105 UU PPh Pasal 26 ayat (4) KMK 113/KMK.03/2002 Jo. PMK 257/PMK.03/2008 Jo. PMK 14/PMK.03/2011 tentang penanaman kembali Laba BUT. PER 16/PJ/2011 tentang Penanaman Kembali Laba BUT",
+    "blocks": [
+      {
+        "locator": "html:article:48324",
+        "text": "Body Dalam Hal Anda memberikan penghasilan kepada Subjek Pajak Luar Negeri (SPLN) , yang harus Anda lakukan adalah: Tentukan dahulu apakah benar lawan transaksi Anda adalah SPLN . Jika merupakan SPLN , tentukan dahulu apakah SPLN tersebut berhak dipotong PPh Pasal 26 dengan menggunakan tarif berdasarkan tax treaty . Tax Treaty bisa digunakan dalam hal SPLN mempunyai form DGT ( Certificate Of Domicile Of Non Resident For Indonesia Withholding Tax ) atau Surat Keterangan Domisili ( SKD ) sesuai PER-25/PJ/2018 Input informasi yang ada di form DGT dengan login ke laman pajak.go.id menu e- SKD untuk mendapatkan tanda terima SKD WPLN (Wajib Pajak Luar Negeri) . Berikan tanda terima SKD WPLN kepada SPLN . Melakukan pemotongan PPh Pasal 26 dengan menggunakan tarif tax treaty jika memenuhi PER-25/PJ/2018 dan membuat bukti potong PPh Pasal 26 melalui aplikasi e-bupot PPh pasal 23/26 Jika tidak memenuhi syarat untuk menggunakan ketentuan pada tax treaty , maka tarif PPh 26 nya adalah 20%. melakukan penyetoran PPh dengan terlebih dahulu membuat kode billing . Penyetoran dilakukan paling lambat tanggal 10 bulan berikutnya di kantor pos/bank persepsi . M elakukan pelaporan PPh Pasal 26 secara elektronik melalui laman pajak.go.id menu e-bupot atau melalui application service provider ( ASP ) paling lama tanggal 20 bulan berikutnya dengan melampirkan tanda terima SKD WPLN walaupun tidak terdapat pemotongan PPh berdasarkan ketentuan tax treaty . Mulai 1 Agustus 2020, yang melakukan transaksi terkait PPh Pasal 23/26 dan terdaftar di Kantor Pelayanan Pajak (KPP) Pratama seluruh Indonesia wajib membuat bukti pemotongan dan penyampaian SPT Masa PPh 23/26 secara elektronik melalui e-Bupot. Tabel Tarif PPh Pasal 26 No Uraian Tarif x DPP Dasar Hukum 1 Penghasilan yang dibayarkan kepada WPLN berupa: Deviden; Bunga termasuk Premium,Diskonto dan Imbalan jaminan pengembalian hutang; Royalty; Sewa; Penghasilan penggunaan harta Imbalan sehubungan dengan jasa pekerjaan dan kegiatan; Hadiah & penghargaan; Pensiun & pembayaran berkala lainnya; premi swap dan transaksi lindung nilai lainnya; dan/ atau keuntungan karena pembebasan utang. 20% x penghasilan bruto atau Tax Treaty (P3B) Penyetoran menggunakan SSP dengan: KAP: 411127 KJS: Deviden: 101 Bunga: 102 Royalti: 103 Jasa: 104 Selain Deviden, Bunga, Royalti, Jasa: 100 UU PPh Pasal 26 ayat (1) 2 Penjualan atas penghasilan dari penjualan atau pengalihan harta di Indonesia, yang diperoleh WP Luar Negeri. Harta yang dimaksud berupa: perhiasan mewah, berlian, emas, intan, jam tangan mewah, barang antik, lukisan, mobil, motor, kapal pesiar, dan/atau pesawat terbang ringan. Dikecualikan dari pemotongan PPh Pasal 26 adalah: WP OP Luar Negeri yang memperoleh penghasilan tidak melebihi Rp 10Juta untuk setiap jenis transaksi. (Pasal 3 ayat (2) PMK 82/PMK.03/2009) 20% x Perkiraan Neto. Perkiraan neto=25% x harga jual Sehingga tarif efektif: 20% x 25% x harga jual = 5% x harga jual FINAL Pemotong Pajak wajib: memberikan bukti potong PPh Pasal 26; menyetorkan PPh Pasal 26 yang terutang dengan menggunakan nama WPLN yang menjual harta paling lama tgl 10 bulan berikutnya setelah bulan transaksi; melaporkan PPh Pasal 26 yang dipotong paling lama tgl 20 bulan berikutnya. Penyetoran menggunakan SSP dengan: KAP: 411127 KJS: 100 UU PPh Pasal 26 ayat (2) PMK 82/PMK.03/2009 berlaku sejak 22 April 2009 3 Penjualan saham oleh WPLN. Saham yang diperjualbelikan adalah saham dari PT di Dalam Negeri dan tidak berstatus sebagai emiten atau perusahaan publik. (Pasal 1 KMK 434/KMK.04/1999) Didalam PMK 258/PMK.03/2008 disebutkan bahwa penjualan/pengalihan saham perusahaan antara ( special purpose compan y atau conduit company ), yang didirikan di Tax Haven Country dan mempunyai hubungan istimewa dengan WPDN Indonesia atau BUT di Indonesia, dapat ditetapkan sebagai penjualan/ pengalihan saham WP Badan Dalam Negeri. 20% x perkiraan neto Perkiraan neto=25% x harga jual Sehingga tarif efektif: 20% x 25% x harga jual = 5% x harga jual FINAL Jika pembeli adalah: WPLN, maka pemotong pajaknya adalah Perseroan (PT Dalam Negeri) yang sahamnya diperjualbelikan. WPDN yang ditunjuk sebagai pemotong, maka pemotong pajaknya adalah WPDN sebagai pembeli. Dan Perseroan hanya mencatat akta pemindahan hak atas saham yang dijual apabila dibuktikan oleh WPLN bahwa PPh Pasal 26 yang terutang telah dibayar lunas dengan bukti pemotongan PPh Pasal 26 dengan menunjukkan aslinya. Penyetoran menggunakan SSP dengan: KAP: 411127 KJS: 100 UU PPh Pasal 26 ayat (2a) KMK 434/KMK.04/1999 PMK 258/PMK.03/2008 4 Premi Asuransi dan Premi Reasuransi yang dibayar kepada perusahaan asuransi di LN 20% x perkiraan neto. Perkiraan neto: 50% dari Premi yang dibayarkan oleh pihak yang tertanggung kepada perusahaan asuransi LN. Sehingga tarif efektif: 20% x 50%= 10%. Pemotong pajak adalah tertanggung. 10% dari Premi yang dibayar oleh perusahaan asuransi di Indonesia kepada perusahaan asuransi LN. Sehingga tarif efektif: 20% x 10%= 2%. Pemotong Pajak adalah perusahaan asuransi di Indonesia. 5% dari Premi yang dibayar oleh perusahaan reasuransi di Indonesia kepada perusahaan asuransi di LN. Sehingga tarif efektif: 20% x 5%= 1%. Pemotong pajak adalah perusahaan reasuransi di Indonesia. Penyetoran menggunakan SSP dengan: KAP: 411127 KJS: 100 UU PPh Pasal 26 ayat (2) KMK 624/KMK.04/1994 5 BUT (Bentuk Usaha Tetap)/ Permanent Establishment Dikecualikan dari pengenaan PPh Pasal 26 ayat (4) jika penghasilan BUT ditanamkan kembali di Indonesia dengan syarat: penanaman kembali dilakukan atas seluruh penghasilan kena pajak setelah dikurangi PPh dalam bentuk penyertaan modal pada perusahaan yang baru didirikan dan berkedudukan di Indonesia sebagai pendiri atau peserta pendiri; Perusahaan yang baru didirikan dan berkedudukan di Indonesia tsb harus aktif melakukan kegiatan usaha sesuai dengan akte pendiriannya, paling lama 1 tahun sejak didirikan; penanaman kembali dilakukan dalam tahun ajak berjalan atau paling lama tahun pajak berikutnya dari tahun pajak diterima/ diperolehnya penghasilan tsb; dan tidak melakukan pengalihan atas penanaman kembali tsb paling singkat dalam jangka waktu 2 tahun sesudah perusahaan baru tsb telah berproduksi komersial. Atas Laba BUT sebelum pajak: → dikenakan tarif Pasal 17 Penyetoran seperti WP Badan DN. Atas Laba BUT setelah pajak yang tidak ditanamkan kembali di Indonesia: → dikenakan 20% x laba setelah pajak Penyetoran PPh Pasal 26 atas Laba BUT setelah pajak, menggunakan SSP dengan: KAP: 411127 KJS: 105 UU PPh Pasal 26 ayat (4) KMK 113/KMK.03/2002 Jo. PMK 257/PMK.03/2008 Jo. PMK 14/PMK.03/2011 tentang penanaman kembali Laba BUT. PER 16/PJ/2011 tentang Penanaman Kembali Laba BUT",
+        "anchorId": "5a26e1b13d75cfd152afefe074593ee9b42bbad0dc6a999f80baac55d4510aeb"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "5a26e1b13d75cfd152afefe074593ee9b42bbad0dc6a999f80baac55d4510aeb",
+      "locator": "html:article:48324",
+      "start": 0,
+      "end": 6661,
+      "quoteHash": "78b68ca874eea7633328a8c555e59be6dcef680f5157cde0bdd4888d7da7c344",
+      "rawContentHash": "e61b0c801dca72a62d2230c651d59f22a1e9e6cca254cdb568f2ea009c997eb8"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.pajak.go.id/id/pph-pasal-26#main-content",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/selayang-pandang",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/visi-misi-tujuan-dan-maklumat-pelayanan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tugas-dan-fungsi-0",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/logo-direktorat-jenderal-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kode-etik-dan-kode-perilaku",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/daftar-pejabat-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/unit-kerja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/halaman-infografis-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/peraturan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kurs-pajak",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kmk-tarif-bunga",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/aplikasi-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/formulir-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-yang-wajib-disediakan-dan-diumumkan-secara-berkala",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-yang-wajib-diumumkan-secara-serta-merta",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/informasi-publik-tersedia-setiap-saat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-kerja-dan-anggaran-0",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/daftar-isian-pelaksanaan-anggaran",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/realisasi-belanja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/keuangan-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-strategis-direktorat-jenderal-pajak-2025-2029",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/rencana-kerja-ditjen-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kinerja-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/laporan-kinerja-unit-kerja",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tahunan-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/realisasi-pendapatan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/layanan-digital/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/akses-informasi-publik-melalui-layanan-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/gambaran-singkat-pembentukan-ppid-tingkat-i",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/regulasi-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/prosedur-permohonan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/laporan-ppid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/statistik-akses-informasi-publik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/jalur-dan-waktu-layanan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/saluran-pengaduan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/penyediaan-pembicara-pembahas-atau-moderator-pada-kegiatan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/standar-pelayanan-di-lingkungan-direktorat-jenderal-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/en/apa-map-homepage",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/aeoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/crs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/cbcr",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/aeoi-wht",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/fatca",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/carf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/eoir",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/eoi/seoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/globe",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/tax-treaty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/en/tax-treaty-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/taxtreaty-mli",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/uu-hpp",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/id/PPS",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/covid19",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/pajakdigital",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/halaman-infografis-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://ejurnal.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/lapor-tahunan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/buku-elektronik-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/kerja-sama-dan-kemitraan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/klaster-kemudahan-berusaha-bidang-perpajakan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/penegakan-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://pajak.go.id/faq-page",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PLDDScx7l7xS1tqRfrYTuZVcHzoeIsKv7w",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://open.spotify.com/show/6jOGiW7J1T4B81LYNxttOk?si=DumG1PAmTp-RLdf9p7Fnlw",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp/coretax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://edukasi.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://pajak.go.id/index-belajar-pajak/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/en/index-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://coretaxdjp.pajak.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-pajak",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-konsultan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/index-pjap",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id/reformdjp/coretax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/apbnkita",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.pajak.go.id/reformdjp/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/prasyarat-pengguna",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/hubungi-kami",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.pajak.go.id/form/contact",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.facebook.com/DitjenPajakRI/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.twitter.com/DitjenPajakRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/user/DitjenPajakRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/ditjenpajakri/?hl=id",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://pengaduan.pajak.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "bdebe94732c3e22713033602005cebf75cccb18f2574d87d34a1c728cd88cdb1"
+}

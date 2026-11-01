@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "aif-dataset/0.1",
+  "datasetVersion": "aif-regulatory-v0.1",
+  "baselineHash": "eb9f66c2a21f3ee2743504882b3d4937ac114e86962f9e394ef0663ae8e4945b",
+  "checkpointCommit": "69f3b88db9294301c0ab7939489fe13d35688007",
+  "scope": "REGULATORY_BEHAVIOR_ONLY",
+  "specialist": "Muse-BiG-M Regulatory v0.1",
+  "split": {
+    "training": 99,
+    "validation": 24,
+    "heldout": 17,
+    "realTrainingRequests": [
+      1,
+      2,
+      3
+    ],
+    "realHeldoutRequests": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "method": "Research-run group split; entire extended trajectory held out. Synthetic families isolated by split."
+  },
+  "limitations": [
+    "Only two related synthetic-persona research trajectories; no population-generalization claim.",
+    "Held-out cases already informed orchestrator development: retrospective comparison, not blind prospective evaluation.",
+    "Historical prompts incomplete; evaluation uses reconstructed next-action tasks with identical cached tools, not exact historic prompts.",
+    "Behavioral corrections are engineered contract targets, never observed specialist successes or approved tax law."
+  ],
+  "taxonomy": {
+    "WEAK_SOURCE_SELECTION": "FAILURE",
+    "SOURCE_URL_NOT_OBSERVED": "FAILURE",
+    "UNSUPPORTED_URL": "FAILURE",
+    "MIRROR_FIDELITY_UNRESOLVED": "REVIEW",
+    "DOCUMENT_RETRIEVAL_FAILURE": "FAILURE",
+    "TOOL_CONTRACT_FAILURE": "FAILURE",
+    "EVIDENCE_EXACT_MATCH_FAILURE": "FAILURE",
+    "EFFECTIVE_PERIOD_UNRESOLVED": "REVIEW",
+    "CROSS_CHECK_INCOMPLETE": "REVIEW",
+    "CONTROLLING_PROVISION_NOT_RETRIEVED": "REVIEW",
+    "VALID_EVIDENCE_BOUND_CANDIDATE": "POSITIVE",
+    "CANDIDATE_NON_EXECUTABLE": "BOUNDARY",
+    "MISSING_USER_FACT": "REVIEW"
+  },
+  "trainingContent": "No historic legal propositions, quotes, rates, thresholds, travel facts or held-out outputs enter SFT exports.",
+  "governance": {
+    "state": "VALIDATED_FOR_BEHAVIOR_EXPERIMENT",
+    "decisionSource": "DETERMINISTIC_INTEGRITY_AND_SPLIT_VALIDATOR",
+    "legalApproval": false
+  },
+  "hashes": {
+    "experiences": "ce8b64aba03f03f1c77365f9c24a8f6a5ed70a33d2e0f4007f81a84cbe88d8df",
+    "training": "296e7ef917c94747739d68e741251822767be3e9e81e2ebfbf71b8d53a2e416c",
+    "validation": "c39fd819d8f6a9c4b0d578884e3a47eb2692155d4e5dd105c7b0a7808a1cea27",
+    "heldout": "01cecf1bd20a8a55701ec45e0671902b622b19b81b840739471499a7523c221b"
+  },
+  "manifestHash": "97a30357cd0d31ddc588ec07ddb52b7badb0e2d0843ed9f0cc00f1d9fa0960ac"
+}

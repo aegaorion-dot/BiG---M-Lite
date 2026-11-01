@@ -1,0 +1,406 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "ID-JDIH",
+  "jurisdictionCode": "ID",
+  "metadata": {
+    "title": "PMK 131 TAHUN 2024 - Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa Kena Pajak, Pemanfaatan Barang Kena Pajak Tidak Berwujud dari Luar Daerah Pabean di Dalam Daerah Pabean, dan Pemanfaatan Jasa Kena Pajak dari Luar Daerah Pabean di Dalam Daerah Pabean | JDIH Kementerian Keuangan",
+    "officialDocumentId": null,
+    "language": "id",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "9b22b676-3fc0-4a50-b49a-6b0f79b3b231",
+    "rawContentHash": "df2e5643e782dceb727d6e39852f8d25fda5196d2c794c91cdffc6571a0fff64",
+    "sourceUrl": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024",
+    "finalUrl": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024",
+    "retrievedAt": "2026-10-28T22:40:04.685Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "JDIH",
+    "authorityName": "Ministry of Finance legal documentation",
+    "sourceRole": "SECONDARY_LEGISLATION",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/df2e5643e782dceb727d6e39852f8d25fda5196d2c794c91cdffc6571a0fff64.bin",
+    "rawContentHash": "df2e5643e782dceb727d6e39852f8d25fda5196d2c794c91cdffc6571a0fff64"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/df2e5643e782dceb727d6e39852f8d25fda5196d2c794c91cdffc6571a0fff64.bin",
+      "rawContentHash": "df2e5643e782dceb727d6e39852f8d25fda5196d2c794c91cdffc6571a0fff64"
+    },
+    "metaTags": [
+      "<meta charSet=\"utf-8\"/>",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>",
+      "<meta name=\"theme-color\" content=\"#02275d\"/>",
+      "<meta name=\"next-size-adjust\" content=\"\"/>",
+      "<meta name=\"description\" content=\"Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa Kena Pajak, Pemanfaatan Barang Kena Pajak Tidak Berwujud dari Luar Daerah Pabean di Dalam Daerah Pabean, dan Pemanfaatan Jasa Kena Pajak dari Luar Daerah Pabean di Dalam Daerah Pabean\"/>",
+      "<meta property=\"og:title\" content=\"PMK 131 TAHUN 2024 - Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa Kena Pajak, Pemanfaatan Barang Kena Pajak Tidak Berwujud dari Luar Daerah Pabean di Dalam Daerah Pabean, dan Pemanfaatan Jasa Kena Pajak dari Luar Daerah Pabean di Dalam Daerah Pabean | JDIH Kementerian Keuangan\"/>",
+      "<meta property=\"og:description\" content=\"Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa Kena Pajak, Pemanfaatan Barang Kena Pajak Tidak Berwujud dari Luar Daerah Pabean di Dalam Daerah Pabean, dan Pemanfaatan Jasa Kena Pajak dari Luar Daerah Pabean di Dalam Daerah Pabean\"/>",
+      "<meta property=\"og:url\" content=\"https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024\"/>",
+      "<meta property=\"og:site_name\" content=\"Kementerian Keuangan Republik Indonesia\"/>",
+      "<meta property=\"og:locale\" content=\"id_ID\"/>",
+      "<meta property=\"og:image\" content=\"https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024/opengraph-image-hp7kqz?de4d8aac5cfec2eb\"/>",
+      "<meta property=\"og:image:type\" content=\"image/png\"/>",
+      "<meta property=\"og:image:width\" content=\"1200\"/>",
+      "<meta property=\"og:image:height\" content=\"630\"/>",
+      "<meta property=\"og:type\" content=\"website\"/>",
+      "<meta name=\"twitter:card\" content=\"summary_large_image\"/>",
+      "<meta name=\"twitter:site\" content=\"@KemenkeuRI\"/>",
+      "<meta name=\"twitter:creator\" content=\"@jdihkemenkeu\"/>",
+      "<meta name=\"twitter:title\" content=\"PMK 131 TAHUN 2024 - Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa Kena Pajak, Pemanfaatan Barang Kena Pajak Tidak Berwujud dari Luar Daerah Pabean di Dalam Daerah Pabean, dan Pemanfaatan Jasa Kena Pajak dari Luar Daerah Pabean di Dalam Daerah Pabean | JDIH Kementerian Keuangan\"/>",
+      "<meta name=\"twitter:description\" content=\"Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa Kena Pajak, Pemanfaatan Barang Kena Pajak Tidak Berwujud dari Luar Daerah Pabean di Dalam Daerah Pabean, dan Pemanfaatan Jasa Kena Pajak dari Luar Daerah Pabean di Dalam Daerah Pabean\"/>",
+      "<meta name=\"twitter:image\" content=\"https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024/twitter-image-hp7kqz?c9e8bd3f94f63ff8\"/>",
+      "<meta name=\"twitter:image:type\" content=\"image/png\"/>",
+      "<meta name=\"twitter:image:width\" content=\"1200\"/>",
+      "<meta name=\"twitter:image:height\" content=\"675\"/>"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Dokumen Hukum Informasi Perihal Dokumen Hukum Peraturan Monografi Artikel Hukum Putusan Pengadilan Informasi Regulasi Infografis Regulasi Simplifikasi Regulasi Direktori Regulasi Program Perencanaan Video Sosialisasi Kamus Hukum Dokumen Pembentukan Rancangan PUU Naskah Akademik/Urgensi Hasil Analisis Risalah Pembahasan Kajian Hukum Informasi Penunjang Tarif Bunga Kurs Pajak Berita Jurnal HKN Statistik Penghargaan JDIH Perihal Tentang Kami Struktur Organisasi Anggota JDIHN Prasyarat Kebijakan Privasi FAQ Website Lama Hubungi Kami Beranda Dokumen PMK 131 TAHUN 2024 PMK 131 TAHUN 2024 Kementerian Keuangan 31 Des 2024 Berlaku Fulltext 0 Pratinjau Tinjauan Ringkasan Files & Tautan Evaluasi ✨ Tanya AI Tipe Dokumen Peraturan Kode PMK 131 TAHUN 2024 Judul Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa Kena Pajak, Pemanfaatan Barang Kena Pajak Tidak Berwujud dari Luar Daerah Pabean di Dalam Daerah Pabean, dan Pemanfaatan Jasa Kena Pajak dari Luar Daerah Pabean di Dalam Daerah Pabean Nomor 131 Tahun 2024 Jenis Peraturan Peraturan Menteri Singkatan Jenis PERMEN T.E.U. (Tajuk Entri Utama) Kementerian Keuangan Subyek PAJAK PERTAMBAHAN NILAI BARANG KENA PAJAK JASA KENA PAJAK Tanggal Penetapan 31 Des 2024 Tanggal Pengundangan 31 Des 2024 Tanggal Berlaku 01 Jan 2025 - s.d. Dicabut Tempat Terbit Jakarta Sumber BN 2024 (1065); 6 hlm. Bahasa Indonesia Lokasi Biro Umum Seluruh layanan Penyebarluasan Peraturan Perundang-undangan pada JDIH Kemenkeu diberikan secara GRATIS dan tidak dipungut biaya FAQ Prasyarat Hubungi Kami Pengelola JDIH Kementerian Keuangan: Biro Hukum, Sekretariat Jenderal Alamat: Gedung Djuanda I, Lantai 13-14 Jl. Dr. Wahidin Raya No 1, Jakarta Pusat Surel: kemenkeu.prime@kemenkeu.go.id JDIH Kemenkeu Profil Struktur Organisasi Berita JDIH Statistik Tautan JDIH JDIH Nasional Sekretariat Negara Kemenko Perekonomian Anggota Lainnya Temukan Kami Hak Cipta Kementerian Keuangan Republik Indonesia © 2025 Situs JDIH Build ID: 15987 ( Release-36 ) PMK 131 TAHUN 2024 - Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa Kena Pajak, Pemanfaatan Barang Kena Pajak Tidak Berwujud dari Luar Daerah Pabean di Dalam Daerah Pabean, dan Pemanfaatan Jasa Kena Pajak dari Luar Daerah Pabean di Dalam Daerah Pabean | JDIH Kementerian Keuangan Infografis Riwayat Dokumen (0) Belum ada riwayat perubahan untuk dokumen ini. Kutip Dokumen Ini Pilih format kutipan APA 7 Chicago Nilai Pengalaman Anda Bagikan Produk Hukum Terkait PER-1/PJ/2025 03 Jan 2025 Petunjuk Teknis Pembuatan Faktur Pajak Dalam Rangka Pelaksanaan Peraturan Menteri Keuangan Nomor 131 Tahun 2024 tentang Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa ... PMK 24 TAHUN 2026 24 Apr 2026 Pajak Pertambahan Nilai atas Penyerahan Jasa Angkutan Udara Niaga Berjadwal Dalam Negeri Kelas Ekonomi dalam Rangka Dukungan Pemerintah Terhadap Kenaikan Harga Avtur yang Ditanggung Pemerintah Tahun Anggaran 2026 PMK 77 TAHUN 2026 20 Okt 2026 Pajak Pertambahan Nilai atas Penyerahan Jasa Angkutan Udara Niaga Berjadwal Dalam Negeri Kelas Ekonomi pada Periode Libur Natal dan Tahun Baru yang Ditanggung Pemerintah Tahun Anggaran 2027 PMK 18 TAHUN 2025 28 Feb 2025 Pajak Pertambahan Nilai atas Penyerahan Jasa Angkutan Udara Niaga Berjadwal dalam Negeri Kelas Ekonomi yang Ditanggung Pemerintah Tahun Anggaran 2025",
+    "blocks": [
+      {
+        "locator": "html:document",
+        "text": "Dokumen Hukum Informasi Perihal Dokumen Hukum Peraturan Monografi Artikel Hukum Putusan Pengadilan Informasi Regulasi Infografis Regulasi Simplifikasi Regulasi Direktori Regulasi Program Perencanaan Video Sosialisasi Kamus Hukum Dokumen Pembentukan Rancangan PUU Naskah Akademik/Urgensi Hasil Analisis Risalah Pembahasan Kajian Hukum Informasi Penunjang Tarif Bunga Kurs Pajak Berita Jurnal HKN Statistik Penghargaan JDIH Perihal Tentang Kami Struktur Organisasi Anggota JDIHN Prasyarat Kebijakan Privasi FAQ Website Lama Hubungi Kami Beranda Dokumen PMK 131 TAHUN 2024 PMK 131 TAHUN 2024 Kementerian Keuangan 31 Des 2024 Berlaku Fulltext 0 Pratinjau Tinjauan Ringkasan Files & Tautan Evaluasi ✨ Tanya AI Tipe Dokumen Peraturan Kode PMK 131 TAHUN 2024 Judul Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa Kena Pajak, Pemanfaatan Barang Kena Pajak Tidak Berwujud dari Luar Daerah Pabean di Dalam Daerah Pabean, dan Pemanfaatan Jasa Kena Pajak dari Luar Daerah Pabean di Dalam Daerah Pabean Nomor 131 Tahun 2024 Jenis Peraturan Peraturan Menteri Singkatan Jenis PERMEN T.E.U. (Tajuk Entri Utama) Kementerian Keuangan Subyek PAJAK PERTAMBAHAN NILAI BARANG KENA PAJAK JASA KENA PAJAK Tanggal Penetapan 31 Des 2024 Tanggal Pengundangan 31 Des 2024 Tanggal Berlaku 01 Jan 2025 - s.d. Dicabut Tempat Terbit Jakarta Sumber BN 2024 (1065); 6 hlm. Bahasa Indonesia Lokasi Biro Umum Seluruh layanan Penyebarluasan Peraturan Perundang-undangan pada JDIH Kemenkeu diberikan secara GRATIS dan tidak dipungut biaya FAQ Prasyarat Hubungi Kami Pengelola JDIH Kementerian Keuangan: Biro Hukum, Sekretariat Jenderal Alamat: Gedung Djuanda I, Lantai 13-14 Jl. Dr. Wahidin Raya No 1, Jakarta Pusat Surel: kemenkeu.prime@kemenkeu.go.id JDIH Kemenkeu Profil Struktur Organisasi Berita JDIH Statistik Tautan JDIH JDIH Nasional Sekretariat Negara Kemenko Perekonomian Anggota Lainnya Temukan Kami Hak Cipta Kementerian Keuangan Republik Indonesia © 2025 Situs JDIH Build ID: 15987 ( Release-36 ) PMK 131 TAHUN 2024 - Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa Kena Pajak, Pemanfaatan Barang Kena Pajak Tidak Berwujud dari Luar Daerah Pabean di Dalam Daerah Pabean, dan Pemanfaatan Jasa Kena Pajak dari Luar Daerah Pabean di Dalam Daerah Pabean | JDIH Kementerian Keuangan Infografis Riwayat Dokumen (0) Belum ada riwayat perubahan untuk dokumen ini. Kutip Dokumen Ini Pilih format kutipan APA 7 Chicago Nilai Pengalaman Anda Bagikan Produk Hukum Terkait PER-1/PJ/2025 03 Jan 2025 Petunjuk Teknis Pembuatan Faktur Pajak Dalam Rangka Pelaksanaan Peraturan Menteri Keuangan Nomor 131 Tahun 2024 tentang Perlakuan Pajak Pertambahan Nilai atas Impor Barang Kena Pajak, Penyerahan Barang Kena Pajak, Penyerahan Jasa ... PMK 24 TAHUN 2026 24 Apr 2026 Pajak Pertambahan Nilai atas Penyerahan Jasa Angkutan Udara Niaga Berjadwal Dalam Negeri Kelas Ekonomi dalam Rangka Dukungan Pemerintah Terhadap Kenaikan Harga Avtur yang Ditanggung Pemerintah Tahun Anggaran 2026 PMK 77 TAHUN 2026 20 Okt 2026 Pajak Pertambahan Nilai atas Penyerahan Jasa Angkutan Udara Niaga Berjadwal Dalam Negeri Kelas Ekonomi pada Periode Libur Natal dan Tahun Baru yang Ditanggung Pemerintah Tahun Anggaran 2027 PMK 18 TAHUN 2025 28 Feb 2025 Pajak Pertambahan Nilai atas Penyerahan Jasa Angkutan Udara Niaga Berjadwal dalam Negeri Kelas Ekonomi yang Ditanggung Pemerintah Tahun Anggaran 2025",
+        "anchorId": "3404bf14a93055bd77e7e2585c7c51a02ed36aee3fa6f0ac162ba0a7809ad559"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "3404bf14a93055bd77e7e2585c7c51a02ed36aee3fa6f0ac162ba0a7809ad559",
+      "locator": "html:document",
+      "start": 0,
+      "end": 3461,
+      "quoteHash": "53efcc0873e8ce0a7a74b7e596f2c15e5a8768260c467388c5551c9af0f01e4e",
+      "rawContentHash": "df2e5643e782dceb727d6e39852f8d25fda5196d2c794c91cdffc6571a0fff64"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/home",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?teu=Kementerian+Keuangan&bentuk=Peraturan+Menteri&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Monografi%20Hukum&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Artikel%20Hukum&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?bentuk=Putusan%20Pengadilan&order=desc",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/infografis",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/simplifikasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/direktori",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/program-perencanaan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/sosialisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/kamus-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=rancangan-puu",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=naskah-akademik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=hasil-analisis",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=risalah-pembahasan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok-pembentukan?jenis=kajian-hukum",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kmk-tarif-bunga",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://fiskal.kemenkeu.go.id/informasi-publik/kurs-pajak",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/berita",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jurnalhukum.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/statistik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prestasi-dan-penghargaan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/tentang-jdih",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prasyarat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/kebijakan-privasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/faq",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih-old.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/hubungi-kami",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/home",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/api/download/f128868e-3cf6-4596-8407-c34eeca0e7be/2024pmkeuangan131.pdf",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024/overview",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024/summary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024/files",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024/evaluasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024/chat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=PAJAK%20PERTAMBAHAN%20NILAI",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=BARANG%20KENA%20PAJAK",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/search?subyek=JASA%20KENA%20PAJAK",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/faq",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/prasyarat",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/hubungi-kami",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.kemenkeu.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/tentang-jdih",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/struktur-organisasi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/berita-jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/statistik",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdihn.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.setneg.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.ekon.go.id/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/jdihn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/kemenkeuRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.twitter.com/jdihkemenkeu",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/kemenkeuRI",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/jdihkemenkeu",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://whatsapp.com/channel/0029Vaix37eLSmbdYZ1Vme1c",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/rss.xml",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/atom.xml",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/feed.json",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/infografis/d49c9b14-b14d-48d4-e51e-08dd29adf809",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/sharer/sharer.php?u=undefined/dok/pmk-131-tahun-2024",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://twitter.com/intent/tweet?url=undefined/dok/pmk-131-tahun-2024",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.linkedin.com/shareArticle?mini=true&url=undefined/dok/pmk-131-tahun-2024",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-131-tahun-2024#",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/per-1pj2025",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-24-tahun-2026",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-77-tahun-2026",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://jdih.kemenkeu.go.id/dok/pmk-18-tahun-2025",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "4e06c794caeb89c44b2fc79f308ca821715b394fa40885768f9354379e0c1fa6"
+}

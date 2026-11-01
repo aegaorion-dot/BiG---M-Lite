@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-29T16:28:10.655Z",
+  "regression": {
+    "tests": 449,
+    "passed": 449,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 160458.3712,
+    "networkGuard": true,
+    "outputSha256": "117ea6c61e4b34cfa5f9a4d919239f3b6fbf6ddb4f5cc494557abf8b098ad56d"
+  },
+  "live": {
+    "totalRequests": 20,
+    "finalExtensionRequests": 4,
+    "remaining": 0,
+    "stopped": true,
+    "activatedRules": 0,
+    "acceptance": "RESIDENCE_GATE_NOT_CLOSED"
+  },
+  "git": {
+    "branch": "hackathon/moroccan-expat-e2e",
+    "baseHead": "980f740ac451d5c115ebd53888ddac294f08caa2",
+    "main": "d6ce3b0c586761cd9221c613c569fdc2644c504a",
+    "status": "UNCOMMITTED_CHANGES",
+    "pushPerformed": false,
+    "mergePerformed": false
+  },
+  "sourceHashes": {
+    "src/ai/aiAdapter.js": "90552f573cc12f1cb7540ab2b76d99ca1596b8f2ee465e718996ca514adcac17",
+    "src/ai/researchBrief.js": "63488ba9ddf9e8d1ace8104d8464707f062fc975fcaf307a033aedaf4e6d9653",
+    "src/ai/researchContext.js": "0ddbd8669bb4d1305cdad8fcc4ac3d7548aebf92b75e7ed5aa56cd4220c7096f",
+    "src/ai/researchInstructions.js": "c5c11ad93c603465f621191ee2474dfa04ca7af04cbcd8d55a0e0be459603b28",
+    "src/ai/regulatoryResearch.js": "eef93884c980cae0cd05c25b2f2528cc5b8c265f921a63c7f2a706775a9a0340",
+    "src/ai/researchRetriever.js": "0236e492dcadc59573f39ca4c4f70d471299ed755288d2095f3bff9c5cb0057c",
+    "src/ai/researchEvidence.js": "90c49fd2b8b4cb2b0475ab3a4e53f53fcdbec18b74a6da720c1f8efe3de203da",
+    "src/ai/researchQuestions.js": "d770e61bbdbebb425f1f399fc1614e01eed828bfa1c535a4004759843e4cf24c",
+    "src/fabric/normalizer.js": "2b93b00492afff11141fcdbbf5615f2aa4d88aa7a605033ec31de72a110c489e",
+    "scripts/moroccan-residence-final.js": "a3b309de01e4525231deefbac69daf8e47c50857740d8a49139181f25959d9cc",
+    "scripts/export-residence-evaluation.js": "b7d50e623cd60dbcd0558cb6d87291324458460a0d7406c1b824e56e13cea3e3",
+    "test/regulatory-research.test.js": "72bbb362ed87c5ffc4c99d7b8d2fd441f50c0f7fc898fbcfa17cb59d9cf4117e"
+  }
+}

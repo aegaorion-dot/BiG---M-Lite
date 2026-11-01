@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "GB-GOVUK",
+  "jurisdictionCode": "GB",
+  "metadata": {
+    "title": "Become a sole trader",
+    "officialDocumentId": "097e75a6-fa8b-455e-8449-f3855f78285b",
+    "language": "en",
+    "documentKind": "GUIDANCE"
+  },
+  "provenance": {
+    "artifactId": "0b4d2af1-ac37-41ec-a5d7-e72cf3fd2364",
+    "rawContentHash": "811198bcf2461534121066571e399ec66880a047279589a987c3cc45963a07f1",
+    "sourceUrl": "https://www.gov.uk/api/content/become-sole-trader",
+    "finalUrl": "https://www.gov.uk/api/content/become-sole-trader",
+    "retrievedAt": "2026-10-28T22:50:41.139Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "GOVUK",
+    "authorityName": "GOV.UK departments (document publisher must be checked)",
+    "sourceRole": "OFFICIAL_GUIDANCE",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": "2012-07-03T16:58:57+01:00",
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/811198bcf2461534121066571e399ec66880a047279589a987c3cc45963a07f1.bin",
+    "rawContentHash": "811198bcf2461534121066571e399ec66880a047279589a987c3cc45963a07f1"
+  },
+  "sourceSpecificMetadata": {
+    "format": "JSON",
+    "topLevelKeys": [
+      "analytics_identifier",
+      "base_path",
+      "content_id",
+      "description",
+      "details",
+      "document_type",
+      "first_published_at",
+      "links",
+      "locale",
+      "phase",
+      "public_updated_at",
+      "publishing_app",
+      "publishing_request_id",
+      "publishing_scheduled_at",
+      "rendering_app",
+      "scheduled_publishing_delay_seconds",
+      "schema_name",
+      "title",
+      "updated_at",
+      "withdrawn_notice"
+    ],
+    "payloadRef": {
+      "rawStorageRef": "blobs/811198bcf2461534121066571e399ec66880a047279589a987c3cc45963a07f1.bin",
+      "rawContentHash": "811198bcf2461534121066571e399ec66880a047279589a987c3cc45963a07f1"
+    },
+    "basePath": "/become-sole-trader",
+    "documentType": "guide",
+    "publicUpdatedAt": "2015-02-09T16:27:17+00:00",
+    "withdrawnNotice": {},
+    "publisherLinks": [
+      {
+        "analytics_identifier": "D25",
+        "api_path": "/api/content/government/organisations/hm-revenue-customs",
+        "api_url": "https://www.gov.uk/api/content/government/organisations/hm-revenue-customs",
+        "base_path": "/government/organisations/hm-revenue-customs",
+        "content_id": "6667cce2-e809-4e21-ae09-cb0bdc1ddda3",
+        "details": {
+          "acronym": "HMRC",
+          "brand": "hm-revenue-customs",
+          "default_news_image": {
+            "high_resolution_url": "https://assets.publishing.service.gov.uk/media/5efdb7ace90e075c58556288/s960_HMRC_sign__media_library_-_alternative__GOVUK_960.jpg",
+            "url": "https://assets.publishing.service.gov.uk/media/5efdb7ac3a6f4023cb365a65/s300_HMRC_sign__media_library_-_alternative__GOVUK_960.jpg"
+          },
+          "logo": {
+            "crest": "hmrc",
+            "formatted_title": "HM Revenue<br/>&amp; Customs"
+          },
+          "organisation_govuk_status": {
+            "status": "live",
+            "updated_at": null,
+            "url": null
+          }
+        },
+        "document_type": "organisation",
+        "links": {},
+        "locale": "en",
+        "schema_name": "organisation",
+        "title": "HM Revenue & Customs",
+        "web_url": "https://www.gov.uk/government/organisations/hm-revenue-customs",
+        "withdrawn": false
+      }
+    ]
+  },
+  "normalizedContent": {
+    "text": "A sole trader is a type of business. It’s the simplest business structure to set up and keep records for. As a sole trader you: work for yourself are classed as self-employed make all the business decisions There are other ways to set up a business . You can be a sole trader as your only job or be employed and self-employed at the same time. Most people set up as a sole trader when first starting out as a business. This guide is also available in Welsh (Cymraeg) . Sole trader responsibilities You’ll have some legal, financial and other responsibilities when running a sole trader business. Legal risks or ‘liability’ Sole trader businesses have ‘unlimited liability’ which means owners are personally responsible for all of the debts of the business. If something goes wrong, you will have less protection. You may be able to get more protection with business insurance . Finances You keep all the profits after paying tax. Naming your business As soon as you start working for yourself you should choose your business name - you can choose a trading name or use your own name. Keeping records and accounts When you start trading you must keep records . This will help you work out your profit or loss for your Self Assessment tax return. Registering as a sole trader You can start trading straight away without registering. However, you must register for Self Assessment as a sole trader if you earn more than £1,000 in a tax year (from 6 April to 5 April). You can choose to register earlier. After you’ve registered you will need to submit Self Assessment tax returns . Taxes When you submit your Self Assessment tax return HM Revenue and Customs ( HMRC ) will work out if you need to pay Income Tax and National Insurance contributions based on your profits. You need to register for VAT if you meet the requirements. You can choose to register before you meet the requirements if you want to reclaim VAT on business expenses . There may be other taxes you need to register for depending on what you do. Check what taxes may apply to you as a sole trader . Find out about tax reliefs for sole traders to reduce your tax bill. Rules for your type of business You may have other responsibilities depending on what your business does. Check if you need: licences or permits , for example to play music, sell food or to trade in the street business insurance There are also rules you must follow if you: sell goods online buy goods from abroad or sell goods abroad store or use personal information You may need to get a criminal record check if working with protected groups, like children or vulnerable adults. There are different ways to get: criminal record checks in England and Wales criminal record checks in Scotland criminal record checks in Northern Ireland Where you work Check what your responsibilities are if you: run your business from home rent somewhere to run your business from If you rent or buy a property, you may have to pay business rates . Small businesses can apply for a discount on business rates and some may pay nothing. Check if you can claim office, property and equipment as expenses . Taking on people to help There are things you’ll need to do if you take on your own employees . You’ll have more responsibilities, including: running payroll paying for their National Insurance - but you can claim an allowance to reduce your bill providing workplace pensions to eligible staff If you take on agency workers or freelancers you have some responsibilities, for example their health and safety. Help and support You can get help with setting up your business .\nYou can trade under your own name, or you can choose another name for your business. This guide is also available in Welsh (Cymraeg) . Sole trader names must not: include ‘limited’, ‘Ltd’, ‘limited liability partnership’, ‘LLP’, ‘public limited company’ or ‘plc’ be offensive be too similar to another company’s trademarked name (because you may have to change it if someone makes a complaint) You must include your name and business name (if you have one) on official paperwork, for example invoices and letters.\nYou register as a sole trader by registering for Self Assessment. You must register as a sole trader if you: earn more than £1,000 in a tax year (from 6 April to 5 April) need to prove you’re self-employed, for example to claim Tax-Free Childcare want to make voluntary Class 2 National Insurance payments to help you qualify for benefits and State Pension need to register as a subcontractor for the Construction Industry Scheme (CIS) or as a share fisher Read more about what a sole trader is . This guide is also available in Welsh (Cymraeg) . If you have already registered for Self Assessment for another reason, you’ll need to register again as a sole trader. This is so you are registered for Class 2 National Insurance contributions, which will help you qualify for benefits like the State Pension. Before you start You’ll need a National Insurance number to register for Self Assessment. You can apply for a National Insurance number if you do not have one. Check how to register Use this tool to register for Self Assessment as a sole trader with HM Revenue and Customs ( HMRC ). How you register depends on your circumstances. You must tell HMRC by 5 October 2026 if you need to complete a tax return for the previous year and you have either: not sent a tax return before registered before but did not need to send a tax return for the tax year 2024 to 2025 You can tell HMRC by registering for Self Assessment. If you register late or do not register when you need to, you may get a penalty. Start now",
+    "blocks": [
+      {
+        "locator": "#/details/parts/0/body",
+        "text": "A sole trader is a type of business. It’s the simplest business structure to set up and keep records for. As a sole trader you: work for yourself are classed as self-employed make all the business decisions There are other ways to set up a business . You can be a sole trader as your only job or be employed and self-employed at the same time. Most people set up as a sole trader when first starting out as a business. This guide is also available in Welsh (Cymraeg) . Sole trader responsibilities You’ll have some legal, financial and other responsibilities when running a sole trader business. Legal risks or ‘liability’ Sole trader businesses have ‘unlimited liability’ which means owners are personally responsible for all of the debts of the business. If something goes wrong, you will have less protection. You may be able to get more protection with business insurance . Finances You keep all the profits after paying tax. Naming your business As soon as you start working for yourself you should choose your business name - you can choose a trading name or use your own name. Keeping records and accounts When you start trading you must keep records . This will help you work out your profit or loss for your Self Assessment tax return. Registering as a sole trader You can start trading straight away without registering. However, you must register for Self Assessment as a sole trader if you earn more than £1,000 in a tax year (from 6 April to 5 April). You can choose to register earlier. After you’ve registered you will need to submit Self Assessment tax returns . Taxes When you submit your Self Assessment tax return HM Revenue and Customs ( HMRC ) will work out if you need to pay Income Tax and National Insurance contributions based on your profits. You need to register for VAT if you meet the requirements. You can choose to register before you meet the requirements if you want to reclaim VAT on business expenses . There may be other taxes you need to register for depending on what you do. Check what taxes may apply to you as a sole trader . Find out about tax reliefs for sole traders to reduce your tax bill. Rules for your type of business You may have other responsibilities depending on what your business does. Check if you need: licences or permits , for example to play music, sell food or to trade in the street business insurance There are also rules you must follow if you: sell goods online buy goods from abroad or sell goods abroad store or use personal information You may need to get a criminal record check if working with protected groups, like children or vulnerable adults. There are different ways to get: criminal record checks in England and Wales criminal record checks in Scotland criminal record checks in Northern Ireland Where you work Check what your responsibilities are if you: run your business from home rent somewhere to run your business from If you rent or buy a property, you may have to pay business rates . Small businesses can apply for a discount on business rates and some may pay nothing. Check if you can claim office, property and equipment as expenses . Taking on people to help There are things you’ll need to do if you take on your own employees . You’ll have more responsibilities, including: running payroll paying for their National Insurance - but you can claim an allowance to reduce your bill providing workplace pensions to eligible staff If you take on agency workers or freelancers you have some responsibilities, for example their health and safety. Help and support You can get help with setting up your business .",
+        "anchorId": "225530a583f96475379891b683d9390ff1342767ec59971d6a8a044b29c64ba6"
+      },
+      {
+        "locator": "#/details/parts/1/body",
+        "text": "You can trade under your own name, or you can choose another name for your business. This guide is also available in Welsh (Cymraeg) . Sole trader names must not: include ‘limited’, ‘Ltd’, ‘limited liability partnership’, ‘LLP’, ‘public limited company’ or ‘plc’ be offensive be too similar to another company’s trademarked name (because you may have to change it if someone makes a complaint) You must include your name and business name (if you have one) on official paperwork, for example invoices and letters.",
+        "anchorId": "1b3824f340e3684d6dc66ec3e4e444cfd4c015e74931647ed2711b159df578fb"
+      },
+      {
+        "locator": "#/details/parts/2/body",
+        "text": "You register as a sole trader by registering for Self Assessment. You must register as a sole trader if you: earn more than £1,000 in a tax year (from 6 April to 5 April) need to prove you’re self-employed, for example to claim Tax-Free Childcare want to make voluntary Class 2 National Insurance payments to help you qualify for benefits and State Pension need to register as a subcontractor for the Construction Industry Scheme (CIS) or as a share fisher Read more about what a sole trader is . This guide is also available in Welsh (Cymraeg) . If you have already registered for Self Assessment for another reason, you’ll need to register again as a sole trader. This is so you are registered for Class 2 National Insurance contributions, which will help you qualify for benefits like the State Pension. Before you start You’ll need a National Insurance number to register for Self Assessment. You can apply for a National Insurance number if you do not have one. Check how to register Use this tool to register for Self Assessment as a sole trader with HM Revenue and Customs ( HMRC ). How you register depends on your circumstances. You must tell HMRC by 5 October 2026 if you need to complete a tax return for the previous year and you have either: not sent a tax return before registered before but did not need to send a tax return for the tax year 2024 to 2025 You can tell HMRC by registering for Self Assessment. If you register late or do not register when you need to, you may get a penalty. Start now",
+        "anchorId": "50b0fda0ea94d035ebbc2473f7a6f4745a7475604b10b50b44624618f9de610a"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "225530a583f96475379891b683d9390ff1342767ec59971d6a8a044b29c64ba6",
+      "locator": "#/details/parts/0/body",
+      "start": 0,
+      "end": 3598,
+      "quoteHash": "eccdf46c2baa5d5b9893cdfae2a9b669e07d092270739051f1dc111e8c27b588",
+      "rawContentHash": "811198bcf2461534121066571e399ec66880a047279589a987c3cc45963a07f1"
+    },
+    {
+      "anchorId": "1b3824f340e3684d6dc66ec3e4e444cfd4c015e74931647ed2711b159df578fb",
+      "locator": "#/details/parts/1/body",
+      "start": 3599,
+      "end": 4112,
+      "quoteHash": "81e367e4ff6e3412c2912fcac2758575056f84125ae2b6e675969c10fc0ed650",
+      "rawContentHash": "811198bcf2461534121066571e399ec66880a047279589a987c3cc45963a07f1"
+    },
+    {
+      "anchorId": "50b0fda0ea94d035ebbc2473f7a6f4745a7475604b10b50b44624618f9de610a",
+      "locator": "#/details/parts/2/body",
+      "start": 4113,
+      "end": 5627,
+      "quoteHash": "e0c3b662af1c4a2872c09a2c8831efe0322f951e3bc9210625087391d7b47ea9",
+      "rawContentHash": "811198bcf2461534121066571e399ec66880a047279589a987c3cc45963a07f1"
+    }
+  ],
+  "discoveredLinks": [],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred."
+  ],
+  "envelopeId": "c99242ea38709c1d3c8e0328ac681cae2f742f873fd46b2990757baefff5b432"
+}

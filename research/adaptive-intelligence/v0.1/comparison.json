@@ -1,0 +1,8 @@
+{
+  "status": "NOT_RUN",
+  "baseModel": "accounts/fireworks/models/muse-spark-open-nvfp4",
+  "specialistModel": null,
+  "reason": "Real training artifact and matched held-out provider evaluations required.",
+  "improvementClaim": null,
+  "activeModel": null
+}

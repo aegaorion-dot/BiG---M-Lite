@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "ID-FISCAL",
+  "jurisdictionCode": "ID",
+  "metadata": {
+    "title": null,
+    "officialDocumentId": null,
+    "language": null,
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "7b89bbd1-4dff-47ad-8f60-f3519c0044a5",
+    "rawContentHash": "905efc4c49bb293572388ddc74a3aa94268ec651efd7c3a399ad79e2168f8074",
+    "sourceUrl": "https://fiskal.kemenkeu.go.id/files/kurs/file/1760431613_nilai_kurs_15_-_21_okt_2025.pdf",
+    "finalUrl": "https://fiskal.kemenkeu.go.id/files/kurs/file/1760431613_nilai_kurs_15_-_21_okt_2025.pdf",
+    "retrievedAt": "2026-10-29T23:22:38.043Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "FISCAL",
+    "authorityName": "Indonesia Ministry of Finance fiscal tax exchange-rate decisions",
+    "sourceRole": "FINANCE_MINISTRY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/905efc4c49bb293572388ddc74a3aa94268ec651efd7c3a399ad79e2168f8074.bin",
+    "rawContentHash": "905efc4c49bb293572388ddc74a3aa94268ec651efd7c3a399ad79e2168f8074"
+  },
+  "sourceSpecificMetadata": {
+    "extractor": "pypdf/6.12.2",
+    "extractionHash": "b16ab10e0dd9c8e9f8f45a24ab9ea06740d0949847140063965c8e6a8e1ceb20",
+    "pageCount": 4
+  },
+  "normalizedContent": {
+    "text": "KEPUTUSAN MENTERI KEUANGAN REPUBLIK INDONESIA\nNOMOR 20/MK/EF.2/2025\nTENTANG\nNILAI KURS SEBAGAI DASAR PELUNASAN BEA MASUK, \nPAJAK PERTAMBAHAN NILAI BARANG DAN JASA DAN PAJAK \nPENJUALAN ATAS BARANG MEWAH, BEA KELUAR, DAN PAJAK\nPENGHASILAN YANG BERLAKU UNTUK TANGGAL 15 OKTOBER 2025 SAMPAI\nDENGAN 21 OKTOBER 2025\nMENTERI KEUANGAN REPUBLIK INDONESIA,\nMenimbang : a. bahwa untuk keperluan pelunasan Bea Masuk, Pajak\nPertambahan Nilai Barang dan Jasa dan Pajak\nPenjualan atas Barang Mewah, Bea Keluar, dan Pajak\nPenghasilan atas Pemasukan Barang, Utang Pajak yang\nberhubungan dengan Pajak Pertambahan Nilai Barang\ndan Jasa dan Pajak Penjualan atas Barang Mewah, Bea\nKeluar, dan Penghasilan yang diterima atau diperoleh\nberupa uang asing, harus terlebih dahulu dinilai ke\ndalam uang Rupiah;\nb. bahwa berdasarkan pertimbangan sebagaimana\ndimaksud dalam huruf a, perlu menetapkan Keputusan\nMenteri Keuangan tentang Nilai Kurs sebagai Dasar\nPelunasan Bea Masuk, Pajak Pertambahan Nilai Barang\ndan Jasa dan Pajak Penjualan atas Barang Mewah, Bea\nKeluar, dan Pajak Penghasilan yang berlaku untuk\ntanggal 15 Oktober 2025 sampai dengan 21 Oktober\n2025;\nMengingat : 1. Undang-Undang Nomor 7 Tahun 1983 tentang Pajak\nPenghasilan (Lembaran Negara Republik Indonesia\nTahun 1983 Nomor 50, Tambahan Lembaran Negara\nRepublik Indonesia Nomor 3263) sebagaimana telah\nbeberapa kali diubah terakhir dengan Undang-Undang\nNomor 7 Tahun 2021 tentang Harmonisasi Peraturan\nPerpajakan (Lembaran Negara Republik Indonesia Tahun\n2021 Nomor 246, Tambahan Lembaran Negara Republik\nIndonesia Nomor 6736);\n\f\n- 2 -\n2. Undang-Undang Nomor 8 Tahun 1983 tentang Pajak\nPertambahan Nilai Barang dan Jasa dan Pajak Penjualan\natas Barang Mewah (Lembaran Negara Republik\nIndonesia Tahun 1983 Nomor 51, Tambahan Lembaran\nNegara Republik Indonesia Nomor 3264) sebagaimana\ntelah beberapa kali diubah terakhir dengan Undang-\nUndang Nomor 7 Tahun 2021 tentang Harmonisasi\nPeraturan Perpajakan (Lembaran Negara Republik\nIndonesia Tahun 2021 Nomor 246, Tambahan Lembaran\nNegara Republik Indonesia Nomor 6736);\n3. Undang-Undang Nomor 10 Tahun 1995 tentang\nKepabeanan (Lembaran Negara Republik Indonesia\nTahun 1995 Nomor 75, Tambahan Lembaran Negara\nRepublik Indonesia Nomor 3612) sebagaimana telah\ndiubah dengan Undang-Undang Nomor 17 Tahun 2006\ntentang Perubahan atas Undang-Undang Nomor 10\nTahun 1995 tentang Kepabeanan (Lembaran Negara\nRepublik Indonesia Tahun 2006 Nomor 93, Tambahan\nLembaran Negara Republik Indonesia Nomor 4661);\n4. Undang-Undang Nomor 11 Tahun 1995 tentang Cukai\n(Lembaran Negara Republik Indonesia Tahun 1995\nNomor 76, Tambahan Lembaran Negara Republik\nIndonesia Nomor 3613) sebagaimana telah beberapa kali\ndiubah terakhir dengan Undang-Undang Nomor 7 Tahun\n2021 tentang Harmonisasi Peraturan Perpajakan\n(Lembaran Negara Republik Indonesia Tahun 2021\nNomor 246, Tambahan Lembaran Negara Republik\nIndonesia Nomor 6736);\n5. Peraturan Menteri Keuangan Nomor 227/PMK.04/2015\ntentang Nilai Tukar Mata Uang yang Digunakan untuk\nPenghitungan dan Pembayaran Bea Masuk (Berita\nNegara Republik Indonesia Tahun 2015 Nomor 1897);\n6. Peraturan Menteri Keuangan Nomor 124 Tahun 2024\ntentang Organisasi dan Tata Kerja Kementerian\nKeuangan (Berita Negara Republik Indonesia Tahun\n2024 Nomor 1063);\n7. Keputusan Menteri Keuangan Republik Indonesia Nomor\n167 Tahun 2025 tentang Pelimpahan Kewenangan\nMenteri Keuangan Dalam Bentuk Mandat Kepada\nPejabat di Lingkungan Kementerian Keuangan;\nMEMUTUSKAN:\nMenetapkan : KEPUTUSAN MENTERI KEUANGAN TENTANG NILAI KURS\nSEBAGAI DASAR PELUNASAN BEA MASUK, PAJAK\nPERTAMBAHAN NILAI BARANG DAN JASA DAN PAJAK\nPENJUALAN ATAS BARANG MEWAH, BEA KELUAR, DAN\nPAJAK PENGHASILAN YANG BERLAKU UNTUK 15\nOKTOBER 2025 SAMPAI DENGAN 21 OKTOBER 2025.\n\f\n- 3 -\nKESATU : Menetapkan Nilai Kurs sebagai dasar pelunasan Bea Masuk,\nPajak Pertambahan Nilai Barang dan Jasa dan Pajak\nPenjualan atas Barang Mewah, Bea Keluar, dan Pajak\nPenghasilan yang berlaku untuk tanggal 15 Oktober 2025\nsampai dengan 21 Oktober 2025 sebagai berikut:\n1. Rp 16.577,00 Untuk dolar Amerika Serikat (USD) 1,-\n2. Rp 10.878,89 \"    dolar Australia (AUD) 1,-\n3. Rp 11.862,46 \"    dolar Kanada (CAD) 1,-\n4. Rp 2.583,36 \"    kroner Denmark (DKK) 1,-\n5. Rp 2.129,95 \"    dolar Hongkong (HKD) 1,-\n6. Rp 3.930,95 \"    ringgit Malaysia (MYR) 1,-\n7. Rp 9.580,61 \"    dolar Selandia Baru (NZD) 1,-\n8. Rp 1.655,91 \"    kroner Norwegia (NOK) 1,-\n9. Rp 22.205,68 \"    poundsterling Inggris (GBP) 1,-\n10. Rp 12.795,92 \"    dolar Singapura (SGD) 1,-\n11. Rp 1.753,77 \"    kroner Swedia (SEK) 1,-\n12. Rp 20.715,57 \"    franc Swiss (CHF) 1,-\n13. Rp 10.917,15 \"    yen Jepang (JPY) 100,-\n14. Rp 7,88 \"    kyat Myanmar (MMK) 1,-\n15. Rp 186,73 \"    rupee India (INR) 1,-\n16. Rp 54.049,54 \"    dinar Kuwait (KWD) 1,-\n17. Rp 58,31 \"    rupee Pakistan (PKR) 1,-\n18. Rp 284,85 \"    peso Filipina (PHP) 1,-\n19. Rp 4.419,44 \"    riyal Arab Saudi (SAR) 1,-\n20. Rp 54,84 \"    rupee Sri Lanka (LKR) 1,-\n21. Rp 509,10 \"    baht Thailand (THB) 1,-\n22. Rp 12.793,46 \"    dolar Brunei Darussalam (BND) 1,-\n23. Rp 19.288,20 \"    euro (EUR) 1,-\n24. Rp 2.320,13 \"    renminbi Tiongkok (CNY) 1,-\n25. Rp 11,62 \"    won Korea (KRW) 1,-\nKEDUA : Dalam hal kurs valuta asing lainnya tidak tercantum dalam\nDiktum KESATU, maka nilai kurs yang digunakan sebagai\ndasar pelunasan adalah kurs spot harian valuta asing yang\nbersangkutan di pasar internasional terhadap dolar Amerika\nSerikat yang berlaku pada penutupan hari kerja sebelumnya\ndan dikalikan kurs rupiah terhadap dolar Amerika Serikat\nsebagaimana ditetapkan dalam Keputusan Menteri\nKeuangan ini.\nKETIGA : Keputusan Menteri ini mulai berlaku pada tanggal 15\nOktober 2025 sampai dengan 21 Oktober 2025.\n\f\n- 4 -\nKeputusan Menteri ini disampaikan kepada:\n1. Menteri Keuangan;\n2. Wakil Menteri Keuangan;\n3. Sekretaris Jenderal Kementerian Keuangan;\n4. Direktur Jenderal Pajak;\n5. Direktur Jenderal Bea dan Cukai; dan\n6. Direktur Jenderal Strategi Ekonomi dan Fiskal.\nDitetapkan di Jakarta\npada tanggal 14 Oktober 2025\na.n. MENTERI KEUANGAN REPUBLIK INDONESIA\nDIREKTUR STRATEGI STABILISASI EKONOMI,\nDitandatangani secara elektronik\nNOOR FAISAL ACHMAD\n",
+    "blocks": [
+      {
+        "locator": "pdf:page:1",
+        "text": "KEPUTUSAN MENTERI KEUANGAN REPUBLIK INDONESIA\nNOMOR 20/MK/EF.2/2025\nTENTANG\nNILAI KURS SEBAGAI DASAR PELUNASAN BEA MASUK, \nPAJAK PERTAMBAHAN NILAI BARANG DAN JASA DAN PAJAK \nPENJUALAN ATAS BARANG MEWAH, BEA KELUAR, DAN PAJAK\nPENGHASILAN YANG BERLAKU UNTUK TANGGAL 15 OKTOBER 2025 SAMPAI\nDENGAN 21 OKTOBER 2025\nMENTERI KEUANGAN REPUBLIK INDONESIA,\nMenimbang : a. bahwa untuk keperluan pelunasan Bea Masuk, Pajak\nPertambahan Nilai Barang dan Jasa dan Pajak\nPenjualan atas Barang Mewah, Bea Keluar, dan Pajak\nPenghasilan atas Pemasukan Barang, Utang Pajak yang\nberhubungan dengan Pajak Pertambahan Nilai Barang\ndan Jasa dan Pajak Penjualan atas Barang Mewah, Bea\nKeluar, dan Penghasilan yang diterima atau diperoleh\nberupa uang asing, harus terlebih dahulu dinilai ke\ndalam uang Rupiah;\nb. bahwa berdasarkan pertimbangan sebagaimana\ndimaksud dalam huruf a, perlu menetapkan Keputusan\nMenteri Keuangan tentang Nilai Kurs sebagai Dasar\nPelunasan Bea Masuk, Pajak Pertambahan Nilai Barang\ndan Jasa dan Pajak Penjualan atas Barang Mewah, Bea\nKeluar, dan Pajak Penghasilan yang berlaku untuk\ntanggal 15 Oktober 2025 sampai dengan 21 Oktober\n2025;\nMengingat : 1. Undang-Undang Nomor 7 Tahun 1983 tentang Pajak\nPenghasilan (Lembaran Negara Republik Indonesia\nTahun 1983 Nomor 50, Tambahan Lembaran Negara\nRepublik Indonesia Nomor 3263) sebagaimana telah\nbeberapa kali diubah terakhir dengan Undang-Undang\nNomor 7 Tahun 2021 tentang Harmonisasi Peraturan\nPerpajakan (Lembaran Negara Republik Indonesia Tahun\n2021 Nomor 246, Tambahan Lembaran Negara Republik\nIndonesia Nomor 6736);",
+        "anchorId": "9fec8cef3c653dc1f4d5b5db0bd9c353f77937ce2e1de5bedabf1db2ca1ad255"
+      },
+      {
+        "locator": "pdf:page:2",
+        "text": "- 2 -\n2. Undang-Undang Nomor 8 Tahun 1983 tentang Pajak\nPertambahan Nilai Barang dan Jasa dan Pajak Penjualan\natas Barang Mewah (Lembaran Negara Republik\nIndonesia Tahun 1983 Nomor 51, Tambahan Lembaran\nNegara Republik Indonesia Nomor 3264) sebagaimana\ntelah beberapa kali diubah terakhir dengan Undang-\nUndang Nomor 7 Tahun 2021 tentang Harmonisasi\nPeraturan Perpajakan (Lembaran Negara Republik\nIndonesia Tahun 2021 Nomor 246, Tambahan Lembaran\nNegara Republik Indonesia Nomor 6736);\n3. Undang-Undang Nomor 10 Tahun 1995 tentang\nKepabeanan (Lembaran Negara Republik Indonesia\nTahun 1995 Nomor 75, Tambahan Lembaran Negara\nRepublik Indonesia Nomor 3612) sebagaimana telah\ndiubah dengan Undang-Undang Nomor 17 Tahun 2006\ntentang Perubahan atas Undang-Undang Nomor 10\nTahun 1995 tentang Kepabeanan (Lembaran Negara\nRepublik Indonesia Tahun 2006 Nomor 93, Tambahan\nLembaran Negara Republik Indonesia Nomor 4661);\n4. Undang-Undang Nomor 11 Tahun 1995 tentang Cukai\n(Lembaran Negara Republik Indonesia Tahun 1995\nNomor 76, Tambahan Lembaran Negara Republik\nIndonesia Nomor 3613) sebagaimana telah beberapa kali\ndiubah terakhir dengan Undang-Undang Nomor 7 Tahun\n2021 tentang Harmonisasi Peraturan Perpajakan\n(Lembaran Negara Republik Indonesia Tahun 2021\nNomor 246, Tambahan Lembaran Negara Republik\nIndonesia Nomor 6736);\n5. Peraturan Menteri Keuangan Nomor 227/PMK.04/2015\ntentang Nilai Tukar Mata Uang yang Digunakan untuk\nPenghitungan dan Pembayaran Bea Masuk (Berita\nNegara Republik Indonesia Tahun 2015 Nomor 1897);\n6. Peraturan Menteri Keuangan Nomor 124 Tahun 2024\ntentang Organisasi dan Tata Kerja Kementerian\nKeuangan (Berita Negara Republik Indonesia Tahun\n2024 Nomor 1063);\n7. Keputusan Menteri Keuangan Republik Indonesia Nomor\n167 Tahun 2025 tentang Pelimpahan Kewenangan\nMenteri Keuangan Dalam Bentuk Mandat Kepada\nPejabat di Lingkungan Kementerian Keuangan;\nMEMUTUSKAN:\nMenetapkan : KEPUTUSAN MENTERI KEUANGAN TENTANG NILAI KURS\nSEBAGAI DASAR PELUNASAN BEA MASUK, PAJAK\nPERTAMBAHAN NILAI BARANG DAN JASA DAN PAJAK\nPENJUALAN ATAS BARANG MEWAH, BEA KELUAR, DAN\nPAJAK PENGHASILAN YANG BERLAKU UNTUK 15\nOKTOBER 2025 SAMPAI DENGAN 21 OKTOBER 2025.",
+        "anchorId": "27a665d5ad2649a9ede4d73c84942c02b20d290b6f95add604cd23d337036f28"
+      },
+      {
+        "locator": "pdf:page:3",
+        "text": "- 3 -\nKESATU : Menetapkan Nilai Kurs sebagai dasar pelunasan Bea Masuk,\nPajak Pertambahan Nilai Barang dan Jasa dan Pajak\nPenjualan atas Barang Mewah, Bea Keluar, dan Pajak\nPenghasilan yang berlaku untuk tanggal 15 Oktober 2025\nsampai dengan 21 Oktober 2025 sebagai berikut:\n1. Rp 16.577,00 Untuk dolar Amerika Serikat (USD) 1,-\n2. Rp 10.878,89 \"    dolar Australia (AUD) 1,-\n3. Rp 11.862,46 \"    dolar Kanada (CAD) 1,-\n4. Rp 2.583,36 \"    kroner Denmark (DKK) 1,-\n5. Rp 2.129,95 \"    dolar Hongkong (HKD) 1,-\n6. Rp 3.930,95 \"    ringgit Malaysia (MYR) 1,-\n7. Rp 9.580,61 \"    dolar Selandia Baru (NZD) 1,-\n8. Rp 1.655,91 \"    kroner Norwegia (NOK) 1,-\n9. Rp 22.205,68 \"    poundsterling Inggris (GBP) 1,-\n10. Rp 12.795,92 \"    dolar Singapura (SGD) 1,-\n11. Rp 1.753,77 \"    kroner Swedia (SEK) 1,-\n12. Rp 20.715,57 \"    franc Swiss (CHF) 1,-\n13. Rp 10.917,15 \"    yen Jepang (JPY) 100,-\n14. Rp 7,88 \"    kyat Myanmar (MMK) 1,-\n15. Rp 186,73 \"    rupee India (INR) 1,-\n16. Rp 54.049,54 \"    dinar Kuwait (KWD) 1,-\n17. Rp 58,31 \"    rupee Pakistan (PKR) 1,-\n18. Rp 284,85 \"    peso Filipina (PHP) 1,-\n19. Rp 4.419,44 \"    riyal Arab Saudi (SAR) 1,-\n20. Rp 54,84 \"    rupee Sri Lanka (LKR) 1,-\n21. Rp 509,10 \"    baht Thailand (THB) 1,-\n22. Rp 12.793,46 \"    dolar Brunei Darussalam (BND) 1,-\n23. Rp 19.288,20 \"    euro (EUR) 1,-\n24. Rp 2.320,13 \"    renminbi Tiongkok (CNY) 1,-\n25. Rp 11,62 \"    won Korea (KRW) 1,-\nKEDUA : Dalam hal kurs valuta asing lainnya tidak tercantum dalam\nDiktum KESATU, maka nilai kurs yang digunakan sebagai\ndasar pelunasan adalah kurs spot harian valuta asing yang\nbersangkutan di pasar internasional terhadap dolar Amerika\nSerikat yang berlaku pada penutupan hari kerja sebelumnya\ndan dikalikan kurs rupiah terhadap dolar Amerika Serikat\nsebagaimana ditetapkan dalam Keputusan Menteri\nKeuangan ini.\nKETIGA : Keputusan Menteri ini mulai berlaku pada tanggal 15\nOktober 2025 sampai dengan 21 Oktober 2025.",
+        "anchorId": "9d6b3baedb35e5959358f90cead9afb0672dc7588534ec1da77d82f003e60d27"
+      },
+      {
+        "locator": "pdf:page:4",
+        "text": "- 4 -\nKeputusan Menteri ini disampaikan kepada:\n1. Menteri Keuangan;\n2. Wakil Menteri Keuangan;\n3. Sekretaris Jenderal Kementerian Keuangan;\n4. Direktur Jenderal Pajak;\n5. Direktur Jenderal Bea dan Cukai; dan\n6. Direktur Jenderal Strategi Ekonomi dan Fiskal.\nDitetapkan di Jakarta\npada tanggal 14 Oktober 2025\na.n. MENTERI KEUANGAN REPUBLIK INDONESIA\nDIREKTUR STRATEGI STABILISASI EKONOMI,\nDitandatangani secara elektronik\nNOOR FAISAL ACHMAD\n",
+        "anchorId": "db5a97f32438404151d14da85d94a1e21571aca49236a7533d7a47281ccfebc8"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "9fec8cef3c653dc1f4d5b5db0bd9c353f77937ce2e1de5bedabf1db2ca1ad255",
+      "locator": "pdf:page:1",
+      "start": 0,
+      "end": 1569,
+      "quoteHash": "2ae1c291cb7bcd1f7938601c6822f95698a86f6f07622d89d00934e1f3b2e417",
+      "rawContentHash": "905efc4c49bb293572388ddc74a3aa94268ec651efd7c3a399ad79e2168f8074"
+    },
+    {
+      "anchorId": "27a665d5ad2649a9ede4d73c84942c02b20d290b6f95add604cd23d337036f28",
+      "locator": "pdf:page:2",
+      "start": 1572,
+      "end": 3726,
+      "quoteHash": "762a02ff42855205c1811bc02a9094575740f1f109fae5ef806744845cb80eb2",
+      "rawContentHash": "905efc4c49bb293572388ddc74a3aa94268ec651efd7c3a399ad79e2168f8074"
+    },
+    {
+      "anchorId": "9d6b3baedb35e5959358f90cead9afb0672dc7588534ec1da77d82f003e60d27",
+      "locator": "pdf:page:3",
+      "start": 3729,
+      "end": 5661,
+      "quoteHash": "66087218da200ee59e937f35cab840c663a16389892790689720ddf3dbe00fa0",
+      "rawContentHash": "905efc4c49bb293572388ddc74a3aa94268ec651efd7c3a399ad79e2168f8074"
+    },
+    {
+      "anchorId": "db5a97f32438404151d14da85d94a1e21571aca49236a7533d7a47281ccfebc8",
+      "locator": "pdf:page:4",
+      "start": 5664,
+      "end": 6106,
+      "quoteHash": "306ed7cee80a9accabe771e9b2932735aca8725b79c2d167490121a53d611eca",
+      "rawContentHash": "905efc4c49bb293572388ddc74a3aa94268ec651efd7c3a399ad79e2168f8074"
+    }
+  ],
+  "discoveredLinks": [],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "PDF triage is heuristic, not a scan diagnosis. See separately hash-bound pypdf R&D observations. No PDF text fabricated.",
+    "Offline PDF extraction: tables, reading order and legal effect require human review."
+  ],
+  "envelopeId": "853c454a9b42eadd8eda8dee19335fe0056d76ac2e941af78eef1d39e9a13f37"
+}

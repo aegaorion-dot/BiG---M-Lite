@@ -1,7 +1,7 @@
 'use strict';
 const {extractJurisdictionCandidates}=require('./jurisdictions');
 const {planQuestion}=require('./profiler');
-const {isFunctionalCorrection}=require('./currencyContext');
+const {isFunctionalCorrection,nameToCode}=require('./currencyContext');
 // Fallback is deliberately bounded and is always labeled. Muse Spark handles semantics when configured.
 function detectSignals(text,{pendingQuestion=null,previousCurrencyRole=null}={}){
  const t=String(text??''),facts=[],jurisdictionFacts=extractJurisdictionCandidates(t);
@@ -9,10 +9,10 @@ function detectSignals(text,{pendingQuestion=null,previousCurrencyRole=null}={})
  const add=(slot,value,quote,operation=correction?'REPLACE':'SET')=>facts.push({slot,value,semanticRole:slot,source:'USER',supportingQuote:quote.slice(0,200),confidence:1,status:'CANDIDATE',operation});
  const uncertain=/^(?:not sure|unsure|maybe|perhaps|tidak yakin|belum tahu|mungkin)\b/i.test(t.trim());
  if(uncertain)return {facts:[],jurisdictionFacts:[]};
- const language=t.match(/\b(?:app|application|display|ui|bahasa|pakai|prefer|use|want|ingin)\b[^.]{0,45}\b(English|Indonesian|Indonesia|Inggris)\b/i);
- if(language&&/(?:app|language|bahasa|display|ui|prefer|use|pakai|ingin)/i.test(language[0]))add('user.language',/Indonesian|Indonesia/i.test(language[1])?'id':'en',language[0]);
- const nationality=t.match(/\b(?:I am|I'm|saya(?: adalah)?|nationality(?: is)?)\s+(?:an?\s+)?(Australian|Indonesian|British|American)\b/i);
- if(nationality)add('user.nationality',({australian:'AU',indonesian:'ID',british:'GB',american:'US'})[nationality[1].toLowerCase()],nationality[0]);
+ const language=t.match(/(?:app|application|display|ui|bahasa|pakai|prefer|use|want|ingin|speak|talk|μιλ|προτιμ)[^.]{0,60}?(English|Indonesian|Indonesia|Inggris|Greek|ελληνικά)/i);
+ if(language&&/(?:app|language|bahasa|display|ui|prefer|use|pakai|ingin|speak|talk|μιλ|προτιμ)/i.test(language[0]))add('user.language',/Greek|ελληνικά/i.test(language[1])?'el-GR':/Indonesian|Indonesia/i.test(language[1])?'id':'en',language[0]);
+ const nationality=t.match(/\b(?:I am|I'm|saya(?: adalah)?|nationality(?: is)?)\s+(?:an?\s+)?(Australian|Indonesian|British|American|Greek|Japanese)\b/i)??t.match(/(Έλληνας|Ελληνίδα|Ιάπωνας|Έλληνα)/i);
+ if(nationality)add('user.nationality',({australian:'AU',indonesian:'ID',british:'GB',american:'US',greek:'GR',japanese:'JP',έλληνας:'GR',ελληνίδα:'GR',έλληνα:'GR',ιάπωνας:'JP'})[nationality[1].toLowerCase()],nationality[0]);
  let name=t.match(/\b(?:business (?:name is|is called)|company (?:name is|is called)|nama (?:usaha|bisnis|perusahaan)(?: saya)?(?: adalah)?|(?:usaha|bisnis|toko|perusahaan) (?:saya )?bernama)\s+["']?([^,;.\n"']{2,80})/i);
  if(!name)name=t.match(/^(?:(?:actually|correction)[:,]?\s*)?(?:Company|PT|CV)\s+([^,;.\n]{2,80})/i);
  if(name)add('org.name',name[1].trim(),name[0]);
@@ -23,12 +23,13 @@ function detectSignals(text,{pendingQuestion=null,previousCurrencyRole=null}={})
  }
  const subject=t.match(/\b(sole proprietor|individual|perorangan|company|corporation|perseroan|PT|partnership|kemitraan)\b/i);
  if(subject)add('org.subjectType',/sole|individual|perorangan/i.test(subject[0])?'INDIVIDUAL':/partnership|kemitraan/i.test(subject[0])?'PARTNERSHIP':'COMPANY',subject[0]);
- const currencyPattern=/\b(IDR|SGD|USD|AUD|GBP|EUR|MYR|rupiah|Singapore dollars?|US dollars?|Australian dollars?|pounds?)\b/gi;
+ const currencyPattern=/\b(?:IDR|SGD|USD|AUD|GBP|EUR|JPY|MYR|AED|MAD|TRY)\b|\b(?:rupiah|Singapore dollars?|US dollars?|Australian dollars?|pounds?(?: sterling)?|euros?|Japanese yen|yen|ringgit|dirhams?|lira)\b|γιεν|γιέν|ευρώ(?!πη)|δολάρια|δολάριο|λίρες?|λίρα|ρουπία|円/gi;
  for(const clause of t.split(/(?<=[.!?;])\s+|,\s*|\s+(?:and|but|dan|tetapi)\s+/i)){
   if(/\b(?:maybe|perhaps|unsure|mungkin|belum tahu)\b/i.test(clause))continue;
   const matches=[...clause.matchAll(currencyPattern)];currencyPattern.lastIndex=0;
   for(const m of matches){
-   const value=/rupiah/i.test(m[0])?'IDR':/Singapore dollars?/i.test(m[0])?'SGD':/US dollars?/i.test(m[0])?'USD':/Australian dollars?/i.test(m[0])?'AUD':/pounds?/i.test(m[0])?'GBP':m[0].toUpperCase();
+   const value=nameToCode(m[0]);
+   if(!value)continue;
    const before=clause.slice(0,m.index).toLowerCase();
    let slot=null;
    if(/report|laporan/.test(before))slot='currency.reporting';
@@ -43,8 +44,15 @@ function detectSignals(text,{pendingQuestion=null,previousCurrencyRole=null}={})
    }
   }
  }
+ if(pendingQuestion==='currency.functional'&&!facts.some(f=>f.slot.startsWith('currency.'))){
+  const distinct=[...new Set([...t.matchAll(currencyPattern)].map(m=>nameToCode(m[0])).filter(Boolean))];currencyPattern.lastIndex=0;
+  if(distinct.length===1){const at=t.search(currencyPattern),start=Math.max(0,t.lastIndexOf('.',at)+1),stop=t.indexOf('.',at);const quote=(t.slice(start,stop>0?stop+1:t.length).trim()||distinct[0]).slice(0,200);add('currency.functional',distinct[0],quote);}
+ }
  const dates=t.match(/\b(?:period|periode)\s+(\d{4}-\d{2}-\d{2})\s+(?:to|through|sampai|hingga)\s+(\d{4}-\d{2}-\d{2})/i);
  if(dates){add('accounting.periodStart',dates[1],dates[0]);add('accounting.periodEnd',dates[2],dates[0]);}
+ // Work location stated in English or Greek becomes a bounded jurisdiction candidate, never tax residence.
+ const workSentence=t.split(/(?<=[.!?])\s+/).find((sentence)=>/(Τ[οό]κι|Ιαπων|Tokio|Tokyo|Japan)/i.test(sentence)&&/(εργαζ|ζω|μέν|live|work|based)/i.test(sentence));
+ if(workSentence)jurisdictionFacts.push({basis:'BUSINESS_WORK_LOCATION',countryCode:/(Ελλ[αά]δ|Greece)/i.test(workSentence)?'GR':'JP',source:'USER',supportingQuote:workSentence.trim().slice(0,200),confidence:1,status:'CANDIDATE'});
  return {facts,jurisdictionFacts:jurisdictionFacts.map(f=>({...f,operation:correction?'REPLACE':f.status==='REJECTED'?'REMOVE':'SET'}))};
 }
 function turn(state,text){const signals=detectSignals(text,{pendingQuestion:state.pendingQuestion,previousCurrencyRole:state.lastCurrencyRole});const {applyFacts}=require('./profiler');const next=applyFacts(state,signals.facts,'USER',{jurisdictionFacts:signals.jurisdictionFacts});const question=planQuestion(next,next.slots['user.language'].value);return {profileState:next,signals,question,complete:question.key==='done'};}

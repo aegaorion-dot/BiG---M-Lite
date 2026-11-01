@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112110949-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "UA-112110949-1", {"groups":"default","anonymize_ip":true,"page_placeholder":"PLACEHOLDER_page_path"});</script>
+<link rel="canonical" href="http://casainvest.ma/fr/search" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/themes/custom/cri/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>| Centre Régional d&#039;Investissement de Casablanca-Settat</title>
+    <link rel="stylesheet" media="all" href="/core/modules/system/css/components/align.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/fieldgroup.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/container-inline.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/clearfix.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/details.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/hidden.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/item-list.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/js.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/nowrap.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/position-container.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/reset-appearance.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/resize.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-counter.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-counters.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-general-info.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tablesort.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/misc/components/progress.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/misc/components/ajax-progress.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/core/modules/views/css/views.module.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/modules/contrib/webform/css/webform.element.details.toggle.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/modules/contrib/webform/css/webform.element.message.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/modules/contrib/webform/css/webform.form.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/modules/contrib/captcha/css/captcha.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/modules/contrib/ckeditor_accordion/css/accordion.frontend.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/modules/contrib/webform/css/webform.ajax.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="//fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;family=Mulish:wght@300;400;700;800&amp;display=block" />
+<link rel="stylesheet" media="all" href="/themes/custom/cri/css/magnific-popup.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/themes/custom/cri/css/swiper-bundle.min.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/themes/custom/cri/css/cri.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/themes/custom/cri/css/main.css?tnbh4b" />
+<link rel="stylesheet" media="all" href="/themes/custom/cri/css/cri-ar.css?tnbh4b" />
+
+    
+  </head>
+  <body class="landing-page main-body">
+        <a href="#main-content" class="visually-hidden focusable">
+      Aller au contenu principal
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="overflow">
+
+  <header role="header animated animated--static" class="header animated animated--static">
+    <div class="cont cont-xlg flex">
+          <div class="header__menu flex">
+  <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.5H18V2.5H0V0.5ZM0 6.5H12.6V8.5H0V6.5ZM9 12.5H0V14.5H9V12.5Z" fill="#3D4854"></path>
+  </svg>
+  <span>Menu</span>
+</div>
+<nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation">
+      
+  	<div class="flex flex-close">
+		<div class="nav-close flex">
+			<svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<rect x="22.7764" y="8.22021" width="20" height="2" transform="rotate(135 22.7764 8.22021)" fill="#3D4854"></rect>
+			<rect x="22.7764" y="20.9478" width="2" height="20" transform="rotate(135 22.7764 20.9478)" fill="#3D4854"></rect>
+			</svg>
+			<span>Fermer</span>
+		</div>
+	</div>
+  
+
+      
+    	<div class="flex-nav">
+          
+            <ul>
+                              <li class="menu-item parent-menu">
+        <a href="/fr" data-drupal-link-system-path="&lt;front&gt;">Qui sommes nous?</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/fr/cri-casablanca-settat/lettre-royale" title="Lettre Royale" data-drupal-link-system-path="node/69">Lettre Royale</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/qui-sommes-nous/mot-du-directeur-g%C3%A9n%C3%A9ral" data-drupal-link-system-path="node/71">Mot du Directeur Général</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/cri-casablanca-settat/vision-valeurs" title="Vision &amp; Valeurs" data-drupal-link-system-path="node/146">Vision &amp; Valeurs</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/qui-sommes-nous/nos-missions" data-drupal-link-system-path="node/148">Nos Missions</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--expanded">
+          <a href="/fr/qui-sommes-nous/gouvernance" data-drupal-link-system-path="node/82">Gouvernance</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+  <ul class="menu menu-level-2">
+                  
+        <li class="menu-item">
+          <a href="/fr/qui-sommes-nous/gouvernance" data-drupal-link-system-path="node/82">Conseil d&#039;Administration</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/organigramme" data-drupal-link-system-path="organigramme">Notre équipe</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/partenaires" data-drupal-link-system-path="partenaires">Nos partenaires</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+             <div  class="nav__box">
+          <div class="menu-description" ><h3>Nous donnons vie à vos projets d'investissement !</h3>
+
+<p><img alt class="lazyloaded" data-src="/sites/default/files/logo-lg.png" src="/sites/default/files/logo-lg.png"></p>
+</div>
+       </div> 
+      
+      </div>
+
+
+
+        
+                    
+            <ul>
+                              <li class="menu-item">
+        <a href="/fr/cri-casablanca-settat/lettre-royale" title="Lettre Royale" data-drupal-link-system-path="node/69">Lettre Royale</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/qui-sommes-nous/mot-du-directeur-g%C3%A9n%C3%A9ral" data-drupal-link-system-path="node/71">Mot du Directeur Général</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/cri-casablanca-settat/vision-valeurs" title="Vision &amp; Valeurs" data-drupal-link-system-path="node/146">Vision &amp; Valeurs</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/qui-sommes-nous/nos-missions" data-drupal-link-system-path="node/148">Nos Missions</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item menu-item--expanded parent-menu">
+        <a href="/fr/qui-sommes-nous/gouvernance" data-drupal-link-system-path="node/82">Gouvernance</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+  <ul class="menu menu-level-2">
+                  
+        <li class="menu-item">
+          <a href="/fr/qui-sommes-nous/gouvernance" data-drupal-link-system-path="node/82">Conseil d&#039;Administration</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/organigramme" data-drupal-link-system-path="organigramme">Notre équipe</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+        
+                    
+            <ul>
+                              <li class="menu-item">
+        <a href="/fr/qui-sommes-nous/gouvernance" data-drupal-link-system-path="node/82">Conseil d&#039;Administration</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/organigramme" data-drupal-link-system-path="organigramme">Notre équipe</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+        </ul>
+  
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/partenaires" data-drupal-link-system-path="partenaires">Nos partenaires</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+        </ul>
+  
+              </li>
+                          <li class="menu-item parent-menu">
+        <a href="/fr" data-drupal-link-system-path="&lt;front&gt;">Région de Casablanca-Settat</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/fr/r%C3%A9gion-de-casablanca-settat/les-10-raisons-dinvestir-%C3%A0-casablanca-settat" data-drupal-link-system-path="node/224">10 Raisons d’investir à Casa-Settat</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--collapsed">
+          <a href="/fr/secteurs-d-activites" data-drupal-link-system-path="secteurs-d-activites">Secteurs porteurs</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/r%C3%A9gion-de-casablanca-settat/plan-de-d%C3%A9veloppement-r%C3%A9gional" data-drupal-link-system-path="node/519">Plan de développement Régional</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--expanded">
+          <a href="/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-provinces" data-drupal-link-system-path="node/282">Préfectures et Provinces</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+  <ul class="menu menu-level-2">
+                  
+        <li class="menu-item">
+          <a href="/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-et-provinces/mohammedia" data-drupal-link-system-path="node/197">Mohammedia</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/nouaceur" data-drupal-link-system-path="node/312">Nouaceur</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-region/prefectures-provinces/mediouna" title="Mediouna" data-drupal-link-system-path="node/196">Mediouna</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/settat" data-drupal-link-system-path="node/204">Settat</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/berrechid" data-drupal-link-system-path="node/314">Berrechid</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/benslimane" data-drupal-link-system-path="node/206">Benslimane</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-region/prefectures-provinces/el-jadida" data-drupal-link-system-path="node/154">El Jadida</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-region/prefectures-provinces/sidi-bennour" data-drupal-link-system-path="node/205">Sidi Bennour</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-region/prefectures-provinces/casablanca" data-drupal-link-system-path="node/195">Casablanca</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/projets" data-drupal-link-system-path="projets">Projets Structurants</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+        
+                    
+            <ul>
+                              <li class="menu-item">
+        <a href="/fr/r%C3%A9gion-de-casablanca-settat/les-10-raisons-dinvestir-%C3%A0-casablanca-settat" data-drupal-link-system-path="node/224">10 Raisons d’investir à Casa-Settat</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item menu-item--collapsed">
+        <a href="/fr/secteurs-d-activites" data-drupal-link-system-path="secteurs-d-activites">Secteurs porteurs</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/r%C3%A9gion-de-casablanca-settat/plan-de-d%C3%A9veloppement-r%C3%A9gional" data-drupal-link-system-path="node/519">Plan de développement Régional</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item menu-item--expanded parent-menu">
+        <a href="/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-provinces" data-drupal-link-system-path="node/282">Préfectures et Provinces</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+  <ul class="menu menu-level-2">
+                  
+        <li class="menu-item">
+          <a href="/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-et-provinces/mohammedia" data-drupal-link-system-path="node/197">Mohammedia</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/nouaceur" data-drupal-link-system-path="node/312">Nouaceur</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-region/prefectures-provinces/mediouna" title="Mediouna" data-drupal-link-system-path="node/196">Mediouna</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/settat" data-drupal-link-system-path="node/204">Settat</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/berrechid" data-drupal-link-system-path="node/314">Berrechid</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/benslimane" data-drupal-link-system-path="node/206">Benslimane</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-region/prefectures-provinces/el-jadida" data-drupal-link-system-path="node/154">El Jadida</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-region/prefectures-provinces/sidi-bennour" data-drupal-link-system-path="node/205">Sidi Bennour</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-region/prefectures-provinces/casablanca" data-drupal-link-system-path="node/195">Casablanca</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+        
+                    
+            <ul>
+                              <li class="menu-item">
+        <a href="/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-et-provinces/mohammedia" data-drupal-link-system-path="node/197">Mohammedia</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/nouaceur" data-drupal-link-system-path="node/312">Nouaceur</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-region/prefectures-provinces/mediouna" title="Mediouna" data-drupal-link-system-path="node/196">Mediouna</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/settat" data-drupal-link-system-path="node/204">Settat</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/berrechid" data-drupal-link-system-path="node/314">Berrechid</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-r%C3%A9gion/pr%C3%A9fectures-provinces/benslimane" data-drupal-link-system-path="node/206">Benslimane</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-region/prefectures-provinces/el-jadida" data-drupal-link-system-path="node/154">El Jadida</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-region/prefectures-provinces/sidi-bennour" data-drupal-link-system-path="node/205">Sidi Bennour</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-region/prefectures-provinces/casablanca" data-drupal-link-system-path="node/195">Casablanca</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+        </ul>
+  
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/projets" data-drupal-link-system-path="projets">Projets Structurants</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+        </ul>
+  
+              </li>
+                          <li class="menu-item parent-menu">
+        <a href="/fr" data-drupal-link-system-path="&lt;front&gt;">Investir dans la région</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/foncier" data-drupal-link-system-path="node/93">Foncier</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/financement" data-drupal-link-system-path="node/92">Financement</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/fiscalit%C3%A9" data-drupal-link-system-path="node/90">Fiscalité</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/ressources-humaines" data-drupal-link-system-path="node/94">Formation &amp; ressources humaines</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/formalit%C3%A9s-incitations" data-drupal-link-system-path="node/278">Formalités administratives</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--expanded">
+          <a href="/fr/d%C3%A9marches-de-cr%C3%A9ation" data-drupal-link-system-path="node/100">Créer son entreprise</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+  <ul class="menu menu-level-2">
+                  
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/cr%C3%A9er-son-entreprise/parcours-de-l%E2%80%99entrepreneur" data-drupal-link-system-path="node/101">Parcours de l&#039;entrepreneur</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/d%C3%A9marches-de-cr%C3%A9ation" data-drupal-link-system-path="node/100">Démarches de création</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/cr%C3%A9er-son-entreprise/bo%C3%AEte-%C3%A0-outils" data-drupal-link-system-path="node/97">Boîte à outils</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/node/346" data-drupal-link-system-path="node/346">Écosystème entrepreneurial</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+             <div  class="nav__box">
+          <div class="menu-description" ><h3>Casablanca-Settat, la région où il fait bon investir !</h3>
+
+<p><img alt="investisseur" data-entity-type="file" data-entity-uuid="b3849b82-227f-4fe1-af68-3ae663170dc3" src="/sites/default/files/inline-images/investissement.jpg" width="2156" height="1390" loading="lazy"></p>
+</div>
+       </div> 
+      
+      </div>
+
+
+
+        
+                    
+            <ul>
+                              <li class="menu-item">
+        <a href="/fr/investir-dans-la-r%C3%A9gion/foncier" data-drupal-link-system-path="node/93">Foncier</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-r%C3%A9gion/financement" data-drupal-link-system-path="node/92">Financement</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-r%C3%A9gion/fiscalit%C3%A9" data-drupal-link-system-path="node/90">Fiscalité</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-r%C3%A9gion/ressources-humaines" data-drupal-link-system-path="node/94">Formation &amp; ressources humaines</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/investir-dans-la-r%C3%A9gion/formalit%C3%A9s-incitations" data-drupal-link-system-path="node/278">Formalités administratives</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item menu-item--expanded parent-menu">
+        <a href="/fr/d%C3%A9marches-de-cr%C3%A9ation" data-drupal-link-system-path="node/100">Créer son entreprise</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+  <ul class="menu menu-level-2">
+                  
+        <li class="menu-item">
+          <a href="/fr/investir-dans-la-r%C3%A9gion/cr%C3%A9er-son-entreprise/parcours-de-l%E2%80%99entrepreneur" data-drupal-link-system-path="node/101">Parcours de l&#039;entrepreneur</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/d%C3%A9marches-de-cr%C3%A9ation" data-drupal-link-system-path="node/100">Démarches de création</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/cr%C3%A9er-son-entreprise/bo%C3%AEte-%C3%A0-outils" data-drupal-link-system-path="node/97">Boîte à outils</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/fr/node/346" data-drupal-link-system-path="node/346">Écosystème entrepreneurial</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+        
+                    
+            <ul>
+                              <li class="menu-item">
+        <a href="/fr/investir-dans-la-r%C3%A9gion/cr%C3%A9er-son-entreprise/parcours-de-l%E2%80%99entrepreneur" data-drupal-link-system-path="node/101">Parcours de l&#039;entrepreneur</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/d%C3%A9marches-de-cr%C3%A9ation" data-drupal-link-system-path="node/100">Démarches de création</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/cr%C3%A9er-son-entreprise/bo%C3%AEte-%C3%A0-outils" data-drupal-link-system-path="node/97">Boîte à outils</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/node/346" data-drupal-link-system-path="node/346">Écosystème entrepreneurial</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-2 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/charte-de-l%E2%80%99investissement" data-drupal-link-system-path="node/515">Charte de l'investissement</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/e-services" data-drupal-link-system-path="node/229">E-services</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/marocains-du-monde" data-drupal-link-system-path="node/703">🌍 Marocains du Monde</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/qimam" data-drupal-link-system-path="node/104">Accompagnement entrepreneurial</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/temoignages" data-drupal-link-system-path="testimonials">Témoignages</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/faq" data-drupal-link-system-path="faq">FAQ</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/rapports" data-drupal-link-system-path="rapports">Publications</a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/actualites" class="urgent" title="Consulter" data-drupal-link-system-path="news">Archive d'actualités <span class="btn btn-sm alt">Consulter</span></a>
+
+                          
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+      </div>
+
+
+
+        
+              </li>
+        </ul>
+  
+
+
+
+	</div>
+  
+  <div class="nav__bottom">
+  		
+              <ul>
+                              <li class="menu-item">
+        <a href="/fr/evenements" data-drupal-link-system-path="evenements">Évènements et networking </a>
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/appels" data-drupal-link-system-path="appels">Appels d’offres &amp; AMI</a>
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/bureau-dordre-electronique" data-drupal-link-system-path="node/79">BUREAU D&#039;ORDRE ÉLECTRONIQUE</a>
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/espace-presse" data-drupal-link-system-path="node/221">Espace Presse</a>
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/contact" data-drupal-link-system-path="node/222">CONTACT</a>
+              </li>
+                          <li class="menu-item">
+        <a href="https://e-reclamation.casainvest.ma/">Réclamation</a>
+              </li>
+        </ul>
+  
+
+
+  </div>
+  
+</nav>
+
+
+      <a href="/fr" rel="home" class="header__logo">
+      <img class="lazyload" src="/themes/custom/cri/Logo.svg" alt="Accueil" />
+    </a>
+      
+	
+
+<div class="search-block-form" data-drupal-selector="search-block-form" id="block-formulairederecherche" role="search">
+	
+	
+	<form action="/fr/search" method="get" id="search-block-form" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
+      <label for="edit-keys" class="visually-hidden">Rechercher</label>
+        <input title="Indiquer les termes à rechercher" data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search" />
+
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Rechercher" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+</div>
+	
+
+<div class="language-switcher-language-url" id="block-languageswitcher" role="navigation">
+	
+	
+	<div class="header__right flex">
+  <div class="header__lang">
+
+      <div class="c-select lang-select">
+        <input id="lang-select" type="text" hidden="" value="FR">
+        <button>
+          <span class="c-select__value">FR</span>
+        </button>
+        <ul class="links"><li hreflang="fr" data-drupal-link-query="{&quot;keys&quot;:&quot;domicile fiscal&quot;}" data-drupal-link-system-path="search" class="is-active" aria-current="page"><a href="/fr/search?keys=domicile%20fiscal" class="language-link is-active" hreflang="fr" data-drupal-link-query="{&quot;keys&quot;:&quot;domicile fiscal&quot;}" data-drupal-link-system-path="search" aria-current="page">Français</a></li><li hreflang="en" data-drupal-link-query="{&quot;keys&quot;:&quot;domicile fiscal&quot;}" data-drupal-link-system-path="search"><a href="/en/search?keys=domicile%20fiscal" class="language-link" hreflang="en" data-drupal-link-query="{&quot;keys&quot;:&quot;domicile fiscal&quot;}" data-drupal-link-system-path="search">Anglais</a></li><li hreflang="ar" data-drupal-link-query="{&quot;keys&quot;:&quot;domicile fiscal&quot;}" data-drupal-link-system-path="search"><a href="/ar/search?keys=domicile%20fiscal" class="language-link" hreflang="ar" data-drupal-link-query="{&quot;keys&quot;:&quot;domicile fiscal&quot;}" data-drupal-link-system-path="search">العربية</a></li><li hreflang="tf" data-drupal-link-query="{&quot;keys&quot;:&quot;domicile fiscal&quot;}" data-drupal-link-system-path="search"><a href="/tf/search?keys=domicile%20fiscal" class="language-link" hreflang="tf" data-drupal-link-query="{&quot;keys&quot;:&quot;domicile fiscal&quot;}" data-drupal-link-system-path="search">ⵜⴰⵎⴰⵣⵉⵖⵜ</a></li></ul>
+      </div>
+    </div></div>
+</div>
+	
+
+
+    </div>
+  </header>
+
+    
+          <div data-drupal-messages-fallback class="hidden"></div>
+
+<div id="block-pagetitle">
+	
+	
+	
+</div>
+	
+
+<div id="block-breadcrumbs-2">
+	
+	
+	
+  <section class="page-nav">
+    <div class="cont cont-lg flex">
+      <a href="">Vous êtes ici</a>
+                            <a href="/fr">Accueil</a>
+                    </div>
+  </section>
+
+</div>
+	
+
+<div id="block-cri-content">
+	
+	
+	<section class="hero hero-page hero-faq hero-search">
+	<div class="hero-page__title">
+		<h1>Résultat de recherche</h1>
+		<form class="newsletter__form newsletter-head__form flex" method="get">
+			<label>
+				<input type="search" placeholder="Main d’oeuvre" name="keys" value="domicile fiscal"  minlength="3">
+			</label>
+			<button class="btn">Rechercher</button>
+		</form>
+	</div>
+</section>
+
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-ba0ad1ae25fa22cec61ec616a94bd1be60e0ddc24477b6d4aecd47c5b1e3e271 cont">
+    
+    
+    
+    <h3 class="search-block__title">Articles <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-7a40f7d08befe33fbd3adea59e17ba7a0796359eb3f8b833e968846a5fa0c9d7 cont">
+    
+    
+    
+    <h3 class="search-block__title">Page <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-3b790c1aedc065ee5e290596aaca8974bf903551bb22a8f4a9b0420c58c4fbf2 cont">
+    
+    
+    
+    <h3 class="search-block__title">Actualités <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-67b17b86d3a109f4d18914ada3dd20f581c3a610822f08db87a28d1f46849a37 cont">
+    
+    
+    
+    <h3 class="search-block__title">Évenement <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-0c89b6e2a1821b605adf5e8eb5eaca483b5f95e1ef91cc27b7efa0aa2f85de91 cont">
+    
+    
+    
+    <h3 class="search-block__title">Foire aux questions <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-a940c4ab0720e68a817c22846b5ada552575559ab6365de6883a5c1bd7f9fd9c cont">
+    
+    
+    
+    <h3 class="search-block__title">Communiqué de presse <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-e09361cb9d958c6ec51b3dd4fd1a80c0cf3c9f26069ffcf613f4e3a795f48fad cont">
+    
+    
+    
+    <h3 class="search-block__title">Appels d'offres <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-aa22ef7d16be149d8b235f75165a4c78d9704b6952aedf401aa1fe3fb3c83eba cont">
+    
+    
+    
+    <h3 class="search-block__title">Partners <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-ef1a303e1bc515e5a1796993d93cfbb0b2ffb83aaa75069871b7ecb1b892f2d5 cont">
+    
+    
+    
+    <h3 class="search-block__title">Projets <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-0fe216284fcd1db88b5c99ca493c94bca0a8d6bb6da423643353a0dcb04d7303 cont">
+    
+    
+    
+    <h3 class="search-block__title">Rapports d'activité <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-ef02ec353a321cf0f25daa380a85732e3a6859fc2a05567d5d660b52bb4dc782 cont">
+    
+    
+    
+    <h3 class="search-block__title">Témoignages <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+<div class="views-element-container">
+<section class="search-block">
+  <div class="js-view-dom-id-5475d3fa65050e51bbff54cceed1d8db381025786cc0f723a042117897b33794 cont">
+    
+    
+    
+    <h3 class="search-block__title">Programme <span class="search-block__qty">(0)</span></h3>
+
+        
+ 
+    
+
+    
+
+        
+
+    
+    
+
+    
+    
+  </div>
+</section>
+</div>
+
+
+ 
+
+  
+<div>
+	
+	
+	
+             <section class="wizard wizard--faq">
+<div class="cont flex">
+<div class="wizard__text">
+<h2>Vous n'avez pas trouvé votre réponse?</h2>
+
+<h2>Posez-nous votre question !</h2>
+<a class="btn" href="faq">Envoyer une question</a></div>
+
+<div class="wizard__img"><img alt class="lazyload" data-src="/sites/default/files/illustr.svg" src="/sites/default/files/illustr.svg"></div>
+</div>
+</section>
+
+      
+</div>
+	
+
+
+
+<span id="webform-submission-newsletter-form-ajax-content"></span><div id="webform-submission-newsletter-form-ajax" class="webform-ajax-form-wrapper" data-effect="fade" data-progress-type="throbber"><section class="newsletter">
+	<div class="cont boxes-box  animated animated--bottom">
+		<h3>Inscrivez-vous à notre Newsletter</h3>
+		 <p>Recevez toutes l’actualité du CRI Casablanca-Settat en vous abonnant à notre newsletter.</p>
+		<form class="webform-submission-form webform-submission-add-form webform-submission-newsletter-form webform-submission-newsletter-add-form js-webform-details-toggle webform-details-toggle" data-drupal-selector="webform-submission-newsletter-add-form" action="/fr/search?keys=domicile%20fiscal" method="post" id="webform-submission-newsletter-add-form" accept-charset="UTF-8">
+		  
+		  <div class="js-form-item form-item js-form-type-email form-item-email js-form-item-email form-no-label">
+      <label for="edit-email" class="visually-hidden js-form-required form-required">Email</label>
+        <input data-drupal-selector="edit-email" type="email" id="edit-email" name="email" value="" size="60" maxlength="254" placeholder="Entrez votre adresse e-mail ici" class="form-email required" required="required" aria-required="true" />
+
+        </div>
+<div class="js-form-item form-item js-form-type-checkbox form-item-termsofuse js-form-item-termsofuse">
+        <input data-webform-required-error="Prière de lire et d&#039;accepter les mentions légales inscrites dans le CGU" data-drupal-selector="edit-termsofuse" type="checkbox" id="edit-termsofuse" name="termsofuse" value="1" class="form-checkbox required" required="required" aria-required="true" />
+
+        <label for="edit-termsofuse" class="option js-form-required form-required">J'ai lu et j'accepte les mentions légales inscrites dans les CGU et le traitement de mes données à caractère personnel <a href="/fr/mentions-l%C3%A9galesCRICS" target="_blank">(voir la charte de la protection des données à caractère personnel)</a></label>
+      </div>
+<div data-drupal-selector="edit-actions" class="form-actions webform-actions js-form-wrapper form-wrapper" id="edit-actions"><input class="webform-button--submit btn button button--primary js-form-submit form-submit" data-drupal-selector="edit-actions-submit" data-disable-refocus="true" type="submit" id="edit-actions-submit" name="op" value="Je m&#039;inscris!" />
+
+</div>
+<input autocomplete="off" data-drupal-selector="form-euhra4fgol4opccmsx0ilszeqnnkegyjwmn2r6qkeq4" type="hidden" name="form_build_id" value="form-EUhRa4FGOl4oPcCMsX0IlSZeqNnKeGyjwMn2r6QkEQ4" />
+<input data-drupal-selector="edit-webform-submission-newsletter-add-form" type="hidden" name="form_id" value="webform_submission_newsletter_add_form" />
+
+
+                      <div  data-drupal-selector="edit-captcha" class="captcha captcha-type-challenge--cri-captcha-seuil">
+                  <div class="captcha__element">
+            <input data-drupal-selector="edit-captcha-sid" type="hidden" name="captcha_sid" value="2322767" />
+<input data-drupal-selector="edit-captcha-token" type="hidden" name="captcha_token" value="NXSJ4QKMCTf70hQ2L7prD6rqwy9-kQeUkh_NP39MCjs" />
+<input id="recaptcha-v3-token" class="recaptcha-v3-token" data-recaptcha-v3-action="cri_captcha_seuil" data-recaptcha-v3-site-key="6LcLJP8kAAAAANEMd5QvYvANBKdQsSdbnFnl6Svl" data-drupal-selector="edit-captcha-response" type="hidden" name="captcha_response" value="" />
+<input data-drupal-selector="edit-is-recaptcha-v3" type="hidden" name="is_recaptcha_v3" value="1" />
+
+          </div>
+                        </div>
+            
+
+		  
+		</form>
+	</div>
+</section>
+</div>
+</div>
+	
+
+
+    <a id="goTop" class="btn"></a>
+
+      <footer class="footer">
+      <div class="cont">
+        <div class="footer__flex flex">
+              
+<div id="block-reseauxsociaux">
+	
+	
+	
+             <p>CRI<br>
+Casablanca<br>
+Settat</p>
+
+<p>&nbsp;</p>
+
+<div class="footer__social flex"><a href="https://www.facebook.com/CRICASABLANCASETTAT/"><img alt src="/sites/default/files/facebook.svg"> </a> <!--a href="https://twitter.com/cri_grand_casa"> <img alt="" src="/sites/default/files/twiter.svg" /> </a--> <a href="https://www.youtube.com/channel/UCE_Zqcct06zmn1ablqJcrOQ"> <img alt src="/sites/default/files/youtube.svg"> </a> <a href="https://www.linkedin.com/company/centre-r-gional-d%27investissement-du-grand-casablanca-cri-/?originalSubdomain=fr"> <img alt src="/sites/default/files/linkedin.svg"> </a></div>
+
+      
+</div>
+	
+<nav role="navigation" aria-labelledby="block-pieddepage-menu" id="block-pieddepage">
+            
+  <h2 class="visually-hidden" id="block-pieddepage-menu">Pied de page</h2>
+  
+
+        
+              <ul>
+                              <li class="menu-item">
+        <a href="/fr/qui-sommes-nous/nos-missions" data-drupal-link-system-path="node/148">Nos missions</a>
+              </li>
+                          <li class="menu-item">
+        <a href="https://www.qimam.ma/">QIMAM</a>
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/r%C3%A9gion-de-casablanca-settat/pr%C3%A9fectures-provinces" data-drupal-link-system-path="node/282">Préfectures &amp; provinces </a>
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/secteurs-d-activites" data-drupal-link-system-path="secteurs-d-activites">Secteurs Porteurs</a>
+              </li>
+                          <li class="menu-item">
+        <a href="https://cri-accompagnement.casainvest.ma/">Prise de rendez-vous</a>
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/espace-presse" data-drupal-link-system-path="node/221">espace presse</a>
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/appels" data-drupal-link-system-path="appels">appels d’offres</a>
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/faq" data-drupal-link-system-path="faq">faq</a>
+              </li>
+                          <li class="menu-item">
+        <a href="/fr/mentions-l%C3%A9galesCRICS" data-drupal-link-system-path="node/484">Mentions légales</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+
+        </div>
+        
+        <div class="footer__bottom">
+              
+<div id="block-descriptionbasdepage">
+	
+	
+	
+             <p>Tous droits réservés © 2025<br>
+Centre Régional d'Investissement de Casablanca-Settat</p>
+
+      
+</div>
+	
+
+
+        </div>
+      </div>
+    </footer>
+  
+
+</div>
+  </div>
+
+    
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"fr\/","currentPath":"search","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"fr","currentQuery":{"keys":"domicile fiscal"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJxtTkESwjAI_FAsBx_UIQmN0SQ4gNX-Xm3V0dbLAssuS8CzhQOCRyUXThSzsfQYAkvM3ODTdYNwM2rRBcmQCnssLjGnQj02LJPloLAmXOXHPZhxV7IXlMkJhSW1H_fwPTid1Kguz4yZrgozdnjE2w9ROV4KuSv5gaXCqy66NUmFKjXrIhnmop3iuHWuRcYp_Ql4yyqpYtrun3AHapSDew","theme":"cri","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/fr\/search?keys=domicile%20fiscal\u0026ajax_form=1":true,"\/fr\/search":true},"google_analytics":{"account":"UA-112110949-1","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"ckeditorAccordion":{"accordionStyle":{"collapseAll":1,"keepRowsOpen":0,"animateAccordionOpenAndClose":1,"openTabsWithHash":1,"allowHtmlInTitles":0}},"ajax":{"edit-captcha-response":{"callback":"recaptcha_v3_ajax_callback","event":"change","url":"\/fr\/search?keys=domicile%20fiscal\u0026ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"captcha_response"}},"edit-actions-submit":{"callback":"::submitAjaxForm","event":"click","effect":"fade","speed":500,"progress":{"type":"throbber","message":""},"disable-refocus":true,"url":"\/fr\/search?keys=domicile%20fiscal\u0026ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Je m\u0027inscris!"}}},"views":{"ajax_path":"\/fr\/views\/ajax","ajaxViews":{"views_dom_id:5475d3fa65050e51bbff54cceed1d8db381025786cc0f723a042117897b33794":{"view_name":"search","view_display_id":"programme","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"5475d3fa65050e51bbff54cceed1d8db381025786cc0f723a042117897b33794","pager_element":0},"views_dom_id:ef02ec353a321cf0f25daa380a85732e3a6859fc2a05567d5d660b52bb4dc782":{"view_name":"search","view_display_id":"temoignages","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"ef02ec353a321cf0f25daa380a85732e3a6859fc2a05567d5d660b52bb4dc782","pager_element":0},"views_dom_id:0fe216284fcd1db88b5c99ca493c94bca0a8d6bb6da423643353a0dcb04d7303":{"view_name":"search","view_display_id":"rapports","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"0fe216284fcd1db88b5c99ca493c94bca0a8d6bb6da423643353a0dcb04d7303","pager_element":0},"views_dom_id:ef1a303e1bc515e5a1796993d93cfbb0b2ffb83aaa75069871b7ecb1b892f2d5":{"view_name":"search","view_display_id":"projets","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"ef1a303e1bc515e5a1796993d93cfbb0b2ffb83aaa75069871b7ecb1b892f2d5","pager_element":0},"views_dom_id:aa22ef7d16be149d8b235f75165a4c78d9704b6952aedf401aa1fe3fb3c83eba":{"view_name":"search","view_display_id":"partenaires","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"aa22ef7d16be149d8b235f75165a4c78d9704b6952aedf401aa1fe3fb3c83eba","pager_element":0},"views_dom_id:e09361cb9d958c6ec51b3dd4fd1a80c0cf3c9f26069ffcf613f4e3a795f48fad":{"view_name":"search","view_display_id":"appels","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"e09361cb9d958c6ec51b3dd4fd1a80c0cf3c9f26069ffcf613f4e3a795f48fad","pager_element":0},"views_dom_id:a940c4ab0720e68a817c22846b5ada552575559ab6365de6883a5c1bd7f9fd9c":{"view_name":"search","view_display_id":"communique","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"a940c4ab0720e68a817c22846b5ada552575559ab6365de6883a5c1bd7f9fd9c","pager_element":0},"views_dom_id:0c89b6e2a1821b605adf5e8eb5eaca483b5f95e1ef91cc27b7efa0aa2f85de91":{"view_name":"search","view_display_id":"faq","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"0c89b6e2a1821b605adf5e8eb5eaca483b5f95e1ef91cc27b7efa0aa2f85de91","pager_element":0},"views_dom_id:67b17b86d3a109f4d18914ada3dd20f581c3a610822f08db87a28d1f46849a37":{"view_name":"search","view_display_id":"evenement","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"67b17b86d3a109f4d18914ada3dd20f581c3a610822f08db87a28d1f46849a37","pager_element":0},"views_dom_id:3b790c1aedc065ee5e290596aaca8974bf903551bb22a8f4a9b0420c58c4fbf2":{"view_name":"search","view_display_id":"articles","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"3b790c1aedc065ee5e290596aaca8974bf903551bb22a8f4a9b0420c58c4fbf2","pager_element":0},"views_dom_id:7a40f7d08befe33fbd3adea59e17ba7a0796359eb3f8b833e968846a5fa0c9d7":{"view_name":"search","view_display_id":"page_de_base","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"7a40f7d08befe33fbd3adea59e17ba7a0796359eb3f8b833e968846a5fa0c9d7","pager_element":0},"views_dom_id:ba0ad1ae25fa22cec61ec616a94bd1be60e0ddc24477b6d4aecd47c5b1e3e271":{"view_name":"search","view_display_id":"actualite","view_args":"domicile fiscal","view_path":"\/search","view_base_path":null,"view_dom_id":"ba0ad1ae25fa22cec61ec616a94bd1be60e0ddc24477b6d4aecd47c5b1e3e271","pager_element":0}}},"user":{"uid":0,"permissionsHash":"a93b9d94edf3fdff309a9bae3ad0ea4ec98ebea8f9e21dff9c59f38d3e8d63ef"}}</script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LcLJP8kAAAAANEMd5QvYvANBKdQsSdbnFnl6Svl" defer async></script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.7.1"></script>
+<script src="/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="/sites/default/files/languages/fr_htDxf109ouKaGxQRJktVUz-SiHuPxqVNEjM7bPi-now.js?tnbh4b"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=10.6.20"></script>
+<script src="/core/misc/drupal.js?v=10.6.20"></script>
+<script src="/core/misc/drupal.init.js?v=10.6.20"></script>
+<script src="/core/assets/vendor/tabbable/index.umd.min.js?v=6.3.0"></script>
+<script src="/modules/contrib/ckeditor_accordion/js/accordion.frontend.min.js?tnbh4b"></script>
+<script src="/themes/custom/cri/js/jquery.magnific-popup.min.js?tnbh4b"></script>
+<script src="/themes/custom/cri/js/swiper-bundle.min.js?tnbh4b"></script>
+<script src="/themes/custom/cri/js/common.js?tnbh4b"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.8/plyr.min.js"></script>
+<script src="/modules/contrib/google_analytics/js/google_analytics.js?v=10.6.20"></script>
+<script src="/modules/custom/motor/js/motor.js?v=1.x"></script>
+<script src="/modules/contrib/recaptcha_v3/js/recaptcha_v3.js?v=10.6.20"></script>
+<script src="/core/misc/jquery.form.js?v=4.3.0"></script>
+<script src="/core/misc/progress.js?v=10.6.20"></script>
+<script src="/core/assets/vendor/loadjs/loadjs.min.js?v=4.3.0"></script>
+<script src="/core/misc/debounce.js?v=10.6.20"></script>
+<script src="/core/misc/announce.js?v=10.6.20"></script>
+<script src="/core/misc/message.js?v=10.6.20"></script>
+<script src="/core/misc/ajax.js?v=10.6.20"></script>
+<script src="/core/modules/views/js/base.js?v=10.6.20"></script>
+<script src="/core/modules/views/js/ajax_view.js?v=10.6.20"></script>
+<script src="/modules/contrib/webform/js/webform.scroll.js?v=10.6.20"></script>
+<script src="/modules/contrib/webform/js/webform.ajax.js?v=10.6.20"></script>
+<script src="/modules/contrib/webform/js/webform.element.details.save.js?v=10.6.20"></script>
+<script src="/modules/contrib/webform/js/webform.element.details.toggle.js?v=10.6.20"></script>
+<script src="/modules/contrib/webform/js/webform.element.message.js?v=10.6.20"></script>
+<script src="/core/misc/form.js?v=10.6.20"></script>
+<script src="/modules/contrib/webform/js/webform.behaviors.js?v=10.6.20"></script>
+<script src="/core/misc/states.js?v=10.6.20"></script>
+<script src="/modules/contrib/webform/js/webform.states.js?v=10.6.20"></script>
+<script src="/modules/contrib/webform/js/webform.form.js?v=10.6.20"></script>
+
+  </body>
+</html>

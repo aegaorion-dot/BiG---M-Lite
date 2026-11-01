@@ -1,0 +1,2 @@
+external_id,date,amount,currency,transaction_type,description,counterparty,account_code,payment_account_code,settlement_status,reference
+EXT-001,2026-10-20,500000,IDR,EXPENSE,Office supplies,Synthetic Office Store,OFFICE,BANK,PAID,OFFICE-001

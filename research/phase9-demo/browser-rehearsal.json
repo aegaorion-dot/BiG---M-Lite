@@ -1,0 +1,159 @@
+{
+  "success": true,
+  "syntheticOnly": true,
+  "liveMetaCalls": 0,
+  "singleUi": true,
+  "engineJournals": 3,
+  "checks": [
+    {
+      "viewport": "desktop",
+      "page": "Beranda",
+      "width": 1440,
+      "documentWidth": 1425,
+      "visibleJson": 0,
+      "heading": "Selamat datang kembali, Bali",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "desktop",
+      "page": "Dokumen",
+      "width": 1440,
+      "documentWidth": 1440,
+      "visibleJson": 0,
+      "heading": "Dokumen",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "desktop",
+      "page": "Kesiapan pajak",
+      "width": 1440,
+      "documentWidth": 1425,
+      "visibleJson": 0,
+      "heading": "Kesiapan pajak",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "desktop",
+      "page": "Laporan",
+      "width": 1440,
+      "documentWidth": 1440,
+      "visibleJson": 0,
+      "heading": "Laporan",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "desktop",
+      "page": "Asisten BiG-M",
+      "width": 1440,
+      "documentWidth": 1425,
+      "visibleJson": 0,
+      "heading": "Asisten bisnis Anda",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "desktop",
+      "page": "Pengaturan",
+      "width": 1440,
+      "documentWidth": 1440,
+      "visibleJson": 0,
+      "heading": "Pengaturan",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "desktop",
+      "assistantReply": "B\nMuse tidak tersedia. Informasi berikut berasal dari catatan ruang kerja tersimpan.\n\nRuang kerja aktif: ya.\n\nMata uang pembukuan: IDR.\n\nuser.language: \"en\" (CANDIDATE).\n\nuser.nationality: \"AU\" (CANDIDATE).\n\norg.name: \"Bali Design Demo\" (CANDIDATE).\n\norg.businessType: \"freelancer"
+    },
+    {
+      "viewport": "laptop",
+      "page": "Beranda",
+      "width": 1280,
+      "documentWidth": 1265,
+      "visibleJson": 0,
+      "heading": "Selamat datang kembali, Bali",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "laptop",
+      "page": "Dokumen",
+      "width": 1280,
+      "documentWidth": 1280,
+      "visibleJson": 0,
+      "heading": "Dokumen",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "laptop",
+      "page": "Kesiapan pajak",
+      "width": 1280,
+      "documentWidth": 1265,
+      "visibleJson": 0,
+      "heading": "Kesiapan pajak",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "laptop",
+      "page": "Laporan",
+      "width": 1280,
+      "documentWidth": 1280,
+      "visibleJson": 0,
+      "heading": "Laporan",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "laptop",
+      "page": "Asisten BiG-M",
+      "width": 1280,
+      "documentWidth": 1265,
+      "visibleJson": 0,
+      "heading": "Asisten bisnis Anda",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "laptop",
+      "page": "Pengaturan",
+      "width": 1280,
+      "documentWidth": 1280,
+      "visibleJson": 0,
+      "heading": "Pengaturan",
+      "untranslated": false,
+      "rawError": false
+    },
+    {
+      "viewport": "laptop",
+      "assistantReply": "B\nMuse tidak tersedia. Informasi berikut berasal dari catatan ruang kerja tersimpan.\n\nRuang kerja aktif: ya.\n\nMata uang pembukuan: IDR.\n\nuser.language: \"en\" (CANDIDATE).\n\nuser.nationality: \"AU\" (CANDIDATE).\n\norg.name: \"Bali Design Demo\" (CANDIDATE).\n\norg.businessType: \"freelancer"
+    }
+  ],
+  "consoleErrors": [],
+  "languageSwitchPreservedRoute": true,
+  "assistantRoundTrip": true,
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "screenshots": [
+    "dashboard-desktop.png",
+    "dashboard-laptop.png",
+    "documents-laptop.png",
+    "home-desktop.png",
+    "home-laptop.png",
+    "reports-laptop.png",
+    "tax-laptop.png"
+  ]
+}

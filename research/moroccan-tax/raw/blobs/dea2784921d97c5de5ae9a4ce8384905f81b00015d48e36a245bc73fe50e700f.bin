@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Language" content="fr" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  
+  <title>Session bloqu&eacute;e</title>
+
+  <style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #2a2d30;
+      background: #fff;
+    }
+    .container {
+      max-width: 800px;
+      margin: 10px auto;
+      padding: 0 16px;
+      color: #7a838c;
+      text-align: center;
+    }
+
+    /* Style du texte "Session bloquee" */
+    h1 {
+      color: #2a2d30;
+      font-weight: bold;
+      font-size: 40px;
+      margin-top: 5px;
+    }
+
+    /* Mise en page pour aligner le texte ÃÂ  gauche */
+    #interstitial-body {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: left;
+    }
+
+    h2 {
+      color: #2a2d30;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p, ul {
+      color: #2a2d30;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    ul { padding-left: 20px; }
+    li { margin: 0 0 10px; }
+    a { color: #428bca; text-decoration: none; }
+    a:hover, a:focus { color: #2a6496; text-decoration: underline; }
+
+    .footer {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #555;
+      text-align: left;
+    }
+    .footer b { color: #2a2d30; }
+
+    /* Logo optionnel */
+    .brand {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .brand img {
+      height: 180px;
+      width: auto;
+    }
+
+    /* Styles pour le texte final et date */
+    .body-end-bold {
+      font-weight: normal !important;
+      font-size: 18px !important;
+      color: #000 !important;
+      text-align: left !important;
+      margin-left: 2px !important;
+      padding-left: 0 !important;
+    }
+
+    .incident-date {
+      font-size: 18px !important;
+      text-align: left !important;
+      margin-top: 8px !important;
+      margin-left: 5px !important;
+      color: #000 !important;
+      font-style: normal !important;
+      font-weight: normal !important;
+      text-decoration: underline;
+      margin-top: -2px;
+    }
+  </style>
+
+  <script>
+    function showBlockPage() {
+      document.title = "SESSION BLOQUEE";
+      var elems = document.getElementsByClassName("interruption-message");
+      for (var i = 0; i < elems.length; ++i) {
+        elems[i].style.display = "block";
+      }
+    }
+    setTimeout(showBlockPage, 10000);
+  </script>
+
+  
+                    <script>
+                    var element = document.createElement('script');
+                    var url = 'https://js.hcaptcha.com/1/api.js';
+                    if (window.hcaptchaLang) {
+                        url += '?hl=' + window.hcaptchaLang;
+                    }
+                    element.setAttribute('src', url);
+                    document.head.appendChild(element);
+                </script>
+                    <script>
+                        function solvedCaptcha(payload) {
+                            const timeoutMs = 10000;
+                            protectionSubmitCaptcha("hcaptcha", payload, timeoutMs, "3:IULl9ZSOpWehmSsjLboKzA==:OxOO0TT7weYU5gEtNNL80MAxarRFI9TfCqHFNwabk8thT2RuSYVjZjlAqxx0jIgAXlG6yJ2EVKz88JhohbxlJsHBD3o2RZ318MumP+zhrtO9bSZLKR+M6idH3A4bMGsRg0venE2WfuoXCWOhtuAkN4Ho5dDpBNy0nyuBIMzS0dMwpshVvjDuZLZxJA/DLYmq:gtklKtrP0UFXfrZKsNCY9/u45wipnshVLuTbaJJqTHU=")
+                                .then(
+                                    function() {
+                                        window.location.reload(true);
+                                    },
+                                    function(error) {
+                                        console.log(error);
+                                    },
+                                );
+                        }
+                    </script>
+                
+  <script src="/abp" async defer></script>
+</head>
+
+<body>
+  
+
+  <!-- Message visible si JavaScript est dÃÂ©sactivÃÂ© -->
+  <noscript>
+    <div class="container">
+      <h1>Session bloqu&eacute;e</h1>
+      <p>Vous avez d&eacute;sactiv&eacute; JavaScript dans votre navigateur web. Veuillez l'activer et recharger cette page pour continuer.</p>
+    </div>
+  </noscript>
+
+  <div class="container interruption-message">
+    <!-- Logo -->
+    <div class="brand">
+      <img src="data:image/png;base64,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" alt="Logo DGI">
+      <h1>Votre session a &eacute;t&eacute; bloqu&eacute;e</h1>
+    </div>
+
+    <div id="interstitial-body">
+      <h2>Le comportement de votre navigateur ou de votre r&eacute;seau nous fait penser que vous &ecirc;tes un robot.</h2>
+      <p>Nous avons bloqu&eacute; votre session. Que faire pour r&eacute;soudre ce probl&egrave;me ?</p>
+      <ul>
+        <li>R&eacute;ssayez de vous connecter &agrave; partir d'un autre navigateur ou d'un autre poste.</li>
+        <li>Assurez-vous d'avoir activ&eacute; JavaScript dans votre navigateur web.</li>
+        <li>Supprimez tous les plugins de navigateurs tiers qui peuvent &ecirc;tre en cours d'ex&eacute;cution.</li>
+      </ul>
+      <p id="identify-msg" style="display:none">Pour retrouver l'acc&eacute;s, assurez-vous que les cookies et JavaScript sont activ&eacute;s, puis rechargez la page.</p>
+      <p id="captcha-msg" style="display:none">Pour retrouver l'acc&eacute;s, assurez-vous que les cookies et JavaScript sont activ&eacute;s et compl&eacute;tez le CAPTCHA ci-dessous.</p>
+    </div>
+
+     <div class="body-end-bold" style="text-align: left; font-size: 18px !important;">
+        <style>
+            .body-end-bold, 
+            .body-end-bold * {
+              font-size: 18px !important;
+              text-align: left !important;
+              color: #000 !important;
+              margin-left: 2px !important;
+              padding-left: 0 !important;
+              font-weight: normal !important;
+              margin-top: 0px;
+            }
+         </style>
+
+         
+                    <script>
+                    showBlockPage()
+                    var e = document.getElementById("captcha-msg");
+                    if (e) {
+                        e.style.display = "";
+                    }
+                    </script>
+                <div class="h-captcha" data-sitekey="4a23e8c5-05f9-459a-83ca-4a4041cf6bea" data-callback="solvedCaptcha"></div>
+
+         <!-- Date affichÃÂ©e sous 
+                    <script>
+                    showBlockPage()
+                    var e = document.getElementById("captcha-msg");
+                    if (e) {
+                        e.style.display = "";
+                    }
+                    </script>
+                <div class="h-captcha" data-sitekey="4a23e8c5-05f9-459a-83ca-4a4041cf6bea" data-callback="solvedCaptcha"></div> -->
+         <div class="incident-date" id="incident-date"></div>
+    </div>
+
+    <div class="footer">
+      <p>Si vous pensez qu'il s'agit d'une erreur, veuillez contacter notre centre d'appel via t&eacute;l&eacute;phone au <b>0537273727</b> ou en envoyant un email &agrave; l'adresse
+      <b>simpl@tax.gov.ma</b>.</p>
+    </div>
+  </div>
+
+  <script>
+    // Masquer la section quand JS fonctionne (elle sera affichÃÂ©e par setTimeout si JS ne se termine pas)
+    (function(){
+      var elems = document.getElementsByClassName("interruption-message");
+      for (var i = 0; i < elems.length; ++i) {
+        elems[i].style.display = "none";
+      }
+    })();
+
+    // GÃÂ©nÃÂ©rer la date au format JJ/MM/AAAA HH:MM:SS
+    function formatDate(date) {
+      const pad = n => (n < 10 ? '0' + n : n);
+      return `${pad(date.getDate())}/${pad(date.getMonth()+1)}/${date.getFullYear()} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+    }
+    document.getElementById("incident-date").textContent = "Date de l'incident : " + formatDate(new Date());
+  </script>
+</body>
+</html>
+
+

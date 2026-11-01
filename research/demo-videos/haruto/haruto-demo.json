@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "demo-video/1",
+  "persona": "haruto",
+  "startedFromEmpty": true,
+  "reusedMuseRun": "haruto-2026-2026-11-01T08-42-20-097Z",
+  "liveMuseCallsWhileRecording": 0,
+  "language": "ja",
+  "theme": "night",
+  "estimate": {
+    "taxType": "INCOME_TAX",
+    "taxAmount": {
+      "amountMinor": "1942452",
+      "currency": "JPY"
+    },
+    "taxableBase": {
+      "amountMinor": "11650000",
+      "currency": "JPY"
+    },
+    "rules": [
+      "JP_INCOME_TAX_INDIVIDUAL_2026:AUTO_APPROVED_DEMO"
+    ],
+    "sources": 2
+  },
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "seconds": 65.95,
+  "capture": "desktop-gdigrab-30fps",
+  "fps": 30,
+  "pages": [
+    "home",
+    "setup",
+    "transactions",
+    "reports",
+    "tax",
+    "settings"
+  ],
+  "video": "research/demo-videos/haruto/haruto-demo.mp4",
+  "videoBytes": 730547,
+  "recordedAt": "2026-11-01T13:41:39.512Z"
+}

@@ -30,7 +30,8 @@ function send(res, status, headers, body) {
 }
 
 function serveStatic(reqPath, res) {
-  const rel = reqPath === '/' ? '/index.html' : reqPath.split('?')[0];
+  const pathname = reqPath.split('?')[0];
+  const rel = pathname === '/' ? '/index.html' : pathname.endsWith('/') ? `${pathname}index.html` : pathname;
   const safe = path.normalize(rel).replace(/^([/\\])+/, '');
   const file = path.join(PUBLIC_DIR, safe);
   if (!file.startsWith(PUBLIC_DIR) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
@@ -47,35 +48,47 @@ function readBody(req, limit = 512 * 1024) {
     const chunks = [];
     req.on('data', (c) => {
       size += c.length;
-      if (size > limit) { reject(new Error('Request body too large')); req.destroy(); return; }
+      if (size > limit) { chunks.length=0;reject(Object.assign(new Error('Request body too large'),{status:413}));return; }
       chunks.push(c);
     });
-    req.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
-    req.on('error', reject);
+    req.on('end', () => {req.setTimeout(0);if(size<=limit)resolve(Buffer.concat(chunks).toString('utf8'));});
+    req.on('error', (error) => {req.setTimeout(0);reject(error);});
+    req.setTimeout(30000,()=>{req.setTimeout(0);reject(Object.assign(Error('Upload timed out'),{status:408}));req.destroy();});
   });
 }
 
-function createServer({ port = 3100, persistPath = null, orgId = null, authToken = null, profileProvider = null } = {}) {
-  const store = createWebStore({ persistPath, orgId, authToken, profileProvider });
+function createServer({ port = 3100, persistPath = null, orgId = null, authToken = null, profileProvider = null, extractionProvider, semanticProvider, museRuntime, fxProvider, languagePackService, demoTaxCatalogs = true, store:providedStore=null, nikosStore:providedNikosStore=null } = {}) {
+  const store = providedStore??createWebStore({ persistPath, orgId, authToken, profileProvider, extractionProvider, semanticProvider, museRuntime, fxProvider, languagePackService, demoTaxCatalogs });
+  const nikosStore=providedNikosStore??createWebStore({persistPath:persistPath?path.join(path.dirname(persistPath),'nikos-demo','store.json'):null,orgId:'org-nikos-demo',authToken,profileProvider,extractionProvider,semanticProvider,fxProvider});
   const server = http.createServer(async (req, res) => {
     try {
       const url = new URL(req.url, 'http://localhost');
       if (url.pathname.startsWith('/api/')) {
         let body = null;
         if (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH') {
-          const raw = await readBody(req);
+          const raw = await readBody(req,['/api/intake/upload','/api/intake/external/upload'].includes(url.pathname)?12*1024*1024:512*1024);
           body = raw ? JSON.parse(raw) : {};
         }
-        const out = await handleApi(store, req.method, url.pathname, Object.fromEntries(url.searchParams), body);
+        const query=Object.fromEntries(url.searchParams),bearer=req.headers.authorization?.match(/^Bearer (.+)$/)?.[1];
+        if(bearer){if(body)body.authToken=bearer;else query.token=bearer;}
+        const requestStore=req.headers['x-bigm-scenario']==='nikos'?nikosStore:store;
+        const out = await handleApi(requestStore, req.method, url.pathname, query, body);
         return send(res, out.status, out.headers, out.body);
       }
       if (req.method !== 'GET') return send(res, 405, { 'content-type': 'text/plain' }, 'Method not allowed');
-      return serveStatic(url.pathname, res);
+      let staticPath = url.pathname;
+      if (staticPath === '/v2' || staticPath === '/v2/') {
+        return send(res, 308, { location: '/', 'content-type': 'text/plain; charset=utf-8' }, 'Moved to /');
+      }
+      if (staticPath === '/legacy' || staticPath.startsWith('/legacy/')) {
+        return send(res, 404, { 'content-type': 'text/plain; charset=utf-8' }, 'Not found');
+      }
+      return serveStatic(staticPath, res);
     } catch (e) {
-      return send(res, 500, { 'content-type': 'application/json' }, JSON.stringify({ ok: false, error: e.message }));
+      return send(res, e.status??(e instanceof SyntaxError?400:500), { 'content-type': 'application/json' }, JSON.stringify({ ok: false, error: e.message }));
     }
   });
-  return { server, store, port };
+  return { server, store, nikosStore, port };
 }
 
 if (require.main === module) {
@@ -83,7 +96,9 @@ if (require.main === module) {
   const port = Number(process.env.BIGM_PORT ?? process.env.PORT ?? 3100);
   const persistPath = process.env.BIGM_DATA_PATH || path.join(__dirname, '..', '..', 'data', 'store.json');
   const authToken = process.env.BIGM_API_TOKEN ?? null;
-  const { server } = createServer({ port, persistPath, authToken });
+  const orgId = process.env.BIGM_ORG_ID ?? null;
+  const demoTaxCatalogs = process.env.BIGM_DEMO_TAX_CATALOGS !== '0';
+  const { server } = createServer({ port, persistPath, authToken, orgId, demoTaxCatalogs });
   server.listen(port, '127.0.0.1', () => {
     console.log(`BiG-M Lite web berjalan di http://localhost:${port}`);
   });

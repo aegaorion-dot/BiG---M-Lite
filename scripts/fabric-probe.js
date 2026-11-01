@@ -4,6 +4,7 @@ const fs=require('node:fs'),path=require('node:path');
 const {SOURCES}=require('../src/fabric/registry');
 const {RawArtifactStore}=require('../src/fabric/artifacts');
 const {SourceConnector}=require('../src/fabric/connector');
+const {sanitizeResearchRecord}=require('../src/fabric/researchSanitizer');
 async function main(){
  if(!process.argv.includes('--live'))throw Error('Use --live to authorize official-source network probes');
  if(process.env.NODE_ENV==='test'||process.env.NODE_TEST_CONTEXT)throw Error('Live research disabled in tests');
@@ -17,7 +18,7 @@ async function main(){
  async function worker(){while(i<targets.length){const target=targets[i++],at=new Date().toISOString();let row;
   try{const artifact=await connector.retrieve(target);row={...target,observedAt:at,artifact};console.log(target.sourceId,artifact.httpStatus,artifact.sourceType,target.kind);}
   catch(e){row={...target,observedAt:at,error:e.message,cause:e.cause?.code??null,redirects:e.redirects??null,finalUrl:e.finalUrl??null};console.log(target.sourceId,'BLOCKED',target.kind,e.message);}
-  fs.appendFileSync(path.join(root,'observations.jsonl'),JSON.stringify(row)+'\n');
+  fs.appendFileSync(path.join(root,'observations.jsonl'),JSON.stringify(sanitizeResearchRecord(row))+'\n');
  }}
  await Promise.all(Array.from({length:4},worker));
 }

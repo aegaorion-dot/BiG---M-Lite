@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-29T16:26:47.169Z",
+  "history": {
+    "reachableBlobsScanned": 650,
+    "reachableCommitsScanned": 77,
+    "knownCredentialMatches": 0,
+    "unresolvedCredentials": 0,
+    "findings": [],
+    "reviewedSyntheticFixtureMatches": 22,
+    "trackedEnvironmentFiles": [],
+    "committedLogFiles": [],
+    "passed": true
+  },
+  "workingTree": {
+    "filesScanned": 599,
+    "configuredCredentialMatches": 0,
+    "secretLookingLogPaths": [],
+    "envTracked": false,
+    "envIgnored": true
+  },
+  "passed": true
+}

@@ -1,0 +1,506 @@
+{
+  "version": 1,
+  "candidates": [
+    {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "MA",
+      "label": "MA-IR-DOMICILE-FISCAL-ART23",
+      "evidenceIds": [
+        "25b4bd537f76572d075b57800fa3f9f12be97ab49a6b240ade77a8d15e01ab89",
+        "fb28fcaca26ae7979aec84cf293281da756b436a00c90dea1bbf618a753d1b7d",
+        "2c0c38fc42694f4b32eb244be7e46f6a6a4ecb5731ff37c99d9c032769c62a18"
+      ],
+      "provenance": [
+        {
+          "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+          "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+          "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "retrievedAt": "2026-10-29T15:44:34.722Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "c292cddcb4b9c5af57d147d2513240bdbf5aba97e8a692ab60e15152a0898263",
+          "locator": "pdf:page:55",
+          "start": 114132,
+          "end": 115132,
+          "quote": " - dessus et \nn’ayant pas opté pour l’impôt sur les sociétés. \nA rticle 22. -   Revenus et profits   imposables \nLes catégories de revenu s et profits concernés sont   : \n1° -   les revenus professionnels ; \n2° -   les revenus provenant des exploitations agricoles ; \n3° -   les revenus salariaux et revenus assimilés ; \n4° -   les revenus et profits fonciers ; \n5° -   les revenus et profits de capitaux mobiliers   ; \n6° -   les autres revenus   et gains 176 . \nArticle 23. -   Territorialité \nI. -   Sont assujetties à l'impôt sur le revenu : \n1° -   les personnes physiques qui ont au Maroc leur domicile fiscal, \nà   raison   de l’ensemble de leurs revenus et profits, de source marocaine \net étrangère ; \n2° -   les   personnes physiques qui n'ont pas au Maroc leur domicile \nfiscal, à   raison de l’ensemble de leurs revenus et profits de source \nmarocaine ; \n3° - les personnes, ayant ou non leur domicile fiscal au Maroc, qui \nréalisent   des   bénéfices   ou   perçoivent   des   revenus   ",
+          "quoteHash": "f7a370cd232c5499e9910a071e1fcecae49900c4a493c3754d8eb357a3f9741a"
+        },
+        {
+          "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+          "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+          "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "retrievedAt": "2026-10-29T15:44:34.722Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "2007e68c1d952fb1c807b207d1d2ffb604b15e640a82d0532b13d135765ebc62",
+          "locator": "pdf:page:56",
+          "start": 115367,
+          "end": 116367,
+          "quote": "57 \nCODE GÉNÉRAL DES IMPÔTS \nII. -   Au sens du présent code, une personne physique a son domicile \nfiscal au Maroc lorsqu'elle a au Maroc son   foyer d'habitation permanent, \nle centre de ses intérêts économiques ou lorsque la durée continue ou \ndiscontinue de ses séjours au Maroc dépasse 183 jours pour toute période \nde 365 jours. \nSont considérés comme ayant leur domicile fiscal au Maroc les   agents \nde l'Etat qui exercent leurs fonctions ou sont chargés de mission à \nl'étranger lorsqu'ils sont exonérés de l 'impôt personnel sur le revenu   dans \nle pays étranger où ils résident. \nArticle 24. -   Exonérations \nSont exonérés de l'impôt sur le revenu : \n1° -   les   ambassadeurs   et   agents   diplomatiques,   les   consuls   et \nagents consulaires de nationalité étrangère, pour leurs revenus de source \nétrangère, dans la mesure où les pays qu'ils représentent concèdent le \nmême avantage aux ambassadeurs et agents diplomatique s, consuls et \nagents consulaires marocains ; \n2° -   le",
+          "quoteHash": "bfb023e20df9e8f02484551d58b79cbf2d64c40413fce37c2f57818d0c2ac734"
+        },
+        {
+          "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+          "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+          "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "retrievedAt": "2026-10-29T15:44:34.722Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "69020107871fea269f2c08c206d974d22cdcd5b2b6e26eadf499a6f5ba920b07",
+          "locator": "pdf:page:58",
+          "start": 119932,
+          "end": 120932,
+          "quote": "59 \nCODE GÉNÉRAL DES IMPÔTS \nL es contribuables concernés doivent   produire   un acte authentique ou \nun contrat légalisé faisant ressortir la part des   droits de chacun dans \nl'indivision ou dans la société en participation. A défaut, l’imposition est \némise au nom de l’indivision ou de la so ciété en participation 186 . \nArticle   27. -   Détermination   du   revenu   global   imposable   des \npersonnes qui s’établissent au Maroc ou qui cessent \nd’y avoir leur domicile fiscal \nI. -   Lorsqu'un contribuable acquiert un domicile fiscal au Maroc, son \nrevenu global imposab le de l'année de son installation comprend : \n-   les   revenus de source marocaine acquis entre le 1 er   janvier et le \n31 décembre de ladite année ; \n-   les   revenus   de   source   étrangère   acquis   entre   le   jour   de   son \ninstallation au Maroc et le 31 Décembre de la même année. \nII. -   Lorsqu'un contribuable cesse d'avoir au Maroc son domicile fiscal, \nson revenu global imposable de l'année de la c",
+          "quoteHash": "b983ab93bb72612d0e865e567e90a11833285374eba1d1e0c837e5224dfeed12"
+        }
+      ],
+      "envelopeIds": [
+        "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc",
+        "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc",
+        "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "bc6f7f3a527d00a68842deedde90dd00b407fbc05fa440c89854f72ab80a6f86",
+      "researchRunId": "46e25c95-e2ca-45c5-bd53-7e7d665f7d9f",
+      "evidenceBundle": {
+        "jurisdiction": "MA",
+        "taxYear": 2026,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "issuingAuthority": "Morocco Ministry of Economy and Finance / DGI publications",
+        "sourceTitle": "Code General des Impots 2025 FR",
+        "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+        "sourceClassification": "MIRROR_OF_OFFICIAL_SOURCE",
+        "articleSectionPage": "Articles 23-24, 27 (pdf pages 55-58)",
+        "evidence": [
+          {
+            "jurisdictionCode": "MA",
+            "sourceId": "MA-CRI",
+            "envelopeId": "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc",
+            "provenance": {
+              "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+              "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+              "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "retrievedAt": "2026-10-29T15:44:34.722Z",
+              "normalizerVersion": "fabric-envelope/1",
+              "anchorId": "c292cddcb4b9c5af57d147d2513240bdbf5aba97e8a692ab60e15152a0898263",
+              "locator": "pdf:page:55",
+              "start": 114132,
+              "end": 115132,
+              "quote": " - dessus et \nn’ayant pas opté pour l’impôt sur les sociétés. \nA rticle 22. -   Revenus et profits   imposables \nLes catégories de revenu s et profits concernés sont   : \n1° -   les revenus professionnels ; \n2° -   les revenus provenant des exploitations agricoles ; \n3° -   les revenus salariaux et revenus assimilés ; \n4° -   les revenus et profits fonciers ; \n5° -   les revenus et profits de capitaux mobiliers   ; \n6° -   les autres revenus   et gains 176 . \nArticle 23. -   Territorialité \nI. -   Sont assujetties à l'impôt sur le revenu : \n1° -   les personnes physiques qui ont au Maroc leur domicile fiscal, \nà   raison   de l’ensemble de leurs revenus et profits, de source marocaine \net étrangère ; \n2° -   les   personnes physiques qui n'ont pas au Maroc leur domicile \nfiscal, à   raison de l’ensemble de leurs revenus et profits de source \nmarocaine ; \n3° - les personnes, ayant ou non leur domicile fiscal au Maroc, qui \nréalisent   des   bénéfices   ou   perçoivent   des   revenus   ",
+              "quoteHash": "f7a370cd232c5499e9910a071e1fcecae49900c4a493c3754d8eb357a3f9741a"
+            },
+            "authority": {
+              "authorityCode": "CRI",
+              "authorityName": "Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror",
+              "sourceRole": "OFFICIAL_GUIDANCE",
+              "legalForce": "REVIEW_REQUIRED"
+            },
+            "temporal": {
+              "publishedAt": null,
+              "effectiveFrom": null,
+              "effectiveTo": null,
+              "sourceTemporalAssertions": [],
+              "status": "REVIEW_REQUIRED"
+            },
+            "status": "CANDIDATE",
+            "aiAuthority": "CANDIDATE_ONLY",
+            "proposedBy": "META_MUSE",
+            "evidenceId": "25b4bd537f76572d075b57800fa3f9f12be97ab49a6b240ade77a8d15e01ab89"
+          },
+          {
+            "jurisdictionCode": "MA",
+            "sourceId": "MA-CRI",
+            "envelopeId": "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc",
+            "provenance": {
+              "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+              "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+              "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "retrievedAt": "2026-10-29T15:44:34.722Z",
+              "normalizerVersion": "fabric-envelope/1",
+              "anchorId": "2007e68c1d952fb1c807b207d1d2ffb604b15e640a82d0532b13d135765ebc62",
+              "locator": "pdf:page:56",
+              "start": 115367,
+              "end": 116367,
+              "quote": "57 \nCODE GÉNÉRAL DES IMPÔTS \nII. -   Au sens du présent code, une personne physique a son domicile \nfiscal au Maroc lorsqu'elle a au Maroc son   foyer d'habitation permanent, \nle centre de ses intérêts économiques ou lorsque la durée continue ou \ndiscontinue de ses séjours au Maroc dépasse 183 jours pour toute période \nde 365 jours. \nSont considérés comme ayant leur domicile fiscal au Maroc les   agents \nde l'Etat qui exercent leurs fonctions ou sont chargés de mission à \nl'étranger lorsqu'ils sont exonérés de l 'impôt personnel sur le revenu   dans \nle pays étranger où ils résident. \nArticle 24. -   Exonérations \nSont exonérés de l'impôt sur le revenu : \n1° -   les   ambassadeurs   et   agents   diplomatiques,   les   consuls   et \nagents consulaires de nationalité étrangère, pour leurs revenus de source \nétrangère, dans la mesure où les pays qu'ils représentent concèdent le \nmême avantage aux ambassadeurs et agents diplomatique s, consuls et \nagents consulaires marocains ; \n2° -   le",
+              "quoteHash": "bfb023e20df9e8f02484551d58b79cbf2d64c40413fce37c2f57818d0c2ac734"
+            },
+            "authority": {
+              "authorityCode": "CRI",
+              "authorityName": "Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror",
+              "sourceRole": "OFFICIAL_GUIDANCE",
+              "legalForce": "REVIEW_REQUIRED"
+            },
+            "temporal": {
+              "publishedAt": null,
+              "effectiveFrom": null,
+              "effectiveTo": null,
+              "sourceTemporalAssertions": [],
+              "status": "REVIEW_REQUIRED"
+            },
+            "status": "CANDIDATE",
+            "aiAuthority": "CANDIDATE_ONLY",
+            "proposedBy": "META_MUSE",
+            "evidenceId": "fb28fcaca26ae7979aec84cf293281da756b436a00c90dea1bbf618a753d1b7d"
+          },
+          {
+            "jurisdictionCode": "MA",
+            "sourceId": "MA-CRI",
+            "envelopeId": "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc",
+            "provenance": {
+              "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+              "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+              "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "retrievedAt": "2026-10-29T15:44:34.722Z",
+              "normalizerVersion": "fabric-envelope/1",
+              "anchorId": "69020107871fea269f2c08c206d974d22cdcd5b2b6e26eadf499a6f5ba920b07",
+              "locator": "pdf:page:58",
+              "start": 119932,
+              "end": 120932,
+              "quote": "59 \nCODE GÉNÉRAL DES IMPÔTS \nL es contribuables concernés doivent   produire   un acte authentique ou \nun contrat légalisé faisant ressortir la part des   droits de chacun dans \nl'indivision ou dans la société en participation. A défaut, l’imposition est \némise au nom de l’indivision ou de la so ciété en participation 186 . \nArticle   27. -   Détermination   du   revenu   global   imposable   des \npersonnes qui s’établissent au Maroc ou qui cessent \nd’y avoir leur domicile fiscal \nI. -   Lorsqu'un contribuable acquiert un domicile fiscal au Maroc, son \nrevenu global imposab le de l'année de son installation comprend : \n-   les   revenus de source marocaine acquis entre le 1 er   janvier et le \n31 décembre de ladite année ; \n-   les   revenus   de   source   étrangère   acquis   entre   le   jour   de   son \ninstallation au Maroc et le 31 Décembre de la même année. \nII. -   Lorsqu'un contribuable cesse d'avoir au Maroc son domicile fiscal, \nson revenu global imposable de l'année de la c",
+              "quoteHash": "b983ab93bb72612d0e865e567e90a11833285374eba1d1e0c837e5224dfeed12"
+            },
+            "authority": {
+              "authorityCode": "CRI",
+              "authorityName": "Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror",
+              "sourceRole": "OFFICIAL_GUIDANCE",
+              "legalForce": "REVIEW_REQUIRED"
+            },
+            "temporal": {
+              "publishedAt": null,
+              "effectiveFrom": null,
+              "effectiveTo": null,
+              "sourceTemporalAssertions": [],
+              "status": "REVIEW_REQUIRED"
+            },
+            "status": "CANDIDATE",
+            "aiAuthority": "CANDIDATE_ONLY",
+            "proposedBy": "META_MUSE",
+            "evidenceId": "2c0c38fc42694f4b32eb244be7e46f6a6a4ecb5731ff37c99d9c032769c62a18"
+          }
+        ],
+        "candidateRule": {
+          "ruleId": "MA-IR-DOMICILE-FISCAL-ART23",
+          "ruleType": "RESIDENCE_TEST",
+          "legalTest": "Personne physique a son domicile fiscal au Maroc si foyer d'habitation permanent au Maroc OU centre des interets economiques au Maroc OU sejours continus/discontinus >183 jours pour toute periode de 365 jours; agents de l'Etat a l'etranger exoneres d'impot personnel a l'etranger consideres domicilies; assujettis a l'IR a raison de l'ensemble des revenus source marocaine et etrangere si domicilies, seulement source marocaine sinon, plus cas conventionnels.",
+          "requiredFacts": [
+            "presence.intervals with legal day-counting convention",
+            "nature/location of foyer d'habitation permanent",
+            "location of centre des interets economiques",
+            "agent-de-l'Etat status if claimed"
+          ],
+          "parameters": [
+            {
+              "name": "SEJOUR_183_JOURS",
+              "value": "183",
+              "unit": "days per any 365-day period",
+              "evidenceIndex": 1
+            }
+          ],
+          "formula": "IF (foyer_permanent_MA OR centre_interets_MA OR sejours_365j > 183 OR agent_Etat_exonere_etranger) THEN domicile_fiscal_MA ELSE non-domicilie; scope = domicilie ? worldwide+conventionnel : source_marocaine+conventionnel"
+        },
+        "conditions": [
+          "183-day test measured for toute periode de 365 jours, continuous or discontinuous"
+        ],
+        "exceptions": [
+          "Diplomatic/consular foreign nationals exoneration for foreign-source income under reciprocity (Art 24); State agents rule; split-year Art 27 installation/cessation"
+        ],
+        "confidence": "MEDIUM",
+        "researchRunId": "46e25c95-e2ca-45c5-bd53-7e7d665f7d9f",
+        "crossChecks": [],
+        "fieldEvidence": [
+          {
+            "field": "candidateRule.legalTest",
+            "evidenceIndex": 1
+          },
+          {
+            "field": "candidateRule.formula",
+            "evidenceIndex": 0
+          },
+          {
+            "field": "conditions",
+            "evidenceIndex": 1
+          },
+          {
+            "field": "exceptions",
+            "evidenceIndex": 2
+          }
+        ],
+        "sourceCandidateId": "bc6f7f3a527d00a68842deedde90dd00b407fbc05fa440c89854f72ab80a6f86",
+        "validator": {
+          "status": "REVIEW_REQUIRED",
+          "issues": [
+            "UNKNOWN_COMMENCEMENT",
+            "MIRROR_FIDELITY_REVIEW_REQUIRED",
+            "INDEPENDENT_CROSS_CHECK_REQUIRED"
+          ],
+          "semanticLegalApproval": false
+        },
+        "runtimeExecutable": false
+      }
+    },
+    {
+      "schemaVersion": "fabric-country-pack-candidate/1",
+      "jurisdictionCode": "MA",
+      "label": "MA-IR-DOMICILE-FISCAL-ART23",
+      "evidenceIds": [
+        "d4e7853cd60edb1083c3a559e3d55da066ce8a804e65377ea1f234930782386a",
+        "2c0c38fc42694f4b32eb244be7e46f6a6a4ecb5731ff37c99d9c032769c62a18",
+        "1a097937d18c726d2cba2258339ddf574e2d51363b19395a881be56f83ba0c55"
+      ],
+      "provenance": [
+        {
+          "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+          "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+          "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "retrievedAt": "2026-10-29T15:44:34.722Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "2007e68c1d952fb1c807b207d1d2ffb604b15e640a82d0532b13d135765ebc62",
+          "locator": "pdf:page:56",
+          "start": 117367,
+          "end": 117388,
+          "quote": " étrangère soumis aux",
+          "quoteHash": "36bb1adaefe4cae81acc8442c66f9061272bbb2669fc4f653ac27c77f05e4dee"
+        },
+        {
+          "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+          "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+          "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "retrievedAt": "2026-10-29T15:44:34.722Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "69020107871fea269f2c08c206d974d22cdcd5b2b6e26eadf499a6f5ba920b07",
+          "locator": "pdf:page:58",
+          "start": 119932,
+          "end": 120932,
+          "quote": "59 \nCODE GÉNÉRAL DES IMPÔTS \nL es contribuables concernés doivent   produire   un acte authentique ou \nun contrat légalisé faisant ressortir la part des   droits de chacun dans \nl'indivision ou dans la société en participation. A défaut, l’imposition est \némise au nom de l’indivision ou de la so ciété en participation 186 . \nArticle   27. -   Détermination   du   revenu   global   imposable   des \npersonnes qui s’établissent au Maroc ou qui cessent \nd’y avoir leur domicile fiscal \nI. -   Lorsqu'un contribuable acquiert un domicile fiscal au Maroc, son \nrevenu global imposab le de l'année de son installation comprend : \n-   les   revenus de source marocaine acquis entre le 1 er   janvier et le \n31 décembre de ladite année ; \n-   les   revenus   de   source   étrangère   acquis   entre   le   jour   de   son \ninstallation au Maroc et le 31 Décembre de la même année. \nII. -   Lorsqu'un contribuable cesse d'avoir au Maroc son domicile fiscal, \nson revenu global imposable de l'année de la c",
+          "quoteHash": "b983ab93bb72612d0e865e567e90a11833285374eba1d1e0c837e5224dfeed12"
+        },
+        {
+          "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+          "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+          "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+          "retrievedAt": "2026-10-29T15:44:34.722Z",
+          "normalizerVersion": "fabric-envelope/1",
+          "anchorId": "c292cddcb4b9c5af57d147d2513240bdbf5aba97e8a692ab60e15152a0898263",
+          "locator": "pdf:page:55",
+          "start": 115132,
+          "end": 115364,
+          "quote": "d ont   le   droit \nd’imposition est attribué au Maroc en vertu des conventions tendant à \néviter la double imposition en matière d’impôts sur le revenu. \n176   Article 8 de la loi de finances n° 60-24   pour l’année budgétaire 2025",
+          "quoteHash": "668ac093f6a16ad188eb42f87b8dc9e91d024515e307289bb3d0154d2dee5d9b"
+        }
+      ],
+      "envelopeIds": [
+        "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc",
+        "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc",
+        "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc"
+      ],
+      "temporal": {
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "status": "REVIEW_REQUIRED"
+      },
+      "status": "CANDIDATE",
+      "aiAuthority": "CANDIDATE_ONLY",
+      "executorSupported": false,
+      "runtimeExecutable": false,
+      "reviewHistory": [],
+      "candidateId": "cbb92d94865eead7e16059f9ca32bbbb14edf798e83a743dee7bbb805445d011",
+      "researchRunId": "46e25c95-e2ca-45c5-bd53-7e7d665f7d9f",
+      "evidenceBundle": {
+        "jurisdiction": "MA",
+        "taxYear": 2026,
+        "effectiveFrom": null,
+        "effectiveTo": null,
+        "issuingAuthority": "Morocco Ministry of Economy and Finance / DGI publications",
+        "sourceTitle": "Code General des Impots 2025 FR",
+        "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+        "sourceClassification": "MIRROR_OF_OFFICIAL_SOURCE",
+        "articleSectionPage": "Articles 23-24, 27 (pdf pages 55-58)",
+        "evidence": [
+          {
+            "jurisdictionCode": "MA",
+            "sourceId": "MA-CRI",
+            "envelopeId": "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc",
+            "provenance": {
+              "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+              "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+              "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "retrievedAt": "2026-10-29T15:44:34.722Z",
+              "normalizerVersion": "fabric-envelope/1",
+              "anchorId": "2007e68c1d952fb1c807b207d1d2ffb604b15e640a82d0532b13d135765ebc62",
+              "locator": "pdf:page:56",
+              "start": 117367,
+              "end": 117388,
+              "quote": " étrangère soumis aux",
+              "quoteHash": "36bb1adaefe4cae81acc8442c66f9061272bbb2669fc4f653ac27c77f05e4dee"
+            },
+            "authority": {
+              "authorityCode": "CRI",
+              "authorityName": "Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror",
+              "sourceRole": "OFFICIAL_GUIDANCE",
+              "legalForce": "REVIEW_REQUIRED"
+            },
+            "temporal": {
+              "publishedAt": null,
+              "effectiveFrom": null,
+              "effectiveTo": null,
+              "sourceTemporalAssertions": [],
+              "status": "REVIEW_REQUIRED"
+            },
+            "status": "CANDIDATE",
+            "aiAuthority": "CANDIDATE_ONLY",
+            "proposedBy": "META_MUSE",
+            "evidenceId": "d4e7853cd60edb1083c3a559e3d55da066ce8a804e65377ea1f234930782386a"
+          },
+          {
+            "jurisdictionCode": "MA",
+            "sourceId": "MA-CRI",
+            "envelopeId": "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc",
+            "provenance": {
+              "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+              "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+              "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "retrievedAt": "2026-10-29T15:44:34.722Z",
+              "normalizerVersion": "fabric-envelope/1",
+              "anchorId": "69020107871fea269f2c08c206d974d22cdcd5b2b6e26eadf499a6f5ba920b07",
+              "locator": "pdf:page:58",
+              "start": 119932,
+              "end": 120932,
+              "quote": "59 \nCODE GÉNÉRAL DES IMPÔTS \nL es contribuables concernés doivent   produire   un acte authentique ou \nun contrat légalisé faisant ressortir la part des   droits de chacun dans \nl'indivision ou dans la société en participation. A défaut, l’imposition est \némise au nom de l’indivision ou de la so ciété en participation 186 . \nArticle   27. -   Détermination   du   revenu   global   imposable   des \npersonnes qui s’établissent au Maroc ou qui cessent \nd’y avoir leur domicile fiscal \nI. -   Lorsqu'un contribuable acquiert un domicile fiscal au Maroc, son \nrevenu global imposab le de l'année de son installation comprend : \n-   les   revenus de source marocaine acquis entre le 1 er   janvier et le \n31 décembre de ladite année ; \n-   les   revenus   de   source   étrangère   acquis   entre   le   jour   de   son \ninstallation au Maroc et le 31 Décembre de la même année. \nII. -   Lorsqu'un contribuable cesse d'avoir au Maroc son domicile fiscal, \nson revenu global imposable de l'année de la c",
+              "quoteHash": "b983ab93bb72612d0e865e567e90a11833285374eba1d1e0c837e5224dfeed12"
+            },
+            "authority": {
+              "authorityCode": "CRI",
+              "authorityName": "Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror",
+              "sourceRole": "OFFICIAL_GUIDANCE",
+              "legalForce": "REVIEW_REQUIRED"
+            },
+            "temporal": {
+              "publishedAt": null,
+              "effectiveFrom": null,
+              "effectiveTo": null,
+              "sourceTemporalAssertions": [],
+              "status": "REVIEW_REQUIRED"
+            },
+            "status": "CANDIDATE",
+            "aiAuthority": "CANDIDATE_ONLY",
+            "proposedBy": "META_MUSE",
+            "evidenceId": "2c0c38fc42694f4b32eb244be7e46f6a6a4ecb5731ff37c99d9c032769c62a18"
+          },
+          {
+            "jurisdictionCode": "MA",
+            "sourceId": "MA-CRI",
+            "envelopeId": "7153b15523e233ddf6387605038dc2d760ccc91bc1ef52d0efe4a63bd3cc08fc",
+            "provenance": {
+              "artifactId": "d33162a0-a72b-4bd0-a0c5-817b60d2091e",
+              "rawContentHash": "f510cca73c15fea490d6d515854f89766555ed756831ef260f2dae8eb9f2fe75",
+              "sourceUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "finalUrl": "https://casainvest.ma/sites/default/files/cgi-2025-fr.pdf",
+              "retrievedAt": "2026-10-29T15:44:34.722Z",
+              "normalizerVersion": "fabric-envelope/1",
+              "anchorId": "c292cddcb4b9c5af57d147d2513240bdbf5aba97e8a692ab60e15152a0898263",
+              "locator": "pdf:page:55",
+              "start": 115132,
+              "end": 115364,
+              "quote": "d ont   le   droit \nd’imposition est attribué au Maroc en vertu des conventions tendant à \néviter la double imposition en matière d’impôts sur le revenu. \n176   Article 8 de la loi de finances n° 60-24   pour l’année budgétaire 2025",
+              "quoteHash": "668ac093f6a16ad188eb42f87b8dc9e91d024515e307289bb3d0154d2dee5d9b"
+            },
+            "authority": {
+              "authorityCode": "CRI",
+              "authorityName": "Casablanca-Settat Regional Investment Centre (public institution), official DGI document mirror",
+              "sourceRole": "OFFICIAL_GUIDANCE",
+              "legalForce": "REVIEW_REQUIRED"
+            },
+            "temporal": {
+              "publishedAt": null,
+              "effectiveFrom": null,
+              "effectiveTo": null,
+              "sourceTemporalAssertions": [],
+              "status": "REVIEW_REQUIRED"
+            },
+            "status": "CANDIDATE",
+            "aiAuthority": "CANDIDATE_ONLY",
+            "proposedBy": "META_MUSE",
+            "evidenceId": "1a097937d18c726d2cba2258339ddf574e2d51363b19395a881be56f83ba0c55"
+          }
+        ],
+        "candidateRule": {
+          "ruleId": "MA-IR-DOMICILE-FISCAL-ART23",
+          "ruleType": "RESIDENCE_TEST",
+          "legalTest": "Domicile fiscal au Maroc si foyer permanent, centre interets economiques, ou sejours >183j toute periode 365j; agents Etat exoneres etranger consideres domicilies; domicilies imposes revenus mondiaux, non-domicilies source marocaine",
+          "requiredFacts": [
+            "presence.intervals with legal counting",
+            "foyer d'habitation permanent location",
+            "centre interets economiques location",
+            "agent Etat status"
+          ],
+          "parameters": [
+            {
+              "name": "SEJOUR_183_JOURS",
+              "value": "183",
+              "unit": "days per 365-day period",
+              "evidenceIndex": 0
+            }
+          ],
+          "formula": "IF foyer_MA OR interets_MA OR sejours365 > 183 THEN domicile_MA ELSE non-domicilie"
+        },
+        "conditions": [
+          "183-day test toute periode 365 jours continue/discontinue"
+        ],
+        "exceptions": [
+          "Art24 diplomatic reciprocity; Art27 split-year installation/cessation"
+        ],
+        "confidence": "MEDIUM",
+        "researchRunId": "46e25c95-e2ca-45c5-bd53-7e7d665f7d9f",
+        "crossChecks": [],
+        "fieldEvidence": [
+          {
+            "field": "candidateRule.legalTest",
+            "evidenceIndex": 0
+          },
+          {
+            "field": "candidateRule.formula",
+            "evidenceIndex": 0
+          },
+          {
+            "field": "conditions",
+            "evidenceIndex": 0
+          },
+          {
+            "field": "exceptions",
+            "evidenceIndex": 1
+          }
+        ],
+        "sourceCandidateId": "cbb92d94865eead7e16059f9ca32bbbb14edf798e83a743dee7bbb805445d011",
+        "validator": {
+          "status": "REVIEW_REQUIRED",
+          "issues": [
+            "UNKNOWN_COMMENCEMENT",
+            "MIRROR_FIDELITY_REVIEW_REQUIRED",
+            "INDEPENDENT_CROSS_CHECK_REQUIRED"
+          ],
+          "semanticLegalApproval": false
+        },
+        "runtimeExecutable": false
+      }
+    }
+  ],
+  "integrityHash": "6f3bb25d0e4d80fed881039714c5bcf1e9090486919be3183f826eb724f2af11"
+}

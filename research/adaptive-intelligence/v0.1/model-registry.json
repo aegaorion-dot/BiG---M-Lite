@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Muse-BiG-M Regulatory v0.1",
+    "datasetHash": "97a30357cd0d31ddc588ec07ddb52b7badb0e2d0843ed9f0cc00f1d9fa0960ac",
+    "datasetVersion": "aif-regulatory-v0.1",
+    "baseModel": "accounts/fireworks/models/muse-spark-open-nvfp4",
+    "method": "LORA_SFT",
+    "provider": "FIREWORKS",
+    "trainingStatus": "NOT_SUBMITTED",
+    "state": "CANDIDATE",
+    "active": false,
+    "providerModelId": null,
+    "history": []
+  }
+]

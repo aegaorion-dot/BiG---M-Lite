@@ -7,4 +7,25 @@ data/
 !.env.example
 .tools/
 .phase2-gate-output.txt
+.phase3-test-output.txt
+.phase3-demo-output.txt
 research/country-pack-fabric/captures/
+.phase4-test-output.txt
+.phase4-demo-output.txt
+.phase5-test-output.txt
+.historical-test-output.txt
+
+# demo artefacts are reproduced by the recorders, not versioned
+research/live-tax-discovery/
+research/demo-videos/*/workspace/
+research/demo-videos/*/frames/
+research/demo-videos/*/profile-*/
+research/_*
+*.bak-encoding
+eng.traineddata
+
+# recorded demo workspaces are large runtime artefacts, only the video + evidence stay
+research/demo-videos/*/configuration-research/
+research/demo-videos/*/tax/
+research/demo-videos/*/store.json
+research/demo-videos/*/language-packs.json

@@ -1,0 +1,5 @@
+RECEIPT
+Date: 10/11/2026
+Vendor: Synthetic Supplies
+Total IDR 500000
+Payment: cash

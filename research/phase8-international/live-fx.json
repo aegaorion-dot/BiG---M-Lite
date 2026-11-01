@@ -1,0 +1,17 @@
+{
+  "role": "fx",
+  "at": "2026-10-29T07:54:21.981Z",
+  "success": true,
+  "latencyMs": 785,
+  "result": {
+    "provider": "frankfurter-v2",
+    "base": "SGD",
+    "quote": "IDR",
+    "date": "2026-06-01",
+    "rate": "13973",
+    "reference": "https://api.frankfurter.dev/v2/rate/SGD/IDR?date=2026-06-01",
+    "requests": 1
+  },
+  "failure": null,
+  "credentialsRecorded": false
+}

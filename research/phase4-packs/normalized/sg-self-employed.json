@@ -1,0 +1,3589 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "SG-IRAS",
+  "jurisdictionCode": "SG",
+  "metadata": {
+    "title": "IRAS | Self-Employed Individuals including Platform Workers and Partnerships",
+    "officialDocumentId": null,
+    "language": "en",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "8b59fda9-e4bb-4c01-9862-5247e922bc59",
+    "rawContentHash": "597aae93eb1540716c16627025b840ec068c19a6a478c68e36adbb935d9502f3",
+    "sourceUrl": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships",
+    "finalUrl": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships",
+    "retrievedAt": "2026-10-28T22:40:10.890Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "IRAS",
+    "authorityName": "Inland Revenue Authority of Singapore",
+    "sourceRole": "TAX_AUTHORITY",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/597aae93eb1540716c16627025b840ec068c19a6a478c68e36adbb935d9502f3.bin",
+    "rawContentHash": "597aae93eb1540716c16627025b840ec068c19a6a478c68e36adbb935d9502f3"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/597aae93eb1540716c16627025b840ec068c19a6a478c68e36adbb935d9502f3.bin",
+      "rawContentHash": "597aae93eb1540716c16627025b840ec068c19a6a478c68e36adbb935d9502f3"
+    },
+    "metaTags": [
+      "<meta charset=\"utf-8\">",
+      "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "<meta name=\"theme-color\" content=\"#2D7BB9\">",
+      "<meta name=\"robots\" content=\"follow\">",
+      "<meta property=\"og:title\" content=\"IRAS | Self-Employed Individuals including Platform Workers and Partnerships\" />",
+      "<meta property=\"og:description\" content=\"Find out on your tax obligations as a self-employed individual including platform worker and partnership.\" />",
+      "<meta property=\"og:url\" content=\"https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships\" />",
+      "<meta property=\"og:type\" content=\"website\" />",
+      "<meta property=\"og:site_name\" content=\"Default\" />",
+      "<meta name=\"description\" content=\"Find out on your tax obligations as a self-employed person, platform workers and partnership.\" />"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Home Taxes Individual Income Tax Self-Employed Individuals including Platform Workers and Partnerships Individual Income Tax For Self-Employed Persons, Platform Workers and Partnerships (including trade, business, profession and vocation income) Am I a self-employed person? Check if you are considered a self-employed person Tax obligations of self-employed individuals Filing responsibilities of self-employed individuals Basic guide for self-employed individuals Tax obligations by industry, trade or profession Filing responsibilities of self-employed individuals including individual partners Tax obligations of foreigners ceasing business or leaving Singapore permanently Pre-filling of income for self-employed individuals (SEIs) Keeping proper records and accounts No-Filing Service (NFS) for self-employed individuals (SEIs) under the Pre-filling of Income initiative Businesses involved in the Beverage Container Return Scheme (BCRS) Am I a platform worker? Check if you are considered a platform worker Tax obligations of platform workers Filing responsibilities of platform workers Basic guide for platform workers Filing responsibilities of platform workers Pre-filling of income for self-employed persons and platform workers Direct Notice of Assessment (D-NOA) or No-Filing Service (NFS) for self-employed persons and platform workers Keeping proper records and accounts Tax obligations of partnerships Filing responsibilities of precedent and individual partners Basic guide for Partnerships Tax obligations of foreigners ceasing business or leaving Singapore permanently Types of Partnerships Withholding Tax Income from property rented out (for partnerships) Keeping proper records and accounts Responsibilities of precedent partners Tax obligations of partnerships closing down (striking-off/de-registering) Tax obligations by industry, trade or profession For specific industries/professions such as private hire car drivers, social media influencers etc Filing and payment Managing myTax Portal account Set up myTax Portal account using Singpass or Singpass Foreign user Account (SFA), and update particulars and contact details Update particulars Managing your individual client's income tax matters via myTax Portal Singpass Foreign user Account (SFA) for foreign individuals Setting up myTax Portal account Understanding my Income Tax filing Use the filing checker to check if you need to file a tax return Individuals required to file tax Filing checker What is taxable, what is not Tax reliefs, rebates & deductions e-Filing your Income Tax Return Common filing mistakes Filing a paper Income Tax Return Making changes after filing/receiving tax bill Late filing or non-filing of Individual Income Tax Returns (Form B1/B/P/M) Tax Season 2026 - About your tax bill Tax Season 2026 - All you need to know Calculating my business income Check taxability of income and report revenue, deductions etc as part of your total personal income Reporting income not reported previously Common filing mistakes to avoid Business expenses and deductions Preparing statement of accounts Types of taxable business income Calculating business income Business expenses and deductions Know the types of business expenses that are allowable or disallowable as deductions Tax residency and tax rates Check if you are a tax resident, and learn the benefits of tax residency in Singapore Working out my tax residency Individual Income Tax rates Sample Income Tax calculations Claiming Exemptions under Avoidance of Double Taxation Agreements (DTAs) Applying for Certificate of Residence Claiming for Foreign Tax Credit Tax reliefs, rebates and deductions Check the tax deductions to claim (reliefs and rebates are applicable to tax residents only) Receive tax bill, pay tax, check refunds Read your tax bill and find out the different payment modes Getting my tax assessment Understanding my tax assessment Making changes after filing/receiving tax bill How to pay Refunds Experiencing difficulties in paying your tax? Late payment or non-payment of taxes Related Content for Individuals I have other side or personal income Check its taxability in this comprehensive list, then check if you need to file a tax return using the filing checker Special tax schemes Tax schemes relating to Individual Income Tax at a glance Angel Investors Tax Deduction Scheme (AITD) Not Ordinarily Resident (NOR) Scheme SRS contributions and tax relief Tax on SRS withdrawals Withholding Tax on SRS Consequences of non-compliance Learn about IRAS' audit processes and penalties for incorrect income reporting Errors in tax returns Getting individuals to comply Audits on individuals by IRAS Voluntary disclosure of errors Make a voluntary disclosure of any omission or under-declaration of income Report tax evasion Report someone to IRAS if you think they are evading tax Investigation by IRAS Reporting tax evasion or fraud",
+    "blocks": [
+      {
+        "locator": "html:main:231956",
+        "text": "Home Taxes Individual Income Tax Self-Employed Individuals including Platform Workers and Partnerships Individual Income Tax For Self-Employed Persons, Platform Workers and Partnerships (including trade, business, profession and vocation income) Am I a self-employed person? Check if you are considered a self-employed person Tax obligations of self-employed individuals Filing responsibilities of self-employed individuals Basic guide for self-employed individuals Tax obligations by industry, trade or profession Filing responsibilities of self-employed individuals including individual partners Tax obligations of foreigners ceasing business or leaving Singapore permanently Pre-filling of income for self-employed individuals (SEIs) Keeping proper records and accounts No-Filing Service (NFS) for self-employed individuals (SEIs) under the Pre-filling of Income initiative Businesses involved in the Beverage Container Return Scheme (BCRS) Am I a platform worker? Check if you are considered a platform worker Tax obligations of platform workers Filing responsibilities of platform workers Basic guide for platform workers Filing responsibilities of platform workers Pre-filling of income for self-employed persons and platform workers Direct Notice of Assessment (D-NOA) or No-Filing Service (NFS) for self-employed persons and platform workers Keeping proper records and accounts Tax obligations of partnerships Filing responsibilities of precedent and individual partners Basic guide for Partnerships Tax obligations of foreigners ceasing business or leaving Singapore permanently Types of Partnerships Withholding Tax Income from property rented out (for partnerships) Keeping proper records and accounts Responsibilities of precedent partners Tax obligations of partnerships closing down (striking-off/de-registering) Tax obligations by industry, trade or profession For specific industries/professions such as private hire car drivers, social media influencers etc Filing and payment Managing myTax Portal account Set up myTax Portal account using Singpass or Singpass Foreign user Account (SFA), and update particulars and contact details Update particulars Managing your individual client's income tax matters via myTax Portal Singpass Foreign user Account (SFA) for foreign individuals Setting up myTax Portal account Understanding my Income Tax filing Use the filing checker to check if you need to file a tax return Individuals required to file tax Filing checker What is taxable, what is not Tax reliefs, rebates & deductions e-Filing your Income Tax Return Common filing mistakes Filing a paper Income Tax Return Making changes after filing/receiving tax bill Late filing or non-filing of Individual Income Tax Returns (Form B1/B/P/M) Tax Season 2026 - About your tax bill Tax Season 2026 - All you need to know Calculating my business income Check taxability of income and report revenue, deductions etc as part of your total personal income Reporting income not reported previously Common filing mistakes to avoid Business expenses and deductions Preparing statement of accounts Types of taxable business income Calculating business income Business expenses and deductions Know the types of business expenses that are allowable or disallowable as deductions Tax residency and tax rates Check if you are a tax resident, and learn the benefits of tax residency in Singapore Working out my tax residency Individual Income Tax rates Sample Income Tax calculations Claiming Exemptions under Avoidance of Double Taxation Agreements (DTAs) Applying for Certificate of Residence Claiming for Foreign Tax Credit Tax reliefs, rebates and deductions Check the tax deductions to claim (reliefs and rebates are applicable to tax residents only) Receive tax bill, pay tax, check refunds Read your tax bill and find out the different payment modes Getting my tax assessment Understanding my tax assessment Making changes after filing/receiving tax bill How to pay Refunds Experiencing difficulties in paying your tax? Late payment or non-payment of taxes Related Content for Individuals I have other side or personal income Check its taxability in this comprehensive list, then check if you need to file a tax return using the filing checker Special tax schemes Tax schemes relating to Individual Income Tax at a glance Angel Investors Tax Deduction Scheme (AITD) Not Ordinarily Resident (NOR) Scheme SRS contributions and tax relief Tax on SRS withdrawals Withholding Tax on SRS Consequences of non-compliance Learn about IRAS' audit processes and penalties for incorrect income reporting Errors in tax returns Getting individuals to comply Audits on individuals by IRAS Voluntary disclosure of errors Make a voluntary disclosure of any omission or under-declaration of income Report tax evasion Report someone to IRAS if you think they are evading tax Investigation by IRAS Reporting tax evasion or fraud",
+        "anchorId": "538e90574470680a249c7192bc26ae0505d81b8bb583ac2588331724902fb445"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "538e90574470680a249c7192bc26ae0505d81b8bb583ac2588331724902fb445",
+      "locator": "html:main:231956",
+      "start": 0,
+      "end": 4910,
+      "quoteHash": "476ac00ccbabd87ec1f3b69ad535f5edc28b5291088b27b503bfc905af66cc12",
+      "rawContentHash": "597aae93eb1540716c16627025b840ec068c19a6a478c68e36adbb935d9502f3"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships#mainContent",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://go.gov.sg/trusted-sites",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/home",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/our-organisation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/our-organisation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/our-organisation/mission-vision-core-values-and-logo",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/our-organisation/board-members-and-committees",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/our-organisation/senior-management",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/our-organisation/organisation-structure",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/our-organisation/history-and-milestones",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/our-organisation/awards-and-accolades",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/taxes-in-singapore",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/taxes-in-singapore",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/taxes-in-singapore/the-singapore-tax-system",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/taxes-in-singapore/taxes-and-nation-building",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/taxes-in-singapore/encouraging-tax-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/public-engagement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/public-engagement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/public-engagement/public-feedback",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/public-engagement/partnership-with-tax-agents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/annual-reports-and-publications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/annual-reports-and-publications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/annual-reports-and-publications/annual-reports",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/annual-reports-and-publications/taxbytes-iras",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/annual-reports-and-publications/tax-statistics",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/annual-reports-and-publications/publications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/commitment-to-service",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/commitment-to-service",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/what-we-do/commitment-to-service/service-excellence-for-iras",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/social-site",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/social-site",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/social-site/digital-gallery",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/social-site/life-at-iras",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/social-site/partnering-for-progress",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/corporate-governance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/corporate-governance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/corporate-governance/data-protection-statement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/corporate-governance/social-responsibility-statement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/who-we-are/corporate-governance/whistleblowing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/managing-mytax-portal-account",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/what-is-taxable-what-is-not",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/receive-tax-bill-pay-tax-check-refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/consequences-of-non-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/voluntary-disclosure-of-errors-for-reduced-penalties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/report-tax-evasion",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees/basic-guide-for-new-individual-taxpayers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees/understanding-my-income-tax-filing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees/tax-residency-and-tax-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees/what-is-taxable-what-is-not",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees/tax-reliefs-rebates-deductions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees/receive-tax-bill-pay-tax-check-refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees/scenario-based-faqs-for-working-in-singapore-and-abroad",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees/special-tax-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees/consequences-of-non-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employees/voluntary-disclosure-of-errors-for-reduced-penalties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/am-i-a-self-employed-person",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-self-employed-persons",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/am-i-a-platform-worker",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-platform-workers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-partnerships",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-by-industry-trade-or-profession",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/keeping-proper-records-and-accounts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/understanding-tax-filing-and-payment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/calculating-my-business-income",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/business-expenses-and-deductions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/consequences-of-non-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/voluntary-disclosure-of-errors-for-reduced-penalties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/report-tax-evasion",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/businesses-involved-in-the-beverage-container-return-scheme-(bcrs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/non-residents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employers/filing-employee-earnings-(ir8a-appendix-8a-appendix-8b-ir8s)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employers/information-to-share-with-employees",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employers/auto-inclusion-scheme-(ais)-for-employment-income",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employers/understanding-the-tax-treatment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employers/retrenchment-exercise-in-the-company",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employers/tax-clearance-for-foreign-spr-employees-(ir21)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/employers/digital-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation/i-have-retired",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation/i-have-been-retrenched",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation/i-have-a-newborn",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation/i-am-affected-by-covid-19",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation/i-have-other-side-or-personal-income",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation/i-am-starting-a-new-business",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation/i-have-rented-out-my-property",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation/i-received-an-audit-letter",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation/my-family-member-has-passed-away",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/my-situation/scenario-based-faqs-for-working-in-singapore-and-abroad",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-filing-season-2026",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/basic-guide-to-corporate-income-tax-for-companies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/tax-residency-of-a-company-certificate-of-residence",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/record-keeping-requirements",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/obtaining-a-copy-of-documents-issued-by-iras",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/corporate-income-tax-rate-rebates-and-tax-exemption-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/updating-company-particulars",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/basics-of-corporate-income-tax/e-learning-videos-webinars-seminars-on-corporate-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/estimated-chargeable-income-(eci)-filing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/form-c-s-form-c-s-(lite)-form-c-filing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/form-c-s-form-c-s-(lite)-form-c-filing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/form-c-s-form-c-s-(lite)-form-c-filing/overview-of-form-c-s-form-c-s-(lite)-form-c",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/form-c-s-form-c-s-(lite)-form-c-filing/guidance-on-filing-form-c-s-form-c-s-(lite)-form-c",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/form-c-s-form-c-s-(lite)-form-c-filing/preparing-a-tax-computation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/form-c-s-form-c-s-(lite)-form-c-filing/penalties-for-errors-in-tax-returns",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/form-c-s-form-c-s-(lite)-form-c-filing/late-filing-or-non-filing-of-Corporate-Income-Tax-Returns-form-c-s-form-c-s-(Lite)-form-c",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/form-c-s-form-c-s-(lite)-form-c-filing/after-filing-form-c-s-form-c-s-(lite)-form-c",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/form-c-s-form-c-s-(lite)-form-c-filing/using-accounting-software-to-prepare-file-form-c-s-seamlessly",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-payment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-payment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-payment/paying-corporate-income-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-payment/experiencing-difficulties-in-paying-your-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-payment/late-payment-or-non-payment-of-corporate-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-compliance/best-practices-when-writing-to-iras",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-compliance/getting-companies-to-comply",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-compliance/voluntary-disclosure-of-errors-for-reduced-penalties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-compliance/international-compliance-assurance-programme-(icap)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-compliance/enhanced-taxpayer-relationship-(etr)-programme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-compliance/about-tax-governance-and-tax-risk-management",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/corporate-income-tax-compliance/tax-evasion-or-fraud",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/taxable-non-taxable-income",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/companies-receiving-foreign-income",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/business-expenses",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/claiming-allowances",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/claiming-reliefs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/unutilised-items-(capital-allowances-trade-losses-donations)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/income-deductions-for-companies/applying-for-tax-incentives",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/dormant-companies-or-companies-closing-down",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/dormant-companies-or-companies-closing-down",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/dormant-companies-or-companies-closing-down/dormant-companies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/dormant-companies-or-companies-closing-down/companies-applying-for-strike-off-to-cease-registration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/dormant-companies-or-companies-closing-down/companies-under-liquidation-judicial-management-receivership",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-industries",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-industries",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-industries/car-rental-companies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-industries/car-tuition-companies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-industries/companies-servicing-only-related-companies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-industries/construction-companies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-industries/investment-holding-companies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-industries/property-developers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-industries/shipping-companies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-topics",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-topics",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-topics/adopting-financial-reporting-standard-(frs)-109-39-the-tax-implications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-topics/advance-ruling-system-for-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-topics/transfer-pricing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-topics/interbank-offered-rate-reform-the-tax-implications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-topics/tax-treatment-of-interest-gains-or-profits-derived-from-negotiable-certificates-of-deposit-by-non-financial-institutions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-topics/classification-of-foreign-entities-for-singapore-income-tax-purposes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/corporate-income-tax/specific-topics/income-tax-treatment-of-deposits-under-the-beverage-container-return-scheme-(bcrs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners/2026-property-tax-bill",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners/property-tax-at-a-glance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners/annual-value",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners/property-tax-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners/information-for-hdb-flat-owners",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners/tax-bills-and-notices",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners/view-statement-of-account-or-view-bills-and-notices",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners/payments",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners/object-to-annual-value",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners/property-tax-reliefs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-owners/your-situation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-buyers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-buyers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-buyers/buying-hdb-flats",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-buyers/buying-private-residential-properties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-buyers/buying-vacant-land-or-development-sites",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-buyers/buying-other-types-of-properties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-professionals",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-professionals",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-professionals/real-estate-housing-agents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-professionals/appraisers-valuer",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-professionals/developer",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-professionals/architect",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/property-professionals/lawyer-legal-professional",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/other-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/other-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/other-services/check-outstanding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/other-services/change-mailing-address",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/other-services/interactive-property-tax-calculators",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/other-services/check-rental-transactions-from-other-government-agencies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/tax-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/tax-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/tax-compliance/property-tax-audits-by-iras",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/tax-compliance/tax-evasion-or-fraud",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/property-tax/tax-compliance/update-iras-to-avoid-penalties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/goods-and-services-tax-(gst)-what-it-is-and-how-it-works",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/current-gst-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/responsibilities-of-a-gst-registered-business",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/invoicing-price-display-and-record-keeping",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/gst-and-bcrs-deposit",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/e-learning-course-overview-of-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-invoicenow-requirement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration/do-i-need-to-register-for-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration/factors-to-consider-before-registering-voluntarily-for-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration/applying-for-gst-registration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration/guide-to-completing-gst-registration-form",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration/applying-for-exemption-from-gst-registration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration/applying-for-special-gst-registration-(group-registration-and-divisional-registration)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration/cancelling-gst-registration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration/guarantee",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-registration-deregistration/voluntary-disclosure-for-wrongful-collection-of-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/charging-gst-(output-tax)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/charging-gst-(output-tax)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/charging-gst-(output-tax)/when-to-charge-goods-and-services-tax-(gst)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/charging-gst-(output-tax)/when-to-charge-0-gst-(zero-rate)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/charging-gst-(output-tax)/when-is-gst-not-charged",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/charging-gst-(output-tax)/common-scenarios---do-i-charge-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/charging-gst-(output-tax)/when-to-report-supplies-in-gst-returns",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/charging-gst-(output-tax)/foreign-currency-transactions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/claiming-gst-(input-tax)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/claiming-gst-(input-tax)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/claiming-gst-(input-tax)/conditions-for-claiming-input-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/claiming-gst-(input-tax)/importing-of-goods",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/claiming-gst-(input-tax)/claim-input-tax-in-the-correct-accounting-period",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/claiming-gst-(input-tax)/claiming-input-tax-incurred-to-make-exempt-supplies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/claiming-gst-(input-tax)/claiming-gst-incurred-before-gst-registration-incorporation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/claiming-gst-(input-tax)/paying-suppliers-after-claiming-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/claiming-gst-(input-tax)/common-scenarios---do-i-claim-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/overview-of-gst-e-filing-process",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/completing-gst-returns",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/correcting-errors-made-in-gst-return-(filing-gst-f7)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/gst-filing-due-dates-and-requests-for-extension",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/late-filing-or-non-filing-of-GST-returns-f5-f8",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/check-status-of-gst-return",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/filing-gst/retrieve-acknowledgements-notices-letters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-payments-refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-payments-refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-payments-refunds/how-to-pay",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-payments-refunds/experiencing-difficulties-in-paying-your-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-payments-refunds/late-payment-or-non-payment-of-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-payments-refunds/refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-payments-refunds/check-account-summary-payments",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-payments-refunds/revising-estimated-assessment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/local-businesses",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-and-digital-economy/overseas-businesses",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/general-gst-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/general-gst-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/general-gst-schemes/cash-accounting-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/general-gst-schemes/discounted-sale-price-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/general-gst-schemes/gross-margin-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/general-gst-schemes/hand-carried-exports-scheme-(hces)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/general-gst-schemes/import-gst-deferment-scheme-(igds)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/general-gst-schemes/major-exporter-scheme-(mes)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/general-gst-schemes/tourist-refund-scheme-(for-retailers)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/general-gst-schemes/zero-gst-(zg)-warehouse-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/industry-specific-gst-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/industry-specific-gst-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/industry-specific-gst-schemes/approved-contract-manufacturer-and-trader-(acmt)-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/industry-specific-gst-schemes/approved-import-gst-suspension-scheme-(aiss)-(for-aerospace-players)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/industry-specific-gst-schemes/approved-marine-customer-scheme-(amcs)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/industry-specific-gst-schemes/approved-marine-fuel-trader-(mft)-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/industry-specific-gst-schemes/approved-refiner-and-consolidator-scheme-(arcs)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/industry-specific-gst-schemes/approved-third-party-logistics-(3pl)-company-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/industry-specific-gst-schemes/specialised-warehouse-scheme-(sws)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/advertising",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/aerospace-and-aviation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/air-and-sea-containers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/auction",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/biomedical",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/bunkering",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/carbon-credits",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/charities-and-non-profit-organisations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/construction",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/consultancy-and-professional-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/digital-payment-tokens",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/e-commerce",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/energy",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/finance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/gold-jewellery",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/hotel-and-food-beverage",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/logistics-and-freight-forwarding",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/manufacturing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/marine-and-shipping",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/migrant-domestic-worker-employment-agencies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/motor-trade",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/pawnbroking",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/real-estate",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/reits-and-registered-business-trusts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/retail",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/telecommunications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/specific-business-sectors/travel",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/getting-it-right",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/getting-it-right",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/getting-it-right/wrongful-collection-of-gst-by-gst-registered-persons",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/getting-it-right/voluntary-compliance-initiatives",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/getting-it-right/voluntary-disclosure-of-errors-for-reduced-penalties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/getting-it-right/gst-audits-by-iras",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/getting-it-right/object-to-audit-assessment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/getting-it-right/tax-evasion-or-fraud",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/getting-it-right/tax-governance-and-tax-risk-management",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/other-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/other-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/other-services/notifying-iras-of-changes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/other-services/changing-gst-accounting-periods",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/other-services/advance-ruling-system-for-gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/other-services/gst-registered-companies-under-liquidation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/other-services/request-for-gst-technical-clarification",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-rate-change",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-rate-change",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-rate-change/gst-rate-change-for-business",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/gst-rate-change/gst-rate-change-for-consumers1",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/tourist-refund-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/buying-from-a-gst-registered-business",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/consumers-importing-goods-into-singapore",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/travellers-bringing-goods-into-singapore",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/purchasing-remote-services-from-overseas-service-providers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/gst-on-imported-low-value-goods",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/consumers/checking-if-a-business-is-gst-registered",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property/basics-of-stamp-duty-for-property",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property/buying-or-acquiring-property",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property/selling-or-disposing-property",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property/renting-a-property",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property/paying-stamp-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property/appeals-refunds-reliefs-and-remissions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property/getting-it-right",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property/other-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property-holding-entities-('phe')",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property-holding-entities-('phe')",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property-holding-entities-('phe')/basics-of-stamp-duty-for-property-holding-entities",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property-holding-entities-('phe')/buying-or-acquiring-property-holding-entities",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property-holding-entities-('phe')/selling-or-disposing-property-holding-entities",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property-holding-entities-('phe')/paying-stamp-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property-holding-entities-('phe')/claiming-refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property-holding-entities-('phe')/getting-it-right",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-property-holding-entities-('phe')/other-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-shares",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-shares",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-shares/basics-of-stamp-duty-for-shares",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-shares/mortgaging-shares",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-shares/buying-or-acquiring-shares",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-shares/paying-stamp-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-shares/claiming-refunds-reliefs-and-remissions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-shares/getting-it-right",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/stamp-duty/for-shares/other-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/list-of-dtas-limited-dtas-and-eoi-arrangements",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/exchange-of-information-arrangements",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/multilateral-convention-on-mutual-administrative-assistance-in-tax-matters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/multilateral-convention-to-implement-tax-treaty-related-measures-to-prevent-base-erosion-and-profit-shifting",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/common-reporting-standard-(crs)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/common-reporting-standard-(crs)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/common-reporting-standard-(crs)/crs-overview-and-latest-developments",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/common-reporting-standard-(crs)/crs-registration-and-deregistration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/common-reporting-standard-(crs)/crs-filing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/common-reporting-standard-(crs)/crs-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/common-reporting-standard-(crs)/basic-information-for-account-holders-of-financial-institutions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/crypto-asset-reporting-framework-(carf)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/crypto-asset-reporting-framework-(carf)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/crypto-asset-reporting-framework-(carf)/carf-overview-and-latest-developments",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/foreign-account-tax-compliance-act-(fatca)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/foreign-account-tax-compliance-act-(fatca)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/foreign-account-tax-compliance-act-(fatca)/fatca-overview-and-latest-developments",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/foreign-account-tax-compliance-act-(fatca)/fatca-registration-and-deregistration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/foreign-account-tax-compliance-act-(fatca)/fatca-filing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/foreign-account-tax-compliance-act-(fatca)/fatca-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/foreign-account-tax-compliance-act-(fatca)/basic-information-for-account-holders-of-financial-institutions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/singapore's-competent-authorities-for-international-tax-agreements",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/list-of-dtas-limited-dtas-and-eoi-arrangements",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/dispute-prevention-and-resolution",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/dispute-prevention-and-resolution",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/dispute-prevention-and-resolution/mutual-agreement-procedure-(map)-and-arbitration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/dispute-prevention-and-resolution/bilateral-multilateral-advance-pricing-arrangements",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/dispute-prevention-and-resolution/international-compliance-assurance-programme-(icap)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/country-by-country-reporting-(cbcr)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/transfer-pricing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/overview-of-withholding-tax-(WHT)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/basics-of-withholding-tax/types-of-payment-and-withholding-tax-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-company",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-company",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-company/payments-that-are-subject-to-withholding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-company/payments-that-are-not-subject-to-withholding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-director",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-director",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-director/board-director",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-director/tax-obligations-for-non-resident-director",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-director/remueration-of-non-resident-director",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-director/tax-refund-for-resident-director",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-professional-(consultant-trainer-coach-etc-)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-professional-(consultant-trainer-coach-etc-)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-professional-(consultant-trainer-coach-etc-)/non-resident-professional",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-professional-(consultant-trainer-coach-etc-)/tax-obligations-for-non-resident-professional",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-professional-(consultant-trainer-coach-etc-)/treatment-of-income-for-non-resident-professional",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-professional-(consultant-trainer-coach-etc-)/non-resident-professional-vs-employee",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-professional-(consultant-trainer-coach-etc-)/tax-treaties-and-non-resident-professional",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-professional-(consultant-trainer-coach-etc-)/non-resident-arbitrator",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-professional-(consultant-trainer-coach-etc-)/non-resident-mediator",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-professional-(consultant-trainer-coach-etc-)/tax-refund-for-resident-professional",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-public-entertainer-(artiste-musician-sportsman-etc-)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-public-entertainer-(artiste-musician-sportsman-etc-)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-public-entertainer-(artiste-musician-sportsman-etc-)/non-resident-public-entertainer",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-public-entertainer-(artiste-musician-sportsman-etc-)/tax-obligations-of-non-resident-public-entertainer",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-public-entertainer-(artiste-musician-sportsman-etc-)/treatment-of-income-for-non-resident-public-entertainer",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-public-entertainer-(artiste-musician-sportsman-etc-)/withholding-tax-calculations-for-non-resident-public-entertainer",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-public-entertainer-(artiste-musician-sportsman-etc-)/exemptions-of-income-for-non-resident-public-entertainer",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-public-entertainer-(artiste-musician-sportsman-etc-)/tax-refund-for-resident-public-entertainer",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withdrawal-from-supplementary-retirement-scheme-(srs)-account-(foreigners-prs)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withdrawal-from-supplementary-retirement-scheme-(srs)-account-(foreigners-prs)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withdrawal-from-supplementary-retirement-scheme-(srs)-account-(foreigners-prs)/tax-obligations-for-srs-withdrawal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withdrawal-from-supplementary-retirement-scheme-(srs)-account-(foreigners-prs)/calculating-withholding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-filing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-filing",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-filing/withholding-tax-filing-and-payment-due-date",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-filing/claim-of-relief-under-the-avoidance-of-double-taxation-agreement-(dta)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-filing/common-errors-made-by-payers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-filing/how-to-file",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-filing/making-amendment-after-filing-claiming-refund",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-payments",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-payments",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-payments/how-to-pay",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-payments/late-payment-and-non-payment-of-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-payments/confirmation-of-payment-(cp)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-reporting-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-reporting-compliance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-reporting-compliance/voluntary-disclosure-of-errors-for-reduced-penalties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/withholding-tax-reporting-compliance/tax-evasion-or-fraud",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/pillar-2-top-up-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/pillar-2-top-up-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/pillar-2-top-up-taxes/global-anti-base-erosion-(globe)-rules-and-domestic-top-up-tax-(dtt)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/pillar-2-top-up-taxes/e-learning-on-global-anti-base-erosion-(globe)-rules-and-domestic-top-up-tax-(dtt)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/pillar-2-top-up-taxes/registration-for-multinational-enterprise-top-up-tax-and-domestic-top-up-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/trusts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/trusts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/trusts/basics-of-income-tax-of-estate-trust",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/trusts/guide-for-administrators-or-trustees",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/trusts/working-out-estate-trust-income-tax-by-trustee-and-beneficiary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/trusts/filing-estate-trust-income-tax-(form-t)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/trusts/paying-estate-trust-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/trusts/change-of-tax-reference-numbers-for-estates--trusts--unit-trusts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/gambling-duties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/gambling-duties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/gambling-duties/basics-of-gambling-duties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/gambling-duties/Betting-Lotteries-and-Sweepstakes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/gambling-duties/Gaming-Machines-Tombola-Continuous-Lucky-Draw-and-Single-Scheduled-Lottery",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/casino-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/casino-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/casino-tax/filing-paying-casino-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/casino-tax/income-tax-treatment-for-international-market-agents-representatives",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/casino-tax/computing-casino-tax-(gross-gaming-revenue-casino-tax-rates)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/charities",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/charities",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/charities/charities-ipcs-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/charities/tax-deduction-scheme-for-grantmakers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/charities/donations-tax-deductions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/bodiesofpersons",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/bodiesofpersons",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/bodiesofpersons/overview_bodiesofpersons",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/bodiesofpersons/filing-clubs-and-associations-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/bodiesofpersons/after-filing-formP1",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/bodiesofpersons/paying-taxes-or-claiming-refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/bodiesofpersons/FAQs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/estate-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/estate-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/estate-duty/estate-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/estate-duty/estate-duty-glossary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/estate-duty/faqs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/estate-duty/estate-duty-forms",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/estate-duty/getting-estate-duty-clearance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/estate-duty/how-to-calculate-estate-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/estate-duty/late-payment-or-non-payment-of-estate-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/estate-duty/trust-(including-income-from-estates)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/other-taxes/estate-duty/how-to-pay",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/SME-Cash-Grant-2026",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/enterprise-innovation-scheme-(eis)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/refundable-investment-credit-(ric)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/progressive-wage-credit-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/progressive-wage-credit-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/progressive-wage-credit-scheme/pwcs-glossary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/uplifting-employment-credit",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/senior-employment-credit-(sec)-cpf-transition-offset-(cto)-and-enabling-employment-credit-(eec)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/self-review-for-eligibility-of-government-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/skillsfuture-enterprise-credit",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/medishield-life-(mshl)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/careshield-life-(cshl)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/corporate-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/corporate-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/corporate-income-tax/business-and-ipc-partnership-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/corporate-income-tax/double-tax-deduction-for-internationalisation-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/general-gst-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/general-gst-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/general-gst-schemes/cash-accounting-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/general-gst-schemes/discounted-sale-price-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/general-gst-schemes/gross-margin-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/general-gst-schemes/hand-carried-exports-scheme-(hces)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/general-gst-schemes/major-exporter-scheme-(mes)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/general-gst-schemes/tourist-refund-scheme-(trs)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/general-gst-schemes/zero-gst-(zg)-warehouse-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/industry-specific-gst-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/industry-specific-gst-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/industry-specific-gst-schemes/approved-contract-manufacturer-and-trader-(acmt)-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/industry-specific-gst-schemes/approved-import-gst-suspension-scheme-(aiss)-(for-aerospace-players)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/industry-specific-gst-schemes/approved-marine-customer-scheme-(amcs)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/industry-specific-gst-schemes/approved-marine-fuel-trader-(mft)-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/industry-specific-gst-schemes/approved-refiner-and-consolidator-scheme-(arcs)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/industry-specific-gst-schemes/approved-third-party-logistics-(3pl)-company-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/gst/industry-specific-gst-schemes/specialised-warehouse-scheme-(sws)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/individual-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/individual-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/individual-income-tax/angel-investors-tax-deduction-scheme-(aitd)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/individual-income-tax/not-ordinarily-resident-(nor)-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/individual-income-tax/srs-contributions-and-tax-relief",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/individual-income-tax/tax-on-srs-withdrawals",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/schemes/individual-income-tax/withholding-tax-on-srs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/amend-tax-bill",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/appeal-penalty-waiver",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/apply-extension-of-time-to-file",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/apply-for-payment-plan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/check-employment-income-status",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/file-income-tax-return",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/manage-tax-agent-authorisation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/mytax-mail",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/pay-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/search-ais-organisation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/update-contact-details",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/update-duplicate-relief-claim",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/view-account-summary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/view-giro-plan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/view-individual-tax-notices",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees/view-transfer-parenthood-tax-rebate-(ptr)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employees",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/file-income-tax-return",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/search-commission-paying-organisation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/apply-for-eis-cash-payout",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/apply-extension-of-time-to-file",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/view-individual-tax-notices",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/amend-tax-bill",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/update-duplicate-relief-claim",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/view-transfer-PTR",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/view-account-summary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/pay-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/apply-manage-giro-plan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/view-giro-plan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/appeal-for-penalty-waiver",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/update-contact-notification-preferences",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed/mytax-mail",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/self-employed",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/intermediaries-of-self-employed-persons-(taxi-drivers-private-hire-car-drivers)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/intermediaries-of-self-employed-persons-(taxi-drivers-private-hire-car-drivers)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/intermediaries-of-self-employed-persons-(taxi-drivers-private-hire-car-drivers)/submit-income-records-for-self-employed",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/intermediaries-of-self-employed-persons-(taxi-drivers-private-hire-car-drivers)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers/mytax-mail",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers/pay-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers/progressive-wage-credit-scheme-eligibility-search-and-breakdown-request",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers/register-for-ais",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers/search-ais-organisation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers/senior-employment-credit-enabling-employment-credit-and-cpf-transition-offset-eligibility-search-and-breakdown-request",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers/submit-employment-income-records",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers/tax-clearance---file-form-ir21",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers/tax-clearance---view-form-ir21-records",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers/tax-clearance---view-tax-clearance-notices-letters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers/uplifting-employment-credit-(uec)---eligibility-search-and-breakdown-request",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/employers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships/file-partnership-income-tax-return",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships/apply-for-extension-of-time-to-file",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships/appeal-for-penalty-waiver",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships/update-partnership-contact-details",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships/mytax-mail",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships/apply-for-eis-cash-payout",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships/view-eis-cash-payout-application-status",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships/submit-eis-enhanced-deduction--allowance-records",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships/view-eis-notices-letters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/partnerships",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/check-statuses-relating-to-corporate-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/view-account-summary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/view-giro-plan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/view-notices-letters---corporate-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/access-tax-agent-e-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/pay-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/apply-manage-giro-plan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/update-notice-preferences-(businesses)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/view-corporate-tax-filing-status",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/access-company-dashboard",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/file-form-c-s-form-c-s-(lite)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents/update-corporate-profile-contact-details",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/companies-tax-agents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/commission-paying-organisations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/commission-paying-organisations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/commission-paying-organisations/e-submission-of-commission",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/commission-paying-organisations/submit-commission-records",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/commission-paying-organisations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/apply-withdraw-for-owner-occupier-tax-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/apply-for-land-remission",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/apply-manage-giro-plan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/apply-house-and-or-unit-number",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/appeal-for-penalty-waiver",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/check-property-tax-balance",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/mytax-mail",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/object-to-annual-value",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/pay-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/property-tax-calculator",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/submit-property-tax-information",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/update-contact-notice-preferences-(individuals)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/update-notice-preferences-(businesses-tax-agents)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/view-account-summary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/view-giro-plan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/view-property-tax-notices-individuals",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/view-property-tax-notices-(businesses-tax-agents)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners/view-property-summary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-owners",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-professionals",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-professionals",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-professionals/apply-house-and-or-unit-number",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-professionals/check-annual-value-of-property",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-professionals/object-to-annual-value",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-professionals/submit-property-tax-information",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-professionals/update-property-ownership",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/property-professionals",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/view-account-summary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/view-cancel-payment-plan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/mytax-mail",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/gst-registered-business-search",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/notices-letters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/file-gst-return-edit-past-return",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/pay-taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/apply-for-payment-plan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/update-notice-preferences-(businesses)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/retrieve-gst-returns-assessments-for-ask-review",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/view-gst-filing-status",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst/update-gst-contact-details",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/gst",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/account--manage-giro-arrangement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/profile--update-contact-details-for-stamp-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/account--pay-stamp-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/account--view-account-summary",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/account--register-a-new-account-id",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/view-notices--letters-and-stamp-certificate",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/check-stamp-certificate-authenticity",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/request-for-access-to-document",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/approve-request-to-access-document",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/sharing-access-to-document",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/search-and-manage-stamping-records",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/requests-amendment-to-stamp-certificate",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/requests-apply-for-assessment-appeal-remission",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/apply-for-refund",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/apply-for-section-15-relief",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/requests-object-to-an-assessment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/stamping-lease-tenancy",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/stamping-mortgage",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/stamping-sale-and-purchase-(for-buyers)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/stamping-sale-and-purchase-(for-sellers)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/stamping-shares",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty/stamping-others---declaration-of-trust-trust-deed",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/stamp-duty",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax/file-s45-form",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax/retrieve-s45-form-(draft)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax/approve-s45-form",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax/submit-s45-form",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax/view-amend-s45-form",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax/view-s45-giro-plan",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax/view-s45-cor-status",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax/view-s45-notices-letters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax/update-notice-preferences-(businesses)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax/update-notice-preferences-(individuals)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/withholding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/apply-for-crs-registration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/check-crs-registration-status",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/view-update-fi-aeoi-profile",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/view-update-my-profile",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/view-aeoi-contact-details",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/view-edit-trustee-documented-trusts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/view-aeoi-e-service-transaction-history",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/submit-crs-or-fatca-return",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/view-submitted-financial-account-report",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/view-aeoi-notices-letters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/email-us-on-aeoi-matters",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)/apply-to-deregister-for-aeoi",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/automatic-exchange-of-information-(crs-and-fatca)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others/iras-bot",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others/corppass",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others/institutions-of-a-public-character-and-qualifying-grantmakers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others/government-payout-schemes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others/singpass-foreign-user-account-(sfa)-for-foreign-individuals",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others/mytax-portal-technical-faq",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others/download-donation-application-submit-records",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others/institutions-of-a-public-character-and-qualifying-grantmakers-cvs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others/key-enhancements-to-mytax-portal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others/service-downtime-for-mytax-portal-enhancement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-services/others",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-businesses-employers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-tax-agents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-tax-agents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-tax-agents/seamlessfilingfromsoftware-(-sffs)-for-tax-agents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-tax-agents/external-value-network-(evn)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-software-developers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-software-developers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-software-developers/become-an--sffs-solution-partner",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-software-developers/accounting-tax-software",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-software-developers/accounting-tax-software",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-software-developers/accounting-tax-software/sffs-solution-partners-framework",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-software-developers/accounting-tax-software/iras-digital-integration-incentive-(dii)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-software-developers/payroll-software",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-software-developers/payroll-software",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-software-developers/payroll-software/how-to-support-ais-submission-as-a-vendor",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/digital-collaboration/for-software-developers/payroll-software/seamlessfilingfromsoftware-(-sffs)-for-tax-clearance-(ir21)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://mytax.iras.gov.sg/login/selection",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/am-i-a-self-employed-person",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-self-employed-persons/basic-guide-for-self-employed-persons",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-by-industry-trade-or-profession",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-self-employed-persons/filing-responsibilities-of-self-employed-persons-(including-individual-partners)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-foreigners-ceasing-business-or-leaving-singapore-permanently",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-self-employed-persons/pre-filling-of-income-for-self-employed-persons",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/keeping-proper-records-and-accounts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-self-employed-persons/dnoa-or-nfs-for-seps-and-pws",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/businesses-involved-in-the-beverage-container-return-scheme-(bcrs",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/am-i-a-platform-worker",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-platform-workers/basic-guide-for-platform-workers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-platform-workers/filing-responsibilities-of-platform-workers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-platform-workers/pre-filling-of-income-for-self-employed-persons-and-platform-workers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-platform-workers/direct-notice-of-assessment-(d-noa)-or-no-filing-service-(nfs)-for-self-employed-persons-and-platform-workers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-platform-workers/keeping-proper-records-and-accounts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-partnerships/basic-guide-for-partnerships",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-foreigners-ceasing-business-or-leaving-singapore-permanently",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-partnerships/types-of-partnerships",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-partnerships/withholding-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-partnerships/basic-guide-for-partnerships#title8",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/keeping-proper-records-and-accounts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-partnerships/responsibilities-of-precedent-partners",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-of-partnerships/tax-obligations-of-partnerships-closing-down-(striking-off-de-registering)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/tax-obligations-by-industry-trade-or-profession",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/managing-mytax-portal-account/update-particulars",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/managing-mytax-portal-account/managing-your-individual-client's-income-tax-matters-via-mytax-portal",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/managing-mytax-portal-account/singpass-foreign-user-account-(sfa)-for-foreign-individuals",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/managing-mytax-portal-account/setting-up-mytax-portal-account",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing/individuals-required-to-file-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing/filing-checker",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/what-is-taxable-what-is-not",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing/e-filing-your-income-tax-return",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing/common-filing-mistakes",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing/filing-a-paper-income-tax-return",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing/making-changes-after-filing-receiving-tax-bill",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing/late-filing-or-non-filing-of-individual-income-tax-returns-form-b1-b-p-m",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing/tax-season-2026---about-your-tax-bill",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/understanding-my-income-tax-filing/tax-season-2026---all-you-need-to-know",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/calculating-my-business-income/reporting-income-previously-not-reported",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/calculating-my-business-income/common-filing-mistakes-to-avoid",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/business-expenses-and-deductions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/calculating-my-business-income/preparing-statement-of-accounts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/what-is-taxable-what-is-not#title2",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/calculating-my-business-income/calculating-business-income",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/self-employed-and-partnerships/business-expenses-and-deductions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/working-out-my-tax-residency",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/individual-income-tax-rates",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/sample-income-tax-calculations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/claiming-exemptions-under-Avoidance-of-Double-Taxation-Agreements-(DTAs)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/apply-for-certificate-of-residence",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/claiming-foreign-tax-credit",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-reliefs-rebates-and-deductions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/receive-tax-bill-pay-tax-check-refunds/getting-my-tax-assessment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/receive-tax-bill-pay-tax-check-refunds/understanding-my-tax-assessment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/receive-tax-bill-pay-tax-check-refunds/making-changes-after-filing-receiving-tax-bill",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/receive-tax-bill-pay-tax-check-refunds/how-to-pay",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/receive-tax-bill-pay-tax-check-refunds/refunds",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/receive-tax-bill-pay-tax-check-refunds/experiencing-difficulties-in-paying-your-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/receive-tax-bill-pay-tax-check-refunds/late-payment-or-non-payment-of-individual-income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/what-is-taxable-what-is-not",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/special-tax-schemes/angel-investors-tax-deduction-scheme-(aitd)",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/special-tax-schemes/not-ordinarily-resident-(nor)-scheme",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/special-tax-schemes/srs-contributions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/special-tax-schemes/tax-on-srs-withdrawals",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/special-tax-schemes/tax-on-srs-withdrawals#title13",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/consequences-of-non-compliance/errors-in-tax-returns",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/consequences-of-non-compliance/getting-individuals-to-comply",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/consequences-of-non-compliance/audits-on-individuals-by-iras",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/voluntary-disclosure-of-errors-for-reduced-penalties",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/report-tax-evasion/investigation-by-iras",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/report-tax-evasion/reporting-tax-evasion-or-fraud",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/careers",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/news-events",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/useful-links",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/subscribe-to-iras-ealerts",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/contact-us",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/feedback",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.facebook.com/irassg",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.instagram.com/irassg/",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.tiktok.com/@irassg",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://x.com/irassg",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://sg.linkedin.com/company/irassg",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCVWvCzqueXUdrT7VdnrnpaQ",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://t.me/irassg",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.whatsapp.com/channel/0029VZzNwbsEAKW8218Tl60R",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/sitemap",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tech.gov.sg/report_vulnerability",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/privacy-statement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.iras.gov.sg/terms-of-use-browser-compatibility",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "fb664607259b0352b9764d985b34fce01833a591eeb1ef33a0a9ad92b3a139f2"
+}

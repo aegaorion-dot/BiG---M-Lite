@@ -13,7 +13,7 @@
 const ISO2_RE = /^[A-Z]{2}$/;
 const ISO3_RE = /^[A-Z]{3}$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
-const LOCALES = Object.freeze(['id', 'en']);
+const LOCALES = Object.freeze(['id', 'en', 'ja']);
 const MODULES = Object.freeze(['sales', 'purchase', 'accounting', 'reports', 'import']);
 
 function isObj(v) {

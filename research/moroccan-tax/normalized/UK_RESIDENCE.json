@@ -1,0 +1,506 @@
+{
+  "schemaVersion": "fabric-envelope/1",
+  "sourceId": "GB-GOVUK",
+  "jurisdictionCode": "GB",
+  "metadata": {
+    "title": "Tax on foreign income: UK residence and tax - GOV.UK",
+    "officialDocumentId": null,
+    "language": "en",
+    "documentKind": "UNCLASSIFIED"
+  },
+  "provenance": {
+    "artifactId": "be383023-b324-4598-8ecd-3a6a9a2586af",
+    "rawContentHash": "41c8873f733d6f47b6c0cbb02548b809bb0cea2aab2b7475996fc5427d9377b0",
+    "sourceUrl": "https://www.gov.uk/tax-foreign-income/residence",
+    "finalUrl": "https://www.gov.uk/tax-foreign-income/residence",
+    "retrievedAt": "2026-10-29T15:01:00.160Z",
+    "normalizerVersion": "fabric-envelope/1"
+  },
+  "authority": {
+    "authorityCode": "GOVUK",
+    "authorityName": "GOV.UK departments (document publisher must be checked)",
+    "sourceRole": "OFFICIAL_GUIDANCE",
+    "legalForce": "REVIEW_REQUIRED"
+  },
+  "temporal": {
+    "publishedAt": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "sourceTemporalAssertions": [],
+    "status": "REVIEW_REQUIRED"
+  },
+  "rawArtifactRef": {
+    "rawStorageRef": "blobs/41c8873f733d6f47b6c0cbb02548b809bb0cea2aab2b7475996fc5427d9377b0.bin",
+    "rawContentHash": "41c8873f733d6f47b6c0cbb02548b809bb0cea2aab2b7475996fc5427d9377b0"
+  },
+  "sourceSpecificMetadata": {
+    "format": "HTML",
+    "payloadRef": {
+      "rawStorageRef": "blobs/41c8873f733d6f47b6c0cbb02548b809bb0cea2aab2b7475996fc5427d9377b0.bin",
+      "rawContentHash": "41c8873f733d6f47b6c0cbb02548b809bb0cea2aab2b7475996fc5427d9377b0"
+    },
+    "metaTags": [
+      "<meta charset=\"utf-8\">",
+      "<meta name=\"govuk:components_gem_version\" content=\"71.0.1\">",
+      "<meta name=\"csrf-param\" content=\"authenticity_token\" />",
+      "<meta name=\"csrf-token\" content=\"sMwPo80KioLhkUFp7MCm4NWIGHDdpxP6v0uF9xvUez92I4a9gKSKtGZ2fpx9AwHyCt4tcPa5_He_PZWxrv57PQ\" />",
+      "<meta name=\"theme-color\" content=\"#1d70b8\">",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+      "<meta property=\"og:image\" content=\"https://www.gov.uk/assets/frontend/govuk-opengraph-image-4196a4d6333cf92aaf720047f56cfd91b3532d7635fc21ebcf0d5897df6b5f77.png\">",
+      "<meta name=\"description\" content=\"Find out whether you need to pay UK tax on foreign income - residence and ‘non-dom’ status, tax returns, claiming relief if you’re taxed twice (including certificates of residence)\">",
+      "<meta property=\"og:site_name\" content=\"GOV.UK\">",
+      "<meta property=\"og:type\" content=\"article\">",
+      "<meta property=\"og:url\" content=\"https://www.gov.uk/tax-foreign-income/residence\">",
+      "<meta property=\"og:title\" content=\"Tax on foreign income\">",
+      "<meta property=\"og:description\" content=\"Find out whether you need to pay UK tax on foreign income - residence and ‘non-dom’ status, tax returns, claiming relief if you’re taxed twice (including certificates of residence)\">",
+      "<meta name=\"twitter:card\" content=\"summary\">",
+      "<meta name=\"csp-nonce\" content=\"brgJYESYu7nLJrv4F0qEqQ==\" />",
+      "<meta name=\"govuk:format\" content=\"guide\">",
+      "<meta name=\"govuk:publishing-app\" content=\"publisher\">",
+      "<meta name=\"govuk:rendering-app\" content=\"frontend\">",
+      "<meta name=\"govuk:schema-name\" content=\"guide\">",
+      "<meta name=\"govuk:content-id\" content=\"56fa5c5b-593b-42ec-8daf-4156dc1f8ca9\">",
+      "<meta name=\"govuk:ga4-base-path\" content=\"/tax-foreign-income\">",
+      "<meta name=\"govuk:first-published-at\" content=\"2014-12-08T15:30:05+00:00\">",
+      "<meta name=\"govuk:updated-at\" content=\"2026-10-01T11:46:07+01:00\">",
+      "<meta name=\"govuk:public-updated-at\" content=\"2014-12-08T16:14:39+00:00\">",
+      "<meta name=\"govuk:primary-publishing-organisation\" content=\"Government Digital Service\">",
+      "<meta name=\"govuk:ga4-browse-topic\" content=\"money and tax\">",
+      "<meta name=\"govuk:organisations\" content=\"&lt;D25&gt;\">",
+      "<meta name=\"govuk:taxonomy_level1\" content=\"going-and-being-abroad, going-and-being-abroad-old, money, world/all\">",
+      "<meta name=\"govuk:taxon-id\" content=\"ff8f4cd7-05dd-4478-b37b-a9dcd984a810\">",
+      "<meta name=\"govuk:taxon-ids\" content=\"ff8f4cd7-05dd-4478-b37b-a9dcd984a810,ce9e9802-6138-4fe9-9f33-045ef213be29,806df5bb-d913-4ae9-b68e-e7d8a6e740f5,104ee859-8278-406b-80cb-5727373e0198,02fdbc1c-89ff-493c-a150-2a2b5e40cc5d,d956c72a-246d-4787-af39-00bf58b2ea66,a83ce24e-0ef4-476e-bac6-d18061e0a22e,24f22965-542e-4ed0-82fa-2e54ca95b35d,02b042bb-b875-4362-ba13-41cbfb70f242,382360ab-c4cf-4e2a-b043-0cfa395f1d0b\">",
+      "<meta name=\"govuk:taxon-slug\" content=\"coming-to-uk\">",
+      "<meta name=\"govuk:taxon-slugs\" content=\"coming-to-uk,countries-living-in,dealing-with-hmrc-tax-compliance-disclosing-offshore-income,income-tax,leaving-uk,living-abroad,personal-tax-living-working-abroad-offshore-living-and-working-abroad,living-working-abroad-offshore,tax-compliance,tax-benefits-pensions-and-working-abroad\">"
+    ]
+  },
+  "normalizedContent": {
+    "text": "Tax on foreign income Skip contents Contents Overview UK residence and tax 'Non-domiciled' residents Reporting your foreign income Foreign income that's taxed differently If you're taxed twice If you come to study in the UK UK residence and tax Your UK residence status affects whether you need to pay tax in the UK on your foreign income. Non-residents only pay tax on their UK income - they do not pay UK tax on their foreign income. Residents normally pay UK tax on all their income, whether it’s from the UK or abroad. Work out your residence status Whether you’re UK resident usually depends on how many days you spend in the UK in the tax year (6 April to 5 April the following year). You’ll only be resident in the UK if both of the following apply: you meet one or more of the automatic UK tests or the sufficient ties test you do not meet any of the automatic overseas tests Otherwise, you’ll be non-resident in the UK for tax purposes. UK tests You may be resident under the automatic UK tests if: you spent 183 or more days in the UK in the tax year your only home was in the UK for 91 days or more in a row - and you visited or stayed in it for at least 30 days of the tax year you worked full-time in the UK for any period of 365 days and at least one day of that period was in the tax year you’re checking You may also be resident under the sufficient ties test if you spent a number of days in the UK and you have additional ties to the UK, like work or family. Overseas tests You’re usually non-resident if either: you spent fewer than 16 days in the UK (or 46 days if you have not been a UK resident for the 3 previous tax years) you worked abroad full-time (averaging at least 35 hours a week), and spent fewer than 91 days in the UK, of which no more than 30 were spent working Get help working out your residence status If you’re still unsure about your status, you can use the residence status checker. This will give you an indication of whether you were a UK resident during a tax year. You can check for the current tax year, or any of the previous 6 tax years. You may be asked for the following information about the year you’re checking: how many days you spent living and working in the UK and abroad roughly how many hours a week you worked family you have in the UK details of your home in the UK Start now Other ways to get help You can also: read HM Revenue and Customs’ ( HMRC ) guidance on the Statutory Residence Test get professional tax help Your residence status when you move When you move in or out of the UK, the tax year is usually split into 2 - a non-resident part and a resident part. This means you only pay UK tax on foreign income based on the time you were living here. This is called ‘split-year treatment’. You will not get split-year treatment if you live abroad for less than a full tax year before returning to the UK . You also need to meet other conditions. To find out if you qualify and see which split-year treatment ‘case’ you’ll need to mention on your Self Assessment tax return, you can: read HMRC ’s guidance about split-years under the Statutory Residence Test contact HMRC If your situation changes Your status can change from one tax year to the next. Check your status if your situation changes, for example: you spend more or less time in the UK you buy or sell a home in the UK you change your job your family moves in or out of the UK, or you get married, separate or have children Residence and capital gains You work out your residence status for capital gains (for example, when you sell shares or a second home) the same way as you do for income. UK residents have to pay tax on their UK and foreign gains. Non-residents have to pay tax on income, but usually only pay Capital Gains Tax either: on UK property or land if they return to the UK Residence before April 2013 There were different rules for working out your residence status before 6 April 2013. Previous : Overview Next : 'Non-domiciled' residents View a printable version of the whole guide Related content Income Tax: introduction Capital Gains Tax: what you pay it on, rates and allowances Tax if you return to the UK Apply for a certificate of residence or letter of confirmation HMRC email updates, videos and webinars for Self Assessment Collection Living or working abroad or offshore: detailed information Tax compliance: detailed information Explore the topic Income Tax Living abroad Travelling to the UK",
+    "blocks": [
+      {
+        "locator": "html:main:44629",
+        "text": "Tax on foreign income Skip contents Contents Overview UK residence and tax 'Non-domiciled' residents Reporting your foreign income Foreign income that's taxed differently If you're taxed twice If you come to study in the UK UK residence and tax Your UK residence status affects whether you need to pay tax in the UK on your foreign income. Non-residents only pay tax on their UK income - they do not pay UK tax on their foreign income. Residents normally pay UK tax on all their income, whether it’s from the UK or abroad. Work out your residence status Whether you’re UK resident usually depends on how many days you spend in the UK in the tax year (6 April to 5 April the following year). You’ll only be resident in the UK if both of the following apply: you meet one or more of the automatic UK tests or the sufficient ties test you do not meet any of the automatic overseas tests Otherwise, you’ll be non-resident in the UK for tax purposes. UK tests You may be resident under the automatic UK tests if: you spent 183 or more days in the UK in the tax year your only home was in the UK for 91 days or more in a row - and you visited or stayed in it for at least 30 days of the tax year you worked full-time in the UK for any period of 365 days and at least one day of that period was in the tax year you’re checking You may also be resident under the sufficient ties test if you spent a number of days in the UK and you have additional ties to the UK, like work or family. Overseas tests You’re usually non-resident if either: you spent fewer than 16 days in the UK (or 46 days if you have not been a UK resident for the 3 previous tax years) you worked abroad full-time (averaging at least 35 hours a week), and spent fewer than 91 days in the UK, of which no more than 30 were spent working Get help working out your residence status If you’re still unsure about your status, you can use the residence status checker. This will give you an indication of whether you were a UK resident during a tax year. You can check for the current tax year, or any of the previous 6 tax years. You may be asked for the following information about the year you’re checking: how many days you spent living and working in the UK and abroad roughly how many hours a week you worked family you have in the UK details of your home in the UK Start now Other ways to get help You can also: read HM Revenue and Customs’ ( HMRC ) guidance on the Statutory Residence Test get professional tax help Your residence status when you move When you move in or out of the UK, the tax year is usually split into 2 - a non-resident part and a resident part. This means you only pay UK tax on foreign income based on the time you were living here. This is called ‘split-year treatment’. You will not get split-year treatment if you live abroad for less than a full tax year before returning to the UK . You also need to meet other conditions. To find out if you qualify and see which split-year treatment ‘case’ you’ll need to mention on your Self Assessment tax return, you can: read HMRC ’s guidance about split-years under the Statutory Residence Test contact HMRC If your situation changes Your status can change from one tax year to the next. Check your status if your situation changes, for example: you spend more or less time in the UK you buy or sell a home in the UK you change your job your family moves in or out of the UK, or you get married, separate or have children Residence and capital gains You work out your residence status for capital gains (for example, when you sell shares or a second home) the same way as you do for income. UK residents have to pay tax on their UK and foreign gains. Non-residents have to pay tax on income, but usually only pay Capital Gains Tax either: on UK property or land if they return to the UK Residence before April 2013 There were different rules for working out your residence status before 6 April 2013. Previous : Overview Next : 'Non-domiciled' residents View a printable version of the whole guide Related content Income Tax: introduction Capital Gains Tax: what you pay it on, rates and allowances Tax if you return to the UK Apply for a certificate of residence or letter of confirmation HMRC email updates, videos and webinars for Self Assessment Collection Living or working abroad or offshore: detailed information Tax compliance: detailed information Explore the topic Income Tax Living abroad Travelling to the UK",
+        "anchorId": "f69695c8b558e4f19f223bcfd67dfe70035f7019fdae3cd026d8b8234f3624fe"
+      }
+    ]
+  },
+  "citationAnchors": [
+    {
+      "anchorId": "f69695c8b558e4f19f223bcfd67dfe70035f7019fdae3cd026d8b8234f3624fe",
+      "locator": "html:main:44629",
+      "start": 0,
+      "end": 4451,
+      "quoteHash": "2c3305728255cb1d4bf74592d97d3ad85103e569f919c95719a4020597245195",
+      "rawContentHash": "41c8873f733d6f47b6c0cbb02548b809bb0cea2aab2b7475996fc5427d9377b0"
+    }
+  ],
+  "discoveredLinks": [
+    {
+      "url": "https://www.gov.uk/help/cookies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/cookies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/cookies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-foreign-income/residence#content",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/benefits",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/births-deaths-marriages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/business",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/childcare-parenting",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/citizenship",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/justice",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/disabilities",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/driving",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/education",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/employing-people",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/environment-countryside",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/housing-local-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/abroad",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/visas-immigration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/working",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/organisations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/news-and-communications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/guidance-and-regulation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/research-and-statistics",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/policy-papers-and-consultations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/transparency-and-freedom-of-information-releases",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/tax/income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-foreign-income/residence#guide-contents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-foreign-income",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-foreign-income/non-domiciled-residents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-foreign-income/paying-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-foreign-income/foreign-income-thats-taxed-differently",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-foreign-income/taxed-twice",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-foreign-income/study-in-the-uk",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-uk-income-live-abroad",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/hmrc-internal-manuals/residence-and-fig-regime-manual/rfig20500",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.tax.service.gov.uk/guidance/check-your-uk-residence-status",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/rdr3-statutory-residence-test-srt",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-help",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-return-uk",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/rdr3-statutory-residence-test-srt",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/organisations/hm-revenue-customs/contact/income-tax-enquiries-for-individuals-pensioners-and-employees",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/capital-gains-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/capital-gains-tax-for-non-residents-uk-residential-property",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-return-uk",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/tax-on-foreign-income-rules-for-the-tax-year-ending-5-april-2013",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-foreign-income",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-foreign-income/non-domiciled-residents",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-foreign-income/print",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/capital-gains-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/tax-return-uk",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/guidance/apply-for-a-certificate-of-residence-or-letter-of-confirmation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/guidance/help-and-support-for-self-assessment",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/collections/living-or-working-abroad-or-offshore-detailed-information",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/collections/tax-compliance-detailed-information",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/tax/income-tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/abroad/living-abroad",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/visas-immigration/arriving-in-the-uk",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/contact/govuk",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.smartsurvey.co.uk/s/gov-uk-banner/?c=no-js",
+      "classification": "REJECTED_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/benefits",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/births-deaths-marriages",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/business",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/childcare-parenting",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/citizenship",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/justice",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/disabilities",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/driving",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/education",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/employing-people",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/environment-countryside",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/housing-local-services",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/tax",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/abroad",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/visas-immigration",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/browse/working",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/organisations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/news-and-communications",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/guidance-and-regulation",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/research-and-statistics",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/policy-papers-and-consultations",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/search/transparency-and-freedom-of-information-releases",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/how-government-works",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/get-involved",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/privacy-notice",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/cookies",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/accessibility-statement",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/contact",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/help/terms-conditions",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/cymraeg",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.gov.uk/government/organisations/government-digital-service",
+      "classification": "REGISTERED_OFFICIAL_SOURCE"
+    },
+    {
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    },
+    {
+      "url": "https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/",
+      "classification": "UNREGISTERED_OFFICIAL_SOURCE_CANDIDATE"
+    }
+  ],
+  "status": "REVIEW_REQUIRED",
+  "processingState": "NORMALIZED",
+  "warnings": [
+    "Remote content is untrusted data. No instruction authority. No legal applicability inferred.",
+    "HTML text may include navigation and incomplete tables; document/authority review required."
+  ],
+  "envelopeId": "783bdd82fb0a0cda13eab49830576275c72bda64335766db24fb9e823bef2eaf"
+}

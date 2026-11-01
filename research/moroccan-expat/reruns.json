@@ -1,0 +1,221 @@
+[
+  {
+    "run": 1,
+    "at": "2026-10-29T13:13:11.496Z",
+    "success": true,
+    "complete": true,
+    "browser": false,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 34094,
+    "timings": {
+      "firstProfileAndQuestionMs": 141,
+      "profileResolutionMs": 67,
+      "activityBatchMs": 17259,
+      "cardAndDocumentMs": 7584
+    },
+    "error": null
+  },
+  {
+    "run": 2,
+    "at": "2026-10-29T13:14:36.800Z",
+    "success": false,
+    "complete": false,
+    "browser": true,
+    "stage": "salary-villa-cafe-and-investment",
+    "elapsedMs": 15409,
+    "timings": null,
+    "error": "Product UI action failed: Error: Missing UI control"
+  },
+  {
+    "run": 3,
+    "at": "2026-10-29T13:17:52.829Z",
+    "success": false,
+    "complete": false,
+    "browser": true,
+    "stage": "salary-villa-cafe-and-investment",
+    "elapsedMs": 12843,
+    "timings": null,
+    "error": "Product UI action failed: Error: Missing UI control: [data-intake-action=\"fx/resolve\"][data-candidate=\"candidate-d0ac6ed4d7a9fb4b3f1df6373e8c3d47c0e90c7c0103c6d5f5af15a0bc17e954\"]"
+  },
+  {
+    "run": 4,
+    "at": "2026-10-29T14:24:29.035Z",
+    "success": true,
+    "complete": true,
+    "browser": true,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 98650,
+    "timings": {
+      "firstProfileAndQuestionMs": 5904,
+      "profileResolutionMs": 224,
+      "activityBatchMs": 38223,
+      "cardAndDocumentMs": 14421
+    },
+    "error": null
+  },
+  {
+    "run": 5,
+    "at": "2026-10-29T14:46:15.495Z",
+    "success": false,
+    "complete": false,
+    "browser": false,
+    "stage": "tax-and-fifteen-grounded-questions",
+    "elapsedMs": 35128,
+    "timings": null,
+    "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ '22495500'\n- '22095500'\n     ^"
+  },
+  {
+    "run": 6,
+    "at": "2026-10-29T14:48:35.803Z",
+    "success": true,
+    "complete": true,
+    "browser": false,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 71078,
+    "timings": {
+      "firstProfileAndQuestionMs": 138,
+      "profileResolutionMs": 148,
+      "activityBatchMs": 37294,
+      "cardAndDocumentMs": 19575
+    },
+    "error": null
+  },
+  {
+    "run": 7,
+    "at": "2026-10-29T14:58:06.645Z",
+    "success": false,
+    "complete": false,
+    "browser": false,
+    "stage": "salary-villa-cafe-and-investment",
+    "elapsedMs": 52572,
+    "timings": null,
+    "error": "{\"id\":\"P-FAMILY\",\"f\":{\"transactionDate\":\"2026-10-28\",\"description\":\"مصاريف عائلية شخصية\",\"counterparty\":\"طرف تجريبي\",\"amount\":\"1000000\",\"currency\":\"IDR\",\"proposedTransactionType\":\"EXPENSE\",\"classificationAccountId\":\"book-drawings\",\"paymentAccountId\":\"book-cash\",\"paymentMethod\":\"bank\",\"referenceNumber\":\"P-FAMILY\",\"settlementStatus\":\"PAID\",\"taxAmount\":null,\"subtotal\":null,\"economicScopeId\":\"PERSONAL\",\"eventType\":\"CASH_PURCHASE\",\"expenseCategory\":\"FAMILY\",\"purpose\":\"PERSONAL\",\"recognitionStatus\":\"PERSONAL\",\"reviewReason\":\"راجع المستخدم الغرض والخلاص، المعالجة الضريبية للمراجعة.\"},\"conflicts\":[\"POSSIBLE_DUPLICATE: explicit duplicate review required\"],\"missing\":[]}\n+ actual - expected\n\n+ 'REQUIRES_REVIEW'\n- 'READY_TO_CONFIRM'\n     ^"
+  },
+  {
+    "run": 8,
+    "at": "2026-10-29T15:01:16.279Z",
+    "success": true,
+    "complete": true,
+    "browser": false,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 56451,
+    "timings": {
+      "firstProfileAndQuestionMs": 113,
+      "profileResolutionMs": 54,
+      "activityBatchMs": 29287,
+      "cardAndDocumentMs": 14309
+    },
+    "error": null
+  },
+  {
+    "run": 9,
+    "at": "2026-10-29T18:18:18.254Z",
+    "success": true,
+    "complete": true,
+    "taxYear": "2025",
+    "browser": false,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 52919,
+    "timings": {
+      "firstProfileAndQuestionMs": 106,
+      "profileResolutionMs": 54,
+      "activityBatchMs": 27598,
+      "cardAndDocumentMs": 14858
+    },
+    "error": null
+  },
+  {
+    "run": 10,
+    "at": "2026-10-29T22:30:12.093Z",
+    "success": false,
+    "complete": false,
+    "taxYear": "2025",
+    "browser": false,
+    "stage": "startup",
+    "elapsedMs": 25925,
+    "timings": null,
+    "error": "Browser command timeout: Runtime.enable"
+  },
+  {
+    "run": 11,
+    "at": "2026-10-29T22:31:52.856Z",
+    "success": false,
+    "complete": false,
+    "taxYear": "2025",
+    "browser": false,
+    "stage": "startup",
+    "elapsedMs": 25327,
+    "timings": null,
+    "error": "Browser command timeout: Runtime.enable"
+  },
+  {
+    "run": 12,
+    "at": "2026-10-29T22:35:37.362Z",
+    "success": false,
+    "complete": false,
+    "taxYear": "2025",
+    "browser": true,
+    "stage": "supported-historical-tax",
+    "elapsedMs": 200592,
+    "timings": null,
+    "error": "Product UI action failed: Error: Missing UI input"
+  },
+  {
+    "run": 13,
+    "at": "2026-10-29T22:38:44.989Z",
+    "success": false,
+    "complete": false,
+    "taxYear": "2025",
+    "browser": true,
+    "stage": "supported-historical-tax",
+    "elapsedMs": 126799,
+    "timings": null,
+    "error": "Product UI action failed: Error: Missing UI input"
+  },
+  {
+    "run": 14,
+    "at": "2026-10-29T22:43:46.942Z",
+    "success": true,
+    "complete": true,
+    "taxYear": "2025",
+    "browser": true,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 200687,
+    "timings": {
+      "firstProfileAndQuestionMs": 6366,
+      "profileResolutionMs": 197,
+      "activityBatchMs": 77962,
+      "cardAndDocumentMs": 25840
+    },
+    "error": null
+  },
+  {
+    "run": 15,
+    "at": "2026-10-29T23:38:43.947Z",
+    "success": true,
+    "complete": true,
+    "taxYear": "2025",
+    "browser": false,
+    "stage": "language-invariance-and-final-explanation",
+    "elapsedMs": 102493,
+    "timings": {
+      "firstProfileAndQuestionMs": 139,
+      "profileResolutionMs": 52,
+      "activityBatchMs": 30825,
+      "cardAndDocumentMs": 12930
+    },
+    "error": null
+  },
+  {
+    "run": 16,
+    "at": "2026-10-29T23:42:35.419Z",
+    "success": false,
+    "complete": false,
+    "taxYear": "2025",
+    "browser": true,
+    "stage": "process-restart-and-replay",
+    "elapsedMs": 189512,
+    "timings": null,
+    "error": "Expected values to be strictly deep-equal:\n+ actual - expected ... Lines skipped\n\n  [\n    {\n...\n      facts: [\n        {\n+         display: 'الإقامة الداخلية فإندونيسيا مدعومة بـ 184 يوم حضور فعلي حتى 31 أكتوبر 2025 حسب PER43/PJ/2011، وكنحسبو حتى جزء النهار. عدد تقويم السفر اللي ما كيحسبش نهار الخروج مختلف. إقامة المغرب والإمارات للاتفاقيات باقية للمراجعة.',\n-         display: 'ما نقدرش نحكم أنك مقيم ضريبي فإندونيسيا. من 2025-01-01 حتى قبل 2025-11-01 سجلنا 183 يوم فإندونيسيا. الفترات المصرح بها: إندونيسيا: 2025-01-01 / 2025-04-01; الإمارات العربية المتحدة: 2025-04-01 / 2025-07-31; إندونيسيا: 2025-07-31 / 2025-11-01. الحساب شامل يوم الدخول وما شاملش يوم الخروج؛ هادي طريقة عرض تقويمية ماشي قاعدة قانونية. الإقامة الضريبية خاصها وقائع وقواعد معتمدة ومراجعة. 184 / PER43/PJ/2011',\n          id: 'scope.residence',\n...\n      kind: 'CALCULATED_RESULT'\n    }\n  ]"
+  }
+]

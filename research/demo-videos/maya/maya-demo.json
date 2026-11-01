@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "demo-video/1",
+  "persona": "maya",
+  "startedFromEmpty": true,
+  "reusedMuseRun": "maya-2026-2026-11-01T08-14-41-810Z",
+  "liveMuseCallsWhileRecording": 0,
+  "language": "id-ID",
+  "theme": "night",
+  "estimate": {
+    "taxType": "SIMPLIFIED_INCOME",
+    "taxAmount": {
+      "amountMinor": "2525000",
+      "currency": "IDR"
+    },
+    "taxableBase": {
+      "amountMinor": "505000000",
+      "currency": "IDR"
+    },
+    "rules": [
+      "ID_SIMPLIFIED_INCOME_2026:AUTO_APPROVED_DEMO"
+    ],
+    "sources": 4
+  },
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "seconds": 62.97,
+  "capture": "desktop-gdigrab-30fps",
+  "fps": 30,
+  "pages": [
+    "home",
+    "setup",
+    "transactions",
+    "reports",
+    "tax",
+    "settings"
+  ],
+  "video": "research/demo-videos/maya/maya-demo.mp4",
+  "videoBytes": 970245,
+  "recordedAt": "2026-11-01T13:32:36.302Z"
+}
