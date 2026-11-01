@@ -83,7 +83,10 @@ async function dispatch(store,method,path,query={},body={}){
    if(path==='/api/intake/edit')return json({ok:true,candidate:await store.intake.edit(body)});
    if(path==='/api/intake/reject')return json({ok:true,candidate:await store.intake.reject(body)});
    if(path==='/api/intake/confirm')return json({ok:true,candidate:await store.intake.confirm(body)});
-   if(path==='/api/intake/retry')return json({ok:true,document:await store.intake.retry(body)});
+   if(path==='/api/intake/schema/approve')return json({ok:true,...await store.intake.approveSchema(body)});
+  if(path==='/api/intake/schema/repropose')return json({ok:true,document:await store.intake.proposeSchema(body)});
+  if(path==='/api/intake/confirm-batch')return json({ok:true,...await store.intake.confirmBatch(body)});
+  if(path==='/api/intake/retry')return json({ok:true,document:await store.intake.retry(body)});
    if(path==='/api/onboarding/turn')return json({ok:true,...await store.onboardingTurn(body?.text)});
    if(path==='/api/onboarding/edit')return json({ok:true,...store.editProfile(body)});
    if(path==='/api/onboarding/language')return json({ok:true,language:store.setUiLanguage(body?.language??body?.tag)});

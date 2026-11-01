@@ -1,6 +1,6 @@
 'use strict';
 const {createHash}=require('node:crypto');
-const LIMITS=Object.freeze({fileBytes:8*1024*1024,totalBytes:64*1024*1024,textChars:200000,pages:20,rows:500,pixels:16000000});
+const LIMITS=Object.freeze({fileBytes:8*1024*1024,totalBytes:64*1024*1024,textChars:200000,textCharsCsv:4*1024*1024,rows:500,rowsCsv:20000,pages:20,pixels:16000000});
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 function textOf(bytes){try{return new TextDecoder('utf-8',{fatal:true}).decode(bytes).replace(/^\uFEFF/,'');}catch{throw Error('Malformed UTF-8 document');}}
 function csvRows(text,{maxRows=LIMITS.rows,preserveRaw=false,allowRagged=false}={}){
@@ -20,7 +20,7 @@ function csvRows(text,{maxRows=LIMITS.rows,preserveRaw=false,allowRagged=false}=
 function inspectFile({bytes,originalFilename,declaredMimeType}){
  if(!Buffer.isBuffer(bytes)||!bytes.length||bytes.length>LIMITS.fileBytes)throw Error('Empty file or file size limit exceeded (8 MiB)');
  if(typeof originalFilename!=='string'||!originalFilename.trim()||originalFilename.length>180||/[\x00-\x1f<>:"/\\|?*]/.test(originalFilename)||originalFilename.includes('..')||/[. ]$/.test(originalFilename)||/^(con|prn|aux|nul|com\d|lpt\d)(\.|$)/i.test(originalFilename))throw Error('Suspicious filename');
- let mime;
+ let mime,csvSchema=null;
  if(bytes.subarray(0,5).toString()==='%PDF-'){if(!bytes.subarray(-1024).includes(Buffer.from('%%EOF')))throw Error('Malformed PDF');mime='application/pdf';}
  else if(bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))){if(bytes.length<33||bytes.subarray(12,16).toString()!=='IHDR')throw Error('Malformed PNG');const w=bytes.readUInt32BE(16),h=bytes.readUInt32BE(20);if(!w||!h||w*h>LIMITS.pixels)throw Error('Image pixel limit exceeded');mime='image/png';}
  else if(bytes[0]===255&&bytes[1]===216&&bytes[2]===255){
@@ -30,13 +30,20 @@ function inspectFile({bytes,originalFilename,declaredMimeType}){
   require('./xlsx').parseXlsxTransactions(bytes);mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
  } else {
   const text=textOf(bytes);if(/[\x00-\x08\x0b\x0e-\x1f]/.test(text)||/^\s*(?:<|MZ|#!|PK\x03)/.test(text))throw Error('Unsupported file type');
-  if(!text.trim()||text.length>LIMITS.textChars)throw Error('Empty or oversized text');
-  const header=text.split(/\r?\n/)[0].toLowerCase().split(',').map(s=>s.trim().replace(/^"|"$/g,''));
-  mime=header.includes('date')&&header.includes('description')&&(header.includes('amount')||header.includes('debit')||header.includes('credit'))?'text/csv':'text/plain';
-  if(mime==='text/csv')csvRows(text);
+  if(!text.trim())throw Error('Empty or oversized text');
+  const firstLine=text.split(/\r?\n/,1)[0]??'';
+  const header=firstLine.toLowerCase().split(',').map(s=>s.trim().replace(/^"|"$/g,''));
+  const canonicalHeader=header.includes('date')&&header.includes('description')&&(header.includes('amount')||header.includes('debit')||header.includes('credit'));
+  const oversized=text.length>LIMITS.textChars;
+  let structure=null;
+  if(text.length<=LIMITS.textCharsCsv){try{const probe=csvRows(text,{maxRows:LIMITS.rowsCsv,preserveRaw:true});if(probe.length>=3&&probe[0].length>=3)structure=probe;}catch{structure=null;}}
+  if(canonicalHeader&&!oversized){mime='text/csv';csvSchema='CANONICAL';csvRows(text,{maxRows:LIMITS.rowsCsv});}
+  else if(structure){mime='text/csv';csvSchema=canonicalHeader?'CANONICAL':'DISCOVERY';}
+  else if(oversized)throw Error('Empty or oversized text');
+  else mime='text/plain';
  }
  const declared=String(declaredMimeType??'application/octet-stream').split(';')[0].toLowerCase();
  if(declared!=='application/octet-stream'&&declared!==mime&&!(declared==='text/plain'&&mime==='text/csv'))throw Error('MIME mismatch: detected '+mime);
- return {detectedMimeType:mime,sizeBytes:bytes.length,sha256:hash(bytes)};
+ return {detectedMimeType:mime,sizeBytes:bytes.length,sha256:hash(bytes),csvSchema};
 }
 module.exports={LIMITS,hash,textOf,csvRows,inspectFile};

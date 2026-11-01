@@ -25,11 +25,16 @@ describe('provisional Japan estimate',()=>{
     assert.equal(r.estimate.amountMinor,'4689657');
     assert.equal(r.coverage.ruleId,'JP_IT_BUS_18000K_39999K_40PCT');
   });
-  it('reports a bracket gap instead of inventing a number',()=>{
+  it('applies the lowest statutory bracket and still refuses to invent an amount for a foreign residence',()=>{
     const r=evaluate({...facts,basicDeduction:'0'},position(1000000,0));
-    assert.equal(r.status,'INFORMATION_REQUIRED');
-    assert.equal(r.estimate,null);
-    assert.ok(r.blockers.some((b)=>b.code==='RULE_BRACKET_NOT_COVERED'));
+    assert.equal(r.status,'PROVISIONAL_ESTIMATE');
+    assert.equal(r.estimate.amountMinor,'51050');
+    assert.equal(r.coverage.ruleId,'JP_IT_BUS_0_1950K_5PCT');
+    assert.equal(r.coverage.rate,'0.05');
+    const foreign=evaluate({...facts,residence:'OTHER'},position(5627290,780632));
+    assert.equal(foreign.status,'INFORMATION_REQUIRED');
+    assert.equal(foreign.estimate,null);
+    assert.ok(foreign.blockers.some((b)=>b.code==='TAX_RESIDENCE_OUTSIDE_JP'));
   });
   it('is deterministic and keyed to the journal binding',()=>{
     assert.equal(evaluate(facts,position(5627290,780632)).evaluationHash,evaluate(facts,position(5627290,780632)).evaluationHash);
